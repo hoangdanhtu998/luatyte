@@ -1,0 +1,1122 @@
+<title>Sổ tay Luật Y tế</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+/* ===== Hệ thống màu: "Achromatic ledger" (chrome không màu, một màu dữ liệu duy nhất) ===== */
+:root{
+  --ground:#F8F8F8; --bg:#F8F8F8; --surface:#FFFFFF; --surface-2:#FAFAFA; --sunk:#EEEEEE; --raised:#EEEEEE; --line:#E6E6E6; --rule:#F0F0F0; --control:#D4D4D4;
+  --ink:#0A0A0A; --text:#0A0A0A; --muted:#6B6B6B;
+  --brand:#1D5FBF; --brand-2:#1D5FBF; --brand-soft:#E8F0FB; --on-brand:#FFFFFF;
+  --accent:#141414; --accent-soft:#EEEEEE;
+  --gold:#92400E; --gold-soft:#FFFBEB;
+  --ok:#2E7D32; --ok-soft:#DCFAE5; --bad:#C4242A; --bad-soft:#FFEDEA;
+  --shadow:none; --shadow-lg:0 24px 48px -24px rgba(10,10,10,.28);
+  --f-display:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:var(--f-body);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --r-lg:8px; --r:8px; --r-ctl:6px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0E0E; --ground:#0E0E0E; --surface:#161616; --surface-2:#1B1B1B; --sunk:#222222; --raised:#262626; --line:#2C2C2C; --rule:#242424; --control:#3A3A3A;
+  --ink:#F2F2F2; --text:#F2F2F2; --muted:#9A9A9A;
+  --brand:#7FB0FF; --brand-2:#7FB0FF; --brand-soft:#1A2A44; --on-brand:#0E0E0E;
+  --accent:#F2F2F2; --accent-soft:#262626;
+  --gold:#FBBF24; --gold-soft:#2E2508; --ok:#4ADE80; --ok-soft:#12331F; --bad:#FB7185; --bad-soft:#3A1A24;
+  --shadow-lg:0 24px 48px -24px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0E0E; --ground:#0E0E0E; --surface:#161616; --surface-2:#1B1B1B; --sunk:#222222; --raised:#262626; --line:#2C2C2C; --rule:#242424; --control:#3A3A3A;
+  --ink:#F2F2F2; --text:#F2F2F2; --muted:#9A9A9A;
+  --brand:#7FB0FF; --brand-2:#7FB0FF; --brand-soft:#1A2A44; --on-brand:#0E0E0E;
+  --accent:#F2F2F2; --accent-soft:#262626;
+  --gold:#FBBF24; --gold-soft:#2E2508; --ok:#4ADE80; --ok-soft:#12331F; --bad:#FB7185; --bad-soft:#3A1A24;
+  --shadow-lg:0 24px 48px -24px rgba(0,0,0,.7); color-scheme:dark}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;overflow-x:clip;background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 110px;min-height:100svh}
+.wrap{max-width:920px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.25;font-weight:700}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:disabled{opacity:.55;cursor:default}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+a{color:var(--brand)}
+.intro{color:var(--muted);max-width:68ch;margin:0;font-size:14px}
+.label{font-size:12px;color:var(--muted);font-weight:500}
+kbd{font-family:var(--f-body);font-variant-numeric:tabular-nums;font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:1px 6px;background:var(--surface);color:var(--muted)}
+
+/* ===== Đầu trang: không nền màu, không hiệu ứng ===== */
+.hero{margin-top:18px;border-radius:var(--r-lg);padding:22px 22px 18px;color:var(--ink);position:relative;background:var(--surface);border:1px solid var(--line)}
+.hero::before,.hero::after{display:none}
+.hero-top{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brand{display:flex;gap:14px;align-items:center;min-width:0}
+.seal{width:44px;height:44px;border-radius:var(--r-ctl);background:var(--ink);color:var(--surface);display:grid;place-items:center;flex:none;
+  font-family:var(--f-display);font-weight:700;font-size:12px;line-height:1;text-align:center}
+.hero h1{font-size:clamp(22px,4vw,28px);letter-spacing:-.01em;color:var(--ink)}
+.hero p.sub{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+.lvl{display:flex;gap:14px;align-items:center;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-ctl);padding:6px 14px 6px 6px}
+.ring{width:52px;height:52px;position:relative;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:5}
+.ring .bg{stroke:var(--sunk)}
+.ring .fg{stroke:var(--brand);stroke-linecap:round;stroke-dasharray:163.4;stroke-dashoffset:163.4;transition:stroke-dashoffset 1s var(--ease)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-size:17px;font-variant-numeric:tabular-nums}
+.lvl .t{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.4}
+.lvl .t strong{display:block;color:var(--ink);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:12px 14px;min-width:0}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font-family:var(--f-display);font-size:28px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.2;font-weight:700}
+
+/* ===== Tab: chữ và gạch chân, không viên thuốc ===== */
+nav.tabs{position:sticky;top:8px;z-index:20;margin:16px 0 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:4px}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs .ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:var(--r-ctl);background:var(--raised);transition:transform .45s var(--ease),width .45s var(--ease);z-index:0}
+nav.tabs button{position:relative;z-index:1;flex:none;background:none;border:0;border-radius:var(--r-ctl);padding:8px 14px;font-size:14px;color:var(--muted);font-weight:500;white-space:nowrap;transition:color .25s}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button[aria-selected="true"]{color:var(--ink);font-weight:700}
+
+/* ===== Panel & chuyển cảnh ===== */
+.panel{display:flex;flex-direction:column;gap:16px}
+.panel:not([hidden]){animation:enter .45s var(--ease) both}
+@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ===== Thư viện luật ===== */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{position:relative;flex:1;min-width:220px}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
+.search input{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:10px 14px 10px 42px;transition:border-color .2s}
+.search input:focus{outline:none;border-color:var(--brand)}
+.cats{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 16px;margin:0 -16px}
+.cats::-webkit-scrollbar{display:none}
+.chip{flex:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:6px 12px;font-size:13px;font-weight:500;color:var(--muted);transition:color .2s,border-color .2s}
+.chip:hover{color:var(--ink);border-color:var(--control)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.laws{display:grid;gap:10px}
+.law{--c:var(--line);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--c);border-radius:var(--r-lg);overflow:hidden;animation:enter .4s var(--ease) backwards}
+.law summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px}
+.law summary::-webkit-details-marker{display:none}
+.badge{width:44px;height:44px;border-radius:var(--r-ctl);display:grid;place-items:center;font-family:var(--f-body);font-variant-numeric:tabular-nums;font-size:10.5px;font-weight:500;color:var(--ink);background:var(--raised);text-align:center;line-height:1.15;padding:4px}
+.law h3{font-size:16px;margin-bottom:4px}
+.meta{display:flex;gap:4px 12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.meta .mono{font-family:var(--f-body);font-variant-numeric:tabular-nums;color:var(--ink);font-size:12px}
+.pill{font-size:12px;font-weight:500;border-radius:var(--r-ctl);padding:2px 8px;white-space:nowrap;display:inline-flex;gap:6px;align-items:center}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.p-on{background:var(--ok-soft);color:var(--ok)}
+.p-amend{background:var(--gold-soft);color:var(--gold)}
+.p-het{background:var(--bad-soft);color:var(--bad)}
+.chev{width:28px;height:28px;display:grid;place-items:center;color:var(--muted);transition:transform .3s var(--ease)}
+.chev svg{width:14px;height:14px}
+.law[open] .chev{transform:rotate(180deg)}
+.law .body{padding:0 16px 16px 72px;display:grid;gap:10px;animation:enter .35s var(--ease) both}
+.law .body .pts{display:grid;gap:6px}
+.law .body .pts p{position:relative;margin:0;padding-left:16px;font-size:14px;line-height:1.55}
+.law .body .pts p::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:2px;background:var(--muted)}
+.law .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.linkbtn{font:inherit;font-size:13px;font-weight:500;text-decoration:none;color:var(--ink);background:var(--raised);border:0;border-radius:var(--r-ctl);padding:6px 12px;transition:background .2s}
+.linkbtn:hover{background:var(--control)}
+.note{font-size:13px;color:var(--muted);background:var(--surface);border:1px dashed var(--control);border-radius:var(--r-ctl);padding:10px 14px}
+
+/* ===== Chung cho các mini game ===== */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;position:relative;overflow:hidden}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{border:0;background:var(--ink);color:var(--surface);border-radius:var(--r-ctl);padding:10px 18px;font-weight:600;transition:transform .15s var(--ease),opacity .2s}
+.btn:hover:not(:disabled){opacity:.88}
+.btn:active:not(:disabled){transform:scale(.98)}
+.btn.ghost{background:var(--raised);color:var(--ink);border:0}
+select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:8px 12px;max-width:100%;min-width:0}
+.gtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.stat-row{display:flex;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stat-row span{background:var(--sunk);border-radius:var(--r-ctl);padding:3px 10px}
+.stat-row b{color:var(--ink)}
+.combo{display:inline-flex;align-items:center;gap:6px;background:var(--gold-soft);color:var(--gold);font-weight:600;border-radius:var(--r-ctl);padding:3px 10px;font-size:13px}
+.combo.hot{animation:bump .5s var(--ease)}
+@keyframes bump{0%{transform:scale(.8)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
+.bar{height:6px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--brand);transition:width .6s var(--ease)}
+.segs{display:flex;gap:4px;margin-bottom:20px}
+.segs i{flex:1;height:5px;border-radius:999px;background:var(--sunk);transition:background .4s,transform .4s var(--ease)}
+.segs i.done{background:var(--brand)}
+.segs i.now{background:var(--ink);transform:scaleY(1.6)}
+.q{font-family:var(--f-display);font-size:clamp(18px,3vw,21px);font-weight:600;line-height:1.4;margin:0 0 16px;text-wrap:pretty;animation:enter .4s var(--ease) both}
+.tag{display:inline-block;font-size:12px;font-weight:500;color:var(--muted);background:var(--sunk);border-radius:var(--r-ctl);padding:2px 8px}
+
+/* ===== Trắc nghiệm ===== */
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:12px 14px;font-size:15px;transition:border-color .2s,background .2s}
+.opt:hover:not(:disabled){border-color:var(--control)}
+.opt .k{width:28px;height:28px;border-radius:var(--r-ctl);background:var(--sunk);display:grid;place-items:center;font-family:var(--f-body);font-variant-numeric:tabular-nums;font-size:12px;font-weight:500;flex:none;transition:transform .2s,opacity .2s,border-color .2s,background .2s .3s}
+.opt .tx{flex:1;min-width:0;overflow-wrap:anywhere}
+.opt.in{animation:qin .35s var(--ease) backwards}
+@keyframes qin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.opt.right{background:var(--ok-soft);border-color:var(--ok)}
+.opt.right .k{background:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad);animation:shake .45s}
+.opt.wrong .k{background:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.shake{animation:shake .45s}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.feedback{margin-top:14px;border-radius:var(--r-ctl);padding:12px 14px;display:grid;gap:8px;animation:enter .35s var(--ease) both}
+.feedback.ok{background:var(--ok-soft)}
+.feedback.no{background:var(--bad-soft)}
+.feedback .hd{font-weight:700}
+.feedback.ok .hd{color:var(--ok)}
+.feedback.no .hd{color:var(--bad)}
+.feedback p{margin:0;font-size:14px}
+.result{display:grid;gap:12px;justify-items:center;text-align:center;padding:12px 0 4px;animation:enter .5s var(--ease) both}
+.big{font-family:var(--f-display);font-size:56px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+
+/* ===== Đúng hay Sai ===== */
+.tf-timer{height:6px;border-radius:999px;background:var(--sunk);overflow:hidden;margin-bottom:16px}
+.tf-timer i{display:block;height:100%;width:100%;border-radius:999px;background:var(--brand);transition:width 1s linear}
+.tf-timer.low i{background:var(--bad)}
+.tf-time{font-family:var(--f-body);font-variant-numeric:tabular-nums;font-size:20px;font-weight:500;color:var(--ink)}
+.tf-stmt{font-family:var(--f-display);font-size:clamp(19px,3.4vw,23px);font-weight:600;line-height:1.4;min-height:110px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 6px;animation:enter .4s var(--ease) both;text-wrap:balance}
+.tf-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.tf-btns button{border:0;border-radius:var(--r-ctl);padding:16px;font-size:18px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .2s}
+.tf-btns button kbd{background:transparent;border-color:currentColor;color:inherit;opacity:.7}
+.tf-btns button:hover{opacity:.85}
+.tf-btns button:active{transform:scale(.98)}
+.tf-yes{background:var(--ok-soft);color:var(--ok)}
+.tf-no{background:var(--bad-soft);color:var(--bad)}
+.tf-stage.flash-ok{animation:fok .5s}
+.tf-stage.flash-bad{animation:shake .45s}
+@keyframes fok{0%{outline:2px solid var(--ok)}100%{outline:2px solid transparent}}
+
+/* ===== Ghép cặp ===== */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match .col{display:grid;gap:8px;align-content:start;min-width:0}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-ctl);padding:12px 13px;text-align:left;font-size:14px;min-height:56px;overflow-wrap:anywhere;transition:border-color .2s,background .2s,opacity .4s;animation:enter .4s var(--ease) backwards}
+.tile:hover:not(.done){border-color:var(--control)}
+.tile.sel{border-color:var(--brand);background:var(--brand-soft)}
+.tile.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);opacity:.6;cursor:default}
+.tile.no{animation:shake .4s;border-color:var(--bad);background:var(--bad-soft)}
+
+/* ===== Thẻ nhớ ===== */
+.flip{perspective:1400px;cursor:pointer;border:0;background:none;padding:0;width:100%;display:block}
+.flip-in{position:relative;min-height:220px;transition:transform .6s var(--ease);transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left}
+.front{background:var(--surface);border:1px solid var(--line)}
+.back{background:var(--ink);color:var(--surface);transform:rotateY(180deg)}
+.face .t{font-family:var(--f-display);font-size:clamp(18px,3vw,21px);font-weight:600;line-height:1.4;text-wrap:balance}
+.face .hint{font-size:12.5px;color:var(--muted)}
+.back .label{color:var(--surface);opacity:.75}
+.card-actions{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+
+/* ===== Nút trợ lý nổi ===== */
+.bot-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:10px;border:0;border-radius:var(--r-ctl);background:var(--ink);color:var(--surface);padding:6px 16px 6px 6px;font-weight:600;font-size:14px;transition:opacity .2s}
+.bot-fab:hover{opacity:.9}
+.bot-fab .ic{width:40px;height:40px;border-radius:var(--r-ctl);background:var(--surface);display:grid;place-items:center;flex:none}
+.bot-fab svg{width:30px;height:30px;overflow:visible}
+.bot-fab.open{background:var(--raised);color:var(--ink)}
+.bot-fab.open .ic{background:var(--surface)}
+@media (max-width:420px){.bot-fab .tx{display:none}.bot-fab{padding:6px}}
+
+/* ===== Trợ lý dạng ngăn nổi ===== */
+.drawer{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(max(16px,env(safe-area-inset-bottom,0px)) + 72px);width:min(410px,calc(100vw - 32px));height:min(600px,calc(100svh - 150px));z-index:60;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);padding:14px;display:flex;flex-direction:column;gap:10px;animation:dup /* taste-skill-ignore: real overlay */ .35s var(--ease)}
+@keyframes dup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:2px 2px 0}
+.drawer-head .who{display:flex;gap:10px;align-items:center}
+.drawer-head .av{width:36px;height:36px;border-radius:var(--r-ctl);background:var(--raised);display:grid;place-items:center}
+.drawer-head .av svg{width:26px;height:26px}
+.drawer-head b{font-family:var(--f-display);font-size:16px;display:block;line-height:1.2}
+.drawer-head small{color:var(--muted);font-size:12px}
+.x{border:0;background:var(--sunk);color:var(--ink);width:30px;height:30px;border-radius:var(--r-ctl);font-size:16px;line-height:1}
+.suggest{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.suggest::-webkit-scrollbar{display:none}
+.suggest .chip{white-space:nowrap}
+.chat{display:flex;flex-direction:column;min-height:0;flex:1;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-ctl);overflow:hidden}
+.chat-log{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth}
+.msg{max-width:90%;padding:9px 12px;border-radius:var(--r-ctl);font-size:14px;line-height:1.6;overflow-wrap:anywhere;animation:enter .3s var(--ease) both}
+.msg.me{align-self:flex-end;background:var(--ink);color:var(--surface)}
+.msg.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--line)}
+.msg p{margin:0 0 6px}.msg p:last-child{margin:0}
+.msg ul{margin:4px 0;padding-left:18px}
+.msg .src{font-size:11.5px;color:var(--muted);margin-top:6px}
+.typing{display:inline-flex;gap:4px;padding:4px 2px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:dot 1.1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-3px);opacity:1}}
+.chat-form{display:flex;gap:8px;padding:10px;background:var(--surface-2);background:var(--surface);align-items:center}
+.chat-form textarea{flex:1;font:inherit;font-size:14px;line-height:1.4;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-ctl);padding:10px 12px;resize:none;min-height:42px;max-height:96px;overflow-y:auto}
+.chat-form textarea:focus{outline:none;border-color:var(--brand)}
+.chat-form .btn{padding:10px 14px;flex:none}
+.mode{font-size:11.5px;color:var(--muted);margin:0;line-height:1.5}
+
+/* ===== Thông báo nổi ===== */
+.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-160%);z-index:200;background:var(--ink);color:var(--surface);padding:9px 16px;border-radius:var(--r-ctl);font-weight:600;font-size:14px;box-shadow:var(--shadow-lg);transition:transform .4s var(--ease);pointer-events:none /* taste-skill-ignore: real overlay */;white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.toast.show{transform:translate(-50%,0)}
+
+/* ===== Pháo giấy khi trả lời đúng ===== */
+.cf{position:fixed;width:8px;height:12px;border-radius:2px;pointer-events:none;z-index:150;animation:cf 1.1s cubic-bezier(.15,.7,.3,1) forwards}
+.cf.round{border-radius:50%;width:7px;height:7px}
+@keyframes cf{0%{transform:translate(0,0) rotate(0);opacity:1}100%{transform:translate(var(--dx),calc(var(--dy) + 380px)) rotate(var(--r));opacity:0}}
+
+footer{margin-top:36px;font-size:12.5px;color:var(--muted);text-align:center;padding:14px}
+
+@media (max-width:620px){
+  .hero{padding:18px 16px 16px}
+  .stats{gap:8px}
+  .stat{padding:10px}
+  .stat b{font-size:22px}
+  .stat span{font-size:11px}
+  .match{gap:8px}
+  .tile{font-size:13px;padding:10px}
+  .law summary{grid-template-columns:auto 1fr}
+  .law summary .chev{display:none}
+  .law .body{padding:0 14px 14px 14px}
+  .card{padding:16px}
+  .cats{flex-wrap:wrap;overflow:visible;margin:0;padding:0}
+  .tf-btns button{padding:12px;font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand">
+        <div class="seal" aria-hidden="true">LUẬT<br>Y TẾ</div>
+        <div>
+          <h1>Sổ tay Luật Y tế</h1>
+          <p class="sub">Học luật qua trò chơi · cập nhật đến 10/2026</p>
+        </div>
+      </div>
+      <div class="lvl" title="Điểm kinh nghiệm: trả lời đúng để lên cấp">
+        <div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="26"/><circle class="fg" id="ringfg" cx="30" cy="30" r="26"/></svg>
+          <b id="ringlv">1</b>
+        </div>
+        <div class="t"><strong id="lv">Cấp 1</strong><span id="xpnum">0 XP</span></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span>Điểm kỷ lục</span><b id="s-quiz">0</b></div>
+      <div class="stat"><span>Thẻ đã nhớ</span><b id="s-cards">0</b></div>
+      <div class="stat"><span>Đúng/Sai kỷ lục</span><b id="s-tf">0</b></div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Các mục">
+    <span class="ind" id="ind" aria-hidden="true"></span>
+    <button role="tab" data-tab="thuvien" aria-selected="true">Thư viện luật</button>
+    <button role="tab" data-tab="troly">Trợ lý hỏi đáp</button>
+    <button role="tab" data-tab="tracnghiem">Trắc nghiệm</button>
+    <button role="tab" data-tab="dungsai">Đúng hay Sai</button>
+    <button role="tab" data-tab="ghepcap">Ghép cặp</button>
+    <button role="tab" data-tab="thenho">Thẻ nhớ</button>
+  </nav>
+
+  <!-- THƯ VIỆN -->
+  <section class="panel" id="p-thuvien">
+    <p class="intro">Các luật y tế chính, kèm số hiệu, ngày hiệu lực và điểm cần nhớ. Bấm vào từng luật để mở chi tiết.</p>
+    <div class="toolbar">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="lawq" placeholder="Tìm: bảo hiểm, thuốc, tiêm chủng, 15/2023…" aria-label="Tìm luật">
+      </label>
+    </div>
+    <div class="cats" id="lawcats"></div>
+    <div class="laws" id="laws"></div>
+    <p class="note">Tóm tắt phục vụ học tập. Trước khi áp dụng vào việc cụ thể, hãy đối chiếu toàn văn và tình trạng hiệu lực tại <a href="https://vbpl.vn" target="_blank" rel="noopener">vbpl.vn</a> hoặc <a href="https://thuvienphapluat.vn" target="_blank" rel="noopener">thuvienphapluat.vn</a>.</p>
+  </section>
+
+  <!-- TRẮC NGHIỆM -->
+  <section class="panel" id="p-tracnghiem" hidden>
+    <p class="intro">10 câu ngẫu nhiên mỗi lượt. Trả lời đúng liên tiếp để tăng combo và nhận nhiều XP hơn.</p>
+    <div class="row">
+      <select id="qtopic" aria-label="Chủ đề"></select>
+      <button class="btn" id="qstart">Lượt mới</button>
+      <button class="btn ghost" id="qai" hidden>Nhờ AI ra 5 câu mới</button>
+    </div>
+    <div class="card" id="quiz"></div>
+  </section>
+
+  <!-- ĐÚNG SAI -->
+  <section class="panel" id="p-dungsai" hidden>
+    <p class="intro">60 giây, càng nhiều câu đúng càng tốt. Sai một câu bị trừ 3 giây. Phím tắt: <kbd>←</kbd> Sai, <kbd>→</kbd> Đúng.</p>
+    <div class="card tf-stage" id="tf"></div>
+  </section>
+
+  <!-- GHÉP CẶP -->
+  <section class="panel" id="p-ghepcap" hidden>
+    <p class="intro">Chọn một ô bên trái rồi ô tương ứng bên phải. Ghép đủ 5 cặp với ít lỗi nhất.</p>
+    <div class="row">
+      <select id="mmode" aria-label="Kiểu ghép">
+        <option value="so">Tên luật ↔ Số hiệu</option>
+        <option value="hl">Tên luật ↔ Ngày hiệu lực</option>
+        <option value="fact">Quy định ↔ Con số</option>
+      </select>
+      <button class="btn" id="mstart">Ván mới</button>
+    </div>
+    <div class="card" id="match"></div>
+  </section>
+
+  <!-- THẺ NHỚ -->
+  <section class="panel" id="p-thenho" hidden>
+    <p class="intro">Bấm vào thẻ để lật xem đáp án. Chọn "Nhớ rồi" để thẻ biến mất, hoặc "Ôn lại sau" để thẻ quay lại sớm hơn.</p>
+    <div class="card" id="cards"></div>
+  </section>
+
+  <!-- TRỢ LÝ (ngăn nổi) -->
+  <section class="drawer" id="p-troly" hidden aria-label="Trợ lý y tế">
+    <div class="drawer-head">
+      <div class="who">
+        <span class="av" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><line x1="32" y1="5" x2="32" y2="11" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/><circle cx="32" cy="4" r="3" fill="#F26B4F"/><rect x="15" y="11" width="34" height="27" rx="11" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5"/><circle cx="24.5" cy="24" r="3.6" fill="#0F766E"/><circle cx="39.5" cy="24" r="3.6" fill="#0F766E"/><path d="M26 31 Q32 36 38 31" fill="none" stroke="#0F766E" stroke-width="2.4" stroke-linecap="round"/><path d="M11 61 Q11 42 32 42 Q53 42 53 61 Z" fill="#FFFFFF" stroke="#0F766E" stroke-width="2"/></svg>
+        </span>
+        <div><b>Trợ lý y tế</b><small>Hỏi về luật và sức khỏe</small></div>
+      </div>
+      <button class="x" type="button" onclick="setBot(false)" aria-label="Đóng">×</button>
+    </div>
+    <div class="suggest" id="suggest"></div>
+    <div class="chat">
+      <div class="chat-log" id="log" aria-live="polite"></div>
+      <form class="chat-form" id="chatform">
+        <textarea id="ask" rows="1" placeholder="Hỏi về luật hoặc sức khỏe…" aria-label="Câu hỏi"></textarea>
+        <button class="btn" id="send" type="submit">Gửi</button>
+        <button class="btn ghost" id="stop" type="button" hidden>Dừng</button>
+      </form>
+    </div>
+    <p class="mode" id="mode">Đang kết nối trợ lý…</p>
+  </section>
+
+  <button class="bot-fab" id="fab" type="button" aria-label="Mở trợ lý y tế" onclick="setBot($('#p-troly').hidden)">
+    <span class="ic">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <line x1="32" y1="5" x2="32" y2="11" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="32" cy="4" r="3" fill="#F26B4F"/>
+        <rect x="15" y="11" width="34" height="27" rx="11" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5"/>
+        <circle cx="32" cy="16" r="3.2" fill="none" stroke="#0F766E" stroke-width="2"/>
+        <circle cx="24.5" cy="24" r="3.6" fill="#0F766E"/>
+        <circle cx="39.5" cy="24" r="3.6" fill="#0F766E"/>
+        <circle cx="23.5" cy="22.8" r="1" fill="#FFFFFF"/>
+        <circle cx="38.5" cy="22.8" r="1" fill="#FFFFFF"/>
+        <path d="M26 31 Q32 36 38 31" fill="none" stroke="#0F766E" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M11 61 Q11 42 32 42 Q53 42 53 61 Z" fill="#FFFFFF" stroke="#0F766E" stroke-width="2"/>
+        <path d="M26 42 L32 50 L38 42" fill="none" stroke="#0F766E" stroke-width="2"/>
+        <path d="M22 43 V49 a6 6 0 0 0 12 0 V43" fill="none" stroke="#2DD4BF" stroke-width="2"/>
+        <circle cx="34" cy="55" r="2" fill="#2DD4BF"/>
+        <path d="M46 52 h-4 v-4 h-3 v4 h-4 v3 h4 v4 h3 v-4 h4 z" fill="#BE123C"/>
+      </svg>
+    </span>
+    <span class="tx">Hỏi trợ lý</span>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer>Nội dung tổng hợp từ văn bản của Quốc hội và cổng thông tin pháp luật, cập nhật 21/10/2026. Đây là công cụ học tập, không thay thế tư vấn pháp lý.</footer>
+</div>
+
+<script>
+/* ================= DỮ LIỆU ================= */
+const TS = q => "https://thuvienphapluat.vn/page/tim-van-ban.aspx?keyword=" + encodeURIComponent(q);
+const LAWS = [
+{id:"tt36_2025", cat:"Dược", name:"Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)", so:"36/2025/TT-BYT", pass:"28/07/2025", eff:"11/09/2025", status:"on",
+  replaces:"Sửa đổi một số điều về phân cấp của Thông tư 04/2018/TT-BYT.",
+  points:["Khi cơ sở thử nghiệm thay đổi thuộc các trường hợp điểm d, đ, e khoản 1 Điều 11, phải nộp báo cáo thay đổi cho Sở Y tế nơi đặt phòng thí nghiệm (khoản 4 Điều 11).","Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.","Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."]},
+{id:"tt25_2026", cat:"Khám bệnh, chữa bệnh", name:"Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)", so:"25/2026/TT-BYT", pass:"30/06/2026", eff:"Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026", status:"on",
+  replaces:"Sửa đổi Thông tư 01/2013/TT-BYT và Thông tư 32/2023/TT-BYT.",
+  points:["Thay thế toàn bộ Điều 34 (hồ sơ khám sức khỏe) và Điều 36 (nội dung khám sức khỏe) của Thông tư 32/2023.","Hồ sơ khám sức khỏe lập theo Mẫu 01–04 Phụ lục XXIV; Mẫu 04 là giấy khám sức khỏe tâm thần mới.","Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."]},
+ {id:"tt26_2025", cat:"Dược", name:"Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú", so:"26/2025/TT-BYT", pass:"30/06/2025", eff:"01/07/2025", status:"on",
+  replaces:"Theo tóm tắt tra cứu; đối chiếu văn bản gốc trước khi áp dụng.",
+  points:["Chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề được kê đơn; người kê đơn chịu trách nhiệm về nội dung đơn.","Đơn phải ghi tên thuốc, nồng độ, hàm lượng, liều dùng, đường dùng và số ngày dùng; trẻ dưới 72 tháng ghi tuổi theo tháng và cân nặng.","Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.","Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định; bệnh viện hoàn thành trước 01/10/2025, các cơ sở khác trước 01/01/2026.","Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."]},
+ {id:"tt22_2024", cat:"Bảo hiểm y tế", name:"Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua", so:"22/2024/TT-BYT", pass:"18/10/2024", eff:"01/01/2025", status:"on",
+  replaces:"Áp dụng cho người bệnh tại cơ sở hợp đồng khám chữa bệnh BHYT.",
+  points:["Thanh toán trực tiếp thuốc trong Danh mục thuốc hiếm (Thông tư 26/2019) và thiết bị loại C, D (trừ chẩn đoán in vitro và thiết bị cá nhân hóa) — Điều 2.","Điều kiện: không có thuốc thương mại cùng hoạt chất, không chuyển tuyến được vì lý do an toàn hoặc cơ sở đang cách ly dịch bệnh — Điều 3.","Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."]},
+ {id:"tt22_2023", cat:"Bảo hiểm y tế", name:"Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng", so:"22/2023/TT-BYT", pass:"17/11/2023", eff:"17/11/2023 (ngày ký)", status:"amend",
+  replaces:"Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
+  points:["Giá khám bệnh BHYT thống nhất theo hạng bệnh viện trên toàn quốc; cách tính giá dựa trên chi phí trực tiếp và tiền lương.","Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám (Điều 5).","Cách tính ngày giường, giá ICU và định mức ca cho siêu âm, X-quang, CT, MRI (Điều 6, 7).","Người bệnh đang điều trị trước ngày hiệu lực tiếp tục áp dụng mức giá cũ đến khi ra viện (Điều 12)."]},
+ {id:"tt21_2023", cat:"Bảo hiểm y tế", name:"Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước", so:"21/2023/TT-BYT", pass:"17/11/2023", eff:"17/11/2023 (ngày ký)", status:"amend",
+  replaces:"Thay thế Thông tư 37/2018 và 14/2019. Nguồn tra cứu ghi đã được thay bởi Thông tư 21/2024/TT-BYT — cần kiểm tra.",
+  points:["HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá (Điều 4).","Khung giá gồm bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú dịch vụ tương đương (Điều 2).","Cơ sở chưa được phân hạng áp giá bệnh viện hạng IV; trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III (Điều 4).","Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."]},
+ {id:"tt49_2025", cat:"Khám bệnh, chữa bệnh", name:"Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền", so:"49/2025/TT-BYT", pass:"31/12/2025", eff:"31/12/2025 (ngày ký)", status:"amend",
+  replaces:"Sửa đổi Thông tư 02/2024/TT-BYT. Hồ sơ đã nộp trước ngày hiệu lực được giải quyết theo quy định cũ.",
+  points:["Cấp giấy chứng nhận lương y trong 5 ngày làm việc kể từ khi nhận hồ sơ hợp lệ (điểm b khoản 2 Điều 12).","Cấp lại giấy chứng nhận lương y trong 5 ngày làm việc (khoản 3 Điều 13).","Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."]},
+ {id:"tt44_2025", cat:"Trang thiết bị y tế", name:"Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế", so:"44/2025/TT-BYT", pass:"22/11/2025", eff:"22/11/2025", status:"on",
+  replaces:"Thay thế Thông tư 19/2021/TT-BYT.",
+  points:["Giao Cục Hạ tầng và Thiết bị y tế thực hiện 11 nhiệm vụ, gồm cấp số lưu hành trang thiết bị loại C và D (Điều 2).","Cục được cấp, cấp lại, thu hồi giấy phép nhập khẩu, giấy chứng nhận lưu hành tự do và chứng chỉ hoạt động thử nghiệm.","Cục được đình chỉ, khôi phục hoặc thu hồi lô sản phẩm và thu hồi lô đã lưu hành (Điều 2).","Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."]},
+{id:"dulieu", cat:"Dữ liệu y tế", name:"Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế", so:"102/2025/NĐ-CP", pass:"13/05/2025", eff:"01/07/2025", status:"on",
+  replaces:"Trạng thái hiệu lực cần đối chiếu Công báo trước khi dùng.",
+  points:["Định nghĩa sổ sức khỏe điện tử là ứng dụng hoặc phần mềm công nghệ thông tin để cập nhật, hiển thị, tra cứu, lưu trữ thông tin tóm lược quá trình phòng bệnh, thăm khám, điều trị của từng cá nhân (khoản 3 Điều 3).",
+   "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."]},
+ {id:"kcb", cat:"Khám chữa bệnh", name:"Luật Khám bệnh, chữa bệnh", so:"15/2023/QH15", pass:"09/01/2023", eff:"01/01/2024", status:"on",
+  replaces:"Thay thế Luật Khám bệnh, chữa bệnh 40/2009/QH12 (đã sửa đổi bởi Luật 21/2017/QH14). Chứng chỉ hành nghề đổi thành giấy phép hành nghề.",
+  points:["Tổ chức 3 cấp chuyên môn kỹ thuật: cấp ban đầu, cấp cơ bản, cấp chuyên sâu (áp dụng từ 01/01/2025).",
+   "Giấy phép hành nghề có thời hạn 5 năm và phải gia hạn; có lộ trình kiểm tra, đánh giá năng lực trước khi cấp phép.",
+   "Điều kiện thực hành trước khi cấp giấy phép được quy định chi tiết tại Nghị định 96/2023/NĐ-CP (cần đối chiếu số tháng cụ thể).",
+   "Ngôn ngữ dùng trong khám chữa bệnh là tiếng Việt; người hành nghề nước ngoài phải dùng thành thạo tiếng Việt hoặc có người phiên dịch.",
+   "Nghiêm cấm từ chối hoặc cố ý chậm cấp cứu người bệnh; người bệnh có quyền được giữ bí mật thông tin sức khỏe.",
+   "Hồ sơ bệnh án có thể lập dưới dạng điện tử (Điều 69) và có Hệ thống thông tin quản lý khám chữa bệnh (Điều 112), liên quan trực tiếp đến HIS."],
+  guide:"Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh"},
+ {id:"bhyt", cat:"Bảo hiểm y tế", name:"Luật Bảo hiểm y tế (sửa đổi 2024)", so:"51/2024/QH15", pass:"27/11/2024", eff:"01/07/2025", status:"amend",
+  replaces:"Sửa đổi Luật BHYT 25/2008/QH12 (đã sửa đổi bởi Luật 46/2014/QH13). Một số quy định có hiệu lực sớm từ 01/01/2025.",
+  points:["Mức hưởng phổ biến 80% chi phí trong phạm vi; 100% với trẻ em dưới 6 tuổi, người có công, hộ nghèo và một số nhóm khác; người hưởng lương hưu 95%.",
+   "Chi phí một lần khám chữa bệnh dưới mức do Chính phủ quy định được hưởng 100%.",
+   "Hưởng 100% khi tham gia BHYT liên tục từ 5 năm trở lên và số tiền cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (Điều 22).",
+   "Khám ngoại trú tại cơ sở cấp ban đầu ở bất kỳ tỉnh nào và điều trị nội trú tại cơ sở cấp cơ bản được hưởng như đúng tuyến; bỏ ranh giới địa giới hành chính tỉnh khi xét mức hưởng.",
+   "Người bệnh một số bệnh hiếm, hiểm nghèo được đến thẳng cơ sở cấp chuyên sâu; người dưới 18 tuổi được chi trả điều trị lác, tật khúc xạ mắt.",
+   "Đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu; người thứ 2, 3, 4 lần lượt bằng 70%, 60%, 50%; từ người thứ 5 bằng 40% mức người thứ nhất (Điều 13).",
+   "Khám trái tuyến: cấp cứu hưởng 100% ở mọi cơ sở; ngoại trú tuyến ban đầu và nội trú tuyến cơ bản được hưởng cao; nội trú tuyến chuyên sâu thường hưởng 40% (Điều 22, các trường hợp đặc biệt được quy định riêng).",
+   "Cách dùng thẻ: thẻ BHYT điện tử và thẻ giấy có giá trị pháp lý như nhau; đăng ký KCB ban đầu tại một cơ sở và được đổi nơi đăng ký trong 15 ngày đầu mỗi quý.",
+   "Cấp cứu ở bất kỳ cơ sở nào vẫn được hưởng 100%; khám không đúng tuyến hoặc không đúng quy định chuyển tuyến thì quỹ BHYT chỉ thanh toán theo một tỷ lệ của mức hưởng.",
+   "Người tham gia liên tục từ 5 năm trở lên được hưởng 100% khi số tiền cùng chi trả trong năm vượt giới hạn (6 lần mức tham chiếu do Chính phủ quy định; theo tóm tắt văn bản, cần đối chiếu nguyên văn)."],
+  guide:"Nghị định 188/2025/NĐ-CP hướng dẫn Luật BHYT"},
+ {id:"duoc", cat:"Dược", name:"Luật Dược (sửa đổi 2024)", so:"44/2024/QH15", pass:"21/11/2024", eff:"01/07/2025", status:"amend",
+  replaces:"Sửa đổi 50 điều và bổ sung 3 điều của Luật Dược 105/2016/QH13 (hiệu lực từ 01/01/2017)",
+  points:["Công nhận chuỗi nhà thuốc là loại hình kinh doanh riêng; nhà thuốc trong chuỗi được luân chuyển thuốc và người phụ trách chuyên môn.",
+   "Cho phép kinh doanh thuốc, nguyên liệu làm thuốc qua thương mại điện tử theo danh mục được phép.",
+   "Bỏ thủ tục xác nhận nội dung thông tin thuốc; tăng phân cấp cho Sở Y tế trong thu hồi thuốc vi phạm.",
+   "Thuốc kê đơn phải công bố giá bán buôn dự kiến; bán qua các tầng trung gian không được vượt giá đã công bố.",
+   "Ưu tiên thủ tục đăng ký lưu hành và ưu đãi đầu tư để phát triển công nghiệp dược thành ngành mũi nhọn."],
+  guide:"Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược"},
+ {id:"phongbenh", cat:"Phòng bệnh", name:"Luật Phòng bệnh", so:"114/2025/QH15", pass:"10/12/2025", eff:"01/07/2026", status:"on",
+  replaces:"Thay thế Luật Phòng, chống bệnh truyền nhiễm 2007 (hết hiệu lực 01/07/2026). 6 chương, 46 điều; chuyển trọng tâm từ chữa bệnh sang chủ động phòng bệnh.",
+  points:["Điều chỉnh phòng, chống bệnh truyền nhiễm, bệnh không lây nhiễm, rối loạn tâm thần và dinh dưỡng trong phòng bệnh.",
+   "Nhà nước bảo đảm người dân được khám sức khỏe định kỳ hoặc khám sàng lọc miễn phí ít nhất mỗi năm một lần, theo nhóm đối tượng và lộ trình.",
+   "Tiêm chủng gồm tiêm chủng bắt buộc và tự nguyện; mở rộng sang sinh phẩm; kiểm tra lịch sử tiêm chủng khi khám sức khỏe đầu năm học.",
+   "Khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến 6 tháng tuổi và duy trì đến 24 tháng.",
+   "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."],
+  guide:"Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn"},
+ {id:"danso", cat:"Dân số", name:"Luật Dân số", so:"113/2025/QH15", pass:"10/12/2025", eff:"01/07/2026", status:"on",
+  replaces:"Thay thế Pháp lệnh Dân số 06/2003 (hết hiệu lực khi Luật này có hiệu lực). Điều 14 điểm c, d có hiệu lực từ 01/01/2027.",
+  points:["Mục tiêu: duy trì mức sinh thay thế, giảm mất cân bằng giới tính khi sinh, thích ứng già hóa dân số, nâng cao chất lượng dân số.",
+   "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai.",
+   "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
+   "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."],
+  guide:"Nghị định hướng dẫn Luật Dân số"},
+ {id:"thuocla", cat:"Phòng chống tác hại", name:"Luật Phòng, chống tác hại của thuốc lá", so:"09/2012/QH13", pass:"18/06/2012", eff:"01/05/2013", status:"on",
+  replaces:"Bổ sung: Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025",
+  points:["Cấm bán thuốc lá cho người dưới 18 tuổi và cấm người dưới 18 tuổi bán thuốc lá.",
+   "Cảnh báo sức khỏe bằng chữ và hình ảnh chiếm ít nhất 50% diện tích mỗi mặt chính của bao bì.",
+   "Cấm hút thuốc hoàn toàn trong nhà và trong phạm vi khuôn viên cơ sở y tế, cơ sở giáo dục (trừ một số trường đại học, cao đẳng), nơi dành cho trẻ em.",
+   "Cấm quảng cáo, khuyến mại thuốc lá; cấm bán thuốc lá bằng máy bán tự động."]},
+ {id:"ruoubia", cat:"Phòng chống tác hại", name:"Luật Phòng, chống tác hại của rượu, bia", so:"44/2019/QH14", pass:"14/06/2019", eff:"01/01/2020", status:"on",
+  replaces:"",
+  points:["Cấm điều khiển phương tiện giao thông mà trong máu hoặc hơi thở có nồng độ cồn.",
+   "Cấm bán, cung cấp rượu, bia cho người dưới 18 tuổi.",
+   "Cấm xúi giục, ép buộc người khác uống rượu, bia.",
+   "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."]},
+ {id:"attp", cat:"An toàn thực phẩm", name:"Luật An toàn thực phẩm", so:"55/2010/QH12", pass:"17/06/2010", eff:"01/07/2011", status:"on",
+  replaces:"Hướng dẫn chính: Nghị định 15/2018/NĐ-CP",
+  points:["Quản lý theo chuỗi: sản xuất, kinh doanh, nhập khẩu, quảng cáo thực phẩm.",
+   "Cơ sở sản xuất, kinh doanh thực phẩm phải có Giấy chứng nhận đủ điều kiện an toàn thực phẩm (trừ trường hợp được miễn).",
+   "Phân công quản lý giữa Bộ Y tế, Bộ Nông nghiệp và Môi trường, Bộ Công Thương."]},
+ {id:"hiv", cat:"Phòng bệnh", name:"Luật Phòng, chống HIV/AIDS", so:"64/2006/QH11", pass:"29/06/2006", eff:"01/01/2007", status:"amend",
+  replaces:"Sửa đổi bởi Luật 71/2020/QH14 (hiệu lực 01/01/2021)",
+  points:["Cấm kỳ thị, phân biệt đối xử với người nhiễm HIV.",
+   "Thông tin về người nhiễm HIV được bảo mật; chỉ thông báo cho những người được luật cho phép.",
+   "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."]},
+ {id:"ghepmo", cat:"Khám chữa bệnh", name:"Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác", so:"75/2006/QH11", pass:"29/11/2006", eff:"01/07/2007", status:"on",
+  replaces:"",
+  points:["Người hiến mô, bộ phận cơ thể khi còn sống phải từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ.",
+   "Hiến hoàn toàn tự nguyện, không vì mục đích thương mại; cấm mua bán mô, bộ phận cơ thể người.",
+   "Giữ bí mật thông tin về người hiến và người được ghép, trừ khi các bên đồng ý khác."]},
+ {id:"truyennhiem", cat:"Phòng bệnh", name:"Luật Phòng, chống bệnh truyền nhiễm", so:"03/2007/QH12", pass:"21/11/2007", eff:"01/07/2008", status:"het",
+  replaces:"Hết hiệu lực từ 01/07/2026, khi Luật Phòng bệnh 114/2025/QH15 có hiệu lực.",
+  points:["Phân loại bệnh truyền nhiễm thành 3 nhóm A, B, C theo mức độ nguy hiểm (nhóm A nguy hiểm nhất).",
+   "Quy định khai báo, giám sát, công bố dịch và các biện pháp chống dịch.",
+   "Là cơ sở pháp lý cho tiêm chủng mở rộng trước khi có Luật Phòng bệnh."]},
+ {id:"donthuoc", cat:"Dược", name:"Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)", so:"52/2017/TT-BYT", pass:"29/12/2017", eff:"01/03/2018", status:"amend",
+  replaces:"Sửa đổi bởi Thông tư 18/2018/TT-BYT, Thông tư 04/2022/TT-BYT; Thông tư 27/2021/TT-BYT quy định kê đơn thuốc bằng hình thức điện tử.",
+  points:["Đơn thuốc phải ghi rõ thông tin người bệnh, tên thuốc, hàm lượng, liều dùng, cách dùng và số lượng; người kê đơn ký và ghi rõ họ tên.",
+   "Đơn thuốc có thể là bản giấy hoặc đơn thuốc điện tử, có giá trị pháp lý như nhau khi đáp ứng quy định.",
+   "Thuốc kê đơn chỉ được bán khi có đơn của người có thẩm quyền kê đơn; người bệnh nên hỏi dược sĩ về cách dùng và không tự ý đổi liều.",
+   "Đối chiếu nguyên văn thông tư và các thông tư sửa đổi trước khi áp dụng trong thực tế."],
+  guide:"Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)"},
+ {id:"tbyt", cat:"Trang thiết bị y tế", name:"Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)", so:"98/2021/NĐ-CP", pass:"08/11/2021", eff:"01/01/2022", status:"amend",
+  replaces:"Được sửa đổi bởi Nghị định 07/2023/NĐ-CP và Nghị định 04/2025/NĐ-CP (có hiệu lực từ 01/01/2025).",
+  points:["Trang thiết bị y tế được phân loại theo mức độ rủi ro, từ loại A (rủi ro thấp) đến loại D (rủi ro cao); mức rủi ro quyết định thủ tục cấp phép lưu hành.",
+   "Cơ sở sản xuất, nhập khẩu, kinh doanh thiết bị y tế phải có giấy phép hoặc đáp ứng điều kiện theo quy định.",
+   "Bộ Y tế và Sở Y tế thực hiện phân cấp quản lý; thủ tục hành chính cụ thể có thể thay đổi theo thông tư mới, cần đối chiếu."],
+  guide:"Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT"},
+];
+
+/* Câu hỏi trắc nghiệm: a = chỉ số đáp án đúng */
+const QUIZ = [
+{t:"dulieu",q:"Sổ sức khỏe điện tử theo Nghị định 102/2025 là gì?",o:["Sổ khám bệnh giấy của bệnh viện","Ứng dụng hoặc phần mềm CNTT tóm lược quá trình chăm sóc sức khỏe của từng cá nhân","Hồ sơ bệnh án lưu tại cơ sở","Phiếu thu viện phí điện tử"],a:1,e:"Khoản 3 Điều 3 Nghị định 102/2025/NĐ-CP định nghĩa sổ sức khỏe điện tử như vậy."},
+ {t:"dulieu",q:"Khi thông tin trong cơ sở dữ liệu y tế của mình thay đổi hoặc có sai sót, tổ chức/cá nhân phải làm gì?",o:["Chờ cơ quan quản lý phát hiện","Kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu","Chỉ sửa khi có yêu cầu bằng văn bản sau 1 năm","Không cần làm gì"],a:1,e:"Điều 24 Nghị định 102/2025/NĐ-CP yêu cầu thông báo kịp thời."},
+ {t:"dulieu",q:"Nghị định 102/2025/NĐ-CP có hiệu lực từ ngày nào (theo nguồn tra cứu)?",o:["01/01/2025","01/07/2025","01/01/2026","13/05/2025"],a:1,e:"Nguồn hethongphapluat ghi 01/07/2025; trạng thái cần đối chiếu Công báo."},
+ {t:"kcb",q:"Luật Khám bệnh, chữa bệnh hiện hành có số hiệu nào?",o:["40/2009/QH12","15/2023/QH15","51/2024/QH15","105/2016/QH13"],a:1,e:"Luật 15/2023/QH15 thay thế Luật 40/2009/QH12."},
+ {t:"kcb",q:"Luật Khám bệnh, chữa bệnh 2023 có hiệu lực từ ngày nào?",o:["01/07/2023","01/01/2024","01/01/2025","01/07/2025"],a:1,e:"Hiệu lực từ 01/01/2024; riêng quy định về cấp chuyên môn kỹ thuật áp dụng từ 01/01/2025."},
+ {t:"kcb",q:"Cơ sở khám chữa bệnh được tổ chức theo mấy cấp chuyên môn kỹ thuật?",o:["2 cấp","3 cấp","4 cấp","5 cấp"],a:1,e:"Ba cấp: ban đầu, cơ bản, chuyên sâu (thay cho 4 tuyến trung ương, tỉnh, huyện, xã)."},
+ {t:"kcb",q:"Giấy phép hành nghề khám chữa bệnh theo Luật 2023 có thời hạn bao lâu?",o:["Vô thời hạn","3 năm","5 năm","10 năm"],a:2,e:"Giấy phép có thời hạn 5 năm, hết hạn phải gia hạn."},
+ {t:"kcb",q:"Luật KCB 2023 gọi giấy phép hành nghề thay cho tên gọi cũ nào?",o:["Chứng chỉ hành nghề","Giấy đăng ký kinh doanh","Thẻ bác sĩ","Chứng nhận đào tạo"],a:0,e:"Trước đây là chứng chỉ hành nghề; Luật 2023 đổi thành giấy phép hành nghề."},
+ {t:"kcb",q:"Ngôn ngữ sử dụng trong khám bệnh, chữa bệnh là gì?",o:["Tiếng Anh","Tiếng Việt","Tùy cơ sở","Ngôn ngữ người bệnh chọn"],a:1,e:"Tiếng Việt; người nước ngoài hành nghề phải thành thạo tiếng Việt hoặc có phiên dịch."},
+ {t:"kcb",q:"Hành vi nào bị nghiêm cấm trong khám chữa bệnh?",o:["Chuyển người bệnh lên cấp cao hơn","Từ chối hoặc cố ý chậm cấp cứu người bệnh","Từ chối kê đơn thuốc không cần thiết","Hội chẩn từ xa"],a:1,e:"Từ chối hoặc cố ý chậm cấp cứu người bệnh là hành vi bị nghiêm cấm."},
+{t:"kcb",q:"Theo Điều 2 Luật KCB 2023, khám bệnh là gì?",o:["Việc người bệnh tự kiểm tra sức khỏe tại nhà","Việc người hành nghề dùng kiến thức, phương pháp, kỹ thuật chuyên môn để đánh giá tình trạng sức khỏe, nguy cơ và nhu cầu chăm sóc sức khỏe","Việc cấp giấy chứng nhận sức khỏe","Việc tư vấn dinh dưỡng"],a:1,e:"Khoản 1 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Theo Luật KCB 2023, ai là người bệnh?",o:["Người có bệnh được kê đơn thuốc","Người sử dụng dịch vụ khám bệnh, chữa bệnh","Người nhà đăng ký chăm sóc","Người làm việc trong cơ sở y tế"],a:1,e:"Khoản 3 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Người hành nghề khám bệnh, chữa bệnh là người như thế nào?",o:["Người học nghề tại bệnh viện","Người đã được cơ quan có thẩm quyền cấp giấy phép hành nghề","Người có bằng đại học bất kỳ","Người làm hành chính trong bệnh viện"],a:1,e:"Khoản 4 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Giấy phép hành nghề khám bệnh, chữa bệnh là văn bản do ai cấp và cho ai?",o:["Cơ sở y tế cấp cho nhân viên","Cơ quan có thẩm quyền cấp cho người có đủ điều kiện hành nghề","Hội nghề nghiệp cấp cho hội viên","Bệnh viện cấp cho người bệnh"],a:1,e:"Khoản 5 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Để cung cấp dịch vụ khám bệnh, chữa bệnh, cơ sở khám bệnh, chữa bệnh cần có văn bản nào?",o:["Giấy chứng nhận đăng ký doanh nghiệp","Giấy phép hoạt động khám bệnh, chữa bệnh","Chứng chỉ hành nghề của giám đốc","Giấy phép xây dựng"],a:1,e:"Khoản 6 và 7 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Bài thuốc gia truyền được hiểu là bài thuốc như thế nào?",o:["Bài thuốc mua từ nước ngoài","Bài thuốc từ kinh nghiệm dòng họ, gia đình truyền lại, điều trị có hiệu quả và được cơ quan chuyên môn của UBND cấp tỉnh công nhận","Bài thuốc do bệnh viện tự nghiên cứu","Bài thuốc trong sách giáo khoa"],a:1,e:"Khoản 8 Điều 2 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Luật KCB 2023 áp dụng cả trong trường hợp nào (Điều 1)?",o:["Chỉ khi bệnh viện hoạt động bình thường","Thiên tai, thảm họa, dịch bệnh truyền nhiễm nhóm A hoặc tình trạng khẩn cấp","Chỉ với người nước ngoài","Chỉ với bệnh mãn tính"],a:1,e:"Điều 1 Luật 15/2023/QH15 nêu phạm vi này."},
+ {t:"kcb",q:"Chữa bệnh nhằm mục đích nào?",o:["Chỉ để cấp thuốc","Điều trị bệnh, ngăn ngừa sự xuất hiện, tiến triển của bệnh, hoặc đáp ứng nhu cầu chăm sóc sức khỏe","Chỉ để phẫu thuật","Chỉ để xác nhận sức khỏe"],a:1,e:"Khoản 2 Điều 2 Luật 15/2023/QH15."},
+{t:"kcb",q:"Điều 3 Luật KCB 2023 yêu cầu đối xử với người bệnh như thế nào?",o:["Ưu tiên người giàu","Tôn trọng, bảo vệ, đối xử bình đẳng, không kỳ thị, phân biệt đối xử","Chỉ tiếp nhận người có bảo hiểm","Phân loại theo thu nhập"],a:1,e:"Khoản 1 Điều 3 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Điều 7 Luật KCB 2023 có nội dung gì?",o:["Quy định quyền của người bệnh","Liệt kê các hành vi bị nghiêm cấm trong khám chữa bệnh","Quy định giá dịch vụ","Quy định thời hạn giấy phép"],a:1,e:"Điều 7 liệt kê hành vi bị nghiêm cấm, gồm từ chối cấp cứu và sửa hồ sơ bệnh án."},
+ {t:"kcb",q:"Mỗi người bệnh có bao nhiêu người đại diện tại một thời điểm (Điều 8)?",o:["Không giới hạn","Hai người","Một người","Ba người"],a:2,e:"Khoản 1 Điều 8 quy định chỉ một người đại diện tại một thời điểm."},
+ {t:"kcb",q:"Người bệnh được cung cấp thông tin gì khi khám chữa bệnh (Điều 9)?",o:["Chỉ tên thuốc","Tình trạng sức khỏe, phương pháp, giá dịch vụ và hướng dẫn tự chăm sóc","Danh sách bác sĩ không được gặp","Thông tin về đối thủ cạnh tranh"],a:1,e:"Khoản 1 Điều 9 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Quyền bảo mật thông tin của người bệnh được quy định ở điều nào (Điều 10)?",o:["Điều 7","Điều 10","Điều 15","Điều 20"],a:1,e:"Điều 10 quy định quyền được tôn trọng danh dự, bảo vệ sức khỏe và bí mật riêng tư."},
+ {t:"kcb",q:"Người bệnh có quyền chấp nhận hoặc từ chối tham gia nghiên cứu y sinh học không (Điều 11)?",o:["Không, bắt buộc tham gia","Có, được chấp nhận hoặc từ chối","Chỉ khi có bảo hiểm","Chỉ khi là người nước ngoài"],a:1,e:"Khoản 2 Điều 11 Luật 15/2023/QH15."},
+ {t:"kcb",q:"Người bệnh được đọc và sao chụp gì theo Điều 12?",o:["Hồ sơ nhân sự của bệnh viện","Hồ sơ bệnh án, và được nhận tóm tắt, giải thích chi phí","Sổ tài chính của cơ sở","Hợp đồng lao động của bác sĩ"],a:1,e:"Điều 12 Luật 15/2023/QH15 quy định quyền được cung cấp thông tin."},
+{t:"bhyt",q:"Thông tư 22/2024/TT-BYT về thanh toán thuốc cho người có thẻ BHYT tự mua có hiệu lực từ ngày nào?",o:["01/07/2024","01/01/2025","01/01/2026","18/10/2024"],a:1,e:"Điều 8 Thông tư 22/2024/TT-BYT: có hiệu lực từ 01/01/2025."},
+ {t:"bhyt",q:"Theo Thông tư 22/2024/TT-BYT, nhóm thuốc nào được thanh toán trực tiếp khi người bệnh tự mua?",o:["Mọi loại thuốc kê đơn","Thuốc trong Danh mục thuốc hiếm (Thông tư 26/2019/TT-BYT)","Thuốc không kê đơn","Thuốc từ nhà thuốc tư nhân bất kỳ"],a:1,e:"Điều 2 Thông tư 22/2024/TT-BYT."},
+ {t:"bhyt",q:"Thiết bị y tế nào được thanh toán trực tiếp theo Thông tư 22/2024/TT-BYT?",o:["Thiết bị loại A và B","Thiết bị loại C và D, trừ chẩn đoán in vitro và thiết bị cá nhân hóa","Mọi thiết bị y tế","Chỉ thiết bị nhập khẩu"],a:1,e:"Điều 2 Thông tư 22/2024/TT-BYT."},
+ {t:"bhyt",q:"Giá thanh toán tối đa của thuốc tự mua theo Thông tư 22/2024/TT-BYT được tính theo gì?",o:["Giá niêm yết của nhà sản xuất","Giá trúng thầu gần nhất tại cơ sở","Giá trung bình thị trường","Giá do người bệnh thỏa thuận"],a:1,e:"Điều 4: không vượt giá trúng thầu gần nhất tại cơ sở; nếu không có thì áp dụng các mức ưu tiên khác."},
+ {t:"bhyt",q:"Thông tư 22/2023/TT-BYT thay thế những thông tư nào (Điều 11)?",o:["Thông tư 22/2024 và 26/2019","Thông tư 39/2018 và 13/2019","Thông tư 32/2023 và 25/2024","Thông tư 21/2023 và 22/2024"],a:1,e:"Khoản 2 Điều 11 Thông tư 22/2023/TT-BYT."},
+ {t:"bhyt",q:"Theo Thông tư 22/2023/TT-BYT, khám chuyên khoa từ lần thứ hai được thanh toán bao nhiêu?",o:["100% giá một lần khám","50% giá một lần khám","30% giá một lần khám","Không được thanh toán"],a:2,e:"Điều 5 Thông tư 22/2023/TT-BYT: khám thêm chuyên khoa từ lần thứ hai tính 30% giá một lần khám, tổng tối đa 2 lần giá khám."},
+ {t:"bhyt",q:"Trạm y tế xã thực hiện dịch vụ kỹ thuật được áp dụng mức giá bằng bao nhiêu % giá quy định (theo Điều 4)?",o:["50%","70%","80%","100%"],a:1,e:"Điều 4 Thông tư 22/2023/TT-BYT (ví dụ trạm y tế bằng 70% giá quy định)."},
+ {t:"bhyt",q:"Thông tư 22/2023/TT-BYT có hiệu lực từ ngày nào (Điều 11)?",o:["Ngày ký ban hành (17/11/2023)","01/01/2024","01/07/2024","Ngày 01/01/2025"],a:0,e:"Khoản 1 Điều 11: có hiệu lực từ ngày ký ban hành; ghi chú nguồn trang tra cứu ghi trạng thái chưa rõ."},
+{t:"bhyt",q:"Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2023/TT-BYT?",o:["Bộ trưởng Bộ Y tế","Hội đồng nhân dân cấp tỉnh (không vượt khung giá)","Giám đốc bệnh viện","Bảo hiểm xã hội Việt Nam"],a:1,e:"Điều 4 Thông tư 21/2023/TT-BYT: HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá."},
+ {t:"bhyt",q:"Thông tư 21/2023/TT-BYT gồm bao nhiêu phụ lục khung giá?",o:["Hai phụ lục","Ba phụ lục","Bốn phụ lục","Năm phụ lục"],a:2,e:"Điều 2 Thông tư 21/2023/TT-BYT có bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú tương đương."},
+ {t:"bhyt",q:"Theo Thông tư 21/2023/TT-BYT, cơ sở chưa được phân hạng áp dụng giá của bệnh viện hạng nào?",o:["Hạng đặc biệt","Hạng I","Hạng III","Hạng IV"],a:3,e:"Điều 4 Thông tư 21/2023/TT-BYT."},
+ {t:"bhyt",q:"Theo Thông tư 21/2023/TT-BYT, giá kỹ thuật tại trạm y tế xã bằng bao nhiêu % Phụ lục III?",o:["50%","70%","80%","100%"],a:1,e:"Điều 4 Thông tư 21/2023/TT-BYT."},
+ {t:"bhyt",q:"Theo Thông tư 21/2023/TT-BYT, từ lượt khám thứ hai trong cùng một lần đến khám, được tính bao nhiêu % giá một lượt khám?",o:["10%","30%","50%","100%"],a:1,e:"Điều 5 Thông tư 21/2023/TT-BYT: tổng tiền khám không quá 2 lần giá khám."},
+ {t:"bhyt",q:"Thông tư 21/2023/TT-BYT thay thế những thông tư nào (Điều 9)?",o:["Thông tư 22/2023 và 39/2018","Thông tư 37/2018 và 14/2019","Thông tư 13/2019 và 26/2019","Thông tư 21/2024 và 22/2024"],a:1,e:"Khoản 2 Điều 9 Thông tư 21/2023/TT-BYT. Lưu ý: nguồn tra cứu ghi thông tư này được thay thế bởi Thông tư 21/2024/TT-BYT, cần kiểm tra lại."},
+{t:"duoc",q:"Thông tư 26/2025/TT-BYT về đơn thuốc có hiệu lực từ ngày nào?",o:["30/06/2025","01/07/2025","01/01/2026","01/03/2026"],a:1,e:"Thông tư 26/2025/TT-BYT ban hành 30/06/2025, có hiệu lực 01/07/2025 (theo tóm tắt tra cứu)."},
+ {t:"duoc",q:"Theo Thông tư 26/2025/TT-BYT, ai được kê đơn thuốc hóa dược, sinh phẩm trong điều trị ngoại trú?",o:["Bất kỳ nhân viên y tế","Chỉ người có chứng chỉ hành nghề bác sĩ hoặc y sĩ","Dược sĩ bệnh viện","Điều dưỡng viên"],a:1,e:"Theo tóm tắt Thông tư 26/2025/TT-BYT: chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề."},
+ {t:"duoc",q:"Theo Thông tư 26/2025/TT-BYT, đơn thuốc cho trẻ dưới 72 tháng tuổi phải ghi thêm gì?",o:["Tên cha mẹ","Tuổi tính theo tháng và cân nặng","Nhóm máu","Số thẻ BHYT"],a:1,e:"Theo tóm tắt Thông tư 26/2025/TT-BYT: ghi tuổi theo tháng và cân nặng."},
+ {t:"duoc",q:"Thời gian cấp thuốc tối đa cho một thuốc theo đơn ngoại trú (Thông tư 26/2025/TT-BYT) là bao nhiêu ngày, trừ bệnh mạn tính?",o:["7 ngày","15 ngày","30 ngày","90 ngày"],a:2,e:"Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII."},
+ {t:"duoc",q:"Đơn thuốc điện tử theo Thông tư 26/2025/TT-BYT có giá trị pháp lý thế nào?",o:["Không có giá trị thay thế đơn giấy","Có giá trị pháp lý như đơn giấy nếu ký số, lưu trữ và chia sẻ đúng quy định","Chỉ dùng trong bệnh viện","Chỉ có giá trị 7 ngày"],a:1,e:"Theo tóm tắt Thông tư 26/2025/TT-BYT."},
+ {t:"kcb",q:"Thông tư 25/2026/TT-BYT ban hành ngày nào và có hiệu lực từ bao giờ (Điều 2, 3)?",o:["30/06/2026; Điều 2 và 3 từ 01/07/2026","15/08/2026 cho toàn bộ","01/01/2027 cho toàn bộ","30/06/2026 cho toàn bộ"],a:0,e:"Theo tóm tắt: ban hành 30/06/2026; Điều 2 và 3 có hiệu lực từ 01/07/2026, phần còn lại từ 15/08/2026. Cần đối chiếu văn bản gốc."},
+ {t:"kcb",q:"Thông tư 25/2026/TT-BYT thay thế toàn bộ Điều nào của Thông tư 32/2023 về khám sức khỏe?",o:["Điều 10 và 11","Điều 34 và Điều 36","Điều 5 và 6","Điều 20 và 21"],a:1,e:"Theo tóm tắt Thông tư 25/2026/TT-BYT, Điều 2 thay thế toàn bộ Điều 34 và Điều 36 của Thông tư 32/2023/TT-BYT."},
+{t:"kcb",q:"Thông tư 49/2025/TT-BYT sửa đổi Thông tư nào về cấp giấy chứng nhận lương y và bài thuốc gia truyền?",o:["Thông tư 32/2023/TT-BYT","Thông tư 02/2024/TT-BYT","Thông tư 26/2025/TT-BYT","Thông tư 22/2023/TT-BYT"],a:1,e:"Thông tư 49/2025/TT-BYT (ban hành 31/12/2025) sửa đổi Thông tư 02/2024/TT-BYT."},
+ {t:"kcb",q:"Theo Thông tư 49/2025/TT-BYT, cơ quan cấp lương y cấp giấy trong bao nhiêu ngày làm việc kể từ khi nhận hồ sơ hợp lệ?",o:["3 ngày","5 ngày","7 ngày","15 ngày"],a:1,e:"Điểm b khoản 2 Điều 12 Thông tư 49/2025/TT-BYT (theo tóm tắt tra cứu)."},
+{t:"tbyt",q:"Thông tư 44/2025/TT-BYT có hiệu lực từ ngày nào và thay thế thông tư nào?",o:["01/01/2026; thay Thông tư 10/2023","22/11/2025; thay Thông tư 19/2021","07/08/2025; thay Thông tư 05/2024","31/12/2025; thay Thông tư 02/2024"],a:1,e:"Điều 4 Thông tư 44/2025/TT-BYT (ban hành và có hiệu lực 22/11/2025), thay Thông tư 19/2021/TT-BYT."},
+ {t:"tbyt",q:"Theo Thông tư 44/2025/TT-BYT, Cục Hạ tầng và Thiết bị y tế được giao quyền gì (Điều 2)?",o:["Cấp số lưu hành trang thiết bị y tế loại C và D, cấp giấy phép nhập khẩu","Chỉ quản lý kho thuốc","Chỉ thu học phí đào tạo","Chỉ xây dựng bệnh viện"],a:0,e:"Điều 2 Thông tư 44/2025/TT-BYT giao 11 nhiệm vụ, trong đó có cấp số lưu hành và giấy phép nhập khẩu (theo tóm tắt tra cứu)."},
+{t:"duoc",q:"Thông tư 36/2025/TT-BYT về GLP có hiệu lực từ ngày nào?",o:["28/07/2025","11/09/2025","01/01/2026","01/07/2026"],a:1,e:"Điều 2 Thông tư 36/2025/TT-BYT (ban hành 28/07/2025)."},
+ {t:"duoc",q:"Theo Thông tư 36/2025/TT-BYT, cơ sở bị yêu cầu khắc phục có bao nhiêu ngày để khắc phục?",o:["10 ngày","30 ngày","45 ngày","90 ngày"],a:2,e:"Khoản 4 Điều 11 Thông tư 36/2025/TT-BYT (theo tóm tắt tra cứu)."},
+ {t:"phongbenh",q:"Luật Phòng bệnh 2025 (114/2025/QH15) có hiệu lực từ ngày nào?",o:["10/12/2025","01/01/2026","01/07/2026","07/04/2026"],a:2,e:"Luật 114/2025/QH15 ban hành 10/12/2025, hiệu lực 01/07/2026, thay Luật Phòng, chống bệnh truyền nhiễm 2007."},
+ {t:"phongbenh",q:"Ngày Sức khỏe toàn dân Việt Nam theo Luật Phòng bệnh 2025 là ngày nào?",o:["01/06 hằng năm","07/04 hằng năm","27/02 hằng năm","01/12 hằng năm"],a:1,e:"Điều 7 Luật Phòng bệnh 2025: Ngày 07/4 hằng năm."},
+ {t:"phongbenh",q:"Theo Luật Phòng bệnh 2025, khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến bao nhiêu tháng tuổi?",o:["3 tháng","6 tháng","12 tháng","24 tháng"],a:1,e:"Theo tóm tắt Luật Phòng bệnh (khuyến khích đến 6 tháng, duy trì đến 24 tháng)."},
+ {t:"bhyt",q:"Luật sửa đổi, bổ sung Luật Bảo hiểm y tế năm 2024 có số hiệu nào?",o:["46/2014/QH13","25/2008/QH12","51/2024/QH15","44/2024/QH15"],a:2,e:"Luật 51/2024/QH15, thông qua 27/11/2024. 44/2024/QH15 là Luật Dược sửa đổi."},
+ {t:"bhyt",q:"Phần lớn quy định của Luật BHYT sửa đổi 2024 có hiệu lực từ khi nào?",o:["01/01/2025","01/07/2025","01/01/2026","01/07/2026"],a:1,e:"Hiệu lực chính từ 01/07/2025; một số quy định áp dụng sớm từ 01/01/2025."},
+ {t:"bhyt",q:"Mức hưởng BHYT phổ biến (đi đúng quy định) là bao nhiêu?",o:["60%","70%","80%","100%"],a:2,e:"Đa số người tham gia hưởng 80%; một số nhóm ưu tiên hưởng 95% hoặc 100%."},
+ {t:"bhyt",q:"Trẻ em dưới 6 tuổi được BHYT chi trả bao nhiêu % chi phí trong phạm vi?",o:["80%","90%","95%","100%"],a:3,e:"Trẻ em dưới 6 tuổi hưởng 100%."},
+ {t:"bhyt",q:"Theo Luật BHYT sửa đổi 2024, chi phí một lần khám dưới mức nào thì được hưởng 100%?",o:["Mức do Chính phủ quy định","15% lương cơ sở","20% lương cơ sở","Không có mức này"],a:0,e:"Luật giao Chính phủ quy định mức chi phí một lần khám được hưởng 100% (Điều 22)."},
+ {t:"bhyt",q:"Đóng BHYT hộ gia đình: người thứ hai đóng bằng bao nhiêu % mức người thứ nhất?",o:["50%","60%","70%","80%"],a:2,e:"Người thứ 2: 70%; thứ 3: 60%; thứ 4: 50%; từ thứ 5: 40%."},
+ {t:"bhyt",q:"Lương tháng tối đa để tính đóng BHYT bằng bao nhiêu lần mức tham chiếu?",o:["10 lần","15 lần","20 lần","30 lần"],a:2,e:"Điều 14 Luật BHYT sửa đổi 2024: tối đa 20 lần mức tham chiếu."},
+ {t:"bhyt",q:"Điểm mới năm 2024 dành cho người dưới 18 tuổi tham gia BHYT là gì?",o:["Miễn phí nha khoa thẩm mỹ","Chi trả điều trị lác, tật khúc xạ mắt","Chi trả kính áp tròng màu","Khám tại nước ngoài"],a:1,e:"Luật 51/2024 bổ sung chi trả điều trị lác, tật khúc xạ cho người dưới 18 tuổi."},
+ {t:"bhyt",q:"Tham gia BHYT bao lâu liên tục (cùng điều kiện chi trả) thì được hưởng 100%?",o:["3 năm","5 năm","7 năm","10 năm"],a:1,e:"5 năm liên tục và số tiền cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (Điều 22)."},
+ {t:"duoc",q:"Luật Dược sửa đổi 2024 công nhận mô hình kinh doanh mới nào?",o:["Chuỗi nhà thuốc","Nhà thuốc tư nhân không dược sĩ","Bán thuốc kê đơn tự do","Quầy thuốc lưu động"],a:0,e:"Chuỗi nhà thuốc và kinh doanh thuốc qua thương mại điện tử."},
+ {t:"duoc",q:"Luật Dược sửa đổi 2024 bỏ thủ tục nào?",o:["Đăng ký lưu hành thuốc","Xác nhận nội dung thông tin thuốc","Cấp chứng chỉ hành nghề dược","Kiểm nghiệm thuốc"],a:1,e:"Bỏ thủ tục xác nhận nội dung thông tin thuốc."},
+ {t:"duoc",q:"Với thuốc kê đơn, Luật Dược sửa đổi yêu cầu công bố loại giá nào?",o:["Giá bán lẻ tối đa","Giá bán buôn dự kiến","Giá nhập khẩu","Giá trúng thầu"],a:1,e:"Công bố giá bán buôn dự kiến; bán qua các tầng trung gian không vượt giá đã công bố."},
+ {t:"phongbenh",q:"Luật Phòng bệnh có số hiệu và hiệu lực như thế nào?",o:["113/2025/QH15 – 01/01/2026","114/2025/QH15 – 01/07/2026","114/2025/QH15 – 01/01/2027","03/2007/QH12 – 01/07/2008"],a:1,e:"Luật 114/2025/QH15, thông qua 10/12/2025, hiệu lực 01/07/2026."},
+ {t:"phongbenh",q:"Theo Luật Phòng bệnh, người dân được khám sức khỏe định kỳ hoặc sàng lọc miễn phí với tần suất tối thiểu nào?",o:["2 năm một lần","Mỗi năm một lần","6 tháng một lần","5 năm một lần"],a:1,e:"Ít nhất mỗi năm một lần, theo nhóm đối tượng và lộ trình ưu tiên."},
+ {t:"phongbenh",q:"Luật Phòng bệnh khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến bao nhiêu tháng tuổi?",o:["3 tháng","4 tháng","6 tháng","12 tháng"],a:2,e:"Hoàn toàn bằng sữa mẹ đến 6 tháng, duy trì đến 24 tháng."},
+ {t:"phongbenh",q:"Luật Phòng bệnh chia tiêm chủng thành những hình thức nào?",o:["Bắt buộc và tự nguyện","Miễn phí và có phí","Trong nước và quốc tế","Định kỳ và khẩn cấp"],a:0,e:"Tiêm chủng bắt buộc và tiêm chủng tự nguyện."},
+ {t:"danso",q:"Theo Luật Dân số 2025, lao động nữ sinh con thứ hai được nghỉ thai sản bao lâu?",o:["6 tháng","7 tháng","8 tháng","12 tháng"],a:1,e:"7 tháng (thay vì 6 tháng thông thường)."},
+ {t:"danso",q:"Lao động nam được nghỉ bao lâu khi vợ sinh con thứ hai?",o:["5 ngày làm việc","7 ngày làm việc","10 ngày làm việc","14 ngày làm việc"],a:2,e:"10 ngày làm việc."},
+ {t:"thuocla",q:"Cảnh báo sức khỏe trên bao bì thuốc lá phải chiếm ít nhất bao nhiêu diện tích mặt chính?",o:["30%","40%","50%","70%"],a:2,e:"Ít nhất 50% diện tích mỗi mặt chính."},
+ {t:"thuocla",q:"Văn bản nào cấm thuốc lá điện tử và thuốc lá nung nóng từ năm 2025?",o:["Luật 09/2012/QH13","Nghị quyết 173/2024/QH15","Luật 44/2019/QH14","Nghị định 96/2023/NĐ-CP"],a:1,e:"Nghị quyết 173/2024/QH15 của Quốc hội."},
+ {t:"ruoubia",q:"Luật Phòng, chống tác hại của rượu, bia có hiệu lực từ ngày nào?",o:["01/07/2019","01/01/2020","01/01/2021","01/07/2020"],a:1,e:"Luật 44/2019/QH14 có hiệu lực từ 01/01/2020."},
+ {t:"ruoubia",q:"Luật rượu, bia quy định gì về nồng độ cồn khi lái xe?",o:["Dưới 0,25 mg/l khí thở là được","Cấm khi có nồng độ cồn","Chỉ cấm với xe ô tô","Chỉ cấm ban đêm"],a:1,e:"Cấm điều khiển phương tiện khi trong máu hoặc hơi thở có nồng độ cồn."},
+ {t:"attp",q:"Luật An toàn thực phẩm có số hiệu nào?",o:["55/2010/QH12","05/2007/QH12","15/2018/NĐ-CP","68/2006/QH11"],a:0,e:"Luật 55/2010/QH12, hiệu lực 01/07/2011."},
+ {t:"truyennhiem",q:"Bệnh truyền nhiễm được phân thành mấy nhóm theo mức độ nguy hiểm?",o:["2 nhóm","3 nhóm (A, B, C)","4 nhóm","5 nhóm"],a:1,e:"Nhóm A nguy hiểm nhất, sau đó B và C."},
+ {t:"ghepmo",q:"Người hiến mô, bộ phận cơ thể khi còn sống phải từ đủ bao nhiêu tuổi?",o:["16 tuổi","18 tuổi","20 tuổi","21 tuổi"],a:1,e:"Từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ."},
+ {t:"hiv",q:"Luật Phòng, chống HIV/AIDS được sửa đổi lần gần nhất bằng luật nào?",o:["71/2020/QH14","64/2006/QH11","51/2024/QH15","44/2019/QH14"],a:0,e:"Luật 71/2020/QH14, hiệu lực 01/01/2021."},
+];
+
+/* Đúng / Sai */
+const TF = [
+ ["Luật Khám bệnh, chữa bệnh 2023 tổ chức cơ sở theo 4 tuyến: trung ương, tỉnh, huyện, xã.",false,"Nay là 3 cấp: ban đầu, cơ bản, chuyên sâu."],
+ ["Giấy phép hành nghề khám chữa bệnh hiện có thời hạn 5 năm.",true,"Đúng, theo Luật 15/2023/QH15."],
+ ["Tên gọi chính thức theo Luật 15/2023 là 'giấy phép hành nghề', thay cho 'chứng chỉ hành nghề'.",true,"Đúng."],
+ ["Trẻ em dưới 6 tuổi được BHYT chi trả 80%.",false,"Trẻ dưới 6 tuổi hưởng 100%."],
+ ["Chi phí một lần khám dưới 15% lương cơ sở được BHYT trả 100%.",false,"Luật 51/2024 giao Chính phủ quy định mức chi phí này, không ghi cố định 15%."],
+ ["Luật BHYT sửa đổi 2024 có số hiệu 51/2024/QH15.",true,"Đúng."],
+ ["Người thứ ba trong hộ gia đình đóng BHYT bằng 60% mức người thứ nhất.",true,"Đúng: 70% – 60% – 50% – 40%."],
+ ["Luật Dược sửa đổi 2024 cấm hoàn toàn bán thuốc qua thương mại điện tử.",false,"Ngược lại, luật cho phép theo danh mục thuốc được phép."],
+ ["Chuỗi nhà thuốc được công nhận là loại hình kinh doanh dược riêng.",true,"Đúng, theo Luật 44/2024/QH15."],
+ ["Luật Phòng bệnh có hiệu lực từ 01/07/2026.",true,"Đúng."],
+ ["Luật Phòng bệnh chỉ điều chỉnh bệnh truyền nhiễm.",false,"Còn bao gồm bệnh không lây nhiễm, rối loạn tâm thần và dinh dưỡng."],
+ ["Giả mắc rối loạn tâm thần để trục lợi là hành vi bị cấm theo Luật Phòng bệnh.",true,"Đúng."],
+ ["Theo Luật Dân số 2025, lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng.",true,"Đúng."],
+ ["Luật Dân số có số hiệu 114/2025/QH15.",false,"Luật Dân số là 113/2025/QH15; 114 là Luật Phòng bệnh."],
+ ["Được bán thuốc lá cho người 17 tuổi nếu có cha mẹ đồng ý.",false,"Cấm bán cho người dưới 18 tuổi, không có ngoại lệ."],
+ ["Thuốc lá điện tử bị cấm từ năm 2025 theo Nghị quyết 173/2024/QH15.",true,"Đúng."],
+ ["Luật rượu, bia cho phép lái xe khi nồng độ cồn dưới mức quy định.",false,"Cấm khi có nồng độ cồn trong máu hoặc hơi thở."],
+ ["Luật An toàn thực phẩm có hiệu lực từ 01/07/2011.",true,"Đúng."],
+ ["Bệnh truyền nhiễm nhóm C là nhóm nguy hiểm nhất.",false,"Nhóm A nguy hiểm nhất."],
+ ["Người 16 tuổi được hiến thận khi còn sống nếu tự nguyện.",false,"Phải từ đủ 18 tuổi."],
+ ["Mua bán mô, bộ phận cơ thể người bị cấm.",true,"Đúng, hiến phải không vì mục đích thương mại."],
+ ["Ngôn ngữ dùng trong khám chữa bệnh là tiếng Việt.",true,"Đúng."],
+ ["Luật Dược sửa đổi 2024 có hiệu lực từ 01/01/2025.",false,"Hiệu lực từ 01/07/2025."],
+ ["Người dưới 18 tuổi được BHYT chi trả điều trị tật khúc xạ mắt.",true,"Đúng, điểm mới của Luật 51/2024."],
+];
+
+/* Ghép cặp kiểu "quy định ↔ con số" */
+const FACTPAIRS = [
+ ["Thời hạn giấy phép hành nghề KCB","5 năm"],["Hiệu lực Luật Khám bệnh, chữa bệnh 2023","01/01/2024"],
+ ["Thời hạn cấp thẻ BHYT sau khi nhận đủ hồ sơ","5 ngày làm việc"],["Mức hưởng BHYT phổ biến","80%"],
+ ["Mức lương tối đa để đóng BHYT","20 lần mức tham chiếu"],["Nơi lập hồ sơ bệnh án điện tử và HIS","Hệ thống thông tin quản lý KCB (Điều 112)"],
+ ["Người thứ hai trong hộ đóng BHYT","70% mức người đầu"],["Cảnh báo trên bao thuốc lá","≥ 50% mặt chính"],
+ ["Nghỉ thai sản khi sinh con thứ hai","7 tháng"],["Cha nghỉ khi vợ sinh con thứ hai","10 ngày làm việc"],
+ ["Tuổi tối thiểu hiến mô khi còn sống","Đủ 18 tuổi"],["Bú mẹ hoàn toàn được khuyến khích đến","6 tháng tuổi"],
+ ["Số cấp chuyên môn kỹ thuật KCB","3 cấp"],["Số điều của Luật Phòng bệnh","46 điều"],
+];
+
+/* ================= TIỆN ÍCH ================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const shuffle = a => { a = a.slice(); for (let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]} return a; };
+const lawById = id => LAWS.find(l => l.id === id);
+const REDUCE = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = {
+  get(k, d){ try { const v = localStorage.getItem("lyt_"+k); return v==null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v){ try { localStorage.setItem("lyt_"+k, JSON.stringify(v)); } catch {} }
+};
+const PALETTE = ["#0F766E","#C2410C","#A16207","#1D4ED8","#0E7490","#BE123C","#15803D","#44403C"];
+const CATCOLOR = {}; [...new Set(LAWS.map(l=>l.cat))].forEach((c,i)=>CATCOLOR[c]=PALETTE[i%PALETTE.length]);
+
+/* Thông báo nổi */
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(()=>t.classList.remove("show"), 2300);
+}
+/* Đếm số tăng dần */
+function countUp(el, to){
+  if (!el) return;
+  const from = Number(el.dataset.v || 0); el.dataset.v = to;
+  if (REDUCE()) { el.textContent = to; return; }
+  const t0 = performance.now(), d = 700;
+  const step = t => { const k = Math.min(1, (t-t0)/d); el.textContent = Math.round(from + (to-from)*(1-Math.pow(1-k,3))); if (k<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function pop(el){ if (!el || REDUCE()) return; el.classList.remove("combo-hot"); void el.offsetWidth; el.classList.add("combo-hot"); }
+/* Pháo giấy */
+function burst(x, y){
+  if (REDUCE()) return;
+  const cols = ["#0F766E","#F26B4F","#D9961A","#2DD4BF","#5EEAD4","#FB7185"];
+  const cx = x ?? innerWidth/2, cy = y ?? innerHeight*.4;
+  for (let i=0;i<44;i++){
+    const s = document.createElement("i");
+    s.className = "cf" + (i%3===0 ? " round" : "");
+    s.style.left = (cx + (Math.random()-.5)*60) + "px";
+    s.style.top = (cy + (Math.random()-.5)*30) + "px";
+    s.style.background = cols[i%cols.length];
+    s.style.setProperty("--dx", ((Math.random()-.5)*340) + "px");
+    s.style.setProperty("--dy", (-120 - Math.random()*240) + "px");
+    s.style.setProperty("--r", (Math.random()*900-450) + "deg");
+    s.style.animationDelay = (Math.random()*120) + "ms";
+    document.body.append(s); setTimeout(()=>s.remove(), 1600);
+  }
+}
+function shakeEl(el){ if (!el || REDUCE()) return; el.classList.remove("shake"); void el.offsetWidth; el.classList.add("shake"); }
+
+/* ================= XP & CẤP ================= */
+let XP = store.get("xp", 0);
+const RING_LEN = 2*Math.PI*26;
+function renderXP(){
+  const lv = Math.floor(XP/100)+1, into = XP%100;
+  $("#lv").textContent = "Cấp " + lv;
+  $("#ringlv").textContent = lv;
+  $("#ringfg").style.strokeDashoffset = RING_LEN * (1 - into/100);
+  $("#xpnum").textContent = XP + " XP";
+}
+function addXP(n){
+  const before = Math.floor(XP/100);
+  XP += n; store.set("xp", XP); renderXP();
+  const after = Math.floor(XP/100);
+  if (after > before) { toast("Lên cấp " + (after+1) + "! Tiếp tục nhé"); burst(); }
+  else if (n>0) pop($("#xpnum"));
+}
+function renderStats(){
+  countUp($("#s-quiz"), store.get("quizbest",0));
+  countUp($("#s-cards"), Math.min(store.get("known",[]).length, QUIZ.length));
+  countUp($("#s-tf"), store.get("tfbest",0));
+}
+renderXP(); renderStats();
+
+/* ================= CHUYỂN TAB ================= */
+const TABS = ["thuvien","tracnghiem","dungsai","ghepcap","thenho"];
+function placeInd(){
+  const b = document.querySelector('nav.tabs button[aria-selected="true"]'); if (!b) return;
+  const ind = $("#ind"); ind.style.width = b.offsetWidth + "px"; ind.style.transform = `translateX(${b.offsetLeft}px)`;
+}
+function showTab(t){
+  if (t === "troly"){ setBot(true); return; }
+  if (!TABS.includes(t)) t = "thuvien";
+  setBot(false);
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab===t));
+  TABS.forEach(x => { $("#p-"+x).hidden = x!==t; });
+  store.set("tab", t);
+  placeInd();
+  if (t==="dungsai" && !tfState.running) renderTFIntro();
+}
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+addEventListener("resize", placeInd);
+
+/* ================= THƯ VIỆN ================= */
+let lawCat = "Tất cả";
+const cats = ["Tất cả", ...new Set(LAWS.map(l => l.cat))];
+$("#lawcats").innerHTML = cats.map(c => `<button class="chip" aria-pressed="${c===lawCat}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+$("#lawcats").onclick = e => { const b = e.target.closest("button"); if(!b) return; lawCat = b.dataset.c;
+  document.querySelectorAll("#lawcats .chip").forEach(x => x.setAttribute("aria-pressed", x===b)); renderLaws(); };
+$("#lawq").oninput = renderLaws;
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d");
+const STATUS = {on:["p-on","Đang hiệu lực"], amend:["p-amend","Có sửa đổi"], het:["p-het","Hết hiệu lực"]};
+function renderLaws(){
+  const q = norm($("#lawq").value.trim());
+  const list = LAWS.filter(l => (lawCat==="Tất cả"||l.cat===lawCat) && (!q || norm([l.name,l.so,l.cat,l.replaces,...l.points].join(" ")).includes(q)));
+  $("#laws").innerHTML = list.length ? list.map((l,i) => `
+    <details class="law" style="--c:${CATCOLOR[l.cat]};animation-delay:${i*45}ms" ${i<1 && !q ? "open":""}>
+      <summary>
+        <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
+        <div>
+          <h3>${esc(l.name)}</h3>
+          <div class="meta"><span class="mono">${esc(l.so)}</span><span>Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>
+        </div>
+        <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </summary>
+      <div class="body">
+        ${l.replaces?`<div class="meta">${esc(l.replaces)}</div>`:""}
+        <div class="pts">${l.points.map(p=>`<p>${esc(p)}</p>`).join("")}</div>
+        ${l.guide?`<div class="meta">Văn bản hướng dẫn: ${esc(l.guide)}</div>`:""}
+        <div class="links">
+          <a class="linkbtn" href="${TS(l.so)}" target="_blank" rel="noopener">Mở toàn văn ↗</a>
+          <button class="linkbtn" type="button" data-askabout="${l.id}">Hỏi trợ lý về luật này</button>
+          <button class="linkbtn" type="button" data-quizabout="${l.id}">Luyện câu hỏi</button>
+        </div>
+      </div>
+    </details>`).join("") : `<p class="intro">Không tìm thấy luật phù hợp. Thử từ khóa khác như "thuốc" hoặc "BHYT".</p>`;
+}
+$("#laws").onclick = e => {
+  const b = e.target.closest("button[data-askabout],button[data-quizabout]"); if(!b) return;
+  if (b.dataset.askabout){ const l = lawById(b.dataset.askabout); setBot(true); $("#ask").value = `Tóm tắt những điểm quan trọng nhất của ${l.name} (${l.so}) mà tôi cần nhớ.`; }
+  else { $("#qtopic").value = b.dataset.quizabout; showTab("tracnghiem"); startQuiz(); }
+};
+renderLaws();
+
+/* ================= TRỢ LÝ ================= */
+const KB = LAWS.map(l => `### ${l.name} — ${l.so}\nThông qua: ${l.pass}; hiệu lực: ${l.eff}. ${l.replaces||""}\n${l.points.map(p=>"- "+p).join("\n")}${l.guide?"\nHướng dẫn: "+l.guide:""}`).join("\n\n");
+const RULES = `Bạn là "Trợ lý Y tế và Luật Y tế", giúp một người Việt Nam học về y tế, sức khỏe và pháp luật y tế Việt Nam. Hôm nay là 21/10/2026.
+Quy tắc:
+- Luôn trả lời bằng tiếng Việt, ngắn gọn (tối đa khoảng 180 từ), dễ hiểu, dùng gạch đầu dòng khi liệt kê.
+- Với câu hỏi về luật, ưu tiên KHO KIẾN THỨC bên dưới. Với quy định ngoài kho kiến thức, nói rõ cần kiểm tra lại văn bản gốc.
+- Với câu hỏi về sức khỏe, bệnh tật, dinh dưỡng, phòng bệnh, thuốc, tiêm chủng, dùng kiến thức y khoa chung đáng tin cậy.
+- Luôn ghi tên luật và số hiệu (ví dụ: Luật 15/2023/QH15) khi dẫn quy định.
+- Không bịa số điều, con số hay văn bản. Nếu không chắc, nói thẳng là không chắc và gợi ý tra cứu vbpl.vn hoặc thuvienphapluat.vn.
+- Với câu hỏi về trường hợp cá nhân cụ thể, giải thích nguyên tắc chung và khuyên hỏi cơ quan BHXH, Sở Y tế hoặc luật sư.
+- Cuối mỗi câu trả lời, thêm một dòng "Ôn nhanh:" với 1 câu hỏi ngắn để người học tự kiểm tra.
+- Không chẩn đoán bệnh, không kê đơn, không thay thế bác sĩ. Khi có dấu hiệu nguy cấp (đau ngực, khó thở, chảy máu nhiều, co giật, ngộ độc...), khuyên gọi 115 ngay.
+- Từ chối nhẹ nhàng các câu hỏi không liên quan đến y tế, sức khỏe hay pháp luật.
+
+KHO KIẾN THỨC (cập nhật 10/2026):
+${KB}`;
+const SUGG = ["Đi khám trái tuyến BHYT được trả bao nhiêu?","Điều kiện cấp giấy phép hành nghề bác sĩ?","Luật Phòng bệnh 2025 có gì mới?","Nhà thuốc có được bán online không?","Sinh con thứ hai được hưởng chính sách gì?","Hút thuốc ở bệnh viện bị cấm ở đâu?"];
+$("#suggest").innerHTML = SUGG.map(s=>`<button class="chip">${esc(s)}</button>`).join("");
+$("#suggest").onclick = e => { const b = e.target.closest("button"); if(!b) return; $("#ask").value = b.textContent; send(); };
+
+const turns = [];
+let sample = null, ctl = null;
+function md(s){
+  const lines = esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").split("\n");
+  let out = "", inList = false;
+  for (const ln of lines){
+    const m = ln.match(/^\s*[-*•]\s+(.*)/);
+    if (m){ if(!inList){out+="<ul>";inList=true} out += "<li>"+m[1]+"</li>"; continue; }
+    if (inList){ out+="</ul>"; inList=false; }
+    if (ln.trim()) out += "<p>"+ln.replace(/^#+\s*/,"")+"</p>";
+  }
+  return out + (inList?"</ul>":"");
+}
+function scrollLog(){ const l = $("#log"); l.scrollTop = l.scrollHeight; }
+function bubble(role, html){
+  const d = document.createElement("div"); d.className = "msg " + (role==="user"?"me":"bot"); d.innerHTML = html;
+  $("#log").append(d); scrollLog(); return d;
+}
+bubble("bot", md("Xin chào! Mình là **Trợ lý Luật Y tế**. Bạn có thể hỏi về BHYT, giấy phép hành nghề, thuốc, tiêm chủng, dân số… hoặc chọn một câu gợi ý ở trên."));
+
+/* Tra cứu ngoại tuyến: dùng khi không có AI */
+function offlineAnswer(q){
+  const words = norm(q).split(/[^a-z0-9/]+/).filter(w => w.length>2);
+  const facts = [];
+  LAWS.forEach(l => l.points.forEach(p => facts.push({l, p, txt: norm(l.name+" "+l.so+" "+l.cat+" "+p)})));
+  QUIZ.forEach(x => { const l = lawById(x.t); if(!l) return; facts.push({l, p: x.q.replace(/\?$/,"")+": "+x.o[x.a]+". "+x.e, txt: norm(l.name+" "+x.q+" "+x.o[x.a]+" "+x.e)}); });
+  const scored = facts.map(f => ({...f, s: words.reduce((a,w)=>a+(f.txt.includes(w)?1:0),0)})).filter(f=>f.s>0).sort((a,b)=>b.s-a.s).slice(0,4);
+  if (!scored.length) return "Mình chưa tìm thấy nội dung khớp trong sổ tay. Thử hỏi bằng từ khóa như **BHYT**, **giấy phép hành nghề**, **thuốc**, **tiêm chủng**.";
+  return "Các quy định liên quan trong sổ tay:\n" + scored.map(f => `- ${f.p} (**${f.l.name}**, ${f.l.so})`).join("\n");
+}
+
+function setBusy(b){ $("#send").disabled = b; $("#stop").hidden = !b; }
+$("#stop").onclick = () => ctl?.abort();
+$("#chatform").onsubmit = e => { e.preventDefault(); send(); };
+$("#ask").addEventListener("keydown", e => { if (e.key==="Enter" && !e.shiftKey){ e.preventDefault(); send(); } });
+$("#ask").addEventListener("input", e => { e.target.style.height="auto"; e.target.style.height = Math.min(96, e.target.scrollHeight)+"px"; });
+
+async function send(){
+  const q = $("#ask").value.trim(); if (!q || !$("#stop").hidden) return;
+  $("#ask").value = ""; $("#ask").style.height = "auto";
+  bubble("user", esc(q));
+  if (!sample){ bubble("bot", md(offlineAnswer(q)) + `<div class="src">Chế độ tra cứu trong sổ tay</div>`); return; }
+  turns.push({role:"user", content:q});
+  while (turns.length > 12) turns.splice(0, 2);
+  const b = bubble("bot", `<span class="typing"><i></i><i></i><i></i></span>`);
+  ctl = new AbortController(); setBusy(true);
+  try {
+    const { text, truncated } = await sample([{role:"user", content:RULES}, ...turns], {
+      cache:false, signal:ctl.signal, onText:({text}) => { b.innerHTML = md(text); scrollLog(); }
+    });
+    turns.push({role:"assistant", content:text});
+    b.innerHTML = md(text) + (truncated?`<div class="src">Câu trả lời bị cắt ngắn, hãy hỏi hẹp hơn.</div>`:"");
+    addXP(2);
+  } catch (e) {
+    turns.pop();
+    if (e.code === "cancelled"){ b.innerHTML = e.text ? md(e.text) : "<p>Đã dừng.</p>"; }
+    else if (["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e.code)){
+      sample = null; setMode();
+      b.innerHTML = md(offlineAnswer(q)) + `<div class="src">Trợ lý AI chưa được bật, đang dùng tra cứu trong sổ tay</div>`;
+    } else if (e.code === "rate_limited"){ b.innerHTML = "<p>Bạn hỏi hơi nhanh, đợi một lát rồi gửi lại nhé.</p>"; }
+    else if (e.code === "refused"){ b.innerHTML = "<p>Mình không trả lời được câu này. Thử hỏi theo cách khác về luật y tế nhé.</p>"; }
+    else { b.innerHTML = (e.text?md(e.text):"") + "<p>Kết nối bị gián đoạn. Bấm Gửi lại câu hỏi để thử lại.</p>"; }
+  } finally { setBusy(false); scrollLog(); }
+}
+function setMode(){
+  $("#mode").innerHTML = sample
+    ? "Chế độ <b>Trợ lý AI</b>: lần hỏi đầu tiên sẽ xin phép dùng Claude trên tài khoản của bạn. Có thể sai, hãy đối chiếu văn bản gốc."
+    : "Chế độ <b>Tra cứu trong sổ tay</b>: trợ lý AI chưa sẵn sàng ở trang này.";
+  $("#qai").hidden = !sample;
+}
+function setBot(open){
+  $("#p-troly").hidden = !open;
+  $("#fab").classList.toggle("open", !!open);
+  $("#fab .tx").textContent = open ? "Đóng trợ lý" : "Hỏi trợ lý";
+  if (open) { setTimeout(()=>$("#ask").focus(), 80); scrollLog(); }
+  store.set("bot", !!open);
+}
+document.addEventListener("keydown", e => { if (e.key==="Escape" && !$("#p-troly").hidden) setBot(false); });
+
+/* ================= TRẮC NGHIỆM ================= */
+$("#qtopic").innerHTML = `<option value="all">Tất cả chủ đề</option>` + LAWS.filter(l => QUIZ.some(q=>q.t===l.id)).map(l=>`<option value="${l.id}">${esc(l.name)}</option>`).join("");
+let qs = [], qi = 0, qscore = 0, qcombo = 0, qbest = 0, qAnswered = false;
+const MASTER_AT = 5;
+function qStats(){ return store.get("qstat", {}); }
+function masteredCount(pool){ const st = qStats(); return pool.filter(q => (st[q.q]||{}).s >= MASTER_AT).length; }
+// Câu đã đúng liên tiếp MASTER_AT lần (không sai lần nào trong chuỗi) xuất hiện ít hơn; câu từng sai thì xuất hiện nhiều hơn.
+function pickQ(pool, n){
+  const st = qStats();
+  let items = pool.map(q => { const x = st[q.q] || {s:0,w:0}; return {q, w: x.s>=MASTER_AT ? 0.1 : (x.w>0 ? 3 : 1)}; });
+  const out = [];
+  while (out.length < n && items.length){
+    const tot = items.reduce((a,x)=>a+x.w,0); let r = Math.random()*tot, k = 0;
+    for (; k < items.length-1; k++){ r -= items[k].w; if (r <= 0) break; }
+    out.push(items[k].q); items.splice(k,1);
+  }
+  return out;
+}
+function recordQ(q, ok){
+  const st = qStats(); const x = st[q.q] || {s:0,w:0};
+  if (ok) x.s++; else { x.s = 0; x.w++; }
+  st[q.q] = x; store.set("qstat", st);
+}
+function startQuiz(pool){
+  const t = $("#qtopic").value;
+  qs = pool || pickQ(QUIZ.filter(q => t==="all" || q.t===t), 10);
+  qs = qs.map(q => { const idx = shuffle(q.o.map((_,i)=>i)); return {...q, o: idx.map(i=>q.o[i]), a: idx.indexOf(q.a)}; });
+  qi = 0; qscore = 0; qcombo = 0; qbest = 0; renderQ();
+}
+function renderQ(){
+  const box = $("#quiz");
+  if (qi >= qs.length){
+    const pct = Math.round(qscore/qs.length*100);
+    const msg = pct===100?"Xuất sắc! Bạn nắm chắc phần này.":pct>=70?"Tốt lắm, ôn thêm vài chỗ là chắc.":pct>=40?"Khá ổn, đọc lại Thư viện rồi thử lượt nữa.":"Mới bắt đầu thôi. Lật Thẻ nhớ vài vòng rồi quay lại nhé.";
+    box.innerHTML = `<div class="result"><span class="label">Kết quả</span><div class="big" id="finalscore">0</div><div class="stat-row"><span>Đúng <b>${qscore}/${qs.length}</b></span><span>Combo dài nhất <b>${qbest}</b></span></div><p class="intro">${msg}</p><button class="btn" id="again">Chơi lượt mới</button></div>`;
+    countUp($("#finalscore"), qscore);
+    $("#again").onclick = () => startQuiz();
+    if (pct>=70) setTimeout(()=>burst(), 300);
+    const best = store.get("quizbest",0); if (qscore>best) { store.set("quizbest", qscore); renderStats(); }
+    return;
+  }
+  qAnswered = false;
+  const q = qs[qi], law = lawById(q.t);
+  box.innerHTML = `
+    <div class="gtop"><span class="tag">${esc(law?law.name:"AI tạo")}</span>
+      <div class="stat-row"><span>Câu <b>${qi+1}</b>/${qs.length}</span><span>Đúng <b>${qscore}</b></span>${qcombo>1?`<span class="combo" id="combo">Liên tiếp ×${qcombo}</span>`:""}</div></div>
+    <div class="segs">${qs.map((_,i)=>`<i class="${i<qi?"done":i===qi?"now":""}"></i>`).join("")}</div>
+    <p class="intro" style="margin:0 0 8px;font-size:13px">Đã thuộc ${masteredCount(QUIZ.filter(x => $("#qtopic").value==="all" || x.t===$("#qtopic").value))}/${QUIZ.filter(x => $("#qtopic").value==="all" || x.t===$("#qtopic").value).length} câu (đúng liên tiếp ${MASTER_AT} lần)</p>
+    <p class="q">${esc(q.q)}</p>
+    <div class="opts">${q.o.map((o,i)=>`<button class="opt in" style="animation-delay:${i*70}ms" data-i="${i}"><span class="k">${"ABCD"[i]}</span><span class="tx">${esc(o)}</span></button>`).join("")}</div>
+    <div id="qfb"></div>`;
+  box.querySelectorAll(".opt").forEach(b => b.onclick = () => answerQ(+b.dataset.i, b));
+}
+function answerQ(i, btn){
+  if (qAnswered) return; qAnswered = true;
+  const q = qs[qi], ok = i===q.a;
+  recordQ(q, ok);
+  const box = $("#quiz");
+  box.querySelectorAll(".opt").forEach((b,j) => { b.disabled = true; if (j===q.a) b.classList.add("right"); else if (j===i) b.classList.add("wrong"); });
+  if (ok){
+    qscore++; qcombo++; qbest = Math.max(qbest,qcombo);
+    const r = btn.getBoundingClientRect();
+    burst(r.left + r.width/2, r.top + r.height/2);
+    addXP(5*Math.min(qcombo,3));
+    if (qcombo===3) toast("Combo x3! Bạn đang rất tốt");
+    if (qcombo===5) toast("Combo x5! Huy hiệu Thần tốc");
+  } else { qcombo = 0; shakeEl(box); }
+  $("#qfb").innerHTML = `<div class="feedback ${ok?"ok":"no"}"><div class="hd">${ok?"Chính xác!":"Chưa đúng"}</div><p>${esc(q.e||"")}</p>
+    <div class="row"><button class="btn" id="qnext">${qi+1<qs.length?"Câu tiếp theo":"Xem kết quả"}</button></div></div>`;
+  $("#qnext").onclick = () => { qi++; renderQ(); };
+  setTimeout(()=>$("#qnext")?.focus(), 50);
+}
+$("#qstart").onclick = () => startQuiz();
+$("#qtopic").onchange = () => startQuiz();
+$("#qai").onclick = async () => {
+  if (!sample) return;
+  const t = $("#qtopic").value, law = lawById(t);
+  const scope = law ? `${law.name} (${law.so}):\n${law.points.join("\n")}` : KB;
+  $("#qai").disabled = true; $("#quiz").innerHTML = `<div class="result"><span class="tag">AI đang soạn</span><p class="intro">AI đang soạn 5 câu hỏi mới…</p></div>`;
+  try {
+    const arr = await sample.json(`Soạn 5 câu hỏi trắc nghiệm tiếng Việt, mới và khác nhau, CHỈ dựa vào nội dung dưới đây (không thêm con số ngoài nội dung). Mỗi câu 4 lựa chọn, 1 đáp án đúng.
+Trả lời CHỈ bằng một mảng JSON: [{"q": "câu hỏi", "o": ["A","B","C","D"], "a": chỉ_số_đáp_án_đúng_0_đến_3, "e": "giải thích ngắn"}]
+
+NỘI DUNG:
+${scope}`, {cache:false});
+    const pool = (Array.isArray(arr)?arr:[]).filter(x => x && x.q && Array.isArray(x.o) && x.o.length===4 && Number.isInteger(x.a) && x.a>=0 && x.a<4)
+      .map(x => ({t: law?law.id:"", q:String(x.q), o:x.o.map(String), a:x.a, e:String(x.e||"")+" (Câu do AI soạn, hãy đối chiếu Thư viện.)"}));
+    if (pool.length) startQuiz(pool); else { $("#quiz").innerHTML = `<p class="intro">AI chưa soạn được câu hợp lệ. Bấm lại để thử lần nữa.</p>`; }
+  } catch(e){
+    if (["not_granted","sampling_disabled"].includes(e.code)){ sample=null; setMode(); }
+    $("#quiz").innerHTML = `<p class="intro">Không tạo được câu hỏi lúc này. Bạn vẫn có thể chơi bộ câu có sẵn.</p>`;
+  } finally { $("#qai").disabled = false; }
+};
+startQuiz();
+
+/* ================= ĐÚNG HAY SAI ================= */
+const tfState = {running:false, left:60, list:[], i:0, ok:0};
+function renderTFIntro(){
+  const best = store.get("tfbest",0);
+  $("#tf").innerHTML = `<div class="result"><span class="label">Thử thách 60 giây</span><div class="big">${TF.length}</div><p class="intro">Có ${TF.length} nhận định. Kỷ lục của bạn: <b>${best}</b> câu đúng.</p><button class="btn" id="tfgo">Bắt đầu</button></div>`;
+  $("#tfgo").onclick = startTF;
+}
+function startTF(){
+  Object.assign(tfState,{running:true, list:shuffle(TF), i:0, ok:0, left:60});
+  clearInterval(tfState.tm);
+  tfState.tm = setInterval(()=>{ tfState.left--; updateTFTimer(); if (tfState.left<=0) endTF(); },1000);
+  renderTF();
+}
+function updateTFTimer(){
+  const bar = $("#tfbar"), t = $("#tftime"); if (!bar) return;
+  bar.style.width = (tfState.left/60*100) + "%";
+  bar.parentElement.classList.toggle("low", tfState.left<=10);
+  if (t) t.textContent = tfState.left + "s";
+}
+function renderTF(){
+  const s = tfState; if (s.i >= s.list.length){ s.list = s.list.concat(shuffle(TF)); }
+  const [st] = s.list[s.i];
+  $("#tf").innerHTML = `<div class="gtop"><span class="tf-time" id="tftime">${s.left}s</span><div class="stat-row"><span>Đúng <b>${s.ok}</b></span><span>Câu <b>${s.i+1}</b></span></div></div>
+    <div class="tf-timer"><i id="tfbar" style="width:${s.left/60*100}%"></i></div>
+    <p class="tf-stmt" id="tfstmt">${esc(st)}</p>
+    <div class="tf-btns"><button class="tf-no" id="tfn">Sai<kbd>←</kbd></button><button class="tf-yes" id="tfy">Đúng<kbd>→</kbd></button></div>
+    <div id="tffb" class="mode" style="min-height:22px;text-align:center;margin-top:12px"></div>`;
+  $("#tfy").onclick = () => answerTF(true); $("#tfn").onclick = () => answerTF(false);
+  updateTFTimer();
+}
+function answerTF(v){
+  const s = tfState; if (!s.running) return;
+  const [, truth, why] = s.list[s.i], ok = v===truth;
+  const st = $("#tfstmt");
+  if (ok){ s.ok++; addXP(2); } else s.left = Math.max(0, s.left-3);
+  const stage = $("#tf");
+  stage.classList.remove("flash-ok","flash-bad"); void stage.offsetWidth; stage.classList.add(ok?"flash-ok":"flash-bad");
+  if (ok && st) { const r = st.getBoundingClientRect(); burst(r.left + r.width/2, r.top); }
+  s.i++;
+  if (s.left<=0) { endTF(); return; }
+  renderTF();
+  $("#tffb").innerHTML = `<span style="color:${ok?"var(--ok)":"var(--bad)"};font-weight:700">${ok?"Đúng rồi.":"Chưa đúng."}</span> ${esc(why)}`;
+  $("#tffb").style.animation = "enter .4s var(--ease) both";
+}
+function endTF(){
+  const s = tfState; if (!s.running) return; s.running = false; clearInterval(s.tm);
+  const best = store.get("tfbest",0), rec = s.ok>best; if (rec) { store.set("tfbest", s.ok); renderStats(); }
+  $("#tf").innerHTML = `<div class="result"><span class="label">Hết giờ</span><div class="big" id="tfscore">0</div><p class="intro">${rec?"Kỷ lục mới!":"Kỷ lục: "+best+" câu."} Bạn đã trả lời ${s.i} nhận định.</p><button class="btn" id="tfgo">Chơi lại</button></div>`;
+  countUp($("#tfscore"), s.ok);
+  if (rec) setTimeout(()=>burst(), 250);
+  $("#tfgo").onclick = startTF;
+}
+document.addEventListener("keydown", e => {
+  if ($("#p-dungsai").hidden || !tfState.running) return;
+  if (e.key==="ArrowRight") answerTF(true); if (e.key==="ArrowLeft") answerTF(false);
+});
+
+/* ================= GHÉP CẶP ================= */
+let mPairs = [], mSel = null, mDone = 0, mErr = 0, mStart = 0;
+function startMatch(){
+  const mode = $("#mmode").value;
+  let pool;
+  if (mode==="so") pool = LAWS.map(l => [l.name.replace(/ \(sửa đổi 2024\)/,""), l.so]);
+  else if (mode==="hl") pool = LAWS.filter(l=>["kcb","bhyt","duoc","phongbenh","ruoubia","attp","thuocla","hiv"].includes(l.id)).map(l => [l.name, l.eff]);
+  else pool = FACTPAIRS;
+  const seen = new Set(); pool = shuffle(pool).filter(p => !seen.has(p[1]) && seen.add(p[1]));
+  mPairs = pool.slice(0,5).map((p,i)=>({id:i, l:p[0], r:p[1]}));
+  mSel = null; mDone = 0; mErr = 0; mStart = Date.now(); renderMatch();
+}
+function renderMatch(){
+  const L = mPairs, R = shuffle(mPairs);
+  $("#match").innerHTML = `<div class="gtop"><span class="tag">Ghép 5 cặp</span><div class="stat-row"><span>Đã ghép <b id="mdone">0</b>/5</span><span>Lỗi <b id="merr">0</b></span></div></div>
+   <div class="match"><div class="col">${L.map((p,i)=>`<button class="tile" style="animation-delay:${i*60}ms" data-side="l" data-id="${p.id}">${esc(p.l)}</button>`).join("")}</div>
+   <div class="col">${R.map((p,i)=>`<button class="tile" style="animation-delay:${i*60+80}ms" data-side="r" data-id="${p.id}">${esc(p.r)}</button>`).join("")}</div></div><div id="mres"></div>`;
+  $("#match").querySelectorAll(".tile").forEach(t => t.onclick = () => pickTile(t));
+}
+function pickTile(t){
+  if (t.classList.contains("done")) return;
+  if (!mSel || mSel.dataset.side === t.dataset.side){ mSel?.classList.remove("sel"); mSel = t; t.classList.add("sel"); return; }
+  if (mSel.dataset.id === t.dataset.id){
+    const r = t.getBoundingClientRect(); burst(r.left + r.width/2, r.top + r.height/2);
+    [mSel,t].forEach(x=>{x.classList.remove("sel");x.classList.add("done");x.disabled=true}); mDone++; addXP(3);
+  } else {
+    mErr++; [mSel,t].forEach(x=>{x.classList.remove("sel","no"); void x.offsetWidth; x.classList.add("no")});
+  }
+  mSel = null; $("#mdone").textContent = mDone; $("#merr").textContent = mErr;
+  if (mDone===5){
+    const sec = Math.round((Date.now()-mStart)/1000);
+    $("#mres").innerHTML = `<div class="feedback ok" style="margin-top:18px"><div class="hd">Hoàn thành trong ${sec} giây, ${mErr} lỗi</div><p>${mErr===0?"Hoàn hảo! Thưởng thêm 10 XP.":"Làm tốt lắm, thử lại để không có lỗi nào."}</p><div class="row"><button class="btn" id="magain">Ván mới</button></div></div>`;
+    if (mErr===0) addXP(10);
+    setTimeout(()=>burst(), 150);
+    $("#magain").onclick = startMatch;
+  }
+}
+$("#mstart").onclick = startMatch; $("#mmode").onchange = startMatch;
+startMatch();
+
+/* ================= THẺ NHỚ ================= */
+const CARDS = QUIZ.map(q => ({front:q.q, back:q.o[q.a], note:q.e, law:(lawById(q.t)||{name:"Luật"}).name}));
+let deck = shuffle(CARDS.map((_,i)=>i)), known = store.get("known", []);
+function renderCard(){
+  if (!deck.length){ deck = shuffle(CARDS.map((_,i)=>i)); }
+  const c = CARDS[deck[0]], k = Math.min(known.length, CARDS.length);
+  $("#cards").innerHTML = `<div class="gtop"><span class="tag">${esc(c.law)}</span><div class="stat-row"><span>Đã nhớ <b>${k}</b>/${CARDS.length}</span></div></div>
+    <div class="bar" style="margin-bottom:18px"><i style="width:${k/CARDS.length*100}%"></i></div>
+    <button class="flip" id="flip" aria-label="Lật thẻ"><div class="flip-in">
+      <div class="face front"><span class="label">Câu hỏi</span><div class="t">${esc(c.front)}</div><span class="hint">Bấm để xem đáp án</span></div>
+      <div class="face back"><span class="label">Đáp án</span><div class="t">${esc(c.back)}</div><span class="hint">${esc(c.note)}</span></div>
+    </div></button>
+    <div class="card-actions"><button class="btn ghost" id="again2">Ôn lại sau</button><button class="btn" id="gotit">Nhớ rồi</button></div>`;
+  $("#flip").onclick = () => $("#flip").classList.toggle("on");
+  $("#gotit").onclick = () => {
+    const id = deck.shift();
+    if (!known.includes(id)){ known.push(id); store.set("known",known); addXP(1); burst(); }
+    renderStats(); renderCard();
+  };
+  $("#again2").onclick = () => { const id = deck.shift(); deck.splice(Math.min(3,deck.length),0,id); known = known.filter(x=>x!==id); store.set("known",known); renderStats(); renderCard(); };
+}
+renderCard();
+
+/* ================= KHỞI ĐỘNG ================= */
+const startTab = (location.hash||"").slice(1) || store.get("tab","thuvien");
+showTab(startTab);
+setMode();
+if (store.get("bot", false)) setBot(true);
+(async () => {
+  try { sample = window.claude ? await window.claude.use("sample") : null; } catch { sample = null; }
+  setMode();
+})();
+requestAnimationFrame(placeInd);
+</script>
