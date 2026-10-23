@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lý thuyết luật y tế · Học theo trình tự</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--line:#e2e8f0;--ink:#0f172a;--muted:#64748b;--teal:#0f766e;--teal2:#14b8a6;--warn:#b45309;--warnbg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 18px;position:sticky;top:0;z-index:2}
+header .row{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+header h1{font-size:17px;margin:0;color:var(--teal)}
+header a{color:var(--muted);font-size:14px;text-decoration:none}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;max-width:760px;margin:10px auto 0}
+.bar i{display:block;height:100%;background:var(--teal2);transition:width .3s}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.toc button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 11px;cursor:pointer;color:var(--ink)}
+.toc button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.chap h2{font-size:22px;margin:0 0 4px}
+.goal{background:#ecfeff;border-left:4px solid var(--teal2);padding:10px 14px;border-radius:8px;margin:12px 0 18px;font-size:15px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.step h3{margin:0 0 8px;font-size:17px;color:var(--teal)}
+.step p{margin:8px 0;font-size:15.5px}
+.label{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-top:12px;font-weight:600}
+.ex{background:#f0fdf4;border-radius:8px;padding:9px 12px;font-size:15px}
+.mistake{background:#fef2f2;border-radius:8px;padding:9px 12px;font-size:15px}
+.src{font-size:13px;color:var(--muted);margin-top:10px}
+.verify{display:inline-block;background:var(--warnbg);color:var(--warn);border:1px solid #fde68a;font-size:12px;border-radius:6px;padding:2px 8px;margin-top:8px}
+.quiz{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.quiz h4{margin:0 0 8px;font-size:15px;color:var(--teal)}
+.quiz details{margin:8px 0;font-size:15px}
+.quiz summary{cursor:pointer;font-weight:600}
+.quiz p{margin:6px 0 0 4px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.nav button{font:inherit;font-size:15px;border:0;border-radius:10px;padding:10px 16px;background:var(--teal);color:#fff;cursor:pointer}
+.nav button:disabled{background:#cbd5e1;cursor:default}
+.note{font-size:13px;color:var(--muted);margin-top:24px;text-align:center}
+
+.lq{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.lq h3{margin:0 0 6px;font-size:17px;color:var(--teal)}
+.lq .opt{display:block;width:100%;text-align:left;font:inherit;font-size:15px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;margin:8px 0;cursor:pointer}
+.lq .opt:disabled{cursor:default}
+.lq .right{border-color:#22c55e;background:#f0fdf4}
+.lq .wrong{border-color:#ef4444;background:#fef2f2}
+.lq .fb{margin-top:10px;font-size:15px}
+.lq .sc{font-weight:700;color:var(--teal)}
+</style>
+</head>
+<body>
+<header>
+  <div class="row">
+    <h1>📚 Lý thuyết luật y tế</h1>
+    <a href="index.html">← Về sổ tay</a>
+  </div>
+  <div class="bar"><i id="prog"></i></div>
+</header>
+<main>
+  <div class="toc" id="toc"></div>
+  <div id="chap" class="chap"></div>
+  <section class="lq" id="lt-quiz">
+    <h3>Luyện câu hỏi lý thuyết</h3>
+    <p class="note" style="text-align:left;margin:0">Bộ câu hỏi về số hiệu và mốc hiệu lực của các văn bản. Ngày ban hành không nằm trong bộ này.</p>
+    <div class="row" style="justify-content:flex-start;margin-top:10px"><button class="nav" id="lt-start" style="border:0;border-radius:10px;padding:10px 16px;background:var(--teal);color:#fff;cursor:pointer">Bắt đầu 10 câu</button><span class="sc" id="lt-score"></span></div>
+    <div id="lt-body"></div>
+  </section>
+  <div class="nav">
+    <button id="prev">← Chương trước</button>
+    <button id="next">Chương sau →</button>
+  </div>
+  <p class="note" id="note"></p>
+</main>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let data = null, cur = 0;
+
+function render(){
+  const c = data.chuong[cur];
+  document.getElementById("prog").style.width = ((cur + 1) / data.chuong.length * 100) + "%";
+  document.querySelectorAll("#toc button").forEach((b, i) => b.classList.toggle("on", i === cur));
+  document.getElementById("chap").innerHTML = `
+    <div class="chap">
+      <div class="label">Chương ${cur + 1} / ${data.chuong.length}</div>
+      <h2>${esc(c.ten)}</h2>
+      <div class="goal"><b>Mục tiêu:</b> ${esc(c.muc_tieu)}</div>
+      ${c.buoc.map((b, i) => `
+        <div class="step">
+          <h3>${i + 1}. ${esc(b.tieu_de)}</h3>
+          <p>${esc(b.giai_thich)}</p>
+          <div class="label">Ví dụ</div>
+          <div class="ex">${esc(b.vi_du)}</div>
+          <div class="label">Lỗi hay gặp</div>
+          <div class="mistake">${esc(b.hay_nham)}</div>
+          <div class="src">Nguồn: ${esc(b.nguon)}</div>
+          ${b.verify ? `<span class="verify">⚠️ Chờ đối chiếu văn bản gốc</span>` : ""}
+        </div>`).join("")}
+      <div class="quiz">
+        <h4>Ôn nhanh</h4>
+        ${c.on_nhanh.map(q => `<details><summary>${esc(q.hoi)}</summary><p>${esc(q.dap)}</p></details>`).join("")}
+      </div>
+    </div>`;
+  document.getElementById("prev").disabled = cur === 0;
+  document.getElementById("next").disabled = cur === data.chuong.length - 1;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+async function boot(){
+  try {
+    data = await fetch("data/ly_thuyet.json").then(r => { if (!r.ok) throw new Error(); return r.json(); });
+  } catch {
+    document.getElementById("chap").innerHTML = `<p>Không đọc được dữ liệu. Hãy mở trang qua máy chủ địa phương (ví dụ python -m http.server).</p>`;
+    return;
+  }
+  document.getElementById("toc").innerHTML = data.chuong.map((c, i) =>
+    `<button data-i="${i}">${i + 1}. ${esc(c.ten)}</button>`).join("");
+  document.getElementById("toc").onclick = e => {
+    const b = e.target.closest("button[data-i]");
+    if (!b) return;
+    cur = +b.dataset.i; render();
+  };
+  document.getElementById("prev").onclick = () => { if (cur > 0) { cur--; render(); } };
+  document.getElementById("next").onclick = () => { if (cur < data.chuong.length - 1) { cur++; render(); } };
+  document.getElementById("note").textContent = data.meta.nguyen_tac;
+  render();
+}
+
+/* Luyện câu hỏi lý thuyết riêng */
+(async function(){
+  const Q = await fetch("data/quiz_lythuyet.json").then(r => r.ok ? r.json() : []).catch(() => []);
+  let list = [], i = 0, right = 0;
+  const body = () => document.getElementById("lt-body");
+  const score = () => document.getElementById("lt-score");
+  function show(){
+    if (i >= list.length){
+      body().innerHTML = '<p class="fb">Kết thúc: đúng ' + right + '/' + list.length + '.</p>';
+      score().textContent = "";
+      return;
+    }
+    const q = list[i];
+    body().innerHTML = '<p class="fb"><b>Câu ' + (i + 1) + '/' + list.length + ':</b> ' + q.q + '</p>' +
+      q.o.map((o, j) => '<button class="opt" data-j="' + j + '">' + o + '</button>').join("") +
+      '<div class="fb" id="lt-fb"></div>';
+    body().querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.j));
+  }
+  function answer(j){
+    const q = list[i];
+    const ok = j === q.a;
+    if (ok) right++;
+    body().querySelectorAll(".opt").forEach((b, k) => {
+      b.disabled = true;
+      if (k === q.a) b.classList.add("right");
+      else if (k === j) b.classList.add("wrong");
+    });
+    document.getElementById("lt-fb").innerHTML = (ok ? "Đúng. " : "Chưa đúng. ") + q.e +
+      '<br><button class="opt" id="lt-next" style="width:auto;margin-top:8px">Câu tiếp theo →</button>';
+    document.getElementById("lt-next").onclick = () => { i++; show(); };
+    score().textContent = "Đúng " + right + "/" + (i + 1);
+  }
+  document.getElementById("lt-start").onclick = () => {
+    list = [...Q].sort(() => Math.random() - 0.5).slice(0, 10);
+    i = 0; right = 0; show();
+  };
+})();
+boot();
+</script>
+</body>
+</html>
