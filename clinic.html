@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ca trực phòng khám · Luyện theo tình huống</title>
+<link rel="icon" href="data:,">
+<style>
+/* Bảng màu: một nền, một chữ, một màu nhấn. Màu đỏ chỉ dành cho sai/cấp cứu, vàng chỉ dành cho tiền. */
+:root{--bg:#0d1117;--panel:#161b22;--raise:#1c222b;--line:#262d36;--ink:#e6e8eb;--muted:#8a939e;--accent:#2fb5a0;--accent-ink:#0d1117;--bad:#e5674f;--ok:#3ccf8e;--gold:#e7b84a}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:12px}
+header{width:100%;max-width:880px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:12px}
+header h1{font-size:17px;margin:0;color:var(--ink);font-weight:700}
+.stats{display:flex;gap:14px;font-size:14px;flex-wrap:wrap;color:var(--muted)}
+.stats b{color:var(--ink)}
+main{width:100%;max-width:880px;flex:1}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.btn{font:inherit;font-size:15px;font-weight:600;border:1px solid var(--accent);border-radius:10px;padding:11px 18px;cursor:pointer;background:var(--accent);color:var(--accent-ink);text-decoration:none;display:inline-block}
+.btn:hover:not(:disabled){filter:brightness(1.07)}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover:not(:disabled){border-color:var(--muted)}
+.btn.red{background:transparent;border-color:var(--bad);color:var(--bad)}
+.btn.red:hover:not(:disabled){background:rgba(229,103,79,.1);filter:none}
+.btn:disabled{opacity:.4;cursor:default}
+#scene{position:relative;width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#11161d;margin-bottom:12px;line-height:0}
+.fx{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-weight:800;font-size:16px;color:var(--gold);text-shadow:0 1px 0 #000;animation:fxup 1.2s ease-out forwards;pointer-events:none;line-height:1}
+@keyframes fxup{0%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-44px)}}
+#scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated}
+.patient{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.tag{font-size:12px;background:rgba(47,181,160,.12);color:var(--accent);border-radius:6px;padding:3px 8px}
+.tag.verify{background:rgba(231,184,74,.14);color:var(--gold)}
+.tag.mode{background:var(--raise);color:var(--ink)}
+.name{font-size:18px;font-weight:700;margin:6px 0 0}
+.situation{font-size:16px;line-height:1.6;margin:8px 0 14px}
+.kw{display:inline-block;padding:0 6px;border-radius:6px;font-weight:700;border:1px solid;font-size:.95em}
+.kw-red{background:rgba(229,103,79,.12);color:var(--bad);border-color:var(--bad)}
+.kw-orange{background:rgba(231,184,74,.12);color:var(--gold);border-color:var(--gold)}
+.kw-blue{background:rgba(47,181,160,.12);color:var(--accent);border-color:var(--accent)}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;font:inherit;font-size:15px;background:var(--raise);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt.right{border-color:var(--ok);background:rgba(60,207,142,.1)}
+.opt.wrong{border-color:var(--bad);background:rgba(229,103,79,.1)}
+.opt:disabled{cursor:default}
+.feedback{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:15px;line-height:1.6}
+.feedback.ok{background:rgba(60,207,142,.08);border:1px solid var(--ok)}
+.feedback.no{background:rgba(229,103,79,.08);border:1px solid var(--bad)}
+.feedback .src{font-size:13px;color:var(--muted);margin-top:6px}
+.ex-row{margin-top:8px;line-height:1.6}
+.ex-row span{font-weight:700;color:var(--ink)}
+.ex-row ul{margin:4px 0 0 18px;padding:0;font-size:14px}
+.next{margin-top:12px;text-align:right}
+.bar{height:6px;background:var(--raise);border-radius:6px;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.center{text-align:center}
+.big{font-size:34px;font-weight:700;color:var(--ink)}
+.list{text-align:left;margin-top:14px;font-size:14px;color:var(--muted);max-height:220px;overflow:auto}
+.list div{padding:6px 0;border-bottom:1px solid var(--line)}
+.section-title{margin:28px 0 12px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:left}
+.shop{display:grid;gap:10px;text-align:left}
+.shop .it{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--raise);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.shop .it b{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.shop .it small{color:var(--muted);display:block;font-size:13px;margin-top:2px}
+.shop button{font:inherit;font-size:14px;border:1px solid var(--accent);border-radius:999px;padding:7px 16px;min-width:96px;background:transparent;color:var(--accent);font-weight:700;cursor:pointer;white-space:nowrap}
+.shop button:hover:not(:disabled){background:rgba(47,181,160,.12)}
+.shop button:disabled{border-color:var(--line);background:transparent;color:var(--muted);cursor:default;font-weight:600}
+.codex{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;text-align:left}
+.codex .row2{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--raise);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px;line-height:1.35}
+.pill{font-size:12px;border-radius:999px;padding:3px 10px;white-space:nowrap;font-weight:600}
+.pill.done{background:rgba(60,207,142,.14);color:var(--ok)}
+.pill.learn{background:rgba(231,184,74,.14);color:var(--gold)}
+.pill.none{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.hint{font-size:13px;color:var(--muted);text-align:left;margin:6px 0 0;line-height:1.5}
+.hidden{display:none !important}
+.note{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:6px;text-align:left}
+.modecard{font:inherit;text-align:left;display:flex;flex-direction:column;gap:4px;background:var(--raise);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .15s}
+.modecard b{font-size:16px;font-weight:700}
+.modecard small{font-size:13px;color:var(--muted);line-height:1.4}
+.modecard:hover:not(:disabled){border-color:var(--accent)}
+.modecard.red{border-color:rgba(229,103,79,.45)}
+.modecard.red:hover:not(:disabled){border-color:var(--bad)}
+.modecard:disabled{opacity:.4;cursor:not-allowed}
+#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,160%);opacity:0;pointer-events:none;background:var(--panel);border:1px solid var(--accent);color:var(--ink);padding:10px 16px;border-radius:10px;transition:transform .3s;z-index:9;font-size:14px;max-width:90vw}
+#toast.show{transform:translate(-50%,0);opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏥 Ca trực phòng khám</h1>
+  <div class="stats">
+    <span>💰 <b id="s-gold">0</b></span>
+    <span>⭐ <b id="s-rep">100%</b></span>
+    <span>🔥 chuỗi <b id="s-streak">0</b></span>
+    <button id="mute" class="btn ghost" style="padding:4px 10px;font-size:13px">🔊</button>
+  </div>
+</header>
+
+<main>
+  <section id="v-start" class="card center">
+    <h2 style="margin-top:4px">Phòng khám</h2>
+    <p style="color:var(--muted);line-height:1.6">Mỗi bệnh nhân là một tình huống từ bộ câu hỏi của app. Chọn cách xử lý đúng theo quy định. Dù đúng hay sai, bạn đều xem được giải thích và căn cứ pháp lý.</p>
+    <div class="modes">
+      <button class="modecard" id="btn-start"><b>Ca trực</b><small>10 bệnh nhân, nhịp bình thường</small></button>
+      <button class="modecard red" id="btn-rush"><b>⚡ Cấp cứu 60 giây</b><small>Làm nhanh, càng đúng càng nhiều điểm</small></button>
+      <button class="modecard" id="btn-audit"><b>📋 Thanh tra BHYT</b><small>Cần mua Khoa BHYT &amp; Giám định</small></button>
+      <button class="modecard" id="btn-daily"><b>📅 Ca trực hằng ngày</b><small>3 tình huống cố định mỗi ngày</small></button>
+    </div>
+    <div class="row"><a class="btn ghost" href="index.html">← Về sổ tay</a></div>
+    <p class="hint" id="audit-hint" style="text-align:center"></p>
+    <p class="hint" id="daily-hint" style="text-align:center"></p>
+    <p class="note" id="s-note"></p>
+
+    <div class="section-title" style="text-align:left">Sổ tay luật</div>
+    <p class="hint">Trả lời đúng 3 lần liên tiếp cho cùng một luật để lĩnh hội luật đó (kèm thưởng).</p>
+    <p class="hint" id="codex-sum"></p>
+    <div class="codex" id="codex"></div>
+
+    <div class="section-title" style="text-align:left">Chuyên khoa</div>
+    <div class="shop" id="depts"></div>
+
+    <div class="section-title" style="text-align:left">Nhân viên phụ quầy</div>
+    <p class="hint">Thuê sau khi lĩnh hội ít nhất một luật. Mỗi nhân viên tự sinh 10 vàng và 0,5 uy tín mỗi 30 giây khi trang đang mở. Tối đa 3 người.</p>
+    <div class="shop" id="staff"></div>
+
+    <div class="section-title" style="text-align:left">Cửa hàng phòng khám</div>
+    <div class="shop" id="shop"></div>
+  </section>
+
+  <section id="v-case" class="card hidden">
+    <div id="scene" aria-label="Quầy tiếp đón phòng khám"><canvas id="pix" width="192" height="108"></canvas></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="patient">
+      <div>
+        <span class="tag mode" id="c-mode"></span>
+        <span class="tag" id="c-law"></span>
+        <span class="tag verify hidden" id="c-verify">chờ đối chiếu</span>
+        <div class="name" id="c-name"></div>
+      </div>
+      <div style="font-size:13px;color:var(--muted);white-space:nowrap" id="c-count"></div>
+    </div>
+    <p class="situation" id="c-q"></p>
+    <div class="opts" id="c-opts"></div>
+    <div id="c-fb" class="hidden"></div>
+    <div class="next"><button class="btn hidden" id="btn-next">Bệnh nhân tiếp theo →</button></div>
+  </section>
+
+  <section id="v-end" class="card center hidden">
+    <h2 style="margin-top:4px" id="e-title">Hết ca trực</h2>
+    <div class="big" id="e-score"></div>
+    <p id="e-gold" style="color:var(--gold)"></p>
+    <p id="e-rep" style="color:var(--muted)"></p>
+    <p id="e-extra" style="color:var(--teal2)"></p>
+    <div class="list" id="e-list"></div>
+    <div class="row">
+      <button class="btn" id="btn-again">Về phòng khám</button>
+      <a class="btn ghost" href="index.html">← Về sổ tay</a>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+/* ============ Cảnh phòng khám vẽ bằng pixel (canvas 192×108, phóng to không làm mịn) ============ */
+const cv = document.getElementById("pix");
+const g = cv.getContext("2d");
+g.imageSmoothingEnabled = false;
+const W = 192, H = 108;
+
+const C = {
+  wall: "#cfe3dc", wallTop: "#a9c7be", wain: "#0f766e", wainHi: "#14b8a6",
+  floorA: "#d6e4df", floorB: "#c4d7d0", grout: "#aac2ba",
+  frame: "#334155", sky: "#9fd8ff", skyHi: "#dbf0ff",
+  outline: "#0f172a", teal: "#0f766e", tealL: "#14b8a6", tealD: "#115e59",
+  counterTop: "#e2e8f0", white: "#f8fafc", red: "#dc2626", brown: "#7c4a2d", brownD: "#5b3a22"
+};
+
+function R(x, y, w, h, c){ g.fillStyle = c; g.fillRect(x | 0, y | 0, w | 0, h | 0); }
+
+// Màu bầu trời và độ sáng theo giờ thực: sáng sớm, ban ngày, hoàng hôn, ban đêm
+function ambientNow(){
+  const h = new Date().getHours();
+  if (h >= 18 || h < 5) return { period: "night", sky: "#1e293b", skyHi: "#334155", lamp: 0.55, wash: "rgba(2,6,23,0.4)" };
+  if (h >= 16) return { period: "dusk", sky: "#fb923c", skyHi: "#fdba74", lamp: 0.4, wash: "rgba(120,53,15,0.12)" };
+  if (h < 10) return { period: "morning", sky: "#bae6fd", skyHi: "#e0f2fe", lamp: 0.3, wash: "rgba(0,0,0,0)" };
+  return { period: "day", sky: C.sky, skyHi: C.skyHi, lamp: 0.35, wash: "rgba(0,0,0,0)" };
+}
+
+function drawRoom(tick){
+  const amb = ambientNow();
+  // Tường và trần
+  R(0, 0, W, 72, C.wall);
+  R(0, 0, W, 6, C.wallTop);
+  R(0, 5, W, 1, "#8fb3a8");
+  // Chân tường xanh
+  R(0, 62, W, 10, C.wain);
+  R(0, 62, W, 1, C.wainHi);
+  // Sàn lát gạch
+  R(0, 72, W, H - 72, C.floorA);
+  for (let ty = 72, row = 0; ty < H; ty += 6, row++){
+    for (let tx = (row % 2) * 12 - 12; tx < W; tx += 24) R(tx, ty, 12, 6, C.floorB);
+    R(0, ty, W, 1, C.grout);
+  }
+  // Đèn trần và ánh sáng tỏa, sáng hơn khi trời tối
+  R(90, 3, 14, 2, "#e2e8f0");
+  R(92, 5, 10, 1, "#fff7d6");
+  const glow = g.createRadialGradient(97, 8, 2, 97, 8, 80);
+  glow.addColorStop(0, `rgba(255,247,214,${amb.lamp})`);
+  glow.addColorStop(1, "rgba(255,247,214,0)");
+  g.fillStyle = glow; g.fillRect(0, 0, W, 72);
+  // Lớp màu theo giờ
+  if (amb.wash !== "rgba(0,0,0,0)"){ g.fillStyle = amb.wash; g.fillRect(0, 0, W, 72); }
+
+  // Cửa sổ: trời theo giờ, có sao buổi đêm
+  R(116, 12, 38, 32, C.frame);
+  R(118, 14, 34, 28, amb.sky);
+  R(118, 14, 34, 6, amb.skyHi);
+  R(134, 14, 2, 28, C.frame);
+  R(118, 27, 34, 2, C.frame);
+  if (amb.period === "night"){
+    [[121, 18], [128, 22], [141, 19], [146, 25], [124, 30], [139, 23]].forEach(([x, y]) => R(x, y, 1, 1, "#fef9c3"));
+  } else {
+    R(121, 20, 8, 2, "#ffffff"); R(123, 19, 4, 1, "#ffffff");
+    R(140, 32, 10, 2, "#ffffff"); R(142, 31, 5, 1, "#ffffff");
+  }
+
+  // Poster chữ thập đỏ
+  R(24, 12, 24, 30, "#94a3b8");
+  R(25, 13, 22, 28, "#fef3c7");
+  R(34, 18, 4, 14, C.red);
+  R(29, 23, 14, 4, C.red);
+  R(27, 36, 18, 1, "#a16207"); R(27, 38, 14, 1, "#a16207");
+
+  // Bảng thông báo
+  R(54, 12, 32, 16, "#e2e8f0");
+  R(53, 11, 34, 1, "#64748b"); R(53, 28, 34, 1, "#64748b");
+  for (let i = 0; i < 4; i++) R(57, 16 + i * 3, 24 - (i % 2) * 6, 1, "#64748b");
+
+  // Đồng hồ treo tường
+  g.fillStyle = C.white; g.beginPath(); g.arc(176, 22, 7, 0, Math.PI * 2); g.fill();
+  g.strokeStyle = C.outline; g.lineWidth = 1; g.beginPath(); g.arc(176, 22, 7, 0, Math.PI * 2); g.stroke();
+  const sec = Math.floor(tick / 30) % 12;
+  R(176, 17, 1, 5, C.outline);
+  R(176, 22, 3, 1, C.outline);
+  P_dot(176 + Math.round(Math.cos(sec / 12 * Math.PI * 2 - Math.PI / 2) * 4), 22 + Math.round(Math.sin(sec / 12 * Math.PI * 2 - Math.PI / 2) * 4), C.red);
+
+  // Cửa ra vào và biển lối thoát
+  R(2, 26, 22, 46, C.brownD);
+  R(4, 28, 18, 44, C.brown);
+  R(18, 50, 2, 2, "#facc15");
+  R(6, 20, 14, 5, "#16a34a");
+  R(9, 21, 8, 2, "#dcfce7");
+
+  // Kệ thuốc có chai lọ
+  R(156, 42, 32, 2, C.brown);
+  const bottles = ["#f26b4f", "#38bdf8", "#34d399", "#facc15", "#a78bfa", "#f472b6"];
+  bottles.forEach((c, i) => {
+    R(158 + i * 5, 34, 3, 8, c);
+    R(158 + i * 5, 33, 3, 1, C.outline);
+  });
+  R(156, 44, 32, 1, C.brownD);
+
+  // Ghế chờ dài
+  R(22, 54, 36, 2, C.tealD);
+  R(22, 56, 36, 5, C.teal);
+  R(24, 61, 3, 11, C.frame);
+  R(52, 61, 3, 11, C.frame);
+  R(22, 54, 36, 1, C.tealL);
+
+  // Cây xanh
+  plant(72, 90);
+  plant(186, 96);
+  // Đồ trang trí đã mua
+  if (decorOwned.includes("plant")) plant(40, 96);
+  if (decorOwned.includes("water")){
+    R(96, 54, 8, 18, "#e2e8f0");
+    R(97, 45, 6, 9, "#38bdf8");
+    R(97, 44, 6, 1, "#0ea5e9");
+    R(99, 62, 2, 1, "#94a3b8");
+  }
+  if (decorOwned.includes("poster")){
+    R(94, 12, 14, 18, "#94a3b8");
+    R(95, 13, 12, 16, "#e0f2fe");
+    R(99, 17, 4, 8, C.teal);
+  }
+}
+function P_dot(x, y, c){ R(x, y, 1, 1, c); }
+
+let decorOwned = [];
+let waiting = [];   // bệnh nhân đang ngồi chờ trên ghế
+function plant(x, y){
+  R(x - 1, y - 2, 10, 2, "#7c2d12");
+  R(x, y, 8, 10, "#9a3412");
+  R(x + 1, y + 1, 1, 8, "#b45309");
+  R(x - 3, y - 14, 4, 12, "#166534");
+  R(x + 1, y - 18, 4, 16, "#15803d");
+  R(x + 5, y - 12, 4, 10, "#166534");
+  R(x - 1, y - 20, 2, 4, "#22c55e");
+}
+
+// Nhân viên tiếp đón sau quầy
+const RECEP = { skin: "#f1c9a5", hair: "#3b2a1e", body: "#f8fafc", coat: true, pants: "#334155", shoe: "#1f2937", steth: true };
+
+// Vẽ một người từ các khối pixel. feet = y chân, cx = tâm. f: {walk: -1 đứng | 0 | 1, face: 'n'|'s'|'f', hx, bob, folder}
+function human(o, cx, feet, f){
+  const s = f.walk < 0 ? 0 : (f.walk ? 1 : -1);
+  const hx = f.hx || 0;
+  const by = f.bob || 0;
+  const feetY = feet + by;
+  // bóng dưới chân
+  R(cx - 5, feet, 11, 1, "rgba(0,0,0,0.25)");
+
+  // chân và giày
+  R(cx - 3 + s, feetY - 9, 3, 7, o.pants);
+  R(cx + 1 - s, feetY - 9, 3, 7, o.pants);
+  R(cx - 3 + s, feetY - 2, 3, 2, o.shoe);
+  R(cx + 1 - s, feetY - 2, 3, 2, o.shoe);
+
+  // thân
+  R(cx - 4, feetY - 18, 8, 9, C.outline);
+  R(cx - 3, feetY - 18, 6, 8, o.body);
+  if (o.coat){
+    R(cx - 1, feetY - 18, 2, 3, o.collar || C.teal);
+    R(cx - 2, feetY - 16, 1, 4, "#cbd5e1");
+    R(cx + 1, feetY - 16, 1, 4, "#cbd5e1");
+  }
+  if (o.steth){
+    R(cx - 2, feetY - 15, 1, 4, "#334155");
+    R(cx + 2, feetY - 15, 1, 4, "#334155");
+    R(cx - 2, feetY - 11, 5, 1, "#334155");
+  }
+  if (o.tag) R(cx + 1, feetY - 15, 2, 1, "#38bdf8");
+
+  // tay (đối xứng với chân)
+  R(cx - 6 - s, feetY - 17, 2, 7, o.body);
+  R(cx - 6 - s, feetY - 10, 2, 2, o.skin);
+  R(cx + 4 + s, feetY - 17, 2, 7, o.body);
+  R(cx + 4 + s, feetY - 10, 2, 2, o.skin);
+  if (f.folder){
+    R(cx + 5 + s, feetY - 14, 4, 5, "#fef3c7");
+    R(cx + 5 + s, feetY - 14, 4, 1, "#a16207");
+  }
+
+  // cổ
+  R(cx - 1 + hx, feetY - 20, 3, 3, o.skin);
+
+  // đầu
+  const hy = feetY - 28;
+  R(cx - 4 + hx, hy, 9, 9, C.outline);
+  R(cx - 3 + hx, hy + 1, 7, 7, o.skin);
+  // tóc
+  if (o.longHair) R(cx - 5 + hx, hy + 2, 2, 10, o.hair);
+  R(cx - 3 + hx, hy, 7, 2, o.hair);
+  R(cx - 4 + hx, hy + 2, 1, 4, o.hair);
+  R(cx + 4 + hx, hy + 2, 1, 4, o.hair);
+  R(cx - 3 + hx, hy + 3, 3, 1, o.hair);
+  if (o.bald) R(cx - 3 + hx, hy, 7, 3, o.skin);
+  // mắt
+  if (!f.blink){
+    R(cx - 2 + hx, hy + 5, 1, 1, C.outline);
+    R(cx + 1 + hx, hy + 5, 1, 1, C.outline);
+  } else {
+    R(cx - 2 + hx, hy + 5, 4, 1, o.skinD || "#b45309");
+  }
+  // má
+  R(cx - 3 + hx, hy + 7, 1, 1, "#fca5a5");
+  R(cx + 3 + hx, hy + 7, 1, 1, "#fca5a5");
+  // miệng
+  const my = hy + 7;
+  if (f.face === "s"){
+    R(cx - 1 + hx, my, 1, 1, "#7c2d12");
+    R(cx + 2 + hx, my, 1, 1, "#7c2d12");
+    R(cx + hx, my + 1, 1, 1, "#7c2d12");
+  } else if (f.face === "f"){
+    R(cx - 1 + hx, my + 1, 1, 1, "#7c2d12");
+    R(cx + 2 + hx, my + 1, 1, 1, "#7c2d12");
+    R(cx + hx, my, 1, 1, "#7c2d12");
+  } else {
+    R(cx - 1 + hx, my + 1, 3, 1, "#7c2d12");
+  }
+  // Phụ kiện theo kiểu bệnh nhân
+  if (o.glasses) for (const fx of [cx - 3 + hx, cx + hx]){
+    R(fx, hy + 4, 3, 1, C.outline); R(fx, hy + 6, 3, 1, C.outline);
+    R(fx, hy + 5, 1, 1, C.outline); R(fx + 2, hy + 5, 1, 1, C.outline);
+  }
+  if (o.hat){ R(cx - 4 + hx, hy - 1, 9, 2, o.hat); R(cx - 5 + hx, hy + 1, 11, 1, o.hat); }
+  if (o.mask) R(cx - 2 + hx, hy + 6, 5, 3, "#e2e8f0");
+  if (o.belly) R(cx - 2, feetY - 14, 5, 4, o.belly);
+  if (o.dress) R(cx - 5, feetY - 12, 10, 6, o.dress);
+  if (o.cane){ R(cx - 9, feetY - 17, 1, 17, "#78350f"); R(cx - 10, feetY - 17, 2, 1, "#78350f"); }
+  if (o.bandage){ R(cx - 7, feetY - 14, 3, 3, C.white); R(cx - 6, feetY - 13, 1, 1, C.red); }
+  if (o.toy){ R(cx + 7, feetY - 4, 3, 3, "#facc15"); R(cx + 7, feetY - 4, 3, 1, "#fde047"); }
+}
+
+// Quầy tiếp đón, màn hình, đồ đạc trên quầy
+function drawCounter(tick){
+  // Thân quầy
+  R(114, 60, 72, 32, C.teal);
+  R(114, 60, 72, 1, C.tealL);
+  R(114, 70, 72, 1, C.tealD);
+  R(114, 82, 72, 1, C.tealD);
+  for (let x = 118; x < 184; x += 10) R(x, 74, 1, 6, C.tealD);
+  // Mặt quầy
+  R(112, 57, 76, 3, C.counterTop);
+  R(112, 60, 76, 1, "#94a3b8");
+  // Màn hình
+  R(124, 42, 18, 13, C.outline);
+  R(125, 43, 16, 11, "#1f2937");
+  R(126, 44, 14, 9, "#7dd3fc");
+  R(126, 44 + (Math.floor(tick / 18) % 8), 14, 1, "#e0f2fe");
+  R(131, 55, 4, 2, "#374151");
+  R(127, 57, 12, 1, "#475569");
+  // Bàn phím, giấy, cốc
+  R(144, 56, 8, 2, "#64748b");
+  R(152, 55, 8, 3, C.white);
+  R(153, 56, 5, 1, "#94a3b8");
+  R(164, 52, 4, 5, C.white);
+  R(168, 53, 1, 2, C.white);
+  R(165, 52, 2, 1, "#78350f");
+}
+
+const patientPal = {
+  skin: ["#f1c9a5", "#d9a578", "#8d5524", "#f5d0b0"],
+  hair: ["#111827", "#7c2d12", "#92400e", "#374151", "#d6d3d1"],
+  shirt: ["#f26b4f", "#3b82f6", "#ec4899", "#10b981", "#a855f7", "#f59e0b"],
+  pants: ["#1e293b", "#334155", "#6b5b4b", "#4b5563"]
+};
+const pick = a => a[Math.floor(Math.random() * a.length)];
+
+let patient = null;
+let tickN = 0;
+const pState = { x: -14, target: 98, walking: false, face: "n", blink: false, shake: 0, hx: 0, bubble: "" };
+
+// Bong bóng cảm xúc trên đầu bệnh nhân
+function drawBubble(cx, y, text){
+  R(cx - 7, y - 8, 14, 9, "#ffffff");
+  R(cx - 1, y + 1, 2, 2, "#ffffff");
+  g.font = "9px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+  g.fillStyle = "#0f172a"; g.fillText(text, cx, y - 4);
+}
+
+// Chín kiểu bệnh nhân: mỗi câu lấy một kiểu khác nhau (trang phục, tóc, phụ kiện)
+const ARCHS = [
+  { name: "Thanh niên",         hair: "#111827", body: "#3b82f6", pants: "#1e293b" },
+  { name: "Phụ nữ váy",         hair: "#7c2d12", body: "#ec4899", pants: "#db2777", longHair: true, dress: "#db2777" },
+  { name: "Cụ ông",             hair: "#e5e7eb", body: "#a16207", pants: "#6b4f2a", glasses: true, cane: true },
+  { name: "Bé",                 hair: "#92400e", body: "#facc15", pants: "#2563eb", toy: true },
+  { name: "Đeo khẩu trang",     hair: "#111827", body: "#64748b", pants: "#1e3a5f", mask: true },
+  { name: "Phụ nữ mang thai",   hair: "#3f2d20", body: "#14b8a6", pants: "#334155", longHair: true, belly: "#5eead4" },
+  { name: "Bị thương",          hair: "#7c2d12", body: "#f97316", pants: "#6b7280", bandage: true },
+  { name: "Người hói",          hair: "#374151", body: "#8b5cf6", pants: "#475569", bald: true, glasses: true },
+  { name: "Đội mũ",             hair: "#111827", body: "#16a34a", pants: "#111827", hat: "#dc2626" }
+];
+function newPatient(arch){
+  const a = arch || ARCHS[0];
+  patient = { skin: pick(patientPal.skin), shoe: "#1f2937", longHair: false, folder: true, ...a };
+  pState.x = -14; pState.walking = true; pState.face = "n"; pState.reactKind = null; pState.bubble = "";
+}
+
+function loop(){
+  tickN++;
+  const t = tickN;
+  drawRoom(t);
+  // Nhân viên: thở nhẹ và gật đầu khi đúng
+  const recepBob = (Math.floor(t / 40) % 2) ? -1 : 0;
+  const nod = recepNod > 0 ? 2 : 0;
+  recepNod = Math.max(0, recepNod - 1);
+  human(RECEP, 164, 66, { walk: -1, face: recepFace, bob: recepBob + nod, hx: 0 });
+  drawCounter(t);
+  // Hàng chờ ngồi trên ghế
+  waiting.forEach((w, i) => human(w, 30 + i * 12, 57, { walk: -1, face: "n", blink: (t % 120) < 4, hx: 0, bob: 0 }));
+
+  // Bệnh nhân đi vào, rồi đứng trước quầy
+  if (patient){
+    if (pState.walking){
+      pState.x += 0.8;
+      if (t % 9 === 0) sfx("step");
+      if (pState.x >= pState.target){ pState.x = pState.target; pState.walking = false; pState.bubble = "💬"; }
+    }
+    let walk = pState.walking ? (Math.floor(t / 7) % 2) : -1;
+    let hx = 0;
+    if (pState.reactKind === "no" && !pState.walking) hx = (Math.floor(t / 3) % 2) ? 1 : -1;
+    human(patient, Math.round(pState.x), 100, {
+      walk, face: pState.reactKind === "ok" ? "s" : pState.reactKind === "no" ? "f" : "n",
+      blink: (t % 150) < 5, hx, bob: 0, folder: true
+    });
+    if (!pState.walking && pState.bubble) drawBubble(Math.round(pState.x), 62, pState.bubble);
+  }
+  requestAnimationFrame(loop);
+}
+
+let recepNod = 0, recepFace = "n";
+window.clinicScene = {
+  next(arch){ newPatient(arch); recepFace = "n"; },
+  react(ok){
+    if (!patient) return;
+    pState.reactKind = ok ? "ok" : "no";
+    pState.bubble = ok ? "😊" : "⚠️";
+    recepNod = ok ? 12 : 0;
+    recepFace = ok ? "s" : "f";
+  }
+};
+loop();
+
+/* ============ Logic ca trực ============ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const KEY = "lyt_clinic";
+const NAMES = ["Nguyễn Văn An","Trần Thị Bình","Lê Hoàng Cường","Phạm Thu Dung","Hoàng Minh Đức","Vũ Thị Hà","Đặng Quốc Khánh","Bùi Ngọc Lan","Đỗ Anh Tuấn","Ngô Thị Yến"];
+
+// Từ khóa nổi bật trong hồ sơ để quét nhanh
+const KW = [
+  { re: /cấp cứu/gi, cls: "kw-red", icon: "🚑 " },
+  { re: /trái tuyến/gi, cls: "kw-orange", icon: "⚠️ " },
+  { re: /\b\d+\s*(ngày|tháng)\b/gi, cls: "kw-blue", icon: "⏱ " }
+];
+function highlight(text){
+  let html = esc(text);
+  KW.forEach(k => { html = html.replace(k.re, m => `<span class="kw ${k.cls}">${k.icon}${m}</span>`); });
+  return html;
+}
+
+function toast(msg){
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toast.t);
+  toast.t = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+/* ---- Âm thanh: tiếng ting khi có vàng, buzz khi sai, bước chân, còi cấp cứu ---- */
+let actx = null, siren = null;
+let muted = localStorage.getItem("lyt_mute") === "1";
+function ac(){
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+  if (actx.state === "suspended") actx.resume();
+  return actx;
+}
+function tone(freq, t0, dur, type = "sine", vol = 0.12, sweepTo = null){
+  const a = ac(), o = a.createOscillator(), gn = a.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(freq, a.currentTime + t0);
+  if (sweepTo) o.frequency.exponentialRampToValueAtTime(sweepTo, a.currentTime + t0 + dur);
+  gn.gain.setValueAtTime(vol, a.currentTime + t0);
+  gn.gain.exponentialRampToValueAtTime(0.001, a.currentTime + t0 + dur);
+  o.connect(gn); gn.connect(a.destination);
+  o.start(a.currentTime + t0); o.stop(a.currentTime + t0 + dur + 0.02);
+}
+function sfx(kind){
+  if (muted) return;
+  try {
+    if (kind === "ting"){ tone(1318, 0, 0.12); tone(1760, 0.09, 0.2); }
+    else if (kind === "ok"){ tone(523, 0, 0.15); tone(659, 0.12, 0.15); tone(784, 0.24, 0.25); }
+    else if (kind === "buzz"){ tone(180, 0, 0.3, "sawtooth", 0.08, 120); }
+    else if (kind === "step"){ tone(90 + Math.random() * 40, 0, 0.05, "square", 0.03); }
+  } catch (e) {}
+}
+function startSiren(){
+  if (muted || siren) return;
+  try {
+    const a = ac();
+    const o = a.createOscillator(), gn = a.createGain();
+    o.type = "triangle"; o.frequency.value = 700; gn.gain.value = 0.04;
+    const lfo = a.createOscillator(), lg = a.createGain();
+    lfo.frequency.value = 0.5; lg.gain.value = 300;
+    lfo.connect(lg); lg.connect(o.frequency);
+    o.connect(gn); gn.connect(a.destination);
+    o.start(); lfo.start();
+    siren = { o, lfo };
+  } catch (e) {}
+}
+function stopSiren(){
+  if (!siren) return;
+  try { siren.o.stop(); siren.lfo.stop(); } catch (e) {}
+  siren = null;
+}
+// Chữ "+vàng" bay lên trên khung cảnh
+function floatText(text){
+  const el = document.createElement("div");
+  el.className = "fx";
+  el.textContent = text;
+  $("#scene").appendChild(el);
+  setTimeout(() => el.remove(), 1300);
+}
+
+let cases = [], queue = [], idx = 0, correct = 0, gold = 0, streak = 0, rep = 100, met = new Map();
+let stats = { gold: 0, rep: 100, streak: 0, total: 0, decor: [], depts: [], staff: 0, lawProg: {}, lawDone: [], daily: { last: "", streak: 0 } };
+
+const loadStats = () => { try { const v = JSON.parse(localStorage.getItem(KEY)); if (v) stats = { ...stats, ...v }; } catch {} };
+const saveStats = () => { try { localStorage.setItem(KEY, JSON.stringify(stats)); } catch {} };
+const showStats = () => {
+  $("#s-gold").textContent = stats.gold;
+  $("#s-rep").textContent = Math.round(stats.rep) + "%";
+  $("#s-streak").textContent = stats.streak;
+};
+function show(id){ ["v-start","v-case","v-end"].forEach(x => $("#"+x).classList.toggle("hidden", x !== id)); }
+
+async function loadCases(){
+  const [laws, quiz, his, nt] = await Promise.all(["laws","quiz","quiz_his","quiz_nentang"].map(n =>
+    fetch(`data/${n}.json`).then(r => r.ok ? r.json() : []).catch(() => [])));
+  const lawOf = id => laws.find(l => l.id === id) || {};
+  const fromQuiz = quiz.filter(q => lawOf(q.t).status !== "het")
+    .map(q => ({ q: q.q, o: q.o, a: q.a, e: q.e || "", law: (lawOf(q.t).name || "") + " · " + (lawOf(q.t).so || ""), key: "q:" + q.t, verify: !!q.verify, pts: (lawOf(q.t).points || []).slice(0, 3) }));
+  const fromHis = his.map(q => ({ q: q.q, o: q.o, a: q.a, e: q.e || "", law: q.law + (q.src ? " · " + q.src : ""), key: "h:" + q.law, his: true, verify: !!q.verify }));
+  const fromNt = nt.map(q => ({ q: q.q, o: q.o, a: q.a, e: q.e || "", law: q.law || q.src || "Nền tảng pháp luật", key: "n:" + (q.law || "Nền tảng pháp luật"), verify: !!q.verify }));
+  return [...fromQuiz, ...fromHis, ...fromNt];
+}
+
+function takeRandom(arr, n){
+  const pool = [...arr], out = [];
+  while (out.length < n && pool.length) out.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+  return out;
+}
+function todayKey(){
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+// Chọn cố định theo chuỗi (ngày): mọi người trong cùng ngày gặp cùng 3 tình huống
+function seededPick(arr, n, seedStr){
+  let s = 0;
+  for (const ch of seedStr) s = (s * 31 + ch.charCodeAt(0)) >>> 0;
+  const rnd = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+  const pool = [...arr], out = [];
+  while (out.length < n && pool.length) out.push(pool.splice(Math.floor(rnd() * pool.length), 1)[0]);
+  return out;
+}
+
+// Thanh tra: một hồ sơ đã xử lý, người chơi phải xét đúng hay sai
+function makeClaim(c){
+  const ok = Math.random() < 0.5;
+  const wrong = c.o.map((_, i) => i).filter(i => i !== c.a);
+  const claimIdx = ok ? c.a : wrong[Math.floor(Math.random() * wrong.length)];
+  return { ...c, audit: true, claim: c.o[claimIdx], claimOk: ok };
+}
+
+function buildQueue(m){
+  if (m === "daily") return seededPick(cases, 3, todayKey());
+  if (m === "rush"){
+    const q = takeRandom(cases, 200);
+    while (q.length < 200) q.push(cases[Math.floor(Math.random() * cases.length)]);
+    return q;
+  }
+  if (m === "audit") return takeRandom(cases.filter(c => !c.his), 10).map(makeClaim);
+  // Ca trực thường; có Khoa CNTT thì 3/10 tình huống là sự cố HIS
+  if (stats.depts.includes("cntt")){
+    const his = takeRandom(cases.filter(c => c.his), 3);
+    const rest = takeRandom(cases.filter(c => !c.his), 7);
+    return [...his, ...rest].sort(() => Math.random() - 0.5);
+  }
+  return takeRandom(cases, 10);
+}
+
+let mode = "normal", timer = null, timeLeft = 0, answered = 0;
+const MODE_NAME = { normal: "Ca trực", rush: "Trực cấp cứu", audit: "Thanh tra BHYT", daily: "Ca trực hằng ngày" };
+
+function startSession(m = "normal"){
+  mode = m;
+  clearInterval(timer);
+  queue = buildQueue(m);
+  idx = 0; correct = 0; gold = 0; streak = 0; rep = stats.rep; met = new Map(); answered = 0;
+  // Xáo thứ tự kiểu bệnh nhân để hai câu liên tiếp thường khác nhau
+  const order = [...ARCHS].sort(() => Math.random() - 0.5);
+  queue.forEach((c, i) => { c.arch = order[i % order.length]; });
+  $("#c-mode").textContent = MODE_NAME[m];
+  if (m === "rush") startSiren(); else stopSiren();
+  show("v-case");
+  if (m === "rush"){
+    timeLeft = 60;
+    timer = setInterval(() => {
+      timeLeft--;
+      updateCount();
+      if (timeLeft <= 0){ clearInterval(timer); endSession(); }
+    }, 1000);
+  }
+  loadCase();
+}
+
+function updateCount(){
+  $("#c-count").textContent = mode === "rush" ? `⏱ ${timeLeft}s · đúng ${correct}` : `${idx + 1} / ${queue.length}`;
+}
+
+function loadCase(){
+  const c = queue[idx];
+  const choices = c.audit ? ["Đúng quy định", "Sai quy định"] : c.o;
+  const correctIdx = c.audit ? (c.claimOk ? 0 : 1) : c.a;
+  const order = choices.map((_, i) => i).sort(() => Math.random() - 0.5);
+  c.view = { o: order.map(i => choices[i]), a: order.indexOf(correctIdx) };
+  $("#c-law").textContent = c.law;
+  $("#c-verify").classList.toggle("hidden", !c.verify);
+  $("#c-name").textContent = "Bệnh nhân: " + NAMES[(idx * 3 + c.q.length) % NAMES.length];
+  updateCount();
+  $("#bar").style.width = (idx / queue.length * 100) + "%";
+  const qText = c.audit ? `Hồ sơ đã xử lý: "${c.claim}". Quyết định này đúng hay sai?` : c.q;
+  $("#c-q").innerHTML = highlight(qText);
+  $("#c-fb").classList.add("hidden");
+  $("#btn-next").classList.add("hidden");
+  window.clinicScene.next(c.arch);
+  // Hai người kế tiếp ngồi chờ trên ghế
+  waiting = queue.slice(idx + 1, idx + 3).map(w => ({ skin: pick(patientPal.skin), shoe: "#1f2937", longHair: false, ...w.arch }));
+  const box = $("#c-opts");
+  box.innerHTML = "";
+  c.view.o.forEach((text, i) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = String.fromCharCode(65 + i) + ". " + text;
+    b.onclick = () => answer(i, b);
+    box.appendChild(b);
+  });
+}
+
+function answer(i){
+  const c = queue[idx];
+  const ok = i === c.view.a;
+  [...$("#c-opts").children].forEach((b, j) => {
+    b.disabled = true;
+    if (j === c.view.a) b.classList.add("right");
+    else if (j === i) b.classList.add("wrong");
+  });
+  window.clinicScene.react(ok);
+  answered++;
+  if (ok){
+    correct++; streak++;
+    let reward = 50 + streak * 5 + (decorOwned.includes("poster") ? 5 : 0);
+    if (mode === "rush" && stats.depts.includes("duoc")) reward += 10;
+    gold += reward; stats.gold += reward;
+    sfx("ting");
+    floatText("+" + reward + " vàng");
+    rep = Math.min(100, rep + 2 + (decorOwned.includes("plant") ? 1 : 0));
+  } else {
+    streak = 0;
+    rep = Math.max(10, rep - (decorOwned.includes("water") ? 3 : 5));
+    sfx("buzz");
+  }
+  stats.rep = rep; stats.streak = streak; stats.total++;
+  met.set(c.law, (met.get(c.law) || 0) + (ok ? 1 : 0));
+  // Sổ tay luật: đúng 3 lần liên tiếp cho cùng luật thì lĩnh hội
+  const k = c.key || c.law;
+  stats.lawProg[k] = ok ? (stats.lawProg[k] || 0) + 1 : 0;
+  if (ok && stats.lawProg[k] >= 3 && !stats.lawDone.includes(k)){
+    stats.lawDone.push(k);
+    stats.gold += 100;
+    gold += 100;
+    toast(`📖 Đã lĩnh hội: ${c.law.split(" · ")[0]} (+100 vàng)`);
+  }
+  saveStats(); showStats();
+  const fb = $("#c-fb");
+  fb.className = "feedback " + (ok ? "ok" : "no");
+  // Giải thích đầy đủ: đáp án đúng, lựa chọn của bạn, lý do, điểm cần nhớ của luật, và trạng thái nguồn
+  let html = `<b>${ok ? "Đúng!" : "Chưa đúng."}</b>`;
+  html += `<div class="ex-row"><span>Đáp án đúng:</span> ${esc(c.view.o[c.view.a])}</div>`;
+  if (!ok) html += `<div class="ex-row"><span>Lựa chọn của bạn:</span> ${esc(c.view.o[i])} — chưa khớp với quy định.</div>`;
+  html += `<div class="ex-row"><span>Vì sao:</span> ${esc(c.e)}</div>`;
+  if (c.pts && c.pts.length) html += `<div class="ex-row"><span>Điểm cần nhớ trong luật này:</span><ul>${c.pts.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>`;
+  if (c.verify) html += `<div class="src">⚠️ Căn cứ đang chờ đối chiếu văn bản gốc.</div>`;
+  html += `<div class="src">Căn cứ: ${esc(c.law)}</div>`;
+  fb.innerHTML = html;
+  $("#btn-next").textContent = idx + 1 < queue.length ? "Bệnh nhân tiếp theo →" : "Xem kết quả";
+  $("#btn-next").classList.remove("hidden");
+}
+
+$("#btn-next").onclick = () => {
+  idx++;
+  if (mode !== "rush" && idx >= queue.length) return endSession();
+  loadCase();
+};
+
+/* ---- Cửa hàng, chuyên khoa, nhân viên ---- */
+const SHOP = [
+  { id: "plant",  name: "Cây xanh",         cost: 50,  desc: "+1 uy tín mỗi câu đúng" },
+  { id: "water",  name: "Máy lọc nước",     cost: 80,  desc: "Câu sai chỉ trừ 3 uy tín thay vì 5" },
+  { id: "poster", name: "Poster BHYT",      cost: 120, desc: "+5 vàng mỗi câu đúng" }
+];
+const DEPTS = [
+  { id: "duoc",  name: "Khoa Dược & Cấp cứu",      cost: 150, desc: "+10 vàng mỗi câu đúng khi trực cấp cứu" },
+  { id: "bhyt",  name: "Khoa BHYT & Giám định",    cost: 250, desc: "Mở chế độ Thanh tra BHYT" },
+  { id: "cntt",  name: "Khoa CNTT & HIS",          cost: 300, desc: "Ca trực có thêm tình huống sự cố HIS" }
+];
+
+function renderShop(){
+  decorOwned = stats.decor || [];
+  $("#shop").innerHTML = SHOP.map(s => {
+    const own = decorOwned.includes(s.id);
+    const cant = own || stats.gold < s.cost;
+    return `<div class="it"><div><b>${s.name}</b><small>${s.desc}</small></div><button data-buy="decor:${s.id}" ${cant ? "disabled" : ""}>${own ? "Đã có" : s.cost + " vàng"}</button></div>`;
+  }).join("");
+
+  $("#depts").innerHTML = DEPTS.map(d => {
+    const own = stats.depts.includes(d.id);
+    const cant = own || stats.gold < d.cost;
+    return `<div class="it"><div><b>${d.name}</b><small>${d.desc}</small></div><button data-buy="dept:${d.id}" ${cant ? "disabled" : ""}>${own ? "Đã mở" : d.cost + " vàng"}</button></div>`;
+  }).join("");
+
+  const sCost = 200 * (stats.staff + 1);
+  const sCant = stats.staff >= 3 || stats.gold < sCost || stats.lawDone.length < 1;
+  $("#staff").innerHTML = `<div class="it"><div><b>Y sĩ phụ quầy</b><small>Đã thuê: ${stats.staff}/3 · thu nhập ${stats.staff * 10} vàng/30 giây</small></div><button data-buy="staff:1" ${sCant ? "disabled" : ""}>${stats.staff >= 3 ? "Đủ 3 người" : sCost + " vàng"}</button></div>`;
+}
+
+function buy(kind, id){
+  if (kind === "decor"){
+    const s = SHOP.find(x => x.id === id);
+    stats.decor = stats.decor || [];
+    if (!s || stats.decor.includes(id) || stats.gold < s.cost) return;
+    stats.gold -= s.cost;
+    stats.decor.push(id);
+  } else if (kind === "dept"){
+    const d = DEPTS.find(x => x.id === id);
+    if (!d || stats.depts.includes(id) || stats.gold < d.cost) return;
+    stats.gold -= d.cost;
+    stats.depts.push(id);
+  } else if (kind === "staff"){
+    const cost = 200 * (stats.staff + 1);
+    if (stats.staff >= 3 || stats.gold < cost || stats.lawDone.length < 1) return;
+    stats.gold -= cost;
+    stats.staff++;
+  }
+  saveStats(); showStats(); renderShop(); renderStart();
+}
+
+/* ---- Sổ tay luật ---- */
+function renderCodex(){
+  const seen = new Map();
+  cases.forEach(c => { if (!seen.has(c.key)) seen.set(c.key, c.law.split(" · ")[0]); });
+  const rows = [...seen.entries()].map(([k, name]) => {
+    const done = stats.lawDone.includes(k);
+    const prog = stats.lawProg[k] || 0;
+    const pill = done ? `<span class="pill done">Đã lĩnh hội</span>`
+      : prog > 0 ? `<span class="pill learn">Đang học ${prog}/3</span>`
+      : `<span class="pill none">Chưa thuộc</span>`;
+    return `<div class="row2"><span>${esc(name)}</span>${pill}</div>`;
+  });
+  const doneN = [...seen.keys()].filter(k => stats.lawDone.includes(k)).length;
+  $("#codex-sum").textContent = seen.size ? `Đã lĩnh hội ${doneN}/${seen.size} luật.` : "";
+  $("#codex").innerHTML = rows.join("") || `<div class="hint">Chưa có dữ liệu luật.</div>`;
+}
+
+/* ---- Trạng thái nút chế độ ---- */
+function renderStart(){
+  const bhyt = stats.depts.includes("bhyt");
+  $("#btn-audit").disabled = !bhyt;
+  $("#audit-hint").textContent = bhyt ? "" : "Mua Khoa BHYT & Giám định ở mục Chuyên khoa để mở Thanh tra.";
+  const today = todayKey();
+  const doneToday = stats.daily.last === today;
+  $("#btn-daily").disabled = doneToday;
+  const yesterday = new Date(Date.now() - 86400000);
+  const yKey = yesterday.getFullYear() + "-" + String(yesterday.getMonth() + 1).padStart(2, "0") + "-" + String(yesterday.getDate()).padStart(2, "0");
+  const cur = stats.daily.last === yKey ? stats.daily.streak : (stats.daily.last === today ? stats.daily.streak : 0);
+  $("#daily-hint").textContent = doneToday
+    ? `Hôm nay đã làm rồi. Chuỗi hiện tại: ${cur} ngày. Ca mới vào ngày mai.`
+    : `3 tình huống cố định trong ngày. Đúng ít nhất 2/3 để giữ chuỗi (hiện ${cur} ngày).`;
+  renderCodex();
+}
+
+function endSession(){
+  stopSiren();
+  clearInterval(timer);
+  show("v-end");
+  $("#bar").style.width = "100%";
+  $("#e-title").textContent = MODE_NAME[mode] + " kết thúc";
+  $("#e-score").textContent = mode === "rush"
+    ? `${correct}/${answered} đúng trong 60 giây`
+    : `${correct}/${queue.length} đúng`;
+  $("#e-gold").textContent = `+${gold} 💰 vàng`;
+  $("#e-rep").textContent = `Uy tín hiện tại: ${Math.round(rep)}%`;
+  $("#e-extra").textContent = "";
+  if (mode === "daily"){
+    const today = todayKey();
+    const yesterday = new Date(Date.now() - 86400000);
+    const yKey = yesterday.getFullYear() + "-" + String(yesterday.getMonth() + 1).padStart(2, "0") + "-" + String(yesterday.getDate()).padStart(2, "0");
+    if (correct >= 2){
+      stats.daily.streak = stats.daily.last === yKey ? stats.daily.streak + 1 : 1;
+      const bonus = Math.min(300, 50 * stats.daily.streak);
+      stats.gold += bonus;
+      $("#e-extra").textContent = `Giữ được chuỗi ${stats.daily.streak} ngày · thưởng +${bonus} vàng`;
+    } else {
+      stats.daily.streak = 0;
+      $("#e-extra").textContent = "Chưa đạt 2/3, chuỗi bị reset. Ngày mai thử lại.";
+    }
+    stats.daily.last = today;
+    saveStats(); showStats();
+  }
+  $("#e-list").innerHTML = [...met.keys()].map(l => `<div>${esc(l)}</div>`).join("") || "<div>Chưa có tình huống nào.</div>";
+}
+
+$("#btn-start").onclick = () => { if (cases.length) startSession("normal"); };
+$("#btn-rush").onclick = () => { if (cases.length) startSession("rush"); };
+$("#btn-audit").onclick = () => { if (cases.length && stats.depts.includes("bhyt")) startSession("audit"); };
+$("#btn-daily").onclick = () => { if (cases.length && stats.daily.last !== todayKey()) startSession("daily"); };
+$("#btn-again").onclick = () => { show("v-start"); renderShop(); renderStart(); };
+$("#shop").onclick = e => { const b = e.target.closest("button[data-buy]"); if (b){ const [k, id] = b.dataset.buy.split(":"); buy(k, id); } };
+$("#depts").onclick = e => { const b = e.target.closest("button[data-buy]"); if (b){ const [k, id] = b.dataset.buy.split(":"); buy(k, id); } };
+$("#staff").onclick = e => { const b = e.target.closest("button[data-buy]"); if (b){ const [k, id] = b.dataset.buy.split(":"); buy(k, id); } };
+
+// Nhân viên phụ quầy sinh thu nhập khi trang đang mở
+setInterval(() => {
+  if (stats.staff > 0){
+    stats.gold += 10 * stats.staff;
+    stats.rep = Math.min(100, stats.rep + 0.5 * stats.staff);
+    saveStats(); showStats(); renderShop();
+  }
+}, 30000);
+
+loadStats(); showStats(); renderShop(); renderStart();
+$("#mute").textContent = muted ? "🔇" : "🔊";
+$("#mute").onclick = () => {
+  muted = !muted;
+  localStorage.setItem("lyt_mute", muted ? "1" : "0");
+  $("#mute").textContent = muted ? "🔇" : "🔊";
+  if (muted) stopSiren();
+};
+loadCases().then(list => {
+  cases = list;
+  $("#s-note").textContent = cases.length ? `Có ${cases.length} tình huống trong bộ câu hỏi.` : "Không đọc được bộ câu hỏi. Hãy mở trang qua máy chủ địa phương.";
+  if (!cases.length) $("#btn-start").disabled = true;
+  renderStart();
+});
+</script>
+</body>
+</html>

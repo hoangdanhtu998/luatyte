@@ -1,0 +1,632 @@
+[
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)\" có số hiệu nào?",
+    "o": [
+      "75/2006/QH11",
+      "25/2026/TT-BYT",
+      "36/2025/TT-BYT",
+      "114/2025/QH15"
+    ],
+    "a": 2,
+    "e": "Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP) có số hiệu 36/2025/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt36_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2020",
+      "11/09/2025",
+      "01/07/2025",
+      "01/01/2025"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP) là: 11/09/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt36_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)\" có số hiệu nào?",
+    "o": [
+      "22/2024/TT-BYT",
+      "22/2023/TT-BYT",
+      "25/2026/TT-BYT",
+      "44/2024/QH15"
+    ],
+    "a": 2,
+    "e": "Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe) có số hiệu 25/2026/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt25_2026) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)\" có hiệu lực từ khi nào?",
+    "o": [
+      "11/09/2025",
+      "Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026",
+      "17/11/2023 (ngày ký)",
+      "01/01/2020"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe) là: Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt25_2026) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú\" có số hiệu nào?",
+    "o": [
+      "102/2025/NĐ-CP",
+      "21/2023/TT-BYT",
+      "98/2021/NĐ-CP",
+      "26/2025/TT-BYT"
+    ],
+    "a": 3,
+    "e": "Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú có số hiệu 26/2025/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt26_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2007",
+      "01/01/2007",
+      "01/01/2022",
+      "01/07/2025"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú là: 01/07/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt26_2025)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua\" có số hiệu nào?",
+    "o": [
+      "22/2024/TT-BYT",
+      "51/2024/QH15",
+      "102/2025/NĐ-CP",
+      "22/2023/TT-BYT"
+    ],
+    "a": 0,
+    "e": "Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua có số hiệu 22/2024/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt22_2024) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2011",
+      "01/07/2025",
+      "01/07/2026",
+      "01/01/2025"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua là: 01/01/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt22_2024)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng\" có số hiệu nào?",
+    "o": [
+      "22/2023/TT-BYT",
+      "44/2025/TT-BYT",
+      "09/2012/QH13",
+      "22/2024/TT-BYT"
+    ],
+    "a": 0,
+    "e": "Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng có số hiệu 22/2023/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt22_2023) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng\" có hiệu lực từ khi nào?",
+    "o": [
+      "17/11/2023 (ngày ký)",
+      "11/09/2025",
+      "01/01/2007",
+      "01/03/2018"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng là: 17/11/2023 (ngày ký).",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt22_2023) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước\" có số hiệu nào?",
+    "o": [
+      "21/2023/TT-BYT",
+      "44/2025/TT-BYT",
+      "44/2024/QH15",
+      "09/2012/QH13"
+    ],
+    "a": 0,
+    "e": "Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước có số hiệu 21/2023/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt21_2023) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2025",
+      "17/11/2023 (ngày ký)",
+      "01/01/2024",
+      "01/01/2025"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước là: 17/11/2023 (ngày ký).",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt21_2023) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền\" có số hiệu nào?",
+    "o": [
+      "22/2023/TT-BYT",
+      "49/2025/TT-BYT",
+      "36/2025/TT-BYT",
+      "21/2023/TT-BYT"
+    ],
+    "a": 1,
+    "e": "Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền có số hiệu 49/2025/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt49_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2025",
+      "11/09/2025",
+      "31/12/2025 (ngày ký)",
+      "01/01/2024"
+    ],
+    "a": 2,
+    "e": "Mốc hiệu lực của Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền là: 31/12/2025 (ngày ký).",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt49_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế\" có số hiệu nào?",
+    "o": [
+      "55/2010/QH12",
+      "44/2019/QH14",
+      "98/2021/NĐ-CP",
+      "44/2025/TT-BYT"
+    ],
+    "a": 3,
+    "e": "Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế có số hiệu 44/2025/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt44_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế\" có hiệu lực từ khi nào?",
+    "o": [
+      "17/11/2023 (ngày ký)",
+      "01/01/2025",
+      "22/11/2025",
+      "01/07/2007"
+    ],
+    "a": 2,
+    "e": "Mốc hiệu lực của Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế là: 22/11/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tt44_2025) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế\" có số hiệu nào?",
+    "o": [
+      "64/2006/QH11",
+      "44/2024/QH15",
+      "113/2025/QH15",
+      "102/2025/NĐ-CP"
+    ],
+    "a": 3,
+    "e": "Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế có số hiệu 102/2025/NĐ-CP.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (dulieu) (chưa có văn bản gốc trong máy)",
+    "verify": true
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế\" có hiệu lực từ khi nào?",
+    "o": [
+      "Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026",
+      "01/07/2025",
+      "01/01/2022",
+      "01/07/2026"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế là: 01/07/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (dulieu)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Khám bệnh, chữa bệnh\" có số hiệu nào?",
+    "o": [
+      "22/2024/TT-BYT",
+      "22/2023/TT-BYT",
+      "52/2017/TT-BYT",
+      "15/2023/QH15"
+    ],
+    "a": 3,
+    "e": "Luật Khám bệnh, chữa bệnh có số hiệu 15/2023/QH15.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (kcb)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Khám bệnh, chữa bệnh\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2011",
+      "17/11/2023 (ngày ký)",
+      "01/01/2024",
+      "01/07/2025"
+    ],
+    "a": 2,
+    "e": "Mốc hiệu lực của Luật Khám bệnh, chữa bệnh là: 01/01/2024.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (kcb)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Bảo hiểm y tế (sửa đổi 2024)\" có số hiệu nào?",
+    "o": [
+      "26/2025/TT-BYT",
+      "51/2024/QH15",
+      "49/2025/TT-BYT",
+      "15/2023/QH15"
+    ],
+    "a": 1,
+    "e": "Luật Bảo hiểm y tế (sửa đổi 2024) có số hiệu 51/2024/QH15.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (bhyt) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Bảo hiểm y tế (sửa đổi 2024)\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/03/2018",
+      "11/09/2025",
+      "17/11/2023 (ngày ký)",
+      "01/07/2025"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Luật Bảo hiểm y tế (sửa đổi 2024) là: 01/07/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (bhyt) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Dược (sửa đổi 2024)\" có số hiệu nào?",
+    "o": [
+      "15/2023/QH15",
+      "44/2025/TT-BYT",
+      "44/2024/QH15",
+      "51/2024/QH15"
+    ],
+    "a": 2,
+    "e": "Luật Dược (sửa đổi 2024) có số hiệu 44/2024/QH15.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (duoc) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Dược (sửa đổi 2024)\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2025",
+      "01/05/2013",
+      "Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026",
+      "01/01/2025"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Luật Dược (sửa đổi 2024) là: 01/07/2025.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (duoc) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Phòng bệnh\" có số hiệu nào?",
+    "o": [
+      "113/2025/QH15",
+      "21/2023/TT-BYT",
+      "114/2025/QH15",
+      "64/2006/QH11"
+    ],
+    "a": 2,
+    "e": "Luật Phòng bệnh có số hiệu 114/2025/QH15.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (phongbenh)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Phòng bệnh\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2026",
+      "31/12/2025 (ngày ký)",
+      "01/07/2025",
+      "17/11/2023 (ngày ký)"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Luật Phòng bệnh là: 01/07/2026.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (phongbenh)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Dân số\" có số hiệu nào?",
+    "o": [
+      "44/2024/QH15",
+      "113/2025/QH15",
+      "09/2012/QH13",
+      "15/2023/QH15"
+    ],
+    "a": 1,
+    "e": "Luật Dân số có số hiệu 113/2025/QH15.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (danso)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Dân số\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2007",
+      "17/11/2023 (ngày ký)",
+      "01/01/2022",
+      "01/07/2026"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Luật Dân số là: 01/07/2026.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (danso)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Phòng, chống tác hại của thuốc lá\" có số hiệu nào?",
+    "o": [
+      "44/2019/QH14",
+      "49/2025/TT-BYT",
+      "09/2012/QH13",
+      "21/2023/TT-BYT"
+    ],
+    "a": 2,
+    "e": "Luật Phòng, chống tác hại của thuốc lá có số hiệu 09/2012/QH13.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (thuocla)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Phòng, chống tác hại của thuốc lá\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2024",
+      "01/05/2013",
+      "01/07/2011",
+      "01/07/2025"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Luật Phòng, chống tác hại của thuốc lá là: 01/05/2013.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (thuocla)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Phòng, chống tác hại của rượu, bia\" có số hiệu nào?",
+    "o": [
+      "44/2019/QH14",
+      "49/2025/TT-BYT",
+      "09/2012/QH13",
+      "55/2010/QH12"
+    ],
+    "a": 0,
+    "e": "Luật Phòng, chống tác hại của rượu, bia có số hiệu 44/2019/QH14.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (ruoubia)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Phòng, chống tác hại của rượu, bia\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2020",
+      "01/07/2026",
+      "31/12/2025 (ngày ký)",
+      "17/11/2023 (ngày ký)"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Luật Phòng, chống tác hại của rượu, bia là: 01/01/2020.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (ruoubia)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật An toàn thực phẩm\" có số hiệu nào?",
+    "o": [
+      "51/2024/QH15",
+      "44/2024/QH15",
+      "49/2025/TT-BYT",
+      "55/2010/QH12"
+    ],
+    "a": 3,
+    "e": "Luật An toàn thực phẩm có số hiệu 55/2010/QH12.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (attp)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật An toàn thực phẩm\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2020",
+      "01/07/2025",
+      "17/11/2023 (ngày ký)",
+      "01/07/2011"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Luật An toàn thực phẩm là: 01/07/2011.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (attp)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Phòng, chống HIV/AIDS\" có số hiệu nào?",
+    "o": [
+      "15/2023/QH15",
+      "114/2025/QH15",
+      "21/2023/TT-BYT",
+      "64/2006/QH11"
+    ],
+    "a": 3,
+    "e": "Luật Phòng, chống HIV/AIDS có số hiệu 64/2006/QH11.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (hiv) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Phòng, chống HIV/AIDS\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2007",
+      "11/09/2025",
+      "01/07/2025",
+      "01/01/2007"
+    ],
+    "a": 3,
+    "e": "Mốc hiệu lực của Luật Phòng, chống HIV/AIDS là: 01/01/2007.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (hiv) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác\" có số hiệu nào?",
+    "o": [
+      "22/2024/TT-BYT",
+      "75/2006/QH11",
+      "113/2025/QH15",
+      "98/2021/NĐ-CP"
+    ],
+    "a": 1,
+    "e": "Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác có số hiệu 75/2006/QH11.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (ghepmo)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2007",
+      "22/11/2025",
+      "01/01/2022",
+      "17/11/2023 (ngày ký)"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác là: 01/07/2007.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (ghepmo)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)\" có số hiệu nào?",
+    "o": [
+      "52/2017/TT-BYT",
+      "44/2024/QH15",
+      "26/2025/TT-BYT",
+      "98/2021/NĐ-CP"
+    ],
+    "a": 0,
+    "e": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi) có số hiệu 52/2017/TT-BYT.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (donthuoc)",
+    "verify": true
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/07/2025",
+      "01/03/2018",
+      "01/01/2025",
+      "Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026"
+    ],
+    "a": 1,
+    "e": "Mốc hiệu lực của Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi) là: 01/03/2018.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (donthuoc)",
+    "verify": true
+  },
+  {
+    "t": "lythuyet",
+    "q": "Văn bản \"Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)\" có số hiệu nào?",
+    "o": [
+      "26/2025/TT-BYT",
+      "25/2026/TT-BYT",
+      "22/2024/TT-BYT",
+      "98/2021/NĐ-CP"
+    ],
+    "a": 3,
+    "e": "Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi) có số hiệu 98/2021/NĐ-CP.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tbyt) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  },
+  {
+    "t": "lythuyet",
+    "q": "\"Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)\" có hiệu lực từ khi nào?",
+    "o": [
+      "01/01/2022",
+      "01/05/2013",
+      "01/07/2025",
+      "15/08/2025"
+    ],
+    "a": 0,
+    "e": "Mốc hiệu lực của Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi) là: 01/01/2022.",
+    "law": "Mốc hiệu lực",
+    "src": "laws.json (tbyt) (đã đối chiếu văn bản gốc trong máy)",
+    "verify": false
+  }
+]
