@@ -1437,7 +1437,8 @@ async function loadCases(){
       for (const q of arr){
         if (!q || !q.q || !Array.isArray(q.o)) continue;
         const text = q.q + " " + q.e;
-        out.push({ q: q.q, o: q.o, a: q.a, e: q.e, law: lawOf(text), key: lawOf(text), verify: !!q.verify });
+        const law = q.law || lawOf(text);
+        out.push({ q: q.q, o: q.o, a: q.a, e: q.e, law: law, key: law, verify: !!q.verify });
       }
     } catch (e) {}
   }
