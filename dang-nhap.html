@@ -89,7 +89,6 @@
 <body>
 <div class="topbar">
   <a class="brand" href="index.html"><img src="icon.svg" alt="" width="34" height="34">Sổ tay Luật Y tế</a>
-  <a class="back" href="index.html">Về sổ tay</a>
 </div>
 
 <main>
@@ -218,7 +217,10 @@ $('form-login').onsubmit = async e => {
     f.password.value = '';
     if (!r.ok) { setMsg($('login-err'), errText(data, 'Không đăng nhập được. Thử lại.')); return; }
     // Đăng nhập xong thì về sổ tay
-    location.replace('index.html');
+    // Quay lại trang đang xem trước khi đăng nhập (chỉ chấp nhận đường dẫn nội bộ)
+    var nx = new URLSearchParams(location.search).get('next') || 'index.html?skip=1';
+    if (!/^\/?[A-Za-z0-9_\/.\-]*(\?skip=1)?$/.test(nx) || nx.indexOf('//') !== -1) nx = 'index.html?skip=1';
+    location.replace(nx.charAt(0) === '/' ? nx.slice(1) || 'index.html?skip=1' : nx);
   } catch {
     setMsg($('login-err'), 'Không kết nối được máy chủ. Kiểm tra mạng rồi thử lại.');
   } finally { busy(btn, false, 'Đăng nhập'); }
