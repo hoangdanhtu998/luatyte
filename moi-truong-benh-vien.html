@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bệnh viện pixel · Luật Y tế</title>
+<meta name="description" content="Bản đồ bệnh viện pixel: bác sĩ đi qua từng khoa và mở nội dung luật liên quan.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="site.css">
+<style>
+  .bv-wrap { max-width: 960px; margin: 0 auto; padding: var(--space-md) var(--space-sm) 48px; }
+  .bv-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: var(--space-md); }
+  .bv-top a { font-size: var(--text-sm); }
+  #map { width: 100%; height: auto; aspect-ratio: 60 / 34; image-rendering: pixelated; border-radius: 14px; border: 1px solid var(--color-rule); display: block; cursor: pointer; background: #8fbf8a; }
+  .bv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 14px; }
+  .bv-grid button { text-align: left; }
+  .bv-card { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper-2); min-height: 5em; }
+  .bv-card b { display: block; margin-bottom: 4px; }
+  .bv-card p { margin: 0; color: var(--color-muted); line-height: 1.5; }
+  .bv-card a { display: inline-block; margin-top: 8px; }
+</style>
+</head>
+<body>
+<main class="bv-wrap">
+  <div class="bv-top">
+    <a href="index.html">← Về sổ tay</a>
+    <a href="moi-truong-pixel.html">Phòng khám pixel →</a>
+  </div>
+  <h1>Bệnh viện pixel</h1>
+  <p class="hint">Bấm một khoa trên bản đồ hoặc chọn trong danh sách. Bác sĩ sẽ đi đến khoa đó và mở nội dung luật liên quan.</p>
+
+  <canvas id="map" width="960" height="544" aria-label="Bản đồ bệnh viện pixel"></canvas>
+  <div class="bv-grid" id="list"></div>
+
+  <div class="bv-card" id="card" aria-live="polite">
+    <b>Chọn một khoa để bắt đầu</b>
+    <p>Bác sĩ sẽ đi đến khoa đã chọn và hiện nội dung luật liên quan.</p>
+  </div>
+</main>
+<script>
+(function () {
+  var TS = 16, COLS = 60, ROWS = 34;
+  var canvas = document.getElementById("map"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+
+  // Khoa: vị trí theo ô (tile). door = 'b' cửa phía dưới, 't' cửa phía trên.
+  var ROOMS = [
+    { id: "noi", name: "Nội khoa", x: 1, y: 1, w: 8, h: 6, door: "b", col: "#dbeafe", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật (ban đầu, cơ bản, chuyên sâu). Mức hưởng BHYT phụ thuộc đối tượng và tuyến." },
+    { id: "ngoai", name: "Ngoại khoa", x: 10, y: 1, w: 7, h: 6, door: "b", col: "#ccfbf1", act: "examine", law: "Cấp cứu ở bất kỳ cơ sở nào được BHYT chi trả 100% mức hưởng, kể cả trái tuyến." },
+    { id: "capcuu", name: "Cấp cứu", x: 17, y: 1, w: 7, h: 6, door: "b", col: "#fee2e2", act: "examine", law: "Cơ sở khám chữa bệnh không được từ chối hoặc chậm cấp cứu người bệnh." },
+    { id: "daliễu", name: "Da liễu", x: 25, y: 1, w: 6, h: 6, door: "b", col: "#fce7f3", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
+    { id: "mat", name: "Mắt", x: 31, y: 1, w: 7, h: 6, door: "b", col: "#e0e7ff", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
+    { id: "tmh", name: "Tai Mũi Họng", x: 38, y: 1, w: 7, h: 6, door: "b", col: "#ede9fe", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
+    { id: "tiepdon", name: "Tiếp đón", x: 1, y: 8, w: 13, h: 6, door: "t", col: "#fef9c3", act: "greet", law: "Thẻ BHYT điện tử có giá trị pháp lý như thẻ giấy. Nên kiểm tra thẻ còn hiệu lực trước khi khám." },
+    { id: "sanhi", name: "Sản phụ - Nhi", x: 17, y: 8, w: 8, h: 5, door: "b", col: "#fce7f3", act: "examine", law: "Trẻ em dưới 6 tuổi được hưởng 100% mức hưởng BHYT khi khám đúng tuyến." },
+    { id: "truyennhiem", name: "Truyền nhiễm", x: 25, y: 8, w: 7, h: 5, door: "b", col: "#dcfce7", act: "inject", law: "Luật Phòng bệnh điều chỉnh phòng, chống bệnh truyền nhiễm. Số hiệu cụ thể cần bổ sung." },
+    { id: "rhm", name: "Răng Hàm Mặt", x: 32, y: 8, w: 8, h: 5, door: "b", col: "#e0f2fe", act: "examine", law: "Khám chữa bệnh theo cấp chuyên môn kỹ thuật, như các chuyên khoa khác." },
+    { id: "yhct", name: "Y học cổ truyền", x: 41, y: 8, w: 7, h: 5, door: "b", col: "#fef3c7", act: "carry", law: "Lương y và bài thuốc gia truyền được cấp giấy chứng nhận theo Thông tư 49/2025/TT-BYT." },
+    { id: "xetnghiem", name: "Xét nghiệm", x: 1, y: 14, w: 8, h: 6, door: "t", col: "#ede9fe", act: "write", law: "Phòng thử nghiệm phải đáp ứng GLP. Thay đổi phải báo cáo theo Thông tư 36/2025/TT-BYT." },
+    { id: "cdha", name: "Chẩn đoán hình ảnh", x: 10, y: 14, w: 8, h: 6, door: "t", col: "#e0e7ff", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
+    { id: "duoc", name: "Dược", x: 32, y: 14, w: 6, h: 6, door: "t", col: "#dcfce7", act: "carry", law: "Đơn thuốc chỉ do bác sĩ hoặc y sĩ có chứng chỉ hành nghề kê (Thông tư 26/2025/TT-BYT)." },
+    { id: "vltl", name: "Vật lý trị liệu", x: 38, y: 14, w: 9, h: 6, door: "t", col: "#e0f2fe", act: "sit", law: "Chưa có nội dung luật riêng trong bài giảng." },
+    { id: "hanhchinh", name: "Hành chính", x: 1, y: 20, w: 5, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Hồ sơ và dữ liệu y tế: Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế." },
+    { id: "phonghop", name: "Phòng họp", x: 7, y: 20, w: 4, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Khu hỗ trợ, chưa có nội dung luật riêng." },
+    { id: "nhansu", name: "Nhân sự", x: 11, y: 20, w: 4, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Lương y và nhân lực: Thông tư 49/2025/TT-BYT về giấy chứng nhận lương y." },
+    { id: "kythuat", name: "Kỹ thuật", x: 15, y: 20, w: 3, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Trang thiết bị y tế: Thông tư 44/2025/TT-BYT về phân cấp và quản lý trang thiết bị." },
+    { id: "kho", name: "Kho", x: 18, y: 20, w: 3, h: 6, door: "t", col: "#fef3c7", act: "carry", law: "Quản lý trang thiết bị và vật tư: Thông tư 44/2025/TT-BYT." },
+    { id: "nhaan", name: "Nhà ăn", x: 32, y: 20, w: 4, h: 6, door: "t", col: "#fff7ed", act: "sit", law: "Khu hỗ trợ, chưa có nội dung luật riêng." },
+    { id: "phonggiat", name: "Phòng giặt", x: 36, y: 20, w: 5, h: 6, door: "t", col: "#fff7ed", act: "sit", law: "Khu hỗ trợ, chưa có nội dung luật riêng." },
+    { id: "cantin", name: "Căn tin", x: 41, y: 20, w: 4, h: 6, door: "t", col: "#fff7ed", act: "sit", law: "Khu hỗ trợ, chưa có nội dung luật riêng." }
+  ];
+  var BLOCKED = [
+    { x: 48, y: 1, w: 11, h: 9, label: "Đang xây - Khu mở rộng (Tầng 2)" },
+    { x: 48, y: 13, w: 11, h: 9, label: "Đang xây - Khu mở rộng (Tầng 1)" }
+  ];
+  var ENTRANCE = { x: 22, y: 21, w: 6, h: 2 };
+
+  // Lưới đi lại: tường quanh khoa, trừ cửa
+  var wall = [];
+  for (var yy = 0; yy < ROWS; yy++) { wall.push([]); for (var xx = 0; xx < COLS; xx++) wall[yy].push(false); }
+  function setWall(x, y, w, h) { for (var j = y; j < y + h; j++) for (var i = x; i < x + w; i++) if (i >= 0 && j >= 0 && i < COLS && j < ROWS) wall[j][i] = true; }
+  ROOMS.forEach(function (r) {
+    for (var j = r.y - 1; j <= r.y + r.h; j++) for (var i = r.x - 1; i <= r.x + r.w; i++) {
+      var border = (i === r.x - 1 || i === r.x + r.w || j === r.y - 1 || j === r.y + r.h);
+      if (border && i >= 0 && j >= 0 && i < COLS && j < ROWS) wall[j][i] = true;
+    }
+    var doorX = r.x + Math.floor(r.w / 2), doorY = r.door === "b" ? r.y + r.h : r.y - 1;
+    wall[doorY][doorX] = false;
+    r.door_t = { x: doorX, y: doorY };
+    r.center = { x: r.x + Math.floor(r.w / 2), y: r.y + Math.floor(r.h / 2) };
+  });
+  BLOCKED.forEach(function (b) { setWall(b.x, b.y, b.w, b.h); });
+
+  // Bản đồ nền (vẽ một lần)
+  var base = document.createElement("canvas"); base.width = W; base.height = H;
+  var bctx = base.getContext("2d");
+  function br(x, y, w, h, c) { bctx.fillStyle = c; bctx.fillRect(x, y, w, h); }
+  function drawBase() {
+    br(0, 0, W, H, "#7fb27a");
+    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) if (((x + y) % 2) === 0) br(x * TS, y * TS, TS, TS, "#86bb82");
+    // cây viền
+    for (var i = 0; i < COLS; i += 3) { br(i * TS, 0, TS, TS, "#3e7d3a"); br(i * TS, H - TS, TS, TS, "#3e7d3a"); }
+    // Đường và sân trước
+    br(20 * TS, 22 * TS, 12 * TS, 12 * TS, "#c9c3b5");
+    br(21 * TS, 22 * TS, 10 * TS, 1 * TS, "#e2ddd1");
+    // Sảnh trung tâm
+    br(20 * TS, 13 * TS, 12 * TS, 8 * TS, "#e9e4d8");
+    br(24 * TS, 16 * TS, 4 * TS, 3 * TS, "#7fb3d5");
+    for (var k = 0; k < 6; k++) br((21 + k * 2) * TS, 14 * TS, 4, 4, "#5b8fb9");
+    // Lối vào bệnh viện
+    br(ENTRANCE.x * TS, ENTRANCE.y * TS, ENTRANCE.w * TS, ENTRANCE.h * TS, "#9fd3e8");
+    // Xe cứu thương
+    br(51 * TS, 26 * TS, 6 * TS, 3 * TS, "#f5f5f4");
+    br(52 * TS, 26 * TS + 2, 2 * TS, 4, "#dc2626");
+    // Tầng nền trong khoa + tường
+    ROOMS.forEach(function (r) {
+      br(r.x * TS, r.y * TS, r.w * TS, r.h * TS, r.col);
+      for (var j = 0; j < r.h; j += 2) br((r.x) * TS, (r.y + j) * TS, r.w * TS, 1, "rgba(0,0,0,0.04)");
+      // Tường quanh khoa
+      br((r.x - 1) * TS, (r.y - 1) * TS, (r.w + 2) * TS, 1 * TS, "#6b7280");
+      br((r.x - 1) * TS, (r.y + r.h) * TS, (r.w + 2) * TS, 1 * TS, "#6b7280");
+      br((r.x - 1) * TS, (r.y - 1) * TS, 1 * TS, (r.h + 2) * TS, "#6b7280");
+      br((r.x + r.w) * TS, (r.y - 1) * TS, 1 * TS, (r.h + 2) * TS, "#6b7280");
+      // Cửa
+      br(r.door_t.x * TS, r.door_t.y * TS, TS, TS, "#b45309");
+      // Bảng tên
+      var tw = Math.min(r.w * TS - 4, 128);
+      br(r.x * TS + 2, (r.y - 1) * TS - 1, tw, 9, "#1e3a5f");
+      bctx.font = "7px monospace"; bctx.fillStyle = "#ffffff"; bctx.textAlign = "left"; bctx.textBaseline = "middle";
+      bctx.fillText(r.name, r.x * TS + 5, (r.y - 1) * TS + 4);
+    });
+    BLOCKED.forEach(function (b) {
+      br(b.x * TS, b.y * TS, b.w * TS, b.h * TS, "#78716c");
+      for (var s = 0; s < b.w * TS; s += 16) br(b.x * TS + s, b.y * TS, 8, 6, "#facc15");
+      br(b.x * TS + 6, b.y * TS + 6, b.w * TS - 12, 1 * TS + 2, "#1c1917");
+      bctx.font = "7px monospace"; bctx.fillStyle = "#fde68a"; bctx.textAlign = "center"; bctx.textBaseline = "middle";
+      bctx.fillText(b.label, b.x * TS + b.w * TS / 2, b.y * TS + 12);
+    });
+  }
+  // Ảnh từng khoa (bộ tranh pixel) vẽ đè lên nền; tải xong thì ghép vào bản đồ
+  var ROOM_IMG = {};
+  function drawOverlays() {
+    ROOMS.forEach(function (r) {
+      var im = ROOM_IMG[r.id];
+      if (im && im.complete && im.naturalWidth) { bctx.imageSmoothingEnabled = false; bctx.drawImage(im, (r.x - 1) * TS, (r.y - 1) * TS, (r.w + 2) * TS, (r.h + 2) * TS); }
+    });
+    BLOCKED.forEach(function (b, i) {
+      var im = ROOM_IMG[i === 0 ? "mr2" : "mr1"];
+      if (im && im.complete && im.naturalWidth) { bctx.imageSmoothingEnabled = false; bctx.drawImage(im, b.x * TS, b.y * TS, b.w * TS, b.h * TS); }
+    });
+  }
+  var toLoad = ROOMS.map(function (r) { return { key: r.id, file: r.id === "daliễu" ? "dalieu" : r.id }; })
+    .concat([{ key: "mr1", file: "mr1" }, { key: "mr2", file: "mr2" }]);
+  var loaded = 0;
+  function onOne() { loaded++; if (loaded === toLoad.length) drawOverlays(); }
+  toLoad.forEach(function (o) {
+    var im = new Image();
+    im.onload = onOne; im.onerror = onOne;
+    im.src = "img/pixel/rooms/" + o.file + ".png";
+    ROOM_IMG[o.key] = im;
+  });
+  drawBase();
+
+  // Bác sĩ: đi theo đường ngắn nhất (BFS) trên lưới
+  var doc = { x: 25.5, y: 22.5, path: [], walking: false, act: "idle", actT: 0, facing: 1, t: 0, target: null, arrivedRoom: null, hold: 0 };
+  var SEQ = {
+    walk: ["walk-01","walk-02","walk-03","walk-04","walk-05","walk-06","walk-07","walk-08"],
+    idle: ["idle-01","idle-02","idle-03","idle-04","idle-05","idle-06"],
+    greet: ["greet-01","greet-02","greet-03","greet-04"],
+    examine: ["examine-01","examine-02"],
+    write: ["write-01","write-02","write-03","write-04","write-05"],
+    carry: ["carry-01","carry-02","carry-03","carry-04"],
+    inject: ["inject-01","inject-02","inject-03","inject-04"],
+    sit: ["sit-01","sit-02","sit-03","sit-04"]
+  };
+  var FPS = { walk: 9, idle: 2.5, greet: 3, examine: 1.6, write: 2.2, carry: 2.2, inject: 3, sit: 2 };
+  var ACTS = {};
+  function loadAct(name) { if (!ACTS[name]) { var im = new Image(); im.src = "img/pixel/actions/" + name + ".png"; ACTS[name] = im; } return ACTS[name]; }
+
+  function bfs(sx, sy, tx, ty) {
+    var prev = {}, q = [[sx, sy]], seen = {};
+    seen[sx + "," + sy] = true;
+    var dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+    while (q.length) {
+      var c = q.shift(), cx = c[0], cy = c[1];
+      if (cx === tx && cy === ty) break;
+      dirs.forEach(function (d) {
+        var nx = cx + d[0], ny = cy + d[1];
+        if (nx < 0 || ny < 0 || nx >= COLS || ny >= ROWS) return;
+        if (wall[ny][nx] || seen[nx + "," + ny]) return;
+        seen[nx + "," + ny] = true; prev[nx + "," + ny] = [cx, cy]; q.push([nx, ny]);
+      });
+    }
+    var path = [], k = tx + "," + ty;
+    if (!seen[k]) return [];
+    var cur = [tx, ty];
+    while (!(cur[0] === sx && cur[1] === sy)) { path.unshift(cur); cur = prev[cur[0] + "," + cur[1]]; if (!cur) break; }
+    return path;
+  }
+
+  function goTo(room) {
+    var start = [Math.round(doc.x - 0.5), Math.round(doc.y - 0.5)];
+    doc.target = room;
+    doc.path = bfs(start[0], start[1], room.center.x, room.center.y);
+    doc.walking = doc.path.length > 0;
+    doc.arrivedRoom = null;
+    doc.act = "walk";
+    setActive(room);
+  }
+
+  function setActive(room) {
+    document.querySelectorAll("#list button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.id === room.id)); });
+    var card = document.getElementById("card");
+    card.innerHTML = "";
+    var b = document.createElement("b"); b.textContent = room.name;
+    var p = document.createElement("p"); p.textContent = room.law;
+    var a = document.createElement("a"); a.href = "bai-giang.html"; a.textContent = "Xem bài giảng có giọng đọc →";
+    card.appendChild(b); card.appendChild(p); card.appendChild(a);
+  }
+
+  function update(dt) {
+    doc.t += dt;
+    if (doc.walking && doc.path.length) {
+      var nxt = doc.path[0];
+      var dx = nxt[0] - doc.x, dy = nxt[1] - doc.y, dist = Math.sqrt(dx * dx + dy * dy);
+      var step = 7 * dt;
+      if (dx !== 0) doc.facing = dx > 0 ? 1 : -1;
+      if (dist <= step) { doc.x = nxt[0]; doc.y = nxt[1]; doc.path.shift(); }
+      else { doc.x += dx / dist * step; doc.y += dy / dist * step; }
+      if (doc.path.length === 0) {
+        doc.walking = false;
+        doc.arrivedRoom = doc.target;
+        doc.act = doc.target ? doc.target.act : "idle";
+        doc.hold = 4.5;
+      }
+    } else if (doc.hold > 0) {
+      doc.hold -= dt;
+      if (doc.hold <= 0) { doc.act = "idle"; }
+    }
+  }
+
+  function render() {
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(base, 0, 0);
+    // Khung chọn khoa
+    if (doc.arrivedRoom) {
+      var r = doc.arrivedRoom;
+      ctx.strokeStyle = "#facc15"; ctx.lineWidth = 2;
+      ctx.strokeRect(r.x * TS - 1, r.y * TS - 1, r.w * TS + 2, r.h * TS + 2);
+    }
+    // Bác sĩ
+    var seqName = doc.walking ? "walk" : (doc.hold > 0 && doc.act !== "idle" ? doc.act : "idle");
+    var seq = SEQ[seqName] || SEQ.idle;
+    var fps = FPS[seqName] || 2.5;
+    var frame = seq[Math.floor(doc.t * fps) % seq.length];
+    var im = loadAct(frame);
+    if (im.complete && im.naturalWidth) {
+      var scale = 36 / im.naturalHeight;
+      var dw = Math.round(im.naturalWidth * scale), dh = 36;
+      var cx = Math.round(doc.x * TS + TS / 2), fy = Math.round(doc.y * TS + TS);
+      ctx.save();
+      ctx.translate(cx, 0);
+      ctx.scale(doc.facing, 1);
+      ctx.drawImage(im, -Math.round(dw / 2), fy - dh, dw, dh);
+      ctx.restore();
+    }
+  }
+
+  // Danh sách khoa
+  var list = document.getElementById("list");
+  ROOMS.forEach(function (r) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "btn ghost"; b.textContent = r.name; b.dataset.id = r.id;
+    b.setAttribute("aria-pressed", "false");
+    b.onclick = function () { goTo(r); };
+    list.appendChild(b);
+  });
+
+  // Bấm trực tiếp lên bản đồ
+  canvas.addEventListener("click", function (e) {
+    var rect = canvas.getBoundingClientRect();
+    var tx = Math.floor((e.clientX - rect.left) * (W / rect.width) / TS);
+    var ty = Math.floor((e.clientY - rect.top) * (H / rect.height) / TS);
+    var hit = null;
+    ROOMS.forEach(function (r) { if (tx >= r.x && tx < r.x + r.w && ty >= r.y && ty < r.y + r.h) hit = r; });
+    if (!hit) {
+      // Nhấn vào đường đi: đưa bác sĩ đến ô gần nhất không phải tường
+      if (wall[ty] && !wall[ty][tx]) { doc.target = null; doc.path = bfs(Math.round(doc.x), Math.round(doc.y), tx, ty); doc.walking = doc.path.length > 0; doc.arrivedRoom = null; doc.act = "walk"; }
+      return;
+    }
+    goTo(hit);
+  });
+
+  var last = performance.now();
+  function loop(now) {
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    update(dt); render();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
