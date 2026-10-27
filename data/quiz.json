@@ -229,15 +229,17 @@
   },
   {
     "t": "kcb",
-    "q": "Quyền bảo mật thông tin của người bệnh được quy định ở điều nào (Điều 10)?",
+    "q": "Quyền bảo mật thông tin của người bệnh yêu cầu điều gì?",
     "o": [
-      "Điều 7",
-      "Điều 10",
-      "Điều 15",
-      "Điều 20"
+      "Thông tin về tình trạng bệnh tật và đời sống riêng tư của người bệnh phải được giữ bí mật",
+      "Bệnh viện được đăng hồ sơ bệnh án của người bệnh lên mạng để tham khảo",
+      "Người bệnh phải tự chịu trách nhiệm nếu thông tin sức khỏe của mình bị tiết lộ",
+      "Thông tin bệnh án được công khai cho mọi người trong khu dân cư biết"
     ],
-    "a": 1,
-    "e": "Điều 10 quy định quyền được tôn trọng danh dự, bảo vệ sức khỏe và bí mật riêng tư."
+    "a": 0,
+    "e": "Người bệnh có quyền được giữ bí mật thông tin về tình trạng bệnh tật và đời sống riêng tư. Người hành nghề không được tiết lộ thông tin này khi chưa có sự đồng ý của người bệnh, trừ trường hợp pháp luật có quy định.",
+    "law": "Luật Khám bệnh, chữa bệnh 2023",
+    "verify": true
   },
   {
     "t": "kcb",
@@ -542,18 +544,6 @@
     ],
     "a": 1,
     "e": "Luật 51/2024 bổ sung chi trả điều trị lác, tật khúc xạ cho người dưới 18 tuổi."
-  },
-  {
-    "t": "bhyt",
-    "q": "Tham gia BHYT bao lâu liên tục (cùng điều kiện chi trả) thì được hưởng 100%?",
-    "o": [
-      "3 năm",
-      "5 năm",
-      "7 năm",
-      "10 năm"
-    ],
-    "a": 1,
-    "e": "5 năm liên tục và số tiền cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (Điều 22)."
   },
   {
     "t": "duoc",
