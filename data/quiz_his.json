@@ -227,21 +227,6 @@
     "verify": false
   },
   {
-    "q": "Điều kiện để người bệnh được hưởng 100% chi phí KCB theo mức \"đủ 5 năm\" là gì?",
-    "o": [
-      "Tham gia BHYT 5 năm liên tục trở lên và số tiền cùng chi trả trong năm vượt mức quy định",
-      "Tham gia 2 năm và cùng chi trả trên 1 triệu đồng",
-      "Tham gia 5 năm không cần liên tục",
-      "Có thẻ BHYT hộ nghèo"
-    ],
-    "a": 0,
-    "t": "his",
-    "law": "Luật BHYT (sửa bởi 51/2024)",
-    "src": "Điều 22 khoản 1 điểm d",
-    "e": "Người bệnh tham gia BHYT 5 năm liên tục trở lên và số tiền cùng chi trả trong năm vượt ngưỡng quy định (ngưỡng là bội số của mức tham chiếu). Con số cụ thể cần đối chiếu văn bản hướng dẫn.",
-    "verify": false
-  },
-  {
     "q": "Mức tham chiếu dùng để tính đóng, hưởng BHYT do cơ quan nào quyết định?",
     "o": [
       "Quốc hội",
@@ -596,34 +581,6 @@
     "law": "Luật KCB 15/2023",
     "src": "Điều 120 khoản 8",
     "e": "Hoàn thành việc xây dựng và vận hành Hệ thống thông tin trước ngày 01/01/2027."
-  },
-  {
-    "q": "Tiêu chuẩn chất lượng cơ sở KCB áp dụng cho bệnh viện từ ngày nào?",
-    "o": [
-      "01/01/2025",
-      "01/01/2027",
-      "01/07/2025",
-      "01/01/2024"
-    ],
-    "a": 0,
-    "t": "his",
-    "law": "Luật KCB 15/2023",
-    "src": "Điều 120 khoản 6",
-    "e": "Bệnh viện từ 01/01/2025; các hình thức tổ chức khác của cơ sở KCB từ 01/01/2027."
-  },
-  {
-    "q": "Quy định về cấp chuyên môn kỹ thuật trong KCB có hiệu lực từ ngày nào?",
-    "o": [
-      "01/07/2025",
-      "01/01/2025",
-      "01/01/2024",
-      "01/01/2027"
-    ],
-    "a": 1,
-    "t": "his",
-    "law": "Luật KCB 15/2023",
-    "src": "Điều 120 khoản 7",
-    "e": "Quy định tại Điều 104 (cấp chuyên môn kỹ thuật) thực hiện từ ngày 01/01/2025."
   },
   {
     "t": "his",
