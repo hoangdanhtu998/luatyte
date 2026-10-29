@@ -22,6 +22,8 @@
       ],
       "bugLine": 6,
       "gt": "Mảng diem có 5 phần tử, chỉ số hợp lệ từ 0 đến 4. diem[5] ghi ra ngoài mảng.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    diem[4] = 9;",
       "proof": "gcc báo đúng dòng 6"
     },
@@ -46,6 +48,8 @@
       ],
       "bugLine": 6,
       "gt": "== so sánh địa chỉ, không so sánh nội dung. Dùng strcmp để so sánh hai chuỗi.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    if (strcmp(ten, \"An\") == 0) {",
       "proof": "gcc báo đúng dòng 6"
     },
@@ -66,6 +70,10 @@
       ],
       "bugLine": 4,
       "gt": "\"Alice\" có 5 ký tự và cần thêm \\0: tổng 6 byte. Mảng ten[5] không đủ chỗ.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 5 (strcpy), nơi chuỗi được ghi vào, nhưng gốc lỗi là dòng 4: ten[5] không đủ chỗ cho \"Alice\" và ký tự \\0 (cần 6 byte).",
+      "nearLines": [
+        5
+      ],
       "fixedLine": "    char ten[6];",
       "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
     },
@@ -88,6 +96,10 @@
       ],
       "bugLine": 8,
       "gt": "free(p) lần thứ hai giải phóng một vùng nhớ đã được trả lại: lỗi double free.",
+      "gtNear": null,
+      "nearLines": [
+        5
+      ],
       "fixedLine": "",
       "proof": "gcc báo đúng dòng 8"
     },
@@ -110,6 +122,10 @@
       ],
       "bugLine": 7,
       "gt": "Sau free(p), ô nhớ không còn của chương trình. Đọc *p sau đó là hành vi không xác định.",
+      "gtNear": null,
+      "nearLines": [
+        5
+      ],
       "fixedLine": "    printf(\"%d\\n\", 7);",
       "proof": "gcc báo đúng dòng 7"
     },
@@ -130,6 +146,10 @@
       ],
       "bugLine": 4,
       "gt": "p là NULL nên *p ghi vào địa chỉ 0, chương trình bị lỗi truy cập bộ nhớ.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 5 (*p = 1), nơi con trỏ được dùng, nhưng gốc lỗi là dòng 4: p được gán NULL nên không trỏ tới ô nhớ nào để ghi.",
+      "nearLines": [
+        5
+      ],
       "fixedLine": "    int *p = &x;",
       "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
     },
@@ -150,6 +170,8 @@
       ],
       "bugLine": 4,
       "gt": "scanf cần địa chỉ của biến để ghi giá trị vào, nên phải có &x.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    scanf(\"%d\", &x);",
       "proof": "gcc báo đúng dòng 4"
     },
@@ -171,6 +193,8 @@
       ],
       "bugLine": 5,
       "gt": "= gán giá trị 5 cho x, còn == so sánh. Điều kiện luôn đúng và x bị đổi.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    if (x == 5) {",
       "proof": "gcc báo đúng dòng 5"
     },
@@ -191,6 +215,8 @@
       ],
       "bugLine": 4,
       "gt": "Chia số nguyên cho 0 là lỗi nghiêm trọng, chương trình có thể dừng ngay.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    int b = 2;",
       "proof": "chương trình lỗi khi chạy (chạy lỗi, mã thoát 3221225620)"
     },
@@ -211,6 +237,8 @@
       ],
       "bugLine": 4,
       "gt": "%d dùng cho số nguyên, còn %s dùng cho chuỗi. Đối số phải khớp kiểu.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    printf(\"%d\\n\", x);",
       "proof": "gcc báo đúng dòng 4"
     },
@@ -231,6 +259,10 @@
       ],
       "bugLine": 4,
       "gt": "Biến cục bộ không được khởi tạo có giá trị rác. Đọc nó là sai.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 6 (chỗ đọc x), nơi biến được dùng, nhưng gốc lỗi là dòng 4: x được khai báo mà không gán giá trị nên có giá trị rác.",
+      "nearLines": [
+        6
+      ],
       "fixedLine": "    int x = 0;",
       "proof": "gcc báo lỗi (dòng 6), bản sửa hết cảnh báo"
     },
@@ -253,12 +285,17 @@
       ],
       "bugLine": 3,
       "gt": "x nằm trên stack và bị hủy khi hàm kết thúc. Trả về &x cho thấy vùng nhớ đã không còn hợp lệ.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 4 (return &x), nhưng gốc lỗi là dòng 3: x là biến cục bộ, hết hiệu lực khi hàm kết thúc, nên &x không còn dùng được.",
+      "nearLines": [
+        4,
+        8
+      ],
       "fixedLine": "    static int x = 1;",
       "proof": "gcc báo lỗi (dòng 4,8), bản sửa hết cảnh báo"
     },
     {
       "id": "g2-13",
-      "name": "Tràn mảng khi ghi",
+      "name": "Ghi vượt mảng 3 phần tử",
       "topic": "Mảng",
       "level": 1,
       "lines": [
@@ -274,6 +311,8 @@
       ],
       "bugLine": 5,
       "gt": "Mảng a có 3 phần tử, chỉ số hợp lệ từ 0 đến 2. a[3] nằm ngoài mảng.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    a[2] = 9;",
       "proof": "gcc báo đúng dòng 5"
     },
@@ -295,6 +334,8 @@
       ],
       "bugLine": 5,
       "gt": "Nếu không có ngoặc, && được tính trước || và kết quả khác với ý định.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    if (a > 0 && (b > 0 || c > 0)) {",
       "proof": "gcc báo đúng dòng 5"
     },
@@ -318,6 +359,10 @@
       ],
       "bugLine": 6,
       "gt": "Hàm khai báo kiểu int nhưng không có return: giá trị trả về không xác định.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 7 (dấu } cuối hàm), nơi hàm kết thúc mà không trả về, nhưng gốc lỗi là dòng 6: hàm kiểu int phải có return s hoặc return a + b.",
+      "nearLines": [
+        7
+      ],
       "fixedLine": "    return a + b;",
       "proof": "gcc báo lỗi (dòng 7), bản sửa hết cảnh báo"
     },
@@ -342,6 +387,8 @@
       ],
       "bugLine": 9,
       "gt": "Hàm swap nhận con trỏ, nên phải truyền địa chỉ &x, &y. Truyền x, y là sai kiểu.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    swap(&x, &y);",
       "proof": "gcc báo đúng dòng 9"
     },
@@ -362,6 +409,10 @@
       ],
       "bugLine": 4,
       "gt": "s chỉ có 4 byte, \"ab\" và \"cde\" cần 6 byte cùng \\0. strcat ghi tràn ra ngoài s.",
+      "gtNear": "gcc sẽ cảnh báo ở dòng 5 (strcat), nơi chuỗi bị nối thêm, nhưng gốc lỗi là dòng 4: s chỉ có 4 byte, không đủ cho \"ab\", \"cde\" và \\0 (cần 6 byte).",
+      "nearLines": [
+        5
+      ],
       "fixedLine": "    char s[10] = \"ab\";",
       "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
     },
@@ -383,6 +434,8 @@
       ],
       "bugLine": 6,
       "gt": "free chỉ dùng cho vùng nhớ lấy từ malloc. Mảng cục bộ nằm trên stack không được free.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    printf(\"%d\\n\", a[0]);",
       "proof": "gcc báo đúng dòng 6"
     },
@@ -403,6 +456,8 @@
       ],
       "bugLine": 5,
       "gt": "%d đọc đối số như số nguyên, còn x là số thực. Dùng %f hoặc %.2f.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    printf(\"%.2f\\n\", x);",
       "proof": "gcc báo đúng dòng 5"
     },
@@ -425,6 +480,8 @@
       ],
       "bugLine": 5,
       "gt": "i < 3 cho ba lượt. Điều kiện i <= 3 cho bốn lượt và tổng bị sai.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    for (i = 0; i < 3; i++) {",
       "proof": "đầu ra khác bản đã sửa"
     },
@@ -445,6 +502,8 @@
       ],
       "bugLine": 4,
       "gt": "\"ABCD\" cần 5 byte gồm cả '\\0'. Mảng code[4] không đủ chỗ cho ký tự kết thúc.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    char code[5] = \"ABCD\";",
       "proof": "đầu ra khác bản đã sửa"
     },
@@ -465,6 +524,8 @@
       ],
       "bugLine": 5,
       "gt": "%d in số nguyên; truyền tên mảng (địa chỉ) là sai kiểu. Muốn in giá trị phải truy cập phần tử.",
+      "gtNear": null,
+      "nearLines": [],
       "fixedLine": "    printf(\"%d\\n\", arr[0]);",
       "proof": "gcc báo đúng dòng 5"
     }

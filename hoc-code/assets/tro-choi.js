@@ -235,6 +235,16 @@
     if (st.answered) return;
     var q = st.deck[st.idx];
     var b = st.lineButtons[i];
+    // Gần đúng: gcc báo lỗi ở dòng này, nhưng gốc lỗi nằm dòng khác. Không trừ điểm, không đứt chuỗi.
+    if (i + 1 !== q.bugLine && (q.nearLines || []).indexOf(i + 1) >= 0) {
+      if (b.classList.contains('near')) return;
+      b.classList.add('near');
+      b.querySelector('.mark').textContent = '◎';
+      mascot(MASCOT.suyNghi, null);
+      $('bubble').textContent = 'Gần đúng! Dòng này có liên quan, tìm dòng gốc lỗi nhé.';
+      $('feedback').textContent = '◎ ' + (q.gtNear || 'Dòng này có liên quan đến lỗi, hãy tìm dòng gốc.');
+      return;
+    }
     if (i + 1 === q.bugLine) {
       st.answered = true;
       dungDongHo();
