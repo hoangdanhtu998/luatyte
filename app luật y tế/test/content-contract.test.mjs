@@ -120,6 +120,15 @@ test('bộ câu đặc thù đúng 8 và mọi câu đều tồn tại trong d�
   for (const q of metaTf) assert.ok(tf.some(row => row[0] === q), `META_TF không có trong dữ liệu: ${q}`);
 });
 
+test('mốc BHYT đã sửa: nội trú trái tuyến 40% và ngưỡng 15% lương cơ sở', () => {
+  const bhyt = quizzes['quiz_bhyt.json'].find(q => q.id === 'bhyt-07');
+  assert.equal(bhyt.o[bhyt.a], '40%');
+  const lt = quizzes['quiz_lythuyet.json'].find(q => q.id === 'lt-10');
+  assert.equal(lt.o[lt.a], '40%');
+  const row = tf.find(x => x[0].includes('15% lương cơ sở'));
+  assert.equal(row[1], true);
+});
+
 test('contract chặn được fixture thiếu trường, trùng id, t sai và đáp án sai', () => {
   const badLaws = structuredClone(laws);
   delete badLaws[0].so;
