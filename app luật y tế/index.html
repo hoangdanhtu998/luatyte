@@ -1441,7 +1441,7 @@ function renderRoleRoadmap(){
   body.innerHTML = `<div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
     <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
     ${chapterRows}
-    <p class="role-empty">Lộ trình gợi ý, không phải chương trình đào tạo chính thức. ${unmapped ? `Còn ${unmapped} câu chưa gắn lộ trình, vẫn luyện được ở tab Trắc nghiệm.` : ""}</p>`;
+    <p class="role-empty">Lộ trình gợi ý, không phải chương trình đào tạo chính thức. ${unmapped ? `Nhóm Khác: ${unmapped} câu chưa gắn lộ trình (gồm câu đang chờ đối chiếu), vẫn luyện được ở tab Trắc nghiệm.` : ""}</p>`;
   body.querySelectorAll("[data-role-practice]").forEach(b => b.onclick = () => practiceRoleChapter(b.dataset.rolePractice));
 }
 /* ================= SAO LƯU TIẾN ĐỘ ================= */
