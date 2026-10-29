@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Class gom dữ liệu và các việc làm trên dữ liệu đó vào một chỗ. Giống máy đếm: có một con số bên trong, và các nút để bấm.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tạo một máy đếm tên d. Lúc mới tạo, số bên trong là 0.", "boxes": ["so"], "code": "Dem d;", "run": { "so": 0 }, "after": "Máy đếm mới, số là 0." },
+    { "img": "m03-meo-vui.png", "say": "Bấm nút tang. Số bên trong tăng lên 1.", "boxes": ["so"], "code": "d.tang();", "run": { "so": 1 }, "after": "Số là 1." },
+    { "img": "m03-meo-vui.png", "say": "Bấm nút tang lần nữa. Số lên 2.", "boxes": ["so"], "code": "d.tang();", "run": { "so": 2 }, "after": "Số là 2." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: gọi d.lay() bây giờ trả về số mấy?", "boxes": ["so"], "code": "d.lay()", "quiz": [
+        { "text": "2", "right": true, "hint": "Đúng! Hai lần bấm tang, số bên trong là 2." },
+        { "text": "0", "right": false, "hint": "Số 0 là lúc mới tạo. Sau đó đã bấm tang hai lần." },
+        { "text": "1", "right": false, "hint": "Đã bấm tang hai lần, không phải một." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: dữ liệu bên trong gọi là thuộc tính. Các việc làm trên dữ liệu gọi là phương thức, như tang và lay.", "boxes": ["so"], "end": true }
+  ]
+}

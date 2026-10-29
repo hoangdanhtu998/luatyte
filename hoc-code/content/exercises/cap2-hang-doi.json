@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Xếp hàng",
+    "prompt": "Đọc các số nguyên dương cho đến khi gặp 0. Thêm vào hàng đợi, rồi lấy ra và in theo đúng thứ tự vào, cách nhau một dấu cách, xuống dòng cuối.",
+    "starter": "#include <stdio.h>\n\n#define MAX 100\nint q[MAX];\nint head = 0, tail = 0;\n\nvoid enqueue(int x) { q[tail++] = x; }\nint dequeue(void) { return q[head++]; }\nint empty(void) { return head == tail; }\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1 2 3 0\n",
+        "expected": "1 2 3\n"
+      },
+      {
+        "stdin": "5 9 0\n",
+        "expected": "5 9\n"
+      }
+    ]
+  }
+]

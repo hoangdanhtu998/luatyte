@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Gọi trình xử lý ngắt",
+    "prompt": "Đọc n, rồi n số hiệu ngắt (0 hoặc 1). Ngắt 0 in `timer`, ngắt 1 in `keyboard`. In từng dòng.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "2\n1 0\n",
+        "expected": "keyboard\ntimer\n"
+      }
+    ]
+  }
+]

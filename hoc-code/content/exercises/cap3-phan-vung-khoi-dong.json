@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Đếm phân vùng khởi động",
+    "prompt": "Đọc 4 byte trạng thái (hex, mỗi dòng một byte). In số phân vùng có byte 0x80.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "80\n00\n00\n80\n",
+        "expected": "2\n"
+      },
+      {
+        "stdin": "00\n00\n00\n00\n",
+        "expected": "0\n"
+      }
+    ]
+  }
+]

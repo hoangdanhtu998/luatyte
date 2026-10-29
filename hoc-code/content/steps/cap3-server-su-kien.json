@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Một server có thể phục vụ nhiều kết nối. Có hai cách: mỗi kết nối một luồng, hoặc một vòng lặp sự kiện xử lý lần lượt.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Sự kiện đến theo thứ tự: kết nối A, dữ liệu A, kết nối B. Vòng lặp xử lý từng sự kiện một.", "boxes": ["hàng đợi", "đã xử lý"], "code": "A-kết nối, A-dữ liệu, B-kết nối", "run": { "hàng đợi": "3 sự kiện", "đã xử lý": "0" }, "after": "Có 3 sự kiện đang chờ." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Vòng lặp lấy sự kiện đầu tiên, xử lý, rồi lấy sự kiện tiếp theo.", "boxes": ["hàng đợi", "đã xử lý"], "code": "xử lý A-kết nối", "run": { "hàng đợi": "2 sự kiện", "đã xử lý": "1" }, "after": "Một sự kiện đã xong." },
+    { "img": "m03-meo-vui.png", "say": "Vòng lặp không cần một luồng riêng cho mỗi kết nối, nên tiết kiệm bộ nhớ và ít chuyển ngữ cảnh.", "boxes": ["hàng đợi", "đã xử lý"], "code": "một luồng, nhiều sự kiện", "after": "Đây là ưu điểm của vòng lặp sự kiện." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: có 3 sự kiện chờ, vòng lặp xử lý hết sau bao nhiêu bước?", "boxes": ["hàng đợi", "đã xử lý"], "code": "3 sự kiện, 1 bước mỗi cái", "quiz": [
+        { "text": "3 bước", "right": true, "hint": "Đúng! Mỗi sự kiện xử lý một bước, nên 3 sự kiện là 3 bước." },
+        { "text": "1 bước", "right": false, "hint": "Vòng lặp xử lý từng sự kiện, không gộp cả ba lại." },
+        { "text": "9 bước", "right": false, "hint": "Không cần nhân ba. Mỗi sự kiện một bước." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: vòng lặp sự kiện phục vụ nhiều kết nối bằng một luồng. Nhược điểm của luồng chặn là mỗi kết nối chờ và tốn bộ nhớ riêng.", "boxes": ["hàng đợi", "đã xử lý"], "end": true }
+  ]
+}

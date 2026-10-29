@@ -1,0 +1,50 @@
+{
+  "quizzes": [
+    {
+      "q": "Vòng lặp sự kiện khác luồng cho mỗi kết nối ở điểm nào?",
+      "options": [
+        {
+          "text": "Dùng một luồng xử lý nhiều kết nối, tiết kiệm bộ nhớ",
+          "why": "Đúng."
+        },
+        {
+          "text": "Chậm hơn luôn",
+          "why": "Không luôn chậm hơn."
+        },
+        {
+          "text": "Không xử lý dữ liệu",
+          "why": "Có xử lý."
+        },
+        {
+          "text": "Cần nhiều CPU hơn",
+          "why": "Không nhất thiết."
+        }
+      ],
+      "answer": 0,
+      "explain": "Ít luồng, ít chuyển ngữ cảnh."
+    },
+    {
+      "q": "Nhược điểm của một luồng chặn (blocking) là gì?",
+      "options": [
+        {
+          "text": "Một kết nối chậm có thể làm chờ các kết nối khác",
+          "why": "Đúng."
+        },
+        {
+          "text": "Không nhận được dữ liệu",
+          "why": "Vẫn nhận."
+        },
+        {
+          "text": "Tốn ổ đĩa",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Không dùng được mạng",
+          "why": "Dùng được."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chặn ở một chỗ làm chậm cả hàng."
+    }
+  ]
+}

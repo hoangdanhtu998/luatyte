@@ -1,0 +1,15 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Danh sách liên kết giống một đoàn tàu. Mỗi toa có hàng hóa và một móc nối chỉ tới toa kế tiếp.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đoàn tàu bắt đầu bằng toa đầu. Ban đầu chưa có toa nào, nên đầu là trống.", "boxes": ["đầu"], "code": "dau = NULL;", "run": { "đầu": "trống" }, "after": "Chưa có toa nào." },
+    { "img": "m03-meo-vui.png", "say": "Thêm số 1 vào đầu. Toa mới chỉ tới đầu cũ, rồi trở thành đầu mới.", "boxes": ["đầu"], "code": "thêm 1 vào đầu", "run": { "đầu": "1" }, "after": "Đầu bây giờ là 1." },
+    { "img": "m03-meo-vui.png", "say": "Thêm số 2 vào đầu. Toa 2 trỏ tới toa 1, rồi 2 trở thành đầu.", "boxes": ["đầu"], "code": "thêm 2 vào đầu", "run": { "đầu": "2 → 1" }, "after": "Đầu bây giờ là 2, phía sau là 1." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: thêm tiếp số 3 vào đầu. Đầu mới là số mấy?", "boxes": ["đầu"], "code": "thêm 3 vào đầu", "quiz": [
+        { "text": "3", "right": true, "hint": "Đúng! Số thêm sau cùng luôn nằm ở đầu." },
+        { "text": "1", "right": false, "hint": "1 là số thêm đầu tiên, nó nằm cuối danh sách." },
+        { "text": "2", "right": false, "hint": "2 đã bị đẩy xuống sau 3." } ] },
+    { "img": "m03-meo-vui.png", "say": "Thêm số 3 vào đầu. Danh sách bây giờ là 3 → 2 → 1.", "boxes": ["đầu"], "code": "thêm 3 vào đầu", "run": { "đầu": "3 → 2 → 1" }, "after": "Danh sách: 3, 2, 1." },
+    { "img": "m03-meo-vui.png", "say": "Để in cả danh sách, bắt đầu từ đầu. In giá trị, rồi đi theo móc nối tới toa kế tiếp, cho đến khi hết.", "boxes": ["đầu"], "code": "for (p = dau; p != NULL; p = p->tiep)", "run": { "đầu": "in 3 2 1" }, "after": "In ra: 3 2 1." },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: danh sách liên kết gồm các nút nối nhau bằng con trỏ. Thêm vào đầu thì phải trỏ tới đầu cũ trước khi đổi đầu.", "boxes": ["đầu"], "end": true }
+  ]
+}

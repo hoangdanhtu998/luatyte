@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Ba bước của vòng lặp máy ảo là gì?",
+      "options": [
+        {
+          "text": "Nạp lệnh, giải mã, thực thi",
+          "why": "Đúng. Đây là chu trình của mọi CPU."
+        },
+        {
+          "text": "Đọc, ghi, xóa",
+          "why": "Không phải các bước của CPU."
+        },
+        {
+          "text": "Biên dịch, liên kết, chạy",
+          "why": "Đó là quy trình của trình biên dịch."
+        },
+        {
+          "text": "In, lưu, đóng",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chu trình nạp - giải mã - thực thi."
+    },
+    {
+      "q": "Thanh ghi trong máy ảo dùng để làm gì?",
+      "options": [
+        {
+          "text": "Lưu giá trị tạm thời khi tính toán",
+          "why": "Đúng. CPU làm việc chủ yếu trên thanh ghi."
+        },
+        {
+          "text": "Lưu toàn bộ chương trình",
+          "why": "Chương trình nằm trong bộ nhớ."
+        },
+        {
+          "text": "Hiển thị màn hình",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Kết nối mạng",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thanh ghi là ô nhớ nhanh trong CPU."
+    },
+    {
+      "q": "Nếu quên tăng bộ đếm lệnh, điều gì xảy ra?",
+      "options": [
+        {
+          "text": "Máy lặp lại cùng một lệnh mãi",
+          "why": "Đúng. Không đi tiếp nên vòng lặp không dừng."
+        },
+        {
+          "text": "Máy tự sửa",
+          "why": "Máy không tự sửa."
+        },
+        {
+          "text": "Chương trình kết thúc ngay",
+          "why": "Ngược lại, nó bị kẹt."
+        },
+        {
+          "text": "Máy đổi lệnh khác",
+          "why": "Không đổi."
+        }
+      ],
+      "answer": 0,
+      "explain": "Bộ đếm lệnh phải tiến lên sau mỗi lệnh."
+    }
+  ]
+}

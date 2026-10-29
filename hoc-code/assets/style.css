@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.55; color: #1d2330; background: #f6f7fb; }
+header { background: #1f3a5f; color: #fff; padding: 16px 20px; }
+header a { color: #cfe3ff; }
+header h1 { margin: 0; font-size: 20px; }
+main { max-width: 920px; margin: 0 auto; padding: 20px; }
+h2 { margin-top: 32px; font-size: 18px; }
+.level-desc { color: #5b6475; margin: -6px 0 12px; }
+.progress { background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.bar { height: 10px; background: #e3e7ef; border-radius: 6px; overflow: hidden; margin-top: 8px; }
+.bar > span { display: block; height: 100%; background: #2e8b57; width: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.card { display: block; background: #fff; border-radius: 10px; padding: 14px; text-decoration: none; color: inherit; box-shadow: 0 1px 3px rgba(0,0,0,.06); border-left: 4px solid #cbd3e1; }
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.card p { margin: 0; color: #4a5263; font-size: 14px; }
+.card.doing { border-left-color: #e0a100; }
+.card.done { border-left-color: #2e8b57; }
+.tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #eef1f7; color: #3a4456; margin-top: 8px; }
+.box { background: #fff; border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: 14px; }
+select, textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid #cbd3e1; border-radius: 6px; }
+textarea { min-height: 120px; }
+.btn { display: inline-block; background: #1f3a5f; color: #fff; padding: 8px 14px; border-radius: 6px; text-decoration: none; margin: 4px 6px 4px 0; border: 0; cursor: pointer; font: inherit; }
+.muted { color: #5b6475; font-size: 14px; }
+pre { background: #1d2330; color: #e8edf7; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 14px; }
+code { font-family: Consolas, "Courier New", monospace; }
+.saved { color: #2e8b57; font-size: 13px; min-height: 18px; }

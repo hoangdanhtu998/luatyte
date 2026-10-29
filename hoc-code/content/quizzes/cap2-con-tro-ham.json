@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Con trỏ hàm lưu gì?",
+      "options": [
+        {
+          "text": "Địa chỉ của một hàm",
+          "why": "Đúng. Nó trỏ tới chỗ hàm nằm trong bộ nhớ, để gọi hàm qua con trỏ."
+        },
+        {
+          "text": "Giá trị trả về của hàm",
+          "why": "Đó là kết quả, không phải địa chỉ."
+        },
+        {
+          "text": "Số tham số của hàm",
+          "why": "Không liên quan đến số tham số."
+        },
+        {
+          "text": "Tên của biến toàn cục",
+          "why": "Không phải tên biến."
+        }
+      ],
+      "answer": 0,
+      "explain": "Con trỏ hàm giữ địa chỉ của hàm, giống con trỏ giữ địa chỉ của biến."
+    },
+    {
+      "q": "Khai báo `int (*f)(int, int)` nghĩa là gì?",
+      "options": [
+        {
+          "text": "f là con trỏ tới hàm nhận hai int và trả về int",
+          "why": "Đúng. Dấu * nằm trong ngoặc cùng f, nên f là con trỏ hàm."
+        },
+        {
+          "text": "f là hàm trả về con trỏ int",
+          "why": "Đó là `int *f(int, int)`, khác với khai báo này."
+        },
+        {
+          "text": "f là một mảng hai số nguyên",
+          "why": "Không phải mảng."
+        },
+        {
+          "text": "f là biến int bình thường",
+          "why": "Có cặp ngoặc và tham số, nên là con trỏ hàm."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đọc từ trong ngoặc ra: f là con trỏ, trỏ tới hàm có tham số và kiểu trả về đã nêu."
+    },
+    {
+      "q": "Vì sao cần con trỏ hàm? ",
+      "options": [
+        {
+          "text": "Để truyền một hành vi vào hàm khác, ví dụ hàm so sánh cho sắp xếp",
+          "why": "Đúng. Đây là kiểu callback, rất phổ biến trong thư viện C."
+        },
+        {
+          "text": "Để chương trình không cần hàm",
+          "why": "Con trỏ hàm không thay thế hàm."
+        },
+        {
+          "text": "Để tăng kích thước bộ nhớ",
+          "why": "Không liên quan đến bộ nhớ."
+        },
+        {
+          "text": "Để in ra màn hình nhanh hơn",
+          "why": "Không liên quan đến tốc độ in."
+        }
+      ],
+      "answer": 0,
+      "explain": "Con trỏ hàm cho phép đổi hành vi mà không sửa hàm nhận."
+    },
+    {
+      "q": "Khai báo `int *f(int, int)` nghĩa là gì?",
+      "options": [
+        {
+          "text": "Hàm f trả về một con trỏ int",
+          "why": "Đúng. Dấu * đi với kiểu trả về, không đi với f."
+        },
+        {
+          "text": "f là con trỏ tới hàm",
+          "why": "Thiếu cặp ngoặc quanh *f, nên không phải con trỏ hàm."
+        },
+        {
+          "text": "f là số nguyên",
+          "why": "Có tham số, nên là hàm."
+        },
+        {
+          "text": "Khai báo bị lỗi",
+          "why": "Đây là khai báo hợp lệ."
+        }
+      ],
+      "answer": 0,
+      "explain": "Cặp ngoặc quyết định đó là con trỏ hàm hay hàm trả về con trỏ."
+    },
+    {
+      "q": "qsort trong thư viện chuẩn nhận con trỏ hàm để làm gì?",
+      "options": [
+        {
+          "text": "So sánh hai phần tử để quyết định thứ tự",
+          "why": "Đúng. Người dùng viết hàm so sánh, qsort dùng để sắp xếp."
+        },
+        {
+          "text": "Đọc file",
+          "why": "qsort không đọc file."
+        },
+        {
+          "text": "Tạo thread",
+          "why": "Không liên quan đến luồng."
+        },
+        {
+          "text": "Xóa mảng",
+          "why": "qsort sắp xếp, không xóa."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đây là ví dụ kinh điển của callback trong C."
+    },
+    {
+      "q": "Điều gì xảy ra nếu gọi con trỏ hàm đang là NULL?",
+      "options": [
+        {
+          "text": "Chương trình thường bị crash",
+          "why": "Đúng. Gọi hàm qua địa chỉ không hợp lệ là lỗi nghiêm trọng."
+        },
+        {
+          "text": "Hàm trả về 0 tự động",
+          "why": "Không có chuyện tự động như vậy."
+        },
+        {
+          "text": "Máy tự tìm hàm khác",
+          "why": "Máy không tự chọn hàm thay thế."
+        },
+        {
+          "text": "Không có gì xảy ra",
+          "why": "Gọi NULL là lỗi, thường làm chương trình dừng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Luôn kiểm tra con trỏ hàm khác NULL trước khi gọi."
+    }
+  ]
+}

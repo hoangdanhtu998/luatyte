@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Checksum của tiêu đề IPv4 được tính bằng cách nào?",
+      "options": [
+        {
+          "text": "Cộng các từ 16 bit, cộng phần nhớ vào, rồi lấy bù một",
+          "why": "Đúng. Đây là cách tính checksum internet."
+        },
+        {
+          "text": "Đếm số byte",
+          "why": "Không phải đếm byte."
+        },
+        {
+          "text": "Lấy trung bình các byte",
+          "why": "Không phải trung bình."
+        },
+        {
+          "text": "Nhân các từ lại với nhau",
+          "why": "Không nhân."
+        }
+      ],
+      "answer": 0,
+      "explain": "Checksum dùng phép cộng một bù."
+    },
+    {
+      "q": "Vì sao phải cộng phần nhớ (carry) trở lại trong checksum?",
+      "options": [
+        {
+          "text": "Để kết quả vừa 16 bit",
+          "why": "Đúng. Tổng vượt 16 bit thì phần thừa được cộng về đầu."
+        },
+        {
+          "text": "Để checksum luôn chẵn",
+          "why": "Không phải mục đích."
+        },
+        {
+          "text": "Để đổi thứ tự byte",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Không cần, bỏ qua",
+          "why": "Bỏ qua sẽ sai checksum."
+        }
+      ],
+      "answer": 0,
+      "explain": "Phần nhớ được gấp lại vào 16 bit thấp."
+    },
+    {
+      "q": "Trường checksum khi tính phải được đặt thế nào?",
+      "options": [
+        {
+          "text": "Đặt bằng 0 trước khi tính",
+          "why": "Đúng. Nếu không sẽ tính lẫn giá trị cũ."
+        },
+        {
+          "text": "Đặt bằng 1",
+          "why": "Không phải quy định."
+        },
+        {
+          "text": "Bỏ qua khi tính",
+          "why": "Phải đặt 0 chứ không bỏ."
+        },
+        {
+          "text": "Đặt bằng địa chỉ IP",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "Checksum được tính với trường checksum bằng 0."
+    },
+    {
+      "q": "Phép lấy bù một (one's complement) của 0xFFFF là gì?",
+      "options": [
+        {
+          "text": "0x0000",
+          "why": "Đúng. Mọi bit bị đảo, FFFF thành 0000."
+        },
+        {
+          "text": "0xFFFF",
+          "why": "Đó là chính nó, không phải bù."
+        },
+        {
+          "text": "0x0001",
+          "why": "Không đúng."
+        },
+        {
+          "text": "0x8000",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Bù một đảo tất cả các bit."
+    }
+  ]
+}

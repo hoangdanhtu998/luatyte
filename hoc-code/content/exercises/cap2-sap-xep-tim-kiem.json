@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Tìm nhị phân",
+    "prompt": "Đọc n, n số đã sắp xếp tăng dần, rồi số x. In chỉ số của x trong mảng (từ 0), hoặc -1 nếu không có. Dùng tìm nhị phân.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    int a[100];\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "5\n1 3 5 7 9\n7\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "5\n1 3 5 7 9\n4\n",
+        "expected": "-1\n"
+      }
+    ]
+  }
+]

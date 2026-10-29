@@ -1,0 +1,119 @@
+{
+  "quizzes": [
+    {
+      "q": "Hàng đợi hoạt động theo nguyên tắc nào?",
+      "options": [
+        {
+          "text": "Vào trước, ra trước (FIFO)",
+          "why": "Đúng. Ai đến trước được phục vụ trước."
+        },
+        {
+          "text": "Vào sau, ra trước (LIFO)",
+          "why": "Đó là ngăn xếp."
+        },
+        {
+          "text": "Ngẫu nhiên",
+          "why": "Hàng đợi có thứ tự rõ ràng."
+        },
+        {
+          "text": "Theo giá trị nhỏ nhất",
+          "why": "Đó là hàng đợi ưu tiên, không phải hàng đợi thường."
+        }
+      ],
+      "answer": 0,
+      "explain": "FIFO: xếp hàng theo thứ tự đến."
+    },
+    {
+      "q": "`enqueue` làm gì?",
+      "options": [
+        {
+          "text": "Thêm phần tử vào cuối hàng",
+          "why": "Đúng. Phần tử mới đứng sau cùng."
+        },
+        {
+          "text": "Lấy phần tử ở đầu hàng",
+          "why": "Lấy ra là dequeue."
+        },
+        {
+          "text": "Xóa toàn bộ hàng",
+          "why": "enqueue không xóa."
+        },
+        {
+          "text": "Đảo ngược hàng",
+          "why": "Không đảo ngược."
+        }
+      ],
+      "answer": 0,
+      "explain": "enqueue thêm vào đuôi, dequeue lấy từ đầu."
+    },
+    {
+      "q": "Khác biệt quan trọng giữa hàng đợi và ngăn xếp khi lấy phần tử ra?",
+      "options": [
+        {
+          "text": "Hàng đợi lấy từ đầu, ngăn xếp lấy từ đỉnh (cuối)",
+          "why": "Đúng. Đây là điểm khác cơ bản."
+        },
+        {
+          "text": "Hai cấu trúc lấy giống nhau",
+          "why": "Khác nhau ở thứ tự."
+        },
+        {
+          "text": "Ngăn xếp lấy ngẫu nhiên",
+          "why": "Ngăn xếp lấy từ đỉnh."
+        },
+        {
+          "text": "Hàng đợi không lấy được",
+          "why": "Hàng đợi lấy được từ đầu."
+        }
+      ],
+      "answer": 0,
+      "explain": "Ngăn xếp lấy phần tử mới nhất, hàng đợi lấy phần tử cũ nhất."
+    },
+    {
+      "q": "Ứng dụng nào dùng hàng đợi?",
+      "options": [
+        {
+          "text": "Hàng đợi công việc và duyệt đồ thị theo chiều rộng",
+          "why": "Đúng. Mọi việc được xử lý theo thứ tự đến."
+        },
+        {
+          "text": "Kiểm tra ngoặc đúng",
+          "why": "Ngoặc thường dùng ngăn xếp."
+        },
+        {
+          "text": "Lời gọi hàm lồng nhau",
+          "why": "Đó là ngăn xếp."
+        },
+        {
+          "text": "Sắp xếp số",
+          "why": "Không dùng hàng đợi cho việc này."
+        }
+      ],
+      "answer": 0,
+      "explain": "Hàng đợi giữ đúng thứ tự xử lý."
+    },
+    {
+      "q": "Vì sao cần kiểm tra rỗng trước khi dequeue?",
+      "options": [
+        {
+          "text": "Để tránh đọc phần tử không tồn tại",
+          "why": "Đúng. Dequeue khi rỗng là lỗi truy cập."
+        },
+        {
+          "text": "Để hàng đợi nhanh hơn",
+          "why": "Không liên quan tốc độ."
+        },
+        {
+          "text": "Vì dequeue không trả về gì",
+          "why": "Dequeue trả về phần tử."
+        },
+        {
+          "text": "Để in ra màn hình",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Lấy từ hàng rỗng là lỗi."
+    }
+  ]
+}

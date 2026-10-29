@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Trung bình ba số",
+    "prompt": "Viết hàm double trung_binh(double a, double b, double c) và dùng nó để in trung bình của ba số đọc vào, với 2 chữ số thập phân.",
+    "starter": "#include <stdio.h>\n\n// viết hàm trung_binh ở đây\n\nint main(void) {\n    double a, b, c;\n    if (scanf(\"%lf %lf %lf\", &a, &b, &c) != 3) return 1;\n    // in kết quả ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "7 8 9\n",
+        "expected": "8.00\n"
+      },
+      {
+        "stdin": "1 2 4\n",
+        "expected": "2.33\n"
+      }
+    ]
+  }
+]

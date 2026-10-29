@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Một pixel 32 bit với định dạng 0x00RRGGBB dành bao nhiêu bit cho màu đỏ?",
+      "options": [
+        {
+          "text": "8 bit",
+          "why": "Đúng."
+        },
+        {
+          "text": "16 bit",
+          "why": "Không đúng."
+        },
+        {
+          "text": "4 bit",
+          "why": "Không đúng."
+        },
+        {
+          "text": "24 bit",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mỗi kênh màu 8 bit."
+    },
+    {
+      "q": "Màu xanh lá thuần 0x0000FF00 có nghĩa gì?",
+      "options": [
+        {
+          "text": "Chỉ có kênh xanh lá đầy đủ",
+          "why": "Đúng: byte G là FF."
+        },
+        {
+          "text": "Đỏ",
+          "why": "Đỏ là byte R."
+        },
+        {
+          "text": "Trắng",
+          "why": "Trắng cần cả ba kênh."
+        },
+        {
+          "text": "Đen",
+          "why": "Đen là 0."
+        }
+      ],
+      "answer": 0,
+      "explain": "Kênh G nằm ở byte giữa."
+    },
+    {
+      "q": "Đệm khung là gì?",
+      "options": [
+        {
+          "text": "Mảng pixel mà chương trình vẽ vào trước khi hiển thị",
+          "why": "Đúng."
+        },
+        {
+          "text": "Ổ cứng",
+          "why": "Không phải."
+        },
+        {
+          "text": "Bàn phím",
+          "why": "Không phải."
+        },
+        {
+          "text": "Mạng",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "Vẽ vào bộ nhớ rồi đưa lên màn hình."
+    }
+  ]
+}

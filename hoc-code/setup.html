@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chuẩn bị môi trường · Học code</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="du-an.html">← Danh sách dự án</a></h1>
+</header>
+<main>
+  <h2 style="margin-top:0">Bước 0: Cài trình biên dịch</h2>
+  <div class="box">
+    <p>Trên Windows, cách đơn giản nhất là cài <strong>MSYS2</strong> (có gcc/g++). Sau khi cài, mở terminal MSYS2 UCRT64 và chạy:</p>
+    <pre>pacman -S --needed mingw-w64-ucrt-x86_64-gcc gdb</pre>
+    <p class="muted">Kiểm tra: <code>gcc --version</code> và <code>g++ --version</code> phải in ra phiên bản.</p>
+  </div>
+
+  <h2>Bước 1: Chương trình đầu tiên</h2>
+  <div class="box">
+    <p>Tạo file <code>hello.c</code>:</p>
+<pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Xin chao\n");
+    return 0;
+}</pre>
+    <p>Biên dịch và chạy:</p>
+<pre>gcc -Wall -Wextra -std=c17 -g hello.c -o hello
+./hello</pre>
+    <p class="muted">Với C++ dùng <code>g++ -Wall -Wextra -std=c++17 -g hello.cpp -o hello</code>. Cờ <code>-Wall -Wextra</code> giúp bắt lỗi sớm, <code>-g</code> để gdb đọc được.</p>
+  </div>
+
+  <h2>Bước 2: Cách làm mỗi dự án</h2>
+  <div class="box">
+    <ol>
+      <li>Đọc mô tả và hướng dẫn gốc, chỉ đọc đến chỗ cần làm.</li>
+      <li>Tự gõ lại code, đừng copy-paste nguyên khối.</li>
+      <li>Chạy thử sau mỗi phần nhỏ. Dùng <code>valgrind</code> hoặc <code>-fsanitize=address</code> để tìm lỗi bộ nhớ.</li>
+      <li>Ghi lại lỗi đã gặp và cách sửa vào ghi chú của dự án.</li>
+      <li>Xong thì đổi trạng thái sang "Đã xong".</li>
+    </ol>
+  </div>
+
+  <h2>Lộ trình đề xuất</h2>
+  <div class="box">
+    <p>Làm theo thứ tự cấp: hoàn thành ít nhất 3 dự án ở cấp 1 trước khi sang cấp 2, và cấp 2 trước khi sang cấp 3. Các dự án cấp 3 khó hơn nhiều, đừng nản nếu mất vài tuần cho một dự án.</p>
+  </div>
+</main>
+</body>
+</html>

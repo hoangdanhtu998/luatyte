@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Con trỏ là một hộp đặc biệt. Thay vì chứa một số, nó chứa địa chỉ của hộp khác, giống như ghi số nhà của một người.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là hộp x. Bỏ số 5 vào.", "boxes": ["x"], "code": "int x = 5;", "run": { "x": 5 }, "after": "Xong! x là 5." },
+    { "img": "m03-meo-vui.png", "say": "Đây là hộp p, là con trỏ. Dấu & lấy địa chỉ của x. Bấm để p ghi địa chỉ của x.", "boxes": ["x", "p"], "code": "int *p = &x;", "run": { "p": "trỏ tới x" }, "after": "Xong! p không chứa 5, mà chứa địa chỉ của x. p đang trỏ tới x." },
+    { "img": "m04-meo-nhe-nhang.png", "say": "Dấu * nghĩa là đi tới hộp mà p đang trỏ tới, rồi làm việc ở đó. Dòng này đổi hộp x thành 9.", "boxes": ["x", "p"], "code": "*p = 9;", "run": { "x": 9 }, "after": "Xong! Hộp x giờ là 9, vì p đã đi tới x và đổi ở đó." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau dòng *p = 9, hộp x chứa số mấy?", "boxes": ["x", "p"], "code": "*p = 9;", "quiz": [
+        { "text": "5", "right": false, "hint": "x đã bị đổi. p đi tới x và ghi 9 vào đó." },
+        { "text": "9", "right": true, "hint": "Đúng! *p đi tới x, nên x thành 9." },
+        { "text": "p", "right": false, "hint": "p là địa chỉ, không đổi giá trị của x." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: con trỏ chứa địa chỉ. Dấu & lấy địa chỉ. Dấu * đi tới hộp đó để đọc hoặc đổi giá trị.", "boxes": ["x", "p"], "end": true }
+  ]
+}

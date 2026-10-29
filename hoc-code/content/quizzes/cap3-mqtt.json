@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "MQTT dùng mô hình nào?",
+      "options": [
+        {
+          "text": "Publish và subscribe qua chủ đề (topic)",
+          "why": "Đúng. Người gửi và người nhận không cần biết nhau."
+        },
+        {
+          "text": "Gọi hàm từ xa",
+          "why": "Không phải RPC."
+        },
+        {
+          "text": "Gửi file trực tiếp",
+          "why": "Không phải truyền file."
+        },
+        {
+          "text": "Chỉ một người nhận",
+          "why": "Có thể nhiều người đăng ký."
+        }
+      ],
+      "answer": 0,
+      "explain": "MQTT là nhắn tin theo chủ đề."
+    },
+    {
+      "q": "Ký tự `+` trong bộ lọc chủ đề có nghĩa gì?",
+      "options": [
+        {
+          "text": "Khớp đúng một cấp chủ đề",
+          "why": "Đúng. sensor/+/temp khớp sensor/1/temp."
+        },
+        {
+          "text": "Khớp nhiều cấp",
+          "why": "Nhiều cấp là #."
+        },
+        {
+          "text": "Cộng hai số",
+          "why": "Không phải phép cộng."
+        },
+        {
+          "text": "Không khớp gì",
+          "why": "+ khớp một cấp."
+        }
+      ],
+      "answer": 0,
+      "explain": "+ là ký tự đại diện cho đúng một cấp."
+    },
+    {
+      "q": "Ký tự `#` trong bộ lọc chủ đề có nghĩa gì?",
+      "options": [
+        {
+          "text": "Khớp mọi cấp còn lại, đặt ở cuối",
+          "why": "Đúng. sensor/# khớp sensor/1/temp."
+        },
+        {
+          "text": "Khớp đúng một cấp",
+          "why": "Một cấp là +."
+        },
+        {
+          "text": "Là ghi chú",
+          "why": "Không phải ghi chú."
+        },
+        {
+          "text": "Lỗi",
+          "why": "Hợp lệ khi đặt ở cuối."
+        }
+      ],
+      "answer": 0,
+      "explain": "# khớp nhiều cấp, phải ở cuối bộ lọc."
+    },
+    {
+      "q": "Bộ lọc `sensor/+` có khớp chủ đề `sensor/1/temp` không?",
+      "options": [
+        {
+          "text": "Không, vì + chỉ khớp đúng một cấp",
+          "why": "Đúng. sensor/1/temp có ba cấp."
+        },
+        {
+          "text": "Có, vì bắt đầu bằng sensor",
+          "why": "Phải khớp toàn bộ số cấp."
+        },
+        {
+          "text": "Có, vì + khớp mọi thứ",
+          "why": "+ chỉ một cấp."
+        },
+        {
+          "text": "Tùy máy",
+          "why": "Quy tắc cố định."
+        }
+      ],
+      "answer": 0,
+      "explain": "Số cấp phải khớp chính xác với +."
+    }
+  ]
+}

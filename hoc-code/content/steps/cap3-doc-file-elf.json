@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Chương trình trên Linux thường là file ELF. Giống như chữ ký đầu thư: đọc vài byte đầu là biết đây là loại file gì.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bốn byte đầu của file ELF luôn là 7F, 45, 4C, 46. Trong chữ cái, 45, 4C, 46 là E, L, F.", "boxes": ["byte 1", "byte 2", "byte 3", "byte 4"], "code": "7F 45 4C 46", "run": { "byte 1": "7F", "byte 2": "45 (E)", "byte 3": "4C (L)", "byte 4": "46 (F)" }, "after": "Bốn byte đầu là dấu hiệu ELF." },
+    { "img": "m03-meo-vui.png", "say": "Debugger và hệ điều hành đọc bốn byte này để biết file có phải ELF không, trước khi làm gì khác.", "boxes": ["byte 1", "byte 2", "byte 3", "byte 4"], "end": false },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: nếu bốn byte đầu là 89 50 4E 47 thì file là gì?", "boxes": ["byte 1", "byte 2", "byte 3", "byte 4"], "code": "89 50 4E 47", "quiz": [
+        { "text": "Không phải ELF (đó là đầu file PNG)", "right": true, "hint": "Đúng! 89 50 4E 47 là chữ ký của PNG, không phải ELF." },
+        { "text": "Là file ELF", "right": false, "hint": "ELF luôn bắt đầu bằng 7F 45 4C 46. Bốn byte này khác." },
+        { "text": "File bị trống", "right": false, "hint": "Có đủ bốn byte, chỉ là khác dấu hiệu của ELF." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: đọc bốn byte đầu để nhận diện file. Dấu hiệu ELF là 7F 45 4C 46.", "boxes": ["byte 1", "byte 2", "byte 3", "byte 4"], "end": true }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Offset ô VGA",
+    "prompt": "Đọc hàng và cột. In offset byte của ô trong bộ đệm VGA theo công thức (hàng*80 + cột)*2.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1 2\n",
+        "expected": "164\n"
+      },
+      {
+        "stdin": "0 0\n",
+        "expected": "0\n"
+      }
+    ]
+  }
+]

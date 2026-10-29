@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Sinh assembly",
+    "prompt": "Đọc một số nguyên n. In hai dòng: `mov $n, %eax` và `ret`.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "42\n",
+        "expected": "mov $42, %eax\nret\n"
+      }
+    ]
+  }
+]

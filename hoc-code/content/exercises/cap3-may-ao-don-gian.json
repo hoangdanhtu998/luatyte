@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Chạy chương trình máy ảo",
+    "prompt": "Đọc từng dòng lệnh (SET, ADD, PRINT) đến hết. Thanh ghi có 4 ô, đánh số 0 đến 3. Thực thi và in theo lệnh PRINT.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "SET 0 5\nSET 1 7\nADD 0 1\nPRINT 0\n",
+        "expected": "12\n"
+      }
+    ]
+  }
+]

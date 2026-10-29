@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Bảng băm giống một tủ có nhiều ngăn. Từ tên đồ, máy tính ra số ngăn để cất. Lần sau tìm lại cũng tính ra đúng ngăn đó, rất nhanh.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tủ có ba ngăn đánh số 0, 1, 2. Lúc đầu cả ba đều trống.", "boxes": ["ngăn 0", "ngăn 1", "ngăn 2"], "after": "Tủ còn trống." },
+    { "img": "m03-meo-vui.png", "say": "Cất con mèo. Máy tính ra số ngăn là 2, nên bỏ mèo vào ngăn 2.", "boxes": ["ngăn 0", "ngăn 1", "ngăn 2"], "code": "cất mèo vào ngăn 2", "run": { "ngăn 2": "mèo" }, "after": "Mèo đã nằm ở ngăn 2." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: nếu cất con lợn, máy cũng tính ra ngăn 2. Chuyện gì xảy ra?", "boxes": ["ngăn 0", "ngăn 1", "ngăn 2"], "code": "cất lợn vào ngăn 2", "quiz": [
+        { "text": "Hai món đụng nhau, phải xử lý thêm", "right": true, "hint": "Đúng! Đây gọi là va chạm. Có nhiều cách xử lý, ví dụ xếp thành danh sách trong cùng một ngăn." },
+        { "text": "Tủ tự tạo thêm ngăn mới", "right": false, "hint": "Tủ có số ngăn cố định. Phải xử lý va chạm, không tự tạo ngăn." },
+        { "text": "Mèo bị xóa đi", "right": false, "hint": "Bảng băm không xóa món đã cất khi có va chạm." } ] },
+    { "img": "m03-meo-vui.png", "say": "Cất chó. Số ngăn là 0, nên bỏ chó vào ngăn 0.", "boxes": ["ngăn 0", "ngăn 1", "ngăn 2"], "code": "cất chó vào ngăn 0", "run": { "ngăn 0": "chó" }, "after": "Chó đã nằm ở ngăn 0." },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: tên đồ đi qua một phép tính để ra số ngăn. Tra cứu cũng vậy, không phải mở cả tủ.", "boxes": ["ngăn 0", "ngăn 1", "ngăn 2"], "end": true }
+  ]
+}

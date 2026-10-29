@@ -1,0 +1,24 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Chương trình chạy từ trên xuống dưới. Khi gặp câu hỏi đúng hay sai, nó chọn đường đi. Mình sẽ cho bạn thấy từng bước.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là hộp diem. Bỏ điểm 7 vào hộp.", "boxes": ["diem"], "code": "int diem = 7;", "run": { "diem": 7 }, "after": "Xong! diem giờ là 7." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: 7 có lớn hơn hoặc bằng 9 không?", "boxes": ["diem"], "code": "if (diem >= 9)", "quiz": [
+        { "text": "Có", "right": false, "hint": "7 nhỏ hơn 9, nên không đúng." },
+        { "text": "Không", "right": true, "hint": "Đúng! 7 không lớn hơn hoặc bằng 9, nên bỏ qua nhánh này." } ] },
+    { "img": "m03-meo-vui.png", "say": "Nhánh đầu sai, máy kiểm tra nhánh tiếp theo: 7 có lớn hơn hoặc bằng 7 không?", "boxes": ["diem"], "code": "else if (diem >= 7)", "quiz": [
+        { "text": "Có", "right": true, "hint": "Đúng! 7 bằng 7. Chạy nhánh này và bỏ qua các nhánh còn lại." },
+        { "text": "Không", "right": false, "hint": "7 bằng 7, nên điều kiện này đúng." } ] },
+    { "img": "m03-meo-vui.png", "say": "Nhánh này đúng nên máy bỏ một hộp kết quả là Kha. Bấm để chạy.", "boxes": ["diem", "ket_qua"], "code": "ket_qua = \"Kha\";", "run": { "ket_qua": "Kha" }, "after": "Xong! Kết quả là Kha. Các nhánh sau không được chạy." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bây giờ đến vòng lặp. Mình bỏ số 1 vào hộp i và số 0 vào hộp tong.", "boxes": ["i", "tong"], "code": "int i = 1, tong = 0;", "run": { "i": 1, "tong": 0 }, "after": "Xong! i là 1, tong là 0." },
+    { "img": "m03-meo-vui.png", "say": "Vòng lặp này làm việc: cộng i vào tong.", "boxes": ["i", "tong"], "code": "tong = tong + i;", "run": { "tong": 1 }, "after": "Bây giờ tong là 1." },
+    { "img": "m03-meo-vui.png", "say": "Sau đó tăng i lên 1.", "boxes": ["i", "tong"], "code": "i++;", "run": { "i": 2 }, "after": "Bây giờ i là 2. Một vòng đã xong." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: i là 2 có còn nhỏ hơn hoặc bằng 3 không? Nếu còn, vòng lặp chạy tiếp.", "boxes": ["i", "tong"], "code": "while (i <= 3)", "quiz": [
+        { "text": "Có, chạy tiếp", "right": true, "hint": "Đúng! 2 nhỏ hơn 3, nên vòng lặp làm thêm một vòng nữa." },
+        { "text": "Không, dừng", "right": false, "hint": "2 vẫn nhỏ hơn 3, nên chưa dừng." } ] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: khi i là 2, nếu gặp continue thì số 2 có được in không?", "boxes": ["i"], "code": "if (i == 2) continue;", "quiz": [
+        { "text": "Không được in", "right": true, "hint": "Đúng! continue bỏ qua lượt này, không in số 2." },
+        { "text": "Được in", "right": false, "hint": "continue bỏ qua phần còn lại của lượt. Số 2 không được in." },
+        { "text": "Dừng cả vòng lặp", "right": false, "hint": "continue chỉ bỏ lượt này. break mới dừng cả vòng lặp." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: if chọn một đường đi theo điều kiện. while lặp lại chừng nào điều kiện còn đúng. continue bỏ qua một lượt. break dừng hẳn vòng lặp.", "boxes": ["i", "tong"], "end": true }
+  ]
+}

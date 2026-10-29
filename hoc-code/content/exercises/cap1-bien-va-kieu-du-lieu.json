@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Tính tiền",
+    "prompt": "Đọc số lượng (int) và đơn giá (double). In tổng tiền với 2 chữ số thập phân.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int so_luong;\n    double don_gia;\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3 15.5\n",
+        "expected": "46.50\n"
+      },
+      {
+        "stdin": "2 10\n",
+        "expected": "20.00\n"
+      }
+    ]
+  }
+]

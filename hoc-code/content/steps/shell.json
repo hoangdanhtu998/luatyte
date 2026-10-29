@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Shell là nơi bạn gõ lệnh bằng chữ. Mỗi lệnh có dạng: tên lệnh, tùy chọn, tham số.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Lệnh ls liệt kê file trong thư mục hiện tại. Thêm -l để xem chi tiết.", "boxes": ["lệnh", "tùy chọn"], "code": "ls -l", "run": { "lệnh": "ls", "tùy chọn": "-l (chi tiết)" }, "after": "ls -l cho thấy kích thước, thời gian, quyền của mỗi file." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Dấu | (pipe) đưa kết quả của lệnh bên trái vào lệnh bên phải. Ở đây head lấy 10 dòng đầu.", "boxes": ["lệnh", "tùy chọn"], "code": "ls -l | head -n 10", "run": { "lệnh": "ls | head", "tùy chọn": "-n 10" }, "after": "Chỉ hiện 10 dòng đầu của danh sách." },
+    { "img": "m03-meo-vui.png", "say": "Đường dẫn tuyệt đối bắt đầu từ gốc /. Đường dẫn tương đối tính từ thư mục bạn đang đứng.", "boxes": ["lệnh", "tùy chọn"], "code": "/home/user/file.txt   và   ./file.txt", "after": "Gốc / là điểm xuất phát của đường dẫn tuyệt đối." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: để đếm số file .txt trong thư mục hiện tại, lệnh nào đúng?", "boxes": ["lệnh", "tùy chọn"], "code": "ls *.txt | ?", "quiz": [
+        { "text": "ls *.txt | wc -l", "right": true, "hint": "Đúng! wc -l đếm số dòng, mỗi file là một dòng." },
+        { "text": "ls *.txt -l", "right": false, "hint": "Lệnh này liệt kê chi tiết, không đếm." },
+        { "text": "cd *.txt", "right": false, "hint": "cd đổi thư mục, không đếm file." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: shell nhận lệnh, dùng | để nối lệnh, và đường dẫn quyết định bạn đang trỏ tới đâu.", "boxes": ["lệnh", "tùy chọn"], "end": true }
+  ]
+}

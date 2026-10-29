@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Chuỗi là dãy các chữ cái nối nhau. Trong C, chuỗi là một mảng các ký tự, kết thúc bằng một ký tự đặc biệt gọi là ký tự kết thúc.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là chuỗi \"Hi\". Mỗi chữ là một hộp. Có thêm một hộp cuối để đánh dấu hết chuỗi.", "boxes": ["s[0]", "s[1]", "s[2]"], "code": "char s[] = \"Hi\";", "run": { "s[0]": "H", "s[1]": "i", "s[2]": "kết thúc" }, "after": "Xong! Chuỗi \"Hi\" có 2 chữ và 1 hộp đánh dấu kết thúc." },
+    { "img": "m03-meo-vui.png", "say": "Hàm strlen đếm số chữ, không tính hộp đánh dấu kết thúc. Bấm để máy đếm.", "boxes": ["s[0]", "s[1]", "s[2]", "dem"], "code": "int dem = strlen(s);", "run": { "dem": 2 }, "after": "Có 2 chữ, nên dem là 2." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: strlen(\"Hi\") cho kết quả là mấy?", "boxes": [], "code": "strlen(\"Hi\")", "quiz": [
+        { "text": "2", "right": true, "hint": "Đúng! strlen đếm 2 chữ H và i, không đếm hộp kết thúc." },
+        { "text": "3", "right": false, "hint": "Hộp kết thúc không được tính trong strlen." },
+        { "text": "1", "right": false, "hint": "Có 2 chữ, nên phải là 2." } ] },
+    { "img": "m03-meo-vui.png", "say": "Cẩn thận: nếu chuỗi dài hơn hộp chứa, sẽ bị tràn. Luôn kiểm tra kích thước trước khi chép chuỗi.", "boxes": [], "end": true }
+  ]
+}

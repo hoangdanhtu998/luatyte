@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Truyền hàm làm tham số",
+    "prompt": "Viết hàm `int apply(int (*op)(int, int), int a, int b)`. Đọc hai số a, b. In `apply(cong, a, b)` rồi `apply(tru, a, b)`, mỗi kết quả một dòng.",
+    "starter": "#include <stdio.h>\n\nint cong(int a, int b) { return a + b; }\nint tru(int a, int b) { return a - b; }\n\n// viết hàm apply ở đây\n\nint main(void) {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) != 2) return 1;\n    // in kết quả ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "7 3\n",
+        "expected": "10\n4\n"
+      },
+      {
+        "stdin": "1 9\n",
+        "expected": "10\n-8\n"
+      }
+    ]
+  }
+]

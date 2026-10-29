@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Bốn byte đầu của file ELF là gì?",
+      "options": [
+        {
+          "text": "7F 45 4C 46",
+          "why": "Đúng. Đó là chữ ký \\x7fELF."
+        },
+        {
+          "text": "89 50 4E 47",
+          "why": "Đó là chữ ký PNG."
+        },
+        {
+          "text": "FF D8 FF",
+          "why": "Đó là chữ ký JPEG."
+        },
+        {
+          "text": "00 00 00 00",
+          "why": "Không phải ELF."
+        }
+      ],
+      "answer": 0,
+      "explain": "ELF bắt đầu bằng 0x7F và chữ ELF."
+    },
+    {
+      "q": "Vì sao debugger cần nhận diện ELF?",
+      "options": [
+        {
+          "text": "Để biết cách đọc tiêu đề và các phần của chương trình",
+          "why": "Đúng. Debugger cần bảng symbol và địa chỉ."
+        },
+        {
+          "text": "Để nén file",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Để đổi màu màn hình",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Để in ra giấy",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thông tin ELF giúp debugger tìm hàm và biến."
+    },
+    {
+      "q": "Byte nào trong bốn byte đầu của ELF có giá trị 0x45?",
+      "options": [
+        {
+          "text": "Byte thứ hai",
+          "why": "Đúng. Byte thứ hai là chữ E."
+        },
+        {
+          "text": "Byte đầu",
+          "why": "Byte đầu là 0x7F."
+        },
+        {
+          "text": "Byte thứ ba",
+          "why": "Byte thứ ba là chữ L (0x4C)."
+        },
+        {
+          "text": "Byte thứ tư",
+          "why": "Byte thứ tư là chữ F (0x46)."
+        }
+      ],
+      "answer": 0,
+      "explain": "45 là mã của chữ E."
+    }
+  ]
+}

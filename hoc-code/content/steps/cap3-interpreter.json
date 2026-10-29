@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Interpreter đọc code rồi chạy ngay, không dịch ra file trước. Nó có ba bước: tách chữ thành token, hiểu cấu trúc, rồi tính kết quả.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bước 1, lexer: tách biểu thức 1 + 2 * 3 thành các token: 1, +, 2, *, 3.", "boxes": ["token"], "code": "1 + 2 * 3  →  1, +, 2, *, 3", "run": { "token": "1, +, 2, *, 3" }, "after": "Đã tách thành 5 token." },
+    { "img": "m03-meo-vui.png", "say": "Bước 2, parser: dấu * ưu tiên hơn +, nên 2 * 3 được gộp trước, thành 1 + (2 * 3).", "boxes": ["token"], "code": "1 + (2 * 3)", "after": "Cấu trúc: cộng 1 với kết quả của 2 * 3." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: giá trị của 1 + 2 * 3 là bao nhiêu?", "boxes": ["token"], "code": "1 + (2 * 3)", "quiz": [
+        { "text": "7", "right": true, "hint": "Đúng! 2 * 3 là 6, cộng 1 được 7." },
+        { "text": "9", "right": false, "hint": "9 là kết quả nếu cộng trước, rồi nhân: (1 + 2) * 3. Đề bài nhân trước." },
+        { "text": "6", "right": false, "hint": "6 chỉ là 2 * 3, chưa cộng thêm 1." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: interpreter tách token, dựng cấu trúc theo thứ tự ưu tiên, rồi tính. Đây là nền của mọi ngôn ngữ lập trình.", "boxes": ["token"], "end": true }
+  ]
+}

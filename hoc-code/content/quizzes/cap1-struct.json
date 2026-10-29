@@ -1,0 +1,119 @@
+{
+  "quizzes": [
+    {
+      "q": "Dùng `struct` để làm gì?",
+      "options": [
+        {
+          "text": "Gom nhiều biến khác kiểu thành một đơn vị",
+          "why": "Đúng. Ví dụ một sinh viên có tên và tuổi nằm chung trong một struct."
+        },
+        {
+          "text": "Tạo một hàm mới",
+          "why": "Hàm được khai báo bằng kiểu trả về và tham số, không phải struct."
+        },
+        {
+          "text": "Xóa bộ nhớ tự động",
+          "why": "struct không quản lý bộ nhớ."
+        },
+        {
+          "text": "Đổi tên biến",
+          "why": "struct không đổi tên biến."
+        }
+      ],
+      "answer": 0,
+      "explain": "struct gom các trường lại thành một kiểu."
+    },
+    {
+      "q": "Với biến `a` là struct, cách truy cập trường tuổi viết thế nào?",
+      "options": [
+        {
+          "text": "a.tuoi",
+          "why": "Đúng. Dùng dấu chấm với biến struct thật."
+        },
+        {
+          "text": "a->tuoi",
+          "why": "-> dùng khi có con trỏ tới struct."
+        },
+        {
+          "text": "a:tuoi",
+          "why": "C không dùng dấu hai chấm để truy cập."
+        },
+        {
+          "text": "tuoi.a",
+          "why": "Thứ tự sai."
+        }
+      ],
+      "answer": 0,
+      "explain": "Dấu . cho biến struct, -> cho con trỏ tới struct."
+    },
+    {
+      "q": "Với `struct Nguoi *p`, viết gì để truy cập trường tuoi?",
+      "options": [
+        {
+          "text": "p->tuoi",
+          "why": "Đúng. p là con trỏ nên dùng ->."
+        },
+        {
+          "text": "p.tuoi",
+          "why": "Dấu . không dùng được trực tiếp với con trỏ."
+        },
+        {
+          "text": "*p.tuoi",
+          "why": "Thứ tự ưu tiên sai, phải là (*p).tuoi."
+        },
+        {
+          "text": "p[tuoi]",
+          "why": "Không đúng cú pháp."
+        }
+      ],
+      "answer": 0,
+      "explain": "p->tuoi tương đương (*p).tuoi."
+    },
+    {
+      "q": "Vì sao không gán được chuỗi vào trường char[] bằng dấu `=`?",
+      "options": [
+        {
+          "text": "Vì mảng không thể gán trực tiếp như vậy trong C",
+          "why": "Đúng. Phải sao chép nội dung bằng hàm như snprintf."
+        },
+        {
+          "text": "Vì struct không chứa chuỗi",
+          "why": "struct có thể chứa mảng char."
+        },
+        {
+          "text": "Vì chuỗi quá dài",
+          "why": "Không liên quan đến độ dài."
+        },
+        {
+          "text": "Vì dấu = chỉ dùng cho số",
+          "why": "= vẫn dùng cho số, nhưng mảng thì khác."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mảng không gán được bằng =, cần hàm sao chép."
+    },
+    {
+      "q": "Dấu `;` sau dấu `}` của định nghĩa struct có cần không?",
+      "options": [
+        {
+          "text": "Có, định nghĩa struct phải kết thúc bằng dấu ;",
+          "why": "Đúng. Quên dấu này là lỗi cú pháp hay gặp."
+        },
+        {
+          "text": "Không, struct không cần dấu ;",
+          "why": "Định nghĩa struct luôn kết thúc bằng ;."
+        },
+        {
+          "text": "Chỉ cần khi struct có số",
+          "why": "Không phụ thuộc nội dung."
+        },
+        {
+          "text": "Không cần khi dùng typedef",
+          "why": "Vẫn cần dấu ;."
+        }
+      ],
+      "answer": 0,
+      "explain": "Định nghĩa struct kết thúc bằng dấu chấm phẩy."
+    }
+  ]
+}

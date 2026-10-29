@@ -1,0 +1,50 @@
+{
+  "quizzes": [
+    {
+      "q": "Vì sao gói cần số thứ tự?",
+      "options": [
+        {
+          "text": "Để người nhận ghép đúng thứ tự thông điệp",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để tăng tốc mạng",
+          "why": "Không trực tiếp."
+        },
+        {
+          "text": "Để mã hóa",
+          "why": "Không phải."
+        },
+        {
+          "text": "Không cần",
+          "why": "Cần."
+        }
+      ],
+      "answer": 0,
+      "explain": "Số thứ tự giúp ghép và phát hiện thiếu gói."
+    },
+    {
+      "q": "Làm tròn lên có nghĩa gì khi tính số gói?",
+      "options": [
+        {
+          "text": "Gói cuối có thể nhỏ hơn M, vẫn cần một gói",
+          "why": "Đúng."
+        },
+        {
+          "text": "Bỏ phần lẻ",
+          "why": "Sai, phần lẻ vẫn cần gói."
+        },
+        {
+          "text": "Luôn cộng 1",
+          "why": "Không đúng với mọi trường hợp."
+        },
+        {
+          "text": "Không liên quan",
+          "why": "Có liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thông điệp dư một phần vẫn cần một gói."
+    }
+  ]
+}

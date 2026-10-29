@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Tiền tố độ dài 2 byte để làm gì?",
+      "options": [
+        {
+          "text": "Người nhận biết thông điệp dài bao nhiêu",
+          "why": "Đúng, nhờ đó tách được các thông điệp."
+        },
+        {
+          "text": "Để mã hóa",
+          "why": "Không phải."
+        },
+        {
+          "text": "Để tăng tốc mạng",
+          "why": "Không trực tiếp."
+        },
+        {
+          "text": "Để đổi IP",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Có khung giúp tách thông điệp trong dòng byte."
+    },
+    {
+      "q": "Big-endian nghĩa là gì?",
+      "options": [
+        {
+          "text": "Byte cao đi trước",
+          "why": "Đúng."
+        },
+        {
+          "text": "Byte thấp đi trước",
+          "why": "Đó là little-endian."
+        },
+        {
+          "text": "Số âm",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Mã hóa",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "Big-endian: byte cao trước, thứ tự mạng thường dùng."
+    },
+    {
+      "q": "Vì sao phải đặt đúng thứ tự byte giữa hai máy khác nhau?",
+      "options": [
+        {
+          "text": "Để hai máy hiểu cùng một độ dài",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để nén dữ liệu",
+          "why": "Không phải."
+        },
+        {
+          "text": "Để tăng băng thông",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Không cần",
+          "why": "Cần."
+        }
+      ],
+      "answer": 0,
+      "explain": "Sai thứ tự làm độ dài bị đọc sai."
+    }
+  ]
+}

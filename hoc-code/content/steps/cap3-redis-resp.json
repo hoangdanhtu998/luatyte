@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Redis nói chuyện với chương trình khác bằng một giao thức gọi là RESP. Lệnh được gửi như một mảng các chuỗi.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Ký hiệu *2 nghĩa là mảng có 2 phần tử. Ký hiệu $3 nghĩa là chuỗi dài 3 byte, theo sau là nội dung.", "boxes": ["mảng", "chuỗi"], "code": "*2  $3", "after": "*n là số phần tử, $n là độ dài chuỗi." },
+    { "img": "m03-meo-vui.png", "say": "Lệnh GET key được gửi đi như sau: *2, rồi $3 GET, rồi $3 key. Mỗi phần có độ dài đi trước.", "boxes": ["mảng", "chuỗi"], "code": "*2\\r\\n$3\\r\\nGET\\r\\n$3\\r\\nkey\\r\\n", "run": { "mảng": 2, "chuỗi": "GET, key" }, "after": "Lệnh GET key đã được đóng gói." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: trong lệnh GET key, chuỗi đầu tiên là gì?", "boxes": ["mảng", "chuỗi"], "code": "$3 GET", "quiz": [
+        { "text": "GET", "right": true, "hint": "Đúng! Phần đầu của mảng là tên lệnh, đây là GET." },
+        { "text": "key", "right": false, "hint": "key là phần thứ hai, là tên khóa cần lấy." },
+        { "text": "2", "right": false, "hint": "2 là số phần tử của mảng, không phải một chuỗi." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: RESP là mảng có đếm số phần tử, mỗi chuỗi có đếm độ dài. Nhờ vậy người nhận biết chính xác mỗi phần kết thúc ở đâu.", "boxes": ["mảng", "chuỗi"], "end": true }
+  ]
+}

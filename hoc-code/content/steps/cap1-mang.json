@@ -1,0 +1,16 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Mảng là dãy nhiều hộp xếp liền nhau. Mỗi hộp có một số thứ tự gọi là chỉ số. Chỉ số bắt đầu từ 0.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là mảng diem có 3 hộp: diem[0], diem[1], diem[2]. Bấm để bỏ điểm 7, 8, 9 vào lần lượt.", "boxes": ["diem[0]", "diem[1]", "diem[2]"], "code": "int diem[3] = {7, 8, 9};", "run": { "diem[0]": 7, "diem[1]": 8, "diem[2]": 9 }, "after": "Xong! Hộp đầu tiên có chỉ số 0, hộp cuối có chỉ số 2." },
+    { "img": "m03-meo-vui.png", "say": "Muốn đổi hộp ở giữa, viết tên mảng và chỉ số trong ngoặc vuông. Đây là hộp số 1.", "boxes": ["diem[0]", "diem[1]", "diem[2]"], "code": "diem[1] = 10;", "run": { "diem[1]": 10 }, "after": "Xong! Chỉ hộp diem[1] đổi thành 10. Hai hộp kia không đổi." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: mảng có 3 hộp thì chỉ số của các hộp là mấy?", "boxes": [], "code": "int diem[3];", "quiz": [
+        { "text": "0, 1, 2", "right": true, "hint": "Đúng! Chỉ số luôn bắt đầu từ 0, nên 3 hộp là 0, 1, 2." },
+        { "text": "1, 2, 3", "right": false, "hint": "Chỉ số bắt đầu từ 0, không phải từ 1." },
+        { "text": "0, 1, 2, 3", "right": false, "hint": "Mảng có 3 hộp nên chỉ có 3 chỉ số." } ] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: diem[2] chứa số mấy?", "boxes": ["diem[0]", "diem[1]", "diem[2]"], "code": "diem[2]", "quiz": [
+        { "text": "7", "right": false, "hint": "7 nằm ở diem[0], không phải diem[2]." },
+        { "text": "9", "right": true, "hint": "Đúng! diem[2] là hộp cuối, chứa 9." },
+        { "text": "10", "right": false, "hint": "10 đã bỏ vào diem[1], không phải diem[2]." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: mảng là dãy hộp cùng loại. Chỉ số bắt đầu từ 0. Dùng tên mảng và chỉ số để tìm đúng một hộp.", "boxes": ["diem[0]", "diem[1]", "diem[2]"], "end": true }
+  ]
+}
