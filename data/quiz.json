@@ -294,7 +294,7 @@
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 22/2023/TT-BYT, khám chuyên khoa từ lần thứ hai được thanh toán bao nhiêu?",
+    "q": "Theo Thông tư 22/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), khám chuyên khoa từ lần thứ hai được thanh toán bao nhiêu?",
     "o": [
       "100% giá một lần khám",
       "50% giá một lần khám",
@@ -302,11 +302,12 @@
       "Không được thanh toán"
     ],
     "a": 2,
-    "e": "Điều 5 Thông tư 22/2023/TT-BYT: khám thêm chuyên khoa từ lần thứ hai tính 30% giá một lần khám, tổng tối đa 2 lần giá khám."
+    "e": "Điều 5 Thông tư 22/2023/TT-BYT: khám thêm chuyên khoa từ lần thứ hai tính 30% giá một lần khám, tổng tối đa 2 lần giá khám. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Trạm y tế xã thực hiện dịch vụ kỹ thuật được áp dụng mức giá bằng bao nhiêu % giá quy định (theo Điều 4)?",
+    "q": "Trước 01/01/2025: Trạm y tế xã thực hiện dịch vụ kỹ thuật được áp dụng mức giá bằng bao nhiêu % giá quy định (theo Điều 4)?",
     "o": [
       "50%",
       "70%",
@@ -314,11 +315,12 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 22/2023/TT-BYT (ví dụ trạm y tế bằng 70% giá quy định)."
+    "e": "Điều 4 Thông tư 22/2023/TT-BYT (ví dụ trạm y tế bằng 70% giá quy định). Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2023/TT-BYT?",
+    "q": "Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2024/TT-BYT?",
     "o": [
       "Bộ trưởng Bộ Y tế",
       "Hội đồng nhân dân cấp tỉnh (không vượt khung giá)",
@@ -326,11 +328,12 @@
       "Bảo hiểm xã hội Việt Nam"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 21/2023/TT-BYT: HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá."
+    "e": "Điều 9 khoản 3 Thông tư 21/2024/TT-BYT: HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá.",
+    "verify": false
   },
   {
     "t": "bhyt",
-    "q": "Thông tư 21/2023/TT-BYT gồm bao nhiêu phụ lục khung giá?",
+    "q": "Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025) gồm bao nhiêu phụ lục khung giá?",
     "o": [
       "Hai phụ lục",
       "Ba phụ lục",
@@ -338,11 +341,12 @@
       "Năm phụ lục"
     ],
     "a": 2,
-    "e": "Điều 2 Thông tư 21/2023/TT-BYT có bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú tương đương."
+    "e": "Điều 2 Thông tư 21/2023/TT-BYT có bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú tương đương. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, cơ sở chưa được phân hạng áp dụng giá của bệnh viện hạng nào?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), cơ sở chưa được phân hạng áp dụng giá của bệnh viện hạng nào?",
     "o": [
       "Hạng đặc biệt",
       "Hạng I",
@@ -350,13 +354,13 @@
       "Hạng IV"
     ],
     "a": 3,
-    "e": "Điều 4 khoản 2 điểm b Thông tư 21/2023/TT-BYT: cơ sở khám bệnh, chữa bệnh chưa được phân hạng áp dụng mức giá của bệnh viện hạng IV (đã đối chiếu).",
+    "e": "Điều 4 khoản 2 điểm b Thông tư 21/2023/TT-BYT: cơ sở khám bệnh, chữa bệnh chưa được phân hạng áp dụng mức giá của bệnh viện hạng IV (đã đối chiếu). Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
     "src": "Thông tư 21/2023/TT-BYT, Điều 4 khoản 2 điểm b (đã đối chiếu)",
-    "verify": false
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, giá kỹ thuật tại trạm y tế xã bằng bao nhiêu % Phụ lục III?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), giá kỹ thuật tại trạm y tế xã bằng bao nhiêu % Phụ lục III?",
     "o": [
       "50%",
       "70%",
@@ -364,11 +368,12 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 21/2023/TT-BYT."
+    "e": "Điều 4 Thông tư 21/2023/TT-BYT. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, từ lượt khám thứ hai trong cùng một lần đến khám, được tính bao nhiêu % giá một lượt khám?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), từ lượt khám thứ hai trong cùng một lần đến khám, được tính bao nhiêu % giá một lượt khám?",
     "o": [
       "10%",
       "30%",
@@ -376,7 +381,8 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 5 Thông tư 21/2023/TT-BYT: tổng tiền khám không quá 2 lần giá khám."
+    "e": "Điều 5 Thông tư 21/2023/TT-BYT: tổng tiền khám không quá 2 lần giá khám. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "duoc",
@@ -520,7 +526,7 @@
       "Không có mức này"
     ],
     "a": 0,
-    "e": "Luật giao Chính phủ quy định mức chi phí một lần khám được hưởng 100% (Điều 22)."
+    "e": "Luật giao Chính phủ quy định mức chi phí một lần khám được hưởng 100% (Điều 22). Hiện nay Điều 17 Nghị định 188/2025/NĐ-CP quy định dưới 15% lương cơ sở."
   },
   {
     "t": "bhyt",
@@ -721,5 +727,355 @@
     "a": 1,
     "e": "Thông tư 49/2025 sửa khoản 2 Điều 11 Thông tư 02/2024: trong 05 ngày làm việc kể từ ngày ghi trên Phiếu tiếp nhận hồ sơ, cơ quan phải thông báo để người nộp bổ sung (đã đối chiếu).",
     "src": "Thông tư 49/2025/TT-BYT, Điều 1 khoản 1 (đã đối chiếu)"
+  },
+  {
+    "t": "nd_96_2023_kcb",
+    "q": "Nghị định 96/2023/NĐ-CP quy định chi tiết nhóm nội dung nào của Luật Khám bệnh, chữa bệnh?",
+    "o": [
+      "Cấp giấy phép hành nghề và giấy phép hoạt động khám bệnh, chữa bệnh",
+      "Mức đóng và quyền lợi bảo hiểm y tế",
+      "Đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
+      "Chính sách dân số và kế hoạch hóa gia đình"
+    ],
+    "a": 0,
+    "e": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật KCB về cấp giấy phép hành nghề, giấy phép hoạt động và các nội dung liên quan.",
+    "src": "Nghị định 96/2023/NĐ-CP"
+  },
+  {
+    "t": "tt_13_2026_tiem_chung",
+    "q": "Thông tư 13/2026/TT-BYT quy định hoạt động nào?",
+    "o": [
+      "Khám sức khỏe định kỳ",
+      "Tiêm chủng",
+      "Đăng ký lưu hành thuốc",
+      "Quản lý trang thiết bị y tế"
+    ],
+    "a": 1,
+    "e": "Thông tư 13/2026/TT-BYT quy định về hoạt động tiêm chủng, gồm tiêm chủng mở rộng và tiêm chủng dịch vụ.",
+    "src": "Thông tư 13/2026/TT-BYT"
+  },
+  {
+    "t": "nd_163_2025_duoc",
+    "q": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược, tập trung vào nhóm nội dung nào?",
+    "o": [
+      "Bảo hiểm y tế và thanh toán chi phí",
+      "Phòng, chống bệnh truyền nhiễm",
+      "Chứng chỉ hành nghề dược và điều kiện kinh doanh dược",
+      "Quản lý dữ liệu cá nhân"
+    ],
+    "a": 2,
+    "e": "Nghị định 163/2025/NĐ-CP quy định chi tiết và biện pháp thi hành Luật Dược, gồm chứng chỉ hành nghề dược, điều kiện kinh doanh dược.",
+    "src": "Nghị định 163/2025/NĐ-CP"
+  },
+  {
+    "t": "tt_50_2025_thu_thuoc",
+    "q": "Thông tư 50/2025/TT-BYT quy định về hoạt động nào?",
+    "o": [
+      "Đăng ký lưu hành thuốc",
+      "Thử thuốc trên lâm sàng",
+      "Tiêm chủng mở rộng",
+      "Quản lý hồ sơ bệnh án"
+    ],
+    "a": 1,
+    "e": "Thông tư 50/2025/TT-BYT quy định về thử thuốc trên lâm sàng, thực hành tốt thử thuốc và hồ sơ, quy trình liên quan.",
+    "src": "Thông tư 50/2025/TT-BYT"
+  },
+  {
+    "t": "nd_165_2026_phong_benh",
+    "q": "Nghị định 165/2026/NĐ-CP quy định chi tiết lĩnh vực nào?",
+    "o": [
+      "Phòng bệnh",
+      "Dược",
+      "Bảo hiểm y tế",
+      "Khám bệnh, chữa bệnh"
+    ],
+    "a": 0,
+    "e": "Nghị định 165/2026/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phòng bệnh 114/2025/QH15.",
+    "src": "Nghị định 165/2026/NĐ-CP"
+  },
+  {
+    "t": "tt_33_2026_phong_benh",
+    "q": "Thông tư 33/2026/TT-BYT hướng dẫn nhóm nội dung nào?",
+    "o": [
+      "Đăng ký thuốc và nguyên liệu làm thuốc",
+      "Thử thuốc trên lâm sàng",
+      "Quản lý trang thiết bị y tế",
+      "Kiểm tra sức khỏe đầu năm học và an toàn sinh học phòng xét nghiệm"
+    ],
+    "a": 3,
+    "e": "Thông tư 33/2026/TT-BYT hướng dẫn Nghị định 165/2026/NĐ-CP về Luật Phòng bệnh, gồm kiểm tra sức khỏe đầu năm học và an toàn sinh học phòng xét nghiệm.",
+    "src": "Thông tư 33/2026/TT-BYT"
+  },
+  {
+    "t": "tt_29_2025_duoc",
+    "q": "Thông tư 29/2025/TT-BYT quy định đăng ký lưu hành nhóm sản phẩm nào?",
+    "o": [
+      "Thuốc tân dược",
+      "Trang thiết bị y tế",
+      "Thuốc cổ truyền, vị thuốc cổ truyền, dược liệu",
+      "Mỹ phẩm"
+    ],
+    "a": 2,
+    "e": "Thông tư 29/2025/TT-BYT quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
+    "src": "Thông tư 29/2025/TT-BYT"
+  },
+  {
+    "t": "tt_18_2026_duoc",
+    "q": "Thông tư 18/2026/TT-BYT quản lý nhóm thuốc nào?",
+    "o": [
+      "Thuốc cổ truyền",
+      "Thuốc, nguyên liệu làm thuốc phải kiểm soát đặc biệt",
+      "Vắc xin tiêm chủng mở rộng",
+      "Thực phẩm chức năng"
+    ],
+    "a": 1,
+    "e": "Thông tư 18/2026/TT-BYT quy định chi tiết về thuốc, nguyên liệu làm thuốc phải kiểm soát đặc biệt.",
+    "src": "Thông tư 18/2026/TT-BYT"
+  },
+  {
+    "t": "tt_32_2026_duoc",
+    "q": "Thông tư 32/2026/TT-BYT quy định việc gì?",
+    "o": [
+      "Đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
+      "Tiêm chủng",
+      "Thử thuốc trên lâm sàng",
+      "Quản lý hồ sơ bệnh án"
+    ],
+    "a": 0,
+    "e": "Thông tư 32/2026/TT-BYT quy định việc đăng ký lưu hành thuốc, nguyên liệu làm thuốc; có hiệu lực từ 01/10/2026.",
+    "src": "Thông tư 32/2026/TT-BYT"
+  },
+  {
+    "t": "luat_91_2025_bvdlcn",
+    "q": "Theo Luật Bảo vệ dữ liệu cá nhân 91/2025, dữ liệu sức khỏe thuộc nhóm nào?",
+    "o": [
+      "Dữ liệu công khai",
+      "Dữ liệu nội bộ",
+      "Dữ liệu ẩn danh",
+      "Dữ liệu cá nhân nhạy cảm"
+    ],
+    "a": 3,
+    "e": "Dữ liệu sức khỏe là dữ liệu cá nhân nhạy cảm; việc xử lý phải có căn cứ pháp lý và bảo đảm an toàn, bảo mật.",
+    "src": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15"
+  },
+  {
+    "t": "nd_356_2025_dulieu",
+    "q": "Nghị định 356/2025/NĐ-CP quy định về lĩnh vực nào?",
+    "o": [
+      "Dược",
+      "Bảo hiểm y tế",
+      "Bảo vệ dữ liệu cá nhân",
+      "Khám bệnh, chữa bệnh"
+    ],
+    "a": 2,
+    "e": "Nghị định 356/2025/NĐ-CP hướng dẫn Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15; thay thế Nghị định 13/2023/NĐ-CP.",
+    "src": "Nghị định 356/2025/NĐ-CP"
+  },
+  {
+    "t": "nd_188_2025_bhyt",
+    "q": "Nghị định 188/2025/NĐ-CP quy định mức hỗ trợ tối thiểu cho một số nhóm đóng BHYT là bao nhiêu?",
+    "o": [
+      "30%",
+      "50%",
+      "80%",
+      "100%"
+    ],
+    "a": 1,
+    "e": "Nghị định 188/2025/NĐ-CP hỗ trợ tối thiểu 50% mức đóng cho một số nhóm đối tượng, gồm nạn nhân theo pháp luật phòng, chống mua bán người.",
+    "src": "Nghị định 188/2025/NĐ-CP"
+  },
+  {
+    "t": "nd_148_2025_phan_quyen",
+    "q": "Nghị định 148/2025/NĐ-CP phân quyền, phân cấp trong lĩnh vực nào?",
+    "o": [
+      "Y tế",
+      "Giáo dục",
+      "Giao thông",
+      "Tài chính"
+    ],
+    "a": 0,
+    "e": "Nghị định 148/2025/NĐ-CP quy định về phân quyền, phân cấp trong lĩnh vực y tế.",
+    "src": "Nghị định 148/2025/NĐ-CP"
+  },
+  {
+    "t": "luat_148_2025_chuyen_doi_so",
+    "q": "Luật Chuyển đổi số 148/2025 quy định nhóm nội dung nào?",
+    "o": [
+      "Nguyên tắc, chính sách, điều phối quốc gia về chuyển đổi số",
+      "Mức hưởng bảo hiểm y tế",
+      "Chính sách dân số",
+      "An toàn thực phẩm"
+    ],
+    "a": 0,
+    "e": "Luật Chuyển đổi số quy định nguyên tắc, chính sách, điều phối quốc gia về chuyển đổi số; hạ tầng số, dữ liệu số và dịch vụ số.",
+    "src": "Luật Chuyển đổi số 148/2025/QH15"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Một phòng khám tư nhân cung cấp dịch vụ khám bệnh, chữa bệnh nhưng không có giấy phép hoạt động. Mức phạt tiền áp dụng đối với cá nhân là bao nhiêu?",
+    "o": [
+      "Từ 20 đến 30 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng",
+      "Từ 50 đến 70 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt 40-50 triệu đồng đối với cá nhân (tổ chức gấp đôi). Căn cứ: Điều 39 khoản 6 điểm a Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 39 khoản 6 điểm a"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Một người chưa được cấp giấy phép hành nghề khám bệnh, chữa bệnh nhưng vẫn khám bệnh, chữa bệnh cho người dân. Mức phạt tiền đối với cá nhân là bao nhiêu?",
+    "o": [
+      "Từ 10 đến 20 triệu đồng",
+      "Từ 20 đến 30 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Khám bệnh, chữa bệnh khi chưa được cấp giấy phép hoặc chứng chỉ hành nghề bị phạt 30-40 triệu đồng. Căn cứ: Điều 38 khoản 7 điểm a Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 38 khoản 7 điểm a"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Cơ sở khám bệnh, chữa bệnh từ chối hoặc cố ý chậm cấp cứu người bệnh, trừ trường hợp được pháp luật cho phép từ chối. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 10 đến 20 triệu đồng",
+      "Từ 20 đến 30 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Từ chối hoặc cố ý chậm cấp cứu người bệnh bị phạt 30-40 triệu đồng. Căn cứ: Điều 38 khoản 7 điểm e Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 38 khoản 7 điểm e"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Một người xâm phạm thân thể, sức khỏe, danh dự hoặc nhân phẩm của nhân viên y tế đang làm việc tại cơ sở khám bệnh, chữa bệnh. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 10 đến 20 triệu đồng",
+      "Từ 20 đến 30 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Xâm phạm thân thể, sức khỏe, danh dự, nhân phẩm của người hành nghề hoặc người khác làm việc tại cơ sở khám bệnh, chữa bệnh bị phạt 30-40 triệu đồng. Căn cứ: Điều 38 khoản 7 điểm g Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 38 khoản 7 điểm g"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Người hành nghề cho người khác thuê hoặc mượn giấy phép, chứng chỉ hành nghề khám bệnh, chữa bệnh của mình để hành nghề. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 5 đến 10 triệu đồng",
+      "Từ 10 đến 20 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Cho người khác thuê, mượn giấy phép hoặc chứng chỉ hành nghề bị phạt 30-40 triệu đồng. Căn cứ: Điều 38 khoản 7 điểm đ Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 38 khoản 7 điểm đ"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Cơ sở khám bệnh, chữa bệnh cung cấp dịch vụ không đúng phạm vi hoạt động chuyên môn cho phép, không thuộc trường hợp cấp cứu. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 20 đến 30 triệu đồng",
+      "Từ 30 đến 40 triệu đồng",
+      "Từ 40 đến 50 triệu đồng",
+      "Từ 50 đến 70 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Cung cấp dịch vụ khám bệnh, chữa bệnh không đúng phạm vi hoạt động chuyên môn bị phạt 40-50 triệu đồng, trừ trường hợp cấp cứu hoặc theo quyết định huy động khi có thiên tai, dịch bệnh. Căn cứ: Điều 39 khoản 6 điểm b Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 39 khoản 6 điểm b"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Bác sĩ kê đơn thuốc không phù hợp với chẩn đoán bệnh hoặc kê vào đơn sản phẩm không được phép kê theo quy định. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 1 đến 3 triệu đồng",
+      "Từ 3 đến 5 triệu đồng",
+      "Từ 5 đến 10 triệu đồng",
+      "Từ 10 đến 20 triệu đồng"
+    ],
+    "a": 3,
+    "e": "Kê đơn không phù hợp chẩn đoán hoặc kê sản phẩm không được phép kê bị phạt 10-20 triệu đồng. Căn cứ: Điều 41 khoản 2 điểm a, b Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 41 khoản 2 điểm a, b"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Cơ sở khám bệnh, chữa bệnh không lập hoặc không lưu trữ hồ sơ bệnh án theo quy định. Mức phạt tiền là bao nhiêu?",
+    "o": [
+      "Từ 200 đến 500 nghìn đồng",
+      "Từ 1 đến 3 triệu đồng",
+      "Từ 3 đến 5 triệu đồng",
+      "Từ 5 đến 10 triệu đồng"
+    ],
+    "a": 1,
+    "e": "Không lập, không ghi đầy đủ hoặc không lưu trữ hồ sơ bệnh án theo quy định bị phạt 1-3 triệu đồng. Căn cứ: Điều 40 khoản 1 điểm a, b Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 40 khoản 1 điểm a, b"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Mức phạt tiền tối đa đối với tổ chức vi phạm hành chính trong lĩnh vực khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế là bao nhiêu?",
+    "o": [
+      "100 triệu đồng",
+      "150 triệu đồng",
+      "200 triệu đồng",
+      "250 triệu đồng"
+    ],
+    "a": 2,
+    "e": "Mức phạt tiền tối đa đối với tổ chức trong lĩnh vực khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế là 200 triệu đồng (cá nhân 100 triệu đồng). Căn cứ: Điều 4 khoản 4 Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 4 khoản 4"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Mức phạt tiền tối đa đối với cá nhân vi phạm hành chính trong lĩnh vực bảo hiểm y tế là bao nhiêu?",
+    "o": [
+      "50 triệu đồng",
+      "75 triệu đồng",
+      "100 triệu đồng",
+      "150 triệu đồng"
+    ],
+    "a": 1,
+    "e": "Mức phạt tiền tối đa đối với cá nhân trong lĩnh vực bảo hiểm y tế là 75 triệu đồng; tổ chức là 150 triệu đồng. Căn cứ: Điều 4 khoản 3 Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 4 khoản 3"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Cùng một hành vi vi phạm hành chính trong lĩnh vực y tế, mức phạt tiền đối với tổ chức so với cá nhân như thế nào?",
+    "o": [
+      "Bằng mức của cá nhân",
+      "Gấp 1,5 lần mức của cá nhân",
+      "Gấp 2 lần mức của cá nhân",
+      "Gấp 3 lần mức của cá nhân"
+    ],
+    "a": 2,
+    "e": "Đối với cùng một hành vi vi phạm, mức phạt tiền đối với tổ chức bằng 02 lần mức phạt tiền đối với cá nhân. Căn cứ: Điều 4 khoản 5 Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 4 khoản 5"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
+    "q": "Mức phạt tiền tối đa đối với tổ chức vi phạm hành chính trong lĩnh vực dân số là bao nhiêu?",
+    "o": [
+      "30 triệu đồng",
+      "60 triệu đồng",
+      "75 triệu đồng",
+      "100 triệu đồng"
+    ],
+    "a": 1,
+    "e": "Mức phạt tiền tối đa trong lĩnh vực dân số là 30 triệu đồng đối với cá nhân và 60 triệu đồng đối với tổ chức. Căn cứ: Điều 4 khoản 1 Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 4 khoản 1"
   }
 ]

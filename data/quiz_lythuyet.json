@@ -127,7 +127,7 @@
       "100%"
     ],
     "a": 2,
-    "e": "Nội trú tuyến chuyên sâu thường hưởng 40%, các trường hợp đặc biệt được quy định riêng. Căn cứ: Luật Bảo hiểm y tế (sửa đổi 2024)."
+    "e": "Nội trú trái tuyến tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100%: bệnh hiếm, bệnh hiểm nghèo, bệnh cần phẫu thuật hoặc kỹ thuật cao theo quy định của Bộ trưởng Bộ Y tế; người dân tộc thiểu số, hộ nghèo ở vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh; cấp cứu. Căn cứ: Điều 22 khoản 4 Luật BHYT 51/2024/QH15."
   },
   {
     "t": "lythuyet",
@@ -470,7 +470,7 @@
   {
     "t": "lythuyet",
     "id": "lt-37",
-    "q": "Khi khám chuyên khoa từ lần thứ hai, giá được tính thế nào?",
+    "q": "Trước 01/01/2025: Khi khám chuyên khoa từ lần thứ hai, giá được tính thế nào?",
     "o": [
       "30% giá một lần khám",
       "Miễn phí",
@@ -478,7 +478,8 @@
       "100% giá một lần khám"
     ],
     "a": 0,
-    "e": "Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám. Căn cứ: Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng."
+    "e": "Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám. Căn cứ: Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "lythuyet",
@@ -491,12 +492,13 @@
       "Thủ tướng Chính phủ"
     ],
     "a": 0,
-    "e": "HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá. Căn cứ: Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước."
+    "e": "HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá. Căn cứ: Thông tư 21/2024/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước.",
+    "verify": false
   },
   {
     "t": "lythuyet",
     "id": "lt-39",
-    "q": "Trạm y tế xã áp giá kỹ thuật bằng bao nhiêu % Phụ lục III?",
+    "q": "Trước 01/01/2025: Trạm y tế xã áp giá kỹ thuật bằng bao nhiêu % Phụ lục III?",
     "o": [
       "30%",
       "50%",
@@ -504,7 +506,8 @@
       "100%"
     ],
     "a": 2,
-    "e": "Trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III. Căn cứ: Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước."
+    "e": "Trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III. Căn cứ: Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "lythuyet",

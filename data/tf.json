@@ -21,8 +21,8 @@
   ],
   [
     "Chi phí một lần khám dưới 15% lương cơ sở được BHYT trả 100%.",
-    false,
-    "Luật 51/2024 giao Chính phủ quy định mức chi phí này, không ghi cố định 15%."
+    true,
+    "Luật 51/2024 giao Chính phủ quy định mức chi phí này; Điều 17 Nghị định 188/2025/NĐ-CP quy định dưới 15% lương cơ sở."
   ],
   [
     "Luật BHYT sửa đổi 2024 có số hiệu 51/2024/QH15.",

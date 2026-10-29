@@ -12,7 +12,8 @@
       "Khi cơ sở thử nghiệm thay đổi thuộc các trường hợp điểm d, đ, e khoản 1 Điều 11, phải nộp báo cáo thay đổi cho Sở Y tế nơi đặt phòng thí nghiệm (khoản 4 Điều 11).",
       "Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.",
       "Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt25_2026",
@@ -27,7 +28,8 @@
       "Thay thế toàn bộ Điều 34 (hồ sơ khám sức khỏe) và Điều 36 (nội dung khám sức khỏe) của Thông tư 32/2023.",
       "Hồ sơ khám sức khỏe lập theo Mẫu 01–04 Phụ lục XXIV; Mẫu 04 là giấy khám sức khỏe tâm thần mới.",
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt26_2025",
@@ -44,7 +46,8 @@
       "Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.",
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
       "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt22_2024",
@@ -59,7 +62,25 @@
       "Thanh toán trực tiếp thuốc trong Danh mục thuốc hiếm (Thông tư 26/2019) và thiết bị loại C, D (trừ chẩn đoán in vitro và thiết bị cá nhân hóa) — Điều 2.",
       "Điều kiện: không có thuốc thương mại cùng hoạt chất, không chuyển tuyến được vì lý do an toàn hoặc cơ sở đang cách ly dịch bệnh — Điều 3.",
       "Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."
-    ]
+    ],
+    "verify": true
+  },
+  {
+    "id": "tt21_2024",
+    "cat": "Khám chữa bệnh",
+    "name": "Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+    "so": "21/2024/TT-BYT",
+    "pass": "17/10/2024",
+    "eff": "17/10/2024",
+    "status": "amend",
+    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
+    "points": [
+      "Quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh.",
+      "Từ 01/01/2025, Thông tư 21/2023 và 22/2023 về giá dịch vụ khám bệnh, chữa bệnh hết hiệu lực.",
+      "Mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung giá do cơ quan có thẩm quyền ban hành."
+    ],
+    "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
+    "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025."
   },
   {
     "id": "tt22_2023",
@@ -68,13 +89,14 @@
     "so": "22/2023/TT-BYT",
     "pass": "17/11/2023",
     "eff": "17/11/2023 (ngày ký)",
-    "status": "amend",
-    "replaces": "Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
+    "status": "het",
+    "replaces": "Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11). Đã hết hiệu lực từ 01/01/2025 cùng Thông tư 21/2023/TT-BYT.",
     "points": [
       "Giá khám bệnh BHYT thống nhất theo hạng bệnh viện trên toàn quốc; cách tính giá dựa trên chi phí trực tiếp và tiền lương.",
       "Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám (Điều 5).",
       "Cách tính ngày giường, giá ICU và định mức ca cho siêu âm, X-quang, CT, MRI (Điều 6, 7)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt21_2023",
@@ -83,14 +105,15 @@
     "so": "21/2023/TT-BYT",
     "pass": "17/11/2023",
     "eff": "17/11/2023 (ngày ký)",
-    "status": "amend",
-    "replaces": "Thay thế Thông tư 37/2018 và 14/2019. Nguồn tra cứu ghi đã được thay bởi Thông tư 21/2024/TT-BYT — cần kiểm tra.",
+    "status": "het",
+    "replaces": "Thay thế Thông tư 37/2018 và 14/2019. Đã hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT.",
     "points": [
       "HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá (Điều 4).",
       "Khung giá gồm bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú dịch vụ tương đương (Điều 2).",
       "Cơ sở chưa được phân hạng áp giá bệnh viện hạng IV; trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III (Điều 4).",
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt49_2025",
@@ -105,7 +128,8 @@
       "Cấp giấy chứng nhận lương y trong 5 ngày làm việc kể từ khi nhận hồ sơ hợp lệ (điểm b khoản 2 Điều 12).",
       "Cấp lại giấy chứng nhận lương y trong 5 ngày làm việc (khoản 3 Điều 13).",
       "Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt44_2025",
@@ -121,7 +145,8 @@
       "Cục được cấp, cấp lại, thu hồi giấy phép nhập khẩu, giấy chứng nhận lưu hành tự do và chứng chỉ hoạt động thử nghiệm.",
       "Cục được đình chỉ, khôi phục hoặc thu hồi lô sản phẩm và thu hồi lô đã lưu hành (Điều 2).",
       "Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "dulieu",
@@ -135,7 +160,8 @@
     "points": [
       "Định nghĩa sổ sức khỏe điện tử là ứng dụng hoặc phần mềm công nghệ thông tin để cập nhật, hiển thị, tra cứu, lưu trữ thông tin tóm lược quá trình phòng bệnh, thăm khám, điều trị của từng cá nhân (khoản 3 Điều 3).",
       "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "kcb",
@@ -154,7 +180,26 @@
       "Nghiêm cấm từ chối hoặc cố ý chậm cấp cứu người bệnh; người bệnh có quyền được giữ bí mật thông tin sức khỏe.",
       "Hồ sơ bệnh án có thể lập dưới dạng điện tử (Điều 69) và có Hệ thống thông tin quản lý khám chữa bệnh (Điều 112), liên quan trực tiếp đến HIS."
     ],
-    "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh"
+    "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh",
+    "verify": true
+  },
+  {
+    "id": "nd_96_2023_kcb",
+    "cat": "Khám chữa bệnh",
+    "name": "Nghị định 96/2023/NĐ-CP quy định chi tiết một số điều của Luật Khám bệnh, chữa bệnh",
+    "so": "96/2023/NĐ-CP",
+    "pass": "30/12/2023",
+    "eff": "01/01/2024",
+    "status": "on",
+    "replaces": "Hướng dẫn Luật Khám bệnh, chữa bệnh 15/2023/QH15; gồm 9 chương, 148 điều.",
+    "points": [
+      "Quy định chi tiết điều kiện, hồ sơ, trình tự cấp giấy phép hành nghề khám bệnh, chữa bệnh; giấy phép hành nghề có thời hạn 5 năm.",
+      "Quy định cấp, điều chỉnh, cấp lại và thu hồi giấy phép hoạt động khám bệnh, chữa bệnh.",
+      "Quy định hồ sơ bệnh án và một số nội dung về tổ chức, hoạt động của cơ sở khám bệnh, chữa bệnh.",
+      "Là văn bản hướng dẫn trực tiếp Luật Khám bệnh, chữa bệnh 15/2023/QH15; có hiệu lực từ 01/01/2024."
+    ],
+    "guide": "Thông tư 32/2023/TT-BYT quy định chi tiết hồ sơ bệnh án; các thông tư chuyên ngành của Bộ Y tế.",
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=209491"
   },
   {
     "id": "bhyt",
@@ -215,7 +260,104 @@
       "Thuốc kê đơn phải công bố giá bán buôn dự kiến; bán qua các tầng trung gian không được vượt giá đã công bố.",
       "Ưu tiên thủ tục đăng ký lưu hành và ưu đãi đầu tư để phát triển công nghiệp dược thành ngành mũi nhọn."
     ],
-    "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược"
+    "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược",
+    "verify": true
+  },
+  {
+    "id": "nd_163_2025_duoc",
+    "cat": "Dược",
+    "name": "Nghị định 163/2025/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Dược",
+    "so": "163/2025/NĐ-CP",
+    "pass": "29/06/2025",
+    "eff": "01/07/2025",
+    "status": "on",
+    "replaces": "Hướng dẫn Luật Dược 44/2024/QH15; gồm hồ sơ, thủ tục cấp/cấp lại/điều chỉnh/thu hồi chứng chỉ hành nghề dược và điều kiện kinh doanh dược.",
+    "points": [
+      "Quy định chi tiết một số điều và biện pháp thi hành Luật Dược 44/2024/QH15.",
+      "Quy định hồ sơ, thủ tục cấp, cấp lại, điều chỉnh và thu hồi chứng chỉ hành nghề dược.",
+      "Quy định điều kiện kinh doanh dược và trách nhiệm của cơ sở hoạt động dược."
+    ],
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214322"
+  },
+  {
+    "id": "tt_31_2025_duoc",
+    "cat": "Dược",
+    "name": "Thông tư 31/2025/TT-BYT hướng dẫn Luật Dược và Nghị định 163/2025/NĐ-CP",
+    "so": "31/2025/TT-BYT",
+    "pass": "01/07/2025",
+    "eff": "01/07/2025",
+    "status": "on",
+    "replaces": "Hướng dẫn chi tiết Luật Dược 44/2024/QH15 và Nghị định 163/2025/NĐ-CP.",
+    "points": [
+      "Hướng dẫn Luật Dược và Nghị định 163/2025/NĐ-CP về hành nghề, kinh doanh dược.",
+      "Quy định chi tiết hồ sơ, thủ tục và nội dung chuyên môn thuộc lĩnh vực dược.",
+      "Có hiệu lực từ 01/07/2025."
+    ],
+    "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748"
+  },
+  {
+    "id": "tt_29_2025_duoc",
+    "cat": "Dược",
+    "name": "Thông tư 29/2025/TT-BYT quy định đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền, dược liệu",
+    "so": "29/2025/TT-BYT",
+    "pass": "01/07/2025",
+    "eff": "01/07/2025",
+    "status": "on",
+    "replaces": "Quy định đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền, dược liệu.",
+    "points": [
+      "Quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
+      "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp giấy đăng ký lưu hành.",
+      "Có hiệu lực từ 01/07/2025."
+    ],
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx"
+  },
+  {
+    "id": "tt_18_2026_duoc",
+    "cat": "Dược",
+    "name": "Thông tư 18/2026/TT-BYT quy định chi tiết Luật Dược và Nghị định 163/2025/NĐ-CP về thuốc, nguyên liệu làm thuốc phải kiểm soát đặc biệt",
+    "so": "18/2026/TT-BYT",
+    "pass": "01/06/2026",
+    "eff": "16/07/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 20/2017/TT-BYT và Thông tư 27/2024/TT-BYT.",
+    "points": [
+      "Quy định chi tiết Luật Dược và Nghị định 163/2025/NĐ-CP về thuốc, nguyên liệu làm thuốc phải kiểm soát đặc biệt.",
+      "Quy định hồ sơ, thủ tục, điều kiện và trách nhiệm quản lý thuốc kiểm soát đặc biệt.",
+      "Có hiệu lực từ 16/07/2026."
+    ],
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx"
+  },
+  {
+    "id": "tt_32_2026_duoc",
+    "cat": "Dược",
+    "name": "Thông tư 32/2026/TT-BYT quy định việc đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
+    "so": "32/2026/TT-BYT",
+    "pass": "29/07/2026",
+    "eff": "01/10/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 12/2025/TT-BYT về đăng ký lưu hành thuốc, nguyên liệu làm thuốc.",
+    "points": [
+      "Quy định việc đăng ký lưu hành thuốc, nguyên liệu làm thuốc.",
+      "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp, gia hạn giấy đăng ký lưu hành.",
+      "Có hiệu lực từ 01/10/2026."
+    ],
+    "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-32-2026-tt-byt-quy-dinh-viec-dang-ky-luu-hanh-thuoc-nguyen-lieu-lam-thuoc--b3c8a3e0-9945-11f1-9dcb-2dbe29d2ab4a"
+  },
+  {
+    "id": "tt_50_2025_thu_thuoc",
+    "cat": "Dược",
+    "name": "Thông tư 50/2025/TT-BYT quy định về thử thuốc trên lâm sàng",
+    "so": "50/2025/TT-BYT",
+    "pass": "31/12/2025",
+    "eff": "27/02/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 29/2018/TT-BYT, Điều 9 Thông tư 10/2020/TT-BYT và Thông tư 08/2014/TT-BYT.",
+    "points": [
+      "Quy định thực hành tốt thử thuốc trên lâm sàng và hồ sơ, quy trình thử thuốc.",
+      "Quy định tiêu chuẩn nhân sự, cơ sở nghiên cứu và đánh giá việc đáp ứng thực hành tốt.",
+      "Ban hành 31/12/2025; có hiệu lực từ 27/02/2026."
+    ],
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447"
   },
   {
     "id": "phongbenh",
@@ -233,7 +375,8 @@
       "Khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến 6 tháng tuổi và duy trì đến 24 tháng.",
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
-    "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn"
+    "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
+    "verify": true
   },
   {
     "id": "danso",
@@ -250,7 +393,8 @@
       "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
-    "guide": "Nghị định hướng dẫn Luật Dân số"
+    "guide": "Nghị định hướng dẫn Luật Dân số",
+    "verify": true
   },
   {
     "id": "thuocla",
@@ -259,14 +403,16 @@
     "so": "09/2012/QH13",
     "pass": "18/06/2012",
     "eff": "01/05/2013",
-    "status": "on",
-    "replaces": "Bổ sung: Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025",
+    "status": "amend",
+    "replaces": "Được sửa đổi, bổ sung bởi Luật Phòng bệnh 114/2025/QH15 (hiệu lực 01/07/2026) và Luật Giá 16/2023/QH15; hợp nhất tại 11/VBHN-VPQH 2026. Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025.",
     "points": [
       "Cấm bán thuốc lá cho người dưới 18 tuổi và cấm người dưới 18 tuổi bán thuốc lá.",
       "Cảnh báo sức khỏe bằng chữ và hình ảnh chiếm ít nhất 50% diện tích mỗi mặt chính của bao bì.",
       "Cấm hút thuốc hoàn toàn trong nhà và trong phạm vi khuôn viên cơ sở y tế, cơ sở giáo dục (trừ một số trường đại học, cao đẳng), nơi dành cho trẻ em.",
-      "Cấm quảng cáo, khuyến mại thuốc lá; cấm bán thuốc lá bằng máy bán tự động."
-    ]
+      "Cấm quảng cáo, khuyến mại thuốc lá; cấm bán thuốc lá bằng máy bán tự động.",
+      "Từ năm 2025, thuốc lá điện tử và thuốc lá nung nóng bị cấm theo Nghị quyết 173/2024/QH15; Luật Phòng bệnh 114/2025/QH15 sửa đổi, bổ sung Luật này."
+    ],
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216940"
   },
   {
     "id": "ruoubia",
@@ -282,7 +428,8 @@
       "Cấm bán, cung cấp rượu, bia cho người dưới 18 tuổi.",
       "Cấm xúi giục, ép buộc người khác uống rượu, bia.",
       "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "attp",
@@ -297,7 +444,8 @@
       "Quản lý theo chuỗi: sản xuất, kinh doanh, nhập khẩu, quảng cáo thực phẩm.",
       "Cơ sở sản xuất, kinh doanh thực phẩm phải có Giấy chứng nhận đủ điều kiện an toàn thực phẩm (trừ trường hợp được miễn).",
       "Phân công quản lý giữa Bộ Y tế, Bộ Nông nghiệp và Môi trường, Bộ Công Thương."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "hiv",
@@ -312,7 +460,8 @@
       "Cấm kỳ thị, phân biệt đối xử với người nhiễm HIV.",
       "Thông tin về người nhiễm HIV được bảo mật; chỉ thông báo cho những người được luật cho phép.",
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "ghepmo",
@@ -327,16 +476,17 @@
       "Người hiến mô, bộ phận cơ thể khi còn sống phải từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ.",
       "Hiến hoàn toàn tự nguyện, không vì mục đích thương mại; cấm mua bán mô, bộ phận cơ thể người.",
       "Giữ bí mật thông tin về người hiến và người được ghép, trừ khi các bên đồng ý khác."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "donthuoc",
     "cat": "Dược",
-    "name": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)",
+    "name": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc",
     "so": "52/2017/TT-BYT",
     "pass": "29/12/2017",
     "eff": "01/03/2018",
-    "status": "amend",
+    "status": "het",
     "replaces": "Hết hiệu lực từ 01/07/2025, thay thế bởi Thông tư 26/2025/TT-BYT (Điều 13 khoản 2), cùng với Thông tư 18/2018, 04/2022 và 27/2021 (kê đơn điện tử).",
     "points": [
       "Đơn thuốc phải ghi rõ thông tin người bệnh, tên thuốc, hàm lượng, liều dùng, cách dùng và số lượng; người kê đơn ký và ghi rõ họ tên.",
@@ -344,7 +494,8 @@
       "Thuốc kê đơn chỉ được bán khi có đơn của người có thẩm quyền kê đơn; người bệnh nên hỏi dược sĩ về cách dùng và không tự ý đổi liều.",
       "Đối chiếu nguyên văn thông tư và các thông tư sửa đổi trước khi áp dụng trong thực tế."
     ],
-    "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)"
+    "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)",
+    "verify": true
   },
   {
     "id": "tbyt",
@@ -360,7 +511,8 @@
       "Cơ sở sản xuất, nhập khẩu, kinh doanh thiết bị y tế phải có giấy phép hoặc đáp ứng điều kiện theo quy định.",
       "Bộ Y tế và Sở Y tế thực hiện phân cấp quản lý; thủ tục hành chính cụ thể có thể thay đổi theo thông tư mới, cần đối chiếu."
     ],
-    "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT"
+    "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT",
+    "verify": true
   },
   {
     "id": "nd_188_2025_bhyt",
@@ -371,7 +523,11 @@
     "eff": "15/08/2025 (một số điều từ 01/07/2025)",
     "status": "on",
     "replaces": "Hướng dẫn Luật 51/2024/QH15. Khoản 9 Điều 69: xác thực điện tử dữ liệu KCB BHYT chậm nhất 01/01/2026. Mức đóng BHYT 4,5%.",
-    "points": [],
+    "points": [
+      "Quy định chi tiết mức hưởng 100%, 80% và các trường hợp thanh toán chi phí khám bệnh, chữa bệnh BHYT.",
+      "Hỗ trợ tối thiểu 50% mức đóng cho một số nhóm đối tượng, gồm nạn nhân theo quy định pháp luật về phòng, chống mua bán người.",
+      "Xác thực điện tử dữ liệu khám bệnh, chữa bệnh BHYT chậm nhất 01/01/2026 (khoản 9 Điều 69)."
+    ],
     "nguon": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-188-2025-nd-cp-45593/57770.htm"
   },
   {
@@ -383,7 +539,11 @@
     "eff": "01/01/2026",
     "status": "on",
     "replaces": "Thay thế NĐ 13/2023/NĐ-CP. Hướng dẫn Luật 91/2025/QH15.",
-    "points": [],
+    "points": [
+      "Hướng dẫn thi hành Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15; thay thế Nghị định 13/2023/NĐ-CP.",
+      "Quy định trách nhiệm của cơ quan, tổ chức, cá nhân trong xử lý và bảo vệ dữ liệu cá nhân, nhất là dữ liệu nhạy cảm.",
+      "Có hiệu lực từ 01/01/2026."
+    ],
     "nguon": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Nghi-dinh-356-2025-ND-CP-huong-dan-Luat-Bao-ve-du-lieu-ca-nhan-687428.aspx"
   },
   {
@@ -395,8 +555,12 @@
     "eff": "01/01/2026",
     "status": "on",
     "replaces": "Dữ liệu sức khỏe là dữ liệu cá nhân nhạy cảm.",
-    "points": [],
-    "nguon": "https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Luat-Bao-ve-du-lieu-ca-nhan-2025-so-91-2025-QH15-625628.aspx"
+    "points": [
+      "Luật đầu tiên quy định toàn diện về bảo vệ dữ liệu cá nhân, quyền của chủ thể dữ liệu và nghĩa vụ của bên xử lý dữ liệu.",
+      "Dữ liệu sức khỏe thuộc nhóm dữ liệu cá nhân nhạy cảm; xử lý phải có căn cứ pháp lý và bảo đảm an toàn, bảo mật.",
+      "Có hiệu lực từ 01/01/2026."
+    ],
+    "nguon": "https://chinhphu.vn/?pageid=27160&docid=214590&classid=1&typegroupid=3"
   },
   {
     "id": "nd_148_2025_phan_quyen",
@@ -407,8 +571,12 @@
     "eff": "01/07/2025",
     "status": "on",
     "replaces": "Hết hiệu lực từ 01/03/2027, trừ trường hợp được kéo dài hoặc thay thế. Một số quy định cấp giấy phép hành nghề KCB áp dụng đến 31/12/2026.",
-    "points": [],
-    "nguon": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-148-2025-nd-cp-45158/56916.htm"
+    "points": [
+      "Phân quyền, phân cấp thẩm quyền quản lý nhà nước về y tế giữa Bộ Y tế, UBND cấp tỉnh và Sở Y tế.",
+      "Phân cấp một số thủ tục hành chính trong lĩnh vực y tế cho chính quyền địa phương.",
+      "Có hiệu lực từ 01/07/2025."
+    ],
+    "nguon": "https://moh.gov.vn/index.jsp?pageId=5803&aid=154918&cid=8328"
   },
   {
     "id": "tt_32_2023_kcb",
@@ -419,7 +587,11 @@
     "eff": "01/01/2024",
     "status": "on",
     "replaces": "Hồ sơ bệnh án theo khoản 1 Điều 69 Luật KCB. Mẫu bệnh án tại Phụ lục XXVIII.",
-    "points": [],
+    "points": [
+      "Quy định chi tiết một số điều của Luật Khám bệnh, chữa bệnh về phạm vi hành nghề, mẫu giấy phép hành nghề và hồ sơ bệnh án.",
+      "Ban hành mẫu hồ sơ bệnh án và hướng dẫn ghi chép, lưu trữ hồ sơ bệnh án.",
+      "Có hiệu lực từ 01/01/2024."
+    ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-32-2023-TT-BYT-huong-dan-Luat-Kham-benh-chua-benh-593360.aspx"
   },
   {
@@ -431,8 +603,12 @@
     "eff": "21/07/2025",
     "status": "on",
     "replaces": "Thay thế TT 46/2018/TT-BYT. Bệnh viện chậm nhất 30/09/2025; cơ sở khác có nội trú, ban ngày, ngoại trú chậm nhất 31/12/2026.",
-    "points": [],
-    "nguon": "https://caselaw.vn/van-ban-phap-luat/587211-thong-tu-so-13-2025-tt-byt-ngay-06-06-2025-cua-bo-truong-bo-y-te-huong-dan-trien-khai-ho-so-benh-an-dien-tu"
+    "points": [
+      "Hướng dẫn triển khai hồ sơ bệnh án điện tử tại cơ sở khám bệnh, chữa bệnh.",
+      "Quy định nội dung hồ sơ, ký xác nhận, lưu trữ và chia sẻ dữ liệu hồ sơ bệnh án điện tử.",
+      "Có hiệu lực từ 21/07/2025; bệnh viện triển khai chậm nhất 30/09/2025."
+    ],
+    "nguon": "https://xaydungchinhsach.chinhphu.vn/lo-trinh-trien-khai-ho-so-benh-an-dien-tu-tai-cac-benh-vien-119250610163849953.htm"
   },
   {
     "id": "tt_15_2026_phong_benh",
@@ -443,8 +619,61 @@
     "eff": "01/07/2026",
     "status": "on",
     "replaces": "Hướng dẫn Luật 114/2025/QH15 (giám sát, phân loại bệnh truyền nhiễm).",
-    "points": [],
+    "points": [
+      "Quy định chi tiết một số điều của Luật Phòng bệnh 114/2025/QH15.",
+      "Hướng dẫn giám sát bệnh truyền nhiễm, quản lý mẫu bệnh phẩm và nội dung phòng, chống bệnh không lây nhiễm.",
+      "Có hiệu lực từ 01/07/2026."
+    ],
     "nguon": "https://vanban.chinhphu.vn/?docid=218141&pageid=27160"
+  },
+  {
+    "id": "tt_13_2026_tiem_chung",
+    "cat": "Phòng bệnh",
+    "name": "Thông tư 13/2026/TT-BYT quy định về hoạt động tiêm chủng",
+    "so": "13/2026/TT-BYT",
+    "pass": "16/05/2026",
+    "eff": "01/07/2026",
+    "status": "on",
+    "replaces": "Quy định chi tiết hoạt động tiêm chủng thuộc Luật Phòng bệnh 114/2025/QH15.",
+    "points": [
+      "Quy định hoạt động tiêm chủng, gồm tiêm chủng thường xuyên, tiêm chủng bù liều, tiêm chủng chiến dịch và tiêm chủng dịch vụ.",
+      "Quy định danh mục bệnh phải sử dụng vắc xin, sinh phẩm tiêm chủng bắt buộc (Chương II).",
+      "Quy định quản lý, tiếp nhận, bảo quản, vận chuyển vắc xin, an toàn tiêm chủng và trách nhiệm của cơ sở tiêm chủng."
+    ],
+    "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te-se-co-hieu-luc-thi-hanh-tu-1-7-2026/"
+  },
+  {
+    "id": "nd_165_2026_phong_benh",
+    "cat": "Phòng bệnh",
+    "name": "Nghị định 165/2026/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phòng bệnh",
+    "so": "165/2026/NĐ-CP",
+    "pass": "15/05/2026",
+    "eff": "01/07/2026",
+    "status": "on",
+    "replaces": "Hướng dẫn Luật Phòng bệnh 114/2025/QH15.",
+    "points": [
+      "Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phòng bệnh 114/2025/QH15.",
+      "Hướng dẫn nội dung phòng, chống bệnh truyền nhiễm, bệnh không lây nhiễm, giám sát và điều kiện bảo đảm.",
+      "Ban hành 15/05/2026; có hiệu lực từ 01/07/2026."
+    ],
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=218169&classid=1"
+  },
+  {
+    "id": "tt_33_2026_phong_benh",
+    "cat": "Phòng bệnh",
+    "name": "Thông tư 33/2026/TT-BYT hướng dẫn thi hành Nghị định 165/2026/NĐ-CP về Luật Phòng bệnh",
+    "so": "33/2026/TT-BYT",
+    "pass": "29/08/2026",
+    "eff": "29/08/2026",
+    "status": "on",
+    "replaces": "Hướng dẫn thi hành Nghị định 165/2026/NĐ-CP về Luật Phòng bệnh.",
+    "points": [
+      "Hướng dẫn thi hành một số điều của Nghị định 165/2026/NĐ-CP về Luật Phòng bệnh.",
+      "Quy định nội dung kiểm tra sức khỏe đầu năm học cho học sinh.",
+      "Quy định bảo đảm an toàn sinh học tại phòng xét nghiệm (Điều 23).",
+      "Có hiệu lực từ 29/08/2026."
+    ],
+    "nguon": "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tu-332026ttbyt-huong-dan-thi-hanh-nghi-dinh-1652026ndcp-ve-luat-phong-benh-co-noi-dung-gi-288836.html"
   },
   {
     "id": "tt_12_2026_giam_dinh_bhyt",
@@ -455,7 +684,11 @@
     "eff": "10/02/2026 (một số điều từ 01/04/2026)",
     "status": "on",
     "replaces": "Bộ Tài chính. Hướng dẫn NĐ 188/2025/NĐ-CP.",
-    "points": [],
+    "points": [
+      "Quy định trình tự, thủ tục giám định, thanh toán, quyết toán chi phí khám bệnh, chữa bệnh BHYT và biểu mẫu tổng hợp.",
+      "Quy định hai phương thức giám định: tự động và chủ động.",
+      "Kết quả giám định tự động phải được gửi trong 7 ngày làm việc (Điều 10)."
+    ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216997&classid=1&typegroupid=6"
   },
   {
@@ -467,7 +700,30 @@
     "eff": "01/07/2026",
     "status": "on",
     "replaces": "Thay thế Luật Công nghệ thông tin 67/2006/QH11. Một nguồn ghi ngày thông qua 10/12/2025.",
-    "points": [],
-    "nguon": "https://kienminh.haiphong.gov.vn/cai-cach-hanh-chinh-chuyen-doi-so/luat-chuyen-doi-so-so-148-2025-qh15-935509"
+    "points": [
+      "Quy định nguyên tắc, chính sách, điều phối quốc gia về chuyển đổi số; hạ tầng số, dữ liệu số và dịch vụ số.",
+      "Gồm 8 chương, 48 điều; có hiệu lực từ 01/07/2026."
+    ],
+    "nguon": "https://congbao.chinhphu.vn/van-ban/luat-so-148-2025-qh15-468708.htm"
+  },
+  {
+    "id": "nd90_2026_xu_phat",
+    "cat": "Xử phạt hành chính",
+    "name": "Nghị định 90/2026/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực y tế",
+    "so": "90/2026/NĐ-CP",
+    "pass": "30/03/2026",
+    "eff": "15/05/2026",
+    "status": "on",
+    "replaces": "Thay thế Nghị định 117/2020/NĐ-CP và các văn bản sửa đổi, bổ sung từ 15/05/2026.",
+    "points": [
+      "Quy định hành vi vi phạm, hình thức, mức xử phạt, biện pháp khắc phục hậu quả và thẩm quyền xử phạt trong 6 nhóm: y tế dự phòng và phòng, chống HIV/AIDS; khám bệnh, chữa bệnh; dược, mỹ phẩm; thiết bị y tế; bảo hiểm y tế; dân số.",
+      "Mức phạt tiền tối đa: dân số 30 triệu đồng với cá nhân, 60 triệu đồng với tổ chức; y tế dự phòng và HIV/AIDS 50/100 triệu đồng; bảo hiểm y tế 75/150 triệu đồng; khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế 100/200 triệu đồng.",
+      "Cùng một hành vi, tổ chức vi phạm bị phạt tiền gấp 02 lần mức phạt của cá nhân.",
+      "Hình thức xử phạt bổ sung gồm tước quyền sử dụng giấy phép, chứng chỉ hành nghề từ 01 đến 24 tháng; tịch thu tang vật, phương tiện; đình chỉ hoạt động từ 01 đến 24 tháng.",
+      "Các mức đáng chú ý: hành nghề khám bệnh, chữa bệnh không có giấy phép/chứng chỉ 30-40 triệu đồng; cơ sở cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động 40-50 triệu đồng; từ chối hoặc cố ý chậm cấp cứu 30-40 triệu đồng; xâm phạm thân thể, danh dự nhân phẩm nhân viên y tế 30-40 triệu đồng.",
+      "Xử lý vi phạm hành chính trên môi trường điện tử thực hiện theo Nghị định 118/2021/NĐ-CP (được sửa đổi, bổ sung bởi Nghị định 68/2025/NĐ-CP và Nghị định 190/2025/NĐ-CP)."
+    ],
+    "nguon": "https://chinhphu.vn/?pageid=27160&docid=217386",
+    "detailSource": "Toàn văn PDF: https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf"
   }
 ]

@@ -50,14 +50,14 @@
   {
     "t": "bhyt",
     "id": "bhyt-07",
-    "q": "Nội trú trái tuyến không cấp cứu. Bà Lan đến bệnh viện chuyên sâu tuyến trung ương để điều trị nội trú theo lịch hẹn, không chuyển tuyến. Đây không phải trường hợp cấp cứu và không có quy định đặc biệt. Mức chi trả thường gặp trong trường hợp này là bao nhiêu?",
+    "q": "Nội trú trái tuyến không cấp cứu. Bà Lan đến bệnh viện chuyên sâu tuyến trung ương để điều trị nội trú theo lịch hẹn, không chuyển tuyến. Đây không phải trường hợp cấp cứu và bà không thuộc nhóm ngoại lệ (không phải hộ nghèo, dân tộc thiểu số vùng khó khăn, bệnh hiếm/hiểm nghèo hay cơ sở từng là tuyến tỉnh trước 01/01/2025). Mức chi trả thường gặp trong trường hợp này là bao nhiêu?",
     "o": [
       "40%",
       "80%",
       "100%"
     ],
     "a": 0,
-    "e": "Nội trú tuyến chuyên sâu khi trái tuyến thường chỉ được hưởng 40%, trừ các trường hợp đặc biệt được quy định riêng. Căn cứ: Luật BHYT (sửa đổi 2024), Điều 22: nội trú tuyến chuyên sâu thường hưởng 40%, các trường hợp đặc biệt được quy định riêng."
+    "e": "Nội trú trái tuyến tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 là tuyến tỉnh; cấp cứu). Căn cứ: Điều 22 khoản 4 Luật BHYT 51/2024/QH15."
   },
   {
     "t": "bhyt",
@@ -93,6 +93,6 @@
       "100%"
     ],
     "a": 2,
-    "e": "Chi phí một lần khám chữa bệnh dưới mức do Chính phủ quy định được hưởng 100%. Căn cứ: Luật BHYT (sửa đổi 2024): chi phí một lần khám chữa bệnh dưới mức do Chính phủ quy định được hưởng 100%. Số mức cụ thể cần lấy từ văn bản hiện hành."
+    "e": "Chi phí một lần khám chữa bệnh dưới mức do Chính phủ quy định được hưởng 100%. Căn cứ: Luật BHYT (sửa đổi 2024); Điều 17 Nghị định 188/2025/NĐ-CP quy định dưới 15% lương cơ sở."
   }
 ]
