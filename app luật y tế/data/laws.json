@@ -72,8 +72,8 @@
     "so": "21/2024/TT-BYT",
     "pass": "17/10/2024",
     "eff": "17/10/2024",
-    "status": "on",
-    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025.",
+    "status": "amend",
+    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
     "points": [
       "Quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh.",
       "Từ 01/01/2025, Thông tư 21/2023 và 22/2023 về giá dịch vụ khám bệnh, chữa bệnh hết hiệu lực.",
@@ -482,11 +482,11 @@
   {
     "id": "donthuoc",
     "cat": "Dược",
-    "name": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)",
+    "name": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc",
     "so": "52/2017/TT-BYT",
     "pass": "29/12/2017",
     "eff": "01/03/2018",
-    "status": "amend",
+    "status": "het",
     "replaces": "Hết hiệu lực từ 01/07/2025, thay thế bởi Thông tư 26/2025/TT-BYT (Điều 13 khoản 2), cùng với Thông tư 18/2018, 04/2022 và 27/2021 (kê đơn điện tử).",
     "points": [
       "Đơn thuốc phải ghi rõ thông tin người bệnh, tên thuốc, hàm lượng, liều dùng, cách dùng và số lượng; người kê đơn ký và ghi rõ họ tên.",
