@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Cờ `-Wall -Wextra` của gcc dùng để làm gì?",
+      "options": [
+        {
+          "text": "Làm chương trình chạy nhanh hơn",
+          "why": "Đây là cờ cảnh báo, không tối ưu tốc độ."
+        },
+        {
+          "text": "Bật thêm cảnh báo để bắt lỗi tiềm ẩn sớm",
+          "why": "Đúng. Cảnh báo giúp phát hiện lỗi trước khi chạy."
+        },
+        {
+          "text": "Xóa các cảnh báo cũ",
+          "why": "Cờ này làm ngược lại, bật thêm cảnh báo."
+        },
+        {
+          "text": "Tự sửa lỗi trong code",
+          "why": "Trình biên dịch báo lỗi, không tự sửa code."
+        }
+      ],
+      "answer": 1,
+      "explain": "Luôn biên dịch với -Wall -Wextra để nhận cảnh báo sớm."
+    },
+    {
+      "q": "Lỗi biên dịch `expected ';' before '}'` nghĩa là gì?",
+      "options": [
+        {
+          "text": "Thiếu dấu chấm phẩy trước dấu }",
+          "why": "Đúng. Máy mong gặp ; trước khi đóng khối."
+        },
+        {
+          "text": "Thiếu dấu ngoặc nhọn mở",
+          "why": "Lỗi này báo khác, về dấu ngoặc đóng thiếu."
+        },
+        {
+          "text": "Hàm main bị thiếu",
+          "why": "Thông báo này chỉ về dấu chấm phẩy."
+        },
+        {
+          "text": "Biến chưa được khai báo",
+          "why": "Lỗi biến chưa khai báo có thông báo riêng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đọc dòng được chỉ đến và dòng ngay phía trên nó."
+    },
+    {
+      "q": "Cờ `-g` khi biên dịch có tác dụng gì?",
+      "options": [
+        {
+          "text": "Gắn thông tin gỡ lỗi để debugger hiển thị đúng dòng code",
+          "why": "Đúng. Nhờ đó gdb biết dòng và biến tương ứng."
+        },
+        {
+          "text": "Tăng tốc chương trình",
+          "why": "Cờ này không tối ưu tốc độ."
+        },
+        {
+          "text": "Tạo file tài liệu",
+          "why": "Không tạo tài liệu."
+        },
+        {
+          "text": "Đổi tên file đầu ra",
+          "why": "Tên file đầu ra do -o quyết định."
+        }
+      ],
+      "answer": 0,
+      "explain": "Biên dịch với -g khi cần gỡ lỗi bằng gdb."
+    },
+    {
+      "q": "Lỗi `undefined reference to 'foo'` xuất hiện ở giai đoạn nào?",
+      "options": [
+        {
+          "text": "Giai đoạn liên kết (link)",
+          "why": "Đúng. Hàm được khai báo nhưng không tìm thấy phần định nghĩa khi ghép."
+        },
+        {
+          "text": "Khi gõ code",
+          "why": "Đây là lỗi lúc ghép chương trình, không phải lúc gõ."
+        },
+        {
+          "text": "Khi chương trình đang chạy",
+          "why": "Lỗi này xảy ra trước khi chương trình chạy."
+        },
+        {
+          "text": "Khi in ra màn hình",
+          "why": "Không liên quan đến việc in."
+        }
+      ],
+      "answer": 0,
+      "explain": "Hàm khai báo nhưng chưa có thân hàm hoặc chưa được đưa vào khi liên kết."
+    },
+    {
+      "q": "Lỗi biên dịch khác lỗi chạy ở điểm nào?",
+      "options": [
+        {
+          "text": "Lỗi biên dịch xảy ra trước khi chương trình chạy",
+          "why": "Đúng. Chương trình chưa tạo được thì chưa thể chạy."
+        },
+        {
+          "text": "Lỗi chạy báo trước khi biên dịch",
+          "why": "Ngược lại."
+        },
+        {
+          "text": "Không có sự khác biệt",
+          "why": "Hai loại lỗi có thời điểm xuất hiện khác nhau."
+        },
+        {
+          "text": "Lỗi biên dịch chỉ xảy ra trên Windows",
+          "why": "Lỗi biên dịch có trên mọi hệ điều hành."
+        }
+      ],
+      "answer": 0,
+      "explain": "Biên dịch fail thì không có chương trình để chạy."
+    },
+    {
+      "q": "Công cụ nào giúp chạy từng dòng và xem giá trị biến khi chương trình dừng?",
+      "options": [
+        {
+          "text": "gdb (debugger)",
+          "why": "Đúng. gdb cho phép đặt breakpoint, chạy từng dòng và xem biến."
+        },
+        {
+          "text": "Trình soạn văn bản",
+          "why": "Trình soạn không chạy được chương trình."
+        },
+        {
+          "text": "Lệnh ls",
+          "why": "ls chỉ liệt kê file."
+        },
+        {
+          "text": "Lệnh cat",
+          "why": "cat chỉ hiển thị nội dung file."
+        }
+      ],
+      "answer": 0,
+      "explain": "Debugger là công cụ chuyên để theo dõi chương trình đang chạy."
+    }
+  ]
+}

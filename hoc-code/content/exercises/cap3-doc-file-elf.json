@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Nhận diện ELF",
+    "prompt": "Đọc 4 byte hex (cách nhau khoảng trắng). In `ELF` nếu là 7F 45 4C 46, ngược lại in `khong phai ELF`.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "7f 45 4c 46\n",
+        "expected": "ELF\n"
+      },
+      {
+        "stdin": "89 50 4e 47\n",
+        "expected": "khong phai ELF\n"
+      }
+    ]
+  }
+]

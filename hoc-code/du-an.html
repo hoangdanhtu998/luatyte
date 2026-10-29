@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Học code qua dự án</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <h1>Học code qua dự án</h1>
+  <a href="setup.html">Chuẩn bị môi trường</a>
+</header>
+<main>
+  <div class="progress">
+    <div><strong>Tiến độ tổng</strong> <span id="summary"></span></div>
+    <div class="bar"><span id="bar"></span></div>
+    <p class="muted">Tiến độ được lưu trên trình duyệt này. Đổi máy hoặc xóa dữ liệu trình duyệt sẽ mất.</p>
+  </div>
+  <div id="levels"></div>
+</main>
+<script src="data/projects.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  const progress = loadProgress();
+  const total = PROJECTS.length;
+  const doneCount = PROJECTS.filter(p => statusOf(progress, p.id) === 'done').length;
+  document.getElementById('summary').textContent = `${doneCount}/${total} dự án đã xong`;
+  document.getElementById('bar').style.width = total ? (doneCount / total * 100) + '%' : '0';
+
+  const root = document.getElementById('levels');
+  for (const lv of LEVELS) {
+    const items = PROJECTS.filter(p => p.level === lv.id);
+    const section = document.createElement('section');
+    section.innerHTML = `<h2></h2><p class="level-desc"></p><div class="grid"></div>`;
+    section.querySelector('h2').textContent = lv.name;
+    section.querySelector('.level-desc').textContent = lv.desc;
+    const grid = section.querySelector('.grid');
+    for (const p of items) {
+      const st = statusOf(progress, p.id);
+      const a = document.createElement('a');
+      a.className = 'card ' + (st === 'todo' ? '' : st);
+      a.href = 'project.html?id=' + encodeURIComponent(p.id);
+      a.innerHTML = `<h3></h3><p></p><span class="tag"></span>`;
+      a.querySelector('h3').textContent = p.title;
+      a.querySelector('p').textContent = p.desc;
+      a.querySelector('.tag').textContent = STATUS_LABEL[st] + (p.parts ? ` · ${p.parts} phần` : '');
+      grid.appendChild(a);
+    }
+    root.appendChild(section);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Thẻ sinh viên",
+    "prompt": "Đọc tên (một từ) và tuổi. Lưu vào struct `Nguoi`, in theo dạng `ten (tuoi)`.",
+    "starter": "#include <stdio.h>\n\nstruct Nguoi {\n    char ten[32];\n    int tuoi;\n};\n\nint main(void) {\n    struct Nguoi a;\n    // đọc và in ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "An 20\n",
+        "expected": "An (20)\n"
+      },
+      {
+        "stdin": "Binh 17\n",
+        "expected": "Binh (17)\n"
+      }
+    ]
+  }
+]

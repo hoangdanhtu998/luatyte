@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Đổi sang RPN",
+    "prompt": "Đọc một dòng biểu thức chỉ có số, + và *, và ngoặc. In dạng RPN, các phần tử cách nhau một dấu cách.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1+2*3\n",
+        "expected": "1 2 3 * +\n"
+      },
+      {
+        "stdin": "2*(3+4)\n",
+        "expected": "2 3 4 + *\n"
+      }
+    ]
+  }
+]

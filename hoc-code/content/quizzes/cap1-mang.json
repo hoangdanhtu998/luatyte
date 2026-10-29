@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Mảng `int diem[5]` có chỉ số hợp lệ là những số nào?",
+      "options": [
+        {
+          "text": "1 đến 5",
+          "why": "Chỉ số bắt đầu từ 0, không phải 1."
+        },
+        {
+          "text": "0 đến 4",
+          "why": "Đúng. 5 ô có chỉ số 0, 1, 2, 3, 4."
+        },
+        {
+          "text": "0 đến 5",
+          "why": "Chỉ số 5 đã nằm ngoài mảng."
+        },
+        {
+          "text": "0 đến 6",
+          "why": "Mảng chỉ có 5 ô."
+        }
+      ],
+      "answer": 1,
+      "explain": "Mảng n phần tử có chỉ số từ 0 đến n − 1."
+    },
+    {
+      "q": "`diem[0]` là phần tử thứ mấy?",
+      "options": [
+        {
+          "text": "Thứ nhất",
+          "why": "Đúng. Chỉ số 0 là phần tử đầu tiên."
+        },
+        {
+          "text": "Thứ hai",
+          "why": "Thứ hai là chỉ số 1."
+        },
+        {
+          "text": "Thứ năm",
+          "why": "Thứ năm là chỉ số 4."
+        },
+        {
+          "text": "Không có phần tử nào",
+          "why": "Phần tử đầu luôn có chỉ số 0."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đếm từ 0: chỉ số 0 là phần tử thứ nhất."
+    },
+    {
+      "q": "Vòng lặp nào duyệt đúng mảng 5 phần tử?",
+      "options": [
+        {
+          "text": "for (int i = 0; i <= 5; i++)",
+          "why": "i = 5 là ô ngoài mảng."
+        },
+        {
+          "text": "for (int i = 0; i < 5; i++)",
+          "why": "Đúng. i chạy từ 0 đến 4."
+        },
+        {
+          "text": "for (int i = 1; i <= 5; i++)",
+          "why": "Bỏ mất phần tử đầu và đọc ngoài mảng ở cuối."
+        },
+        {
+          "text": "for (int i = 5; i > 0; i++)",
+          "why": "i bắt đầu ở 5, đã ngoài mảng, và tăng mãi."
+        }
+      ],
+      "answer": 1,
+      "explain": "Dùng i < n với mảng n phần tử."
+    },
+    {
+      "q": "`int diem[5]; diem[5] = 1;` có vấn đề gì?",
+      "options": [
+        {
+          "text": "Không có vấn đề",
+          "why": "Chỉ số 5 không tồn tại trong mảng 5 ô."
+        },
+        {
+          "text": "Ghi ra ngoài mảng, kết quả không đoán được",
+          "why": "Đúng. Đây là lỗi tràn mảng, có thể làm hỏng dữ liệu khác."
+        },
+        {
+          "text": "Máy tự tạo thêm ô mới",
+          "why": "C không tự mở rộng mảng."
+        },
+        {
+          "text": "Mảng đổi kích thước thành 6",
+          "why": "Kích thước mảng cố định khi khai báo."
+        }
+      ],
+      "answer": 1,
+      "explain": "Tràn mảng là lỗi nguy hiểm vì C không kiểm tra giới hạn cho bạn."
+    },
+    {
+      "q": "`int diem[5] = {8, 6, 9, 7, 10};` thì `diem[2]` là số nào?",
+      "options": [
+        {
+          "text": "6",
+          "why": "6 là phần tử có chỉ số 1."
+        },
+        {
+          "text": "9",
+          "why": "Đúng. Chỉ số 0 là 8, 1 là 6, 2 là 9."
+        },
+        {
+          "text": "7",
+          "why": "7 là phần tử có chỉ số 3."
+        },
+        {
+          "text": "10",
+          "why": "10 là phần tử có chỉ số 4."
+        }
+      ],
+      "answer": 1,
+      "explain": "Đếm từ 0: 8, 6, 9, 7, 10 có chỉ số 0, 1, 2, 3, 4."
+    },
+    {
+      "q": "Đoạn code tính tổng mảng `diem` có kết quả nào?",
+      "options": [
+        {
+          "text": "Tổng bằng 40 với mảng {8, 6, 9, 7, 10}",
+          "why": "Đúng. 8 + 6 + 9 + 7 + 10 = 40."
+        },
+        {
+          "text": "Tổng bằng 30",
+          "why": "Cộng lại thì được 40."
+        },
+        {
+          "text": "Tổng bằng 50",
+          "why": "Không đúng, tổng là 40."
+        },
+        {
+          "text": "Không tính được vì mảng có 5 số",
+          "why": "Mảng có số thì tính được."
+        }
+      ],
+      "answer": 0,
+      "explain": "Cộng từng phần tử trong vòng lặp."
+    }
+  ]
+}

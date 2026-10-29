@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Trình biên dịch phải hiểu thứ tự tính. Mình sẽ đổi biểu thức thường thành dạng RPN, để máy chỉ cần đọc từ trái sang phải.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Biểu thức thường là 1 + 2 * 3. Nhân phải làm trước cộng, nên 2 * 3 đi trước.", "boxes": ["kết quả"], "code": "1 + 2 * 3", "after": "Nhân trước, cộng sau." },
+    { "img": "m03-meo-vui.png", "say": "Viết lại theo thứ tự làm: số 1, số 2, số 3, dấu nhân, dấu cộng. Đó là RPN.", "boxes": ["kết quả"], "code": "1 2 3 * +", "run": { "kết quả": "1 2 3 * +" }, "after": "RPN của 1 + 2 * 3 là 1 2 3 * +." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: biểu thức 2 * (3 + 4) viết dạng RPN là gì?", "boxes": ["kết quả"], "code": "2 * (3 + 4)", "quiz": [
+        { "text": "2 3 4 + *", "right": true, "hint": "Đúng! Làm trong ngoặc trước: 3 4 +, rồi nhân với 2." },
+        { "text": "2 3 * 4 +", "right": false, "hint": "Đó là 2 * 3 + 4, khác biểu thức đề bài." },
+        { "text": "2 3 4 * +", "right": false, "hint": "Đó là 2 + 3 * 4, sai thứ tự." } ] },
+    { "img": "m03-meo-vui.png", "say": "Trình biên dịch làm việc này bằng cách dùng một ngăn xếp: số thì để ngay, dấu thì giữ lại đến lúc đúng.", "boxes": ["kết quả"], "end": true }
+  ]
+}

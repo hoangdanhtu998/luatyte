@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Tổng từ 1 đến n",
+    "prompt": "Đọc số nguyên n. In tổng 1 + 2 + ... + n.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "10\n",
+        "expected": "55\n"
+      },
+      {
+        "stdin": "4\n",
+        "expected": "10\n"
+      }
+    ]
+  }
+]

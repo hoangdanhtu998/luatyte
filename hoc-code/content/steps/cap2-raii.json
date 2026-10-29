@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "RAII nghĩa là: mở tài nguyên khi tạo đối tượng, và đóng khi đối tượng bị hủy. Ra khỏi phạm vi thì tự đóng, không cần nhớ gọi đóng.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tạo một đối tượng Tep trong khối ngoặc. Lúc tạo, tệp được mở.", "boxes": ["trạng thái"], "code": "{ Tep p; }", "run": { "trạng thái": "mở" }, "after": "Tệp đã mở." },
+    { "img": "m03-meo-vui.png", "say": "Khi đi ra khỏi dấu ngoặc, đối tượng p bị hủy. Hàm hủy tự chạy và đóng tệp.", "boxes": ["trạng thái"], "code": "kết thúc khối }", "run": { "trạng thái": "đóng" }, "after": "Tệp đã tự đóng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: hàm hủy được gọi khi nào?", "boxes": ["trạng thái"], "code": "~Tep()", "quiz": [
+        { "text": "Khi đối tượng ra khỏi phạm vi của nó", "right": true, "hint": "Đúng! Đó là lúc C++ tự gọi hàm hủy." },
+        { "text": "Không bao giờ được gọi", "right": false, "hint": "C++ luôn gọi hàm hủy khi đối tượng hết phạm vi." },
+        { "text": "Chỉ khi bạn tự gọi bằng tay", "right": false, "hint": "Nhờ RAII, bạn không cần gọi tay." } ] },
+    { "img": "m03-meo-vui.png", "say": "unique_ptr là một con trỏ thông minh. Nó tự giải phóng đối tượng khi hết phạm vi, nên không bị quên xóa.", "boxes": ["trạng thái"], "end": true }
+  ]
+}

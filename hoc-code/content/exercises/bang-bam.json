@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Khởi tạo và put/get cơ bản",
+    "prompt": "Viết hàm ht_create, ht_put, ht_get cho hash table chaining. Test với 5 cặp key-value.\n\nGợi ý:\n- Hash function djb2: h = 5381; while(c=*str++) h = h*33 + c\n- calloc để bucket tự động NULL\n- strcmp để so sánh key trong danh sách",
+    "starter": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n// TODO: định nghĩa struct Node, HashTable\n// TODO: unsigned long hash(const char *str)\n// TODO: HashTable *ht_create(size_t capacity)\n// TODO: void ht_put(HashTable *ht, const char *key, int value)\n// TODO: bool ht_get(HashTable *ht, const char *key, int *out)\n\nint main() {\n    HashTable *ht = ht_create(16);\n    ht_put(ht, \"Alice\", 25);\n    ht_put(ht, \"Bob\", 30);\n    ht_put(ht, \"Charlie\", 35);\n    ht_put(ht, \"David\", 40);\n    ht_put(ht, \"Eve\", 45);\n    \n    int val;\n    if (ht_get(ht, \"Charlie\", &val)) printf(\"Charlie: %d\\n\", val);\n    if (ht_get(ht, \"Frank\", &val)) printf(\"Frank: %d\\n\", val);\n    else printf(\"Frank: NOT FOUND\\n\");\n    \n    // TODO: ht_free(ht)\n    return 0;\n}",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Charlie: 35\nFrank: NOT FOUND\n"
+      }
+    ]
+  },
+  {
+    "id": "ex2",
+    "title": "Bài 2: Xóa key và xử lý va chạm",
+    "prompt": "Viết ht_remove. Test xóa key ở giữa danh sách, key đầu, key không tồn tại.\n\nGợi ý:\n- Cần theo dõi prev node để nối next khi xóa giữa\n- Xóa head: bucket[idx] = cur->next\n- Xóa giữa: prev->next = cur->next\n- Nhớ free(key) và free(node)",
+    "starter": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n// (copy struct, hash, ht_create, ht_put, ht_get từ bài 1)\n// TODO: bool ht_remove(HashTable *ht, const char *key)\n\nint main() {\n    HashTable *ht = ht_create(8);  // capacity nhỏ để dễ va chạm\n    \n    // Thêm nhiều key để tạo va chạm\n    ht_put(ht, \"A\", 1);\n    ht_put(ht, \"B\", 2);\n    ht_put(ht, \"C\", 3);\n    ht_put(ht, \"D\", 4);\n    \n    // Test xóa key đầu bucket\n    ht_remove(ht, \"A\");\n    int v; ht_get(ht, \"A\", &v) ? printf(\"A: %d\\n\", v) : printf(\"A: DELETED\\n\");\n    \n    // Test xóa key giữa\n    ht_remove(ht, \"C\");\n    ht_get(ht, \"C\", &v) ? printf(\"C: %d\\n\", v) : printf(\"C: DELETED\\n\");\n    \n    // Test xóa key không có\n    bool ok = ht_remove(ht, \"ZZZ\");\n    printf(\"Remove ZZZ: %s\\n\", ok ? \"OK\" : \"NOT FOUND\");\n    \n    ht_free(ht);\n    return 0;\n}",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "A: DELETED\nC: DELETED\nRemove ZZZ: NOT FOUND\n"
+      }
+    ]
+  },
+  {
+    "id": "ex3",
+    "title": "Bài 3: Rehash tự động khi load factor > 0.75",
+    "prompt": "Thêm rehash vào ht_put. Thêm 20 key vào table capacity 8, quan sát capacity tự động mở rộng.\n\nGợi ý:\n- Rehash: tạo buckets mới gấp đôi, băm lại tất cả key cũ\n- Dùng ht_put để chèn lại vào mảng mới (đã có logic chaining)\n- Free key và node cũ sau khi chuyển xong\n- Load factor sau rehash nên < 0.75",
+    "starter": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n// (copy toàn bộ code từ bài 1,2)\n// TODO: void ht_rehash(HashTable *ht)\n// Trong ht_put: sau khi ht->size++, nếu (double)ht->size/ht->capacity > 0.75 thì ht_rehash(ht)\n\nint main() {\n    HashTable *ht = ht_create(8);  // nhỏ để trigger rehash sớm\n    \n    printf(\"Initial capacity: %zu\\n\", ht->capacity);\n    \n    for (int i = 0; i < 20; i++) {\n        char key[16];\n        sprintf(key, \"key%d\", i);\n        ht_put(ht, key, i * 10);\n    }\n    \n    printf(\"Final capacity: %zu\\n\", ht->capacity);\n    printf(\"Size: %zu\\n\", ht->size);\n    printf(\"Load factor: %.2f\\n\", (double)ht->size / ht->capacity);\n    \n    // Verify data intact after rehash\n    int val;\n    for (int i = 0; i < 20; i++) {\n        char key[16];\n        sprintf(key, \"key%d\", i);\n        if (!ht_get(ht, key, &val) || val != i * 10) {\n            printf(\"ERROR at %s\\n\", key);\n            break;\n        }\n    }\n    printf(\"All data verified!\\n\");\n    \n    ht_free(ht);\n    return 0;\n}",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Initial capacity: 8\nFinal capacity: 32\nSize: 20\nLoad factor: 0.62\nAll data verified!\n"
+      }
+    ]
+  }
+]

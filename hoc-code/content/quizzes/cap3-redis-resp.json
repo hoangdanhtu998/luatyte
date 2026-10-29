@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "RESP là gì?",
+      "options": [
+        {
+          "text": "Giao thức văn bản Redis dùng để gửi lệnh và nhận trả lời",
+          "why": "Đúng. Các lệnh được gửi dưới dạng mảng các chuỗi."
+        },
+        {
+          "text": "Một cơ sở dữ liệu",
+          "why": "RESP là giao thức, không phải cơ sở dữ liệu."
+        },
+        {
+          "text": "Một ngôn ngữ lập trình",
+          "why": "Không phải ngôn ngữ."
+        },
+        {
+          "text": "Một hệ điều hành",
+          "why": "Không phải hệ điều hành."
+        }
+      ],
+      "answer": 0,
+      "explain": "RESP là cách Redis trao đổi dữ liệu."
+    },
+    {
+      "q": "Trong RESP, ký tự `*` ở đầu dòng nghĩa là gì?",
+      "options": [
+        {
+          "text": "Một mảng, theo sau là số phần tử",
+          "why": "Đúng. Ví dụ *2 nghĩa là mảng có 2 phần tử."
+        },
+        {
+          "text": "Một chuỗi có độ dài cố định",
+          "why": "Chuỗi dùng $."
+        },
+        {
+          "text": "Một số nguyên",
+          "why": "Số nguyên dùng :."
+        },
+        {
+          "text": "Lỗi",
+          "why": "Lỗi dùng -."
+        }
+      ],
+      "answer": 0,
+      "explain": "* mở đầu một mảng."
+    },
+    {
+      "q": "Ký tự `$3` trong RESP nghĩa là gì?",
+      "options": [
+        {
+          "text": "Một chuỗi dài 3 byte, theo sau là nội dung",
+          "why": "Đúng. Đây là bulk string có độ dài."
+        },
+        {
+          "text": "Số 3",
+          "why": "Số dùng :3."
+        },
+        {
+          "text": "Mảng 3 phần tử",
+          "why": "Mảng dùng *3."
+        },
+        {
+          "text": "Lỗi 3",
+          "why": "Lỗi dùng -."
+        }
+      ],
+      "answer": 0,
+      "explain": "$ mở đầu chuỗi có độ dài đi kèm."
+    },
+    {
+      "q": "Lệnh `GET key` gửi đi có dạng RESP nào?",
+      "options": [
+        {
+          "text": "*2, rồi $3 GET, rồi $3 key",
+          "why": "Đúng. Mảng hai phần tử, mỗi chuỗi có độ dài."
+        },
+        {
+          "text": "GET key trực tiếp",
+          "why": "RESP cần định dạng mảng."
+        },
+        {
+          "text": "*1 GET",
+          "why": "Phải có đủ hai phần tử."
+        },
+        {
+          "text": ":GET key",
+          "why": "Dấu : dùng cho số nguyên."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mỗi phần tử của lệnh là một bulk string."
+    }
+  ]
+}

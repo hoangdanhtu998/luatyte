@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Ánh xạ PID",
+    "prompt": "Đọc n, rồi n PID thật (tăng dần). PID trong container bắt đầu từ 1 và tăng theo thứ tự. In các PID trong container cách nhau một dấu cách.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n700 701 705\n",
+        "expected": "1 2 3\n"
+      }
+    ]
+  }
+]

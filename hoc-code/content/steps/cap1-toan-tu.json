@@ -1,0 +1,20 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Hôm nay mình học cách máy tính tính toán. Mình sẽ cho bạn xem từng bước.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là hai hộp: x và y. Bấm nút để bỏ số 7 vào x và số 2 vào y.", "boxes": ["x", "y"], "code": "int x = 7, y = 2;", "run": { "x": 7, "y": 2 }, "after": "Xong! x giờ là 7, y giờ là 2." },
+    { "img": "m03-meo-vui.png", "say": "Dấu / là chia. Máy lấy 7 chia cho 2 và chỉ giữ phần nguyên.", "boxes": ["x", "y", "chia"], "code": "int chia = x / y;", "run": { "chia": 3 }, "after": "7 chia 2 được 3 dư 1. Phần lẻ bị bỏ đi, nên chia là 3." },
+    { "img": "m03-meo-vui.png", "say": "Dấu % là lấy phần dư. Phần dư của 7 khi chia 2 là bao nhiêu?", "boxes": ["x", "y", "chia", "du"], "code": "int du = x % y;", "run": { "du": 1 }, "after": "Phần dư là 1. Kiểm tra: 2 × 3 = 6, và 7 - 6 = 1." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: không dùng hộp nào, chỉ tính 9 chia 2 thì được mấy?", "boxes": [], "code": "9 / 2", "quiz": [
+        { "text": "4", "right": true, "hint": "Đúng! 9 chia 2 được 4, phần lẻ bỏ đi." },
+        { "text": "4.5", "right": false, "hint": "Hai số đều là số nguyên nên không có phần lẻ." },
+        { "text": "5", "right": false, "hint": "5 là làm tròn lên. Máy không làm tròn, chỉ bỏ phần lẻ." } ] },
+    { "img": "m03-meo-vui.png", "say": "Muốn có phần lẻ thì phải dùng số thập phân. Dòng này viết 7.0 để máy hiểu là số thực.", "boxes": ["tb"], "code": "double tb = 7.0 / 2;", "run": { "tb": 3.5 }, "after": "Bây giờ tb là 3.5, có phần lẻ." },
+    { "img": "m03-meo-vui.png", "say": "Bây giờ đến dấu ++. Đầu tiên bỏ số 10 vào hộp n.", "boxes": ["n"], "code": "int n = 10;", "run": { "n": 10 }, "after": "Xong! n giờ là 10." },
+    { "img": "m04-meo-nhe-nhang.png", "say": "Dòng này: n++ dùng số cũ của n là 10 để cộng 1, được 11. Sau đó n mới tăng lên 11.", "boxes": ["n", "r"], "code": "int r = n++ + 1;", "run": { "r": 11, "n": 11 }, "after": "r là 11 và n cũng là 11. Số 10 được dùng trước, rồi n mới tăng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: nếu n bắt đầu là 10 và dòng là int r = ++n + 1; thì r là mấy? (++n tăng n trước rồi mới dùng.)", "boxes": [], "code": "int r = ++n + 1;", "quiz": [
+        { "text": "11", "right": false, "hint": "Không. ++n tăng n trước, nên không dùng số cũ 10." },
+        { "text": "12", "right": true, "hint": "Đúng! ++n tăng n thành 11 trước, rồi cộng 1 được 12." },
+        { "text": "10", "right": false, "hint": "Số 10 là số cũ. ++n đã tăng nó trước khi dùng." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: / lấy phần nguyên khi chia số nguyên. % lấy phần dư. n++ dùng số cũ rồi mới tăng. ++n tăng trước rồi mới dùng.", "boxes": ["n", "r"], "end": true }
+  ]
+}

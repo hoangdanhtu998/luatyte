@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "STL là thư viện có sẵn của C++. Vector là một dãy co giãn được. Sort là hàm sắp xếp. Template là khuôn để viết một lần, dùng cho nhiều kiểu dữ liệu.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tạo một vector tên v, có ba số: 3, 1, 2.", "boxes": ["v"], "code": "vector<int> v = {3, 1, 2};", "run": { "v": "3, 1, 2" }, "after": "v đang là 3, 1, 2." },
+    { "img": "m03-meo-vui.png", "say": "Gọi sort để sắp xếp v từ nhỏ đến lớn. Chỉ cần một dòng.", "boxes": ["v"], "code": "sort(v.begin(), v.end());", "run": { "v": "1, 2, 3" }, "after": "v giờ là 1, 2, 3." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau sort, v chứa gì?", "boxes": ["v"], "code": "sort(v.begin(), v.end());", "quiz": [
+        { "text": "1, 2, 3", "right": true, "hint": "Đúng! sort xếp từ nhỏ đến lớn." },
+        { "text": "3, 2, 1", "right": false, "hint": "Đó là xếp từ lớn đến nhỏ. sort mặc định xếp từ nhỏ đến lớn." },
+        { "text": "3, 1, 2", "right": false, "hint": "Đó là thứ tự ban đầu, sort đã đổi lại." } ] },
+    { "img": "m03-meo-vui.png", "say": "Template: một hàm như vậy dùng được cho int, double hay kiểu khác, không phải viết lại từng cái.", "boxes": ["v"], "end": true }
+  ]
+}

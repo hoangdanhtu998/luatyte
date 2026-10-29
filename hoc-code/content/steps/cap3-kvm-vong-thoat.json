@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Với KVM, máy ảo chạy trực tiếp trên CPU. Khi máy ảo cần hypervisor làm gì đó, CPU thoát về chương trình quản lý.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Chương trình quản lý chạy máy ảo trong một vòng lặp. Mỗi lần máy ảo dừng, nó đọc lý do thoát.", "boxes": ["lý do"], "code": "lý_do = chạy_vCPU()", "run": { "lý do": "chưa có" }, "after": "Mỗi lần thoát, chương trình biết máy ảo cần gì." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Nếu lý do là IO_OUT, máy ảo muốn ghi một ký tự ra cổng. Hypervisor in ký tự đó rồi chạy tiếp máy ảo.", "boxes": ["lý do"], "code": "if lý_do == IO_OUT: in ký tự", "run": { "lý do": "IO_OUT" }, "after": "Ký tự được in, máy ảo tiếp tục." },
+    { "img": "m03-meo-vui.png", "say": "Nếu lý do là HALT, máy ảo dừng hẳn và vòng lặp kết thúc.", "boxes": ["lý do"], "code": "if lý_do == HALT: dừng", "run": { "lý do": "HALT" }, "after": "Máy ảo dừng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: chương trình quản lý làm gì sau khi xử lý một lần thoát IO_OUT?", "boxes": ["lý do"], "code": "xử lý xong rồi ?", "quiz": [
+        { "text": "Chạy tiếp máy ảo bằng vòng lặp", "right": true, "hint": "Đúng! Máy ảo chạy tiếp, và vòng lặp lại gọi chạy_vCPU." },
+        { "text": "Tắt hẳn chương trình ngay", "right": false, "hint": "Tắt ngay là sai khi mới chỉ có một lần IO_OUT. Máy ảo chưa yêu cầu dừng." },
+        { "text": "Xóa máy ảo", "right": false, "hint": "Lý do thoát IO_OUT không yêu cầu xóa máy ảo." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: máy ảo chạy nhanh vì chạy thẳng trên CPU. Khi cần hypervisor, nó thoát, được xử lý, rồi chạy tiếp.", "boxes": ["lý do"], "end": true }
+  ]
+}

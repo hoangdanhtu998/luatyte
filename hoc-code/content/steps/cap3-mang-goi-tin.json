@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Mạng truyền các byte liền nhau, không biết tin nhắn kết thúc ở đâu. Cách đơn giản là đặt trước một số ghi độ dài.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tin nhắn là chữ hi. Mỗi chữ có một mã byte: h là 68, i là 69. Độ dài của hi là 2.", "boxes": ["độ dài", "nội dung"], "code": "hi  →  độ dài 2, nội dung 68 69", "run": { "độ dài": "00 02", "nội dung": "68 69" }, "after": "Tách tin nhắn thành độ dài và nội dung." },
+    { "img": "m03-meo-vui.png", "say": "Ghép lại: đặt độ dài 2 byte lên trước, rồi nội dung. Gói tin là 00 02 68 69.", "boxes": ["gói tin"], "code": "00 02 68 69", "run": { "gói tin": "00 02 68 69" }, "after": "Gói tin đã đóng gói xong." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: độ dài 2 viết thành 2 byte theo thứ tự big-endian là gì?", "boxes": ["gói tin"], "code": "2 trong 2 byte big-endian", "quiz": [
+        { "text": "00 02", "right": true, "hint": "Đúng! Big-endian đặt byte cao đi trước, nên là 00 rồi 02." },
+        { "text": "02 00", "right": false, "hint": "Đó là little-endian, byte thấp đi trước. Bài này dùng big-endian." },
+        { "text": "02", "right": false, "hint": "Cần 2 byte, không phải 1 byte." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: đóng gói là đặt độ dài trước nội dung, theo đúng thứ tự byte mà hai bên đã thỏa thuận. Sai thứ tự thì người nhận đọc sai độ dài.", "boxes": ["gói tin"], "end": true }
+  ]
+}

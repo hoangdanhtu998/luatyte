@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Độ dài chuỗi",
+    "prompt": "Đọc một từ (không có khoảng trắng) vào mảng char. In độ dài của từ đó. Dùng strlen từ <string.h>.",
+    "starter": "#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char s[100];\n    if (scanf(\"%99s\", s) != 1) return 1;\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "hello\n",
+        "expected": "5\n"
+      },
+      {
+        "stdin": "c\n",
+        "expected": "1\n"
+      }
+    ]
+  }
+]

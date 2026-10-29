@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Game vẽ lên một mảng pixel gọi là đệm khung. Mỗi pixel là một số 32 bit lưu màu.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Dạng 0x00RRGGBB: 8 bit đỏ, 8 bit xanh lá, 8 bit xanh dương. Byte đầu luôn là 00.", "boxes": ["đỏ", "xanh lá", "xanh dương"], "code": "0x00 RR GG BB", "run": { "đỏ": "RR", "xanh lá": "GG", "xanh dương": "BB" }, "after": "Mỗi màu chiếm 8 bit, tức 1 byte." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Màu đỏ thuần: đỏ đầy đủ là FF, còn xanh lá và xanh dương bằng 00.", "boxes": ["đỏ", "xanh lá", "xanh dương"], "code": "0x00FF0000", "run": { "đỏ": "FF", "xanh lá": "00", "xanh dương": "00" }, "after": "Màu đỏ thuần là 0x00FF0000." },
+    { "img": "m03-meo-vui.png", "say": "Màu xanh dương thuần thì chỉ có byte cuối khác 0.", "boxes": ["đỏ", "xanh lá", "xanh dương"], "code": "0x000000FF", "after": "Đây là màu xanh dương thuần." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: màu xanh lá thuần viết là gì?", "boxes": ["đỏ", "xanh lá", "xanh dương"], "code": "0x00 ? ? 00", "quiz": [
+        { "text": "0x0000FF00", "right": true, "hint": "Đúng! Xanh lá là byte GG, nên màu xanh lá thuần là 0x0000FF00." },
+        { "text": "0x00FF0000", "right": false, "hint": "0x00FF0000 là màu đỏ thuần, không phải xanh lá." },
+        { "text": "0x000000FF", "right": false, "hint": "0x000000FF là màu xanh dương thuần." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: một pixel 32 bit gồm 3 màu, mỗi màu 8 bit. Lệch vị trí bit là lỗi rất hay gặp khi đóng gói màu.", "boxes": ["đỏ", "xanh lá", "xanh dương"], "end": true }
+  ]
+}

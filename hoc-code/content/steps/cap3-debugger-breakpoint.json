@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Breakpoint là điểm dừng: chương trình chạy đến đó thì đứng lại, để ta xem bên trong. Debugger làm điều này bằng một byte đặc biệt.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Một lệnh có mã byte 55. Muốn dừng ở lệnh này, debugger nhớ lại byte gốc 55 và thay nó bằng 0xCC.", "boxes": ["byte gốc", "byte đang có"], "code": "55  →  CC", "run": { "byte gốc": "55", "byte đang có": "CC" }, "after": "Byte gốc 55 đã được lưu lại, CC được đặt vào." },
+    { "img": "m03-meo-vui.png", "say": "Khi CPU gặp 0xCC, nó dừng và báo cho debugger. Lúc này bạn xem được giá trị bên trong.", "boxes": ["byte gốc", "byte đang có"], "code": "CPU gặp CC: dừng", "after": "Chương trình đứng lại tại breakpoint." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau khi xem xong, debugger làm gì với byte CC?", "boxes": ["byte gốc", "byte đang có"], "code": "khôi phục byte", "quiz": [
+        { "text": "Trả lại byte gốc 55 để chương trình chạy đúng", "right": true, "hint": "Đúng! Nếu không trả lại 55, chương trình sẽ dừng ở đó mãi." },
+        { "text": "Giữ nguyên CC mãi mãi", "right": false, "hint": "Nếu giữ CC, lệnh đó không bao giờ được thực hiện đúng." },
+        { "text": "Xóa luôn lệnh đó", "right": false, "hint": "Debugger không xóa lệnh. Nó chỉ thay tạm và trả lại sau." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: breakpoint thay một byte bằng 0xCC và nhớ byte gốc. Khi chạy tiếp thì khôi phục byte gốc.", "boxes": ["byte gốc", "byte đang có"], "end": true }
+  ]
+}

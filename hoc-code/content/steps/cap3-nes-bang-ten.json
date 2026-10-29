@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Màn hình NES được vẽ bằng các ô nền. Bảng tên là danh sách các ô đó, nhưng lưu trong bộ nhớ như một dãy phẳng.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Mỗi hàng có 32 ô. Muốn tìm ô ở cột 3, hàng 2, ta bỏ qua 2 hàng đầy trước, mỗi hàng 32 ô.", "boxes": ["hàng", "cột", "chỉ số"], "code": "hàng 2 × 32", "run": { "hàng": "2", "cột": "3", "chỉ số": "chưa tính" }, "after": "2 hàng đầy là 64 ô." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Cộng thêm cột 3 để vào đúng vị trí trong hàng đó.", "boxes": ["hàng", "cột", "chỉ số"], "code": "2 × 32 + 3", "run": { "hàng": "2", "cột": "3", "chỉ số": "67" }, "after": "Chỉ số của ô là 67." },
+    { "img": "m03-meo-vui.png", "say": "Công thức chung: chỉ số = hàng × 32 + cột. Nhớ thứ tự hàng trước, cột sau.", "boxes": ["hàng", "cột", "chỉ số"], "code": "chỉ số = hàng × 32 + cột", "after": "Đây là công thức đổi tọa độ thành chỉ số." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: ô ở cột 5, hàng 1 có chỉ số bao nhiêu?", "boxes": ["hàng", "cột", "chỉ số"], "code": "1 × 32 + 5", "quiz": [
+        { "text": "37", "right": true, "hint": "Đúng! 1 × 32 + 5 = 37." },
+        { "text": "69", "right": false, "hint": "69 sai vì đã đổi chỗ cột và hàng. Đúng là hàng 1 nhân 32, cộng cột 5: 1 × 32 + 5 = 37." },
+        { "text": "5", "right": false, "hint": "5 chỉ là số cột, chưa tính hàng 1." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: bảng tên là mảng phẳng, và muốn tìm ô thì đổi (hàng, cột) thành một số duy nhất.", "boxes": ["hàng", "cột", "chỉ số"], "end": true }
+  ]
+}

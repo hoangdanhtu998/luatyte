@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "std::vector là gì?",
+      "options": [
+        {
+          "text": "Mảng động có thể tự tăng kích thước",
+          "why": "Đúng. Thêm phần tử thì vector tự cấp thêm chỗ."
+        },
+        {
+          "text": "Mảng có kích thước cố định",
+          "why": "Đó là mảng thường, không phải vector."
+        },
+        {
+          "text": "Một hàm sắp xếp",
+          "why": "Sắp xếp là std::sort, không phải vector."
+        },
+        {
+          "text": "Một kiểu số thực",
+          "why": "Không phải kiểu số."
+        }
+      ],
+      "answer": 0,
+      "explain": "vector thay thế mảng khi không biết trước số phần tử."
+    },
+    {
+      "q": "std::map lưu dữ liệu theo dạng nào?",
+      "options": [
+        {
+          "text": "Cặp khóa và giá trị, khóa được sắp xếp",
+          "why": "Đúng. Ví dụ tra điểm theo tên."
+        },
+        {
+          "text": "Một dãy số liên tiếp không có khóa",
+          "why": "Đó là vector hoặc mảng."
+        },
+        {
+          "text": "Một chuỗi ký tự",
+          "why": "Không phải chuỗi."
+        },
+        {
+          "text": "Một hàm",
+          "why": "Không phải hàm."
+        }
+      ],
+      "answer": 0,
+      "explain": "map giống từ điển: tra theo khóa để lấy giá trị."
+    },
+    {
+      "q": "Template trong C++ dùng để làm gì?",
+      "options": [
+        {
+          "text": "Viết một đoạn code dùng được cho nhiều kiểu dữ liệu",
+          "why": "Đúng. Ví dụ hàm max hoạt động với int và double."
+        },
+        {
+          "text": "Tạo thêm file cho chương trình",
+          "why": "Không liên quan đến file."
+        },
+        {
+          "text": "Làm chương trình chạy trên nhiều máy",
+          "why": "Không phải mục đích."
+        },
+        {
+          "text": "Xóa bộ nhớ tự động",
+          "why": "Không phải mục đích."
+        }
+      ],
+      "answer": 0,
+      "explain": "Template là khuôn: trình biên dịch tạo bản cụ thể cho từng kiểu cần dùng."
+    },
+    {
+      "q": "vector.size() trả về gì?",
+      "options": [
+        {
+          "text": "Số phần tử hiện có trong vector",
+          "why": "Đúng. size() là số lượng phần tử."
+        },
+        {
+          "text": "Dung lượng bộ nhớ đã cấp",
+          "why": "Đó là capacity(), không phải size()."
+        },
+        {
+          "text": "Phần tử đầu tiên",
+          "why": "Phần tử đầu là v[0] hoặc front()."
+        },
+        {
+          "text": "Số lần gọi hàm",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "size là số phần tử đang có; capacity là chỗ đã cấp sẵn."
+    },
+    {
+      "q": "std::string có lợi thế gì so với char[]?",
+      "options": [
+        {
+          "text": "Tự quản lý bộ nhớ và độ dài, ít lỗi tràn hơn",
+          "why": "Đúng. Không cần tự tính kích thước và '\\0'."
+        },
+        {
+          "text": "Luôn nhanh hơn char[] trong mọi trường hợp",
+          "why": "Không phải luôn nhanh hơn."
+        },
+        {
+          "text": "Không thể nối chuỗi",
+          "why": "Nối chuỗi dễ dàng bằng +."
+        },
+        {
+          "text": "Chỉ dùng với số",
+          "why": "Dùng cho chữ."
+        }
+      ],
+      "answer": 0,
+      "explain": "std::string bảo vệ khỏi nhiều lỗi của char[] trong C."
+    },
+    {
+      "q": "push_back trên vector làm gì?",
+      "options": [
+        {
+          "text": "Thêm một phần tử vào cuối vector",
+          "why": "Đúng. Vector tự cấp thêm chỗ nếu cần."
+        },
+        {
+          "text": "Xóa phần tử đầu",
+          "why": "Xóa đầu là erase hoặc pop_front ở deque."
+        },
+        {
+          "text": "Sắp xếp vector",
+          "why": "Sắp xếp là std::sort."
+        },
+        {
+          "text": "Đảo ngược vector",
+          "why": "Đảo ngược là std::reverse."
+        }
+      ],
+      "answer": 0,
+      "explain": "push_back là cách thêm phần tử thông dụng nhất vào vector."
+    }
+  ]
+}

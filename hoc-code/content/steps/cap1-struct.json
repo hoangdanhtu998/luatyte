@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Struct là một cái hộp ghi nhiều thông tin liên quan với nhau. Ví dụ: tên và tuổi của một bạn học sinh.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Ta tạo hộp a kiểu SinhVien. Bên trong có hai ngăn: a.ten và a.tuoi. Lúc đầu chưa có gì.", "boxes": ["a.ten", "a.tuoi"], "code": "struct SinhVien a;", "after": "Hai ngăn đang trống." },
+    { "img": "m03-meo-vui.png", "say": "Bỏ tên An vào ngăn a.ten.", "boxes": ["a.ten", "a.tuoi"], "code": "strcpy(a.ten, An);", "run": { "a.ten": "An" }, "after": "Ngăn tên giờ là An." },
+    { "img": "m03-meo-vui.png", "say": "Bỏ số 15 vào ngăn a.tuoi. Dấu chấm nghĩa là lấy ngăn bên trong của hộp a.", "boxes": ["a.ten", "a.tuoi"], "code": "a.tuoi = 15;", "run": { "a.tuoi": 15 }, "after": "Ngăn tuổi giờ là 15." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: a.tuoi chứa số mấy?", "boxes": ["a.ten", "a.tuoi"], "code": "a.tuoi", "quiz": [
+        { "text": "15", "right": true, "hint": "Đúng! a.tuoi là ngăn tuổi của hộp a, đang chứa 15." },
+        { "text": "An", "right": false, "hint": "An nằm ở ngăn a.ten, không phải ngăn tuổi." },
+        { "text": "trống", "right": false, "hint": "Ngăn tuổi đã được bỏ số 15 vào rồi." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: struct gom nhiều ngăn có tên vào một hộp. Lấy ngăn ra bằng dấu chấm: hộp.ngăn.", "boxes": ["a.ten", "a.tuoi"], "end": true }
+  ]
+}

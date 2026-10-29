@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biến là cái hộp · Học code</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    /* Bài mẫu: chữ to, ít chữ, bấm từng bước. */
+    .hop-wrap { max-width: 820px; margin: 0 auto; padding: 16px; }
+    .hop-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .hop-dots { display: flex; gap: 8px; }
+    .hop-dots span { width: 12px; height: 12px; border-radius: 50%; background: #c5cfdd; }
+    .hop-dots span.on { background: #F08A4B; }
+    .hop-stage { display: grid; grid-template-columns: 180px 1fr; gap: 20px; align-items: center; margin-top: 18px; }
+    .hop-mascot img { width: 100%; max-width: 180px; height: auto; }
+    .hop-bubble { background: #fff; border: 2px solid #1C2027; border-radius: 16px; padding: 16px 18px; font-size: 1.35rem; line-height: 1.5; position: relative; }
+    .hop-bubble::before { content: ""; position: absolute; left: -12px; top: 26px; border: 10px solid transparent; border-right: 12px solid #1C2027; border-left: 0; }
+    .hop-boxes { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin: 26px 0 8px; min-height: 150px; align-items: flex-end; }
+    .hop-box { width: 150px; text-align: center; }
+    .hop-box .lid { font-weight: 700; font-size: 1.25rem; background: #2F5FB3; color: #fff; border-radius: 10px 10px 0 0; padding: 6px; font-family: "JetBrains Mono", monospace; }
+    .hop-box .body { background: #F5F2EA; border: 3px solid #2F5FB3; border-top: 0; border-radius: 0 0 12px 12px; height: 96px; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; font-weight: 800; color: #1C2027; transition: transform .25s, background .25s; }
+    .hop-box .body.fresh { background: #FFE7CF; transform: scale(1.08); }
+    .hop-box .body.empty { color: #9aa4b2; font-size: 1rem; font-weight: 600; }
+    .hop-code { background: #14181F; color: #E8EDF5; border-radius: 12px; padding: 14px 16px; font-family: "JetBrains Mono", monospace; font-size: 1.25rem; margin-top: 10px; min-height: 52px; }
+    .hop-code.none { color: #7d8797; }
+    .hop-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .hop-actions .btn { font-size: 1.2rem; padding: 14px 22px; }
+    .hop-choices { display: grid; gap: 12px; margin-top: 16px; }
+    .hop-choices button { font-size: 1.35rem; padding: 14px; border-radius: 14px; border: 2px solid #c5cfdd; background: #fff; cursor: pointer; font-family: inherit; }
+    .hop-choices button:hover { border-color: #2F5FB3; }
+    .hop-choices button.right { background: #d9f3e4; border-color: #2e8b57; }
+    .hop-choices button.wrong { background: #fde2dc; border-color: #B8521F; }
+    .hop-feedback { font-size: 1.2rem; margin-top: 12px; min-height: 1.6em; font-weight: 600; }
+    .hop-feedback.good { color: #2e8b57; }
+    .hop-feedback.bad { color: #B8521F; }
+    @media (max-width: 600px) {
+      .hop-stage { grid-template-columns: 1fr; }
+      .hop-mascot img { max-width: 120px; margin: 0 auto; }
+      .hop-bubble::before { display: none; }
+      .hop-box { width: 120px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .hop-box .body { transition: none; } }
+  </style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index-hoccode.html">Trang chủ</a>
+  <nav><a href="../lesson.html?id=cap1-bien-va-kieu-du-lieu">Bài Biến</a></nav>
+</header>
+
+<main class="hop-wrap">
+  <div class="hop-top">
+    <h1 style="margin:0">Biến là cái hộp</h1>
+    <div class="hop-dots" id="dots" aria-label="Tiến độ"></div>
+  </div>
+
+  <div class="hop-stage">
+    <div class="hop-mascot"><img id="mascot" src="../assets/mascot/m01-meo-chao.png" alt="Mèo hướng dẫn"></div>
+    <div>
+      <div class="hop-bubble" id="say"></div>
+      <div class="hop-boxes" id="boxes" aria-live="polite"></div>
+      <div class="hop-code none" id="code"></div>
+      <div class="hop-choices" id="choices" hidden></div>
+      <p class="hop-feedback" id="feedback" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="hop-actions">
+    <button class="btn ghost" id="speak" type="button">🔊 Đọc to</button>
+    <button class="btn amber" id="next" type="button">Tiếp</button>
+    <button class="btn ghost" id="restart" type="button" hidden>Học lại từ đầu</button>
+  </div>
+</main>
+
+<script>
+(function () {
+  const IMG = '../assets/mascot/';
+
+  // Mỗi màn: lời mèo, các hộp hiện ra, dòng lệnh (nếu có).
+  // run: hộp nào đổi giá trị khi bấm nút chạy. quiz: câu đoán có đáp án.
+  const screens = [
+    { img: 'm01-meo-chao.png', say: 'Chào bạn! Mình là Mèo. Hôm nay mình học về biến cùng bạn nhé.', boxes: [] },
+    { img: 'm02-meo-suy-nghi.png', say: 'Biến giống như một cái hộp có tên dán ngoài. Đây là hộp tên là tuoi. Lúc này hộp đang trống.', boxes: ['tuoi'] },
+    { img: 'm03-meo-vui.png', say: 'Dòng lệnh này nghĩa là: tạo hộp tên tuoi, rồi bỏ số 20 vào. Bấm nút bên dưới để máy chạy dòng này.', boxes: ['tuoi'], code: 'int tuoi = 20;', run: { tuoi: 20 }, after: 'Xong! Hộp tuoi giờ có số 20.' },
+    { img: 'm03-meo-vui.png', say: 'Dòng này: bỏ đồ cũ ra và bỏ số 21 vào. Vẫn là hộp tuoi, chỉ đổi đồ bên trong.', boxes: ['tuoi'], code: 'tuoi = 21;', run: { tuoi: 21 }, after: 'Xong! Hộp tuoi giờ có số 21.' },
+    { img: 'm02-meo-suy-nghi.png', say: 'Thử đoán nhé: sau dòng vừa chạy, hộp tuoi chứa số mấy?', boxes: ['tuoi'], code: 'tuoi = 21;', quiz: [
+        { text: '20', right: false, hint: 'Số 20 là số cũ. Dòng vừa rồi đã thay nó.' },
+        { text: '21', right: true, hint: 'Đúng! Dòng tuoi = 21 đã bỏ 21 vào hộp.' },
+        { text: '22', right: false, hint: 'Máy không cộng thêm. Nó chỉ bỏ 21 vào hộp.' } ] },
+    { img: 'm03-meo-vui.png', say: 'Bây giờ có hai hộp: a và b. Dòng đầu tiên bỏ số 5 vào hộp a.', boxes: ['a', 'b'], code: 'int a = 5;', run: { a: 5 }, after: 'Xong! Hộp a giờ có số 5.' },
+    { img: 'm04-meo-nhe-nhang.png', say: 'Dòng này: nhìn vào hộp a, chép số đang có trong đó, rồi bỏ bản sao vào hộp b.', boxes: ['a', 'b'], code: 'int b = a;', run: { b: 5 }, after: 'Xong! Hộp b giờ cũng có số 5, là bản sao của a.' },
+    { img: 'm04-meo-nhe-nhang.png', say: 'Dòng này đổi hộp a thành số 7. Hộp b có đổi theo không nhỉ?', boxes: ['a', 'b'], code: 'a = 7;', run: { a: 7 }, after: 'Xong! Hộp a giờ là 7. Mình xem hộp b.' },
+    { img: 'm02-meo-suy-nghi.png', say: 'Thử đoán: bây giờ hộp b chứa số mấy?', boxes: ['a', 'b'], code: 'a = 7;', quiz: [
+        { text: '7', right: false, hint: 'Hộp a mới là 7. Hộp b là hộp riêng, không đổi theo a.' },
+        { text: '5', right: true, hint: 'Đúng! b đã nhận bản sao số 5 từ trước. Đổi a không làm đổi b.' },
+        { text: '12', right: false, hint: 'Không có phép cộng nào ở đây.' } ] },
+    { img: 'm03-meo-vui.png', say: 'Tóm lại: biến là hộp có tên, chứa một giá trị. Dấu = nghĩa là bỏ đồ vào hộp. Dòng b = a là chép đồ từ hộp a sang hộp b.', boxes: ['a', 'b'], end: true }
+  ];
+
+  // state.i: màn hiện tại. state.ran: đã bấm chạy dòng lệnh của màn này chưa.
+  const state = { i: 0, ran: false };
+  const $ = id => document.getElementById(id);
+
+  // Giá trị các hộp = tổng hợp các dòng lệnh đã chạy ở những màn trước,
+  // cộng dòng lệnh của màn hiện tại nếu đã bấm chạy.
+  function boxValues() {
+    const vals = {};
+    for (let k = 0; k < state.i; k++) {
+      if (screens[k].run) Object.assign(vals, screens[k].run);
+    }
+    const cur = screens[state.i];
+    const changed = {};
+    if (cur.run && state.ran) {
+      Object.assign(vals, cur.run);
+      Object.keys(cur.run).forEach(n => changed[n] = true);
+    }
+    return { vals, changed };
+  }
+
+  function renderDots() {
+    const d = $('dots');
+    d.innerHTML = '';
+    screens.forEach((_, k) => {
+      const s = document.createElement('span');
+      if (k <= state.i) s.className = 'on';
+      d.appendChild(s);
+    });
+  }
+
+  function renderBoxes(screen) {
+    const box = $('boxes');
+    box.innerHTML = '';
+    const { vals, changed } = boxValues();
+    screen.boxes.forEach(name => {
+      const value = vals[name];
+      const has = value !== undefined;
+      const wrap = document.createElement('div');
+      wrap.className = 'hop-box';
+      const lid = document.createElement('div');
+      lid.className = 'lid';
+      lid.textContent = name;
+      const body = document.createElement('div');
+      body.className = 'body' + (has ? '' : ' empty') + (changed[name] ? ' fresh' : '');
+      body.textContent = has ? String(value) : 'trống';
+      wrap.appendChild(lid);
+      wrap.appendChild(body);
+      box.appendChild(wrap);
+    });
+  }
+
+  function speak(text) {
+    if (!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'vi-VN';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  }
+
+  function show() {
+    const s = screens[state.i];
+    $('mascot').src = IMG + s.img;
+    $('say').textContent = s.say;
+    renderDots();
+    renderBoxes(s);
+
+    const codeEl = $('code');
+    codeEl.textContent = s.code ? s.code : 'Chưa có dòng lệnh ở bước này.';
+    codeEl.className = 'hop-code' + (s.code ? '' : ' none');
+
+    const feedback = $('feedback');
+    feedback.textContent = '';
+    feedback.className = 'hop-feedback';
+
+    const choices = $('choices');
+    const next = $('next');
+    choices.innerHTML = '';
+    choices.hidden = true;
+    next.hidden = false;
+    $('restart').hidden = !s.end;
+    next.textContent = 'Tiếp';
+
+    if (s.quiz) {
+      // Màn đoán: chỉ đi tiếp sau khi chọn đúng.
+      choices.hidden = false;
+      next.hidden = true;
+      s.quiz.forEach(opt => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = opt.text;
+        b.addEventListener('click', () => {
+          if (opt.right) {
+            b.classList.add('right');
+            feedback.textContent = '🎉 ' + opt.hint;
+            feedback.className = 'hop-feedback good';
+            choices.querySelectorAll('button').forEach(x => x.disabled = true);
+            next.hidden = false;
+          } else {
+            b.classList.add('wrong');
+            feedback.textContent = 'Chưa đúng. ' + opt.hint;
+            feedback.className = 'hop-feedback bad';
+          }
+        });
+        choices.appendChild(b);
+      });
+    } else if (s.run && !state.ran) {
+      // Màn có dòng lệnh: bấm để chạy ngay trên màn này, hộp đổi số rồi mới đi tiếp.
+      next.textContent = 'Chạy dòng này';
+    } else if (s.run && state.ran) {
+      feedback.textContent = s.after;
+      feedback.className = 'hop-feedback good';
+    }
+    if (s.end) next.hidden = true;
+  }
+
+  $('next').addEventListener('click', () => {
+    const s = screens[state.i];
+    if (s.run && !state.ran) {
+      state.ran = true;   // chạy dòng lệnh, ở lại màn này để thấy hộp đổi
+      show();
+      return;
+    }
+    if (state.i < screens.length - 1) {
+      state.i++;
+      state.ran = false;
+    }
+    show();
+  });
+
+  $('restart').addEventListener('click', () => { state.i = 0; state.ran = false; show(); });
+  $('speak').addEventListener('click', () => speak(screens[state.i].say));
+
+  show();
+})();
+</script>
+</body>
+</html>

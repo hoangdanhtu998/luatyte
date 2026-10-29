@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shell · Slide · Học code</title>
+<style>
+  :root {
+    --cream: #F5F2EA; --paper: #ffffff; --navy: #1C2027; --navy-2: #2A2F3A;
+    --teal: #2F5FB3; --amber: #F08A4B; --brick: #B8521F; --ink: #14181F; --muted: #5b6475;
+    --code-bg: #14181F; --code-ink: #e8edf7; --line: #dfe5ee;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #20283a; font-family: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif; color: var(--ink); overflow: hidden; }
+  @font-face {
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 400 700;
+    src: url(https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap);
+  }
+
+  .deck {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: min(100vw, calc(100vh * 16 / 9)); height: min(100vh, calc(100vw * 9 / 16));
+    background: var(--cream); overflow: hidden; box-shadow: 0 12px 50px rgba(0,0,0,.4);
+  }
+
+  .slide {
+    position: absolute; inset: 0; padding: 5.5% 7% 9.5%;
+    display: none; flex-direction: column; justify-content: center; gap: 2.2%;
+    opacity: 0; transition: opacity .25s ease;
+  }
+  .slide.active { display: flex; opacity: 1; }
+  .slide > .band { position: absolute; left: 0; top: 0; bottom: 0; width: 1.1%; background: linear-gradient(var(--amber), var(--teal) 60%, var(--navy)); }
+  .slide.cover { background: var(--navy); color: #fff; }
+  .slide.cover > .band { display: none; }
+
+  .kicker { font-size: clamp(11px, 1.45vw, 17px); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); font-weight: 800; }
+  .kicker.amber { color: #b98300; }
+  h1 { font-size: clamp(30px, 5.4vw, 74px); line-height: 1.06; margin: 0; color: var(--navy); letter-spacing: -.5px; }
+  h2 { font-size: clamp(22px, 3.5vw, 46px); line-height: 1.15; margin: 0; color: var(--navy); }
+  h3 { font-size: clamp(15px, 2vw, 24px); margin: 0 0 .3em; color: var(--navy); }
+  p, li { font-size: clamp(14px, 2.05vw, 26px); line-height: 1.5; margin: 0; }
+  ul, ol { margin: 0; padding-left: 1.2em; display: grid; gap: .45em; }
+  li::marker { color: var(--amber); font-weight: 700; }
+  ol li::marker { color: var(--teal); }
+  .lead { color: var(--muted); font-size: clamp(15px, 2.3vw, 28px); }
+  strong { color: var(--navy); }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 4%; align-items: center; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3%; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3%; }
+  .stack { display: grid; gap: 2.4%; }
+
+  .card {
+    background: var(--paper); border-radius: 16px; padding: 2.4% 2.6%;
+    box-shadow: 0 6px 20px rgba(28,32,39,.1); border-top: 6px solid var(--teal);
+  }
+  .card.amber { border-top-color: var(--amber); }
+  .card.brick { border-top-color: var(--brick); }
+  .card.navy { border-top-color: var(--navy); }
+  .card p { font-size: clamp(13px, 1.75vw, 22px); }
+
+  .callout {
+    background: var(--navy); color: #fff; border-radius: 16px; padding: 2.4% 3%;
+    box-shadow: 0 10px 28px rgba(28,32,39,.25);
+  }
+  .callout p { color: #fff; font-size: clamp(14px, 2vw, 24px); }
+  .callout strong { color: var(--amber); }
+
+  .chip {
+    display: inline-flex; align-items: center; justify-content: center; width: 2.2em; height: 2.2em; min-width: 34px;
+    border-radius: 12px; background: var(--amber); color: var(--navy); font-weight: 800; font-size: clamp(14px, 1.9vw, 22px);
+  }
+  .chip.teal { background: var(--teal); color: #fff; }
+  .chip.brick { background: var(--brick); color: #fff; }
+  .chip.navy { background: var(--navy); color: #fff; }
+
+  pre {
+    background: var(--code-bg); color: var(--code-ink); border-radius: 16px; padding: 2.2% 2.6%; margin: 0;
+    font-family: Consolas, "Courier New", monospace; font-size: clamp(11px, 1.7vw, 22px); line-height: 1.5;
+    white-space: pre; overflow: hidden; border-left: 7px solid var(--amber); box-shadow: 0 10px 26px rgba(20,30,50,.25);
+  }
+  .c-com { color: #8fb3a9; }
+  .c-key { color: #f0c36b; }
+  .c-bad { color: #f38b7b; }
+  .c-ok { color: #7dd3a6; }
+
+  img.fig { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 26px rgba(28,32,39,.16); display: block; }
+  .fig-missing {
+    width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; border: 3px dashed #aab6c9; background: #fbfcfe;
+    display: flex; align-items: center; justify-content: center; color: var(--muted);
+    font-size: clamp(11px, 1.5vw, 18px); text-align: center; padding: 3%;
+  }
+  .caption { font-size: clamp(11px, 1.5vw, 18px); color: var(--muted); }
+
+  .steps { counter-reset: s; display: grid; gap: 2%; }
+  .step { display: grid; grid-template-columns: auto 1fr; gap: 3%; align-items: center; background: var(--paper); border-radius: 14px; padding: 1.8% 2.4%; box-shadow: 0 4px 14px rgba(28,32,39,.08); }
+
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 1%; align-items: stretch; }
+  .flow .node { background: var(--paper); border-radius: 14px; padding: 3% 2.5%; box-shadow: 0 6px 18px rgba(28,32,39,.1); border-bottom: 6px solid var(--teal); }
+  .flow .node.amber { border-bottom-color: var(--amber); }
+  .flow .node.brick { border-bottom-color: var(--brick); }
+  .flow .node.navy { border-bottom-color: var(--navy); }
+  .flow .node h3 { margin-bottom: .2em; }
+  .flow .node p { font-size: clamp(12px, 1.6vw, 19px); }
+  .flow .arrow { align-self: center; text-align: center; color: var(--amber); font-weight: 800; font-size: clamp(16px, 2.4vw, 30px); }
+
+  table.t { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: 14px; overflow: hidden; box-shadow: 0 6px 18px rgba(28,32,39,.08); font-size: clamp(12px, 1.7vw, 21px); }
+  table.t th, table.t td { padding: 1.4% 2%; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.t th { background: #e6eef8; color: var(--navy); }
+  table.t tr:last-child td { border-bottom: 0; }
+
+  .agenda { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6% 3%; }
+  .agenda div { display: flex; gap: 12px; align-items: center; font-size: clamp(14px, 2vw, 24px); background: var(--paper); border-radius: 12px; padding: 1.4% 2%; box-shadow: 0 3px 10px rgba(28,32,39,.07); }
+
+  .cover { justify-content: flex-end; }
+  .cover .hero-art { position: absolute; right: 6%; top: 12%; width: 38%; }
+  .cover h1 { color: #fff; max-width: 14ch; }
+  .cover .lead { color: #d8e4f3; max-width: 36ch; }
+  .cover .badge { display: inline-block; background: var(--amber); color: var(--navy); font-weight: 800; padding: .35em .9em; border-radius: 999px; font-size: clamp(11px, 1.5vw, 18px); letter-spacing: .08em; text-transform: uppercase; justify-self: start; }
+
+  .nav {
+    position: absolute; bottom: 2.2%; left: 7%; right: 7%;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-size: clamp(11px, 1.45vw, 17px); color: var(--muted);
+  }
+  .dots { display: flex; gap: 5px; flex-wrap: wrap; }
+  .dots span { width: 9px; height: 9px; border-radius: 50%; background: #c3ccda; cursor: pointer; }
+  .dots span.on { background: var(--navy); }
+  .dots span.on.amber { background: var(--amber); }
+  .home { color: var(--navy); font-weight: 700; text-decoration: none; }
+  .tap { position: absolute; top: 0; bottom: 8%; width: 18%; cursor: pointer; z-index: 2; }
+  .tap.l { left: 0; } .tap.r { right: 0; }
+
+  @media (max-width: 640px) {
+    .row, .grid3, .grid2, .agenda, .flow { grid-template-columns: 1fr; }
+    .flow .arrow { display: none; }
+    pre { font-size: 11px; }
+    .cover .hero-art { display: none; }
+    .nav { flex-direction: column; align-items: center; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 · Bìa -->
+  <section class="slide cover active">
+    <img class="hero-art" src="../assets/img/hero-c-cpp.png" alt="" onerror="this.style.display='none'">
+    <span class="badge">Cấp 1 · Bài 1 · 45 phút</span>
+    <h1>Con trỏ và bộ nhớ</h1>
+    <p class="lead">Hiểu vì sao con trỏ tồn tại, máy làm gì khi anh viết <code>int *p</code>, và cách xin – trả bộ nhớ mà không rò rỉ.</p>
+    <p class="caption" style="color:#b9c8dc">Bấm → hoặc phím cách để chuyển trang</p>
+  </section>
+
+  <!-- 2 · Mục tiêu -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Mục tiêu</div>
+    <h2>Sau bài này, anh sẽ hiểu được</h2>
+    <div class="grid2">
+      <div class="card"><h3><span class="chip">1</span> &nbsp;Biến là gì</h3><p>Biến là một ô nhớ có địa chỉ, không chỉ là một cái tên.</p></div>
+      <div class="card amber"><h3><span class="chip">2</span> &nbsp;Con trỏ làm gì</h3><p>Con trỏ giữ địa chỉ và đi theo địa chỉ đó để đọc, ghi.</p></div>
+      <div class="card navy"><h3><span class="chip navy">3</span> &nbsp;Heap khác stack</h3><p>Heap sống tới khi anh tự trả. Stack tự dọn khi hàm kết thúc.</p></div>
+      <div class="card brick"><h3><span class="chip brick">4</span> &nbsp;Ba lỗi kinh điển</h3><p>NULL, dùng sau khi free, và rò rỉ bộ nhớ.</p></div>
+    </div>
+    <p class="lead">Không cần nhớ thuộc cú pháp. Cần nhớ hình ảnh: mọi thứ đều nằm ở một địa chỉ.</p>
+  </section>
+
+  <!-- 3 · Bản đồ bài -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Bản đồ bài học</div>
+    <h2>Đi theo một đường thẳng</h2>
+    <div class="agenda">
+      <div><span class="chip">1</span> Biến là ô nhớ có địa chỉ</div>
+      <div><span class="chip">2</span> Con trỏ là lá thư ghi số nhà</div>
+      <div><span class="chip">3</span> Logic từ biến đến heap</div>
+      <div><span class="chip">4</span> Stack và heap</div>
+      <div><span class="chip">5</span> malloc, free và kiểm tra NULL</div>
+      <div><span class="chip">6</span> Ba lỗi kinh điển</div>
+      <div><span class="chip">7</span> Ứng dụng: danh sách, hash table</div>
+      <div><span class="chip">8</span> Tự kiểm tra và luyện tập</div>
+    </div>
+  </section>
+
+  <!-- 4 · Biến là ô nhớ có địa chỉ -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 1</div>
+    <h2>Biến là một ô nhớ có số nhà</h2>
+    <div class="row">
+      <div class="stack">
+        <p>Bộ nhớ như một con phố dài. Mỗi ô nhớ là một ngôi nhà, có <strong>số nhà</strong> (địa chỉ) và <strong>thứ bên trong</strong> (giá trị).</p>
+        <div class="card amber"><p>Đời thường: anh gọi bạn bằng tên, nhưng shipper chỉ cần số nhà. Máy cũng vậy, nó cần địa chỉ.</p></div>
+      </div>
+      <pre><span class="c-com">// x là tên gọi, máy lưu nó ở một địa chỉ</span>
+int x = 42;
+
+printf("Gia tri: %d\n", x);
+printf("Dia chi: %p\n", (void *)&amp;x);
+
+<span class="c-com">// &amp; hỏi: "số nhà của x là bao nhiêu?"</span></pre>
+    </div>
+  </section>
+
+  <!-- 5 · Ba việc máy làm -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 1 · Chi tiết</div>
+    <h2>Khi anh viết <code>int x = 42;</code>, máy làm ba việc</h2>
+    <div class="steps">
+      <div class="step"><span class="chip">1</span><div><h3>Tìm chỗ trống</h3><p>Tìm một ô nhớ đủ chỗ cho một số nguyên.</p></div></div>
+      <div class="step"><span class="chip teal">2</span><div><h3>Đặt tên</h3><p>Gắn tên <code>x</code> cho ô đó để anh dễ gọi.</p></div></div>
+      <div class="step"><span class="chip navy">3</span><div><h3>Ghi giá trị</h3><p>Ghi <code>42</code> vào trong ô.</p></div></div>
+    </div>
+    <div class="callout"><p>Anh gọi <strong>x</strong> thì nhận được <strong>42</strong>. Nhưng máy chỉ cần số nhà. Đó là lý do cần con trỏ.</p></div>
+  </section>
+
+  <!-- 6 · Con trỏ là lá thư -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 2</div>
+    <h2>Con trỏ là lá thư ghi số nhà</h2>
+    <div class="row">
+      <img class="fig" src="../assets/img/con-tro-hop-thu.png" alt="Con trỏ như lá thư có địa chỉ" onerror="this.outerHTML='<div class=\'fig-missing\'>Chưa có ảnh: assets/img/con-tro-hop-thu.png<br>(xem image-prompts/02-con-tro-hop-thu.md)</div>'">
+      <div class="stack">
+        <p>Con trỏ là một biến mà <strong>giá trị bên trong là một địa chỉ</strong>. Nó không phải ngôi nhà, nó chỉ cho biết đi đâu.</p>
+        <pre><span class="c-com">// p giữ ĐỊA CHỈ của x</span>
+int x = 42;
+int *p = &amp;x;
+
+<span class="c-com">// *p: đi tới ô p trỏ đến, ghi 7 vào đó</span>
+*p = 7;
+printf("%d\n", x);   <span class="c-com">// 7</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Hai dấu * -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 2 · Dễ nhầm</div>
+    <h2>Hai dấu <code>*</code> cần phân biệt</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="chip">*</span> &nbsp;Khi khai báo</h3>
+        <p><code>int *p</code> nghĩa là: <strong>p là con trỏ tới int</strong>.</p>
+        <p class="caption">Đọc to câu này là hiểu.</p>
+      </div>
+      <div class="card amber">
+        <h3><span class="chip">*</span> &nbsp;Khi dùng</h3>
+        <p><code>*p = 7</code> nghĩa là: <strong>nội dung của ô p trỏ tới</strong>.</p>
+        <p class="caption">Đi theo địa chỉ rồi thao tác.</p>
+      </div>
+    </div>
+    <div class="callout"><p>Mẹo nhớ: nếu anh đọc được "p trỏ tới một int", anh đã hiểu con trỏ. Phần còn lại là đi theo địa chỉ.</p></div>
+  </section>
+
+  <!-- 8 · Logic từng bước -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 3 · Logic</div>
+    <h2>Từ biến đến heap: một đường thẳng</h2>
+    <div class="flow">
+      <div class="node"><h3>Biến</h3><p>Một ô có tên, sống trong phạm vi hàm.</p></div>
+      <div class="arrow">→</div>
+      <div class="node amber"><h3>Địa chỉ</h3><p><code>&amp;x</code> cho biết ô đó ở đâu.</p></div>
+      <div class="arrow">→</div>
+      <div class="node"><h3>Con trỏ</h3><p>Lưu địa chỉ để đi theo, kể cả khi truyền vào hàm khác.</p></div>
+      <div class="arrow">→</div>
+      <div class="node brick"><h3>Heap</h3><p><code>malloc</code> xin vùng nhớ, trả về địa chỉ.</p></div>
+    </div>
+    <div class="card navy" style="margin-top:1%"><p>Bước cuối: vùng heap không tự biến mất. Anh phải trả bằng <code>free</code>, nếu không nó bị giữ mãi.</p></div>
+  </section>
+
+  <!-- 9 · Stack và heap -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 4</div>
+    <h2>Stack và heap khác nhau thế nào</h2>
+    <div class="row">
+      <img class="fig" src="../assets/img/stack-heap.png" alt="Sơ đồ stack và heap" onerror="this.outerHTML='<div class=\'fig-missing\'>Chưa có ảnh: assets/img/stack-heap.png<br>(xem image-prompts/03-stack-heap.md)</div>'">
+      <table class="t">
+        <tr><th></th><th>Stack</th><th>Heap</th></tr>
+        <tr><td>Lưu gì</td><td>Biến cục bộ trong hàm</td><td>Vùng nhớ xin bằng <code>malloc</code></td></tr>
+        <tr><td>Ai dọn</td><td>Tự động khi hàm kết thúc</td><td>Anh phải tự <code>free</code></td></tr>
+        <tr><td>Kích thước</td><td>Nhỏ</td><td>Lớn hơn nhiều</td></tr>
+        <tr><td>Đời thường</td><td>Đồ để trên bàn, cuối ngày dọn</td><td>Kho thuê, thuê chỗ thì phải trả</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 10 · Khi nào dùng heap -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 4 · Ví dụ</div>
+    <h2>Khi nào bắt buộc dùng heap?</h2>
+    <div class="card amber"><p>Hàm nhận số phần tử n từ người dùng rồi tạo mảng đúng n phần tử. Số n chỉ biết lúc chạy, nên mảng phải nằm trên heap.</p></div>
+    <pre><span class="c-com">// n chỉ biết khi chương trình đang chạy</span>
+int *arr = malloc(n * sizeof(int));</pre>
+    <p class="caption">Stack cần kích thước biết trước lúc biên dịch. Heap thì linh hoạt theo lúc chạy.</p>
+  </section>
+
+  <!-- 11 · malloc và free an toàn -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 5</div>
+    <h2>Quy trình an toàn: xin – kiểm tra – dùng – trả</h2>
+    <pre><span class="c-com">// 1. xin</span>
+int *arr = malloc(5 * sizeof(int));
+<span class="c-com">// 2. kiểm tra: có thể thất bại</span>
+if (arr == NULL) { perror("malloc"); return 1; }
+<span class="c-com">// 3. dùng</span>
+for (int i = 0; i &lt; 5; i++) arr[i] = i * i;
+<span class="c-com">// 4. trả lại, rồi xóa con trỏ</span>
+free(arr);
+arr = NULL;</pre>
+  </section>
+
+  <!-- 12 · Hai chi tiết hay bỏ qua -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 5 · Chi tiết</div>
+    <h2>Hai chi tiết hay bị bỏ qua</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Dùng <code>sizeof(int)</code>, đừng viết cứng 4</h3>
+        <p>Cùng một code vẫn đúng trên máy có kích thước <code>int</code> khác nhau.</p>
+      </div>
+      <div class="card amber">
+        <h3>Gán <code>arr = NULL</code> sau khi free</h3>
+        <p>Nếu lỡ đọc lại, chương trình crash ngay chỗ đó thay vì âm thầm làm hỏng dữ liệu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · Lỗi 1 và 2 -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 6 · Cảnh báo</div>
+    <h2>Lỗi 1 và 2: NULL và dùng sau free</h2>
+    <div class="grid2">
+      <div class="card brick">
+        <h3><span class="chip brick">1</span> &nbsp;Con trỏ NULL</h3>
+        <p><code>malloc</code> có thể trả về NULL khi hết bộ nhớ. Ghi vào đó làm chương trình crash.</p>
+        <pre style="margin-top:4%"><span class="c-bad">int *a = NULL;
+*a = 1;     // crash</span></pre>
+      </div>
+      <div class="card brick">
+        <h3><span class="chip brick">2</span> &nbsp;Dùng sau free</h3>
+        <p>Ô nhớ đã trả đi, không còn của anh. Đọc hay ghi là hành vi không xác định, khó bắt nhất.</p>
+        <pre style="margin-top:4%"><span class="c-bad">int *b = malloc(sizeof(int));
+free(b);
+*b = 2;     // sai</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 · Lỗi 3 và công cụ -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 6 · Lỗi 3 và công cụ</div>
+    <h2>Rò rỉ bộ nhớ và cách bắt lỗi</h2>
+    <div class="row">
+      <div class="stack">
+        <div class="card brick"><h3><span class="chip brick">3</span> &nbsp;Rò rỉ</h3>
+          <p>Cấp phát mà quên <code>free</code>. Chương trình ngắn thì không sao, nhưng server chạy hàng tuần sẽ hết bộ nhớ.</p></div>
+        <pre><span class="c-bad">int *c = malloc(sizeof(int));
+*c = 3;     // không có free(c): rò rỉ</span></pre>
+      </div>
+      <div class="stack">
+        <div class="card"><h3>Công cụ: AddressSanitizer</h3>
+          <p>Biên dịch với cờ này rồi chạy. Lỗi được báo ngay với dòng code cụ thể.</p></div>
+        <pre><span class="c-com"># biên dịch có AddressSanitizer</span>
+gcc -Wall -Wextra -g \
+    -fsanitize=address main.c -o main
+./main</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 · Danh sách liên kết -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 7 · Ứng dụng</div>
+    <h2>Danh sách liên kết: nối các ô nhớ lại</h2>
+    <div class="row">
+      <pre><span class="c-com">// mỗi nút: giá trị + địa chỉ nút kế tiếp</span>
+typedef struct Node {
+    int value;
+    struct Node *next;
+} Node;
+
+Node *b = malloc(sizeof(Node));
+b-&gt;value = 2;  b-&gt;next = NULL;
+
+Node *a = malloc(sizeof(Node));
+a-&gt;value = 1;  a-&gt;next = b;   <span class="c-com">// a -&gt; b -&gt; NULL</span></pre>
+      <div class="stack">
+        <div class="card"><h3>Vì sao cần</h3><p>Danh sách dài bao nhiêu cũng được, không cần mảng cố định.</p></div>
+        <div class="card amber"><h3>Nhớ</h3><p><code>a-&gt;value</code> là cách viết ngắn của <code>(*a).value</code>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 · Hash table -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 7 · Thực tế</div>
+    <h2>Bảng băm: khi hai khóa rơi vào một ô</h2>
+    <div class="row">
+      <img class="fig" src="../assets/img/hash-chaining.png" alt="Bảng băm với các nút nối nhau khi trùng chỉ số" onerror="this.outerHTML='<div class=\'fig-missing\'>Chưa có ảnh: assets/img/hash-chaining.png<br>(xem image-prompts/04-hash-chaining.md)</div>'">
+      <div class="stack">
+        <p>Mỗi ô của bảng là một con trỏ tới danh sách nút. Hai khóa khác nhau có thể trùng ô (va chạm).</p>
+        <div class="card amber"><p><strong>Không ghi đè.</strong> Nối thêm nút vào danh sách của ô đó. Đây là bài tập hash table ở cấp 1.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17 · Vì sao quan trọng -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 7 · Ý nghĩa</div>
+    <h2>Vì sao lỗi con trỏ nguy hiểm</h2>
+    <div class="callout"><p>Dùng bộ nhớ sau khi đã giải phóng, hoặc ghi vượt kích thước mảng, là nguyên nhân của <strong>nhiều lỗ hổng bảo mật</strong> trong phần mềm thật.</p></div>
+    <p class="lead">Hiểu địa chỉ là hiểu vì sao những lỗi này xảy ra, và cách chặn chúng từ đầu.</p>
+  </section>
+
+  <!-- 18 · Tự kiểm tra -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Phần 8 · Tự kiểm tra</div>
+    <h2>Trả lời bằng lời của anh</h2>
+    <div class="steps">
+      <div class="step"><span class="chip">1</span><div><h3>Vì sao in ra địa chỉ khác nhau trên máy khác?</h3><p class="caption">Gợi ý: địa chỉ do hệ điều hành và trình biên dịch quyết định.</p></div></div>
+      <div class="step"><span class="chip teal">2</span><div><h3>Trả về <code>&amp;x</code> với x là biến cục bộ thì sao?</h3><p class="caption">Gợi ý: stack được dọn khi hàm kết thúc.</p></div></div>
+      <div class="step"><span class="chip navy">3</span><div><h3>Khi nào bắt buộc dùng heap?</h3><p class="caption">Gợi ý: kích thước chỉ biết lúc chạy.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 19 · Thực hành -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Thực hành</div>
+    <h2>Ba bài tập trong bài học</h2>
+    <div class="grid3">
+      <div class="card"><h3>Bài 1</h3><p>Cấp phát mảng n số nguyên trên heap, điền 0, in ra, nhớ free.</p></div>
+      <div class="card amber"><h3>Bài 2</h3><p>Hoán đổi hai số bằng con trỏ: <code>void swap(int *a, int *b)</code>.</p></div>
+      <div class="card brick"><h3>Bài 3</h3><p>Xây danh sách liên kết n nút, in giá trị, rồi giải phóng hết.</p></div>
+    </div>
+    <div class="callout"><p>Viết code ngay trong phần <strong>Luyện tập</strong> của bài. Chạy được rồi mới sang bài kế tiếp.</p></div>
+  </section>
+
+  <!-- 20 · Tổng kết -->
+  <section class="slide">
+    <div class="band"></div>
+    <div class="kicker">Tổng kết</div>
+    <h2>Bốn ý cần nhớ</h2>
+    <div class="grid2">
+      <div class="card"><h3><span class="chip">1</span> &nbsp;Biến là ô nhớ có địa chỉ</h3><p>Mọi thứ đều nằm ở một số nhà.</p></div>
+      <div class="card amber"><h3><span class="chip">2</span> &nbsp;Con trỏ giữ địa chỉ</h3><p><code>int *p</code> là "p trỏ tới int".</p></div>
+      <div class="card navy"><h3><span class="chip navy">3</span> &nbsp;Heap phải tự trả</h3><p>Mỗi <code>malloc</code> có đúng một <code>free</code>.</p></div>
+      <div class="card brick"><h3><span class="chip brick">4</span> &nbsp;Kiểm tra trước khi dùng</h3><p>NULL, dùng sau free, rò rỉ: đều có cách bắt.</p></div>
+    </div>
+  </section>
+
+  <div class="tap l" onclick="go(-1)"></div>
+  <div class="tap r" onclick="go(1)"></div>
+  <div class="nav">
+    <div class="dots" id="dots"></div>
+    <div><a class="home" href="lesson.html?id=con-tro-va-bo-nho">← Về bài học</a> &nbsp;·&nbsp; <span id="counter"></span> &nbsp;·&nbsp; ← → để chuyển</div>
+  </div>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dots = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  let i = 0;
+
+  slides.forEach((_, n) => {
+    const d = document.createElement('span');
+    d.title = 'Trang ' + (n + 1);
+    d.onclick = (e) => { e.stopPropagation(); show(n); };
+    dots.appendChild(d);
+  });
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  function go(step) { show(i + step); }
+
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+    x0 = null;
+  });
+
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+</body>
+</html>

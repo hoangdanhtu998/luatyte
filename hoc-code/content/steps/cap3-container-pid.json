@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Container dùng namespace để cô lập tiến trình. Bên trong container, mỗi tiến trình có số PID riêng, không phải số thật trên máy chủ.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Giả sử ba tiến trình thật có PID 700, 701 và 705 thuộc về một container.", "boxes": ["PID thật", "PID trong container"], "code": "700, 701, 705", "run": { "PID thật": "700, 701, 705", "PID trong container": "chưa đánh số" }, "after": "Ba tiến trình thuộc container này." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bên trong container, tiến trình đầu tiên được đánh số 1, rồi 2, rồi 3.", "boxes": ["PID thật", "PID trong container"], "code": "700 → 1, 701 → 2, 705 → 3", "run": { "PID thật": "700, 701, 705", "PID trong container": "1, 2, 3" }, "after": "Số bên trong bắt đầu từ 1." },
+    { "img": "m03-meo-vui.png", "say": "Bảng ánh xạ này là cách bài mô phỏng. Namespace thật do Linux làm, nhưng ý tưởng giống nhau.", "boxes": ["PID thật", "PID trong container"], "code": "bảng: PID thật → PID trong container", "after": "Container thấy PID riêng của nó." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: tiến trình thật 712 là PID bao nhiêu bên trong container nếu nó là tiến trình thứ 4?", "boxes": ["PID thật", "PID trong container"], "code": "700 → 1, 701 → 2, 705 → 3, 712 → ?", "quiz": [
+        { "text": "4", "right": true, "hint": "Đúng! Đây là tiến trình thứ 4 trong container, nên đánh số 4." },
+        { "text": "712", "right": false, "hint": "712 là số thật trên máy chủ. Bên trong container, số được đánh lại từ 1." },
+        { "text": "0", "right": false, "hint": "Số bên trong bắt đầu từ 1, không phải 0." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: container cô lập bằng namespace, và PID bên trong bắt đầu từ 1 vì đó là không gian riêng của nó.", "boxes": ["PID thật", "PID trong container"], "end": true }
+  ]
+}

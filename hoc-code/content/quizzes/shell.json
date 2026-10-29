@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Lệnh nào liệt kê file trong thư mục hiện tại?",
+      "options": [
+        {
+          "text": "ls",
+          "why": "Đúng."
+        },
+        {
+          "text": "cd",
+          "why": "cd đổi thư mục."
+        },
+        {
+          "text": "rm",
+          "why": "rm xóa file."
+        },
+        {
+          "text": "mkdir",
+          "why": "mkdir tạo thư mục."
+        }
+      ],
+      "answer": 0,
+      "explain": "ls liệt kê nội dung thư mục."
+    },
+    {
+      "q": "Ký hiệu `|` trong shell dùng để làm gì?",
+      "options": [
+        {
+          "text": "Nối đầu ra của lệnh này vào đầu vào của lệnh kia (pipe)",
+          "why": "Đúng."
+        },
+        {
+          "text": "Chạy lệnh nền",
+          "why": "Đó là &."
+        },
+        {
+          "text": "Xóa file",
+          "why": "Không."
+        },
+        {
+          "text": "So sánh hai số",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "Pipe chuyển đầu ra thành đầu vào."
+    },
+    {
+      "q": "`>` trong shell làm gì với file đích?",
+      "options": [
+        {
+          "text": "Ghi đè đầu ra vào file",
+          "why": "Đúng."
+        },
+        {
+          "text": "Đọc file",
+          "why": "Đọc là <."
+        },
+        {
+          "text": "Xóa file",
+          "why": "Không."
+        },
+        {
+          "text": "Đổi tên",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chuyển hướng đầu ra vào file."
+    }
+  ]
+}

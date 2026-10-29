@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dự án · Học code</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="du-an.html">← Danh sách dự án</a></h1>
+</header>
+<main>
+  <div id="missing" class="box" hidden>Không tìm thấy dự án này. <a href="du-an.html">Quay lại danh sách</a>.</div>
+  <div id="content" hidden>
+    <h2 id="title" style="margin-top:0"></h2>
+    <div class="box">
+      <p id="desc"></p>
+      <p class="muted" id="level"></p>
+      <a class="btn" id="link" target="_blank" rel="noopener">Mở hướng dẫn gốc</a>
+    </div>
+    <div class="box">
+      <label for="status"><strong>Trạng thái</strong></label>
+      <select id="status">
+        <option value="todo">Chưa bắt đầu</option>
+        <option value="doing">Đang làm</option>
+        <option value="done">Đã xong</option>
+      </select>
+    </div>
+    <div class="box">
+      <label for="notes"><strong>Ghi chú của anh</strong> (lỗi gặp phải, cách đã sửa, điều đã học)</label>
+      <textarea id="notes" placeholder="Ví dụ: segfault ở hàm free vì dùng con trỏ sau khi giải phóng..."></textarea>
+      <div class="saved" id="saved"></div>
+    </div>
+  </div>
+</main>
+<script src="data/projects.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  const id = new URLSearchParams(location.search).get('id');
+  const proj = PROJECTS.find(p => p.id === id);
+  if (!proj) {
+    document.getElementById('missing').hidden = false;
+  } else {
+    const progress = loadProgress();
+    document.title = proj.title + ' · Học code';
+    document.getElementById('content').hidden = false;
+    document.getElementById('title').textContent = proj.title;
+    document.getElementById('desc').textContent = proj.desc + (proj.parts ? ` (loạt bài ${proj.parts} phần, bắt đầu từ link bên dưới)` : '');
+    document.getElementById('level').textContent = LEVELS.find(l => l.id === proj.level).name;
+    document.getElementById('link').href = proj.url;
+
+    const statusEl = document.getElementById('status');
+    const notesEl = document.getElementById('notes');
+    const savedEl = document.getElementById('saved');
+    statusEl.value = statusOf(progress, proj.id);
+    notesEl.value = progress.notes[proj.id] || '';
+
+    statusEl.addEventListener('change', () => {
+      const p = loadProgress();
+      p.status[proj.id] = statusEl.value;
+      saveProgress(p);
+      savedEl.textContent = 'Đã lưu trạng thái.';
+    });
+
+    let timer;
+    notesEl.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const p = loadProgress();
+        p.notes[proj.id] = notesEl.value;
+        saveProgress(p);
+        savedEl.textContent = 'Đã lưu ghi chú.';
+      }, 400);
+    });
+  }
+</script>
+</body>
+</html>

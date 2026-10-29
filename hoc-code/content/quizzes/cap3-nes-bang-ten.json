@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Bảng tên nền của NES có bao nhiêu cột ô?",
+      "options": [
+        {
+          "text": "32",
+          "why": "Đúng."
+        },
+        {
+          "text": "64",
+          "why": "Không phải."
+        },
+        {
+          "text": "80",
+          "why": "Đó là VGA."
+        },
+        {
+          "text": "16",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "NES có lưới 32×30 ô nền."
+    },
+    {
+      "q": "Ô ở cột 0, hàng 1 có chỉ số bao nhiêu?",
+      "options": [
+        {
+          "text": "32",
+          "why": "Đúng: 1*32 + 0."
+        },
+        {
+          "text": "1",
+          "why": "1 là cột 1 hàng 0."
+        },
+        {
+          "text": "0",
+          "why": "Đó là ô đầu."
+        },
+        {
+          "text": "31",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chỉ số = hàng*32 + cột."
+    },
+    {
+      "q": "Vì sao tính chỉ số một chiều?",
+      "options": [
+        {
+          "text": "Bảng tên lưu trong mảng liên tục",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để đổi màu",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Vì NES không có cột",
+          "why": "Có cột."
+        },
+        {
+          "text": "Để tiết kiệm nguồn",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mảng một chiều dễ truy cập hơn."
+    }
+  ]
+}

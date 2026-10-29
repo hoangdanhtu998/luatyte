@@ -1,0 +1,10 @@
+{
+  "examples": [
+    {
+      "title": "Ví dụ 1: con trỏ đổi giá trị của biến",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int x = 42;\n    int *p = &x;\n    printf(\"x = %d\\n\", x);\n    *p = 7;\n    printf(\"sau *p = 7: x = %d\\n\", x);\n    printf(\"p == &x ? %s\\n\", p == &x ? \"co\" : \"khong\");\n    return 0;\n}\n",
+      "output": "x = 42\nsau *p = 7: x = 7\np == &x ? co\n",
+      "note": "Kết quả thật, biên dịch bằng gcc 16.2.0 với -Wall -Wextra -std=c17. p giữ địa chỉ của x, nên *p = 7 đổi chính x."
+    }
+  ]
+}

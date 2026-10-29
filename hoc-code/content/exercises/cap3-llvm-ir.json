@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Dòng IR phép cộng",
+    "prompt": "Đọc hai tên biến a và b. In dòng LLVM IR `%r = add i32 %a, %b`.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "x y\n",
+        "expected": "%r = add i32 %x, %y\n"
+      }
+    ]
+  }
+]

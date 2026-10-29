@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Hàm `int cong(int a, int b)` trả về gì?",
+      "options": [
+        {
+          "text": "Một số nguyên",
+          "why": "Đúng. Kiểu trước tên hàm cho biết kiểu giá trị trả về."
+        },
+        {
+          "text": "Không có gì, vì có tham số",
+          "why": "Tham số là đầu vào, không liên quan đến việc có trả về hay không."
+        },
+        {
+          "text": "Một chuỗi",
+          "why": "Kiểu int nghĩa là trả về số nguyên."
+        },
+        {
+          "text": "Một con trỏ",
+          "why": "Không có dấu * nên không phải con trỏ."
+        }
+      ],
+      "answer": 0,
+      "explain": "Kiểu viết trước tên hàm là kiểu giá trị trả về."
+    },
+    {
+      "q": "Khi gọi `tang(x)` với `void tang(int n)`, biến `x` ở ngoài có đổi không?",
+      "options": [
+        {
+          "text": "Có, luôn đổi",
+          "why": "Hàm nhận bản sao của x nên không đổi x gốc."
+        },
+        {
+          "text": "Không, vì hàm chỉ đổi bản sao của n",
+          "why": "Đúng. Truyền giá trị nghĩa là hàm nhận một bản sao."
+        },
+        {
+          "text": "Có, nếu gọi trong hàm main",
+          "why": "Nơi gọi không quyết định việc này."
+        },
+        {
+          "text": "Không, vì hàm không được có tham số",
+          "why": "Hàm có tham số bình thường."
+        }
+      ],
+      "answer": 1,
+      "explain": "Truyền giá trị: hàm làm việc trên bản sao."
+    },
+    {
+      "q": "Muốn hàm đổi được biến ở ngoài, cần truyền gì?",
+      "options": [
+        {
+          "text": "Tên biến",
+          "why": "Tên không đủ để hàm đi tới ô của biến."
+        },
+        {
+          "text": "Địa chỉ của biến, dùng con trỏ",
+          "why": "Đúng. Con trỏ cho hàm đi tới đúng ô nhớ và đổi giá trị ở đó."
+        },
+        {
+          "text": "Giá trị dưới dạng chuỗi",
+          "why": "Chuỗi không cho hàm đổi biến gốc."
+        },
+        {
+          "text": "Một hằng số",
+          "why": "Hằng không thể đổi."
+        }
+      ],
+      "answer": 1,
+      "explain": "Dùng &x để truyền địa chỉ, và *p trong hàm để đổi giá trị."
+    },
+    {
+      "q": "Hàm `void chao(const char *ten)` trả về gì?",
+      "options": [
+        {
+          "text": "Một chuỗi",
+          "why": "Có dùng chuỗi làm tham số, nhưng không trả về chuỗi."
+        },
+        {
+          "text": "Không có giá trị trả về",
+          "why": "Đúng. void nghĩa là hàm chỉ làm việc, không trả về gì."
+        },
+        {
+          "text": "Một số nguyên",
+          "why": "Kiểu trả về là void, không phải int."
+        },
+        {
+          "text": "Một con trỏ",
+          "why": "Không có dấu * trước tên hàm."
+        }
+      ],
+      "answer": 1,
+      "explain": "void là hàm chỉ làm việc, không trả về kết quả."
+    },
+    {
+      "q": "Vì sao nên gói công việc lặp lại vào một hàm?",
+      "options": [
+        {
+          "text": "Để chỉ sửa một chỗ khi cần đổi cách làm",
+          "why": "Đúng. Gọi lại tên hàm thay vì viết lại code nhiều lần."
+        },
+        {
+          "text": "Để chương trình chạy nhanh hơn luôn",
+          "why": "Hàm không đảm bảo nhanh hơn, mục đích chính là gọn và dễ sửa."
+        },
+        {
+          "text": "Vì C bắt buộc phải có hàm cho mọi việc",
+          "why": "Không bắt buộc, nhưng nên dùng để code dễ đọc."
+        },
+        {
+          "text": "Để tránh dùng biến",
+          "why": "Hàm vẫn dùng biến bình thường."
+        }
+      ],
+      "answer": 0,
+      "explain": "Gói lại một lần, dùng nhiều lần."
+    },
+    {
+      "q": "Hàm `double trung_binh(double a, double b, double c)` gọi với `trung_binh(7, 8, 9)` trả về bao nhiêu?",
+      "options": [
+        {
+          "text": "8.0",
+          "why": "Đúng. (7 + 8 + 9) / 3 = 8. Các số được đổi sang double."
+        },
+        {
+          "text": "8",
+          "why": "Kiểu trả về là double, nên kết quả là số thực, dù giá trị là 8."
+        },
+        {
+          "text": "24",
+          "why": "24 là tổng, chưa chia cho 3."
+        },
+        {
+          "text": "7",
+          "why": "7 chỉ là số đầu tiên, không phải trung bình."
+        }
+      ],
+      "answer": 0,
+      "explain": "Hàm trả về trung bình của ba số, kiểu double."
+    }
+  ]
+}

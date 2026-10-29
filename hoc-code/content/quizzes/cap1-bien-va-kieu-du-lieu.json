@@ -1,0 +1,44 @@
+{
+  "quizzes": [
+    {
+      "q": "Sau `x = 3;` rồi `y = x;` rồi `x = 9;`, biến `y` bằng bao nhiêu?",
+      "options": [
+        { "text": "3", "why": "Đúng. `y = x` chép giá trị 3 vào y ở thời điểm đó. Đổi x sau này không làm đổi y." },
+        { "text": "9", "why": "Sai. Đổi x về sau không ảnh hưởng đến y, vì y đã nhận giá trị 3 từ trước." },
+        { "text": "0", "why": "Sai. Biến được gán giá trị 3 rồi chép sang y, không phải 0." }
+      ],
+      "answer": 0,
+      "explain": "Gán là chép giá trị tại thời điểm đó. Mỗi biến giữ giá trị riêng của nó."
+    },
+    {
+      "q": "Với `p = 2;` rồi `q = 4;` rồi `p = q;`, thì `p` bằng bao nhiêu?",
+      "options": [
+        { "text": "2", "why": "Sai. Dòng `p = q` đã ghi đè giá trị cũ của p." },
+        { "text": "4", "why": "Đúng. `p = q` chép giá trị hiện tại của q (là 4) vào p." },
+        { "text": "6", "why": "Sai. Không có phép cộng nào ở đây." }
+      ],
+      "answer": 1,
+      "explain": "Bảng theo dõi: sau `p = 2` thì p là 2. Sau `p = q` thì p là 4."
+    },
+    {
+      "q": "Vì sao biến kiểu `int` không thể lưu đúng số `3.5`?",
+      "options": [
+        { "text": "Vì int chỉ lưu số nguyên, phần thập phân bị bỏ đi", "why": "Đúng. Kiểu int chỉ giữ phần nguyên của số." },
+        { "text": "Vì 3.5 là số âm", "why": "Sai. 3.5 là số dương." },
+        { "text": "Vì int không có chỗ để ghi dấu chấm", "why": "Sai. Vấn đề là kiểu int không giữ phần thập phân, không phải vì có dấu chấm." }
+      ],
+      "answer": 0,
+      "explain": "Để lưu số có phần thập phân, dùng kiểu double."
+    },
+    {
+      "q": "Sau `int a = 5;` rồi `a = a + 1;`, thì `a` bằng bao nhiêu?",
+      "options": [
+        { "text": "5", "why": "Sai. Dòng thứ hai đã thay đổi a." },
+        { "text": "6", "why": "Đúng. Máy tính lấy giá trị cũ của a (5), cộng 1, rồi ghi lại vào a." },
+        { "text": "51", "why": "Sai. Dấu + là phép cộng số, không ghép chữ số." }
+      ],
+      "answer": 1,
+      "explain": "Dòng `a = a + 1` đọc a cũ, tính toán, rồi gán lại. Đây là cách biến thay đổi qua từng dòng lệnh."
+    }
+  ]
+}

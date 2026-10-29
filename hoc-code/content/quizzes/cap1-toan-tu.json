@@ -1,0 +1,44 @@
+{
+  "quizzes": [
+    {
+      "q": "`17 / 5` cho kết quả bằng bao nhiêu?",
+      "options": [
+        { "text": "3.4", "why": "Sai. Cả hai số đều là số nguyên nên không có phần thập phân." },
+        { "text": "3", "why": "Đúng. Phép chia số nguyên giữ phần nguyên, bỏ phần lẻ 0.4." },
+        { "text": "4", "why": "Sai. Phép chia không làm tròn lên; nó cắt bỏ phần lẻ." }
+      ],
+      "answer": 1,
+      "explain": "17 chia 5 được 3 dư 2. Phép `/` lấy 3."
+    },
+    {
+      "q": "`17 % 5` cho kết quả bằng bao nhiêu?",
+      "options": [
+        { "text": "2", "why": "Đúng. Phép `%` cho phần dư: 17 - 3 × 5 = 2." },
+        { "text": "3", "why": "Sai. 3 là kết quả của `/`, không phải `%`." },
+        { "text": "5", "why": "Sai. Phần dư luôn nhỏ hơn số chia." }
+      ],
+      "answer": 0,
+      "explain": "Phép `%` chỉ quan tâm đến phần dư sau khi chia."
+    },
+    {
+      "q": "Với `int a = 4; int b = a++ * 2;`, thì `b` bằng bao nhiêu?",
+      "options": [
+        { "text": "8", "why": "Đúng. `a++` dùng giá trị cũ là 4 trong phép nhân, nên b = 4 × 2 = 8. Sau đó a tăng thành 5." },
+        { "text": "10", "why": "Sai. Đó là kết quả nếu a đã tăng trước khi nhân, nhưng `a++` dùng giá trị cũ." },
+        { "text": "4", "why": "Sai. Có phép nhân với 2 nên không thể là 4." }
+      ],
+      "answer": 0,
+      "explain": "`a++` dùng giá trị hiện tại trước, rồi mới tăng a. Đây là điểm khác của `a++` so với `++a`."
+    },
+    {
+      "q": "Dòng `if (diem = 10)` có vấn đề gì?",
+      "options": [
+        { "text": "Đây là phép gán, không phải so sánh. Điều kiện luôn đúng vì 10 khác 0.", "why": "Đúng. Phải dùng `==` để so sánh." },
+        { "text": "Không có vấn đề gì", "why": "Sai. Dấu `=` gán giá trị, không so sánh." },
+        { "text": "Phải viết là `if (10 = diem)`", "why": "Sai. Đảo thứ tự không sửa được lỗi gán. Phải dùng `==`." }
+      ],
+      "answer": 0,
+      "explain": "So sánh bằng dùng `==`. Dấu `=` một mình là gán."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "quizzes": [
+    {
+      "q": "Vibe coding khác AI coding ở điểm nào?",
+      "options": [
+        { "text": "Vibe coding tin gần như toàn bộ kết quả AI, không đọc kỹ", "why": "Đúng. Đây là đặc điểm của vibe coding." },
+        { "text": "Vibe coding không dùng AI", "why": "Sai. Vibe coding vẫn dùng AI, chỉ khác ở cách kiểm tra." },
+        { "text": "AI coding luôn chạy nhanh hơn", "why": "Sai. Tốc độ không phải điểm khác biệt chính." }
+      ],
+      "answer": 0,
+      "explain": "AI coding: bạn vẫn hiểu và kiểm soát code. Vibe coding: bạn ra lệnh rồi tin gần như toàn bộ kết quả."
+    },
+    {
+      "q": "Khi nào nên để AI làm pilot (tự làm, bạn kiểm tra kết quả)?",
+      "options": [
+        { "text": "Khi việc nhỏ và rõ ràng", "why": "Đúng. Việc nhỏ, rõ ràng dễ kiểm tra kết quả." },
+        { "text": "Khi dự án phức tạp và bạn đang học", "why": "Sai. Lúc đó nên dùng copilot để bạn hiểu từng bước." },
+        { "text": "Không bao giờ", "why": "Sai. Pilot hữu ích khi việc nhỏ, rõ ràng." }
+      ],
+      "answer": 0,
+      "explain": "Pilot phù hợp việc nhỏ, rõ ràng. Copilot phù hợp việc phức tạp hoặc khi bạn đang học."
+    },
+    {
+      "q": "Vì sao phải đọc lại code AI viết?",
+      "options": [
+        { "text": "Vì AI có thể viết code trông đúng nhưng sai hoặc không hiểu được", "why": "Đúng. Code chạy được chưa chắc đã đúng." },
+        { "text": "Vì AI không biết viết code", "why": "Sai. AI viết code được, nhưng có thể sai." },
+        { "text": "Để AI biết bạn đang xem", "why": "Sai. Đọc lại là để bạn kiểm soát code." }
+      ],
+      "answer": 0,
+      "explain": "Code AI viết có thể trông đúng nhưng vẫn có lỗi. Đọc lại và thử với đầu vào mẫu giúp bạn bắt lỗi trước khi dùng."
+    }
+  ]
+}

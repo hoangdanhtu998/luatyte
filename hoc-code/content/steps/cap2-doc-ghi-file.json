@@ -1,0 +1,14 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Đọc và ghi file giúp chương trình lưu dữ liệu lại, để lần sau mở ra vẫn còn. Giống ghi số ra sổ tay.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Mở file so.txt để ghi. Mở xong, máy có một cuốn sổ để viết vào.", "boxes": ["file"], "code": "mở so.txt để ghi", "run": { "file": "so.txt (ghi)" }, "after": "File đã mở để ghi." },
+    { "img": "m03-meo-vui.png", "say": "Ghi số 42 vào file. Dữ liệu được viết vào sổ.", "boxes": ["file", "nội dung"], "code": "ghi 42 vào file", "run": { "nội dung": "42" }, "after": "Nội dung 42 đã được ghi." },
+    { "img": "m03-meo-vui.png", "say": "Đóng file. Đóng xong thì dữ liệu được lưu chắc chắn và file được trả lại cho hệ điều hành.", "boxes": ["file", "nội dung"], "code": "đóng file", "run": { "file": "đã đóng" }, "after": "File đã đóng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau khi ghi xong và đóng file, vì sao phải đóng file?", "boxes": ["file", "nội dung"], "code": "fclose(f);", "quiz": [
+        { "text": "Để dữ liệu được lưu chắc chắn và giải phóng file", "right": true, "hint": "Đúng! Đóng file là hoàn tất việc ghi và trả lại tài nguyên." },
+        { "text": "Để file tự xóa đi", "right": false, "hint": "Đóng file không xóa file. File vẫn còn để đọc lại." },
+        { "text": "Không cần thiết", "right": false, "hint": "Không đóng file thì dữ liệu có thể chưa được ghi hết." } ] },
+    { "img": "m03-meo-vui.png", "say": "Mở lại file để đọc. Đọc được số 42 đã ghi trước đó.", "boxes": ["file", "nội dung", "đọc được"], "code": "mở so.txt để đọc", "run": { "đọc được": 42 }, "after": "Đọc được 42 từ file." },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: mở file, ghi hoặc đọc, rồi đóng file. Ghi xong mà không đóng thì có thể mất dữ liệu.", "boxes": ["file", "nội dung", "đọc được"], "end": true }
+  ]
+}

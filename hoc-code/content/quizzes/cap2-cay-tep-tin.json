@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Đường dẫn `/a/b.txt` gồm những phần nào?",
+      "options": [
+        {
+          "text": "Thư mục a, rồi tệp b.txt bên trong",
+          "why": "Đúng. Mỗi dấu / là một cấp thư mục."
+        },
+        {
+          "text": "Chỉ một tệp tên a/b.txt",
+          "why": "Dấu / là phân cách thư mục."
+        },
+        {
+          "text": "Hai ổ đĩa",
+          "why": "Không phải ổ đĩa."
+        },
+        {
+          "text": "Một phím tắt",
+          "why": "Không phải phím tắt."
+        }
+      ],
+      "answer": 0,
+      "explain": "Dấu / phân tách các cấp thư mục."
+    },
+    {
+      "q": "Hệ thống tệp làm gì với đường dẫn?",
+      "options": [
+        {
+          "text": "Ánh xạ đường dẫn tới dữ liệu tương ứng",
+          "why": "Đúng. Tra cứu là phần cốt lõi."
+        },
+        {
+          "text": "Xóa đường dẫn",
+          "why": "Không phải việc chính."
+        },
+        {
+          "text": "Đổi màu đường dẫn",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Chỉ dùng cho mạng",
+          "why": "Không chỉ dùng cho mạng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Tra cứu đường dẫn tìm ra dữ liệu."
+    },
+    {
+      "q": "FUSE cho phép làm gì?",
+      "options": [
+        {
+          "text": "Viết hệ thống tệp chạy ở chế độ người dùng",
+          "why": "Đúng. Không cần sửa nhân hệ điều hành."
+        },
+        {
+          "text": "Sửa trực tiếp phần cứng ổ đĩa",
+          "why": "Không phải việc của FUSE."
+        },
+        {
+          "text": "Tăng tốc CPU",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Thay đổi bàn phím",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "FUSE đưa hệ thống tệp ra không gian người dùng."
+    }
+  ]
+}

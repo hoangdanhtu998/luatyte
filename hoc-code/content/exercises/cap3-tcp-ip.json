@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Checksum tiêu đề IPv4",
+    "prompt": "Đọc 10 số hex 16 bit (cách nhau khoảng trắng) là 10 từ của tiêu đề IPv4, với trường checksum (từ thứ 6) đặt bằng 0. Tính checksum internet (cộng một bù) và in dạng hex 4 chữ số, chữ thường.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    unsigned w[10];\n    // đọc và tính checksum ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "4500 0073 0000 4000 4011 0000 c0a8 0001 c0a8 00c7\n",
+        "expected": "b861\n"
+      }
+    ]
+  }
+]
