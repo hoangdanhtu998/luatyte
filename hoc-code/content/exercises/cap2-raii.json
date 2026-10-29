@@ -10,6 +10,11 @@
         "expected": "mo\nxong\ndong\n"
       }
     ],
-    "language": "cpp"
+    "language": "cpp",
+    "solution": "#include <iostream>\n#include <memory>\n\nstruct Tep {\n    Tep() { std::cout << \"mo\\n\"; }\n    ~Tep() { std::cout << \"dong\\n\"; }\n};\n\nint main() {\n    {\n        std::unique_ptr<Tep> tep = std::make_unique<Tep>();\n        std::cout << \"xong\\n\";\n    }\n    return 0;\n}\n",
+    "hints": [
+      "Đối tượng được tạo trong khối nào thì bị hủy khi khối đó kết thúc. unique_ptr làm việc này cho ta.",
+      "Hãy đoán thứ tự: constructor in trước, câu xong in ở giữa, destructor in khi thoát khối."
+    ]
   }
 ]

@@ -13,6 +13,11 @@
         "stdin": "89 50 4e 47\n",
         "expected": "khong phai ELF\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned int b[4];\n    for (int i = 0; i < 4; i++) {\n        if (scanf(\"%x\", &b[i]) != 1) return 1;\n    }\n    if (b[0] == 0x7F && b[1] == 0x45 && b[2] == 0x4C && b[3] == 0x46)\n        printf(\"ELF\\n\");\n    else\n        printf(\"khong phai ELF\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "File ELF luôn bắt đầu bằng 4 byte 7F 45 4C 46. So bốn số đọc được với bốn byte này.",
+      "Đọc bốn số hex bằng %x, so từng byte. Đúng hết thì in ELF, sai thì in khong phai ELF."
     ]
   }
 ]

@@ -79,7 +79,7 @@
       (data.passages || []).forEach(addPassage);
     } catch (err) {
       pending.remove();
-      add('bot error', 'Không kết nối được máy chủ. Kiểm tra server đang chạy (node server/server.mjs) và mở trang qua http://localhost:4500.');
+      add('bot error', 'Trợ lý cần máy chủ Học code nên chưa dùng được trên bản web này. Trên máy bạn, chạy node server/server.mjs rồi mở http://localhost:4500 (xem setup.html).');
     }
   });
 })();

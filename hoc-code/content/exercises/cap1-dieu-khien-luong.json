@@ -12,7 +12,27 @@
       {
         "stdin": "4\n",
         "expected": "10\n"
+      },
+      {
+        "stdin": "2\n",
+        "expected": "3\n",
+        "hidden": true
+      },
+      {
+        "stdin": "100\n",
+        "expected": "5050\n",
+        "hidden": true
+      },
+      {
+        "stdin": "5\n",
+        "expected": "15\n",
+        "hidden": true
       }
-    ]
+    ],
+    "hints": [
+      "Cần một biến để cộng dồn và một vòng lặp chạy từ 1 đến n.",
+      "Khởi tạo tổng = 0, trong vòng for cộng i vào tổng, rồi in tổng."
+    ],
+    "solution": "#include <stdio.h>\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    int tong = 0;\n    for (int i = 1; i <= n; i++) tong += i;\n    printf(\"%d\\n\", tong);\n    return 0;\n}\n"
   }
 ]

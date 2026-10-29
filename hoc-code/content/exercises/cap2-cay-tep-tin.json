@@ -9,6 +9,11 @@
         "stdin": "3\n/a/b.txt\n/a/c.txt\n/d\n2\n/a/b.txt\n/x\n",
         "expected": "co\nkhong\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    static char dd[1000][256];\n    int n, q;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 0; i < n; i++) if (scanf(\"%255s\", dd[i]) != 1) return 1;\n    if (scanf(\"%d\", &q) != 1) return 1;\n    for (int j = 0; j < q; j++) {\n        char x[256];\n        if (scanf(\"%255s\", x) != 1) return 1;\n        int co = 0;\n        for (int i = 0; i < n; i++) if (strcmp(dd[i], x) == 0) co = 1;\n        printf(co ? \"co\\n\" : \"khong\\n\");\n    }\n    return 0;\n}\n",
+    "hints": [
+      "Đọc n đường dẫn vào một mảng chuỗi, rồi với mỗi truy vấn duyệt mảng để tìm đường dẫn đó.",
+      "So chuỗi bằng strcmp, không dùng ==. In co nếu tìm thấy, khong nếu không."
     ]
   }
 ]

@@ -9,6 +9,11 @@
         "stdin": "42\n",
         "expected": "mov $42, %eax\nret\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    printf(\"mov $%d, %%eax\\n\", n);\n    printf(\"ret\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Lệnh mov đưa số vào thanh ghi eax. Dấu $ đứng trước số, và % đứng trước tên thanh ghi.",
+      "In hai dòng: mov $n, %eax rồi ret. Trong printf, % phải viết thành %%."
     ]
   }
 ]

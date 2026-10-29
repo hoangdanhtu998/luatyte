@@ -5,9 +5,23 @@
     "prompt": "Đoạn code dưới đây do AI viết để tính `1 + 2 + ... + n`, nhưng có lỗi. Đọc kỹ, tìm lỗi, sửa lại. Đọc một số n, in tổng từ 1 đến n.\n\nGợi ý: thử với n = 5, kết quả phải là 15.",
     "starter": "#include <stdio.h>\n\n// AI viết hàm này. Đọc kỹ rồi sửa lỗi trước khi chạy.\nint tong_1_den(int n) {\n    int s = 0;\n    for (int i = 1; i < n; i++) s += i;\n    return s;\n}\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\\n\", tong_1_den(n));\n    return 0;\n}\n",
     "tests": [
-      { "stdin": "5\n", "expected": "15\n" },
-      { "stdin": "1\n", "expected": "1\n" },
-      { "stdin": "10\n", "expected": "55\n" }
+      {
+        "stdin": "5\n",
+        "expected": "15\n"
+      },
+      {
+        "stdin": "2\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "10\n",
+        "expected": "55\n"
+      }
+    ],
+    "solution": "#include <stdio.h>\n\n// Lỗi: vòng lặp dừng ở n - 1 nên bỏ mất số n. Sửa điều kiện thành i <= n.\nint tong_1_den(int n) {\n    int s = 0;\n    for (int i = 1; i <= n; i++) s += i;\n    return s;\n}\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    printf(\"%d\\n\", tong_1_den(n));\n    return 0;\n}\n",
+    "hints": [
+      "Thử với n = 5: kết quả phải là 15. Đếm xem vòng lặp đã chạy đủ các số chưa.",
+      "Vòng lặp dừng sớm nên bỏ mất số n. Đổi điều kiện để bao gồm cả n."
     ]
   }
 ]

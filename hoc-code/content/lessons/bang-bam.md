@@ -5,239 +5,160 @@
 ---
 
 ## Tóm tắt trong 1 phút
-- Bảng băm biến tên (khóa) thành số ngăn (chỉ số mảng), để cất và tìm rất nhanh.
-- Hai khóa có thể ra cùng một ngăn gọi là va chạm. Cách hay dùng: mỗi ngăn là một danh sách nối (chaining).
-- Khi bảng quá đầy, phải rehash: tạo bảng lớn hơn rồi chuyển dữ liệu sang.
-- Ứng dụng: từ điển, bộ nhớ đệm, đếm số lần xuất hiện. Tìm trung bình rất nhanh, gọi là O(1).
-
-## 1. Vấn đề: Tìm nhanh O(1)
-
-Mảng cho phép truy cập phần tử bằng chỉ số trong O(1). Nhưng nếu *khóa* không phải là số nguyên liên tiếp (ví dụ: tên người, mã sinh viên, từ điển), sao tìm nhanh?
-
-**Ý tưởng:** Biến khóa thành chỉ số mảng bằng *hàm băm* (hash function).
+- Bảng băm biến **khóa** (ví dụ tên) thành **số ô** trong mảng. Nhờ vậy cất và tìm rất nhanh.
+- Hai khóa có thể rơi vào cùng một ô, gọi là **va chạm**. Cách dùng ở đây: mỗi ô là một danh sách nối.
+- Khi bảng quá đầy, mở rộng gấp đôi và băm lại mọi khóa. Gọi là **rehash**.
 
 ---
 
-## 2. Hàm băm
+## Bước 1: Từ khóa đến số ô
 
-Hàm băm nhận khóa (key) trả về chỉ số mảng (index):
+Mảng cho phép tìm nhanh theo số thứ tự. Nhưng khóa là chữ thì không có số thứ tự.
+
+Hàm băm biến khóa thành một số, rồi lấy phần dư để có số ô:
 
 ```
-index = hash(key) % capacity
+ô = hash(khóa) % dung_luong
 ```
 
-**Yêu cầu hàm băm tốt:**
-- Nhanh (O(1))
-- Phân bố đều: khóa khác nhau rải đều các ô
-- Xác định: cùng khóa luôn ra cùng index
+Hàm băm tốt phải:
+- Chạy nhanh.
+- Cùng khóa luôn ra cùng số.
+- Rải các khóa khác nhau đều trên các ô.
 
-**Ví dụ đơn giản cho chuỗi (djb2):**
+---
+
+## Bước 2: Hàm băm djb2
 
 ```c
-unsigned long hash(const char *str) {
+static unsigned long hash(const char *str) {
     unsigned long h = 5381;
     int c;
-    while ((c = *str++))
-        h = ((h << 5) + h) + c;  // h * 33 + c
+    while ((c = (unsigned char)*str++))
+        h = ((h << 5) + h) + c;   /* h = h * 33 + c */
     return h;
 }
 ```
 
 ---
 
-## 3. Va chạm (Collision)
+## Bước 3: Va chạm và danh sách nối
 
-Hai khóa khác nhau có thể băm ra cùng một index. Hai cách xử lý chính:
-
-### A. Chaining (Nối danh sách) — *Dùng trong bài này*
-Mỗi ô mảng lưu **con trỏ đầu** của một danh sách liên kết. Khóa trùng index → thêm nút vào danh sách.
+Hai khóa khác nhau có thể ra cùng một ô. Lúc này ta không ghi đè. Ta nối thêm một nút vào danh sách của ô đó.
 
 ```
-bucket[0] → Node("Alice") → Node("Bob") → NULL
-bucket[1] → NULL
-bucket[2] → Node("Charlie") → NULL
-...
+ô 0 → Alice → Bob → NULL
+ô 1 → NULL
+ô 2 → Charlie → NULL
 ```
 
-### B. Open Addressing (Dò tuyến tính)
-Nếu ô bị chiếm → nhảy sang ô tiếp theo (index+1, index+2...). Không dùng con trỏ nhưng phức tạp hơn khi xóa.
+Tìm một khóa thì đi đúng ô, rồi duyệt danh sách của ô đó.
 
 ---
 
-## 4. Cấu trúc dữ liệu
+## Bước 4: Cấu trúc dữ liệu
 
 ```c
 typedef struct Node {
-    char *key;           // khóa (chuỗi)
-    int value;           // giá trị
-    struct Node *next;   // nút tiếp theo trong chuỗi
+    char *key;           /* khóa */
+    int value;           /* giá trị */
+    struct Node *next;   /* nút kế tiếp trong cùng ô */
 } Node;
 
 typedef struct {
-    Node **buckets;      // mảng con trỏ Node*
-    size_t capacity;     // số bucket
-    size_t size;         // số cặp key-value hiện có
+    Node **buckets;      /* mảng các con trỏ tới danh sách */
+    size_t capacity;     /* số ô */
+    size_t size;         /* số cặp khóa-giá trị */
 } HashTable;
 ```
 
 ---
 
-## 5. Các thao tác cơ bản
+## Bước 5: Thêm và cập nhật (put)
 
-### Khởi tạo
-```c
-HashTable *ht_create(size_t capacity) {
-    HashTable *ht = malloc(sizeof(HashTable));
-    ht->capacity = capacity;
-    ht->size = 0;
-    ht->buckets = calloc(capacity, sizeof(Node*));  // calloc = zero-initialized
-    return ht;
-}
-```
-
-### Chèn / Cập nhật (put)
 ```c
 void ht_put(HashTable *ht, const char *key, int value) {
     size_t idx = hash(key) % ht->capacity;
-    Node *cur = ht->buckets[idx];
-
-    // Tìm key đã tồn tại → cập nhật value
-    while (cur) {
-        if (strcmp(cur->key, key) == 0) {
-            cur->value = value;
-            return;
-        }
-        cur = cur->next;
+    for (Node *cur = ht->buckets[idx]; cur; cur = cur->next) {
+        if (strcmp(cur->key, key) == 0) { cur->value = value; return; }  /* đã có: cập nhật */
     }
-
-    // Chưa có → tạo nút mới, chèn đầu danh sách
-    Node *new_node = malloc(sizeof(Node));
-    new_node->key = strdup(key);  // copy chuỗi
-    new_node->value = value;
-    new_node->next = ht->buckets[idx];
-    ht->buckets[idx] = new_node;
-    ht->size++;
+    insert_new(ht, strdup(key), value);                 /* chưa có: thêm nút mới */
+    if ((double)ht->size / ht->capacity > 0.75) ht_rehash(ht);
 }
 ```
 
-### Tìm (get)
-```c
-bool ht_get(HashTable *ht, const char *key, int *out_value) {
-    size_t idx = hash(key) % ht->capacity;
-    Node *cur = ht->buckets[idx];
-
-    while (cur) {
-        if (strcmp(cur->key, key) == 0) {
-            *out_value = cur->value;
-            return true;
-        }
-        cur = cur->next;
-    }
-    return false;  // không tìm thấy
-}
-```
-
-### Xóa (remove)
-```c
-bool ht_remove(HashTable *ht, const char *key) {
-    size_t idx = hash(key) % ht->capacity;
-    Node *cur = ht->buckets[idx];
-    Node *prev = NULL;
-
-    while (cur) {
-        if (strcmp(cur->key, key) == 0) {
-            if (prev) prev->next = cur->next;
-            else ht->buckets[idx] = cur->next;
-            free(cur->key);
-            free(cur);
-            ht->size--;
-            return true;
-        }
-        prev = cur;
-        cur = cur->next;
-    }
-    return false;
-}
-```
-
-### Giải phóng toàn bộ
-```c
-void ht_free(HashTable *ht) {
-    for (size_t i = 0; i < ht->capacity; i++) {
-        Node *cur = ht->buckets[i];
-        while (cur) {
-            Node *next = cur->next;
-            free(cur->key);
-            free(cur);
-            cur = next;
-        }
-    }
-    free(ht->buckets);
-    free(ht);
-}
-```
+`insert_new` là hàm nhỏ chèn một nút vào đầu danh sách. Mã đầy đủ có trong ví dụ bên dưới.
 
 ---
 
-## 6. Load Factor & Rehash
+## Bước 6: Tìm (get) và xóa (remove)
 
-**Load factor** = `size / capacity`. Khi load factor lớn (ví dụ > 0.75), danh sách ở mỗi bucket dài ra → tìm chậm.
+Cả hai đều bắt đầu như put: tính ô, rồi duyệt danh sách của ô đó.
 
-**Giải pháp:** Tạo mảng bucket mới gấp đôi, băm lại tất cả key (rehash).
+- **get:** tìm được thì trả về giá trị. Không tìm được thì trả về `false`.
+- **remove:** tìm được thì nối nút trước với nút sau, rồi giải phóng nút. Phải giải phóng cả `key`.
+
+---
+
+## Bước 7: Băm lại (rehash)
+
+**Hệ số tải** = số khóa / số ô. Khi hệ số tải lớn hơn 0,75, danh sách mỗi ô dài ra và tìm chậm.
+
+Khi đó ta làm ba việc:
+1. Tạo mảng ô mới gấp đôi.
+2. Chuyển từng nút sang mảng mới, băm lại khóa.
+3. Giải phóng mảng cũ.
+
+Chú ý: khi chuyển nút, không gọi `ht_put` nữa, vì `ht_put` có thể lại gọi rehash. Dùng `insert_new` để chèn trực tiếp.
+
+---
+
+## Bước 8: Chạy thử
+
+Ví dụ dưới đã biên dịch với `gcc -std=c11 -Wall -Wextra -Werror` và chạy thật:
 
 ```c
-void ht_rehash(HashTable *ht) {
-    size_t old_cap = ht->capacity;
-    Node **old_buckets = ht->buckets;
-
-    ht->capacity *= 2;
-    ht->buckets = calloc(ht->capacity, sizeof(Node*));
-    ht->size = 0;
-
-    for (size_t i = 0; i < old_cap; i++) {
-        Node *cur = old_buckets[i];
-        while (cur) {
-            ht_put(ht, cur->key, cur->value);  // băm lại vào mảng mới
-            Node *tmp = cur;
-            cur = cur->next;
-            free(tmp->key);
-            free(tmp);
-        }
-    }
-    free(old_buckets);
-}
+HashTable *ht = ht_create(4);
+ht_put(ht, "Alice", 90);
+ht_put(ht, "Bob", 75);
+ht_put(ht, "Charlie", 60);
+ht_put(ht, "Bob", 80);          /* cập nhật Bob */
 ```
 
-Trong `ht_put`, sau khi chèn xong: `if ((double)ht->size / ht->capacity > 0.75) ht_rehash(ht);`
+Kết quả:
+
+```
+size=3 capacity=4
+Bob=80
+Zed=-1
+remove Alice=1
+size=2
+100 keys ok=1 size=100 capacity=256
+```
+
+Đọc kết quả:
+- Thêm 3 khóa vào bảng 4 ô: hệ số tải là 0,75, chưa lớn hơn 0,75 nên chưa rehash.
+- `Bob` được cập nhật, không tạo thêm nút. Size vẫn là 3.
+- Thêm 100 khóa vào bảng bắt đầu chỉ có 2 ô: bảng tự mở rộng đến 256 ô.
+
+Mã đầy đủ (gồm `insert_new`, `ht_rehash`, `ht_remove`, `ht_free`) nằm ở file `demo/bang-bam-chay-thu.c`. Biên dịch bằng `gcc -std=c11 -Wall -Wextra -Werror bang-bam-chay-thu.c` rồi chạy.
 
 ---
 
-## 7. Ứng dụng thực tế
+## Ba lỗi hay gặp
 
-- **Bộ nhớ đệm (cache):** Redis, Memcached dùng hash table
-- **Trình biên dịch:** Bảng ký hiệu (symbol table) tra cứu tên biến/hàm
-- **Cơ sở dữ liệu:** Index băm cho tra cứu khóa chính
-- **Bộ gõ tiếng Việt:** Từ điển chữ -> mã, tra cứu O(1)
-- **Bản đồ (map) trong ngôn ngữ cao cấp:** Python `dict`, Go `map`, C++ `unordered_map` đều là hash table
+1. **Quên `free`** khóa (`strdup`) và nút khi xóa hoặc giải phóng bảng: rò rỉ bộ nhớ.
+2. **Không kiểm tra `NULL`** sau `malloc`, `calloc` hoặc `strdup`.
+3. **Hàm băm kém:** mọi khóa rơi vào một ô, tìm chậm như danh sách thường.
 
 ---
 
-## 8. Ba lỗi thường gặp
+## Tự kiểm tra
+1. Vì sao hai khóa khác nhau có thể cùng một ô?
+2. Vì sao khi rehash không gọi `ht_put`?
+3. Hệ số tải 0,8 có kích hoạt rehash không? Vì sao?
 
-1. **Quên free key** khi xóa hoặc free bảng → rò rỉ bộ nhớ
-2. **Không check NULL** sau `malloc`/`calloc`/`strdup`
-3. **Hash function kém** → tất cả key rơi vào 1 bucket → O(n) thay vì O(1)
-
----
-
-## 9. Tóm tắt
-
-| Khái niệm | Ý nghĩa |
-|-----------|---------|
-| Hash function | Biến key thành index |
-| Bucket | Một ô trong mảng hash table |
-| Chaining | Nối các key trùng index thành danh sách |
-| Load factor | `size / capacity`, ngưỡng rehash thường 0.75 |
-| Rehash | Mở rộng mảng, băm lại tất cả key |
-
-**Bài tập:** Xây hash table chaining với put/get/remove, test với 1000 key ngẫu nhiên, in load factor trước/sau rehash.
+## Tổng kết
+- Hàm băm biến khóa thành số ô.
+- Va chạm: mỗi ô là một danh sách nối.
+- Hệ số tải trên 0,75 thì rehash: mở rộng gấp đôi và băm lại.

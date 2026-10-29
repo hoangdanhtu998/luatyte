@@ -12,7 +12,22 @@
       {
         "stdin": "2 10\n",
         "expected": "20.00\n"
+      },
+      {
+        "stdin": "1 0.1\n",
+        "expected": "0.10\n",
+        "hidden": true
+      },
+      {
+        "stdin": "7 9.99\n",
+        "expected": "69.93\n",
+        "hidden": true
       }
-    ]
+    ],
+    "hints": [
+      "Tổng tiền = số lượng nhân đơn giá. Đơn giá là số thực, nên đọc bằng %lf.",
+      "In bằng %.2f để có đúng hai chữ số thập phân."
+    ],
+    "solution": "#include <stdio.h>\nint main(void) {\n    int sl; double gia;\n    if (scanf(\"%d %lf\", &sl, &gia) != 2) return 1;\n    printf(\"%.2f\\n\", sl * gia);\n    return 0;\n}\n"
   }
 ]

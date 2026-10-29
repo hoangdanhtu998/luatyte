@@ -12,7 +12,22 @@
       {
         "stdin": "3\n-1 -5 -2\n",
         "expected": "-1\n"
+      },
+      {
+        "stdin": "1\n42\n",
+        "expected": "42\n",
+        "hidden": true
+      },
+      {
+        "stdin": "5\n1 1 1 1 1\n",
+        "expected": "1\n",
+        "hidden": true
       }
-    ]
+    ],
+    "hints": [
+      "Lưu n số vào mảng, rồi dùng một biến max để so với từng phần tử.",
+      "Gán max = a[0], duyệt i từ 1 và cập nhật max khi a[i] lớn hơn."
+    ],
+    "solution": "#include <stdio.h>\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    int a[1000], max;\n    for (int i = 0; i < n; i++) if (scanf(\"%d\", &a[i]) != 1) return 1;\n    max = a[0];\n    for (int i = 1; i < n; i++) if (a[i] > max) max = a[i];\n    printf(\"%d\\n\", max);\n    return 0;\n}\n"
   }
 ]

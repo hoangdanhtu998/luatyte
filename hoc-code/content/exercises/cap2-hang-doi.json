@@ -13,6 +13,11 @@
         "stdin": "5 9 0\n",
         "expected": "5 9\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#define MAX 1000\nint main(void) {\n    int q[MAX], head = 0, tail = 0, x;\n    while (scanf(\"%d\", &x) == 1 && x != 0) q[tail++] = x;\n    for (int i = head; i < tail; i++) {\n        printf(\"%d\", q[i]);\n        if (i + 1 < tail) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Hàng đợi là FIFO: số vào trước được lấy ra trước. Dùng hai chỉ số đầu và cuối trên một mảng.",
+      "Đọc đến khi gặp 0, mỗi số tăng chỉ số cuối. Sau đó duyệt từ đầu đến cuối và in, chỉ thêm dấu cách giữa các số."
     ]
   }
 ]

@@ -9,6 +9,11 @@
         "stdin": "",
         "expected": "Charlie: 35\nFrank: NOT FOUND\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\ntypedef struct Node { char *key; int value; struct Node *next; } Node;\ntypedef struct { Node **buckets; size_t capacity; size_t size; } HashTable;\nstatic unsigned long hash(const char *str) { unsigned long h = 5381; int c; while ((c = (unsigned char)*str++)) h = h * 33 + c; return h; }\nHashTable *ht_create(size_t capacity) { HashTable *ht = malloc(sizeof(HashTable)); ht->capacity = capacity; ht->size = 0; ht->buckets = calloc(capacity, sizeof(Node *)); return ht; }\nvoid ht_put(HashTable *ht, const char *key, int value) {\n    size_t idx = hash(key) % ht->capacity;\n    for (Node *cur = ht->buckets[idx]; cur; cur = cur->next) if (strcmp(cur->key, key) == 0) { cur->value = value; return; }\n    Node *n = malloc(sizeof(Node)); n->key = strdup(key); n->value = value; n->next = ht->buckets[idx]; ht->buckets[idx] = n; ht->size++;\n}\nint ht_get(HashTable *ht, const char *key, int *out) {\n    size_t idx = hash(key) % ht->capacity;\n    for (Node *cur = ht->buckets[idx]; cur; cur = cur->next) if (strcmp(cur->key, key) == 0) { *out = cur->value; return 1; }\n    return 0;\n}\nint main(void) {\n    HashTable *ht = ht_create(8);\n    ht_put(ht, \"Alice\", 10); ht_put(ht, \"Bob\", 20); ht_put(ht, \"Charlie\", 35); ht_put(ht, \"Dave\", 40); ht_put(ht, \"Eve\", 50);\n    int v;\n    if (ht_get(ht, \"Charlie\", &v)) printf(\"Charlie: %d\\n\", v);\n    if (!ht_get(ht, \"Frank\", &v)) printf(\"Frank: NOT FOUND\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Cần ba hàm: tạo bảng, thêm cặp khóa-giá trị, tìm giá trị theo khóa. Dùng hash (djb2) để biết khóa nằm ở ô nào.",
+      "Mỗi ô là một danh sách. Khi tìm, đi đúng ô băm rồi so khóa bằng strcmp từng nút."
     ]
   },
   {
@@ -21,6 +26,11 @@
         "stdin": "",
         "expected": "A: DELETED\nC: DELETED\nRemove ZZZ: NOT FOUND\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\ntypedef struct Node { char *key; int value; struct Node *next; } Node;\ntypedef struct { Node **buckets; size_t capacity; size_t size; } HashTable;\nstatic unsigned long hash(const char *str) { unsigned long h = 5381; int c; while ((c = (unsigned char)*str++)) h = h * 33 + c; return h; }\nHashTable *ht_create(size_t capacity) { HashTable *ht = malloc(sizeof(HashTable)); ht->capacity = capacity; ht->size = 0; ht->buckets = calloc(capacity, sizeof(Node *)); return ht; }\nvoid ht_put(HashTable *ht, const char *key, int value) {\n    size_t idx = hash(key) % ht->capacity;\n    Node *n = malloc(sizeof(Node)); n->key = strdup(key); n->value = value; n->next = ht->buckets[idx]; ht->buckets[idx] = n; ht->size++;\n}\nbool ht_remove(HashTable *ht, const char *key) {\n    size_t idx = hash(key) % ht->capacity;\n    Node *cur = ht->buckets[idx], *prev = NULL;\n    while (cur) {\n        if (strcmp(cur->key, key) == 0) {\n            if (prev) prev->next = cur->next; else ht->buckets[idx] = cur->next;\n            free(cur->key); free(cur); ht->size--; return true;\n        }\n        prev = cur; cur = cur->next;\n    }\n    return false;\n}\nint main(void) {\n    HashTable *ht = ht_create(2);\n    ht_put(ht, \"A\", 1); ht_put(ht, \"B\", 2); ht_put(ht, \"C\", 3);\n    printf(\"A: %s\\n\", ht_remove(ht, \"A\") ? \"DELETED\" : \"NOT FOUND\");\n    printf(\"C: %s\\n\", ht_remove(ht, \"C\") ? \"DELETED\" : \"NOT FOUND\");\n    printf(\"Remove ZZZ: %s\\n\", ht_remove(ht, \"ZZZ\") ? \"DELETED\" : \"NOT FOUND\");\n    return 0;\n}\n",
+    "hints": [
+      "Khi xóa nút ở giữa danh sách, phải giữ con trỏ của nút đứng trước để nối lại.",
+      "Xóa nút đầu thì cập nhật ô bảng. Xóa nút giữa thì prev->next trỏ qua nút bị xóa. Nhớ giải phóng cả khóa và nút."
     ]
   },
   {
@@ -33,6 +43,11 @@
         "stdin": "",
         "expected": "Initial capacity: 8\nFinal capacity: 32\nSize: 20\nLoad factor: 0.62\nAll data verified!\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\ntypedef struct Node { char *key; int value; struct Node *next; } Node;\ntypedef struct { Node **buckets; size_t capacity; size_t size; } HashTable;\nstatic unsigned long hash(const char *str) { unsigned long h = 5381; int c; while ((c = (unsigned char)*str++)) h = h * 33 + c; return h; }\nHashTable *ht_create(size_t capacity) { HashTable *ht = malloc(sizeof(HashTable)); ht->capacity = capacity; ht->size = 0; ht->buckets = calloc(capacity, sizeof(Node *)); return ht; }\nstatic void insert_new(HashTable *ht, char *key, int value) {\n    size_t idx = hash(key) % ht->capacity;\n    Node *n = malloc(sizeof(Node)); n->key = key; n->value = value; n->next = ht->buckets[idx]; ht->buckets[idx] = n; ht->size++;\n}\nstatic void rehash(HashTable *ht) {\n    size_t old_cap = ht->capacity; Node **old = ht->buckets;\n    ht->capacity *= 2; ht->buckets = calloc(ht->capacity, sizeof(Node *)); ht->size = 0;\n    for (size_t i = 0; i < old_cap; i++) {\n        Node *cur = old[i];\n        while (cur) { Node *next = cur->next; insert_new(ht, cur->key, cur->value); free(cur); cur = next; }\n    }\n    free(old);\n}\nvoid ht_put(HashTable *ht, const char *key, int value) {\n    size_t idx = hash(key) % ht->capacity;\n    for (Node *cur = ht->buckets[idx]; cur; cur = cur->next) if (strcmp(cur->key, key) == 0) { cur->value = value; return; }\n    insert_new(ht, strdup(key), value);\n    if ((double)ht->size / ht->capacity > 0.75) rehash(ht);\n}\nint ht_get(HashTable *ht, const char *key, int *out) {\n    size_t idx = hash(key) % ht->capacity;\n    for (Node *cur = ht->buckets[idx]; cur; cur = cur->next) if (strcmp(cur->key, key) == 0) { *out = cur->value; return 1; }\n    return 0;\n}\nint main(void) {\n    HashTable *ht = ht_create(8);\n    char key[16];\n    for (int i = 1; i <= 20; i++) { snprintf(key, sizeof key, \"key%d\", i); ht_put(ht, key, i * 10); }\n    int ok = 1, v;\n    for (int i = 1; i <= 20; i++) { snprintf(key, sizeof key, \"key%d\", i); if (!ht_get(ht, key, &v) || v != i * 10) ok = 0; }\n    printf(\"Initial capacity: 8\\n\");\n    printf(\"Final capacity: %zu\\n\", ht->capacity);\n    printf(\"Size: %zu\\n\", ht->size);\n    printf(\"Load factor: %.2f\\n\", (double)ht->size / ht->capacity);\n    printf(ok ? \"All data verified!\\n\" : \"Data error!\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Đếm số khóa (size) và so với dung lượng (capacity). Khi tỉ lệ vượt 0,75 thì cần mở rộng bảng.",
+      "Khi mở rộng, tạo mảng ô mới gấp đôi, rồi chuyển từng nút sang mảng mới. Đừng gọi lại ht_put trong lúc chuyển."
     ]
   }
 ]

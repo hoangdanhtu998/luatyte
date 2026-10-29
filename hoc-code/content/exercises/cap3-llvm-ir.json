@@ -9,6 +9,11 @@
         "stdin": "x y\n",
         "expected": "%r = add i32 %x, %y\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    char a[64], b[64];\n    if (scanf(\"%63s %63s\", a, b) != 2) return 1;\n    printf(\"%%r = add i32 %%%s, %%%s\\n\", a, b);\n    return 0;\n}\n",
+    "hints": [
+      "Dòng IR là một chuỗi cố định, chỉ có tên biến a và b thay vào.",
+      "Trong printf, dấu % cần viết thành %% để in ra một dấu % thật."
     ]
   }
 ]

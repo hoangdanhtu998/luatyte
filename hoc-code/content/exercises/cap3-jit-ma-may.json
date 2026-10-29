@@ -13,6 +13,11 @@
         "stdin": "258\n",
         "expected": "B8 02 01 00 00 C3\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned int n;\n    if (scanf(\"%u\", &n) != 1) return 1;\n    /* mov eax, imm32 (B8 + 4 byte little-endian), rồi ret (C3) */\n    printf(\"B8 %02X %02X %02X %02X C3\\n\",\n           n & 0xFF, (n >> 8) & 0xFF, (n >> 16) & 0xFF, (n >> 24) & 0xFF);\n    return 0;\n}\n",
+    "hints": [
+      "Lệnh mov eax, imm32 có mã B8, theo sau là 4 byte của số. x86 ghi số theo thứ tự byte thấp đứng trước.",
+      "Tách n thành 4 byte bằng phép dịch và mặt nạ 0xFF, rồi in B8, 4 byte đó và C3."
     ]
   }
 ]

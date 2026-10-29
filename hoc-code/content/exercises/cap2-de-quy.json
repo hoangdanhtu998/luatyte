@@ -17,6 +17,11 @@
         "stdin": "10\n",
         "expected": "3628800\n"
       }
+    ],
+    "solution": "#include <stdio.h>\nlong long giai_thua(int n) { return n <= 1 ? 1 : n * giai_thua(n - 1); }\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    printf(\"%lld\\n\", giai_thua(n));\n    return 0;\n}\n",
+    "hints": [
+      "Giai thừa của n bằng n nhân giai thừa của n - 1. Trường hợp dừng là n nhỏ hơn hoặc bằng 1.",
+      "Hàm trả về số lớn, nên dùng kiểu long long để tránh tràn khi n = 10."
     ]
   }
 ]

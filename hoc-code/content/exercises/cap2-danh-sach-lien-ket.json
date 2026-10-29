@@ -5,9 +5,23 @@
     "prompt": "Đọc số n, rồi n số nguyên. Mỗi số thêm vào đầu danh sách liên kết. Sau khi thêm hết, in cả danh sách từ đầu, các số cách nhau một dấu cách.\n\nGợi ý: mỗi nút có giá trị và con trỏ tới nút kế tiếp. Khi thêm vào đầu, nút mới trỏ tới đầu cũ rồi trở thành đầu mới.",
     "starter": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct Nut {\n    int giatri;\n    struct Nut *tiep;\n};\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    struct Nut *dau = NULL;\n    // viết code thêm n số vào đầu danh sách ở đây\n\n    // viết code in danh sách từ đầu ở đây\n    return 0;\n}\n",
     "tests": [
-      { "stdin": "3\n1 2 3\n", "expected": "3 2 1\n" },
-      { "stdin": "1\n5\n", "expected": "5\n" },
-      { "stdin": "4\n7 8 9 10\n", "expected": "10 9 8 7\n" }
+      {
+        "stdin": "3\n1 2 3\n",
+        "expected": "3 2 1\n"
+      },
+      {
+        "stdin": "1\n5\n",
+        "expected": "5\n"
+      },
+      {
+        "stdin": "4\n7 8 9 10\n",
+        "expected": "10 9 8 7\n"
+      }
+    ],
+    "solution": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct Node { int value; struct Node *next; } Node;\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    Node *head = NULL;\n    for (int i = 0; i < n; i++) {\n        int x;\n        if (scanf(\"%d\", &x) != 1) return 1;\n        Node *nd = malloc(sizeof(Node));\n        nd->value = x;\n        nd->next = head;\n        head = nd;\n    }\n    for (Node *cur = head; cur; ) {\n        printf(\"%d\", cur->value);\n        Node *next = cur->next;\n        free(cur);\n        cur = next;\n        if (cur) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi số mới được gắn vào đầu danh sách. Nút mới trỏ tới đầu cũ rồi thành đầu mới.",
+      "Sau khi đọc hết, duyệt từ đầu và in giá trị, chỉ thêm dấu cách giữa các số."
     ]
   }
 ]

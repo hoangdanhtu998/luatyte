@@ -17,6 +17,11 @@
         "stdin": "sensor/#\nsensor/1/temp\n",
         "expected": "yes\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\n\n/* Khớp bộ lọc MQTT: + khớp đúng một cấp, # khớp mọi cấp còn lại (đặt ở cuối). */\nstatic int khop(const char *f, const char *t) {\n    if (f[0] == '#') return 1;\n    if (f[0] == '\\0') return t[0] == '\\0';\n    if (t[0] == '\\0') return 0;\n    size_t lf = strcspn(f, \"/\"), lt = strcspn(t, \"/\");\n    int giong = (lf == 1 && f[0] == '+') || (lf == lt && strncmp(f, t, lf) == 0);\n    if (!giong) return 0;\n    f += lf;\n    t += lt;\n    if (f[0] == '/') {\n        if (t[0] != '/') return 0;\n        return khop(f + 1, t + 1);\n    }\n    return khop(f, t);\n}\n\nint main(void) {\n    char loc[256], chu_de[256];\n    if (scanf(\"%255s %255s\", loc, chu_de) != 2) return 1;\n    printf(khop(loc, chu_de) ? \"yes\\n\" : \"no\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Bộ lọc và chủ đề được chia theo dấu /. + khớp đúng một cấp, # khớp mọi cấp còn lại.",
+      "So từng cấp một. Gặp # thì khớp hết. Gặp + thì bỏ qua nội dung cấp đó. Hết chuỗi cùng lúc mới là khớp."
     ]
   }
 ]

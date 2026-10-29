@@ -9,6 +9,11 @@
         "stdin": "",
         "expected": "Xin chao\n"
       }
-    ]
+    ],
+    "hints": [
+      "Đọc dòng báo lỗi của trình biên dịch: nó chỉ đúng dòng có vấn đề.",
+      "Thiếu dấu chấm phẩy ở cuối câu printf. Thêm ; vào đó."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Xin chao\\n\");\n    return 0;\n}\n"
   }
 ]

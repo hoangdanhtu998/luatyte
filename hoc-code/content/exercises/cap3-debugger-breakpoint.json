@@ -9,6 +9,11 @@
         "stdin": "55\n",
         "expected": "CC\n55\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned int goc;\n    if (scanf(\"%x\", &goc) != 1) return 1;\n    printf(\"CC\\n\");\n    printf(\"%02X\\n\", goc);\n    return 0;\n}\n",
+    "hints": [
+      "Đặt điểm dừng là thay byte gốc bằng CC. Khi khôi phục, trả lại byte gốc đã lưu.",
+      "Đọc byte gốc dạng hex, in CC trước, rồi in lại byte gốc dạng hex hai chữ số."
     ]
   }
 ]

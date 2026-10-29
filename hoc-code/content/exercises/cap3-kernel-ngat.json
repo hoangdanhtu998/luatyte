@@ -9,6 +9,11 @@
         "stdin": "2\n1 0\n",
         "expected": "keyboard\ntimer\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 0; i < n; i++) {\n        int so;\n        if (scanf(\"%d\", &so) != 1) return 1;\n        printf(so == 0 ? \"timer\\n\" : \"keyboard\\n\");\n    }\n    return 0;\n}\n",
+    "hints": [
+      "Ngắt 0 là bộ hẹn giờ, ngắt 1 là bàn phím. Đọc từng số và chọn chuỗi tương ứng.",
+      "Dùng câu lệnh if hoặc toán tử ba ngôi để chọn chữ in ra, mỗi ngắt một dòng."
     ]
   }
 ]

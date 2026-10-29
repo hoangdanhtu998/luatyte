@@ -12,7 +12,22 @@
       {
         "stdin": "c\n",
         "expected": "1\n"
+      },
+      {
+        "stdin": "xinchao\n",
+        "expected": "7\n",
+        "hidden": true
+      },
+      {
+        "stdin": "abcdefghij\n",
+        "expected": "10\n",
+        "hidden": true
       }
-    ]
+    ],
+    "hints": [
+      "Đọc từ bằng scanf với %s, rồi gọi strlen trên mảng char.",
+      "strlen không đếm ký tự '\u0000' cuối chuỗi. Kết quả in bằng %zu."
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char s[100];\n    if (scanf(\"%99s\", s) != 1) return 1;\n    printf(\"%zu\\n\", strlen(s));\n    return 0;\n}\n"
   }
 ]

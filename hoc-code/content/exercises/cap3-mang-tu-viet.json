@@ -13,6 +13,11 @@
         "stdin": "8 4\n",
         "expected": "2\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int L, M;\n    if (scanf(\"%d %d\", &L, &M) != 2 || M <= 0) return 1;\n    printf(\"%d\\n\", (L + M - 1) / M);\n    return 0;\n}\n",
+    "hints": [
+      "Số gói là số lần chia L cho M, làm tròn lên. Phần dư khác 0 thì cần thêm một gói.",
+      "Dùng công thức (L + M - 1) / M với số nguyên."
     ]
   }
 ]
