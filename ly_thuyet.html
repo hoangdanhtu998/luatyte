@@ -85,6 +85,11 @@ async function boot(){
   }
   document.getElementById("toc").innerHTML = data.chuong.map((c, i) =>
     `<button data-i="${i}">${i + 1}. ${esc(c.ten)}</button>`).join("");
+  const wanted = new URLSearchParams(location.search).get("c");
+  if (wanted) {
+    const idx = data.chuong.findIndex(c => c.id === wanted);
+    if (idx >= 0) cur = idx;
+  }
   document.getElementById("toc").onclick = e => {
     const b = e.target.closest("button[data-i]");
     if (!b) return;

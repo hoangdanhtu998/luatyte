@@ -1,0 +1,661 @@
+{
+  "phien_ban": 1,
+  "cap_nhat": "2026-10-29",
+  "ghi_chu": "Ánh xạ gợi ý cho lộ trình theo vai; câu verify không được đưa vào lộ trình. Người phụ trách nội dung cần duyệt trước khi dùng chính thức.",
+  "vai_tro": [
+    {
+      "id": "dieu_duong",
+      "ten": "Điều dưỡng",
+      "mo_ta": "Nền tảng KCB, quyền người bệnh và an toàn chăm sóc.",
+      "chuong": [
+        "c10",
+        "c11",
+        "c9",
+        "c2",
+        "c3",
+        "c12",
+        "c14"
+      ],
+      "van_ban": [
+        "kcb",
+        "nd_96_2023_kcb",
+        "nd_165_2026_phong_benh",
+        "tt_33_2026_phong_benh"
+      ],
+      "so_cau": 63,
+      "so_chuong_chuyen_mon": 5
+    },
+    {
+      "id": "bac_si",
+      "ten": "Bác sĩ",
+      "mo_ta": "Hành nghề, quyền người bệnh, hồ sơ bệnh án và thông tư mới.",
+      "chuong": [
+        "c10",
+        "c11",
+        "c2",
+        "c3",
+        "c13",
+        "c6"
+      ],
+      "van_ban": [
+        "kcb",
+        "tt_32_2023_kcb",
+        "tt_13_2025_benh_an_dien_tu",
+        "tt25_2026"
+      ],
+      "so_cau": 75,
+      "so_chuong_chuyen_mon": 4
+    },
+    {
+      "id": "duoc_si",
+      "ten": "Dược sĩ",
+      "mo_ta": "Thuốc, đơn thuốc, giá và thông tư dược mới.",
+      "chuong": [
+        "c10",
+        "c11",
+        "c5",
+        "c6",
+        "c13"
+      ],
+      "van_ban": [
+        "duoc",
+        "nd_163_2025_duoc",
+        "tt26_2025",
+        "tt36_2025",
+        "tt_18_2026_duoc",
+        "tt_29_2025_duoc",
+        "tt_32_2026_duoc"
+      ],
+      "so_cau": 50,
+      "so_chuong_chuyen_mon": 3
+    },
+    {
+      "id": "bhyt",
+      "ten": "Nhân viên BHYT / kế toán",
+      "mo_ta": "Mức hưởng, giá dịch vụ, thanh toán và xử phạt.",
+      "chuong": [
+        "c10",
+        "c11",
+        "c4",
+        "c5",
+        "c15"
+      ],
+      "van_ban": [
+        "bhyt",
+        "nd_188_2025_bhyt",
+        "tt_12_2026_giam_dinh_bhyt",
+        "tt22_2024"
+      ],
+      "so_cau": 54,
+      "so_chuong_chuyen_mon": 3
+    },
+    {
+      "id": "his",
+      "ten": "Nhân viên HIS",
+      "mo_ta": "Dữ liệu y tế, hồ sơ bệnh án điện tử và kết nối hệ thống.",
+      "chuong": [
+        "c10",
+        "c11",
+        "c7",
+        "c4",
+        "c13"
+      ],
+      "van_ban": [
+        "dulieu",
+        "nd_356_2025_dulieu",
+        "luat_91_2025_bvdlcn",
+        "luat_148_2025_chuyen_doi_so",
+        "tt_13_2025_benh_an_dien_tu"
+      ],
+      "so_cau": 63,
+      "so_chuong_chuyen_mon": 3
+    }
+  ],
+  "chuong": {
+    "c10": {
+      "ten": "Kiến thức nền cho người mới",
+      "vai_tro": [
+        "dieu_duong",
+        "bac_si",
+        "duoc_si",
+        "bhyt",
+        "his"
+      ]
+    },
+    "c11": {
+      "ten": "Văn bản và mốc hiệu lực cần nhớ",
+      "vai_tro": [
+        "dieu_duong",
+        "bac_si",
+        "duoc_si",
+        "bhyt",
+        "his"
+      ]
+    },
+    "c9": {
+      "ten": "Hiến pháp và quyền sức khỏe",
+      "vai_tro": [
+        "dieu_duong"
+      ]
+    },
+    "c2": {
+      "ten": "Người, cơ sở và giấy phép khám chữa bệnh",
+      "vai_tro": [
+        "dieu_duong",
+        "bac_si"
+      ]
+    },
+    "c3": {
+      "ten": "Quyền của người bệnh",
+      "vai_tro": [
+        "dieu_duong",
+        "bac_si"
+      ]
+    },
+    "c12": {
+      "ten": "Các khoa trong bệnh viện và quy định",
+      "vai_tro": [
+        "dieu_duong"
+      ]
+    },
+    "c14": {
+      "ten": "Cập nhật 2025–2026: luật mới và điểm cần nhớ",
+      "vai_tro": [
+        "dieu_duong"
+      ]
+    },
+    "c13": {
+      "ten": "Thông tư mới: bệnh án điện tử, khám sức khỏe, lương y, thiết bị y tế",
+      "vai_tro": [
+        "bac_si",
+        "duoc_si",
+        "his"
+      ]
+    },
+    "c6": {
+      "ten": "Thuốc và đơn thuốc",
+      "vai_tro": [
+        "bac_si",
+        "duoc_si"
+      ]
+    },
+    "c5": {
+      "ten": "Giá dịch vụ và thanh toán thuốc tự mua",
+      "vai_tro": [
+        "duoc_si",
+        "bhyt"
+      ]
+    },
+    "c4": {
+      "ten": "Bảo hiểm y tế: đọc đúng mức hưởng",
+      "vai_tro": [
+        "bhyt",
+        "his"
+      ]
+    },
+    "c15": {
+      "ten": "Xử phạt hành chính trong y tế: đọc đúng mức phạt",
+      "vai_tro": [
+        "bhyt"
+      ]
+    },
+    "c7": {
+      "ten": "Dữ liệu y tế và bảo mật",
+      "vai_tro": [
+        "his"
+      ]
+    }
+  },
+  "cau_hoi": {
+    "Ai quy định chi tiết về đơn thuốc, việc kê đơn và liên thông dữ liệu đơn thuốc với hệ thống quốc gia?": [
+      "c6"
+    ],
+    "Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2024/TT-BYT?": [
+      "c5"
+    ],
+    "Án lệ được công bố bởi ai?": [
+      "c10"
+    ],
+    "Bác sĩ kê đơn thuốc không phù hợp với chẩn đoán bệnh hoặc kê vào đơn sản phẩm không được phép kê theo quy định. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Bài thuốc gia truyền được hiểu là bài thuốc như thế nào?": [
+      "c2"
+    ],
+    "Bán thuốc đã hết hạn dùng có phải là hành vi bị cấm kinh doanh không?": [
+      "c6"
+    ],
+    "Bé 4 tuổi khám ngoại trú. Anh Hùng đưa con gái 4 tuổi đi khám sốt tại trạm y tế xã. Bé có thẻ BHYT còn hạn. Bé được hưởng mức chi trả BHYT bao nhiêu?": [
+      "c4"
+    ],
+    "Bệnh viện phải triển khai hồ sơ bệnh án điện tử chậm nhất khi nào theo Thông tư 13/2025/TT-BYT?": [
+      "c13"
+    ],
+    "Cảnh báo sức khỏe trên bao bì thuốc lá phải chiếm ít nhất bao nhiêu diện tích mặt chính?": [
+      "c14"
+    ],
+    "Cấp cứu ở bệnh viện xa. Ông Tuấn bị tai nạn lúc đi công tác. Ông được đưa vào bệnh viện chuyên sâu ở tỉnh khác, không đúng tuyến đăng ký. Đây là trường hợp cấp cứu. Ông Tuấn được hưởng mức chi trả bao nhiêu cho việc cấp cứu?": [
+      "c4"
+    ],
+    "Chị Mai khám ở tỉnh khác. Chị Mai đang làm việc ở tỉnh A nhưng có thẻ BHYT đăng ký ở tỉnh B. Chị đến trạm y tế tuyến ban đầu ở tỉnh A để khám ngoại trú. Chị đã tham gia BHYT được 3 năm. Chị Mai có được hưởng như khám đúng tuyến không, và mức chi trả là bao nhiêu?": [
+      "c4"
+    ],
+    "Chi phí một lần khám dưới mức quy định. Anh Sơn khám ngoại trú và tổng chi phí của một lần khám rất thấp, nằm dưới mức do Chính phủ quy định. Chi phí của lần khám này được hưởng mức chi trả bao nhiêu?": [
+      "c4"
+    ],
+    "Chữ ký số trong hồ sơ bệnh án điện tử có giá trị tương đương chữ ký tay không?": [
+      "c13"
+    ],
+    "Chữa bệnh nhằm mục đích nào?": [
+      "c2"
+    ],
+    "Có được kê thực phẩm chức năng trong đơn thuốc không?": [
+      "c6"
+    ],
+    "Cơ sở bán lẻ thuốc chỉ được bán thuốc kê đơn khi nào?": [
+      "c6"
+    ],
+    "Cơ sở đã được cấp giấy phép hoạt động trước 01/01/2027 phải đáp ứng yêu cầu hạ tầng CNTT kết nối với hệ thống quản lý KCB chậm nhất khi nào?": [
+      "c7"
+    ],
+    "Cơ sở KCB cung cấp thông tin lên Hệ thống thông tin quản lý hoạt động KCB phải làm thế nào?": [
+      "c7"
+    ],
+    "Cơ sở KCB làm được nhiệm vụ của cả ba cấp chuyên môn kỹ thuật được xếp vào cấp nào?": [
+      "c2"
+    ],
+    "Cơ sở khám bệnh, chữa bệnh cung cấp dịch vụ không đúng phạm vi hoạt động chuyên môn cho phép, không thuộc trường hợp cấp cứu. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Cơ sở khám bệnh, chữa bệnh không lập hoặc không lưu trữ hồ sơ bệnh án theo quy định. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Cơ sở khám bệnh, chữa bệnh từ chối hoặc cố ý chậm cấp cứu người bệnh, trừ trường hợp được pháp luật cho phép từ chối. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Cơ sở khám chữa bệnh được tổ chức theo mấy cấp chuyên môn kỹ thuật?": [
+      "c2"
+    ],
+    "Cơ sở y tế có được hút thuốc lá trong nhà và khuôn viên không?": [
+      "c14"
+    ],
+    "Cùng một hành vi vi phạm hành chính trong lĩnh vực y tế, mức phạt tiền đối với tổ chức so với cá nhân như thế nào?": [
+      "c15"
+    ],
+    "Đặc trưng nào giúp phân biệt pháp luật với các quy phạm xã hội khác?": [
+      "c10"
+    ],
+    "Để cung cấp dịch vụ khám bệnh, chữa bệnh, cơ sở khám bệnh, chữa bệnh cần có văn bản nào?": [
+      "c2"
+    ],
+    "Điểm mới năm 2024 dành cho người dưới 18 tuổi tham gia BHYT là gì?": [
+      "c4"
+    ],
+    "Điều 20 Hiến pháp bảo hộ điều gì của mỗi người?": [
+      "c9",
+      "c10"
+    ],
+    "Điều 3 Luật KCB 2023 yêu cầu đối xử với người bệnh như thế nào?": [
+      "c3"
+    ],
+    "Điều 7 Luật KCB 2023 có nội dung gì?": [
+      "c3"
+    ],
+    "Đóng BHYT hộ gia đình: người thứ hai đóng bằng bao nhiêu % mức người thứ nhất?": [
+      "c4"
+    ],
+    "Đơn thuốc điện tử theo Thông tư 26/2025/TT-BYT có giá trị pháp lý thế nào?": [
+      "c6"
+    ],
+    "Đơn thuốc phải ghi tối thiểu những nội dung nào?": [
+      "c6"
+    ],
+    "Giá thanh toán tối đa của thuốc tự mua theo Thông tư 22/2024/TT-BYT được tính theo gì?": [
+      "c5"
+    ],
+    "Giấy phép hành nghề khám bệnh, chữa bệnh có giá trị bao lâu?": [
+      "c2"
+    ],
+    "Giấy phép hành nghề khám bệnh, chữa bệnh là văn bản do ai cấp và cho ai?": [
+      "c2"
+    ],
+    "Giấy phép hành nghề khám chữa bệnh theo Luật 2023 có thời hạn bao lâu?": [
+      "c2"
+    ],
+    "Giấy phép hoạt động khám bệnh, chữa bệnh của một cơ sở có thời hạn không?": [
+      "c2"
+    ],
+    "Hạn hoàn thành xây dựng và vận hành Hệ thống thông tin quản lý KCB theo Luật KCB 2023 là khi nào?": [
+      "c7",
+      "c13"
+    ],
+    "Hành vi gian dối trong việc xác định mức độ khuyết tật, cấp giấy xác nhận khuyết tật có bị cấm không?": [
+      "c14"
+    ],
+    "Hành vi nào bị Hiến pháp nghiêm cấm liên quan đến sức khỏe?": [
+      "c9",
+      "c10"
+    ],
+    "Hành vi nào bị nghiêm cấm trong khám chữa bệnh?": [
+      "c2"
+    ],
+    "Hành vi thông báo, tiết lộ giới tính thai nhi để phá thai có căn cứ đình chỉ hành nghề không?": [
+      "c8"
+    ],
+    "Hệ thống thông tin quản lý KCB do cơ quan nào thống nhất quản lý?": [
+      "c7"
+    ],
+    "Hộ nghèo khám bệnh. Gia đình chị Thảo thuộc diện hộ nghèo và có thẻ BHYT còn hạn. Chị đi khám ngoại trú tại trạm y tế xã. Chị Thảo được hưởng mức chi trả bao nhiêu?": [
+      "c4"
+    ],
+    "Hồ sơ bệnh án có thể lập bằng giấy hoặc bản điện tử. Hai hình thức này có giá trị pháp lý thế nào?": [
+      "c7",
+      "c13"
+    ],
+    "Kết quả HIV dương tính chỉ được thông báo cho những đối tượng nào?": [
+      "c7"
+    ],
+    "Khám thai định kỳ và sinh con có thuộc phạm vi thanh toán của quỹ BHYT không?": [
+      "c4"
+    ],
+    "Khi KCB từ xa, người hành nghề chịu trách nhiệm về điều gì?": [
+      "c3"
+    ],
+    "Khi thông tin trong cơ sở dữ liệu y tế của mình thay đổi hoặc có sai sót, tổ chức/cá nhân phải làm gì?": [
+      "c7"
+    ],
+    "Khi xin sự đồng ý xử lý dữ liệu sức khỏe, cơ sở phải nói gì với người được xin?": [
+      "c7"
+    ],
+    "Lao động nam được nghỉ bao lâu khi vợ sinh con thứ hai?": [
+      "c8"
+    ],
+    "Lao động nam được nghỉ bao nhiêu ngày làm việc khi vợ sinh con thứ hai?": [
+      "c8"
+    ],
+    "Luật Chuyển đổi số 148/2025 quy định nhóm nội dung nào?": [
+      "c7"
+    ],
+    "Luật do cơ quan nào ban hành?": [
+      "c10"
+    ],
+    "Luật Dược sửa đổi 2024 bỏ thủ tục nào?": [
+      "c6"
+    ],
+    "Luật Dược sửa đổi 2024 công nhận mô hình kinh doanh mới nào?": [
+      "c6"
+    ],
+    "Luật KCB 2023 áp dụng cả trong trường hợp nào (Điều 1)?": [
+      "c2"
+    ],
+    "Luật KCB 2023 gọi giấy phép hành nghề thay cho tên gọi cũ nào?": [
+      "c2"
+    ],
+    "Luật Phòng bệnh chia tiêm chủng thành những hình thức nào?": [
+      "c14"
+    ],
+    "Luật Phòng bệnh khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến bao nhiêu tháng tuổi?": [
+      "c14"
+    ],
+    "Luật rượu, bia quy định gì về nồng độ cồn khi lái xe?": [
+      "c14"
+    ],
+    "Mỗi người bệnh có bao nhiêu người đại diện tại một thời điểm (Điều 8)?": [
+      "c3"
+    ],
+    "Mỗi người tham gia BHYT được cấp bao nhiêu mã số BHYT?": [
+      "c4"
+    ],
+    "Một người chưa được cấp giấy phép hành nghề khám bệnh, chữa bệnh nhưng vẫn khám bệnh, chữa bệnh cho người dân. Mức phạt tiền đối với cá nhân là bao nhiêu?": [
+      "c15"
+    ],
+    "Một người xâm phạm thân thể, sức khỏe, danh dự hoặc nhân phẩm của nhân viên y tế đang làm việc tại cơ sở khám bệnh, chữa bệnh. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Một phòng khám tư nhân cung cấp dịch vụ khám bệnh, chữa bệnh nhưng không có giấy phép hoạt động. Mức phạt tiền áp dụng đối với cá nhân là bao nhiêu?": [
+      "c15"
+    ],
+    "Mức hưởng BHYT phổ biến (đi đúng quy định) là bao nhiêu?": [
+      "c4"
+    ],
+    "Mức phạt tiền tối đa đối với cá nhân vi phạm hành chính trong lĩnh vực bảo hiểm y tế là bao nhiêu?": [
+      "c15"
+    ],
+    "Mức phạt tiền tối đa đối với tổ chức vi phạm hành chính trong lĩnh vực dân số là bao nhiêu?": [
+      "c15"
+    ],
+    "Mức phạt tiền tối đa đối với tổ chức vi phạm hành chính trong lĩnh vực khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế là bao nhiêu?": [
+      "c15"
+    ],
+    "Mức tham chiếu dùng để tính đóng, hưởng BHYT do cơ quan nào quyết định?": [
+      "c4"
+    ],
+    "Mức tiền lương tháng tối đa để tính đóng BHYT bằng bao nhiêu lần mức tham chiếu?": [
+      "c4"
+    ],
+    "Nghị định 148/2025/NĐ-CP phân quyền, phân cấp trong lĩnh vực nào?": [
+      "c14"
+    ],
+    "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược, tập trung vào nhóm nội dung nào?": [
+      "c6",
+      "c14"
+    ],
+    "Nghị định 165/2026/NĐ-CP quy định chi tiết lĩnh vực nào?": [
+      "c14"
+    ],
+    "Nghị định 188/2025/NĐ-CP quy định mức hỗ trợ tối thiểu cho một số nhóm đóng BHYT là bao nhiêu?": [
+      "c4"
+    ],
+    "Nghị định 356/2025/NĐ-CP quy định về lĩnh vực nào?": [
+      "c7"
+    ],
+    "Nghị định 96/2023/NĐ-CP quy định chi tiết nhóm nội dung nào của Luật Khám bệnh, chữa bệnh?": [
+      "c2"
+    ],
+    "Nghị định do cơ quan nào ban hành và dùng để làm gì?": [
+      "c10"
+    ],
+    "Ngôn ngữ sử dụng trong khám bệnh, chữa bệnh là gì?": [
+      "c2"
+    ],
+    "Người bệnh có quyền chấp nhận hoặc từ chối tham gia nghiên cứu y sinh học không (Điều 11)?": [
+      "c3"
+    ],
+    "Người bệnh có quyền được giữ bí mật thông tin trong hồ sơ bệnh án không?": [
+      "c3"
+    ],
+    "Người bệnh được cung cấp thông tin gì khi khám chữa bệnh (Điều 9)?": [
+      "c3"
+    ],
+    "Người bệnh được đọc và sao chụp gì theo Điều 12?": [
+      "c3"
+    ],
+    "Người bệnh từ chối khám, chữa bệnh phải làm gì?": [
+      "c3"
+    ],
+    "Người cấp cứu phải xuất trình thông tin thẻ BHYT khi nào?": [
+      "c4"
+    ],
+    "Người có kết quả HIV dương tính phải kịp thời thông báo cho ai?": [
+      "c7"
+    ],
+    "Người hành nghề cho người khác thuê hoặc mượn giấy phép, chứng chỉ hành nghề khám bệnh, chữa bệnh của mình để hành nghề. Mức phạt tiền là bao nhiêu?": [
+      "c15"
+    ],
+    "Người hành nghề khám bệnh, chữa bệnh là người như thế nào?": [
+      "c2"
+    ],
+    "Người hiến mô, bộ phận cơ thể khi còn sống phải từ đủ bao nhiêu tuổi?": [
+      "c14"
+    ],
+    "Người kê đơn để trục lợi (kê dịch vụ kỹ thuật, thiết bị y tế hoặc gợi ý chuyển người bệnh để trục lợi) có bị cấm không?": [
+      "c3"
+    ],
+    "Người khuyết tật đặc biệt nặng là người như thế nào?": [
+      "c14"
+    ],
+    "Người mất năng lực hành vi dân sự đề nghị khám sức khỏe nhưng không thuộc các trường hợp khám theo mẫu của Thông tư 25/2026, cần giấy tờ gì ngoài giấy khám?": [
+      "c13"
+    ],
+    "Người sửa hồ sơ bệnh án để làm sai lệch thông tin khám chữa bệnh thì vi phạm điều nào?": [
+      "c7",
+      "c13"
+    ],
+    "Người tham gia BHYT có quyền thay đổi cơ sở KCB ban đầu trong thời hạn nào?": [
+      "c4"
+    ],
+    "Nhân viên y tế hoặc người bệnh ký điện tử trong hồ sơ bệnh án điện tử bằng cách nào?": [
+      "c13"
+    ],
+    "Nội trú trái tuyến không cấp cứu. Bà Lan đến bệnh viện chuyên sâu tuyến trung ương để điều trị nội trú theo lịch hẹn, không chuyển tuyến. Đây không phải trường hợp cấp cứu và bà không thuộc nhóm ngoại lệ (không phải hộ nghèo, dân tộc thiểu số vùng khó khăn, bệnh hiếm/hiểm nghèo hay cơ sở từng là tuyến tỉnh trước 01/01/2025). Mức chi trả thường gặp trong trường hợp này là bao nhiêu?": [
+      "c4"
+    ],
+    "Ông Thắng nhận lương hưu. Ông Thắng nghỉ hưu, đang nhận lương hưu hằng tháng. Ông đã tham gia BHYT 30 năm và đi khám nội trú ở bệnh viện tuyến tỉnh đúng tuyến. Ông Thắng được hưởng mức chi trả bao nhiêu?": [
+      "c4"
+    ],
+    "Sau bao nhiêu ngày kể từ khi hết hạn lập danh sách người tham gia BHYT mà vẫn không lập đủ thì bị coi là trốn đóng?": [
+      "c4"
+    ],
+    "Sau khi nhận đủ hồ sơ, cơ quan BHXH phải cấp thẻ BHYT trong thời hạn bao lâu?": [
+      "c4"
+    ],
+    "Sổ sức khỏe điện tử theo Nghị định 102/2025 là gì?": [
+      "c7"
+    ],
+    "Thẻ điện tử hay thẻ giấy. Anh Đức đưa thẻ BHYT điện tử trên điện thoại đến khám. Lễ tân hỏi thẻ điện tử có được dùng không. Thẻ BHYT điện tử có giá trị so với thẻ giấy thế nào?": [
+      "c4"
+    ],
+    "Theo Điều 14 Hiến pháp, quyền con người có thể bị hạn chế bằng luật trong trường hợp nào liên quan y tế?": [
+      "c9",
+      "c10"
+    ],
+    "Theo Điều 2 Luật KCB 2023, khám bệnh là gì?": [
+      "c2"
+    ],
+    "Theo Điều 38 Hiến pháp, mỗi người có nghĩa vụ gì trong lĩnh vực y tế?": [
+      "c9",
+      "c10"
+    ],
+    "Theo Điều 58 Hiến pháp, ai có trách nhiệm bảo vệ, chăm sóc sức khỏe người mẹ và trẻ em?": [
+      "c9",
+      "c10"
+    ],
+    "Theo Điều 58 Hiến pháp, Nhà nước thực hiện chính sách gì về y tế?": [
+      "c9",
+      "c10"
+    ],
+    "Theo Hiến pháp, thử nghiệm y học trên cơ thể người cần điều kiện gì?": [
+      "c9",
+      "c10"
+    ],
+    "Theo Luật Bảo vệ dữ liệu cá nhân 91/2025, dữ liệu sức khỏe thuộc nhóm nào?": [
+      "c7"
+    ],
+    "Theo Luật BHYT sửa đổi 2024, chi phí một lần khám dưới mức nào thì được hưởng 100%?": [
+      "c4"
+    ],
+    "Theo Luật Dân số 2025, lao động nữ sinh con thứ hai được nghỉ thai sản bao lâu?": [
+      "c8"
+    ],
+    "Theo Luật KCB 2023, ai là người bệnh?": [
+      "c2"
+    ],
+    "Theo Luật Phòng bệnh, người dân được khám sức khỏe định kỳ hoặc sàng lọc miễn phí với tần suất tối thiểu nào?": [
+      "c14"
+    ],
+    "Theo Thông tư 26/2025/TT-BYT, ai được kê đơn thuốc hóa dược, sinh phẩm trong điều trị ngoại trú?": [
+      "c6"
+    ],
+    "Theo Thông tư 26/2025/TT-BYT, đơn thuốc cho trẻ dưới 72 tháng tuổi phải ghi thêm gì?": [
+      "c6"
+    ],
+    "Theo Thông tư 36/2025/TT-BYT, cơ sở bị yêu cầu khắc phục có bao nhiêu ngày để khắc phục?": [
+      "c6"
+    ],
+    "Theo Thông tư 36/2025/TT-BYT, sau khi nhận báo cáo khắc phục kèm bằng chứng, Sở Y tế đánh giá trong bao nhiêu ngày?": [
+      "c6"
+    ],
+    "Theo Thông tư 44/2025/TT-BYT, Cục Hạ tầng và Thiết bị y tế được giao quyền gì (Điều 2)?": [
+      "c13"
+    ],
+    "Theo Thông tư 49/2025/TT-BYT, cơ quan cấp lương y cấp giấy trong bao nhiêu ngày làm việc kể từ khi nhận hồ sơ hợp lệ?": [
+      "c13"
+    ],
+    "Theo Thông tư 49/2025/TT-BYT, nếu hồ sơ xin giấy chứng nhận lương y chưa hợp lệ, cơ quan tiếp nhận phải thông báo bổ sung trong bao nhiêu ngày làm việc?": [
+      "c13"
+    ],
+    "Thiết bị y tế nào được thanh toán trực tiếp theo Thông tư 22/2024/TT-BYT?": [
+      "c5"
+    ],
+    "Thông tin giới tính thai nhi có được tiết lộ không?": [
+      "c8"
+    ],
+    "Thông tư 13/2025/TT-BYT làm hết hiệu lực Thông tư nào về hồ sơ bệnh án điện tử?": [
+      "c13",
+      "c11"
+    ],
+    "Thông tư 13/2026/TT-BYT quy định hoạt động nào?": [
+      "c14"
+    ],
+    "Thông tư 18/2026/TT-BYT quản lý nhóm thuốc nào?": [
+      "c6",
+      "c14"
+    ],
+    "Thông tư 25/2026/TT-BYT thay thế toàn bộ Điều nào của Thông tư 32/2023 về khám sức khỏe?": [
+      "c11",
+      "c13"
+    ],
+    "Thông tư 29/2025/TT-BYT quy định đăng ký lưu hành nhóm sản phẩm nào?": [
+      "c6",
+      "c14"
+    ],
+    "Thông tư 32/2026/TT-BYT quy định việc gì?": [
+      "c6",
+      "c14"
+    ],
+    "Thông tư 33/2026/TT-BYT hướng dẫn nhóm nội dung nào?": [
+      "c14"
+    ],
+    "Thông tư 50/2025/TT-BYT quy định về hoạt động nào?": [
+      "c6",
+      "c14"
+    ],
+    "Thông tư là văn bản do ai ban hành và có vai trò gì?": [
+      "c10"
+    ],
+    "Thời gian cấp thuốc tối đa cho một thuốc theo đơn ngoại trú (Thông tư 26/2025/TT-BYT) là bao nhiêu ngày, trừ bệnh mạn tính?": [
+      "c6"
+    ],
+    "Thu thập và xử lý thông tin sức khỏe của người bệnh có cần sự đồng ý của người đó không?": [
+      "c7"
+    ],
+    "Thuốc kê đơn bán qua thương mại điện tử có được bán tự do không?": [
+      "c6"
+    ],
+    "Tính xã hội của pháp luật thể hiện ở điều gì?": [
+      "c10"
+    ],
+    "Trẻ em dưới 6 tuổi được BHYT chi trả bao nhiêu % chi phí trong phạm vi?": [
+      "c4"
+    ],
+    "Trong giấy phép hành nghề, thông tin nhận dạng của người hành nghề Việt Nam là gì?": [
+      "c2"
+    ],
+    "Từ đủ bao nhiêu tuổi người có năng lực hành vi dân sự được tự nguyện yêu cầu xét nghiệm HIV?": [
+      "c7"
+    ],
+    "Văn bản nào có hiệu lực pháp lý cao nhất trong hệ thống văn bản pháp luật Việt Nam?": [
+      "c10"
+    ],
+    "Việc hiến mô, bộ phận cơ thể người và hiến xác được thực hiện theo gì?": [
+      "c9",
+      "c10"
+    ],
+    "Với thuốc kê đơn, Luật Dược sửa đổi yêu cầu công bố loại giá nào?": [
+      "c6"
+    ],
+    "Xét nghiệm khẳng định HIV dương tính được thực hiện ở đâu?": [
+      "c7"
+    ]
+  }
+}

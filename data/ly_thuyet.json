@@ -216,15 +216,15 @@
         },
         {
           "tieu_de": "Cấp cứu và trái tuyến",
-          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào được hưởng 100%. Khám trái tuyến (không cấp cứu): nội trú tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh). Khám ngoại trú tại cơ sở cấp ban đầu được hưởng như đúng tuyến; nội trú tại cơ sở cấp cơ bản cũng được hưởng 100% mức hưởng.",
+          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào được hưởng 100%. Khám trái tuyến (không cấp cứu): nội trú tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh hoặc tuyến huyện). Khám ngoại trú tại cơ sở cấp ban đầu được hưởng như đúng tuyến; nội trú tại cơ sở cấp cơ bản cũng được hưởng 100% mức hưởng. Ngoại trú trái tuyến chỉ có mức 50% trong trường hợp hẹp: cơ sở cấp chuyên sâu mà trước 01/01/2025 là tuyến tỉnh, từ 01/07/2026 (Nghị định 188/2025 Điều 19 khoản 4); không áp dụng chung cho mọi bệnh viện.",
           "vi_du": "Một người tự đến bệnh viện tuyến trung ương để điều trị nội trú, không thuộc ngoại lệ: quỹ thanh toán 40% mức hưởng. Nếu vào cấp cứu, hưởng 100%.",
           "hay_nham": "Nghĩ mọi trường hợp nội trú trái tuyến đều hưởng 100%. Chỉ cấp cứu và các ngoại lệ được quy định mới hưởng 100%; nội trú chuyên sâu thông thường là 40%.",
-          "nguon": "Điều 22 khoản 4 Luật BHYT 51/2024/QH15; Điều 22 khoản 1 và khoản 5 về mức hưởng/cấp cứu.",
+          "nguon": "Điều 22 khoản 4 (điểm a, b, đ, g, h) Luật BHYT 51/2024/QH15; Điều 22 khoản 1 và khoản 5 về mức hưởng/cấp cứu; Nghị định 188/2025/NĐ-CP Điều 19 khoản 4 về ngoại trú 50% từ 01/07/2026 (đã đối chiếu văn bản Công báo).",
           "verify": false
         },
         {
           "tieu_de": "Điều kiện 5 năm và hộ gia đình",
-          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định. Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
+          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định (Luật dùng cụm “6 lần mức tham chiếu”; Nghị định 188/2025 Điều 18 khoản 2 viết là “06 tháng lương cơ sở”). Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
           "vi_du": "Một hộ có 4 người đóng BHYT: người thứ hai đóng 70% mức của người thứ nhất, người thứ tư đóng 50%.",
           "hay_nham": "Dùng con số 6 lần cho mọi trường hợp, hoặc quên điều kiện liên tục 5 năm.",
           "nguon": "Luật BHYT sửa đổi 2024, Điều 22 khoản 1 điểm d: 5 năm liên tục và cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (đã đối chiếu). Nghị định 188/2025, Điều 18 khoản 2 hướng dẫn (đã đối chiếu).",

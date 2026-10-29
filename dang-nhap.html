@@ -180,10 +180,11 @@ document.querySelectorAll('.toggle-pw').forEach(b => b.onclick = () => {
 });
 
 function setMsg(el, text) { el.textContent = text || ''; el.classList.toggle('show', !!text); }
-const errText = (data, fallback) => (data && data.error && data.error.message) || fallback;
+const NO_SERVER = 'Tính năng tài khoản chưa có ở bản này. Tiến độ vẫn lưu trên máy bạn.';
+const errText = (data, fallback, status) => (status === 404 || status === 405 || status === 501) ? NO_SERVER : ((data && data.error && data.error.message) || fallback);
 
 async function refresh() {
-  const r = await fetch('/api/me', { credentials: 'same-origin' });
+  const r = await fetch('/api/me', { credentials: 'same-origin' }).catch(() => ({ ok: false }));
   if (r.ok) {
     const d = await r.json();
     const u = d.user || {};
@@ -215,7 +216,7 @@ $('form-login').onsubmit = async e => {
     });
     const data = await r.json().catch(() => ({}));
     f.password.value = '';
-    if (!r.ok) { setMsg($('login-err'), errText(data, 'Không đăng nhập được. Thử lại.')); return; }
+    if (!r.ok) { setMsg($('login-err'), errText(data, 'Không đăng nhập được. Thử lại.', r.status)); return; }
     // Đăng nhập xong thì về sổ tay
     // Quay lại trang đang xem trước khi đăng nhập (chỉ chấp nhận đường dẫn nội bộ)
     var nx = new URLSearchParams(location.search).get('next') || 'index.html?skip=1';
@@ -241,7 +242,7 @@ $('form-register').onsubmit = async e => {
       }),
     });
     const data = await r.json().catch(() => ({}));
-    if (!r.ok) { setMsg($('register-err'), errText(data, 'Không tạo được tài khoản. Thử lại.')); return; }
+    if (!r.ok) { setMsg($('register-err'), errText(data, 'Không tạo được tài khoản. Thử lại.', r.status)); return; }
     const name = f.username.value.trim();
     f.reset();
     showTab('login');

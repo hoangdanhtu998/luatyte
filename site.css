@@ -104,7 +104,11 @@ select { min-height: var(--ctl); padding: 0 var(--space-sm); max-width: 100%; mi
 .remind input[type=time] { min-height: var(--ctl); padding: 0 var(--space-sm); background: var(--color-paper); color: var(--color-ink); border: 1px solid var(--color-field); border-radius: 10px; }
 .achv-row { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-top: var(--space-md); }
 .achv { font-size: var(--text-xs); font-weight: 600; color: var(--color-muted); background: transparent; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); padding: var(--space-3xs) var(--space-sm); }
+.achv::before { content: "○"; margin-right: 4px; opacity: .6; font-size: .9em; }
 .achv.on { color: var(--color-accent-soft-ink); background: var(--color-accent-soft); box-shadow: none; }
+.achv.on::before { content: "✓"; opacity: 1; }
+.achv.more { background: transparent; border: 0; cursor: pointer; font-family: inherit; box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
+.achv.more::before { content: "+"; opacity: 1; }
 
 /* ===== Thanh tab ===== */
 nav.tabs {
@@ -116,6 +120,10 @@ nav.tabs .ind { position: absolute; bottom: -1px; left: 0; width: 0; height: 2px
 nav.tabs button { flex: none; min-height: 44px; padding: 0 var(--space-md); background: none; border: 0; color: var(--color-muted); font-size: var(--text-sm); font-weight: 600; white-space: nowrap; cursor: pointer; transition: color var(--dur-micro) var(--ease-out); }
 nav.tabs button:hover { color: var(--color-ink); }
 nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
+@media (min-width: 900px) {
+  nav.tabs { gap: 2px; flex-wrap: wrap; overflow-x: visible; }
+  nav.tabs button { padding: 0 12px; }
+}
 
 /* ===== Panel ===== */
 .panel { display: flex; flex-direction: column; gap: var(--space-md); }
@@ -127,7 +135,7 @@ nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
 .search input { width: 100%; min-height: var(--ctl); color: var(--color-ink); background: var(--color-paper); border: 1px solid var(--color-field); border-radius: 10px; padding: 0 var(--space-md) 0 var(--space-xl); }
 .search input:hover, select:hover { border-color: var(--color-ink); }
 .search input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.cats { display: flex; gap: var(--space-xs); overflow-x: auto; scrollbar-width: none; padding: var(--space-3xs); margin: calc(var(--space-3xs) * -1); }
+.cats { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding: var(--space-3xs); margin: calc(var(--space-3xs) * -1); }
 .cats::-webkit-scrollbar { display: none; }
 .laws { border-top: 1px solid var(--color-ink); }
 .law { border-bottom: 1px solid var(--color-rule); background: none; }
@@ -243,6 +251,16 @@ input.cloze:focus-visible { outline: 2px solid var(--color-focus); outline-offse
 .ex-nav button.did { background: var(--color-accent-soft); color: var(--color-accent-soft-ink); border-color: var(--color-accent); }
 .ex-nav button.ok { background: var(--color-accent-soft); border-color: var(--color-accent); color: var(--color-accent-soft-ink); }
 .ex-nav button.no { background: var(--color-error-soft); border-color: var(--color-error); color: var(--color-error-ink); }
+.ex-chapter-box { display: grid; gap: var(--space-xs); margin-top: var(--space-sm); }
+.ex-chapters { margin: 0; padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-rule); border-radius: 10px; min-width: 0; }
+.ex-chapter-tools { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-bottom: var(--space-2xs); }
+.ex-chapter-tools .btn { min-height: 44px; }
+.ex-ch { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-xs); align-items: center; min-height: 44px; padding: 4px 0; border-top: 1px solid var(--color-rule); font-size: var(--text-sm); }
+.ex-ch:first-of-type { border-top: 0; }
+.ex-ch input { width: 20px; height: 20px; margin: 0; }
+.ex-ch.off { color: var(--color-muted); }
+.ex-weak { margin-top: var(--space-sm); }
+#ex-form .btn, #ex-form select, #ex-stage .btn { min-height: 44px; }
 
 /* ===== Nút trợ lý nổi và ngăn trợ lý ===== */
 .bot-fab { position: fixed; right: max(var(--space-md), env(safe-area-inset-right, 0px)); bottom: max(var(--space-md), env(safe-area-inset-bottom, 0px)); z-index: var(--z-sticky-nav); display: flex; align-items: center; gap: var(--space-sm); border: 0; border-radius: 10px; background: var(--color-ink); color: var(--color-paper); padding: var(--space-2xs) var(--space-md) var(--space-2xs) var(--space-2xs); font-weight: 600; font-size: var(--text-sm); cursor: pointer; }
@@ -552,3 +570,23 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
 
 .acct { margin-left: auto; align-self: flex-start; }
 .acct .linkbtn { font-size: var(--text-sm); white-space: nowrap; max-width: 220px; overflow: hidden; text-overflow: ellipsis; display: inline-block; }
+
+/* ===== Lộ trình theo vai trò ===== */
+.role-card { display: grid; gap: var(--space-sm); }
+.role-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-sm); flex-wrap: wrap; }
+.role-picker { display: grid; grid-template-columns: 1fr; gap: var(--space-xs); }
+.role-btn { min-height: 48px; padding: 10px 12px; text-align: left; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper); color: var(--color-ink); font: inherit; cursor: pointer; }
+.role-btn:hover { border-color: var(--color-ink); }
+.role-btn[aria-pressed="true"] { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.role-btn b { display: block; font-size: 14px; }
+.role-btn span { display: block; margin-top: 3px; color: var(--color-muted); font-size: 12px; line-height: 1.4; }
+.role-summary { display: flex; justify-content: space-between; gap: var(--space-sm); align-items: baseline; flex-wrap: wrap; }
+.role-ch { padding: 12px 0; border-top: 1px solid var(--color-rule); }
+.role-ch:first-child { border-top: 0; padding-top: 0; }
+.role-ch-head { display: flex; justify-content: space-between; gap: var(--space-sm); align-items: baseline; }
+.role-ch-head b { font-size: 14px; }
+.role-ch .prog-bar { margin-top: 8px; }
+.role-ch-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.role-ch-actions .btn, .role-ch-actions a.btn { min-height: 44px; }
+.role-empty { margin: 6px 0 0; color: var(--color-muted); font-size: 13px; }
+@media (min-width: 620px) { .role-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

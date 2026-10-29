@@ -1,11 +1,11 @@
 /* sw.js — Sổ tay Luật Y tế: network-first (bản mới khi có mạng), cache khi ngoại tuyến */
-const V = "lyt-v28";
+const V = "lyt-v37";
 const CORE = [
-  "./", "index.html", "clinic.html", "site.css", "tokens.css", "base.css", "js/hospital.js", "tin_luat.html", "tham_chieu.html", "ly_thuyet.html", "404.html",
+  "./", "index.html", "game.html", "clinic.html", "site.css", "tokens.css", "base.css", "js/hospital.js", "tin_luat.html", "tham_chieu.html", "ly_thuyet.html", "404.html",
   "manifest.json", "icon.svg",
-  "js/search.js", "js/avatar.js",
-  "data/laws.json", "data/quiz.json", "data/tf.json", "data/factpairs.json",
-  "data/quiz_his.json", "data/quiz_lythuyet.json", "data/quiz_nentang.json",
+  "js/search.js", "js/progress-compat.js", "js/exam-builder.js", "js/avatar.js", "js/swipe-core.js", "js/plan-badge.js", "js/clinic3d.js",
+  "data/laws.json", "data/quiz.json", "data/tf.json", "data/factpairs.json", "data/lo-trinh-vai-tro.json",
+  "data/quiz_his.json", "data/quiz_lythuyet.json", "data/quiz_nentang.json", "data/quiz_bhyt.json",
   "data/khoa_phong.json", "data/ly_thuyet.json", "data/tra_loi_nhanh.json", "data/tin_luat.json", "data/tham-chieu.json"
 ];
 self.addEventListener("install", e => {
@@ -22,6 +22,6 @@ self.addEventListener("fetch", e => {
       const cp = r.clone();
       caches.open(V).then(c => c.put(e.request, cp));
       return r;
-    }).catch(() => caches.match(e.request).then(h => h || caches.match("./")))
+    }).catch(() => caches.match(e.request).then(h => h || caches.match(e.request, { ignoreSearch: true })).then(h => h || caches.match("./")))
   );
 });
