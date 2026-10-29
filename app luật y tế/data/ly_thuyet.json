@@ -78,7 +78,7 @@
         {
           "tieu_de": "Hiệu lực và thay thế",
           "giai_thich": "Một văn bản có ngày hiệu lực riêng. Khi văn bản mới có hiệu lực, văn bản cũ có thể bị thay thế hoặc sửa đổi. Quy tắc: nếu hai văn bản trùng nội dung mà đáp án khác nhau, áp dụng văn bản mới hơn theo ngày hiệu lực.",
-          "vi_du": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật 40/2009. Luật Dân số 113/2025 có hiệu lực từ 01/07/2026 và sẽ thay Pháp lệnh Dân số 06/2003 khi có hiệu lực.",
+          "vi_du": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật 40/2009. Luật Dân số 113/2025 có hiệu lực từ 01/07/2026 và đã thay thế Pháp lệnh Dân số 06/2003 từ 01/07/2026.",
           "hay_nham": "Học theo luật cũ đã bị thay. Ví dụ: Luật Phòng bệnh truyền nhiễm 03/2007 đã bị thay bởi Luật Phòng bệnh 114/2025, hiệu lực từ 01/07/2026.",
           "nguon": "laws.json, trường replaces và eff",
           "verify": false
@@ -249,10 +249,10 @@
       "buoc": [
         {
           "tieu_de": "Khung giá và mức giá cụ thể",
-          "giai_thich": "Từ 01/01/2025, Thông tư 21/2023 và Thông tư 22/2023 về giá dịch vụ khám bệnh, chữa bệnh đã hết hiệu lực. Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh; mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung. Các tỷ lệ 70%/30% và cách xếp hạng cơ sở theo thông tư cũ không còn là căn cứ hiện hành.",
+          "giai_thich": "Từ 01/01/2025, Thông tư 21/2023 và Thông tư 22/2023 về giá dịch vụ khám bệnh, chữa bệnh đã hết hiệu lực. Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh (được sửa đổi bởi Thông tư 39/2024/TT-BYT); mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung. Các tỷ lệ 70%/30% và cách xếp hạng cơ sở theo thông tư cũ không còn là căn cứ hiện hành.",
           "vi_du": "Khi tra giá dịch vụ tại địa phương, xem nghị quyết giá của HĐND tỉnh ban hành theo Thông tư 21/2024/TT-BYT, không dùng khung giá 2023.",
           "hay_nham": "Vẫn áp dụng 70% cho trạm y tế hoặc 30% cho lần khám chuyên khoa thứ hai theo Thông tư 21/2023 và 22/2023 đã hết hiệu lực.",
-          "nguon": "Thông tư 21/2024/TT-BYT (hiệu lực 17/10/2024); Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 39/2024/TT-BYT; Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
           "verify": false
         },
         {
@@ -502,10 +502,10 @@
         },
         {
           "tieu_de": "Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
-          "giai_thich": "Số hiệu: 21/2024/TT-BYT. Hiệu lực: 17/10/2024. Thay thế Thông tư 21/2023 và 22/2023 từ 01/01/2025; quy định phương pháp định giá, mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung.",
+          "giai_thich": "Số hiệu: 21/2024/TT-BYT. Hiệu lực: 17/10/2024. Thay thế Thông tư 21/2023 và 22/2023 từ 01/01/2025; quy định phương pháp định giá, mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung. Thông tư 21/2024 được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
           "vi_du": "Tra giá dịch vụ KCB tại địa phương theo nghị quyết giá của HĐND tỉnh.",
           "hay_nham": "Dùng khung giá và tỷ lệ 70%/30% của thông tư 2023 đã hết hiệu lực.",
-          "nguon": "Thông tư 21/2024/TT-BYT; chinhphu.vn docid 211506",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 39/2024/TT-BYT; chinhphu.vn docid 211506",
           "verify": false
         },
         {
