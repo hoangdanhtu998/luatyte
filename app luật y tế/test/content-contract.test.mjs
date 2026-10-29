@@ -22,6 +22,8 @@ const nonEmpty = v => typeof v === 'string' && v.trim().length > 0;
 export function validateContent(input) {
   const errors = [];
   const push = (file, id, field, message) => errors.push({ file, id, field, message });
+  const lawIds = new Set(Array.isArray(input.laws) ? input.laws.map(l => l.id).filter(nonEmpty) : []);
+  const genericTopics = new Set(['his', 'lythuyet', 'nentang']);
   const checkQuizSet = (file, rows) => {
     if (!Array.isArray(rows)) return push(file, '-', 'root', 'phải là mảng');
     const seen = new Set();
@@ -30,6 +32,8 @@ export function validateContent(input) {
       if (!nonEmpty(q.q)) push(file, id, 'q', 'thiếu nội dung câu hỏi');
       if (nonEmpty(q.q) && seen.has(q.q)) push(file, id, 'q', 'câu hỏi bị trùng');
       seen.add(q.q);
+      if (!nonEmpty(q.t)) push(file, id, 't', 'thiếu mã chủ đề/luật');
+      else if (!lawIds.has(q.t) && !genericTopics.has(q.t)) push(file, id, 't', `không trỏ tới law id hoặc chủ đề chung: ${q.t}`);
       if (!Array.isArray(q.o) || q.o.length < 3) push(file, id, 'o', 'phải có ít nhất 3 lựa chọn');
       if (Array.isArray(q.o) && new Set(q.o).size !== q.o.length) push(file, id, 'o', 'lựa chọn bị trùng');
       if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.o?.length || 0)) push(file, id, 'a', 'đáp án ngoài phạm vi');
@@ -116,12 +120,13 @@ test('bộ câu đặc thù đúng 8 và mọi câu đều tồn tại trong d�
   for (const q of metaTf) assert.ok(tf.some(row => row[0] === q), `META_TF không có trong dữ liệu: ${q}`);
 });
 
-test('contract chặn được fixture thiếu trường, trùng id và đáp án sai', () => {
+test('contract chặn được fixture thiếu trường, trùng id, t sai và đáp án sai', () => {
   const badLaws = structuredClone(laws);
   delete badLaws[0].so;
   const badQuizzes = structuredClone(quizzes);
   badQuizzes['quiz.json'].push({ ...badQuizzes['quiz.json'][0] });
   badQuizzes['quiz_bhyt.json'][0].a = 99;
+  badQuizzes['quiz_lythuyet.json'][0].t = 'khong_ton_tai';
 
   const errors = validateContent({
     laws: badLaws,
@@ -132,6 +137,7 @@ test('contract chặn được fixture thiếu trường, trùng id và đáp á
   assert.ok(errors.some(e => e.file === 'laws.json' && e.field === 'so'), 'phải bắt thiếu số hiệu');
   assert.ok(errors.some(e => e.file === 'quiz.json' && e.field === 'q' && e.message.includes('trùng')), 'phải bắt trùng câu hỏi');
   assert.ok(errors.some(e => e.file === 'quiz_bhyt.json' && e.field === 'a'), 'phải bắt đáp án ngoài phạm vi');
+  assert.ok(errors.some(e => e.file === 'quiz_lythuyet.json' && e.field === 't'), 'phải bắt t không trỏ tới luật/chủ đề hợp lệ');
 
   const badAnswer2 = structuredClone(quizzes);
   badAnswer2['quiz.json'][0].a = 99;
