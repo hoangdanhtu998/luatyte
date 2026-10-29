@@ -150,7 +150,10 @@
       if (im && im.complete && im.naturalWidth) { bctx.imageSmoothingEnabled = false; bctx.drawImage(im, b.x * TS, b.y * TS, b.w * TS, b.h * TS); }
     });
   }
-  var toLoad = ROOMS.map(function (r) { return { key: r.id, file: r.id === "daliễu" ? "dalieu" : r.id }; })
+  // Khoa chưa có ảnh trong bộ tranh (Tiếp đón): không yêu cầu ảnh, giữ nền màu của khoa.
+  var NO_ROOM_IMG = { tiepdon: true };
+  var toLoad = ROOMS.filter(function (r) { return !NO_ROOM_IMG[r.id]; })
+    .map(function (r) { return { key: r.id, file: r.id === "daliễu" ? "dalieu" : r.id }; })
     .concat([{ key: "mr1", file: "mr1" }, { key: "mr2", file: "mr2" }]);
   var loaded = 0;
   function onOne() { loaded++; if (loaded === toLoad.length) drawOverlays(); }
@@ -176,7 +179,7 @@
   };
   var FPS = { walk: 9, idle: 2.5, greet: 3, examine: 1.6, write: 2.2, carry: 2.2, inject: 3, sit: 2 };
   var ACTS = {};
-  function loadAct(name) { if (!ACTS[name]) { var im = new Image(); im.src = "img/pixel/actions/" + name + ".png"; ACTS[name] = im; } return ACTS[name]; }
+  function loadAct(name) { if (!name) return null; if (!ACTS[name]) { var im = new Image(); im.src = "img/pixel/actions/" + name + ".png"; ACTS[name] = im; } return ACTS[name]; }
 
   function bfs(sx, sy, tx, ty) {
     var prev = {}, q = [[sx, sy]], seen = {};
@@ -253,9 +256,9 @@
     var seqName = doc.walking ? "walk" : (doc.hold > 0 && doc.act !== "idle" ? doc.act : "idle");
     var seq = SEQ[seqName] || SEQ.idle;
     var fps = FPS[seqName] || 2.5;
-    var frame = seq[Math.floor(doc.t * fps) % seq.length];
+    var frame = seq[Math.floor(doc.t * fps) % seq.length] || seq[0];
     var im = loadAct(frame);
-    if (im.complete && im.naturalWidth) {
+    if (im && im.complete && im.naturalWidth) {
       var scale = 36 / im.naturalHeight;
       var dw = Math.round(im.naturalWidth * scale), dh = 36;
       var cx = Math.round(doc.x * TS + TS / 2), fy = Math.round(doc.y * TS + TS);
