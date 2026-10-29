@@ -251,6 +251,16 @@ input.cloze:focus-visible { outline: 2px solid var(--color-focus); outline-offse
 .ex-nav button.did { background: var(--color-accent-soft); color: var(--color-accent-soft-ink); border-color: var(--color-accent); }
 .ex-nav button.ok { background: var(--color-accent-soft); border-color: var(--color-accent); color: var(--color-accent-soft-ink); }
 .ex-nav button.no { background: var(--color-error-soft); border-color: var(--color-error); color: var(--color-error-ink); }
+.ex-chapter-box { display: grid; gap: var(--space-xs); margin-top: var(--space-sm); }
+.ex-chapters { margin: 0; padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-rule); border-radius: 10px; min-width: 0; }
+.ex-chapter-tools { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-bottom: var(--space-2xs); }
+.ex-chapter-tools .btn { min-height: 44px; }
+.ex-ch { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-xs); align-items: center; min-height: 44px; padding: 4px 0; border-top: 1px solid var(--color-rule); font-size: var(--text-sm); }
+.ex-ch:first-of-type { border-top: 0; }
+.ex-ch input { width: 20px; height: 20px; margin: 0; }
+.ex-ch.off { color: var(--color-muted); }
+.ex-weak { margin-top: var(--space-sm); }
+#ex-form .btn, #ex-form select, #ex-stage .btn { min-height: 44px; }
 
 /* ===== Nút trợ lý nổi và ngăn trợ lý ===== */
 .bot-fab { position: fixed; right: max(var(--space-md), env(safe-area-inset-right, 0px)); bottom: max(var(--space-md), env(safe-area-inset-bottom, 0px)); z-index: var(--z-sticky-nav); display: flex; align-items: center; gap: var(--space-sm); border: 0; border-radius: 10px; background: var(--color-ink); color: var(--color-paper); padding: var(--space-2xs) var(--space-md) var(--space-2xs) var(--space-2xs); font-weight: 600; font-size: var(--text-sm); cursor: pointer; }
