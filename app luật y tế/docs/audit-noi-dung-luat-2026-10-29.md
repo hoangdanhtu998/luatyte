@@ -107,3 +107,11 @@ Phạm vi: 41 văn bản sau bổ sung; 187 câu trắc nghiệm (72 + 15 + 44 +
 - 8 câu về giá theo Thông tư 21/2023/22/2023 được giữ làm câu lịch sử, có cảnh báo “chờ đối chiếu”; chưa thay bằng bảng giá cụ thể vì mức giá hiện hành do từng địa phương quyết định và cần đối chiếu nghị quyết giá của tỉnh.
 - Không thay đổi dữ liệu người dùng, không sửa `index.html` ngoài chuỗi câu hỏi đặc thù và phần UI đã nêu.
 
+
+## 8. Chuyên đề xử phạt hành chính (bổ sung 29/10/2026)
+
+- **Văn bản áp dụng:** Nghị định **90/2026/NĐ-CP** ngày 30/03/2026, hiệu lực **15/05/2026**, thay thế Nghị định 117/2020/NĐ-CP và các văn bản sửa đổi, bổ sung. Nguồn: [Cổng Chính phủ](https://chinhphu.vn/?pageid=27160&docid=217386); toàn văn PDF: [viendinhduong.vn](https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf).
+- **Đã thêm:** 1 văn bản vào `laws.json` (mã `nd90_2026_xu_phat`, danh mục “Xử phạt hành chính”), 12 câu tình huống vào `quiz.json` (mã chuyên đề cùng tên), chương lý thuyết **c15**.
+- **Nội dung đã đối chiếu:** phạm vi 6 nhóm; mức phạt tối đa 30/60 triệu (dân số), 50/100 (y tế dự phòng, HIV), 75/150 (BHYT), 100/200 (KCB, dược, mỹ phẩm, thiết bị y tế); tổ chức gấp đôi cá nhân; hành nghề không phép 30-40 triệu; cơ sở KCB không có giấy phép hoạt động 40-50 triệu; từ chối/chậm cấp cứu 30-40 triệu; xâm phạm nhân viên y tế 30-40 triệu; không lưu hồ sơ bệnh án 1-3 triệu; kê đơn sai 10-20 triệu; hình thức bổ sung tước giấy phép/đình chỉ 1-24 tháng.
+- **Không dùng NĐ117/2020 làm hiện hành:** văn bản này đã hết hiệu lực từ 15/05/2026; chỉ nhắc trong phần lịch sử/ghi chú thay thế.
+- **Sau bổ sung:** 42 văn bản, 199 câu trắc nghiệm (72 + 12 + 15 + 44 + 48 + 8), 23 Đúng/Sai, 15 chương lý thuyết. Bộ 8 câu đặc thù giữ nguyên.

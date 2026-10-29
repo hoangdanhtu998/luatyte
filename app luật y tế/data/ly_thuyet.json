@@ -910,6 +910,59 @@
           "dap": "Dữ liệu cá nhân nhạy cảm theo Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15."
         }
       ]
+    },
+    {
+      "id": "c15",
+      "ten": "Xử phạt hành chính trong y tế: đọc đúng mức phạt",
+      "muc_tieu": "Nhận diện nhóm hành vi vi phạm, mức phạt tiền, hình thức xử phạt bổ sung và nguyên tắc trách nhiệm của tổ chức; không học vẹt toàn bộ khung phạt.",
+      "buoc": [
+        {
+          "tieu_de": "Văn bản đang áp dụng và phạm vi điều chỉnh",
+          "giai_thich": "Từ 15/05/2026, Nghị định 90/2026/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực y tế, thay thế Nghị định 117/2020/NĐ-CP và các văn bản sửa đổi, bổ sung. Phạm vi gồm 6 nhóm: y tế dự phòng và phòng, chống HIV/AIDS; khám bệnh, chữa bệnh; dược, mỹ phẩm; thiết bị y tế; bảo hiểm y tế; dân số.",
+          "vi_du": "Một cơ sở bán thuốc không có giấy phép hoạt động được xem xét theo nhóm dược; một phòng khám hoạt động không phép theo nhóm khám bệnh, chữa bệnh.",
+          "hay_nham": "Vẫn tra khung phạt cũ tại Nghị định 117/2020/NĐ-CP dù hành vi xảy ra sau ngày 15/05/2026.",
+          "nguon": "Điều 1 Nghị định 90/2026/NĐ-CP; Điều 4 về mức phạt tối đa.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Mức trần và nguyên tắc tổ chức bị phạt gấp đôi",
+          "giai_thich": "Mức phạt tiền tối đa theo lĩnh vực: dân số 30 triệu đồng với cá nhân, 60 triệu đồng với tổ chức; y tế dự phòng và HIV/AIDS 50/100 triệu đồng; bảo hiểm y tế 75/150 triệu đồng; khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế 100/200 triệu đồng. Cùng một hành vi, tổ chức bị phạt gấp 02 lần cá nhân. Khung phạt ghi trong Chương II là mức của cá nhân, nên khi xác định trách nhiệm tổ chức phải nhân đôi.",
+          "vi_du": "Cá nhân cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt 40-50 triệu đồng; nếu tổ chức thực hiện hành vi đó thì khung áp dụng là 80-100 triệu đồng, trong giới hạn tối đa 200 triệu đồng.",
+          "hay_nham": "Đọc khung tiền phạt của cá nhân rồi áp nguyên cho bệnh viện, công ty hoặc hợp tác xã.",
+          "nguon": "Điều 4 khoản 1-5 Nghị định 90/2026/NĐ-CP.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Nhóm hành vi khám bệnh, chữa bệnh đáng nhớ",
+          "giai_thich": "Các mức thường gặp: hành nghề không có giấy phép/chứng chỉ 30-40 triệu đồng; cơ sở cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động 40-50 triệu đồng; cung cấp dịch vụ vượt phạm vi chuyên môn 40-50 triệu đồng; từ chối hoặc cố ý chậm cấp cứu 30-40 triệu đồng; xâm phạm thân thể, sức khỏe, danh dự, nhân phẩm nhân viên y tế 30-40 triệu đồng; không lập hoặc không lưu hồ sơ bệnh án 1-3 triệu đồng; kê đơn không phù hợp chẩn đoán hoặc kê sản phẩm không được phép 10-20 triệu đồng.",
+          "vi_du": "Một bác sĩ không có giấy phép hành nghề nhưng vẫn khám bệnh bị phạt 30-40 triệu đồng; nếu là cơ sở không có giấy phép hoạt động thì khung là 40-50 triệu đồng.",
+          "hay_nham": "Nhầm hành nghề không phép của cá nhân với cơ sở hoạt động không phép; hai hành vi có khung phạt khác nhau.",
+          "nguon": "Điều 38 khoản 7; Điều 39 khoản 6; Điều 40 khoản 1; Điều 41 khoản 2 Nghị định 90/2026/NĐ-CP.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Hình thức bổ sung, khắc phục và thẩm quyền",
+          "giai_thich": "Ngoài cảnh cáo và phạt tiền, Nghị định còn quy định tước quyền sử dụng giấy phép, chứng chỉ hành nghề từ 01 đến 24 tháng; tịch thu tang vật, phương tiện; đình chỉ hoạt động từ 01 đến 24 tháng. Tùy hành vi, cơ sở có thể bị buộc xin lỗi, nộp lại lợi nhuận bất hợp pháp, khắc phục hậu quả hoặc chi trả chi phí khám bệnh. Thẩm quyền xử phạt được quy định tại Chương III; vi phạm trên môi trường điện tử thực hiện theo Nghị định 118/2021/NĐ-CP (sửa đổi bởi Nghị định 68/2025/NĐ-CP và Nghị định 190/2025/NĐ-CP).",
+          "vi_du": "Cơ sở vượt phạm vi chuyên môn có thể bị đình chỉ hoạt động 12-24 tháng tùy điểm, khoản vi phạm; người hành nghề có thể bị tước giấy phép 1-24 tháng.",
+          "hay_nham": "Chỉ nhìn số tiền phạt mà bỏ qua việc bị đình chỉ hoạt động, tước giấy phép hoặc buộc khắc phục hậu quả.",
+          "nguon": "Điều 3 Nghị định 90/2026/NĐ-CP; Chương III về thẩm quyền xử phạt.",
+          "verify": false
+        }
+      ],
+      "on_nhanh": [
+        {
+          "hoi": "Cơ sở khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt bao nhiêu với cá nhân?",
+          "dap": "40-50 triệu đồng; tổ chức gấp đôi."
+        },
+        {
+          "hoi": "Tổ chức vi phạm cùng hành vi với cá nhân thì mức phạt thế nào?",
+          "dap": "Gấp 02 lần mức phạt của cá nhân."
+        },
+        {
+          "hoi": "Mức phạt tối đa trong lĩnh vực khám bệnh, chữa bệnh, dược và thiết bị y tế là bao nhiêu?",
+          "dap": "100 triệu đồng với cá nhân và 200 triệu đồng với tổ chức."
+        }
+      ]
     }
   ],
   "nguon": "Luật BHYT 51/2024/QH15"

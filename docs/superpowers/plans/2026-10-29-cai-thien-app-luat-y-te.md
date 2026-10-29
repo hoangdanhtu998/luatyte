@@ -133,3 +133,7 @@
 - P4: error boundary server, fallback clinic3d, `scripts/check-local.mjs`, `scripts/security-smoke.mjs` (8/8), compose config pass; runtime VPS chưa chạy.
 - P5: root README, đồng bộ docs, regression cuối.
 - Blocked/unverified: Task 23 không có điện thoại thật; Task 47 chưa có VPS. Không có task nào bị bỏ qua mà không ghi lý do.
+
+## Follow-up 29/10/2026 — chuyên đề xử phạt hành chính
+- Đã thêm Nghị định 90/2026/NĐ-CP (thay NĐ117/2020 từ 15/05/2026), 12 câu tình huống và chương lý thuyết c15; tổng 42 văn bản / 199 câu / 15 chương.
+- Đã kiểm contract, UI quiz/thi thử, mobile/desktop, offline và security smoke; chi tiết trong `app luật y tế/docs/audit-noi-dung-luat-2026-10-29.md` mục 8.
