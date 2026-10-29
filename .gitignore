@@ -13,7 +13,8 @@ ogam/
 
 # Learning app generated/private content
 app luật y tế/archify/
-app luật y tế/img/
+app luật y tế/img/*
+!app luật y tế/img/pixel/
 app luật y tế/public/audio/
 app luật y tế/slides-ly-thuyet/public/audio/
 app luật y tế/data/bhyt-cases.draft.json
