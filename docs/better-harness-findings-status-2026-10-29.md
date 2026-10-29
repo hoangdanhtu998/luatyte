@@ -18,4 +18,4 @@ Nguồn finding: `.qoder/better-harness-runs/20261029-1500/findings.json`. Lư�
 
 ## Việc chuyển phiên nội dung pháp lý
 
-Ghi chú `app luật y tế/docs/nghien-cuu-do-phu-noi-dung-2026-10-29.md` phát hiện `laws.json` mục `bhyt` vẫn còn dòng tóm tắt 40% trái với quiz/lý thuyết đã sửa. Lượt này **không sửa** `data/*.json` theo yêu cầu; chuyển cho phiên rà soát pháp lý xử lý cùng danh sách sửa.
+Đã xử lý ở đợt audit 2 (commit `d3e941f`): mức 40% trong `laws.json` là đúng theo Điều 22 khoản 4; quiz/lý thuyết đã được hoàn nguyên từ 100% về 40% và bỏ số liệu ngoại trú 50% chưa xác minh. Không còn mục chuyển phiên cho phần này.
