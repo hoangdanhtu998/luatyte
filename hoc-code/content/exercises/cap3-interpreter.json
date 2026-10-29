@@ -13,6 +13,11 @@
         "stdin": "2*3+4*5\n",
         "expected": "26\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    char s[256];\n    if (fgets(s, sizeof s, stdin) == NULL) return 1;\n\n    long long tong = 0, tich = 1, so = 0;\n    for (int i = 0; s[i] != '\\0' && s[i] != '\\n'; i++) {\n        char c = s[i];\n        if (c >= '0' && c <= '9') {\n            so = so * 10 + (c - '0');\n        } else if (c == '*') {\n            tich *= so;\n            so = 0;\n        } else if (c == '+') {\n            tich *= so;\n            tong += tich;\n            tich = 1;\n            so = 0;\n        }\n    }\n    tich *= so;\n    tong += tich;\n    printf(\"%lld\\n\", tong);\n    return 0;\n}\n",
+    "hints": [
+      "Phép * được tính trước phép +. Hãy tích lũy một tích hiện tại và cộng vào tổng khi gặp +.",
+      "Duyệt từng ký tự: số thì ghép chữ số, * thì nhân vào tích, + thì cộng tích vào tổng. Đừng quên xử lý số cuối cùng."
     ]
   }
 ]

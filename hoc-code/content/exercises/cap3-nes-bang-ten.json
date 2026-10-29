@@ -13,6 +13,11 @@
         "stdin": "0 0\n",
         "expected": "0\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int x, y;\n    if (scanf(\"%d %d\", &x, &y) != 2) return 1;\n    printf(\"%d\\n\", y * 32 + x);\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi hàng có 32 ô, nên hàng y đứng sau y * 32 ô, rồi cộng cột x.",
+      "Tính y * 32 + x và in kết quả."
     ]
   }
 ]

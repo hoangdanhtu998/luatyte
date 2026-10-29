@@ -13,6 +13,11 @@
         "stdin": "7 0\n",
         "expected": "7\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#define MAX 1000\nint main(void) {\n    int st[MAX], top = 0, x;\n    while (scanf(\"%d\", &x) == 1 && x != 0) st[top++] = x;\n    for (int i = top - 1; i >= 0; i--) {\n        printf(\"%d\", st[i]);\n        if (i > 0) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Ngăn xếp là LIFO: số vào sau được lấy ra trước. Chỉ cần một mảng và một chỉ số đỉnh.",
+      "In từ đỉnh xuống đáy, tức là duyệt mảng từ phần tử cuối về đầu."
     ]
   }
 ]

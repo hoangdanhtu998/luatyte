@@ -10,6 +10,11 @@
         "expected": "Tao: An\nAn\nHuy: An\n"
       }
     ],
-    "language": "cpp"
+    "language": "cpp",
+    "solution": "#include <iostream>\n#include <string>\n\nclass SinhVien {\npublic:\n    explicit SinhVien(const std::string &ten) : ten_(ten) {\n        std::cout << \"Tao: \" << ten_ << \"\\n\";\n    }\n    ~SinhVien() {\n        std::cout << \"Huy: \" << ten_ << \"\\n\";\n    }\n    void hienThi() const {\n        std::cout << ten_ << \"\\n\";\n    }\n\nprivate:\n    std::string ten_;\n};\n\nint main() {\n    std::string ten;\n    std::cin >> ten;\n    SinhVien sv(ten);\n    sv.hienThi();\n    return 0;\n}\n",
+    "hints": [
+      "Constructor chạy khi tạo đối tượng, destructor chạy khi đối tượng bị hủy ở cuối hàm main.",
+      "Lưu tên trong một thành viên, rồi in trong constructor, hienThi và destructor theo đúng thứ tự đề bài."
+    ]
   }
 ]

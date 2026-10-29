@@ -13,6 +13,11 @@
         "stdin": "2*(3+4)\n",
         "expected": "2 3 4 + *\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <ctype.h>\n\n/* Chuyển biểu thức trung tố (số, +, *, ngoặc) sang RPN bằng thuật toán shunting-yard. */\nstatic int do_uu_tien(char op) { return op == '*' ? 2 : op == '+' ? 1 : 0; }\n\nint main(void) {\n    char bt[256];\n    if (scanf(\"%255s\", bt) != 1) return 1;\n\n    char ngan[256];\n    int top = 0, dau = 1;\n\n    for (int i = 0; bt[i] != '\\0'; ) {\n        char c = bt[i];\n        if (isdigit((unsigned char)c)) {\n            int so = 0;\n            while (isdigit((unsigned char)bt[i])) so = so * 10 + (bt[i++] - '0');\n            printf(dau ? \"%d\" : \" %d\", so);\n            dau = 0;\n            continue;\n        }\n        if (c == '(') {\n            ngan[top++] = c;\n        } else if (c == ')') {\n            while (top > 0 && ngan[top - 1] != '(') {\n                printf(\" %c\", ngan[--top]);\n            }\n            if (top > 0) top--;             /* bỏ dấu ( */\n        } else if (c == '+' || c == '*') {\n            while (top > 0 && ngan[top - 1] != '(' && do_uu_tien(ngan[top - 1]) >= do_uu_tien(c)) {\n                printf(\" %c\", ngan[--top]);\n            }\n            ngan[top++] = c;\n        }\n        i++;\n    }\n    while (top > 0) printf(\" %c\", ngan[--top]);\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Thuật toán ghi nhớ toán tử trong một ngăn xếp. Toán tử * có ưu tiên cao hơn +.",
+      "Số in ra ngay. Gặp + hay * thì lấy các toán tử có ưu tiên cao hơn hoặc bằng ra trước. Dấu ( đẩy vào, ) lấy hết toán tử đến khi gặp (."
     ]
   }
 ]

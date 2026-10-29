@@ -9,6 +9,11 @@
         "stdin": "SET 0 5\nSET 1 7\nADD 0 1\nPRINT 0\n",
         "expected": "12\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    int thanhGhi[4] = {0, 0, 0, 0};\n    char lenh[16];\n    while (scanf(\"%15s\", lenh) == 1) {\n        if (strcmp(lenh, \"SET\") == 0) {\n            int r, v;\n            if (scanf(\"%d %d\", &r, &v) != 2) return 1;\n            thanhGhi[r] = v;\n        } else if (strcmp(lenh, \"ADD\") == 0) {\n            int r, s;\n            if (scanf(\"%d %d\", &r, &s) != 2) return 1;\n            thanhGhi[r] += thanhGhi[s];\n        } else if (strcmp(lenh, \"PRINT\") == 0) {\n            int r;\n            if (scanf(\"%d\", &r) != 1) return 1;\n            printf(\"%d\\n\", thanhGhi[r]);\n        }\n    }\n    return 0;\n}\n",
+    "hints": [
+      "Máy có 4 thanh ghi. Mỗi lệnh đọc tên lệnh trước, rồi đọc tham số theo lệnh đó.",
+      "Dùng mảng 4 số nguyên. SET gán giá trị, ADD cộng thanh ghi s vào r, PRINT in thanh ghi r."
     ]
   }
 ]

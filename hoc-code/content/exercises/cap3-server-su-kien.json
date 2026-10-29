@@ -9,6 +9,11 @@
         "stdin": "4\nconn\ndata\nconn\ndata\n",
         "expected": "2 2\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    int ket_noi = 0, nhan_du_lieu = 0;\n    for (int i = 0; i < n; i++) {\n        char su_kien[32];\n        if (scanf(\"%31s\", su_kien) != 1) return 1;\n        if (strcmp(su_kien, \"conn\") == 0) ket_noi++;\n        else if (strcmp(su_kien, \"data\") == 0) nhan_du_lieu++;\n    }\n    printf(\"%d %d\\n\", ket_noi, nhan_du_lieu);\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi sự kiện là conn hoặc data. Đếm riêng từng loại.",
+      "Đọc n chuỗi và tăng hai bộ đếm tương ứng. In hai số cách nhau một dấu cách."
     ]
   }
 ]

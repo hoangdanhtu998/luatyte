@@ -9,6 +9,11 @@
         "stdin": "*2\n$3\nGET\n$3\nkey\n",
         "expected": "GET key\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void) {\n    char tok[256];\n    if (scanf(\"%255s\", tok) != 1 || tok[0] != '*') return 1;\n    int so_phan_tu = atoi(tok + 1);\n    for (int i = 0; i < so_phan_tu; i++) {\n        char do_dai[64], noi_dung[256];\n        if (scanf(\"%63s\", do_dai) != 1) return 1;   /* dòng $độ_dài: bỏ qua */\n        if (scanf(\"%255s\", noi_dung) != 1) return 1;\n        printf(\"%s\", noi_dung);\n        if (i + 1 < so_phan_tu) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Dòng đầu bắt đầu bằng * và cho số phần tử. Mỗi phần tử có một dòng $ độ dài, rồi đến nội dung.",
+      "Đọc số phần tử từ dòng đầu, rồi lặp: bỏ qua dòng $ và in dòng nội dung, cách nhau bằng dấu cách."
     ]
   }
 ]

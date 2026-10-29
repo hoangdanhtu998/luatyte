@@ -14,6 +14,11 @@
         "expected": "7 8 9\n"
       }
     ],
-    "language": "cpp"
+    "language": "cpp",
+    "solution": "#include <algorithm>\n#include <iostream>\n#include <vector>\n\nint main() {\n    int n;\n    if (!(std::cin >> n)) return 1;\n    std::vector<int> v(n);\n    for (int i = 0; i < n; i++) std::cin >> v[i];\n\n    std::sort(v.begin(), v.end());\n    for (size_t i = 0; i < v.size(); i++) {\n        std::cout << v[i];\n        if (i + 1 < v.size()) std::cout << \" \";\n    }\n    std::cout << \"\\n\";\n    return 0;\n}\n",
+    "hints": [
+      "std::vector lưu mảng có kích thước thay đổi. std::sort sắp xếp theo khoảng từ begin() đến end().",
+      "Đọc n số vào vector, gọi sort, rồi in từng phần tử và chỉ thêm dấu cách giữa các số."
+    ]
   }
 ]

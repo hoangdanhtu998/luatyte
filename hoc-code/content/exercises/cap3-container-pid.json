@@ -9,6 +9,11 @@
         "stdin": "3\n700 701 705\n",
         "expected": "1 2 3\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 0; i < n; i++) {\n        int pid_that;\n        if (scanf(\"%d\", &pid_that) != 1) return 1;\n    }\n    for (int i = 1; i <= n; i++) {\n        printf(\"%d\", i);\n        if (i < n) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "PID bên trong container được đánh số lại từ 1, theo thứ tự của danh sách.",
+      "Đọc hết n PID thật, rồi in các số từ 1 đến n cách nhau một dấu cách."
     ]
   }
 ]

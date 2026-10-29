@@ -163,6 +163,35 @@ function initPractice({ lessonId, exercises }) {
   });
 
   // Gửi code lên máy chủ Học code để biên dịch và chạy. Máy chủ chạy bằng: node server/server.mjs
+  // Bản web tĩnh không có máy chủ: báo rõ là cần chạy trên máy của bạn, không báo lỗi thô.
+  function offlineError() {
+    const e = new Error('Bản web chưa chạy được code — chạy trên máy bạn.');
+    e.offline = true;
+    return e;
+  }
+
+  // Hiện khung hướng dẫn dưới khung kết quả: link cài đặt và nút chép code.
+  function showOfflineHelp() {
+    if (document.getElementById('offline-help')) return;
+    const box = document.createElement('div');
+    box.id = 'offline-help';
+    box.style.cssText = 'margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(127,127,127,.12)';
+    const a = document.createElement('a');
+    a.href = 'setup.html';
+    a.textContent = 'Xem cách cài gcc và chạy trên máy bạn';
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'btn';
+    b.textContent = 'Chép code của bạn';
+    b.onclick = () => {
+      navigator.clipboard.writeText(el.code.value)
+        .then(() => { b.textContent = 'Đã chép'; })
+        .catch(() => { b.textContent = 'Không chép được, hãy chọn và copy tay'; });
+    };
+    box.append(a, ' ', b);
+    el.term.insertAdjacentElement('afterend', box);
+  }
+
   async function callRun(stdin) {
     let r;
     try {
@@ -172,10 +201,10 @@ function initPractice({ lessonId, exercises }) {
         body: JSON.stringify({ language: el.lang.value, std: el.std.value, warn: el.warn.checked, code: el.code.value, stdin: stdin || '' }),
       });
     } catch (e) {
-      throw new Error('Không kết nối được máy chạy code. Mở trang qua http://localhost:4500 và kiểm tra server đang chạy (node server/server.mjs).');
+      throw offlineError();
     }
     let data;
-    try { data = await r.json(); } catch (e) { throw new Error('Máy chủ trả về dữ liệu không đọc được (HTTP ' + r.status + ').'); }
+    try { data = await r.json(); } catch (e) { throw offlineError(); }
     if (!data.ok) throw new Error(data.error.message + ' [' + data.error.code + ']');
     return data;
   }
@@ -204,12 +233,14 @@ function initPractice({ lessonId, exercises }) {
   }
 
   el.run.addEventListener('click', async () => {
+    if (currentEx().language === 'bash') { setTerm([['warn', 'Bài Shell chạy trong terminal của bạn (bash), bản web chưa chạy được.']]); return; }
     el.run.disabled = true;
     setTerm([['info', 'Đang biên dịch và chạy...']]);
     try {
       showResult(await callRun(el.stdin.value));
     } catch (e) {
       setTerm([['err', e.message]]);
+      if (e.offline) showOfflineHelp();
     } finally {
       el.run.disabled = false;
     }
@@ -220,8 +251,26 @@ function initPractice({ lessonId, exercises }) {
     return (s || '').replace(/\r\n/g, '\n').split('\n').map(l => l.replace(/\s+$/, '')).join('\n').replace(/\n+$/, '');
   }
 
+  // Số lần chấm sai liên tiếp của từng bài, lưu riêng để không đổi cấu trúc tiến độ.
+  const HINT_KEY = 'hoc-code-goi-y-v1';
+  function hintMap() { try { return JSON.parse(localStorage.getItem(HINT_KEY) || '{}'); } catch (e) { return {}; } }
+  function saveHintMap(m) { try { localStorage.setItem(HINT_KEY, JSON.stringify(m)); } catch (e) { /* bộ nhớ đầy: bỏ qua */ } }
+
+  // Gợi ý 3 nấc: lần 1 chỉ vùng lỗi, lần 2 giải thích, lần 3 trở đi mở lời giải mẫu.
+  function hintLines(ex, fails) {
+    const lines = [];
+    if (fails === 1 && ex.hints && ex.hints[0]) lines.push(['info', 'Gợi ý lần 1: ' + ex.hints[0]]);
+    if (fails === 2 && ex.hints && ex.hints[1]) lines.push(['info', 'Gợi ý lần 2: ' + ex.hints[1]]);
+    if (fails >= 3 && ex.solution) {
+      lines.push(['info', 'Lời giải mẫu (đã sau 3 lần chưa đạt):']);
+      lines.push(['out', ex.solution.replace(/\s+$/, '')]);
+    }
+    return lines;
+  }
+
   el.grade.addEventListener('click', async () => {
     const ex = currentEx();
+    if (ex.language === 'bash') { setTerm([['warn', 'Bài Shell chưa chấm tự động trên bản web. Chạy các lệnh trong terminal của bạn và so với kết quả mong đợi.']]); return; }
     const tests = ex.tests || [];
     if (tests.length === 0) { setTerm([['warn', 'Bài này chưa có test để chấm.']]); return; }
     el.grade.disabled = true;
@@ -239,21 +288,34 @@ function initPractice({ lessonId, exercises }) {
         const want = normalizeOut(t.expected);
         const ok = !d.run.timedOut && got === want;
         if (ok) passed++;
+        if (t.hidden) {
+          // Test ẩn: chỉ báo đạt hay chưa, không lộ dữ liệu và đáp án.
+          lines.push([ok ? 'ok' : 'err', 'Test ' + (i + 1) + ' (ẩn): ' + (ok ? 'ĐẠT' : 'CHƯA ĐẠT')]);
+          continue;
+        }
         lines.push([ok ? 'ok' : 'err', 'Test ' + (i + 1) + ': ' + (ok ? 'ĐẠT' : 'CHƯA ĐẠT')]);
         if (!ok) {
           lines.push(['info', '   kỳ vọng: ' + JSON.stringify(want)]);
           lines.push(['info', '   thực tế: ' + JSON.stringify(got) + (d.run.timedOut ? ' (hết thời gian)' : '')]);
         }
       }
+      const map = hintMap();
       if (passed === tests.length) {
+        delete map[codeKey()];
+        saveHintMap(map);
         lines.push(['ok', 'Kết quả: ' + passed + '/' + tests.length + ' test đạt. Làm tốt lắm.']);
         markLessonDone(lessonId, 'Đã chấm đạt hết bài tập viết code, bài được ghi là hoàn thành.');
       } else {
         lines.push(['warn', 'Kết quả: ' + passed + '/' + tests.length + ' test đạt.']);
+        const fails = (map[codeKey()] || 0) + 1;
+        map[codeKey()] = fails;
+        saveHintMap(map);
+        lines.push(...hintLines(ex, fails));
       }
       setTerm(lines);
     } catch (e) {
       setTerm([['err', e.message]]);
+      if (e.offline) showOfflineHelp();
     } finally {
       el.grade.disabled = false;
     }

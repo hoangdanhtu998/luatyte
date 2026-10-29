@@ -13,6 +13,11 @@
         "stdin": "00\n00\n00\n00\n",
         "expected": "0\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int dem = 0;\n    for (int i = 0; i < 4; i++) {\n        unsigned int trang_thai;\n        if (scanf(\"%x\", &trang_thai) != 1) return 1;\n        if (trang_thai == 0x80) dem++;\n    }\n    printf(\"%d\\n\", dem);\n    return 0;\n}\n",
+    "hints": [
+      "Byte trạng thái 80 đánh dấu phân vùng khởi động được. Đếm xem có bao nhiêu byte như vậy.",
+      "Đọc bốn số hex, mỗi lần bằng 0x80 thì tăng bộ đếm, rồi in bộ đếm."
     ]
   }
 ]

@@ -2,17 +2,32 @@
   {
     "id": "ex1",
     "title": "Bài 1: Ghi rồi đọc lại file",
-    "prompt": "Đọc số n. Ghi các số 1 đến n, mỗi số một dòng, vào file `so.txt`. Sau đó mở lại file và in số dòng đã ghi.",
+    "prompt": "Đọc số n. Ghi các số 1 đến n, mỗi số một dòng, vào file so.txt. Sau đó mở lại file, đọc các số và in tổng của chúng.",
     "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    // viết code ở đây\n    return 0;\n}\n",
     "tests": [
       {
         "stdin": "3\n",
-        "expected": "3\n"
+        "expected": "6\n"
       },
       {
         "stdin": "5\n",
-        "expected": "5\n"
+        "expected": "15\n"
+      },
+      {
+        "stdin": "10\n",
+        "expected": "55\n",
+        "hidden": true
+      },
+      {
+        "stdin": "4\n",
+        "expected": "10\n",
+        "hidden": true
       }
+    ],
+    "solution": "#include <stdio.h>\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    FILE *f = fopen(\"so.txt\", \"w\");\n    if (f == NULL) return 1;\n    for (int i = 1; i <= n; i++) fprintf(f, \"%d\\n\", i);\n    fclose(f);\n    f = fopen(\"so.txt\", \"r\");\n    if (f == NULL) return 1;\n    int x, tong = 0;\n    while (fscanf(f, \"%d\", &x) == 1) tong += x;\n    fclose(f);\n    printf(\"%d\\n\", tong);\n    return 0;\n}\n",
+    "hints": [
+      "Mở file bằng fopen ở chế độ ghi, dùng fprintf ghi từng số kèm xuống dòng, rồi đóng file.",
+      "Mở lại file ở chế độ đọc, dùng fscanf đọc từng số và cộng dồn vào một biến tổng."
     ]
   }
 ]

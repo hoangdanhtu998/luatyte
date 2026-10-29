@@ -13,6 +13,11 @@
         "stdin": "0 0\n",
         "expected": "0\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int hang, cot;\n    if (scanf(\"%d %d\", &hang, &cot) != 2) return 1;\n    printf(\"%d\\n\", (hang * 80 + cot) * 2);\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi ô văn bản dùng 2 byte. Số ô đứng trước ô cần tìm là hàng * 80 + cột.",
+      "Tính số ô rồi nhân 2 để ra offset theo byte."
     ]
   }
 ]

@@ -13,6 +13,11 @@
         "stdin": "0 128 255\n",
         "expected": "0x000080FF\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned int r, g, b;\n    if (scanf(\"%u %u %u\", &r, &g, &b) != 3) return 1;\n    unsigned int mau = (r << 16) | (g << 8) | b;\n    printf(\"0x%08X\\n\", mau);\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi màu chiếm 8 bit trong số 32 bit: đỏ dịch trái 16 bit, xanh lá 8 bit, xanh dương 0 bit.",
+      "Ghép ba số bằng phép dịch bit và phép OR, rồi in dạng 0x và 8 chữ số hex."
     ]
   }
 ]

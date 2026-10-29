@@ -10,6 +10,11 @@
         "stdin": "",
         "expected": "Bắt đầu bài tập Shell\n\nXin chào\n\nKết thúc bài tập Shell\n"
       }
+    ],
+    "solution": "#!/bin/bash\necho \"Bắt đầu bài tập Shell\"\necho \"\"\nmkdir -p test_dir\necho \"Xin chào\" > test_dir/hello.txt\nls test_dir > /dev/null\ncat test_dir/hello.txt\nrm -r test_dir\necho \"\"\necho \"Kết thúc bài tập Shell\"\n",
+    "hints": [
+      "Lệnh mkdir tạo thư mục, echo ghi chữ vào file, cat in nội dung file, và rm -r xóa thư mục.",
+      "Dùng dấu > để ghi chữ vào file. Dùng echo \"\" để in dòng trống."
     ]
   },
   {
@@ -23,6 +28,11 @@
         "stdin": "",
         "expected": "Số file .txt: 0\nKết thúc\n"
       }
+    ],
+    "solution": "#!/bin/bash\nso_txt=$(ls *.txt 2>/dev/null | wc -l | tr -d ' ')\necho \"Số file .txt: $so_txt\"\necho \"Kết thúc\"\n",
+    "hints": [
+      "Lệnh ls liệt kê file, grep lọc dòng, wc -l đếm số dòng. Pipe nối các lệnh lại với nhau.",
+      "Đếm file .txt bằng ls *.txt rồi đưa qua wc -l. Đặt kết quả vào biến để in cùng nhãn."
     ]
   },
   {
@@ -36,6 +46,11 @@
         "stdin": "",
         "expected": "Bạn chưa nhập tên\nKết thúc\n"
       }
+    ],
+    "solution": "#!/bin/bash\nten=\"\"\nif [ -z \"$ten\" ]; then\n  echo \"Bạn chưa nhập tên\"\nelse\n  echo \"Xin chào $ten\"\nfi\necho \"Kết thúc\"\n",
+    "hints": [
+      "Dùng kiểm tra [ -z \"$ten\" ] để biết biến có rỗng không. Nhớ dấu cách quanh ngoặc vuông.",
+      "Dùng if ... then ... else ... fi. Trong nhánh rỗng in thông báo chưa nhập tên."
     ]
   },
   {
@@ -49,6 +64,11 @@
         "stdin": "",
         "expected": "Số chẵn từ 1 đến 20:\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\nKết thúc\n"
       }
+    ],
+    "solution": "#!/bin/bash\necho \"Số chẵn từ 1 đến 20:\"\nfor i in $(seq 2 2 20); do\n  echo \"$i\"\ndone\necho \"Kết thúc\"\n",
+    "hints": [
+      "Lệnh seq 2 2 20 tạo dãy số từ 2 đến 20 với bước 2.",
+      "Dùng vòng for lặp qua dãy đó và echo từng số, trước vòng lặp in tiêu đề."
     ]
   },
   {
@@ -62,6 +82,11 @@
         "stdin": "",
         "expected": "File lớn hơn 1KB:\n\nKết thúc\n"
       }
+    ],
+    "solution": "#!/bin/bash\necho \"File lớn hơn 1KB:\"\necho \"$(find . -type f -size +1k)\"\necho \"Kết thúc\"\n",
+    "hints": [
+      "Lệnh find . -type f -size +1k tìm file có kích thước lớn hơn 1KB.",
+      "Lưu kết quả find trong $(...) rồi echo ra. Nếu không có file thì vẫn in được một dòng trống."
     ]
   }
 ]

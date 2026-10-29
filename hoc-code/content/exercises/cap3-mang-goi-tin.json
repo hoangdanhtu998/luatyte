@@ -9,6 +9,11 @@
         "stdin": "hi\n",
         "expected": "00 02 68 69\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char s[256];\n    if (scanf(\"%255s\", s) != 1) return 1;\n    unsigned int dai = (unsigned int)strlen(s);\n    printf(\"%02X %02X\", (dai >> 8) & 0xFF, dai & 0xFF);\n    for (size_t i = 0; i < strlen(s); i++) printf(\" %02X\", (unsigned char)s[i]);\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Độ dài 2 byte được ghi big-endian: byte cao đứng trước. Sau đó là các byte của chuỗi.",
+      "In độ dài dạng %02X hai lần cho byte cao và byte thấp, rồi in từng ký tự của chuỗi dưới dạng hex."
     ]
   }
 ]

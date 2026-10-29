@@ -13,6 +13,11 @@
         "stdin": "0 0 0\n",
         "expected": "0\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int x, y, z;\n    if (scanf(\"%d %d %d\", &x, &y, &z) != 3) return 1;\n    printf(\"%d\\n\", x + z * 16 + y * 256);\n    return 0;\n}\n",
+    "hints": [
+      "Chỉ số một chiều được tính từ x, z và y theo công thức đề bài cho.",
+      "Đọc x, y, z rồi tính x + z*16 + y*256 và in ra."
     ]
   }
 ]

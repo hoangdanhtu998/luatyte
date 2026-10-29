@@ -12,7 +12,22 @@
       {
         "stdin": "Binh 17\n",
         "expected": "Binh (17)\n"
+      },
+      {
+        "stdin": "Lan 0\n",
+        "expected": "Lan (0)\n",
+        "hidden": true
+      },
+      {
+        "stdin": "Hoa 99\n",
+        "expected": "Hoa (99)\n",
+        "hidden": true
       }
-    ]
+    ],
+    "hints": [
+      "Khai báo struct Nguoi có hai trường: ten (mảng char) và tuoi (int).",
+      "Đọc bằng scanf vào p.ten và &p.tuoi, rồi in theo dạng \"%s (%d)\"."
+    ],
+    "solution": "#include <stdio.h>\ntypedef struct { char ten[50]; int tuoi; } Nguoi;\nint main(void) {\n    Nguoi p;\n    if (scanf(\"%49s %d\", p.ten, &p.tuoi) != 2) return 1;\n    printf(\"%s (%d)\\n\", p.ten, p.tuoi);\n    return 0;\n}\n"
   }
 ]

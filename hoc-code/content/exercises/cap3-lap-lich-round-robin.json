@@ -9,6 +9,11 @@
         "stdin": "2 3\n5 3 1\n",
         "expected": "9 8 5\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int q, n;\n    if (scanf(\"%d %d\", &q, &n) != 2) return 1;\n    int con[100], xong[100];\n    for (int i = 0; i < n; i++) {\n        if (scanf(\"%d\", &con[i]) != 1) return 1;\n        xong[i] = 0;\n    }\n\n    int thoi_gian = 0, conLai = n;\n    while (conLai > 0) {\n        for (int i = 0; i < n; i++) {\n            if (con[i] <= 0) continue;\n            int chay = con[i] < q ? con[i] : q;\n            thoi_gian += chay;\n            con[i] -= chay;\n            if (con[i] == 0) {\n                xong[i] = thoi_gian;\n                conLai--;\n            }\n        }\n    }\n\n    for (int i = 0; i < n; i++) {\n        printf(\"%d\", xong[i]);\n        if (i + 1 < n) printf(\" \");\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi tiến trình chạy tối đa q đơn vị thời gian mỗi lượt, rồi nhường cho tiến trình khác.",
+      "Lặp vòng qua các tiến trình còn việc. Mỗi lần chạy cộng vào thời gian chung, và ghi thời điểm xong khi thời gian còn lại bằng 0."
     ]
   }
 ]

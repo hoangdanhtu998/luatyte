@@ -9,6 +9,11 @@
         "stdin": "3\nIO H\nIO i\nHALT\n",
         "expected": "Hi\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 0; i < n; i++) {\n        char lenh[16];\n        if (scanf(\"%15s\", lenh) != 1) return 1;\n        if (strcmp(lenh, \"HALT\") == 0) break;\n        if (strcmp(lenh, \"IO\") == 0) {\n            char c[16];\n            if (scanf(\"%15s\", c) != 1) return 1;\n            printf(\"%c\", c[0]);\n        }\n    }\n    printf(\"\\n\");\n    return 0;\n}\n",
+    "hints": [
+      "Mỗi lượt thoát là một dòng: IO kèm một ký tự, hoặc HALT để dừng.",
+      "Đọc từng lượt. Với IO thì in ký tự đứng sau. Gặp HALT thì dừng vòng lặp, rồi in xuống dòng."
     ]
   }
 ]

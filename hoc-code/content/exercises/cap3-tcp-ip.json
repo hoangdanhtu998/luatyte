@@ -9,6 +9,11 @@
         "stdin": "4500 0073 0000 4000 4011 0000 c0a8 0001 c0a8 00c7\n",
         "expected": "b861\n"
       }
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    unsigned long tong = 0;\n    for (int i = 0; i < 10; i++) {\n        unsigned int tu;\n        if (scanf(\"%x\", &tu) != 1) return 1;\n        if (i == 5) tu = 0;                 /* trường checksum được đặt bằng 0 */\n        tong += tu;\n    }\n    while (tong >> 16) tong = (tong & 0xFFFF) + (tong >> 16);   /* cộng phần nhớ */\n    printf(\"%04x\\n\", (unsigned int)(~tong & 0xFFFF));\n    return 0;\n}\n",
+    "hints": [
+      "Checksum là tổng các từ 16 bit, rồi cộng phần nhớ trở lại vào 16 bit thấp, cuối cùng lấy bù một.",
+      "Đặt từ thứ 6 (chỉ số 5) bằng 0 trước khi cộng. Sau khi cộng, lấy phần bù của kết quả và in dạng hex 4 chữ số."
     ]
   }
 ]
