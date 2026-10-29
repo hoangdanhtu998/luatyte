@@ -18,13 +18,12 @@ Create individual image assets from a pre-defined list of prompts. Each asset is
 
 ## Installation
 
+This is a local skill in the repository; no clone or npm install is required. Run the scripts from the `skill-hospital-assets/` directory.
+
 ### Option 1: Use Together AI (Recommended)
 ```bash
-# Set API key
+# Set API key (a paid call; ask the project owner before generating)
 export TOGETHER_API_KEY="your-together-api-key"
-
-# Or install the skill
-git clone https://github.com/thewh1teagle/hallmark-skills.git ~/.agents/skills/hallmark
 ```
 
 ### Option 2: Use Hugging Face Inference API (Free tier)
@@ -50,7 +49,7 @@ node generate-hospital-assets.mjs --category signs
 node generate-hospital-assets.mjs --item bed-single
 
 # With custom model
-node generate-hospital-assets.mjs --all --model black-forest-labs/FLUX.1.1-schnell
+IMAGE_MODEL=black-forest-labs/FLUX.1.1-schnell node generate-hospital-assets.mjs --all
 ```
 
 ## Available Categories
@@ -135,5 +134,5 @@ Default: 1774x887
 Options: 512x256, 1024x512, 1774x887, 2048x1024
 
 ### Add More Items
-Edit `prompts.json` to add new items and their prompts.
+Edit the `PROMPTS` object in `generate-hospital-assets.mjs` to add new items and their prompts. Each entry needs `category` and `prompt`.
 

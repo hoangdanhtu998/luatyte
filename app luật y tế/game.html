@@ -47,6 +47,7 @@
   .big-btn{width:100%;min-height:56px;border:0;border-radius:16px;background:var(--color-accent);color:var(--color-accent-ink);font:700 16px/1 var(--font-body);cursor:pointer;box-shadow:0 10px 24px color-mix(in oklch,var(--color-accent) 26%,transparent);transition:transform .15s,filter .15s}
   .big-btn:hover{filter:brightness(1.06)}
   .big-btn:active{transform:scale(.985)}
+  .big-btn:focus-visible,.answer-btn:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
   .mini{position:relative;margin:10px 0 0;text-align:center;font-size:11px;color:var(--color-muted)}
 
   .game-play{width:min(100%,560px);margin:0 auto;display:flex;flex-direction:column;min-height:0}
@@ -416,9 +417,11 @@ function renderIntro() {
           : `<div class="intro-stat"><span>Cách chơi</span><b style="font-size:14px">← / →</b></div>`}
       </div>
       <ul class="rules">
-        <li><b>Đúng:</b> vuốt phải${mobile ? " hoặc bấm Đúng" : " hoặc bấm →"}</li>
-        <li><b>Sai:</b> vuốt trái${mobile ? " hoặc bấm Sai" : " hoặc bấm ←"}; trừ 3 giây</li>
-        <li><b>Combo:</b> đúng liên tiếp để nhận hiệu ứng; sai là reset</li>
+        <li><b>Đúng:</b> ${mobile ? "vuốt phải hoặc bấm Đúng" : "bấm Đúng hoặc phím →"}</li>
+        <li><b>Sai:</b> ${mobile ? "vuốt trái hoặc bấm Sai" : "bấm Sai hoặc phím ←"}; trừ 3 giây</li>
+        ${mobile
+          ? `<li><b>Chuỗi:</b> đúng liên tiếp để nhận hiệu ứng; sai là reset</li>`
+          : `<li><b>Phím:</b> Enter để bắt đầu hoặc chơi lại; ← → để trả lời</li>`}
       </ul>
       <button type="button" class="big-btn" id="start">Bắt đầu</button>
       <p class="mini">${mobile ? "Bản điện thoại · mẹo: vuốt ngắn cũng được" : "Bản máy tính · phím ← → hoạt động ngay"}</p>
@@ -845,6 +848,13 @@ function renderEnd(record, best) {
 }
 
 document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && (phase === "intro" || phase === "ending")) {
+    const t = e.target;
+    if (t && (t.tagName === "A" || t.tagName === "BUTTON" || t.tagName === "INPUT" || t.tagName === "SELECT" || t.isContentEditable)) return;
+    const b = phase === "intro" ? $("#start") : $("#again");
+    if (b){ e.preventDefault(); b.click(); }
+    return;
+  }
   if (phase !== "playing") return;
   if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
     e.preventDefault();

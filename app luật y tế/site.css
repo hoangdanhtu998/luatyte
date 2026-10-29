@@ -104,7 +104,11 @@ select { min-height: var(--ctl); padding: 0 var(--space-sm); max-width: 100%; mi
 .remind input[type=time] { min-height: var(--ctl); padding: 0 var(--space-sm); background: var(--color-paper); color: var(--color-ink); border: 1px solid var(--color-field); border-radius: 10px; }
 .achv-row { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-top: var(--space-md); }
 .achv { font-size: var(--text-xs); font-weight: 600; color: var(--color-muted); background: transparent; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); padding: var(--space-3xs) var(--space-sm); }
+.achv::before { content: "○"; margin-right: 4px; opacity: .6; font-size: .9em; }
 .achv.on { color: var(--color-accent-soft-ink); background: var(--color-accent-soft); box-shadow: none; }
+.achv.on::before { content: "✓"; opacity: 1; }
+.achv.more { background: transparent; border: 0; cursor: pointer; font-family: inherit; box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
+.achv.more::before { content: "+"; opacity: 1; }
 
 /* ===== Thanh tab ===== */
 nav.tabs {
@@ -116,6 +120,10 @@ nav.tabs .ind { position: absolute; bottom: -1px; left: 0; width: 0; height: 2px
 nav.tabs button { flex: none; min-height: 44px; padding: 0 var(--space-md); background: none; border: 0; color: var(--color-muted); font-size: var(--text-sm); font-weight: 600; white-space: nowrap; cursor: pointer; transition: color var(--dur-micro) var(--ease-out); }
 nav.tabs button:hover { color: var(--color-ink); }
 nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
+@media (min-width: 900px) {
+  nav.tabs { gap: 2px; flex-wrap: wrap; overflow-x: visible; }
+  nav.tabs button { padding: 0 12px; }
+}
 
 /* ===== Panel ===== */
 .panel { display: flex; flex-direction: column; gap: var(--space-md); }
@@ -127,7 +135,7 @@ nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
 .search input { width: 100%; min-height: var(--ctl); color: var(--color-ink); background: var(--color-paper); border: 1px solid var(--color-field); border-radius: 10px; padding: 0 var(--space-md) 0 var(--space-xl); }
 .search input:hover, select:hover { border-color: var(--color-ink); }
 .search input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.cats { display: flex; gap: var(--space-xs); overflow-x: auto; scrollbar-width: none; padding: var(--space-3xs); margin: calc(var(--space-3xs) * -1); }
+.cats { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding: var(--space-3xs); margin: calc(var(--space-3xs) * -1); }
 .cats::-webkit-scrollbar { display: none; }
 .laws { border-top: 1px solid var(--color-ink); }
 .law { border-bottom: 1px solid var(--color-rule); background: none; }

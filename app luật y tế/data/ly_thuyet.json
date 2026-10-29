@@ -216,7 +216,7 @@
         },
         {
           "tieu_de": "Cấp cứu và trái tuyến",
-          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào vẫn được hưởng 100%. Khám ngoại trú tại cơ sở cấp ban đầu ở bất kỳ tỉnh nào và điều trị nội trú tại cơ sở cấp cơ bản được hưởng như đúng tuyến. Điều trị nội trú tại cơ sở cấp chuyên sâu, nếu trái tuyến, thường được hưởng 40%. Khám không đúng tuyến hoặc không đúng quy định chuyển tuyến thì quỹ chỉ thanh toán theo một tỷ lệ của mức hưởng.",
+          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào vẫn được hưởng 100%. Khám ngoại trú tại cơ sở cấp ban đầu ở bất kỳ tỉnh nào và điều trị nội trú tại cơ sở cấp cơ bản được hưởng như đúng tuyến. Theo Luật BHYT 51/2024/QH15, điều trị nội trú trái tuyến tại cơ sở cấp chuyên sâu được hưởng 100% mức hưởng; khám ngoại trú trái tuyến được hưởng 50% mức hưởng theo lộ trình. Khám không đúng tuyến hoặc không đúng quy định chuyển tuyến thì quỹ chỉ thanh toán theo một tỷ lệ của mức hưởng.",
           "vi_du": "Một người bị tai nạn được đưa vào cơ sở chuyên sâu không đúng tuyến: hưởng 100% vì là cấp cứu. Cùng người đó tự đi khám ngoại trú ở cơ sở chuyên sâu, không cấp cứu: không được hưởng như đúng tuyến.",
           "hay_nham": "Nhầm cấp cứu với trái tuyến. Cấp cứu luôn được 100%, còn trái tuyến là chuyện của ngoại trú và nội trú không cấp cứu.",
           "nguon": "laws.json, bhyt P3, P6, P8 (Điều 22)",
@@ -224,7 +224,7 @@
         },
         {
           "tieu_de": "Điều kiện 5 năm và hộ gia đình",
-          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định. Phần con số này chưa đối chiếu được nguyên văn. Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
+          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định. Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
           "vi_du": "Một hộ có 4 người đóng BHYT: người thứ hai đóng 70% mức của người thứ nhất, người thứ tư đóng 50%.",
           "hay_nham": "Dùng con số 6 lần cho mọi trường hợp, hoặc quên điều kiện liên tục 5 năm.",
           "nguon": "Luật BHYT sửa đổi 2024, Điều 22 khoản 1 điểm d: 5 năm liên tục và cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (đã đối chiếu). Nghị định 188/2025, Điều 18 khoản 2 hướng dẫn (đã đối chiếu).",
@@ -249,19 +249,19 @@
       "buoc": [
         {
           "tieu_de": "Khung giá và mức giá cụ thể",
-          "giai_thich": "Thông tư 21/2023 có bốn phụ lục khung giá: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, và ghi chú tương đương. Hội đồng nhân dân cấp tỉnh quyết định mức giá cụ thể trong cơ sở nhà nước, nhưng không vượt khung giá. Cơ sở chưa được phân hạng áp dụng giá bệnh viện hạng IV. Trạm y tế xã áp dụng 70% giá kỹ thuật quy định. Nguồn tra cứu có ghi thông tư này có thể đã được thay bởi Thông tư 21/2024, cần kiểm tra.",
-          "vi_du": "Một trạm y tế xã thực hiện dịch vụ kỹ thuật được tính 70% giá quy định.",
-          "hay_nham": "Cho rằng bệnh viện tự đặt giá. Giá cụ thể do HĐND tỉnh quyết trong khung.",
-          "nguon": "Thông tư 21/2023, Điều 2, 4; quiz bhyt về giá khám",
+          "giai_thich": "Từ 01/01/2025, Thông tư 21/2023 và Thông tư 22/2023 về giá dịch vụ khám bệnh, chữa bệnh đã hết hiệu lực. Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh; mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung. Các tỷ lệ 70%/30% và cách xếp hạng cơ sở theo thông tư cũ không còn là căn cứ hiện hành.",
+          "vi_du": "Khi tra giá dịch vụ tại địa phương, xem nghị quyết giá của HĐND tỉnh ban hành theo Thông tư 21/2024/TT-BYT, không dùng khung giá 2023.",
+          "hay_nham": "Vẫn áp dụng 70% cho trạm y tế hoặc 30% cho lần khám chuyên khoa thứ hai theo Thông tư 21/2023 và 22/2023 đã hết hiệu lực.",
+          "nguon": "Thông tư 21/2024/TT-BYT (hiệu lực 17/10/2024); Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
           "verify": false
         },
         {
           "tieu_de": "Khám nhiều lượt trong một lần đến",
-          "giai_thich": "Trong cùng một lần đến khám, lượt khám chuyên khoa từ lần thứ hai được tính 30% giá một lượt khám. Tổng tiền khám không quá 2 lần giá khám.",
-          "vi_du": "Người bệnh khám chuyên khoa thứ hai trong cùng một lần đến: tính 30% giá một lượt khám.",
-          "hay_nham": "Tính đủ 100% cho mọi lượt khám. Quy định giới hạn ở tổng 2 lần giá khám.",
-          "nguon": "Thông tư 21/2023, Điều 5; Thông tư 22/2023, Điều 5",
-          "verify": false
+          "giai_thich": "Quy định 30% cho lần khám chuyên khoa thứ hai thuộc Thông tư 21/2023 và 22/2023, đã hết hiệu lực từ 01/01/2025. Hiện hành, mức giá cụ thể và cách tính khi khám nhiều lượt do Hội đồng nhân dân cấp tỉnh quy định theo Thông tư 21/2024/TT-BYT; cần tra nghị quyết giá của địa phương.",
+          "vi_du": "Một cơ sở ở tỉnh A phải dùng bảng giá của tỉnh A ban hành theo Thông tư 21/2024, không tự lấy tỷ lệ 30% của thông tư cũ.",
+          "hay_nham": "Coi tỷ lệ 30% và mức tối đa 2 lần giá khám của thông tư cũ là quy định đang áp dụng.",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
+          "verify": true
         },
         {
           "tieu_de": "Thuốc tự mua được thanh toán khi nào",
@@ -274,12 +274,12 @@
       ],
       "on_nhanh": [
         {
-          "hoi": "Trạm y tế xã áp dụng bao nhiêu % giá kỹ thuật quy định?",
-          "dap": "70%."
+          "hoi": "Từ 01/01/2025, giá dịch vụ khám bệnh, chữa bệnh được quy định theo văn bản nào?",
+          "dap": "Thông tư 21/2024/TT-BYT quy định phương pháp định giá; mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung."
         },
         {
-          "hoi": "Lượt khám chuyên khoa từ lần thứ hai tính bao nhiêu?",
-          "dap": "30% giá một lượt khám."
+          "hoi": "Còn áp dụng tỷ lệ 70% cho trạm y tế và 30% cho lần khám chuyên khoa thứ hai của Thông tư 21/2023 không?",
+          "dap": "Không. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; dùng Thông tư 21/2024 và nghị quyết giá của địa phương."
         }
       ]
     },
@@ -486,7 +486,7 @@
         },
         {
           "tieu_de": "Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng",
-          "giai_thich": "Số hiệu: 22/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Trạng thái: có sửa đổi, bổ sung. Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
+          "giai_thich": "Số hiệu: 22/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT. Trước đó thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
           "vi_du": "Khi cần tra cứu, dùng số hiệu 22/2023/TT-BYT để tìm đúng văn bản.",
           "hay_nham": "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu.",
           "nguon": "laws.json (tt22_2023)",
@@ -494,10 +494,18 @@
         },
         {
           "tieu_de": "Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước",
-          "giai_thich": "Số hiệu: 21/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Trạng thái: có sửa đổi, bổ sung. Thay thế Thông tư 37/2018 và 14/2019. Nguồn tra cứu ghi đã được thay bởi Thông tư 21/2024/TT-BYT — cần kiểm tra.",
+          "giai_thich": "Số hiệu: 21/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT. Trước đó thay thế Thông tư 37/2018 và 14/2019.",
           "vi_du": "Khi cần tra cứu, dùng số hiệu 21/2023/TT-BYT để tìm đúng văn bản.",
           "hay_nham": "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu.",
           "nguon": "laws.json (tt21_2023)",
+          "verify": false
+        },
+        {
+          "tieu_de": "Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+          "giai_thich": "Số hiệu: 21/2024/TT-BYT. Hiệu lực: 17/10/2024. Thay thế Thông tư 21/2023 và 22/2023 từ 01/01/2025; quy định phương pháp định giá, mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung.",
+          "vi_du": "Tra giá dịch vụ KCB tại địa phương theo nghị quyết giá của HĐND tỉnh.",
+          "hay_nham": "Dùng khung giá và tỷ lệ 70%/30% của thông tư 2023 đã hết hiệu lực.",
+          "nguon": "Thông tư 21/2024/TT-BYT; chinhphu.vn docid 211506",
           "verify": false
         },
         {
@@ -903,5 +911,6 @@
         }
       ]
     }
-  ]
+  ],
+  "nguon": "Luật BHYT 51/2024/QH15"
 }

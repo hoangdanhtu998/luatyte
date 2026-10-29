@@ -10,7 +10,7 @@ Cập nhật 27/10/2026. Ghi rõ việc đã chạy thật và việc chưa ch�
 - [x] `sitemap.xml` có đủ 5 URL, gồm `tham_chieu.html`.
 
 ## Lỗi đã biết, chưa sửa
-- [ ] `clinic.html` tải `./js/clinic3d.js` cho chế độ "Phòng 3D", nhưng file không có. Chế độ này sẽ không hiện 3D. Cần quyết định: làm lại module hay bỏ chế độ.
+- [x] `clinic.html` tải `./js/clinic3d.js`; file fallback 2D đã có để không 404. Chế độ 3D thật (WebGL/asset) vẫn chưa làm — fallback hiện thông báo và giữ bản đồ 4 phòng.
 - [ ] Trích dẫn luật trong `data/quiz*.json`, `cbl.json`, `ly_thuyet.json` là chữ tự do, không dùng mã. Chưa kiểm tra tự động được. Cần đọc tay từng câu.
 - [ ] `cbl.json` trích TT 26/2025, TT 25/2026, NĐ 102/2025 — các văn bản này chưa đối chiếu.
 

@@ -24,3 +24,10 @@ docker compose logs -f
 - Dữ liệu tài khoản nằm trong volume `admin-data`. Phải sao lưu định kỳ.
 - Giọng đọc tạo theo thời gian thực (Piper) và các phần chạy trên máy Windows không hoạt động trong container. Bài giảng có giọng đọc đã tạo sẵn vẫn chạy.
 - Cần kiểm tra lại toàn bộ sau khi triển khai, vì các file này chưa được chạy thử trên VPS thật.
+
+**Healthcheck và vận hành (cập nhật 29/10/2026)**
+- `docker compose ps` phải hiện `healthy` cho `admin` và `study` trước khi Caddy nhận traffic. Compose đã đặt `depends_on: condition: service_healthy`.
+- Kiểm tra nhanh: `docker compose exec study node -e "fetch('http://127.0.0.1:4400/robots.txt').then(r=>process.exit(r.ok?0:1))"`.
+- Sao lưu volume: `docker run --rm -v deploy_admin-data:/data -v "$PWD":/backup alpine tar czf /backup/admin-data-$(date +%F).tgz -C /data .` (chạy trong thư mục `deploy`).
+- Khôi phục: dừng `admin`, giải nén bản backup vào volume, rồi `docker compose up -d admin`; thử `docker compose exec admin node src/cli.mjs restore <file> --yes` nếu dùng file SQLite.
+- Trạng thái xác minh: `docker compose config` đã pass ngày 29/10/2026; chưa có VPS để chạy thật, nên healthcheck/backup runtime vẫn **unverified**.

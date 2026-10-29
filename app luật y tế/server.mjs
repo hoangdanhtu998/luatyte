@@ -95,7 +95,7 @@ function readBody(req) {
 }
 
 export function createHandler() {
-  return async (req, res) => {
+  const route = async (req, res) => {
     const url = new URL(req.url, 'http://localhost');
 
     // ---- TTS Routes ----
@@ -190,6 +190,18 @@ export function createHandler() {
     // no-cache: trình duyệt luôn kiểm tra bản mới, tránh dùng trang cũ sau khi sửa.
     res.writeHead(200, { 'content-type': TYPES[extname(file)] || 'application/octet-stream', 'cache-control': 'no-cache' });
     res.end(readFileSync(file));
+  };
+  return async (req, res) => {
+    try {
+      await route(req, res);
+    } catch (e) {
+      console.error('Yêu cầu lỗi:', req.method, req.url, e && e.message ? e.message : e);
+      if (!res.headersSent) {
+        sendJson(res, 500, { error: { code: 'INTERNAL_ERROR', message: 'Máy chủ gặp lỗi khi xử lý yêu cầu.' } });
+      } else {
+        res.destroy();
+      }
+    }
   };
 }
 

@@ -12,7 +12,8 @@
       "Khi cơ sở thử nghiệm thay đổi thuộc các trường hợp điểm d, đ, e khoản 1 Điều 11, phải nộp báo cáo thay đổi cho Sở Y tế nơi đặt phòng thí nghiệm (khoản 4 Điều 11).",
       "Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.",
       "Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt25_2026",
@@ -27,7 +28,8 @@
       "Thay thế toàn bộ Điều 34 (hồ sơ khám sức khỏe) và Điều 36 (nội dung khám sức khỏe) của Thông tư 32/2023.",
       "Hồ sơ khám sức khỏe lập theo Mẫu 01–04 Phụ lục XXIV; Mẫu 04 là giấy khám sức khỏe tâm thần mới.",
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt26_2025",
@@ -44,7 +46,8 @@
       "Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.",
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
       "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt22_2024",
@@ -59,7 +62,25 @@
       "Thanh toán trực tiếp thuốc trong Danh mục thuốc hiếm (Thông tư 26/2019) và thiết bị loại C, D (trừ chẩn đoán in vitro và thiết bị cá nhân hóa) — Điều 2.",
       "Điều kiện: không có thuốc thương mại cùng hoạt chất, không chuyển tuyến được vì lý do an toàn hoặc cơ sở đang cách ly dịch bệnh — Điều 3.",
       "Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."
-    ]
+    ],
+    "verify": true
+  },
+  {
+    "id": "tt21_2024",
+    "cat": "Khám chữa bệnh",
+    "name": "Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+    "so": "21/2024/TT-BYT",
+    "pass": "17/10/2024",
+    "eff": "17/10/2024",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025.",
+    "points": [
+      "Quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh.",
+      "Từ 01/01/2025, Thông tư 21/2023 và 22/2023 về giá dịch vụ khám bệnh, chữa bệnh hết hiệu lực.",
+      "Mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung giá do cơ quan có thẩm quyền ban hành."
+    ],
+    "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
+    "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025."
   },
   {
     "id": "tt22_2023",
@@ -68,13 +89,14 @@
     "so": "22/2023/TT-BYT",
     "pass": "17/11/2023",
     "eff": "17/11/2023 (ngày ký)",
-    "status": "amend",
-    "replaces": "Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
+    "status": "het",
+    "replaces": "Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11). Đã hết hiệu lực từ 01/01/2025 cùng Thông tư 21/2023/TT-BYT.",
     "points": [
       "Giá khám bệnh BHYT thống nhất theo hạng bệnh viện trên toàn quốc; cách tính giá dựa trên chi phí trực tiếp và tiền lương.",
       "Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám (Điều 5).",
       "Cách tính ngày giường, giá ICU và định mức ca cho siêu âm, X-quang, CT, MRI (Điều 6, 7)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt21_2023",
@@ -83,14 +105,15 @@
     "so": "21/2023/TT-BYT",
     "pass": "17/11/2023",
     "eff": "17/11/2023 (ngày ký)",
-    "status": "amend",
-    "replaces": "Thay thế Thông tư 37/2018 và 14/2019. Nguồn tra cứu ghi đã được thay bởi Thông tư 21/2024/TT-BYT — cần kiểm tra.",
+    "status": "het",
+    "replaces": "Thay thế Thông tư 37/2018 và 14/2019. Đã hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT.",
     "points": [
       "HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá (Điều 4).",
       "Khung giá gồm bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú dịch vụ tương đương (Điều 2).",
       "Cơ sở chưa được phân hạng áp giá bệnh viện hạng IV; trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III (Điều 4).",
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt49_2025",
@@ -105,7 +128,8 @@
       "Cấp giấy chứng nhận lương y trong 5 ngày làm việc kể từ khi nhận hồ sơ hợp lệ (điểm b khoản 2 Điều 12).",
       "Cấp lại giấy chứng nhận lương y trong 5 ngày làm việc (khoản 3 Điều 13).",
       "Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "tt44_2025",
@@ -121,7 +145,8 @@
       "Cục được cấp, cấp lại, thu hồi giấy phép nhập khẩu, giấy chứng nhận lưu hành tự do và chứng chỉ hoạt động thử nghiệm.",
       "Cục được đình chỉ, khôi phục hoặc thu hồi lô sản phẩm và thu hồi lô đã lưu hành (Điều 2).",
       "Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "dulieu",
@@ -135,7 +160,8 @@
     "points": [
       "Định nghĩa sổ sức khỏe điện tử là ứng dụng hoặc phần mềm công nghệ thông tin để cập nhật, hiển thị, tra cứu, lưu trữ thông tin tóm lược quá trình phòng bệnh, thăm khám, điều trị của từng cá nhân (khoản 3 Điều 3).",
       "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "kcb",
@@ -154,7 +180,8 @@
       "Nghiêm cấm từ chối hoặc cố ý chậm cấp cứu người bệnh; người bệnh có quyền được giữ bí mật thông tin sức khỏe.",
       "Hồ sơ bệnh án có thể lập dưới dạng điện tử (Điều 69) và có Hệ thống thông tin quản lý khám chữa bệnh (Điều 112), liên quan trực tiếp đến HIS."
     ],
-    "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh"
+    "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh",
+    "verify": true
   },
   {
     "id": "nd_96_2023_kcb",
@@ -233,7 +260,8 @@
       "Thuốc kê đơn phải công bố giá bán buôn dự kiến; bán qua các tầng trung gian không được vượt giá đã công bố.",
       "Ưu tiên thủ tục đăng ký lưu hành và ưu đãi đầu tư để phát triển công nghiệp dược thành ngành mũi nhọn."
     ],
-    "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược"
+    "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược",
+    "verify": true
   },
   {
     "id": "nd_163_2025_duoc",
@@ -347,7 +375,8 @@
       "Khuyến khích nuôi con hoàn toàn bằng sữa mẹ đến 6 tháng tuổi và duy trì đến 24 tháng.",
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
-    "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn"
+    "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
+    "verify": true
   },
   {
     "id": "danso",
@@ -364,7 +393,8 @@
       "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
-    "guide": "Nghị định hướng dẫn Luật Dân số"
+    "guide": "Nghị định hướng dẫn Luật Dân số",
+    "verify": true
   },
   {
     "id": "thuocla",
@@ -398,7 +428,8 @@
       "Cấm bán, cung cấp rượu, bia cho người dưới 18 tuổi.",
       "Cấm xúi giục, ép buộc người khác uống rượu, bia.",
       "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "attp",
@@ -413,7 +444,8 @@
       "Quản lý theo chuỗi: sản xuất, kinh doanh, nhập khẩu, quảng cáo thực phẩm.",
       "Cơ sở sản xuất, kinh doanh thực phẩm phải có Giấy chứng nhận đủ điều kiện an toàn thực phẩm (trừ trường hợp được miễn).",
       "Phân công quản lý giữa Bộ Y tế, Bộ Nông nghiệp và Môi trường, Bộ Công Thương."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "hiv",
@@ -428,7 +460,8 @@
       "Cấm kỳ thị, phân biệt đối xử với người nhiễm HIV.",
       "Thông tin về người nhiễm HIV được bảo mật; chỉ thông báo cho những người được luật cho phép.",
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "ghepmo",
@@ -443,7 +476,8 @@
       "Người hiến mô, bộ phận cơ thể khi còn sống phải từ đủ 18 tuổi, có năng lực hành vi dân sự đầy đủ.",
       "Hiến hoàn toàn tự nguyện, không vì mục đích thương mại; cấm mua bán mô, bộ phận cơ thể người.",
       "Giữ bí mật thông tin về người hiến và người được ghép, trừ khi các bên đồng ý khác."
-    ]
+    ],
+    "verify": true
   },
   {
     "id": "donthuoc",
@@ -460,7 +494,8 @@
       "Thuốc kê đơn chỉ được bán khi có đơn của người có thẩm quyền kê đơn; người bệnh nên hỏi dược sĩ về cách dùng và không tự ý đổi liều.",
       "Đối chiếu nguyên văn thông tư và các thông tư sửa đổi trước khi áp dụng trong thực tế."
     ],
-    "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)"
+    "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)",
+    "verify": true
   },
   {
     "id": "tbyt",
@@ -476,7 +511,8 @@
       "Cơ sở sản xuất, nhập khẩu, kinh doanh thiết bị y tế phải có giấy phép hoặc đáp ứng điều kiện theo quy định.",
       "Bộ Y tế và Sở Y tế thực hiện phân cấp quản lý; thủ tục hành chính cụ thể có thể thay đổi theo thông tư mới, cần đối chiếu."
     ],
-    "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT"
+    "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT",
+    "verify": true
   },
   {
     "id": "nd_188_2025_bhyt",

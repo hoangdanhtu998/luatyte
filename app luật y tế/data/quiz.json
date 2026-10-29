@@ -294,7 +294,7 @@
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 22/2023/TT-BYT, khám chuyên khoa từ lần thứ hai được thanh toán bao nhiêu?",
+    "q": "Theo Thông tư 22/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), khám chuyên khoa từ lần thứ hai được thanh toán bao nhiêu?",
     "o": [
       "100% giá một lần khám",
       "50% giá một lần khám",
@@ -302,11 +302,12 @@
       "Không được thanh toán"
     ],
     "a": 2,
-    "e": "Điều 5 Thông tư 22/2023/TT-BYT: khám thêm chuyên khoa từ lần thứ hai tính 30% giá một lần khám, tổng tối đa 2 lần giá khám."
+    "e": "Điều 5 Thông tư 22/2023/TT-BYT: khám thêm chuyên khoa từ lần thứ hai tính 30% giá một lần khám, tổng tối đa 2 lần giá khám. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Trạm y tế xã thực hiện dịch vụ kỹ thuật được áp dụng mức giá bằng bao nhiêu % giá quy định (theo Điều 4)?",
+    "q": "Trước 01/01/2025: Trạm y tế xã thực hiện dịch vụ kỹ thuật được áp dụng mức giá bằng bao nhiêu % giá quy định (theo Điều 4)?",
     "o": [
       "50%",
       "70%",
@@ -314,11 +315,12 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 22/2023/TT-BYT (ví dụ trạm y tế bằng 70% giá quy định)."
+    "e": "Điều 4 Thông tư 22/2023/TT-BYT (ví dụ trạm y tế bằng 70% giá quy định). Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2023/TT-BYT?",
+    "q": "Ai quyết định mức giá cụ thể của dịch vụ khám chữa bệnh trong cơ sở Nhà nước theo Thông tư 21/2024/TT-BYT?",
     "o": [
       "Bộ trưởng Bộ Y tế",
       "Hội đồng nhân dân cấp tỉnh (không vượt khung giá)",
@@ -326,11 +328,12 @@
       "Bảo hiểm xã hội Việt Nam"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 21/2023/TT-BYT: HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá."
+    "e": "Điều 9 khoản 3 Thông tư 21/2024/TT-BYT: HĐND cấp tỉnh quyết định mức giá cụ thể, không vượt khung giá.",
+    "verify": false
   },
   {
     "t": "bhyt",
-    "q": "Thông tư 21/2023/TT-BYT gồm bao nhiêu phụ lục khung giá?",
+    "q": "Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025) gồm bao nhiêu phụ lục khung giá?",
     "o": [
       "Hai phụ lục",
       "Ba phụ lục",
@@ -338,11 +341,12 @@
       "Năm phụ lục"
     ],
     "a": 2,
-    "e": "Điều 2 Thông tư 21/2023/TT-BYT có bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú tương đương."
+    "e": "Điều 2 Thông tư 21/2023/TT-BYT có bốn phụ lục: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, ghi chú tương đương. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, cơ sở chưa được phân hạng áp dụng giá của bệnh viện hạng nào?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), cơ sở chưa được phân hạng áp dụng giá của bệnh viện hạng nào?",
     "o": [
       "Hạng đặc biệt",
       "Hạng I",
@@ -350,13 +354,13 @@
       "Hạng IV"
     ],
     "a": 3,
-    "e": "Điều 4 khoản 2 điểm b Thông tư 21/2023/TT-BYT: cơ sở khám bệnh, chữa bệnh chưa được phân hạng áp dụng mức giá của bệnh viện hạng IV (đã đối chiếu).",
+    "e": "Điều 4 khoản 2 điểm b Thông tư 21/2023/TT-BYT: cơ sở khám bệnh, chữa bệnh chưa được phân hạng áp dụng mức giá của bệnh viện hạng IV (đã đối chiếu). Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
     "src": "Thông tư 21/2023/TT-BYT, Điều 4 khoản 2 điểm b (đã đối chiếu)",
-    "verify": false
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, giá kỹ thuật tại trạm y tế xã bằng bao nhiêu % Phụ lục III?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), giá kỹ thuật tại trạm y tế xã bằng bao nhiêu % Phụ lục III?",
     "o": [
       "50%",
       "70%",
@@ -364,11 +368,12 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 4 Thông tư 21/2023/TT-BYT."
+    "e": "Điều 4 Thông tư 21/2023/TT-BYT. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 21/2023/TT-BYT, từ lượt khám thứ hai trong cùng một lần đến khám, được tính bao nhiêu % giá một lượt khám?",
+    "q": "Theo Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025), từ lượt khám thứ hai trong cùng một lần đến khám, được tính bao nhiêu % giá một lượt khám?",
     "o": [
       "10%",
       "30%",
@@ -376,7 +381,8 @@
       "100%"
     ],
     "a": 1,
-    "e": "Điều 5 Thông tư 21/2023/TT-BYT: tổng tiền khám không quá 2 lần giá khám."
+    "e": "Điều 5 Thông tư 21/2023/TT-BYT: tổng tiền khám không quá 2 lần giá khám. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; hiện hành là Thông tư 21/2024/TT-BYT.",
+    "verify": true
   },
   {
     "t": "duoc",

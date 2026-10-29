@@ -75,3 +75,35 @@ Các văn bản mới phát hiện nhưng **chưa thêm** vì ngoài phạm vi h
 2. Bổ sung chương lý thuyết cho Luật Phòng bệnh 114/2025, Luật Dân số 113/2025 và Luật Chuyển đổi số 148/2025 nếu muốn mảng lý thuyết theo kịp danh mục.
 3. Quyết định có thêm Thông tư 34/2026 và 36/2026 vào thư viện hay không.
 4. Kiểm tra lại các câu hỏi/đáp án liên quan Nghị định 96/2023 và Thông tư 13/2026 nếu muốn có đề luyện riêng.
+
+## 7. Đợt 2 — rà số/ngày, toàn bộ Đúng/Sai và lý thuyết (29/10/2026)
+
+Phạm vi: 41 văn bản sau bổ sung; 187 câu trắc nghiệm (72 + 15 + 44 + 48 + 8); 23 nhận định Đúng/Sai; 14 chương lý thuyết (c11 có 22 bước); bộ câu đặc thù 8 câu. Đã rà toàn bộ cấu trúc, toàn bộ đáp án có chứa số/ngày/tỷ lệ, toàn bộ 23 Đúng/Sai và 14 chương; các câu khái niệm không có số được rà theo cụm chủ đề.
+
+### 7.1. Lỗi đã sửa
+
+| # | Nội dung | Trước | Sau | Nguồn |
+|---|---|---|---|---|
+| 1 | Mức hưởng BHYT trái tuyến (2 câu hỏi + chương c4) | Nội trú tuyến chuyên sâu 40% | Nội trú trái tuyến tại cấp chuyên sâu hưởng 100% mức hưởng; ngoại trú trái tuyến 50% mức hưởng | [Luật BHYT 51/2024/QH15 — hướng dẫn mức hưởng trái tuyến](https://tytphuong27qbth.medinet.gov.vn/dich-vu-y-te/quy-dinh-moi-ve-muc-huong-bhyt-trai-tuyen-tu-0172025-ma-nguoi-dan-can-biet-cmobile7708-205099.aspx) |
+| 2 | Thông tư 21/2023 và 22/2023 về giá dịch vụ KCB | Đang hiệu lực / “có sửa đổi” | Hết hiệu lực từ 01/01/2025; thêm Thông tư 21/2024/TT-BYT vào danh mục; 8 câu giá cũ ghi rõ “trước 01/01/2025 / đã hết hiệu lực” và bật cảnh báo đối chiếu; cập nhật chương c5, c11 | [Thông tư 21/2024/TT-BYT — Cổng Chính phủ](https://chinhphu.vn/?pageid=27160&docid=211506) |
+| 3 | Câu “Ai quyết định mức giá cụ thể?” | Căn cứ Thông tư 21/2023 | Căn cứ Thông tư 21/2024/TT-BYT (Điều 9 khoản 3); HĐND cấp tỉnh quyết định trong phạm vi khung | [Thông tư 21/2024/TT-BYT](https://chinhphu.vn/?pageid=27160&docid=211506) |
+
+### 7.2. Kết quả kiểm tra
+
+- `laws.json`: 41 văn bản, không trùng id/số hiệu, 0 mục `points` rỗng; 22 mục có nguồn chi tiết, 19 mục cũ được đánh dấu `verify: true` thay vì tạo URL không kiểm chứng.
+- `quiz*.json`: 187 câu, không trùng câu hỏi, mọi đáp án nằm trong phạm vi, mọi câu có giải thích; 9 câu đang bật cảnh báo đối chiếu (8 câu giá lịch sử + 1 câu quyền bảo mật thông tin người bệnh).
+- `tf.json`: 23 nhận định, đúng định dạng `[câu, đúng/sai, giải thích]`; đã đối chiếu các mốc BHYT, Luật Dược 44/2024, Luật Dân số 113/2025, thuốc lá điện tử, nồng độ cồn, hiến mô.
+- `ly_thuyet.json`: 14 chương; c14 đủ 6 bước, mỗi bước có `nguon`; c5 và c11 đã sửa theo Thông tư 21/2024; bước “Khám nhiều lượt” được đánh dấu `verify` vì mức giá cụ thể phụ thuộc nghị quyết địa phương.
+- Bộ đặc thù vẫn đúng 8 câu; `index.html` cập nhật đúng chuỗi câu hỏi giá đã đổi; đề thi lấy từ pool thường nên không chứa bộ đặc thù.
+- `test/content-contract.test.mjs` pass; bổ sung kiểm tra mỗi văn bản phải có `nguon`/`detailSource` hoặc `verify: true`.
+
+### 7.3. Quyết định văn bản
+
+- Đã thêm **Thông tư 21/2024/TT-BYT** vì thay thế trực tiếp hai thông tư giá đang có trong app.
+- Giữ quyết định không thêm **Thông tư 26/2026, 34/2026, 36/2026** và **Nghị định 350/2026** vì ngoài phạm vi học chính hoặc chưa đủ chắc chắn; xem mục 3.
+
+### 7.4. Giới hạn còn lại
+
+- 8 câu về giá theo Thông tư 21/2023/22/2023 được giữ làm câu lịch sử, có cảnh báo “chờ đối chiếu”; chưa thay bằng bảng giá cụ thể vì mức giá hiện hành do từng địa phương quyết định và cần đối chiếu nghị quyết giá của tỉnh.
+- Không thay đổi dữ liệu người dùng, không sửa `index.html` ngoài chuỗi câu hỏi đặc thù và phần UI đã nêu.
+
