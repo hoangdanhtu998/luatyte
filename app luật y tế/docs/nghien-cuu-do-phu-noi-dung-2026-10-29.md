@@ -4,6 +4,8 @@
 **Phạm vi:** `app luật y tế/data/laws.json`, `quiz*.json`, `tf.json`, `ly_thuyet.json`; đối chiếu nguồn chính thức trên Cổng Chính phủ, Công báo, Bộ Y tế, BHXH Việt Nam.  
 **Tính chất:** chỉ đọc dữ liệu app; chỉ tạo file ghi chú này; không sửa laws/quiz/theory hay file khác.
 
+> **Đính chính 29/10/2026:** mục 3.5 và 5.7 nói `laws.json` còn dòng 40% là mâu thuẫn — thực ra 40% là mức đúng theo Điều 22 khoản 4 Luật BHYT 51/2024; quiz/lý thuyết đã được hoàn nguyên từ 100% về 40% trong đợt audit 2. Các nhận định còn lại giữ nguyên.
+
 ## 0. Một thay đổi dữ liệu trong lúc rà
 
 Khi bắt đầu, dữ liệu đúng như yêu cầu: **41 văn bản, 187 câu trắc nghiệm, 23 câu đúng/sai, 14 chương lý thuyết**. Trong lúc rà, dữ liệu được bổ sung **Nghị định 90/2026/NĐ-CP** (12 câu hỏi, trong đó 8 tình huống; chương `c15`; 1 mục trong `laws.json`). Trạng thái cuối của ghi chú này là:
