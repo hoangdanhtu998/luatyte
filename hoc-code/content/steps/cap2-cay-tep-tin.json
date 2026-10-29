@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Hệ thống tệp giống một bảng tra: mỗi đường dẫn như /a/b.txt trỏ tới một dữ liệu. Bài này làm việc tra đó.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bảng có ba đường dẫn: /a, /a/b.txt và /a/c.", "boxes": ["bảng", "tìm"], "code": "/a   /a/b.txt   /a/c", "run": { "bảng": "3 đường dẫn", "tìm": "chưa tìm" }, "after": "Bảng đã có sẵn ba đường dẫn." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Muốn tìm /a/b.txt, ta duyệt từng đường dẫn và so với strcmp. Khi bằng nhau thì có.", "boxes": ["bảng", "tìm"], "code": "strcmp(\"/a/b.txt\", \"/a/b.txt\") == 0", "run": { "bảng": "3 đường dẫn", "tìm": "/a/b.txt: có" }, "after": "Tìm thấy /a/b.txt." },
+    { "img": "m03-meo-vui.png", "say": "Tìm /x thì không khớp đường dẫn nào, nên kết quả là không có.", "boxes": ["bảng", "tìm"], "code": "/x không khớp ô nào", "run": { "bảng": "3 đường dẫn", "tìm": "/x: không" }, "after": "Không tìm thấy /x." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: vì sao không dùng == để so sánh hai chuỗi?", "boxes": ["bảng", "tìm"], "code": "a == b  so sánh gì?", "quiz": [
+        { "text": "== so sánh địa chỉ, không so sánh nội dung", "right": true, "hint": "Đúng! Hai chuỗi giống nội dung nhưng ở hai địa chỉ khác nhau thì == cho kết quả sai." },
+        { "text": "== luôn đúng với chuỗi", "right": false, "hint": "Không. == với hai mảng char chỉ so địa chỉ." },
+        { "text": "== chậm hơn strcmp", "right": false, "hint": "Vấn đề không nằm ở tốc độ. == so sánh sai thứ." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: hệ thống tệp tìm dữ liệu bằng đường dẫn. Tra cứu bằng strcmp, và nhớ đó là phần lõi của FUSE.", "boxes": ["bảng", "tìm"], "end": true }
+  ]
+}

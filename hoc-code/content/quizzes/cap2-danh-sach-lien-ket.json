@@ -1,0 +1,34 @@
+{
+  "quizzes": [
+    {
+      "q": "Danh sách liên kết khác mảng ở điểm nào?",
+      "options": [
+        { "text": "Các nút có thể nằm rải rác, mỗi nút trỏ tới nút kế tiếp", "why": "Đúng. Mảng là các ô liền nhau, còn danh sách dựa vào con trỏ nối các nút." },
+        { "text": "Danh sách luôn có đúng 10 phần tử", "why": "Sai. Danh sách có thể dài hoặc ngắn tùy số nút." },
+        { "text": "Không thể in ra được", "why": "Sai. Đi từ đầu theo con trỏ là in được hết." }
+      ],
+      "answer": 0,
+      "explain": "Mỗi nút có giá trị và con trỏ tới nút kế tiếp. Muốn đi hết danh sách, bắt đầu từ đầu và đi theo các con trỏ."
+    },
+    {
+      "q": "Thêm 1, 2, 3 lần lượt vào đầu danh sách. Danh sách từ đầu là gì?",
+      "options": [
+        { "text": "3 2 1", "why": "Đúng. Số thêm sau cùng nằm ở đầu." },
+        { "text": "1 2 3", "why": "Sai. Thêm vào đầu thì số mới nhất đứng trước." },
+        { "text": "2 1 3", "why": "Sai. Mỗi lần thêm đều đặt lên đầu." }
+      ],
+      "answer": 0,
+      "explain": "Mỗi nút mới trỏ tới đầu cũ rồi trở thành đầu mới."
+    },
+    {
+      "q": "Khi thêm nút mới vào đầu, bước nào phải làm trước?",
+      "options": [
+        { "text": "Cho nút mới trỏ tới đầu hiện tại", "why": "Đúng. Làm vậy mới không làm mất phần danh sách cũ." },
+        { "text": "Xóa đầu cũ", "why": "Sai. Xóa đầu cũ sẽ làm mất các nút phía sau." },
+        { "text": "In danh sách ra", "why": "Sai. In không thay đổi cấu trúc danh sách." }
+      ],
+      "answer": 0,
+      "explain": "Nếu đặt đầu mới trước khi trỏ tới đầu cũ, toàn bộ phần danh sách cũ sẽ bị mất."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "RAII nghĩa là gì?",
+      "options": [
+        {
+          "text": "Lấy tài nguyên trong constructor và giải phóng trong destructor",
+          "why": "Đúng. Tài nguyên gắn với đời sống của đối tượng."
+        },
+        {
+          "text": "Luôn dùng malloc thay cho new",
+          "why": "Không phải nội dung của RAII."
+        },
+        {
+          "text": "Không bao giờ dùng con trỏ",
+          "why": "RAII vẫn dùng con trỏ bên trong."
+        },
+        {
+          "text": "Tắt cảnh báo của trình biên dịch",
+          "why": "Không liên quan đến cảnh báo."
+        }
+      ],
+      "answer": 0,
+      "explain": "Resource Acquisition Is Initialization: tài nguyên được quản lý bởi đối tượng."
+    },
+    {
+      "q": "std::unique_ptr khác con trỏ thường ở điểm nào?",
+      "options": [
+        {
+          "text": "Tự giải phóng đối tượng khi ra khỏi phạm vi",
+          "why": "Đúng. Không cần gọi delete thủ công."
+        },
+        {
+          "text": "Không thể trỏ tới đối tượng",
+          "why": "Trỏ tới đối tượng được."
+        },
+        {
+          "text": "Chỉ dùng cho số nguyên",
+          "why": "Dùng được cho mọi kiểu."
+        },
+        {
+          "text": "Tự tăng tốc chương trình",
+          "why": "Không phải mục đích."
+        }
+      ],
+      "answer": 0,
+      "explain": "unique_ptr là con trỏ có người sở hữu duy nhất và tự dọn khi hết phạm vi."
+    },
+    {
+      "q": "Khi biến unique_ptr ra khỏi phạm vi, điều gì xảy ra?",
+      "options": [
+        {
+          "text": "Đối tượng được giải phóng tự động",
+          "why": "Đúng. Destructor của unique_ptr gọi delete."
+        },
+        {
+          "text": "Đối tượng vẫn còn mãi, gây rò rỉ",
+          "why": "Không rò rỉ vì đã được quản lý."
+        },
+        {
+          "text": "Chương trình báo lỗi",
+          "why": "Đây là hành vi bình thường."
+        },
+        {
+          "text": "Đối tượng được sao chép",
+          "why": "Không sao chép."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đây là lợi ích chính: không cần nhớ delete."
+    },
+    {
+      "q": "Vì sao nên hạn chế new và delete thủ công?",
+      "options": [
+        {
+          "text": "Dễ quên delete hoặc delete hai lần, gây rò rỉ hoặc lỗi",
+          "why": "Đúng. Đây là nguồn lỗi bộ nhớ phổ biến."
+        },
+        {
+          "text": "Vì new chậm hơn luôn luôn",
+          "why": "Tốc độ không phải lý do chính."
+        },
+        {
+          "text": "Vì C++ cấm dùng new",
+          "why": "C++ vẫn cho phép new."
+        },
+        {
+          "text": "Vì new không tạo được đối tượng",
+          "why": "new tạo được đối tượng."
+        }
+      ],
+      "answer": 0,
+      "explain": "RAII và con trỏ thông minh giảm việc phải nhớ giải phóng."
+    },
+    {
+      "q": "std::shared_ptr khác unique_ptr ở điểm nào?",
+      "options": [
+        {
+          "text": "Nhiều con trỏ có thể cùng sở hữu, và đối tượng được giải phóng khi không còn ai dùng",
+          "why": "Đúng. shared_ptr đếm số tham chiếu."
+        },
+        {
+          "text": "Không tự giải phóng",
+          "why": "Vẫn tự giải phóng khi đếm về 0."
+        },
+        {
+          "text": "Chỉ dùng được với chuỗi",
+          "why": "Dùng với mọi kiểu."
+        },
+        {
+          "text": "Nhanh hơn unique_ptr luôn",
+          "why": "Có thêm chi phí đếm tham chiếu."
+        }
+      ],
+      "answer": 0,
+      "explain": "shared_ptr hợp khi nhiều phần của chương trình cùng dùng một đối tượng."
+    },
+    {
+      "q": "Lợi ích của RAII khi có lỗi (ngoại lệ) xảy ra giữa chừng là gì?",
+      "options": [
+        {
+          "text": "Destructor vẫn chạy khi ra khỏi phạm vi, nên tài nguyên vẫn được giải phóng",
+          "why": "Đúng. Đây là lý do RAII an toàn khi có lỗi."
+        },
+        {
+          "text": "Tài nguyên bị rò rỉ mãi",
+          "why": "Ngược lại, RAII tránh rò rỉ."
+        },
+        {
+          "text": "Chương trình không bao giờ dừng",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Lỗi tự biến mất",
+          "why": "Lỗi không tự biến mất, nhưng tài nguyên vẫn được dọn."
+        }
+      ],
+      "answer": 0,
+      "explain": "Destructor được gọi khi stack bị thu lại, kể cả khi có ngoại lệ."
+    }
+  ]
+}

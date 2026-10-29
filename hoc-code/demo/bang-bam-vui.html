@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng băm vui · thử tương tác</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --navy:#1C2027; --orange:#F08A4B; --blue:#2F5FB3; --brick:#B8521F; --paper:#fff; --muted:#5b6475; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Be Vietnam Pro', sans-serif; background:var(--cream); color:var(--ink); }
+  header { background:var(--navy); color:#F1EDE4; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  header a { color:var(--orange); text-decoration:none; font-weight:700; }
+  main { max-width:980px; margin:0 auto; padding:18px 16px 60px; display:grid; gap:18px; }
+  h1 { margin:0; font-size:26px; }
+  .card { background:var(--paper); border-radius:18px; padding:18px; box-shadow:0 4px 18px rgba(28,32,39,.08); }
+  .row { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  @media (max-width:640px) { .row { grid-template-columns:1fr; } }
+  label { font-size:14px; font-weight:700; color:var(--muted); display:block; margin-bottom:6px; }
+  input { width:100%; font:600 16px 'Be Vietnam Pro', sans-serif; padding:10px 12px; border:2px solid #d9dfe9; border-radius:12px; }
+  input:focus { outline:none; border-color:var(--orange); }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+  button { font:700 15px 'Be Vietnam Pro', sans-serif; border:0; border-radius:12px; padding:10px 16px; cursor:pointer; background:var(--navy); color:#F1EDE4; transition:transform .1s, background .2s; }
+  button:hover { background:#2d333d; transform:translateY(-1px); }
+  button.alt { background:var(--orange); color:var(--navy); }
+  button.ghost { background:#fff; color:var(--navy); border:2px solid #c5cfdd; }
+  #msg { font-size:17px; font-weight:700; min-height:48px; padding:12px 14px; border-radius:14px; background:#eef3fa; color:var(--blue); line-height:1.5; }
+  #msg.update { background:#fff1e6; color:var(--brick); }
+  #msg.insert { background:#e8f5ec; color:#1f6b43; }
+  #msg.miss { background:#f3f3f3; color:var(--muted); }
+
+  /* Nhân vật mèo */
+  .stage { position:relative; height:150px; }
+  #cat { position:absolute; top:0; left:0; width:86px; transition: left .6s cubic-bezier(.3,1.4,.6,1), top .6s; }
+  #cat .eye { transform-origin:center; animation: blink 4s infinite; }
+  @keyframes blink { 0%,94%,100% { transform: scaleY(1);} 96% { transform: scaleY(.1);} }
+  #cat.jump { animation: hop .5s; }
+  @keyframes hop { 0%{transform:translateY(0)} 40%{transform:translateY(-22px)} 100%{transform:translateY(0)} }
+  #cat.happy .mouth { d: path('M 30 56 Q 40 66 50 56'); }
+
+  /* Bảng băm */
+  .buckets { display:grid; grid-template-columns: repeat(8, 1fr); gap:8px; }
+  .bucket { background:#fff; border:2px solid #dfe5ee; border-radius:14px; padding:8px 6px; min-height:86px; transition: all .3s; }
+  .bucket .idx { font:700 13px 'JetBrains Mono', monospace; color:var(--muted); }
+  .bucket.on { border-color:var(--orange); background:#fff6ef; box-shadow:0 0 0 4px rgba(240,138,75,.25); }
+  .bucket .item { display:block; font-size:13px; margin-top:4px; padding:3px 6px; background:#eef3fa; border-radius:8px; word-break:break-all; }
+  .bucket .item.new { background:#e8f5ec; }
+  .bucket .item.changed { background:#fde3d2; }
+  @media (max-width:640px) { .buckets { grid-template-columns: repeat(4,1fr); } }
+
+  /* Các bước tính hàm băm */
+  #steps { font:14px/1.7 'JetBrains Mono', monospace; color:#26324a; background:#f6f3ec; border-radius:12px; padding:12px; overflow-x:auto; white-space:pre; }
+  .hint { color:var(--muted); font-size:14px; line-height:1.6; }
+  .legend { font-size:14px; color:var(--muted); }
+  /* Người dùng bật "giảm chuyển động" thì tắt hết hoạt ảnh; mèo vẫn đứng đúng ô. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <strong>Bảng băm vui · thử tương tác</strong>
+  <a href="lesson.html?id=bang-bam">← Về bài học Bảng băm</a>
+</header>
+
+<main>
+  <section class="card">
+    <div class="stage" aria-hidden="true">
+      <img id="cat" src="../assets/mascot/m05-meo-tai-vao-o.png" alt="Mèo con nhảy tới ô băm">
+    </div>
+    <p class="hint">Chú mèo sẽ nhảy tới đúng ô mà khóa được băm vào. Hãy thử nhập khóa "cho" với giá trị "mèo", rồi nhập lại "cho" với giá trị "lợn" và xem chuyện gì xảy ra.</p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <div>
+        <label for="key">Khóa (tên)</label>
+        <input id="key" type="text" value="cho" autocomplete="off" maxlength="20">
+      </div>
+      <div>
+        <label for="val">Giá trị</label>
+        <input id="val" type="text" value="mèo" autocomplete="off" maxlength="20">
+      </div>
+    </div>
+    <div class="btns">
+      <button id="put" type="button">Thêm / cập nhật (put)</button>
+      <button id="get" type="button" class="ghost">Tìm (get)</button>
+      <button id="demo" type="button" class="alt">Thử: cho = mèo, rồi cho = lợn</button>
+      <button id="reset" type="button" class="ghost">Làm lại từ đầu</button>
+    </div>
+    <p id="msg" role="status" aria-live="polite" style="margin-top:14px">Nhập khóa và giá trị, rồi bấm Thêm.</p>
+  </section>
+
+  <section class="card">
+    <h2 style="margin:0 0 6px;font-size:18px">Bảng băm có 8 ô</h2>
+    <p class="legend">Ô nào có màu cam là ô đang được dùng. Trong một ô có thể có nhiều khóa, xếp thành hàng: khóa mới được đặt lên đầu.</p>
+    <div id="buckets" class="buckets"></div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin:0 0 6px;font-size:18px">Tính chỉ số của khóa</h2>
+    <p class="hint">Hàm băm djb2 bắt đầu từ 5381. Với mỗi ký tự: nhân 33 rồi cộng mã của ký tự. Cuối cùng lấy phần dư khi chia cho 8 để có chỉ số ô.</p>
+    <div id="steps"></div>
+  </section>
+</main>
+
+<script>
+  const CAP = 8;
+  let buckets = Array.from({ length: CAP }, () => []); // mỗi ô là danh sách {key, value}
+  const enc = new TextEncoder();
+
+  // djb2 trên byte UTF-8, dùng số 32 bit không dấu.
+  function hashSteps(key) {
+    const bytes = Array.from(enc.encode(key));
+    let h = 5381;
+    const lines = ['bắt đầu: h = 5381'];
+    for (const c of bytes) {
+      h = (Math.imul(h, 33) + c) >>> 0;
+      lines.push('nhân 33, cộng ' + c + ' (mã của ký tự) -> h = ' + h);
+    }
+    const idx = h % CAP;
+    lines.push('chỉ số = ' + h + ' % ' + CAP + ' = ' + idx);
+    return { idx, lines };
+  }
+
+  const bucketsEl = document.getElementById('buckets');
+  const msg = document.getElementById('msg');
+  const cat = document.getElementById('cat');
+
+  function render(highlightIdx, changedKey, newKey) {
+    bucketsEl.innerHTML = '';
+    for (let i = 0; i < CAP; i++) {
+      const b = document.createElement('div');
+      b.className = 'bucket' + (i === highlightIdx ? ' on' : '');
+      const t = document.createElement('div');
+      t.className = 'idx';
+      t.textContent = 'ô [' + i + ']';
+      b.appendChild(t);
+      if (buckets[i].length === 0) {
+        const e = document.createElement('span');
+        e.className = 'item';
+        e.style.background = 'transparent';
+        e.style.color = '#9aa3b2';
+        e.textContent = 'trống';
+        b.appendChild(e);
+      }
+      buckets[i].forEach(node => {
+        const it = document.createElement('span');
+        it.className = 'item' + (node.key === newKey ? (changedKey ? ' changed' : ' new') : '');
+        it.textContent = node.key + ' = ' + node.value;
+        b.appendChild(it);
+      });
+      bucketsEl.appendChild(b);
+    }
+  }
+
+  function moveCat(idx) {
+    // Mỗi ô rộng khoảng 1/8 của hàng, nên mèo đi tới vị trí tương ứng.
+    const row = bucketsEl.getBoundingClientRect();
+    const stage = cat.parentElement.getBoundingClientRect();
+    const target = bucketsEl.children[idx] ? bucketsEl.children[idx].getBoundingClientRect() : null;
+    if (!target) return;
+    const left = target.left - stage.left + target.width / 2 - 43;
+    cat.style.left = Math.max(0, Math.min(stage.width - 86, left)) + 'px';
+    cat.style.top = '40px';
+    cat.classList.remove('jump'); void cat.offsetWidth; cat.classList.add('jump');
+  }
+
+  function showSteps(key) {
+    const { lines } = hashSteps(key);
+    document.getElementById('steps').textContent = lines.join('\n');
+  }
+
+  function put(key, value) {
+    key = key.trim();
+    value = value.trim();
+    if (!key) { msg.className = 'miss'; msg.textContent = 'Anh cần nhập khóa trước.'; return; }
+    const { idx } = hashSteps(key);
+    showSteps(key);
+    const bucket = buckets[idx];
+    const found = bucket.find(n => n.key === key);
+    if (found) {
+      const old = found.value;
+      found.value = value;
+      msg.className = 'update';
+      msg.textContent = 'Khóa "' + key + '" đã có ở ô [' + idx + ']. Mình chỉ cập nhật giá trị từ "' + old + '" thành "' + value + '". Không thêm nút mới.';
+      render(idx, true, key);
+    } else {
+      bucket.unshift({ key, value });
+      msg.className = 'insert';
+      msg.textContent = 'Khóa "' + key + '" chưa có, nên được thêm vào ô [' + idx + ']' +
+        (bucket.length > 1 ? '. Ô này đã có khóa khác nên khóa mới được xếp lên đầu danh sách (va chạm).' : '.');
+      render(idx, false, key);
+    }
+    moveCat(idx);
+  }
+
+  function get(key) {
+    key = key.trim();
+    const { idx } = hashSteps(key);
+    showSteps(key);
+    const found = buckets[idx].find(n => n.key === key);
+    render(idx, false, null);
+    moveCat(idx);
+    if (found) {
+      msg.className = 'insert';
+      msg.textContent = 'Tìm thấy: "' + key + '" = "' + found.value + '" ở ô [' + idx + '].';
+    } else {
+      msg.className = 'miss';
+      msg.textContent = 'Không có khóa "' + key + '" trong ô [' + idx + ']. Tra cứu chỉ cần xem đúng ô này.';
+    }
+  }
+
+  document.getElementById('put').onclick = () => put(document.getElementById('key').value, document.getElementById('val').value);
+  document.getElementById('get').onclick = () => get(document.getElementById('key').value);
+  document.getElementById('demo').onclick = () => {
+    document.getElementById('key').value = 'cho';
+    document.getElementById('val').value = 'mèo';
+    put('cho', 'mèo');
+    setTimeout(() => {
+      document.getElementById('val').value = 'lợn';
+      put('cho', 'lợn');
+    }, 1400);
+  };
+  document.getElementById('reset').onclick = () => {
+    buckets = Array.from({ length: CAP }, () => []);
+    render(-1, false, null);
+    msg.className = ''; msg.textContent = 'Bảng đã làm lại từ đầu.';
+    document.getElementById('steps').textContent = '';
+  };
+  document.getElementById('key').addEventListener('keydown', e => { if (e.key === 'Enter') put(e.target.value, document.getElementById('val').value); });
+  document.getElementById('val').addEventListener('keydown', e => { if (e.key === 'Enter') put(document.getElementById('key').value, e.target.value); });
+
+  render(-1, false, null);
+  if (location.hash === '#demo') document.getElementById('demo').click();
+  window.addEventListener('resize', () => { /* giữ mèo đúng chỗ khi đổi cỡ màn hình */ });
+</script>
+</body>
+</html>

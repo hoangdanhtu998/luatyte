@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Vì sao thế giới voxel chia thành chunk?",
+      "options": [
+        {
+          "text": "Để chỉ xử lý và vẽ phần gần người chơi",
+          "why": "Đúng. Chia nhỏ giúp tải và vẽ hiệu quả hơn."
+        },
+        {
+          "text": "Để tăng số khối",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Vì máy không đếm được",
+          "why": "Không đúng."
+        },
+        {
+          "text": "Để đổi màu khối",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chunk giúp quản lý dữ liệu theo khu vực."
+    },
+    {
+      "q": "Chỉ số của khối (0, 1, 0) trong công thức x + z*16 + y*256 là bao nhiêu?",
+      "options": [
+        {
+          "text": "256",
+          "why": "Đúng. 0 + 0*16 + 1*256 = 256."
+        },
+        {
+          "text": "16",
+          "why": "16 là z=1 với y=0."
+        },
+        {
+          "text": "1",
+          "why": "1 là x=1."
+        },
+        {
+          "text": "0",
+          "why": "Không phải khối gốc."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thay vào công thức để tính."
+    },
+    {
+      "q": "Vì sao phải cẩn thận thứ tự x, y, z khi đổi sang chỉ số?",
+      "options": [
+        {
+          "text": "Đổi thứ tự sẽ làm các khối lẫn nhau",
+          "why": "Đúng. Mỗi tọa độ có vị trí riêng trong công thức."
+        },
+        {
+          "text": "Không quan trọng",
+          "why": "Quan trọng vì sai chỉ số là sai khối."
+        },
+        {
+          "text": "Chỉ quan trọng khi có 1 khối",
+          "why": "Luôn quan trọng."
+        },
+        {
+          "text": "Chỉ quan trọng trên màn hình",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mỗi tọa độ có hệ số riêng."
+    }
+  ]
+}

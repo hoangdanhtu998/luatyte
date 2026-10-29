@@ -1,0 +1,44 @@
+{
+  "quizzes": [
+    {
+      "q": "Với `int diem = 9;`, chương trình in gì nếu dùng `if (diem >= 9) ... else if (diem >= 7) ...`?",
+      "options": [
+        { "text": "Gioi", "why": "Đúng. Điều kiện đầu tiên `diem >= 9` đúng, nên chạy nhánh đó và bỏ qua các nhánh sau." },
+        { "text": "Kha", "why": "Sai. Nhánh `diem >= 7` không được kiểm tra vì nhánh đầu đã đúng." },
+        { "text": "Gioi và Kha", "why": "Sai. Trong chuỗi `if / else if`, chỉ một nhánh được chạy." }
+      ],
+      "answer": 0,
+      "explain": "Máy kiểm tra từ trên xuống, gặp điều kiện đúng đầu tiên thì dừng."
+    },
+    {
+      "q": "Với `int x = 10;` và ba câu `if` liên tiếp (`x > 5`, `x > 8`, `x > 20`), chương trình in gì?",
+      "options": [
+        { "text": "Không in gì", "why": "Sai. `x > 5` và `x > 8` đều đúng với x = 10." },
+        { "text": "A và B", "why": "Đúng. Ba câu `if` độc lập, nên A và B đều được in. C không in vì 10 không lớn hơn 20." },
+        { "text": "A, B và C", "why": "Sai. C không in vì 10 không lớn hơn 20." }
+      ],
+      "answer": 1,
+      "explain": "`if` liên tiếp đều được kiểm tra. Chỉ `else if` mới bỏ qua các nhánh sau."
+    },
+    {
+      "q": "Vòng lặp `while (i <= 3)` với `i = 1` nhưng không có dòng `i++` bên trong thì sao?",
+      "options": [
+        { "text": "Chạy mãi, vì i không bao giờ thay đổi và luôn nhỏ hơn hoặc bằng 3", "why": "Đúng. Không có gì thay đổi i, nên điều kiện luôn đúng và vòng lặp không dừng." },
+        { "text": "Chạy đúng 3 lần rồi dừng", "why": "Sai. Muốn chạy 3 lần thì i phải tăng mỗi lượt." },
+        { "text": "Không chạy lần nào", "why": "Sai. Với i = 1 thì điều kiện đúng ngay từ đầu." }
+      ],
+      "answer": 0,
+      "explain": "Mỗi vòng lặp cần có bước làm thay đổi điều kiện để có lúc dừng lại."
+    },
+    {
+      "q": "Với `for (int i = 1; i <= 5; i++)` có `if (i == 2) continue;` và `if (i == 4) break;`, chương trình in gì?",
+      "options": [
+        { "text": "1 2 3", "why": "Sai. `continue` ở i = 2 đã bỏ qua việc in số 2." },
+        { "text": "1 3", "why": "Đúng. i = 2 bị bỏ qua bởi `continue`, i = 4 làm vòng lặp dừng bởi `break`, nên chỉ in 1 và 3." },
+        { "text": "1 3 5", "why": "Sai. `break` ở i = 4 đã thoát vòng lặp trước khi tới 5." }
+      ],
+      "answer": 1,
+      "explain": "`continue` bỏ qua lượt hiện tại. `break` thoát hẳn khỏi vòng lặp."
+    }
+  ]
+}

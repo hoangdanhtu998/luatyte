@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "MQTT gửi tin theo chủ đề, giống địa chỉ thư: sensor/1/temp. Người nhận đăng ký một bộ lọc để chọn chủ đề muốn nghe.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Dấu + nghĩa là đúng một cấp bất kỳ. Thử với bộ lọc sensor/+/temp và chủ đề sensor/1/temp.", "boxes": ["khớp?"], "code": "sensor/+/temp  với  sensor/1/temp", "run": { "khớp?": "có" }, "after": "Dấu + khớp đúng cấp số 1, nên có khớp." },
+    { "img": "m03-meo-vui.png", "say": "Bộ lọc sensor/+ thì sao? Nó chỉ có hai cấp, nên không khớp chủ đề có ba cấp.", "boxes": ["khớp?"], "code": "sensor/+  với  sensor/1/temp", "run": { "khớp?": "không" }, "after": "Không khớp, vì + chỉ khớp đúng một cấp." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: bộ lọc sensor/# có khớp với sensor/1/temp không?", "boxes": ["khớp?"], "code": "sensor/#  với  sensor/1/temp", "quiz": [
+        { "text": "Có", "right": true, "hint": "Đúng! # khớp mọi cấp còn lại, nên khớp cả 1 và temp." },
+        { "text": "Không", "right": false, "hint": "# khớp nhiều cấp, nên không bị giới hạn ở một cấp như +." },
+        { "text": "Chỉ khớp sensor", "right": false, "hint": "# khớp tất cả các cấp phía sau, không chỉ cấp đầu." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: + khớp đúng một cấp, # khớp mọi cấp còn lại và chỉ đặt ở cuối. Đừng nhầm hai ký tự này.", "boxes": ["khớp?"], "end": true }
+  ]
+}

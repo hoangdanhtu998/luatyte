@@ -1,0 +1,15 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Tài nguyên tự giải phóng",
+    "prompt": "Trong code có struct `Tep` in `mo` khi tạo và `dong` khi hủy. Trong một khối `{}`, tạo `std::unique_ptr<Tep>`, in `xong`, rồi để khối kết thúc. Kết quả đúng: `mo`, `xong`, `dong`.",
+    "starter": "#include <iostream>\n#include <memory>\n\nstruct Tep {\n    Tep() { std::cout << \"mo\\n\"; }\n    ~Tep() { std::cout << \"dong\\n\"; }\n};\n\nint main() {\n    // viết khối code ở đây\n}\n",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "mo\nxong\ndong\n"
+      }
+    ],
+    "language": "cpp"
+  }
+]

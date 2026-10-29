@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Kiểm tra đường dẫn",
+    "prompt": "Đọc n, n đường dẫn. Đọc q, rồi q đường dẫn cần kiểm tra. Mỗi truy vấn in `co` nếu có trong danh sách, ngược lại in `khong`.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n/a/b.txt\n/a/c.txt\n/d\n2\n/a/b.txt\n/x\n",
+        "expected": "co\nkhong\n"
+      }
+    ]
+  }
+]

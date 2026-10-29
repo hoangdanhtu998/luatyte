@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Đóng gói màu",
+    "prompt": "Đọc ba số r g b (0 đến 255). In màu 32 bit dạng 0x00RRGGBB, chữ hoa 8 chữ số hex.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "255 0 0\n",
+        "expected": "0x00FF0000\n"
+      },
+      {
+        "stdin": "0 128 255\n",
+        "expected": "0x000080FF\n"
+      }
+    ]
+  }
+]

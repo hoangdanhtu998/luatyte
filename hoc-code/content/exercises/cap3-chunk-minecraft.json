@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Chỉ số khối",
+    "prompt": "Đọc x, y, z (0 đến 15). In chỉ số một chiều theo công thức x + z*16 + y*256.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1 2 3\n",
+        "expected": "561\n"
+      },
+      {
+        "stdin": "0 0 0\n",
+        "expected": "0\n"
+      }
+    ]
+  }
+]

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Học code · Bài học theo chủ đề</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index-hoccode.html">Học code</a>
+  <nav>
+    <a href="setup.html">Chuẩn bị môi trường</a>
+    <a href="du-an.html">41 dự án gợi ý</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">Học C và C++ từ gốc</span>
+    <h1>Hiểu bản chất trước, nhớ cú pháp sau</h1>
+    <p class="lead">Mỗi bài có bài đọc có ví dụ đời thường, slide tương ứng và khu luyện tập để viết code C/C++ rồi xem kết quả như trên terminal thật.</p>
+    <div class="progress-line">
+      <div class="label" id="status"></div>
+      <div class="bar"><span id="bar"></span></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn" id="start" href="lesson.html?id=con-tro-va-bo-nho">Bắt đầu bài đầu tiên →</a>
+      <a class="btn ghost" href="setup.html">Cài trình biên dịch</a>
+    </div>
+  </section>
+
+  <section id="review-box" class="card" hidden style="margin:14px 0"></section>
+  <div id="levels"></div>
+</main>
+
+<script src="assets/site.js"></script>
+<script src="assets/chat.js"></script>
+<script>
+  (async function () {
+    const status = document.getElementById('status');
+    const bar = document.getElementById('bar');
+    const root = document.getElementById('levels');
+    try {
+      const r = await fetch('content/index.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const data = await r.json();
+      const progress = loadProgress();
+      const rev = loadReview();
+      const rb = document.getElementById('review-box');
+      const revIds = Object.keys(rev).filter((id) => data.lessons.some((l) => l.id === id));
+      if (revIds.length) {
+        rb.hidden = false;
+        const total = revIds.reduce((s, id) => s + Object.keys(rev[id]).length, 0);
+        const head = document.createElement('div'); head.style.fontWeight = '700'; head.textContent = 'Ôn lại: ' + total + ' câu trắc nghiệm đã trả lời sai';
+        rb.appendChild(head);
+        const list = document.createElement('ul'); list.style.margin = '8px 0 0 18px';
+        for (const id of revIds) {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = 'lesson.html?id=' + encodeURIComponent(id);
+          a.textContent = data.lessons.find((l) => l.id === id).title + ' (' + Object.keys(rev[id]).length + ' câu)';
+          li.appendChild(a); list.appendChild(li);
+        }
+        rb.appendChild(list);
+      }
+      const doneCount = data.lessons.filter(l => progress.done[l.id]).length;
+      status.textContent = 'Đã học ' + doneCount + '/' + data.lessons.length + ' bài';
+      bar.style.width = (data.lessons.length ? doneCount / data.lessons.length * 100 : 0) + '%';
+
+      // Bài đầu chưa học thì nút "Bắt đầu" trỏ tới bài đó; bài đã học xong thì giữ nguyên.
+      const firstOpen = data.lessons.find(l => !progress.done[l.id]);
+      const startBtn = document.getElementById('start');
+      if (firstOpen) {
+        startBtn.href = 'lesson.html?id=' + encodeURIComponent(firstOpen.id);
+        // Đã học ít nhất một bài thì nhãn nói rõ bài sẽ học tiếp, không còn là "bài đầu tiên".
+        if (doneCount > 0) startBtn.textContent = 'Học tiếp: ' + firstOpen.title + ' →';
+      } else {
+        startBtn.href = 'index-hoccode.html#levels';
+        startBtn.textContent = 'Đã học hết các bài ✓';
+      }
+
+      for (const lv of data.levels) {
+        const items = data.lessons.filter(l => l.level === lv.id);
+        const sec = document.createElement('section');
+        sec.className = 'level';
+        sec.innerHTML = '<div class="level-head"><span class="num"></span><h2></h2></div><p class="muted"></p><div class="lessons"></div>';
+        sec.querySelector('.num').textContent = lv.id;
+        sec.querySelector('h2').textContent = lv.name;
+        sec.querySelector('p').textContent = lv.desc;
+        const doneLv = items.filter((l) => progress.done[l.id]).length;
+        const prog = document.createElement('div');
+        prog.className = 'lvl-progress';
+        prog.innerHTML = '<div class="lvl-text"></div><div class="lvl-bar"><i></i></div>';
+        prog.querySelector('.lvl-text').textContent = 'Đã học ' + doneLv + '/' + items.length + ' bài';
+        prog.querySelector('.lvl-bar i').style.width = (items.length ? (doneLv / items.length) * 100 : 0) + '%';
+        sec.querySelector('.level-head').after(prog);
+        const grid = sec.querySelector('.lessons');
+        if (items.length === 0) {
+          grid.innerHTML = '<p class="muted">Chưa có bài nào ở cấp này.</p>';
+        }
+        for (const l of items) {
+          const isDone = !!progress.done[l.id];
+          const a = document.createElement('a');
+          a.className = 'card lesson-card' + (isDone ? ' done' : '');
+          a.href = 'lesson.html?id=' + encodeURIComponent(l.id);
+          a.innerHTML = '<h3></h3><p></p><div class="tags"><span class="tag"></span><span class="tag"></span></div>';
+          a.querySelector('h3').textContent = l.title;
+          a.querySelector('p').textContent = l.desc;
+          const tags = a.querySelectorAll('.tag');
+          tags[0].textContent = l.minutes + ' phút';
+          tags[1].textContent = isDone ? 'Đã học' : 'Chưa học';
+          if (isDone) tags[1].classList.add('ok');
+          grid.appendChild(a);
+        }
+        root.appendChild(sec);
+      }
+    } catch (e) {
+      status.textContent = '';
+      root.innerHTML = '<div class="card error-card">Không tải được danh sách bài (' + e.message + ').<br>Hãy mở trang qua localhost: chạy <code>node server/server.mjs</code> trong thư mục dự án rồi vào <code>http://localhost:4500</code>.</div>';
+    }
+  })();
+</script>
+</body>
+</html>

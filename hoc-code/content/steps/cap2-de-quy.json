@@ -1,0 +1,19 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Đệ quy là hàm gọi lại chính nó, với bài toán nhỏ hơn. Giống búp bê Nga: mở ra thấy búp bê nhỏ hơn bên trong.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Ta tính giaiThua(3). Lần gọi đầu tiên có n là 3.", "boxes": ["n"], "code": "giaiThua(3)", "run": { "n": 3 }, "after": "Lần gọi đầu tiên: n là 3." },
+    { "img": "m03-meo-vui.png", "say": "Hàm chưa xong, nó gọi lại chính nó với n - 1, tức là 2. Lần gọi này phải chờ kết quả.", "boxes": ["n"], "code": "giaiThua(n - 1)", "run": { "n": 2 }, "after": "Lần gọi thứ hai: n là 2. Lần này cũng phải chờ." },
+    { "img": "m03-meo-vui.png", "say": "Lại gọi tiếp với n - 1, tức là 1. Lần này n là 1.", "boxes": ["n"], "code": "giaiThua(n - 1)", "run": { "n": 1 }, "after": "Lần gọi thứ ba: n là 1. Đây là điều kiện dừng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: lần gọi có n là 1 trả về số mấy?", "boxes": ["n"], "code": "if (n <= 1) return 1;", "quiz": [
+        { "text": "1", "right": true, "hint": "Đúng! Đây là điều kiện dừng, trả về 1 ngay, không gọi tiếp." },
+        { "text": "0", "right": false, "hint": "Không có dòng nào trả về 0 ở đây. Điều kiện dừng trả về 1." },
+        { "text": "3", "right": false, "hint": "3 là n của lần gọi đầu tiên. Lần này n là 1." } ] },
+    { "img": "m03-meo-vui.png", "say": "Bây giờ các lần gọi trả kết quả lên trên. Lần có n là 2 nhận 1, nhân 2, được 2.", "boxes": ["kq"], "code": "2 * 1 = 2", "run": { "kq": 2 }, "after": "Lần n là 2 trả về 2." },
+    { "img": "m03-meo-vui.png", "say": "Lần có n là 3 nhận 2, nhân 3, được 6.", "boxes": ["kq"], "code": "3 * 2 = 6", "run": { "kq": 6 }, "after": "Lần n là 3 trả về 6. Xong." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: giaiThua(3) cho kết quả là mấy?", "boxes": ["kq"], "code": "giaiThua(3)", "quiz": [
+        { "text": "6", "right": true, "hint": "Đúng! 1 × 2 × 3 = 6." },
+        { "text": "3", "right": false, "hint": "3 chỉ là n của lần gọi đầu. Kết quả phải nhân tất cả các lần." },
+        { "text": "9", "right": false, "hint": "Không phải phép cộng. Giai thừa là nhân các số từ 1 đến n." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: đệ quy cần điều kiện dừng. Thiếu điều kiện dừng thì hàm gọi mãi không thôi.", "boxes": ["kq"], "end": true }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "LLVM dùng một dạng trung gian gọi là IR. Trình biên dịch của bạn sinh IR, còn LLVM lo tối ưu và sinh mã máy cho nhiều loại CPU.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Phép cộng hai số nguyên 32 bit viết trong IR là add i32. Ở đây a và b là hai đầu vào.", "boxes": ["a", "b", "kết quả"], "code": "%r = add i32 %a, %b", "run": { "a": "đầu vào 1", "b": "đầu vào 2", "kết quả": "%r" }, "after": "Kết quả lưu vào %r." },
+    { "img": "m03-meo-vui.png", "say": "Cùng một IR này có thể thành lệnh x86 hoặc lệnh ARM. Đó là lý do IR chung giúp hỗ trợ nhiều CPU.", "boxes": ["a", "b", "kết quả"], "code": "IR  →  x86 hoặc ARM", "after": "Một IR, nhiều đích." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: đoạn IR nào cộng hai số nguyên 64 bit?", "boxes": ["a", "b", "kết quả"], "code": "%r = add ? %a, %b", "quiz": [
+        { "text": "%r = add i64 %a, %b", "right": true, "hint": "Đúng! i64 là số nguyên 64 bit." },
+        { "text": "%r = add i32 %a, %b", "right": false, "hint": "i32 là 32 bit, không phải 64 bit." },
+        { "text": "%r = add %a, %b, 64", "right": false, "hint": "Kiểu dữ liệu được ghi ngay sau add, như i64." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: IR là bước giữa, độc lập với CPU. Trình biên dịch chỉ cần sinh IR, phần còn lại do LLVM làm.", "boxes": ["a", "b", "kết quả"], "end": true }
+  ]
+}

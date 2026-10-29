@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Lệnh 0xCC (int3) gây ra điều gì?",
+      "options": [
+        {
+          "text": "CPU dừng để debugger xử lý",
+          "why": "Đúng."
+        },
+        {
+          "text": "Chương trình tăng tốc",
+          "why": "Không."
+        },
+        {
+          "text": "Xóa bộ nhớ",
+          "why": "Không."
+        },
+        {
+          "text": "Đổi màu",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "int3 là ngắt dành cho debugger."
+    },
+    {
+      "q": "Vì sao debugger phải lưu byte gốc?",
+      "options": [
+        {
+          "text": "Để khôi phục lệnh khi chạy tiếp",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để nén file",
+          "why": "Không."
+        },
+        {
+          "text": "Để in ra",
+          "why": "Không."
+        },
+        {
+          "text": "Không cần",
+          "why": "Cần."
+        }
+      ],
+      "answer": 0,
+      "explain": "Không khôi phục thì lệnh bị hỏng."
+    },
+    {
+      "q": "Sau khi dừng xong, debugger làm gì?",
+      "options": [
+        {
+          "text": "Trả byte gốc về vị trí cũ rồi tiếp tục",
+          "why": "Đúng."
+        },
+        {
+          "text": "Xóa chương trình",
+          "why": "Không."
+        },
+        {
+          "text": "Ghi thêm 0xCC",
+          "why": "Không cần."
+        },
+        {
+          "text": "Tắt máy",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "Khôi phục rồi chạy tiếp."
+    }
+  ]
+}
