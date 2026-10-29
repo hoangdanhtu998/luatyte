@@ -128,11 +128,20 @@
     <p class="intro">Thi thử như thi thật: làm câu nào hay câu đó, đáp án chỉ hiện sau khi nộp bài. Hết giờ tự động nộp. Kết quả được lưu lại để so sánh tiến bộ. Câu đặc thù về số hiệu/ngày văn bản không nằm trong đề; luyện riêng ở tab Trắc nghiệm.</p>
     <div class="card" id="ex-form">
       <div class="toolbar">
-        <select id="ex-set" aria-label="Bộ đề"><option value="chung">Luật chung</option><option value="his">HIS</option><option value="both">Gộp cả hai</option><option value="topic">Theo chuyên đề</option><option value="blueprint">Chuẩn bản đồ đề (thang 10)</option></select>
+        <select id="ex-set" aria-label="Bộ đề"><option value="chung">Luật chung</option><option value="his">HIS</option><option value="both">Gộp cả hai</option><option value="topic">Theo chuyên đề</option><option value="chapter" id="ex-opt-chapter">Theo chương / vai trò</option></select>
         <select id="ex-topic" aria-label="Chuyên đề" hidden></select>
         <select id="ex-count" aria-label="Số câu"><option value="10">10 câu</option><option value="20" selected>20 câu</option><option value="40">40 câu</option></select>
         <select id="ex-mins" aria-label="Thời gian"><option value="10">10 phút</option><option value="20" selected>20 phút</option><option value="40">40 phút</option></select>
         <button class="btn" id="ex-start">Vào thi</button>
+      </div>
+      <div class="ex-chapter-box" id="ex-chapter-box" hidden>
+        <label class="meta" for="ex-role">Vai trò</label>
+        <select id="ex-role" aria-label="Vai trò"></select>
+        <fieldset class="ex-chapters"><legend class="meta">Chương đưa vào đề</legend>
+          <div class="ex-chapter-tools"><button type="button" class="btn ghost" id="ex-ch-all">Chọn hết</button><button type="button" class="btn ghost" id="ex-ch-none">Bỏ hết</button></div>
+          <div id="ex-chapters"></div>
+        </fieldset>
+        <p class="meta" id="ex-chapter-note" aria-live="polite"></p>
       </div>
     </div>
     <div id="ex-stage"></div>
@@ -588,6 +597,7 @@ function renderStats(){
 const compat = await import("./js/progress-compat.js").catch(() => null);
 try { compat?.migrateLegacyProgress(localStorage); } catch {}
 if (compat) sync.classify = compat.classifyAccountProbe;
+const EXB = await import("./js/exam-builder.js").catch(() => null);
 await sync.init();
 renderStats(); checkBadges();
 
@@ -1348,7 +1358,7 @@ function renderProgress(){
       }).join("") : `<p class="intro" style="margin:6px 0 0">Chưa có dữ liệu theo chủ đề. Làm vài câu trắc nghiệm hoặc một đề thi thử.</p>`}
     </div>
     <div class="card"><span class="label">Lịch sử thi thử</span>
-      ${exams.length ? `<table class="prog-table"><thead><tr><th>Ngày</th><th>Đề</th><th>Kết quả</th><th>Thời gian</th></tr></thead><tbody>${exams.map(x => `<tr><td>${esc(x.d)}</td><td>${esc((EX_SETS[x.set] || x.set) + (x.topic ? " · " + x.topic : ""))}</td><td><b>${x.pct}%</b> (${x.r}/${x.n})</td><td>${Math.round((x.used || 0) / 60)} phút</td></tr>`).join("")}</tbody></table>` : `<p class="intro" style="margin:6px 0 0">Chưa thi thử lần nào. Vào tab <b>Thi thử</b> để làm một đề.</p>`}
+      ${exams.length ? `<table class="prog-table"><thead><tr><th>Ngày</th><th>Đề</th><th>Kết quả</th><th>Thời gian</th></tr></thead><tbody>${exams.slice(0, 10).map(x => `<tr><td>${esc(x.d)}</td><td>${esc((EX_SETS[x.set] || x.set) + (x.topic ? " · " + x.topic : ""))}</td><td><b>${x.pct}%</b> (${x.r}/${x.n})</td><td>${Math.round((x.used || 0) / 60)} phút</td></tr>`).join("")}</tbody></table>` : `<p class="intro" style="margin:6px 0 0">Chưa thi thử lần nào. Vào tab <b>Thi thử</b> để làm một đề.</p>`}
     </div>`;
 
   const gi = $("#goal-input"), gMinus = $("#goal-minus"), gPlus = $("#goal-plus");
@@ -1558,7 +1568,11 @@ $("#qtopic").onchange = () => startQuiz();
 
 /* ================= THI THỬ GIẢ LẬP ================= */
 let EXQ = [], exi = 0, exAns = [], exTimer = null, exRemain = 0, exCfg = {};
-const EX_SETS = { chung: "Luật chung", his: "HIS", both: "Gộp cả hai", topic: "Chuyên đề", blueprint: "Bản đồ đề" };
+const EX_SETS = { chung: "Luật chung", his: "HIS", both: "Gộp cả hai", topic: "Chuyên đề", chapter: "Theo chương", retry: "Làm lại câu sai", blueprint: "Bản đồ đề" }; // blueprint: chỉ để hiển thị lịch sử cũ
+let exEndAt = 0;
+const EXAM_SESSION_KEY = "lytx_examSession"; // ngoài tiền tố lyt_ nên không bị đồng bộ sang máy khác
+const EXAM_HISTORY_MAX = 100, EXAM_HISTORY_SHOW = 10, EXAM_HISTORY_BYTES = 55000;
+const remainingSec = (end, now) => Math.max(0, Math.ceil((end - now) / 1000));
 function buildExamTopics(){
   const g1 = [];
   const seen = new Set();
@@ -1570,30 +1584,106 @@ function buildExamTopics(){
   ].join("");
   $("#ex-topic").innerHTML = html || `<option value="">Chưa có chuyên đề</option>`;
 }
-function syncExamForm(){ $("#ex-topic").hidden = $("#ex-set").value !== "topic"; }
-buildExamTopics(); syncExamForm();
-$("#ex-set").onchange = syncExamForm;
-let BP_CACHE = null;
-function blueprint(){
-  if (BP_CACHE) return Promise.resolve(BP_CACHE);
-  return fetch("data/blueprint.json").then(r => r.ok ? r.json() : []).catch(() => []).then(j => { BP_CACHE = j; return j; });
+/* ---- Thi thử theo chương / vai trò (đề luyện tự tạo, không phải cấu trúc đề chính thức) ---- */
+const chapterPool = () => ROLE_BANK.filter(q => !q.verify && !isMetaQ(q));
+const examChapterCount = cid => roleChapterQuestions(cid).filter(q => !isMetaQ(q)).length;
+const examRoleChapters = () => {
+  const role = $("#ex-role").value;
+  return role === "all" ? Object.keys(ROLES.chuong) : (ROLES.vai_tro.find(r => r.id === role)?.chuong || []);
+};
+const examChecked = () => [...document.querySelectorAll("#ex-chapters input:checked")].map(i => i.value);
+function updateExChapterNote(){
+  const n = examChecked().reduce((s, cid) => s + examChapterCount(cid), 0);
+  $("#ex-chapter-note").textContent = examChecked().length
+    ? `Đề chia theo số câu có sẵn của mỗi chương (tổng ${n} câu). Đây là đề luyện do app tự tạo, không phải cấu trúc đề thi chính thức.`
+    : "Chọn ít nhất một chương.";
 }
-function pickBlueprint(total){
-  return blueprint().then(bp => {
-    const rows = bp.map(b => ({ id: b.id, want: b.w * total / 100, pool: shuffle(regularQuiz().filter(q => q.t === b.id)) })).filter(r => r.pool.length);
-    const picked = [];
-    let need = total;
-    for (const r of rows){ const take = Math.min(Math.round(r.want), r.pool.length, need); picked.push(...r.pool.slice(0, take)); need -= take; r.pool.splice(0, take); }
-    while (need > 0){
-      const donor = rows.filter(r => r.pool.length).sort((a, b) => b.pool.length - a.pool.length)[0];
-      if (!donor) break;
-      picked.push(donor.pool.shift()); need--;
-    }
-    return shuffle(picked.slice(0, total));
-  });
+function renderExamChapters(){
+  const box = $("#ex-chapters");
+  box.innerHTML = examRoleChapters().map(cid => {
+    const n = examChapterCount(cid), meta = ROLES.chuong[cid] || { ten: cid };
+    return `<label class="ex-ch${n ? "" : " off"}"><input type="checkbox" value="${esc(cid)}"${n ? " checked" : " disabled"}><span>${esc(meta.ten || cid)}</span><span class="meta">${n ? n + " câu" : "chưa có câu"}</span></label>`;
+  }).join("");
+  box.querySelectorAll("input").forEach(i => i.onchange = updateExChapterNote);
+  updateExChapterNote();
+}
+function initExamChapterUi(){
+  const opt = $("#ex-opt-chapter");
+  if (!ROLES || !EXB){ opt.disabled = true; opt.textContent += " (chưa sẵn sàng)"; return; }
+  const cur = store.get("role", "");
+  $("#ex-role").innerHTML = `<option value="all">Tất cả chương</option>` + ROLES.vai_tro.map(r => `<option value="${esc(r.id)}">${esc(r.ten)}</option>`).join("");
+  if (ROLES.vai_tro.some(r => r.id === cur)) $("#ex-role").value = cur;
+  $("#ex-role").onchange = renderExamChapters;
+  $("#ex-ch-all").onclick = () => { document.querySelectorAll("#ex-chapters input:not(:disabled)").forEach(i => { i.checked = true; }); updateExChapterNote(); };
+  $("#ex-ch-none").onclick = () => { document.querySelectorAll("#ex-chapters input").forEach(i => { i.checked = false; }); updateExChapterNote(); };
+  renderExamChapters();
+}
+function syncExamForm(){
+  const set = $("#ex-set").value;
+  $("#ex-topic").hidden = set !== "topic";
+  $("#ex-chapter-box").hidden = set !== "chapter";
+}
+buildExamTopics(); initExamChapterUi(); syncExamForm();
+$("#ex-set").onchange = syncExamForm;
+
+/* ---- Lưu/khôi phục bài thi đang làm (mốc kết thúc tuyệt đối) ---- */
+function persistExam(){
+  if (!EXB || !EXQ.length) return;
+  try {
+    localStorage.setItem(EXAM_SESSION_KEY, EXB.serializeSession({
+      cfg: { set: exCfg.set, mins: exCfg.mins, topicName: exCfg.topicName || "", shortfall: exCfg.shortfall || 0, requested: exCfg.requested || 0 },
+      endAt: exEndAt, exi, answers: exAns,
+      items: EXQ.map(q => ({ q: q.q, idx: q._idx, ch: q.ch })),
+    }));
+  } catch {}
+}
+function clearExamSession(){ try { localStorage.removeItem(EXAM_SESSION_KEY); } catch {} }
+function tickExam(){
+  exRemain = remainingSec(exEndAt, Date.now());
+  updateExTime();
+  if (exRemain <= 0){ clearInterval(exTimer); finishExam(true); }
+}
+function startExamTimer(){
+  clearInterval(exTimer);
+  exRemain = remainingSec(exEndAt, Date.now());
+  updateExTime();
+  exTimer = setInterval(tickExam, 1000);
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden && EXQ.length) tickExam(); });
+function restoreExamSession(){
+  if (!EXB) return;
+  let raw = null;
+  try { raw = localStorage.getItem(EXAM_SESSION_KEY); } catch {}
+  if (!raw) return;
+  const r = EXB.restoreSession(raw, Date.now(), t => ROLE_BY_TEXT.get(t) || null);
+  if (!r.ok){ clearExamSession(); return; }
+  EXQ = r.items; exAns = r.answers; exi = r.exi; exCfg = r.cfg; exEndAt = r.endAt; exRemain = r.remaining;
+  $("#ex-form").hidden = true;
+  if (r.expired){ finishExam(true); toast("Bài thi đã hết giờ khi bạn rời trang, app đã tự nộp bài."); return; }
+  startExamTimer(); renderExam();
+  toast("Đã khôi phục bài thi đang làm dở. Vào tab Thi thử để làm tiếp.");
+}
+
+function beginExam(items, cfg){
+  EXQ = items.map(it => { const idx = shuffle(it.q.o.map((_, i) => i)); return { ...it.q, o: idx.map(i => it.q.o[i]), a: idx.indexOf(it.q.a), ch: it.ch, _idx: idx }; });
+  exCfg = cfg; exi = 0; exAns = Array(EXQ.length).fill(null);
+  exEndAt = Date.now() + cfg.mins * 60000;
+  $("#ex-form").hidden = true;
+  startExamTimer(); persistExam(); renderExam();
 }
 async function startExam(){
   const set = $("#ex-set").value;
+  const mins = +$("#ex-mins").value;
+  if (set === "chapter"){
+    const chosen = examChecked();
+    if (!chosen.length){ toast("Chọn ít nhất một chương nhé."); return; }
+    const total = +$("#ex-count").value;
+    const ex = EXB.buildChapterExam({ pool: chapterPool(), chaptersOf: q => ROLES.cau_hoi[q.q] || [], chapters: chosen, total });
+    if (!ex.items.length){ toast("Các chương đã chọn chưa có câu hỏi."); return; }
+    const roleName = $("#ex-role").selectedOptions[0]?.textContent || "";
+    beginExam(ex.items, { set, mins, topicName: `${roleName} · ${chosen.length} chương`, shortfall: ex.shortfall, requested: total });
+    return;
+  }
   let pool = set === "his" ? regularHis() : set === "both" ? [...regularQuiz(), ...regularHis()] : regularQuiz();
   let topicName = "";
   if (set === "topic"){
@@ -1606,16 +1696,7 @@ async function startExam(){
     if (!pool.length){ toast("Chuyên đề này chưa có câu hỏi. Chọn chuyên đề khác nhé."); return; }
   }
   const n = Math.min(+$("#ex-count").value, pool.length);
-  exCfg = { set, mins: +$("#ex-mins").value, topicName };
-  EXQ = set === "blueprint" ? await pickBlueprint(n) : shuffle([...pool]).slice(0, n);
-  EXQ = EXQ.map(q => { const idx = shuffle(q.o.map((_,i)=>i)); return { ...q, o: idx.map(i=>q.o[i]), a: idx.indexOf(q.a) }; });
-  exi = 0; exAns = Array(EXQ.length).fill(null);
-  exRemain = exCfg.mins * 60;
-  $("#ex-form").hidden = true;
-  clearInterval(exTimer);
-  updateExTime();
-  exTimer = setInterval(() => { exRemain--; updateExTime(); if (exRemain <= 0){ clearInterval(exTimer); finishExam(true); } }, 1000);
-  renderExam();
+  beginExam(shuffle([...pool]).slice(0, n).map(q => ({ q })), { set, mins, topicName });
 }
 function updateExTime(){
   const el = $("#ex-time"); if (!el) return;
@@ -1641,16 +1722,18 @@ function renderExam(){
       <button class="btn" id="ex-submit">Nộp bài</button>
     </div>`;
   updateExTime();
-  box.querySelectorAll(".opts .opt").forEach(b => b.onclick = () => { exAns[exi] = +b.dataset.i; renderExam(); });
-  box.querySelectorAll(".ex-nav button").forEach(b => b.onclick = () => { exi = +b.dataset.i; renderExam(); });
-  $("#ex-prev").onclick = () => { if (exi > 0){ exi--; renderExam(); } };
-  $("#ex-next").onclick = () => { if (exi < EXQ.length-1){ exi++; renderExam(); } };
-  $("#ex-quit").onclick = () => { clearInterval(exTimer); EXQ = []; exi = 0; $("#ex-form").hidden = false; renderExam(); };
+  box.querySelectorAll(".opts .opt").forEach(b => b.onclick = () => { exAns[exi] = +b.dataset.i; persistExam(); renderExam(); });
+  box.querySelectorAll(".ex-nav button").forEach(b => b.onclick = () => { exi = +b.dataset.i; persistExam(); renderExam(); });
+  $("#ex-prev").onclick = () => { if (exi > 0){ exi--; persistExam(); renderExam(); } };
+  $("#ex-next").onclick = () => { if (exi < EXQ.length-1){ exi++; persistExam(); renderExam(); } };
+  $("#ex-quit").onclick = () => { clearInterval(exTimer); clearExamSession(); EXQ = []; exi = 0; $("#ex-form").hidden = false; renderExam(); };
   $("#ex-submit").onclick = () => finishExam(false);
 }
 function finishExam(auto){
   clearInterval(exTimer);
-  const used = exCfg.mins*60 - Math.max(0, exRemain);
+  clearExamSession();
+  if (!auto) exRemain = remainingSec(exEndAt, Date.now());
+  const used = Math.min(exCfg.mins * 60, exCfg.mins * 60 - Math.max(0, exRemain));
   let right = 0; const wrongRows = [];
   EXQ.forEach((q,i) => { const a = exAns[i], ok = a === q.a; if (ok) right++; else wrongRows.push({q,a}); recordQ(q, ok); });
   const pct = Math.round(right / EXQ.length * 100);
@@ -1660,9 +1743,12 @@ function finishExam(auto){
   const byLaw = new Map();
   EXQ.forEach((q, i) => { const nm = lawNameOfQ(q.q) || "Khác"; const e = byLaw.get(nm) || { r: 0, t: 0 }; e.t++; if (exAns[i] === q.a) e.r++; byLaw.set(nm, e); });
   const byLawHtml = '<div class="card"><span class="label">Đúng/sai theo luật</span><div style="display:grid;gap:8px;margin-top:8px">' + [...byLaw.entries()].sort((a, b) => b[1].t - a[1].t).map(function(en){ return '<div><div class="meta" style="display:flex;justify-content:space-between"><span>' + esc(en[0]) + '</span><span>' + en[1].r + "/" + en[1].t + '</span></div><div class="bl-bar"><i style="width:' + Math.round(en[1].r / en[1].t * 100) + '%"></i></div></div>'; }).join("") + "</div></div>";
+  const chScores = EXB && EXQ.some(q => q.ch) ? EXB.scoreByChapter(EXQ.map((q, i) => ({ ch: q.ch, ok: exAns[i] === q.a }))) : [];
+  const chapterHtml = chScores.length ? examChapterResultHtml(chScores, exCfg) : "";
   const hist = store.get("exams", []);
-  hist.unshift({ d: todayKey(), set: exCfg.set, topic: exCfg.topicName || "", n: EXQ.length, r: right, pct, used, sbd, d10 });
-  store.set("exams", hist.slice(0,10));
+  const entry = { d: todayKey(), set: exCfg.set, topic: exCfg.topicName || "", n: EXQ.length, r: right, pct, used, sbd, d10 };
+  if (chScores.length) entry.byCh = chScores.map(x => [x.ch, x.right, x.total]);
+  saveExamHistory([entry, ...hist]);
   const total = EXQ.length;
   EXQ = []; exi = 0; $("#ex-form").hidden = false; renderExam();
   $("#ex-stage").innerHTML = `
@@ -1670,7 +1756,9 @@ function finishExam(auto){
       <div class="stat-row"><span>Đúng <b>${right}/${total}</b></span><span>Điểm <b>${d10.toFixed(1)}/10</b></span><span>SBD <b>${sbd}</b></span><span>Thời gian <b>${Math.floor(used/60)}:${String(used%60).padStart(2,"0")}</b></span></div>
       ${sheetHtml}
       <p class="intro">Điểm của bạn cũng được tính vào tab Phân tích.</p>
-      <button class="btn" id="ex-again">Thi lại</button></div>
+      <button class="btn" id="ex-again">Thi lại</button>
+      ${wrongRows.length ? `<button class="btn ghost" id="ex-retry">Thi lại ${wrongRows.length} câu sai</button>` : ""}</div>
+    ${chapterHtml}
     ${byLawHtml}
     ${wrongRows.length ? `<div class="card"><span class="label">Câu sai (${wrongRows.length})</span><div style="display:grid;gap:12px;margin-top:8px">${wrongRows.map(({q,a}) => `
       <div style="border-bottom:1px solid var(--rule);padding-bottom:10px">
@@ -1681,18 +1769,42 @@ function finishExam(auto){
       </div>`).join("")}</div></div>` : `<div class="card"><p class="intro" style="margin:0">Không sai câu nào. Quá đỉnh!</p></div>`}`;
   countUp($("#exscore"), pct);
   $("#ex-again").onclick = startExam;
+  const retry = $("#ex-retry");
+  if (retry) retry.onclick = () => beginExam(
+    wrongRows.map(({ q }) => ({ q: ROLE_BY_TEXT.get(q.q) || q, ch: q.ch })),
+    { set: "retry", mins: Math.max(5, wrongRows.length), topicName: "Làm lại câu sai" });
+  document.querySelectorAll("#ex-stage [data-ex-practice]").forEach(b => b.onclick = () => practiceRoleChapter(b.dataset.exPractice));
   if (pct >= 80){ setTimeout(() => burst(), 300); avatar?.play("cheer", 2.8); toast("Thi thử xuất sắc!"); }
   else if (pct >= 70){ setTimeout(() => burst(), 300); avatar?.play("happy", 2.5); }
   else if (pct < 40){ avatar?.play("sad", 2.5); }
   checkBadges();
   renderExamHistory();
 }
+/* Lịch sử thi: giữ tới EXAM_HISTORY_MAX lượt nhưng không vượt giới hạn dung lượng mỗi khóa khi đồng bộ. */
+function saveExamHistory(list){
+  let h = list.slice(0, EXAM_HISTORY_MAX);
+  while (h.length > 1 && JSON.stringify(h).length > EXAM_HISTORY_BYTES) h = h.slice(0, -1);
+  store.set("exams", h);
+}
+function examChapterResultHtml(scores, cfg){
+  const name = cid => (ROLES && ROLES.chuong[cid] && ROLES.chuong[cid].ten) || cid;
+  const weak = EXB.weakChapters(scores);
+  const rows = scores.slice().sort((a, b) => a.pct - b.pct || b.total - a.total).map(x =>
+    `<div><div class="meta" style="display:flex;justify-content:space-between"><span>${esc(name(x.ch))}</span><span>${x.right}/${x.total} (${x.pct}%)</span></div><div class="bl-bar"><i style="width:${x.pct}%"></i></div></div>`).join("");
+  const weakHtml = weak.length
+    ? `<div class="ex-weak"><span class="label">Chương cần ôn</span>${weak.map(x => `<div class="role-ch"><div class="role-ch-head"><b>${esc(name(x.ch))}</b><span class="meta">${x.right}/${x.total} câu đúng</span></div><div class="role-ch-actions"><a class="btn ghost" href="ly_thuyet.html?c=${encodeURIComponent(x.ch)}">Đọc chương</a><button type="button" class="btn ghost" data-ex-practice="${esc(x.ch)}">Luyện chương này</button></div></div>`).join("")}</div>`
+    : `<p class="meta" style="margin:8px 0 0">Chưa chỉ ra được chương yếu: cần chương có ít nhất ${EXB.MIN_QUESTIONS_FOR_WEAK} câu trong đề và chưa đúng hết.</p>`;
+  const miss = cfg && cfg.shortfall > 0 ? `<p class="meta" style="margin:8px 0 0">Đề chỉ có ${cfg.requested - cfg.shortfall}/${cfg.requested} câu vì các chương đã chọn chưa đủ câu hỏi.</p>` : "";
+  return `<div class="card"><span class="label">Điểm theo chương</span><div style="display:grid;gap:8px;margin-top:8px">${rows}</div>${miss}${weakHtml}</div>`;
+}
 function renderExamHistory(){
-  const h = store.get("exams", []);
-  $("#ex-history").innerHTML = h.length ? `<div class="card"><span class="label">Lần thi gần đây</span>
+  const all = store.get("exams", []);
+  const h = all.slice(0, EXAM_HISTORY_SHOW);
+  $("#ex-history").innerHTML = h.length ? `<div class="card"><span class="label">Lần thi gần đây${all.length > h.length ? ` (${h.length}/${all.length})` : ""}</span>
     ${h.map(x => `<div class="meta" style="display:flex;justify-content:space-between;gap:12px;padding:3px 0"><span>${x.d} · ${esc((EX_SETS[x.set]||x.set) + (x.topic ? " · " + x.topic : ""))} · ${x.n} câu</span><span><b>${x.r}/${x.n}</b> (${x.pct}%) · ${Math.round(x.used/60)} phút</span></div>`).join("")}</div>` : "";
 }
 $("#ex-start").onclick = startExam;
+restoreExamSession();
 $("#weak-practice").onclick = startWeakPractice;
 $("#qai").onclick = async () => {
   if (!sample) return;
