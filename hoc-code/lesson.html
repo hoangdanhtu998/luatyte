@@ -23,6 +23,7 @@
 
     <div class="slides-bar">
       <a class="btn amber" id="slides-link" href="#">Xem slide bài này</a>
+      <a class="btn ghost" id="bo-nho-link" href="bo-nho.html" hidden>Xem bộ nhớ</a>
       <button class="btn ghost" id="done" type="button"></button>
       <a class="btn ghost next-link" id="next-top" href="#" hidden>Bài tiếp theo →</a>
     </div>
@@ -275,6 +276,11 @@
       // Bài chưa có slide thì ẩn nút xem slide, không để liên kết trỏ lung tung.
       document.getElementById('slides-link').hidden = !lesson.slides;
       document.getElementById('slides-link').href = lesson.slides || '#';
+      // Bài có ví dụ "Xem bộ nhớ" thì hiện nút dẫn tới đúng ví dụ.
+      const VI_DU_BO_NHO = { 'con-tro-va-bo-nho': 'con-tro-co-ban', 'cap1-mang': 'mang-tran', 'cap1-chuoi-ky-tu': 'chuoi-kieu-c', 'cap2-danh-sach-lien-ket': 'danh-sach-lien-ket' };
+      const boNho = VI_DU_BO_NHO[lesson.id];
+      document.getElementById('bo-nho-link').hidden = !boNho;
+      if (boNho) document.getElementById('bo-nho-link').href = 'bo-nho.html?vd=' + boNho;
       document.getElementById('tab-slide').hidden = !lesson.slides;
       document.getElementById('tab-slide').href = lesson.slides || '#';
       window.currentLessonId = lesson.id;

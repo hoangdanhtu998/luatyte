@@ -1,5 +1,5 @@
 /* sw.js — Sổ tay Luật Y tế: network-first (bản mới khi có mạng), cache khi ngoại tuyến */
-const V = "lyt-v25";
+const V = "lyt-v26";
 const CORE = [
   "./", "index.html", "clinic.html", "site.css", "tokens.css", "base.css", "js/hospital.js", "tin_luat.html", "tham_chieu.html", "ly_thuyet.html", "404.html",
   "manifest.json", "icon.svg",
@@ -9,7 +9,7 @@ const CORE = [
   "data/khoa_phong.json", "data/ly_thuyet.json", "data/tra_loi_nhanh.json", "data/tin_luat.json", "data/tham-chieu.json"
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(V).then(c => c.addAll(CORE.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim()));

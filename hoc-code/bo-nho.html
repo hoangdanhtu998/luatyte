@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xem bộ nhớ trực tiếp · Học code</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/bo-nho.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index-hoccode.html">Trang chủ</a>
+  <nav><a href="setup.html">Chuẩn bị môi trường</a></nav>
+</header>
+
+<main class="bn">
+  <h1 class="bn-h1">Xem bộ nhớ trực tiếp</h1>
+  <p class="muted bn-lead">Bấm "Bước tiếp" để chạy từng dòng C và xem stack, heap, con trỏ thay đổi ra sao.</p>
+
+  <div class="bn-chon">
+    <label for="bn-vd">Ví dụ</label>
+    <select id="bn-vd"></select>
+  </div>
+  <p class="bn-mota" id="bn-mota"></p>
+  <div class="card bn-loi" id="bn-loi" role="alert" hidden></div>
+
+  <div id="bn-trang" hidden>
+    <section class="bn-khung" aria-labelledby="bn-t-code">
+      <h2 id="bn-t-code">Mã nguồn</h2>
+      <div class="bn-code" id="bn-code" tabindex="0" role="region" aria-label="Mã nguồn C"></div>
+    </section>
+
+    <div class="bn-mem" id="bn-mem">
+      <section class="bn-khung bn-stack" aria-labelledby="bn-t-stack">
+        <h2 id="bn-t-stack">Stack <span>(biến đang sống)</span></h2>
+        <div id="bn-stack"></div>
+      </section>
+      <section class="bn-khung bn-heap" aria-labelledby="bn-t-heap">
+        <h2 id="bn-t-heap">Heap <span>(khối do malloc cấp)</span></h2>
+        <div id="bn-heap"></div>
+      </section>
+      <svg class="bn-svg" id="bn-svg" aria-hidden="true" focusable="false">
+        <defs>
+          <marker id="bn-dau" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" class="bn-dau-mui"/>
+          </marker>
+        </defs>
+        <g id="bn-mui"></g>
+      </svg>
+    </div>
+
+    <div class="bn-canhbao" id="bn-canhbao" hidden></div>
+
+    <section class="bn-khung" aria-labelledby="bn-t-buoc">
+      <h2 id="bn-t-buoc">Bước này làm gì?</h2>
+      <p class="bn-buoc" id="bn-buoc" aria-live="polite" aria-atomic="true"></p>
+      <h3 class="bn-h3">Đầu ra</h3>
+      <pre class="bn-dauRa" id="bn-dauRa" aria-label="Đầu ra chương trình"></pre>
+    </section>
+
+    <div class="bn-dieukhien" role="group" aria-label="Điều khiển bước">
+      <div class="bn-tiendo">
+        <span id="bn-so">Bước 0 / 0</span>
+        <div class="bn-thanh" role="progressbar" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" aria-labelledby="bn-so"><i id="bn-thanh-i"></i></div>
+      </div>
+      <div class="bn-nut">
+        <button class="btn ghost" id="bn-lui" type="button">← Trước</button>
+        <button class="btn run" id="bn-tien" type="button">Bước tiếp →</button>
+        <button class="btn ghost" id="bn-dat" type="button">Đặt lại</button>
+      </div>
+      <p class="muted bn-phim">Phím tắt: ← → để lùi/tiến, Home/End để về đầu/cuối.</p>
+    </div>
+  </div>
+</main>
+<script src="assets/bo-nho.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+ "vidu": [
+  {
+   "id": "con-tro-co-ban",
+   "tieuDe": "Con trỏ và mũi tên",
+   "baiHoc": "Con trỏ",
+   "baiHocId": "con-tro-va-bo-nho"
+  },
+  {
+   "id": "doi-hai-so",
+   "tieuDe": "Đổi hai số qua con trỏ",
+   "baiHoc": "Con trỏ",
+   "baiHocId": "con-tro-va-bo-nho"
+  },
+  {
+   "id": "mang-tran",
+   "tieuDe": "Mảng và tràn mảng",
+   "baiHoc": "Mảng",
+   "baiHocId": "cap1-mang"
+  },
+  {
+   "id": "chuoi-kieu-c",
+   "tieuDe": "Chuỗi kiểu C",
+   "baiHoc": "Chuỗi",
+   "baiHocId": "cap1-chuoi-ky-tu"
+  },
+  {
+   "id": "cap-phat-giai-phong",
+   "tieuDe": "Cấp phát, dùng, giải phóng",
+   "baiHoc": "Bộ nhớ động",
+   "baiHocId": "con-tro-va-bo-nho"
+  },
+  {
+   "id": "ro-ri-bo-nho",
+   "tieuDe": "Rò rỉ bộ nhớ",
+   "baiHoc": "Bộ nhớ động",
+   "baiHocId": "con-tro-va-bo-nho"
+  },
+  {
+   "id": "danh-sach-lien-ket",
+   "tieuDe": "Danh sách liên kết 3 nút",
+   "baiHoc": "Danh sách liên kết",
+   "baiHocId": "cap2-danh-sach-lien-ket"
+  }
+ ]
+}
