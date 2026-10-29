@@ -1,0 +1,64 @@
+/* Banner quảng cáo dùng chung: trang quản trị (xem trước) và app học luật y tế.
+   Màu lấy theo thương hiệu Luật y tế (#0F766E). Hỗ trợ sáng/tối theo hệ thống. */
+.ad-banner{
+  --ad-brand:#0F766E;
+  --ad-ink:#111827;
+  --ad-muted:#4b5563;
+  --ad-bg:#ffffff;
+  --ad-line:#dde2e8;
+  --ad-soft:#ecfdf5;
+  display:flex;align-items:stretch;gap:0;
+  width:100%;max-width:720px;margin:12px auto;
+  background:var(--ad-bg);color:var(--ad-ink);
+  border:1px solid var(--ad-line);border-radius:14px;
+  box-shadow:0 1px 2px rgba(15,23,42,.06);
+  overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+}
+.ad-banner *{box-sizing:border-box}
+.ad-banner__media{
+  flex:0 0 112px;min-height:112px;background:var(--ad-soft);
+  display:grid;place-items:center;overflow:hidden;
+}
+.ad-banner__media img{width:100%;height:100%;object-fit:cover;display:block}
+.ad-banner__media--empty{
+  background:linear-gradient(135deg,#0F766E 0%,#14b8a6 100%);
+}
+.ad-banner__media--empty svg{width:44px;height:44px;opacity:.95}
+.ad-banner__body{flex:1 1 auto;min-width:0;padding:14px 16px;display:flex;flex-direction:column;gap:6px;justify-content:center}
+.ad-banner__label{
+  align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ad-brand);background:var(--ad-soft);border-radius:999px;padding:2px 8px;
+}
+.ad-banner__title{margin:0;font-size:16px;line-height:1.35;font-weight:700;color:var(--ad-ink);overflow-wrap:anywhere}
+.ad-banner__text{margin:0;font-size:14px;line-height:1.5;color:var(--ad-muted);overflow-wrap:anywhere;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ad-banner__cta{
+  align-self:flex-start;margin-top:4px;display:inline-flex;align-items:center;gap:6px;
+  font-size:14px;font-weight:600;color:#fff;background:var(--ad-brand);
+  text-decoration:none;border-radius:8px;padding:8px 14px;min-height:40px;
+}
+.ad-banner__cta:hover{background:#115e59}
+.ad-banner__cta:focus-visible{outline:3px solid #7dd3c7;outline-offset:2px}
+.ad-banner--inline{margin:16px auto}
+.ad-banner--sidebar{flex-direction:column;max-width:300px}
+.ad-banner--sidebar .ad-banner__media{flex:0 0 auto;min-height:0;aspect-ratio:16/9;width:100%}
+.ad-banner--top{border-radius:0;border-left:0;border-right:0;max-width:none;margin:0}
+
+/* Điện thoại: ảnh nằm trên, chữ nằm dưới */
+@media (max-width:520px){
+  .ad-banner{flex-direction:column}
+  .ad-banner__media{flex:0 0 auto;min-height:0;aspect-ratio:16/9;width:100%}
+  .ad-banner__body{padding:12px 14px 14px}
+  .ad-banner__cta{width:100%;justify-content:center}
+  .ad-banner--sidebar{max-width:none}
+}
+
+@media (prefers-color-scheme:dark){
+  .ad-banner{
+    --ad-ink:#f3f4f6;--ad-muted:#9ca3af;--ad-bg:#14201f;--ad-line:#24423f;--ad-soft:#0f2a28;
+  }
+  .ad-banner__label{color:#5eead4}
+  .ad-banner__cta{background:#14b8a6;color:#052e2b}
+  .ad-banner__cta:hover{background:#2dd4bf}
+}

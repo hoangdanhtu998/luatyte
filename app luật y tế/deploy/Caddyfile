@@ -1,0 +1,5 @@
+# HTTPS tự động cho luatyte.online; mọi yêu cầu đi vào máy chủ sổ tay
+luatyte.online {
+	encode gzip
+	reverse_proxy study:4400
+}

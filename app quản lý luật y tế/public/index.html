@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quản lý · Luật y tế</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="ad-banner.css">
+<script src="ad-banner.js"></script>
+<meta name="theme-color" content="#0F766E">
+<style>
+  :root{
+    --brand:#0F766E; --brand-600:#115E59; --brand-50:#F0FDFA; --brand-200:#99F6E4;
+    --ink:#0F172A; --ink-2:#334155; --muted:#64748B; --line:#E2E8F0; --line-2:#CBD5E1;
+    --bg:#F4F7F8; --surface:#FFFFFF; --bad:#B42318; --bad-50:#FEF3F2; --ok:#067647;
+    --radius:12px; --radius-sm:8px; --shadow:0 1px 2px rgba(15,23,42,.05),0 1px 3px rgba(15,23,42,.06);
+    --side:232px; --head:60px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+  /* Thanh trên */
+  header{position:sticky;top:0;z-index:20;height:var(--head);background:var(--surface);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px}
+  .brand-head{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand-head img{flex:none}
+  .brand-head b{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #logout{background:var(--surface);color:var(--ink-2);border:1px solid var(--line-2)}
+  #logout:hover{background:#F8FAFC}
+
+  /* Menu bên trái (máy tính) */
+  nav#menu{position:fixed;top:var(--head);left:0;bottom:0;width:var(--side);background:var(--surface);
+    border-right:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:2px;overflow-y:auto;z-index:10}
+  nav#menu button{display:block;width:100%;text-align:left;background:none;color:var(--ink-2);border:0;border-radius:var(--radius-sm);
+    padding:10px 12px;font-size:14px;font-weight:500;min-height:40px;cursor:pointer}
+  nav#menu button:hover{background:#F1F5F9;color:var(--ink)}
+  nav#menu button[aria-current="page"]{background:var(--brand-50);color:var(--brand);font-weight:600;box-shadow:inset 3px 0 0 var(--brand)}
+  main{max-width:1120px;margin:0 auto;padding:24px 24px 48px 0;margin-left:var(--side);padding-left:24px}
+  body:not(.auth) main{min-height:calc(100vh - var(--head))}
+
+  /* Thẻ nội dung */
+  section.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+  h2{font-size:20px;line-height:1.3;font-weight:700;margin:0 0 14px;color:var(--ink);letter-spacing:-.01em}
+  h3{font-size:15px;font-weight:600;margin:20px 0 8px;color:var(--ink-2)}
+
+  /* Ô nhập và nút */
+  input,select,textarea,button{font:inherit;color:var(--ink)}
+  input,select,textarea{padding:9px 12px;border:1px solid var(--line-2);border-radius:var(--radius-sm);background:var(--surface);min-height:40px;max-width:100%}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,118,110,.18)}
+  textarea{width:100%;min-height:90px;resize:vertical}
+  button{background:var(--brand);color:#fff;border:1px solid var(--brand);border-radius:var(--radius-sm);padding:9px 16px;font-weight:600;font-size:14px;min-height:40px;cursor:pointer;transition:background .15s}
+  button:hover{background:var(--brand-600)}
+  button.ghost{background:var(--surface);color:var(--brand);border:1px solid var(--line-2)}
+  button.ghost:hover{background:var(--brand-50);border-color:var(--brand)}
+  button.danger{background:var(--bad);border-color:var(--bad)}
+  button.danger:hover{background:#912018;border-color:#912018}
+  button:disabled{opacity:.55;cursor:default}
+  button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #5EEAD4;outline-offset:2px}
+  .link{background:none;border:0;color:var(--brand);padding:6px 0;font-size:14px;text-decoration:underline;min-height:0}
+  .link:hover{background:none;color:var(--brand-600)}
+
+  label{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin:0}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+  .row>label{flex:1 1 160px;margin:0}
+  .grow{flex:1 1 220px}
+
+  /* Bảng */
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-sm)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#F8FAFC;white-space:nowrap}
+  tbody tr:hover td{background:#FAFCFC}
+  tbody tr:last-child td{border-bottom:0}
+  td.muted,.muted{color:var(--muted)}
+
+  /* Thống kê */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 6px}
+  .stat{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;background:var(--surface)}
+  .stat span{display:block;font-size:12px;font-weight:500;color:var(--muted)}
+  .stat b{display:block;font-size:22px;font-weight:700;margin-top:4px;letter-spacing:-.01em;color:var(--ink);overflow-wrap:anywhere}
+
+  .err{color:var(--bad);min-height:1.2em;margin:8px 0 0;font-size:14px}
+  .ok-msg{color:var(--ok)}
+  pre{white-space:pre-wrap;word-break:break-word;background:#F8FAFC;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px;font-size:12px;max-height:320px;overflow:auto}
+  .hidden{display:none !important}
+  .otp-secret{word-break:break-all}
+  code{background:#F1F5F9;border-radius:4px;padding:1px 5px;font-size:13px}
+
+  /* Màn đăng nhập */
+  body.auth{background:linear-gradient(160deg,#0F766E 0%,#0B4F4A 60%,#083B37 100%);min-height:100vh}
+  body.auth header{display:none}
+  .auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;box-sizing:border-box}
+  .auth-card{background:var(--surface);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.28);width:100%;max-width:400px;padding:32px 28px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--ink-2);font-size:14px;font-weight:600}
+  .brand img{flex:none}
+  .auth-title{font-size:22px;margin:18px 0 6px;color:var(--ink)}
+  .auth-sub{color:var(--muted);margin:0 0 20px;font-size:14px;line-height:1.55}
+  .steps{display:flex;gap:6px;margin-bottom:4px}
+  .steps span{flex:1;height:4px;border-radius:2px;background:var(--line)}
+  .steps span.on{background:var(--brand)}
+  .field{display:flex;flex-direction:column;gap:6px;margin:0 0 16px;font-size:13px;font-weight:500;color:var(--ink-2)}
+  .field input{font-size:16px;width:100%;min-height:46px;padding:11px 14px}
+  .pw-wrap{position:relative;display:block}
+  .pw-wrap input{padding-right:70px}
+  .pw-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;color:var(--brand);border:0;padding:6px 8px;font-size:13px;min-height:0}
+  .pw-toggle:hover{background:none;color:var(--brand-600)}
+  .btn-block{width:100%;min-height:46px;font-size:16px;margin-top:4px}
+  .otp{font-size:24px !important;letter-spacing:.42em;text-align:center;font-variant-numeric:tabular-nums}
+  .hint{font-size:13px;color:var(--muted);margin:14px 0 0;text-align:center}
+  .secret-box{display:flex;gap:10px;align-items:center;background:var(--brand-50);border:1px solid var(--brand-200);border-radius:var(--radius-sm);padding:10px 12px}
+  .secret-box code{flex:1;word-break:break-all;font-size:14px;background:none;padding:0}
+  ol.setup{padding-left:20px;margin:0 0 16px;color:var(--ink-2);font-size:14px;line-height:1.7}
+  .ad-preview{margin-top:10px}
+
+  /* Điện thoại: menu cuộn ngang trên đầu, nội dung đầy đủ chiều rộng */
+  @media (max-width:900px){
+    :root{--head:56px}
+    nav#menu{position:sticky;top:var(--head);left:auto;bottom:auto;width:auto;flex-direction:row;overflow-x:auto;overflow-y:hidden;
+      border-right:0;border-bottom:1px solid var(--line);padding:8px 10px;gap:6px;white-space:nowrap;z-index:15}
+    nav#menu button{width:auto;flex:none;padding:8px 12px;min-height:38px}
+    nav#menu button[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--brand)}
+    main{margin-left:0;padding:16px 14px 40px}
+    section.card{padding:16px}
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .row>label{flex:1 1 100%}
+    .brand-head b{font-size:14px}
+  }
+  @media (max-width:520px){
+    .auth-card{padding:26px 20px}
+    .stats{grid-template-columns:1fr 1fr}
+  }
+
+  /* Đầu trang từng mục */
+  .page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .page-head .crumb{margin:0 0 4px;font-size:12px;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.06em}
+  .page-head h1{margin:0;font-size:24px;line-height:1.25;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .page-head .page-sub{margin:4px 0 0;font-size:14px;color:var(--muted)}
+  .page-head.hidden,.page-head[hidden]{display:none !important}
+
+  /* Tiêu đề trong thẻ */
+  section.card > h2:first-child{padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+
+  /* Nhãn trạng thái */
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:999px;padding:2px 10px;line-height:20px;white-space:nowrap;background:#F1F5F9;color:var(--ink-2)}
+  .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.8}
+  .badge-ok{background:#ECFDF3;color:var(--ok)}
+  .badge-bad{background:var(--bad-50);color:var(--bad)}
+  .badge-warn{background:#FFFAEB;color:#B54708}
+  .badge-info{background:var(--brand-50);color:var(--brand)}
+  .badge-muted{background:#F1F5F9;color:var(--muted)}
+
+  /* Thẻ thống kê có vạch màu */
+  .stat{position:relative;overflow:hidden;padding-left:18px}
+  .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--brand)}
+  .stat.stat-warn::before{background:#F79009}
+  .stat.stat-bad::before{background:var(--bad)}
+  .stat.stat-ok::before{background:var(--ok)}
+
+  /* Dòng trống */
+  tr.empty td{padding:26px 12px;text-align:center;color:var(--muted)}
+
+  /* Mục đang chọn trên menu có nền sáng hơn */
+  nav#menu{padding-top:16px}
+  nav#menu button{position:relative}
+  nav#menu button[aria-current="page"]::before{content:"";position:absolute;left:-10px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:var(--brand)}
+  @media (max-width:900px){ nav#menu button[aria-current="page"]::before{display:none} .page-head h1{font-size:20px} .page-head{align-items:flex-start;flex-direction:column} }
+</style>
+</head>
+<body>
+<header><span class="brand-head"><img src="icon.svg" alt="" width="28" height="28"><b>Quản lý · Luật y tế</b></span><button class="ghost hidden" id="logout">Đăng xuất</button></header>
+
+<nav id="menu" class="hidden" aria-label="Menu quản trị">
+  <button data-tab="overview" aria-current="page">Tổng quan</button>
+  <button data-tab="users">Quản lý người dùng</button>
+  <button data-tab="plans">Gói & mã giảm giá</button>
+  <button data-tab="email">Email</button>
+  <button data-tab="logs">Nhật ký</button>
+  <button data-tab="ads">Quảng cáo & IP</button>
+  <button data-tab="content">Nội dung luật</button>
+  <button data-tab="backups">Sao lưu & cảnh báo</button>
+  <button data-tab="reports">Báo cáo tài chính</button>
+  <button data-tab="tools">Công cụ & repo</button>
+  <button data-tab="diagrams">Sơ đồ</button>
+</nav>
+
+<div id="auth" class="auth-wrap hidden">
+<div class="auth-card">
+  <div class="brand"><img src="icon.svg" alt="" width="40" height="40"><span>Luật y tế · Khu quản trị</span></div>
+
+  <!-- Bước 1: email và mật khẩu -->
+  <section id="login-box" class="hidden">
+    <div class="steps"><span class="on"></span><span></span></div>
+    <h2 class="auth-title">Đăng nhập</h2>
+    <p class="auth-sub">Dành cho quản trị viên và nhân viên được cấp quyền.</p>
+    <form id="login-form">
+      <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="username" placeholder="ten@vidu.vn"></label>
+      <label class="field"><span>Mật khẩu</span>
+        <span class="pw-wrap"><input name="password" type="password" required autocomplete="current-password" placeholder="Nhập mật khẩu">
+          <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Hiện hoặc ẩn mật khẩu">Hiện</button></span>
+      </label>
+      <button type="submit" class="btn-block" id="login-btn">Tiếp tục</button>
+    </form>
+    <p class="err" id="login-err" role="alert"></p>
+  </section>
+
+  <!-- Bước 2: mã xác minh hai lớp -->
+  <section id="totp-box" class="hidden">
+    <div class="steps"><span class="on"></span><span class="on"></span></div>
+    <h2 class="auth-title">Mã xác minh</h2>
+    <p class="auth-sub">Mở ứng dụng xác thực (Google Authenticator hoặc Microsoft Authenticator) và nhập mã 6 số đang hiện.</p>
+    <form id="totp-form">
+      <label class="field"><span>Mã 6 số</span><input class="otp" name="code" inputmode="numeric" pattern="\d{6}" maxlength="6" required autocomplete="one-time-code" placeholder="000000"></label>
+      <button type="submit" class="btn-block">Xác nhận</button>
+    </form>
+    <p class="err" id="totp-err" role="alert"></p>
+    <p class="hint"><button type="button" class="link" id="totp-back">Đăng nhập bằng tài khoản khác</button></p>
+  </section>
+
+  <!-- Thiết lập lần đầu: bật xác minh hai lớp (bắt buộc cho admin) -->
+  <section id="setup-box" class="hidden">
+    <div class="steps"><span class="on"></span><span class="on"></span></div>
+    <h2 class="auth-title">Bật xác minh hai lớp</h2>
+    <p class="auth-sub">Bắt buộc với tài khoản quản trị. Làm theo 3 bước:</p>
+    <ol class="setup">
+      <li>Mở Google Authenticator hoặc Microsoft Authenticator.</li>
+      <li>Thêm tài khoản bằng khóa bên dưới (hoặc bấm liên kết để mở trực tiếp).</li>
+      <li>Nhập mã 6 số ứng dụng đang hiện.</li>
+    </ol>
+    <div class="secret-box"><code id="secret" class="otp-secret"></code><button type="button" class="ghost" id="copy-secret">Sao chép</button></div>
+    <p class="hint"><a id="otp-link" href="#" hidden>Mở bằng ứng dụng xác thực</a></p>
+    <form id="enable-form" style="margin-top:14px">
+      <label class="field"><span>Mã 6 số từ ứng dụng</span><input class="otp" name="code" inputmode="numeric" pattern="\d{6}" maxlength="6" required autocomplete="one-time-code" placeholder="000000"></label>
+      <button type="submit" class="btn-block">Bật và tiếp tục</button>
+    </form>
+    <p class="err" id="setup-err" role="alert"></p>
+  </section>
+</div>
+</div>
+
+<main>
+<header class="page-head" id="page-head" hidden><div><p class="crumb">Quản trị</p><h1 id="page-title"></h1><p class="page-sub" id="page-sub"></p></div></header>
+
+<!-- Tổng quan -->
+<section id="tab-overview" class="card tab">
+  <h2>Tổng quan</h2>
+  <div class="stats" id="ov-stats"></div>
+  <h3>Chi tiết</h3>
+  <pre id="ov-raw"></pre>
+  <p class="err" id="ov-err" role="alert"></p>
+</section>
+
+<!-- Quản lý người dùng -->
+<section id="tab-users" class="card tab hidden">
+  <h2>Quản lý người dùng</h2>
+  <div class="row" style="margin-bottom:10px">
+    <label class="grow">Tìm <input id="q" placeholder="Email, tên đăng nhập hoặc họ tên"></label>
+    <label>Vai trò <select id="role"><option value="">Tất cả</option><option value="user">User</option><option value="admin">Admin</option></select></label>
+    <label>Trạng thái <select id="status"><option value="">Tất cả</option><option value="active">Hoạt động</option><option value="locked">Đã khóa</option></select></label>
+    <label>Gói <select id="plan-filter"><option value="">Tất cả</option><option value="paid">Đang có gói</option><option value="free">Miễn phí</option></select></label>
+    <button class="ghost" id="search">Tìm</button>
+    <button class="ghost" id="users-csv">Tải CSV</button>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Tên đăng nhập</th><th>Họ tên</th><th>Email</th><th>Vai trò</th><th>Trạng thái</th><th>Gói</th><th>Đăng nhập gần nhất</th><th>IP gần nhất</th><th>Tạo lúc</th></tr></thead>
+      <tbody id="users"></tbody>
+    </table>
+  </div>
+  <p class="muted" id="users-empty" hidden>Không có người dùng nào khớp bộ lọc.</p>
+  <div class="row" style="margin-top:10px">
+    <button class="ghost" id="pg-prev">‹ Trước</button>
+    <span class="muted" id="pg-info"></span>
+    <button class="ghost" id="pg-next">Sau ›</button>
+  </div>
+  <p class="err" id="users-err" role="alert"></p>
+
+  <!-- Chi tiết một người dùng -->
+  <div id="person" class="hidden" style="margin-top:18px;border-top:1px solid #dde2e8;padding-top:16px">
+    <h2 id="pd-title"></h2>
+    <div class="stats" id="pd-stats"></div>
+
+    <h3>Hồ sơ</h3>
+    <form id="pf" class="row">
+      <label>Họ tên <input name="name" maxlength="100"></label>
+      <label>Tên đăng nhập <input name="username" maxlength="30" autocapitalize="none"></label>
+      <label>Email <input name="email" type="email" required></label>
+      <button type="submit">Lưu hồ sơ</button>
+    </form>
+
+    <h3>Thao tác tài khoản</h3>
+    <div class="row">
+      <button class="ghost" id="pd-lock">Khóa tài khoản</button>
+      <label>Vai trò <select id="pd-role"><option value="user">user</option><option value="admin">admin</option></select></label>
+      <button class="ghost" id="pd-role-btn">Đổi vai trò</button>
+      <button class="ghost" id="pd-reset">Đặt lại mật khẩu</button>
+      <button class="ghost" id="pd-export">Tải dữ liệu (JSON)</button>
+      <button class="danger" id="pd-anon">Ẩn danh tài khoản</button>
+    </div>
+
+    <h3>Gói</h3>
+    <div class="row">
+      <label>Gói <select id="pd-plan"></select></label>
+      <button id="pd-grant">Cấp gói</button>
+      <button class="danger" id="pd-revoke">Thu hồi gói</button>
+    </div>
+    <p class="err" id="pd-err" role="alert"></p>
+
+    <h3>Lịch sử đăng nhập (30 lần gần nhất)</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Thời gian</th><th>IP</th><th>Kết quả</th><th>Thiết bị</th></tr></thead>
+      <tbody id="pd-logins"></tbody>
+    </table></div>
+
+    <h3>Gói đã mua và đã dùng</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Gói</th><th>Bắt đầu</th><th>Hết hạn</th><th>Trạng thái</th></tr></thead>
+      <tbody id="pd-subs"></tbody>
+    </table></div>
+
+    <h3>Đơn hàng</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Gói</th><th>Số tiền (VND)</th><th>Cổng</th><th>Trạng thái</th><th>Ngày</th></tr></thead>
+      <tbody id="pd-orders"></tbody>
+    </table></div>
+
+    <h3>Đồng ý điều khoản</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Loại</th><th>Phiên bản</th><th>Thời điểm</th><th>IP</th></tr></thead>
+      <tbody id="pd-consents"></tbody>
+    </table></div>
+  </div>
+
+  <h3>Gói và quyền theo email</h3>
+  <p class="muted">Admin luôn có quyền cao nhất, không cần gói. Người dùng thường có gói hoặc là miễn phí.</p>
+  <div class="row">
+    <label class="grow">Email tài khoản <input id="sg-email" type="email" placeholder="ten@vidu.vn"></label>
+    <button class="ghost" id="sg-check">Kiểm tra</button>
+  </div>
+  <p id="sg-info" class="muted"></p>
+  <div class="row">
+    <label>Gói <select id="sg-plan"></select></label>
+    <button id="sg-grant">Cấp gói</button>
+    <button class="danger" id="sg-revoke">Thu hồi gói</button>
+  </div>
+  <div class="row" style="margin-top:8px">
+    <label>Vai trò <select id="sg-role"><option value="user">user (người dùng)</option><option value="admin">admin (quản trị)</option></select></label>
+    <button id="sg-role-btn">Đổi vai trò</button>
+  </div>
+  <p class="err" id="sg-err" role="alert"></p>
+  <p class="err" id="users-err" role="alert"></p>
+</section>
+
+<!-- Gói cước & mã giảm giá (Phase 2) -->
+<section id="tab-plans" class="card tab hidden">
+  <h2>Gói cước</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Tên</th><th>Thời hạn</th><th>Giá (VND)</th><th>Trạng thái</th><th></th></tr></thead>
+    <tbody id="plans-body"></tbody>
+  </table></div>
+  <h3 id="plan-form-title">Thêm gói mới</h3>
+  <form id="plan-form" class="row">
+    <input type="hidden" name="id">
+    <label>Tên gói <input name="name" required maxlength="100"></label>
+    <label>Số ngày (-1 = trọn đời) <input name="durationDays" type="number" required value="30"></label>
+    <label>Giá (VND) <input name="price" type="number" min="0" required value="0"></label>
+    <label>Trạng thái <select name="status"><option value="active">Đang bán</option><option value="inactive">Ngừng bán</option></select></label>
+    <label style="flex-basis:100%">Tính năng (JSON, tùy chọn) <textarea name="features" placeholder='{"tuChoi":false}'></textarea></label>
+    <button type="submit" id="plan-submit">Thêm gói</button>
+    <button type="button" class="ghost" id="plan-cancel">Hủy sửa</button>
+  </form>
+  <p class="err" id="plan-err" role="alert"></p>
+
+  <h2 style="margin-top:22px">Mã giảm giá</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Mã</th><th>Loại</th><th>Giá trị</th><th>Đã dùng / tối đa</th><th>Hết hạn</th><th>Gói</th><th>Bật</th><th></th></tr></thead>
+    <tbody id="codes-body"></tbody>
+  </table></div>
+  <h3>Tạo mã mới</h3>
+  <form id="code-form" class="row">
+    <label>Mã <input name="code" required placeholder="TET2027"></label>
+    <label>Loại <select name="type"><option value="percent">Phần trăm (%)</option><option value="fixed">Số tiền (VND)</option></select></label>
+    <label>Giá trị <input name="value" type="number" min="1" required></label>
+    <label>Số lần dùng tối đa (-1 = không giới hạn) <input name="maxUses" type="number" value="-1"></label>
+    <label>Hết hạn <input name="expiresAt" type="datetime-local"></label>
+    <label>Chỉ áp cho gói (ID, để trống = mọi gói) <input name="planId" inputmode="numeric"></label>
+    <button type="submit">Tạo mã</button>
+  </form>
+  <p class="err" id="code-err" role="alert"></p>
+</section>
+
+<!-- Email (Phase 3) -->
+<section id="tab-email" class="card tab hidden">
+  <h2>Cấu hình email</h2>
+  <p class="muted">Hiện chưa có SMTP thật: thư chỉ được ghi vào <code>data/outbox.log</code>, chưa gửi tới hộp thư.</p>
+  <form id="smtp-form" class="row">
+    <label>Máy chủ SMTP <input name="host" placeholder="smtp.gmail.com"></label>
+    <label>Cổng <input name="port" type="number" value="587"></label>
+    <label>Tài khoản <input name="user"></label>
+    <label>Mật khẩu (để trống nếu giữ nguyên) <input name="password" type="password" autocomplete="new-password"></label>
+    <label>Người gửi <input name="from" type="email"></label>
+    <label><input type="checkbox" name="enabled" style="width:auto"> Bật gửi email</label>
+    <button type="submit">Lưu</button>
+  </form>
+  <p class="muted" id="smtp-state"></p>
+  <h3>Gửi thử</h3>
+  <form id="test-form" class="row">
+    <label>Gửi đến <input name="to" type="email" required></label>
+    <label>Tiêu đề <input name="subject" value="Thư thử"></label>
+    <button type="submit" class="ghost">Gửi thử</button>
+  </form>
+  <p id="test-result" class="muted"></p>
+  <p class="err" id="smtp-err" role="alert"></p>
+
+  <h2 style="margin-top:22px">Hàng đợi email</h2>
+  <div class="row" style="margin-bottom:8px">
+    <label>Lọc trạng thái <select id="eq-status"><option value="">Tất cả</option><option>queued</option><option>sent</option><option>failed</option></select></label>
+    <button class="ghost" id="eq-refresh">Tải lại</button>
+    <button id="eq-run">Chạy hàng đợi ngay</button>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Đến</th><th>Tiêu đề</th><th>Trạng thái</th><th>Lần thử</th><th>Lỗi</th><th></th></tr></thead>
+    <tbody id="eq-body"></tbody>
+  </table></div>
+  <p class="err" id="eq-err" role="alert"></p>
+</section>
+
+<!-- Nhật ký (Phase 4) -->
+<section id="tab-logs" class="card tab hidden">
+  <h2>Nhật ký đăng nhập</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Thời gian</th><th>Email</th><th>IP</th><th>Kết quả</th><th>Lý do</th></tr></thead>
+    <tbody id="login-logs-body"></tbody>
+  </table></div>
+  <h2 style="margin-top:22px">Nhật ký thao tác admin</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Thời gian</th><th>Hành động</th><th>Đối tượng</th><th>ID</th><th>IP</th></tr></thead>
+    <tbody id="audit-body"></tbody>
+  </table></div>
+  <p class="err" id="logs-err" role="alert"></p>
+</section>
+
+<!-- Quảng cáo & thống kê IP -->
+<section id="tab-ads" class="card tab hidden">
+  <h2>Thống kê truy cập theo IP</h2>
+  <div class="row" style="margin-bottom:10px">
+    <label>Khoảng thời gian <select id="ip-days"><option value="1">24 giờ</option><option value="7" selected>7 ngày</option><option value="30">30 ngày</option></select></label>
+    <button class="ghost" id="ip-load">Xem</button>
+  </div>
+  <div class="stats" id="ip-stats"></div>
+  <h3>Theo ngày</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Ngày</th><th>IP khác nhau</th><th>Lượt truy cập</th></tr></thead>
+    <tbody id="ip-daily"></tbody>
+  </table></div>
+  <h3>IP truy cập nhiều nhất</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>IP</th><th>Lượt</th><th>Tài khoản đã đăng nhập</th><th>Lần cuối</th></tr></thead>
+    <tbody id="ip-top"></tbody>
+  </table></div>
+  <p class="muted">Nếu máy chủ đặt sau proxy, bật TRUST_PROXY=true để đọc đúng IP người dùng.</p>
+  <p class="err" id="ip-err" role="alert"></p>
+
+  <h2 style="margin-top:22px">Quảng cáo</h2>
+  <p class="muted">Chỉ người dùng gói miễn phí và khách thấy quảng cáo. Gói trả phí và admin không thấy.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Vị trí</th><th>Tiêu đề</th><th>Link</th><th>Bật</th><th></th></tr></thead>
+    <tbody id="ads-body"></tbody>
+  </table></div>
+  <h3 id="ad-form-title">Thêm quảng cáo</h3>
+  <form id="ad-form" class="row">
+    <input type="hidden" name="id">
+    <label>Vị trí <select name="placement"><option value="banner-top">Banner đầu trang</option><option value="inline">Giữa nội dung</option><option value="sidebar">Cột bên</option></select></label>
+    <label class="grow">Tiêu đề <input name="title" required maxlength="120"></label>
+    <label style="flex-basis:100%">Nội dung <textarea name="body" maxlength="500"></textarea></label>
+    <label class="grow">Link (https://) <input name="linkUrl" type="url" placeholder="https://..."></label>
+    <label class="grow">Ảnh (https://, tùy chọn) <input name="imageUrl" type="url" placeholder="https://..."></label>
+    <label><input type="checkbox" name="active" checked style="width:auto"> Đang chạy</label>
+    <button type="submit" id="ad-submit">Thêm quảng cáo</button>
+    <button type="button" class="ghost hidden" id="ad-cancel">Hủy sửa</button>
+  </form>
+  <p class="err" id="ad-err" role="alert"></p>
+
+  <h3>Xem trước banner</h3>
+  <p class="muted">Đây là cách banner hiển thị trên điện thoại và máy tính (trên màn nhỏ sẽ xếp ảnh lên trên chữ).</p>
+  <div id="ad-preview" class="ad-preview"></div>
+</section>
+
+<!-- Nội dung luật & pháp lý (Phase 6) -->
+<section id="tab-content" class="card tab hidden">
+  <h2>Nội dung luật</h2>
+  <h3>Thêm danh mục</h3>
+  <form id="cat-form" class="row">
+    <label>Tên danh mục <input name="name" required maxlength="200"></label>
+    <label>Thứ tự <input name="sortOrder" type="number" value="0"></label>
+    <button type="submit">Thêm danh mục</button>
+  </form>
+  <h3>Thêm điều luật</h3>
+  <form id="art-form" class="row">
+    <label>ID danh mục <input name="categoryId" required inputmode="numeric"></label>
+    <label>Số điều <input name="number" required></label>
+    <label class="grow">Tiêu đề <input name="title" required></label>
+    <label style="flex-basis:100%">Nội dung <textarea name="content" required></textarea></label>
+    <button type="submit">Thêm điều luật</button>
+  </form>
+  <h3>Điều luật hiện có</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Điều</th><th>Tiêu đề</th><th>Đã đối chiếu</th><th></th></tr></thead>
+    <tbody id="art-body"></tbody>
+  </table></div>
+  <h3>Tin tức</h3>
+  <form id="news-form" class="row">
+    <label class="grow">Tiêu đề <input name="title" required></label>
+    <label style="flex-basis:100%">Nội dung <textarea name="content" required></textarea></label>
+    <label><input type="checkbox" name="publish" style="width:auto"> Đăng ngay</label>
+    <button type="submit">Lưu tin</button>
+  </form>
+  <h3>Trang pháp lý</h3>
+  <form id="legal-form" class="row">
+    <label>Trang <select name="name"><option value="terms">Điều khoản sử dụng</option><option value="privacy">Chính sách bảo mật</option></select></label>
+    <label style="flex-basis:100%">Nội dung <textarea name="text"></textarea></label>
+    <button type="submit">Lưu trang</button>
+  </form>
+  <p class="muted">Nội dung pháp lý cần luật sư duyệt trước khi công khai.</p>
+  <div class="row"><button class="ghost" id="export-btn">Xuất toàn bộ nội dung luật (JSON)</button></div>
+  <p class="err" id="content-err" role="alert"></p>
+</section>
+
+<!-- Sao lưu & cảnh báo (Phase 5) -->
+<section id="tab-backups" class="card tab hidden">
+  <h2>Cảnh báo</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Thời gian</th><th>Mức</th><th>Nội dung</th><th></th></tr></thead>
+    <tbody id="alerts-body"></tbody>
+  </table></div>
+  <p class="muted" id="alerts-empty" hidden>Không có cảnh báo đang mở.</p>
+  <h2 style="margin-top:22px">Sao lưu</h2>
+  <div class="row" style="margin-bottom:8px"><button id="backup-now">Sao lưu ngay</button><span class="muted">Tự động lúc 2:00 mỗi ngày, giữ 7 bản gần nhất.</span></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Tên file</th><th>Dung lượng</th><th>Tạo lúc</th></tr></thead>
+    <tbody id="backups-body"></tbody>
+  </table></div>
+  <p class="err" id="backup-err" role="alert"></p>
+</section>
+
+<!-- Báo cáo tài chính (Phase 7) -->
+<section id="tab-tools" class="card tab hidden">
+  <h2>Skills, repo và công cụ đang dùng cho app</h2>
+  <p class="muted">Số lần dùng được đếm từ lúc có nhật ký này. Lần dùng trước đó không được khôi phục.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Công cụ</th><th>Dùng ở đâu</th><th>Giấy phép</th><th>Trạng thái</th><th>Số lần dùng</th><th>Lần cuối</th><th></th></tr></thead>
+    <tbody id="tools-body"></tbody>
+  </table></div>
+  <p class="err" id="tools-err" role="alert"></p>
+</section>
+<section id="tab-diagrams" class="card tab hidden">
+  <h2>Sơ đồ kiến trúc và luồng</h2>
+  <p class="muted">Sơ đồ vẽ từ mã nguồn hiện tại (archify). Chỉ quản trị viên xem được; mỗi lần mở đều được ghi vào nhật ký.</p>
+  <div class="row" id="dg-list" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"></div>
+  <p class="muted" id="dg-desc"></p>
+  <iframe id="dg-frame" title="Sơ đồ" sandbox="allow-scripts allow-downloads" referrerpolicy="no-referrer" loading="lazy" style="width:100%;height:75vh;min-height:420px;border:1px solid var(--line, #cfe3de);border-radius:12px;background:#fff"></iframe>
+  <p class="err" id="dg-err" role="alert"></p>
+</section>
+<section id="tab-reports" class="card tab hidden">
+  <h2>Doanh thu</h2>
+  <div class="row" style="margin-bottom:8px">
+    <label>Từ ngày <input type="date" id="rp-from"></label>
+    <label>Đến ngày <input type="date" id="rp-to"></label>
+    <label>Nhóm theo <select id="rp-group"><option value="day">Ngày</option><option value="month">Tháng</option><option value="plan">Gói</option><option value="gateway">Cổng thanh toán</option></select></label>
+    <button class="ghost" id="rp-load">Xem</button>
+    <button class="ghost" id="rp-csv">Tải CSV</button>
+  </div>
+  <div class="stats" id="rp-stats"></div>
+  <div class="scroll"><table><tbody id="rp-body"></tbody></table></div>
+
+  <h2 style="margin-top:22px">Chi phí</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Tên</th><th>Loại</th><th>Số tiền</th><th>Từ</th><th>Đến</th></tr></thead>
+    <tbody id="cost-body"></tbody>
+  </table></div>
+  <h3>Thêm chi phí</h3>
+  <form id="cost-form" class="row">
+    <label>Tên khoản chi <input name="name" required></label>
+    <label>Loại <select name="type"><option value="fixed">Cố định</option><option value="variable">Biến đổi</option></select></label>
+    <label>Số tiền (VND) <input name="amount" type="number" min="0" required></label>
+    <label>Từ ngày <input name="periodStart" type="date" required></label>
+    <label>Đến ngày <input name="periodEnd" type="date" required></label>
+    <button type="submit">Thêm</button>
+  </form>
+
+  <h2 style="margin-top:22px">Lợi nhuận</h2>
+  <div class="stats" id="profit-stats"></div>
+  <p class="err" id="cost-err" role="alert"></p>
+  <p class="err" id="rp-err" role="alert"></p>
+</section>
+
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+let CSRF = '';
+const TABS = ['overview','users','plans','email','logs','ads','content','backups','reports','tools','diagrams'];
+let CURRENT = 'overview';
+
+async function api(path, opts = {}) {
+  const init = { method: opts.method || 'GET', headers: {} };
+  if (init.method !== 'GET' && CSRF) init.headers['x-csrf-token'] = CSRF;
+  if (opts.body !== undefined) { init.headers['content-type'] = 'application/json'; init.body = JSON.stringify(opts.body); }
+  const r = await fetch(path, init);
+  const data = await r.json().catch(() => ({}));
+  return { ok: r.ok, status: r.status, data };
+}
+const msg = d => (d && d.error && d.error.message) || 'Có lỗi xảy ra.';
+const fmt = n => (n === null || n === undefined) ? '—' : Number(n).toLocaleString('vi-VN');
+const dt = s => s ? new Date(s).toLocaleString('vi-VN') : '—';
+function cell(text, cls) { const td = document.createElement('td'); td.textContent = text == null ? '' : String(text); if (cls) td.className = cls; return td; }
+function btn(label, onclick, cls = 'ghost') { const b = document.createElement('button'); b.textContent = label; b.className = cls; b.onclick = onclick; return b; }
+function setErr(id, text) { $(id).textContent = text || ''; }
+function emptyRow(tbody, cols, text) { tbody.innerHTML = ''; const tr = document.createElement('tr'); tr.className = 'empty'; const td = cell(text, 'muted'); td.colSpan = cols; tr.append(td); tbody.append(tr); }
+// Hiện đúng một bước của màn đăng nhập; box = null nghĩa là đã đăng nhập xong, ẩn màn đăng nhập.
+function show(box) {
+  $('auth').classList.toggle('hidden', !box);
+  document.body.classList.toggle('auth', !!box);
+  ['login-box','totp-box','setup-box'].forEach(id => $(id).classList.toggle('hidden', id !== box));
+  if (box) { const f = document.querySelector('#' + box + ' input'); if (f) setTimeout(() => f.focus(), 0); }
+}
+function setLoggedIn(on) {
+  $('logout').classList.toggle('hidden', !on);
+  if (!on) $('page-head').hidden = true;
+  if (!on) {
+    $('menu').classList.add('hidden');
+    TABS.forEach(t => $('tab-' + t).classList.add('hidden'));
+  }
+}
+// Mã 6 số: tự gửi khi nhập đủ, không cần bấm nút.
+document.querySelectorAll('input.otp').forEach(i => i.addEventListener('input', () => {
+  i.value = i.value.replace(/\D/g, '').slice(0, 6);
+  if (i.value.length === 6) i.form.requestSubmit();
+}));
+function goTab(name) {
+  CURRENT = name;
+  const INFO = {
+    overview: ['Tổng quan', 'Số liệu hoạt động và tình hình hệ thống'],
+    users: ['Quản lý người dùng', 'Tìm, xem và quản lý tài khoản, gói và quyền'],
+    plans: ['Gói & mã giảm giá', 'Gói cước bán cho người dùng và mã khuyến mãi'],
+    email: ['Email', 'Cấu hình gửi thư và theo dõi hàng đợi'],
+    logs: ['Nhật ký', 'Đăng nhập và thao tác của quản trị viên'],
+    ads: ['Quảng cáo & IP', 'Banner quảng cáo và thống kê truy cập theo IP'],
+    content: ['Nội dung luật', 'Điều luật, tin tức và trang pháp lý'],
+    backups: ['Sao lưu & cảnh báo', 'Bản sao dữ liệu và cảnh báo hệ thống'],
+    reports: ['Báo cáo tài chính', 'Doanh thu, chi phí và lợi nhuận'],
+    tools: ['Công cụ & repo', 'Skills, repo và công cụ đang dùng cho app'],
+    diagrams: ['Sơ đồ', 'Sơ đồ kiến trúc và luồng của hệ thống'],
+  };
+  const pi = INFO[name];
+  if (pi) { $('page-title').textContent = pi[0]; $('page-sub').textContent = pi[1]; $('page-head').hidden = false; }
+  TABS.forEach(t => $('tab-' + t).classList.toggle('hidden', t !== name));
+  document.querySelectorAll('nav button').forEach(b => b.setAttribute('aria-current', b.dataset.tab === name ? 'page' : 'false'));
+  ({ overview: loadOverview, users: loadUsers, plans: loadPlans, email: loadEmail, logs: loadLogs, ads: loadAds, content: loadContent, backups: loadBackups, reports: loadReports, tools: loadTools, diagrams: loadDiagrams })[name]();
+}
+document.querySelectorAll('nav button').forEach(b => b.onclick = () => goTab(b.dataset.tab));
+
+async function refresh() {
+  const r = await api('/api/me');
+  if (!r.ok) { setLoggedIn(false); show('login-box'); return; }
+  const u = r.data.user;
+  CSRF = r.data.csrfToken || CSRF;
+  if (u.role !== 'admin') { setLoggedIn(false); show('login-box'); setErr('login-err', 'Tài khoản này không có quyền quản trị.'); return; }
+  setLoggedIn(true);
+  if (!u.totpEnabled) { show('setup-box'); return startSetup(); }
+  if (!u.mfaOk) { show('totp-box'); return; }
+  // Đã đăng nhập và xác minh xong: hiện menu và trang quản trị.
+  show(null);
+  $('menu').classList.remove('hidden');
+  goTab(CURRENT);
+}
+
+async function startSetup() {
+  const r = await api('/api/admin/totp/setup', { method: 'POST', body: {} });
+  if (!r.ok) { setErr('setup-err', msg(r.data)); return; }
+  $('secret').textContent = r.data.secret;
+  $('otp-link').href = r.data.otpauth;
+  $('otp-link').hidden = false;
+}
+
+// Gửi form có trạng thái đang xử lý: khóa nút, tránh bấm nhiều lần.
+async function busy(btn, fn) {
+  btn.disabled = true;
+  try { await fn(); } finally { btn.disabled = false; }
+}
+
+$('pw-toggle').onclick = () => {
+  const i = document.querySelector('#login-form input[name=password]');
+  const hidden = i.type === 'password';
+  i.type = hidden ? 'text' : 'password';
+  $('pw-toggle').textContent = hidden ? 'Ẩn' : 'Hiện';
+  $('pw-toggle').setAttribute('aria-label', hidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
+};
+
+$('login-form').onsubmit = async e => {
+  e.preventDefault(); setErr('login-err', '');
+  const f = e.target;
+  await busy($('login-btn'), async () => {
+    const r = await api('/api/auth/login', { method: 'POST', body: { email: f.email.value.trim(), password: f.password.value } });
+    f.password.value = '';
+    if (!r.ok) { setErr('login-err', r.status === 429 ? 'Bạn thử quá nhiều lần. Vui lòng đợi 15 phút rồi thử lại.' : msg(r.data)); return; }
+    CSRF = r.data.csrfToken || '';
+    await refresh();
+  });
+};
+$('totp-form').onsubmit = async e => {
+  e.preventDefault(); setErr('totp-err', '');
+  const f = e.target;
+  await busy(f.querySelector('button'), async () => {
+    const r = await api('/api/auth/totp', { method: 'POST', body: { code: f.code.value } });
+    if (!r.ok) { setErr('totp-err', msg(r.data)); f.code.value = ''; f.code.focus(); return; }
+    await refresh();
+  });
+};
+$('enable-form').onsubmit = async e => {
+  e.preventDefault(); setErr('setup-err', '');
+  const f = e.target;
+  await busy(f.querySelector('button'), async () => {
+    const r = await api('/api/admin/totp/enable', { method: 'POST', body: { code: f.code.value } });
+    if (!r.ok) { setErr('setup-err', msg(r.data)); f.code.value = ''; f.code.focus(); return; }
+    await refresh();
+  });
+};
+$('totp-back').onclick = async () => { await api('/api/auth/logout', { method: 'POST', body: {} }); CSRF = ''; refresh(); };
+$('copy-secret').onclick = async () => {
+  const b = $('copy-secret');
+  try { await navigator.clipboard.writeText($('secret').textContent); b.textContent = 'Đã chép'; }
+  catch { b.textContent = 'Không chép được'; }
+  setTimeout(() => { b.textContent = 'Sao chép'; }, 1500);
+};
+$('logout').onclick = async () => { await api('/api/auth/logout', { method: 'POST', body: {} }); CSRF = ''; refresh(); };
+
+// ---------- Tổng quan ----------
+async function loadOverview() {
+  setErr('ov-err', '');
+  const r = await api('/api/admin/overview');
+  if (!r.ok) { setErr('ov-err', msg(r.data)); return; }
+  const d = r.data, s = $('ov-stats'); s.innerHTML = '';
+  const add = (label, value) => { const b = document.createElement('div'); b.className = 'stat'; const l = document.createElement('span'); l.className = 'muted'; l.textContent = label; const v = document.createElement('b'); v.textContent = value; b.append(l, v); s.append(b); };
+  if (d.users) { add('Tổng người dùng', fmt(d.users.total)); add('Đang hoạt động', fmt(d.users.active)); add('Mới hôm nay', fmt(d.users.newToday)); }
+  if (d.revenue) { add('Doanh thu hôm nay (VND)', fmt(d.revenue.today)); if (d.revenue.month !== undefined) add('Doanh thu tháng (VND)', fmt(d.revenue.month)); }
+  $('ov-raw').textContent = JSON.stringify(d, null, 2);
+}
+
+// ---------- Người dùng ----------
+// ---------- Quản lý người dùng ----------
+let PEOPLE_PAGE = 1;
+const PEOPLE_LIMIT = 25;
+let PEOPLE_TOTAL = 0;
+let PERSON = null;
+
+function fillRows(tbodyId, cols, rows, emptyText) {
+  const tb = $(tbodyId); tb.innerHTML = '';
+  if (!rows.length) { emptyRow(tb, cols, emptyText); return; }
+  for (const cells of rows) { const tr = document.createElement('tr'); cells.forEach(c => tr.append(cell(c))); tb.append(tr); }
+}
+async function fillPlanSelect(sel) {
+  const r = await api('/api/admin/plans');
+  sel.innerHTML = '';
+  for (const p of (r.data.plans || []).filter(x => x.status === 'active')) {
+    const o = document.createElement('option'); o.value = p.id;
+    o.textContent = `${p.name} — ${p.durationDays === -1 ? 'trọn đời' : p.durationDays + ' ngày'} — ${fmt(p.price)} ₫`;
+    sel.append(o);
+  }
+}
+function peopleQuery() {
+  return new URLSearchParams({
+    q: $('q').value.trim(), role: $('role').value, status: $('status').value, plan: $('plan-filter').value,
+    page: PEOPLE_PAGE, limit: PEOPLE_LIMIT,
+  }).toString();
+}
+async function loadUsers() {
+  setErr('users-err', '');
+  if (!$('sg-plan').options.length) loadPlanOptions();
+  const r = await api('/api/admin/people?' + peopleQuery());
+  if (!r.ok) { setErr('users-err', msg(r.data)); return; }
+  PEOPLE_TOTAL = r.data.total;
+  const tb = $('users'); tb.innerHTML = '';
+  $('users-empty').hidden = r.data.items.length > 0;
+  for (const u of r.data.items) {
+    const tr = document.createElement('tr');
+    tr.style.cursor = 'pointer'; tr.tabIndex = 0;
+    tr.append(cell(u.username || '—'), cell(u.name || '—'), cell(u.email),
+      badgeCell(u.role === 'admin' ? 'Quản trị' : 'Người dùng', u.role === 'admin' ? 'badge-info' : 'badge-muted'),
+      badgeCell(u.status === 'locked' ? 'Đã khóa' : 'Hoạt động', u.status === 'locked' ? 'badge-bad' : 'badge-ok'),
+      badgeCell(u.plan ? u.plan.name : 'Miễn phí', u.plan ? 'badge-info' : 'badge-muted'), cell(u.lastLoginAt ? dt(u.lastLoginAt) : 'Chưa có'), cell(u.lastIp || '—'), cell(dt(u.createdAt)));
+    tr.onclick = () => openPerson(u.id);
+    tr.onkeydown = e => { if (e.key === 'Enter') openPerson(u.id); };
+    tb.append(tr);
+  }
+  const pages = Math.max(1, Math.ceil(PEOPLE_TOTAL / PEOPLE_LIMIT));
+  $('pg-info').textContent = `Trang ${PEOPLE_PAGE}/${pages} · ${fmt(PEOPLE_TOTAL)} người dùng`;
+  $('pg-prev').disabled = PEOPLE_PAGE <= 1;
+  $('pg-next').disabled = PEOPLE_PAGE >= pages;
+}
+function badgeCell(text, cls) { const td = document.createElement('td'); const b = document.createElement('span'); b.className = 'badge ' + cls; b.textContent = text; td.append(b); return td; }
+function resetAndLoad() { PEOPLE_PAGE = 1; loadUsers(); }
+$('search').onclick = resetAndLoad;
+$('q').onkeydown = e => { if (e.key === 'Enter') resetAndLoad(); };
+['role', 'status', 'plan-filter'].forEach(id => $(id).onchange = resetAndLoad);
+$('users-csv').onclick = () => { location.href = '/api/admin/users.csv?' + peopleQuery(); };
+$('pg-prev').onclick = () => { PEOPLE_PAGE--; loadUsers(); };
+$('pg-next').onclick = () => { PEOPLE_PAGE++; loadUsers(); };
+
+async function openPerson(id) {
+  setErr('pd-err', '');
+  const r = await api(`/api/admin/people/${id}`);
+  if (!r.ok) { setErr('users-err', msg(r.data)); return; }
+  const d = r.data, p = d.person;
+  PERSON = p;
+  $('person').classList.remove('hidden');
+  $('pd-title').textContent = p.name || p.username || p.email;
+  const s = $('pd-stats'); s.innerHTML = '';
+  const add = (label, value) => { const b = document.createElement('div'); b.className = 'stat'; const l = document.createElement('span'); l.className = 'muted'; l.textContent = label; const v = document.createElement('b'); v.textContent = value; b.append(l, v); s.append(b); };
+  add('Email', p.email);
+  add('Tên đăng nhập', p.username || 'Chưa có');
+  add('Vai trò', p.role);
+  add('Trạng thái', p.status === 'locked' ? 'Đã khóa' : 'Hoạt động');
+  add('Gói hiện tại', p.plan ? p.plan.name : 'Miễn phí');
+  add('Lượt chat hôm nay', d.chatToday);
+  add('Xác minh 2 lớp', p.totpEnabled ? 'Bật' : 'Tắt');
+  add('IP lúc đăng ký', p.registerIp || '—');
+  const f = $('pf').elements;
+  f.name.value = p.name || ''; f.username.value = p.username || ''; f.email.value = p.email;
+  $('pd-lock').textContent = p.status === 'locked' ? 'Mở khóa tài khoản' : 'Khóa tài khoản';
+  $('pd-role').value = p.role;
+  fillRows('pd-logins', 4, d.logins.map(l => [dt(l.loggedAt), l.ip, l.success ? 'Thành công' : `Thất bại (${l.failedReason || ''})`, (l.userAgent || '').slice(0, 60)]), 'Chưa có lượt đăng nhập.');
+  fillRows('pd-subs', 4, d.subscriptions.map(x => [x.planName, dt(x.startsAt), x.endsAt ? dt(x.endsAt) : 'Trọn đời', x.status === 'active' ? 'Đang dùng' : 'Đã hết']), 'Chưa có gói nào.');
+  fillRows('pd-orders', 5, d.orders.map(o => [o.planName, fmt(o.amount), o.gateway, o.status, dt(o.createdAt)]), 'Chưa có đơn hàng.');
+  fillRows('pd-consents', 4, d.consents.map(c => [c.type, c.version, dt(c.agreedAt), c.ip]), 'Chưa có bản ghi đồng ý.');
+  await fillPlanSelect($('pd-plan'));
+  $('person').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const reopen = () => { if (PERSON) openPerson(PERSON.id); loadUsers(); };
+
+$('pf').onsubmit = async e => {
+  e.preventDefault(); setErr('pd-err', '');
+  const el = e.target.elements;
+  const r = await api(`/api/admin/people/${PERSON.id}`, { method: 'PUT', body: { name: el.name.value, username: el.username.value, email: el.email.value } });
+  if (!r.ok) { setErr('pd-err', msg(r.data)); return; }
+  reopen();
+};
+$('pd-lock').onclick = async () => {
+  setErr('pd-err', '');
+  const locking = PERSON.status !== 'locked';
+  if (locking && !confirm(`Khóa tài khoản ${PERSON.email}? Người này sẽ bị đăng xuất ngay.`)) return;
+  const r = await api(`/api/admin/users/${PERSON.id}/lock`, { method: 'PUT', body: { locked: locking } });
+  if (!r.ok) setErr('pd-err', msg(r.data));
+  reopen();
+};
+$('pd-role-btn').onclick = async () => {
+  setErr('pd-err', '');
+  const role = $('pd-role').value;
+  if (role === PERSON.role) { setErr('pd-err', 'Tài khoản đã có vai trò này.'); return; }
+  if (!confirm(`Đổi vai trò của ${PERSON.email} thành "${role}"?`)) return;
+  const r = await api(`/api/admin/users/${PERSON.id}/role`, { method: 'PUT', body: { role } });
+  if (!r.ok) setErr('pd-err', msg(r.data));
+  reopen();
+};
+$('pd-reset').onclick = async () => {
+  setErr('pd-err', '');
+  const pw = prompt(`Mật khẩu mới cho ${PERSON.email} (ít nhất 10 ký tự). Mọi phiên đăng nhập cũ sẽ bị đăng xuất:`);
+  if (!pw) return;
+  const r = await api(`/api/admin/users/${PERSON.id}/reset-password`, { method: 'POST', body: { password: pw } });
+  setErr('pd-err', r.ok ? 'Đã đặt lại mật khẩu.' : msg(r.data));
+};
+$('pd-export').onclick = async () => {
+  const r = await api(`/api/admin/users/${PERSON.id}/data-export`);
+  if (!r.ok) { setErr('pd-err', msg(r.data)); return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(r.data, null, 2)], { type: 'application/json' })); a.download = `du-lieu-user-${PERSON.id}.json`; a.click();
+};
+$('pd-anon').onclick = async () => {
+  setErr('pd-err', '');
+  const typed = prompt(`Ẩn danh tài khoản ${PERSON.email}? Email và tên sẽ bị xóa, phiên và đồng ý bị xóa. Đơn hàng được giữ lại. Không hoàn tác được. Gõ XOA để xác nhận:`);
+  if (typed === null) return;
+  if (typed !== 'XOA') { setErr('pd-err', 'Chưa xác nhận. Gõ đúng XOA để ẩn danh.'); return; }
+  const r = await api(`/api/admin/people/${PERSON.id}/anonymize`, { method: 'POST', body: { confirm: 'XOA' } });
+  if (!r.ok) { setErr('pd-err', msg(r.data)); return; }
+  PERSON = null; $('person').classList.add('hidden'); loadUsers();
+};
+$('pd-grant').onclick = async () => {
+  setErr('pd-err', '');
+  const planId = Number($('pd-plan').value);
+  if (!planId) { setErr('pd-err', 'Chưa có gói để cấp.'); return; }
+  const r = await api('/api/admin/subscriptions/grant', { method: 'POST', body: { email: PERSON.email, planId } });
+  setErr('pd-err', r.ok ? `Đã cấp "${r.data.planName}".` : msg(r.data));
+  reopen();
+};
+$('pd-revoke').onclick = async () => {
+  setErr('pd-err', '');
+  if (!confirm(`Thu hồi mọi gói đang hoạt động của ${PERSON.email}?`)) return;
+  const r = await api('/api/admin/subscriptions/revoke', { method: 'POST', body: { email: PERSON.email } });
+  setErr('pd-err', r.ok ? `Đã thu hồi ${r.data.revoked} gói.` : msg(r.data));
+  reopen();
+};
+
+// Gói và quyền theo email
+let SG_USER = null;
+async function loadPlanOptions() {
+  const r = await api('/api/admin/plans');
+  const sel = $('sg-plan'); sel.innerHTML = '';
+  for (const p of (r.data.plans || []).filter(x => x.status === 'active')) {
+    const o = document.createElement('option'); o.value = p.id;
+    o.textContent = `${p.name} — ${p.durationDays === -1 ? 'trọn đời' : p.durationDays + ' ngày'} — ${fmt(p.price)} ₫`;
+    sel.append(o);
+  }
+}
+async function checkGrantEmail() {
+  setErr('sg-err', ''); SG_USER = null;
+  const email = $('sg-email').value.trim();
+  if (!email) { setErr('sg-err', 'Nhập email tài khoản.'); return null; }
+  const r = await api('/api/admin/subscriptions?email=' + encodeURIComponent(email));
+  if (!r.ok) { $('sg-info').textContent = ''; setErr('sg-err', msg(r.data)); return null; }
+  SG_USER = r.data.user;
+  const sub = r.data.subscription;
+  const subText = sub ? `gói "${sub.planName || 'không rõ'}", ` + (sub.endsAt ? `hết hạn ${dt(sub.endsAt)}` : 'trọn đời') : 'chưa có gói';
+  $('sg-info').textContent = `${SG_USER.email} — vai trò: ${SG_USER.role}, trạng thái: ${SG_USER.status}, ${subText}.`;
+  $('sg-role').value = SG_USER.role;
+  return SG_USER;
+}
+$('sg-check').onclick = checkGrantEmail;
+$('sg-grant').onclick = async () => {
+  const email = $('sg-email').value.trim();
+  if (!email) { setErr('sg-err', 'Nhập email tài khoản.'); return; }
+  if (!$('sg-plan').value) { setErr('sg-err', 'Chưa có gói nào để cấp.'); return; }
+  const r = await api('/api/admin/subscriptions/grant', { method: 'POST', body: { email, planId: Number($('sg-plan').value) } });
+  if (!r.ok) setErr('sg-err', msg(r.data)); else { setErr('sg-err', `Đã cấp "${r.data.planName}" cho ${r.data.email}.`); checkGrantEmail(); }
+};
+$('sg-revoke').onclick = async () => {
+  const email = $('sg-email').value.trim();
+  if (!email) { setErr('sg-err', 'Nhập email tài khoản.'); return; }
+  if (!confirm(`Thu hồi mọi gói đang hoạt động của ${email}?`)) return;
+  const r = await api('/api/admin/subscriptions/revoke', { method: 'POST', body: { email } });
+  if (!r.ok) setErr('sg-err', msg(r.data)); else { setErr('sg-err', `Đã thu hồi ${r.data.revoked} gói.`); checkGrantEmail(); }
+};
+$('sg-role-btn').onclick = async () => {
+  const u = await checkGrantEmail();
+  if (!u) return;
+  const role = $('sg-role').value;
+  if (role === u.role) { setErr('sg-err', 'Tài khoản đã có vai trò này.'); return; }
+  if (!confirm(`Đổi vai trò của ${u.email} thành "${role}"?`)) return;
+  const r = await api(`/api/admin/users/${u.id}/role`, { method: 'PUT', body: { role } });
+  if (!r.ok) setErr('sg-err', msg(r.data)); else { setErr('sg-err', 'Đã đổi vai trò.'); checkGrantEmail(); loadUsers(); }
+};
+
+// ---------- Gói & mã giảm giá ----------
+let EDIT_PLAN = null;
+function resetPlanForm() {
+  EDIT_PLAN = null; $('plan-form').reset(); $('plan-form').elements.durationDays.value = 30; $('plan-form').elements.price.value = 0;
+  $('plan-form-title').textContent = 'Thêm gói mới'; $('plan-submit').textContent = 'Thêm gói'; $('plan-cancel').classList.add('hidden');
+}
+$('plan-cancel').onclick = resetPlanForm;
+async function loadPlans() {
+  setErr('plan-err', ''); setErr('code-err', '');
+  const [p, c] = await Promise.all([api('/api/admin/plans'), api('/api/admin/discount-codes')]);
+  if (!p.ok) setErr('plan-err', msg(p.data));
+  const pb = $('plans-body'); pb.innerHTML = '';
+  if (p.ok && p.data.plans.length === 0) emptyRow(pb, 6, 'Chưa có gói nào.');
+  for (const pl of (p.data.plans || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(pl.id), cell(pl.name), cell(pl.durationDays === -1 ? 'Trọn đời' : pl.durationDays + ' ngày'), cell(fmt(pl.price)), cell(pl.status === 'active' ? 'Đang bán' : 'Ngừng bán'));
+    const td = document.createElement('td');
+    td.append(btn('Sửa', () => editPlan(pl), 'ghost'), document.createTextNode(' '), btn('Xóa', () => deletePlan(pl), 'danger'));
+    tr.append(td); pb.append(tr);
+  }
+  const cb = $('codes-body'); cb.innerHTML = '';
+  if (c.ok && c.data.codes.length === 0) emptyRow(cb, 8, 'Chưa có mã giảm giá nào.');
+  for (const k of (c.data.codes || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(k.code), cell(k.type === 'percent' ? 'Phần trăm' : 'Số tiền'), cell(k.type === 'percent' ? k.value + '%' : fmt(k.value) + ' ₫'),
+      cell(`${k.usedCount ?? 0} / ${k.maxUses === -1 || k.maxUses == null ? '∞' : k.maxUses}`), cell(k.expiresAt ? dt(k.expiresAt) : 'Không'), cell(k.planId ?? 'Mọi gói'), cell(k.active ? 'Có' : 'Không'));
+    const td = document.createElement('td');
+    td.append(btn(k.active ? 'Tắt' : 'Bật', async () => {
+      const x = await api(`/api/admin/discount-codes/${k.id}`, { method: 'PUT', body: { active: !k.active } });
+      if (!x.ok) setErr('code-err', msg(x.data)); loadPlans();
+    }));
+    tr.append(td); cb.append(tr);
+  }
+}
+function editPlan(pl) {
+  EDIT_PLAN = pl; const f = $('plan-form');
+  f.elements.name.value = pl.name; f.elements.durationDays.value = pl.durationDays; f.elements.price.value = pl.price;
+  f.elements.status.value = pl.status; f.elements.features.value = pl.features ? JSON.stringify(pl.features) : '';
+  $('plan-form-title').textContent = `Sửa gói #${pl.id}`; $('plan-submit').textContent = 'Lưu thay đổi'; $('plan-cancel').classList.remove('hidden');
+  f.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+async function deletePlan(pl) {
+  if (!confirm(`Xóa gói "${pl.name}"? Gói sẽ ẩn khỏi trang bán, đơn cũ không bị ảnh hưởng.`)) return;
+  const r = await api(`/api/admin/plans/${pl.id}`, { method: 'DELETE' });
+  if (!r.ok) setErr('plan-err', msg(r.data)); loadPlans();
+}
+$('plan-form').onsubmit = async e => {
+  e.preventDefault(); setErr('plan-err', '');
+  const f = e.target;
+  const body = { name: f.elements.name.value, durationDays: Number(f.elements.durationDays.value), price: Number(f.elements.price.value), status: f.elements.status.value };
+  const feat = f.elements.features.value.trim(); if (feat) body.features = feat;
+  const r = EDIT_PLAN
+    ? await api(`/api/admin/plans/${EDIT_PLAN.id}`, { method: 'PUT', body })
+    : await api('/api/admin/plans', { method: 'POST', body });
+  if (!r.ok) { setErr('plan-err', msg(r.data)); return; }
+  resetPlanForm(); loadPlans();
+};
+$('code-form').onsubmit = async e => {
+  e.preventDefault(); setErr('code-err', '');
+  const f = e.target, el = f.elements;
+  const body = { code: el.code.value, type: el.type.value, value: Number(el.value.value), maxUses: el.maxUses.value === '' ? -1 : Number(el.maxUses.value) };
+  if (el.expiresAt.value) body.expiresAt = new Date(el.expiresAt.value).toISOString();
+  if (el.planId.value.trim()) body.planId = Number(el.planId.value);
+  const r = await api('/api/admin/discount-codes', { method: 'POST', body });
+  if (!r.ok) { setErr('code-err', msg(r.data)); return; }
+  f.reset(); el.maxUses.value = -1; loadPlans();
+};
+resetPlanForm();
+
+// ---------- Email ----------
+async function loadEmail() {
+  setErr('smtp-err', ''); setErr('eq-err', '');
+  const [c, q] = await Promise.all([api('/api/admin/settings/email-config'), api('/api/admin/email-queue' + ($('eq-status').value ? '?status=' + $('eq-status').value : ''))]);
+  if (c.ok) {
+    const cfg = c.data.config, f = $('smtp-form').elements;
+    f.host.value = cfg.host; f.port.value = cfg.port; f.user.value = cfg.user; f.from.value = cfg.from; f.enabled.checked = cfg.enabled;
+    $('smtp-state').textContent = cfg.hasPassword ? 'Đã lưu mật khẩu (không hiển thị).' : 'Chưa lưu mật khẩu.';
+  } else setErr('smtp-err', msg(c.data));
+  const qb = $('eq-body'); qb.innerHTML = '';
+  if (!q.ok) setErr('eq-err', msg(q.data));
+  else if (q.data.items.length === 0) emptyRow(qb, 7, 'Hàng đợi trống.');
+  for (const it of (q.data.items || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(it.id), cell(it.to), cell(it.subject), cell(it.status), cell(it.attempts), cell(it.lastError || ''));
+    const td = document.createElement('td');
+    if (it.status !== 'sent') td.append(btn('Thử lại', async () => { const x = await api(`/api/admin/email-queue/${it.id}/retry`, { method: 'POST', body: {} }); if (!x.ok) setErr('eq-err', msg(x.data)); loadEmail(); }));
+    tr.append(td); qb.append(tr);
+  }
+}
+$('smtp-form').onsubmit = async e => {
+  e.preventDefault(); setErr('smtp-err', '');
+  const el = e.target.elements;
+  const body = { host: el.host.value, port: Number(el.port.value), user: el.user.value, from: el.from.value, enabled: el.enabled.checked };
+  if (el.password.value) body.password = el.password.value;
+  const r = await api('/api/admin/settings/email-config', { method: 'PUT', body });
+  el.password.value = '';
+  if (!r.ok) setErr('smtp-err', msg(r.data)); else loadEmail();
+};
+$('test-form').onsubmit = async e => {
+  e.preventDefault(); $('test-result').textContent = 'Đang gửi thử...';
+  const el = e.target.elements;
+  const r = await api('/api/admin/settings/email-config/test', { method: 'POST', body: { to: el.to.value, subject: el.subject.value, body: 'Thư thử từ hệ thống quản lý.' } });
+  $('test-result').textContent = r.ok && r.data.success ? (r.data.note || 'Đã gửi.') : (r.data.error || msg(r.data));
+};
+$('eq-refresh').onclick = loadEmail;
+$('eq-status').onchange = loadEmail;
+$('eq-run').onclick = async () => {
+  const r = await api('/api/admin/jobs/run/email-queue', { method: 'POST', body: {} });
+  if (!r.ok) setErr('eq-err', msg(r.data)); loadEmail();
+};
+
+// ---------- Nhật ký ----------
+async function loadLogs() {
+  setErr('logs-err', '');
+  const [l, a] = await Promise.all([api('/api/admin/login-logs?take=50'), api('/api/admin/audit-logs?take=50')]);
+  const lb = $('login-logs-body'); lb.innerHTML = '';
+  if (!l.ok) setErr('logs-err', msg(l.data));
+  else if (l.data.items.length === 0) emptyRow(lb, 5, 'Chưa có nhật ký.');
+  for (const it of (l.data.items || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(dt(it.loggedAt)), cell(it.email), cell(it.ip), cell(it.success ? 'Thành công' : 'Thất bại'), cell(it.failedReason || ''));
+    lb.append(tr);
+  }
+  const ab = $('audit-body'); ab.innerHTML = '';
+  if (!a.ok) setErr('logs-err', msg(a.data));
+  else if (a.data.items.length === 0) emptyRow(ab, 5, 'Chưa có thao tác nào.');
+  for (const it of (a.data.items || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(dt(it.loggedAt)), cell(it.action), cell(it.entity), cell(it.entityId), cell(it.ip));
+    ab.append(tr);
+  }
+}
+
+// ---------- Nội dung luật & pháp lý ----------
+let ARTICLES = [];
+async function loadContent() {
+  setErr('content-err', '');
+  const [ex, terms] = await Promise.all([api('/api/admin/content/export'), api('/api/legal/terms')]);
+  if (!ex.ok) { setErr('content-err', msg(ex.data)); return; }
+  ARTICLES = ex.data.articles || [];
+  const ab = $('art-body'); ab.innerHTML = '';
+  if (ARTICLES.length === 0) emptyRow(ab, 5, 'Chưa có điều luật nào.');
+  for (const a of ARTICLES) {
+    const tr = document.createElement('tr');
+    tr.append(cell(a.id), cell(a.number), cell(a.title), cell(a.is_verified ? 'Đã đối chiếu' : 'Chưa đối chiếu'));
+    const td = document.createElement('td');
+    td.append(btn(a.is_verified ? 'Bỏ đánh dấu' : 'Đánh dấu đã đối chiếu', async () => {
+      const x = await api(`/api/admin/content/articles/${a.id}`, { method: 'PUT', body: { isVerified: !a.is_verified } });
+      if (!x.ok) setErr('content-err', msg(x.data)); loadContent();
+    }));
+    tr.append(td); ab.append(tr);
+  }
+  if (terms.ok) $('legal-form').elements.text.value = terms.data.text || '';
+}
+$('legal-form').elements.name.onchange = async e => {
+  const r = await api('/api/legal/' + e.target.value);
+  $('legal-form').elements.text.value = r.ok ? (r.data.text || '') : '';
+};
+$('cat-form').onsubmit = async e => {
+  e.preventDefault(); setErr('content-err', '');
+  const el = e.target.elements;
+  const r = await api('/api/admin/content/categories', { method: 'POST', body: { name: el.name.value, sortOrder: Number(el.sortOrder.value) } });
+  if (!r.ok) setErr('content-err', msg(r.data)); else { e.target.reset(); el.sortOrder.value = 0; }
+};
+$('art-form').onsubmit = async e => {
+  e.preventDefault(); setErr('content-err', '');
+  const el = e.target.elements;
+  const r = await api('/api/admin/content/articles', { method: 'POST', body: { categoryId: Number(el.categoryId.value), number: el.number.value, title: el.title.value, content: el.content.value } });
+  if (!r.ok) setErr('content-err', msg(r.data)); else { e.target.reset(); loadContent(); }
+};
+$('news-form').onsubmit = async e => {
+  e.preventDefault(); setErr('content-err', '');
+  const el = e.target.elements;
+  const r = await api('/api/admin/content/news', { method: 'POST', body: { title: el.title.value, content: el.content.value, publish: el.publish.checked } });
+  if (!r.ok) setErr('content-err', msg(r.data)); else e.target.reset();
+};
+$('legal-form').onsubmit = async e => {
+  e.preventDefault(); setErr('content-err', '');
+  const el = e.target.elements;
+  const r = await api('/api/admin/content/legal/' + el.name.value, { method: 'PUT', body: { text: el.text.value } });
+  if (!r.ok) setErr('content-err', msg(r.data)); else setErr('content-err', 'Đã lưu trang pháp lý.');
+};
+$('export-btn').onclick = async () => {
+  const r = await api('/api/admin/content/export');
+  if (!r.ok) { setErr('content-err', msg(r.data)); return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(r.data, null, 2)], { type: 'application/json' })); a.download = 'noi-dung-luat.json'; a.click();
+};
+
+// ---------- Sao lưu & cảnh báo ----------
+async function loadBackups() {
+  setErr('backup-err', '');
+  const [al, bk] = await Promise.all([api('/api/admin/alerts'), api('/api/admin/backups')]);
+  const ab = $('alerts-body'); ab.innerHTML = '';
+  const alerts = (al.data && al.data.items) || [];
+  $('alerts-empty').hidden = alerts.length > 0;
+  for (const it of alerts) {
+    const tr = document.createElement('tr');
+    tr.append(cell(dt(it.createdAt)), cell(it.severity), cell(it.message));
+    const td = document.createElement('td');
+    td.append(btn('Đã xử lý', async () => { const x = await api(`/api/admin/alerts/${it.id}/resolve`, { method: 'POST', body: {} }); if (!x.ok) setErr('backup-err', msg(x.data)); loadBackups(); }));
+    tr.append(td); ab.append(tr);
+  }
+  const bb = $('backups-body'); bb.innerHTML = '';
+  if (!bk.ok) setErr('backup-err', msg(bk.data));
+  else if (bk.data.items.length === 0) emptyRow(bb, 3, 'Chưa có bản sao lưu.');
+  for (const it of (bk.data.items || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(it.name), cell(it.size ? Math.round(it.size / 1024) + ' KB' : ''), cell(dt(it.mtime)));
+    bb.append(tr);
+  }
+}
+$('backup-now').onclick = async () => {
+  const r = await api('/api/admin/backups', { method: 'POST', body: {} });
+  if (!r.ok) setErr('backup-err', msg(r.data)); loadBackups();
+};
+
+// ---------- Báo cáo tài chính ----------
+function defaultRange() {
+  const to = new Date(), from = new Date(Date.now() - 30 * 86400000);
+  $('rp-to').value = to.toISOString().slice(0, 10); $('rp-from').value = from.toISOString().slice(0, 10);
+}
+function rangeQuery() {
+  const from = $('rp-from').value, to = $('rp-to').value;
+  const q = new URLSearchParams();
+  if (from) q.set('from', new Date(from + 'T00:00:00').toISOString());
+  if (to) q.set('to', new Date(to + 'T23:59:59').toISOString());
+  return q.toString();
+}
+async function loadReports() {
+  if (!$('rp-to').value) defaultRange();
+  setErr('rp-err', ''); setErr('cost-err', '');
+  const q = rangeQuery();
+  const [rev, prof, costs] = await Promise.all([
+    api(`/api/admin/reports/revenue?groupBy=${$('rp-group').value}&${q}`),
+    api(`/api/admin/reports/profit?${q}`),
+    api('/api/admin/costs'),
+  ]);
+  const s = $('rp-stats'); s.innerHTML = '';
+  const add = (parent, label, value) => { const b = document.createElement('div'); b.className = 'stat'; const l = document.createElement('span'); l.className = 'muted'; l.textContent = label; const v = document.createElement('b'); v.textContent = value; b.append(l, v); parent.append(b); };
+  const rb = $('rp-body'); rb.innerHTML = '';
+  if (!rev.ok) setErr('rp-err', msg(rev.data));
+  else {
+    add(s, 'Tổng doanh thu (VND)', fmt(rev.data.totalRevenue));
+    const g = $('rp-group').value;
+    const rows = g === 'plan' ? rev.data.byPlan : g === 'gateway' ? rev.data.byGateway : rev.data.byPeriod;
+    if (!rows || !rows.length) emptyRow(rb, 2, 'Không có doanh thu trong khoảng này.');
+    for (const row of (rows || [])) {
+      const label = row.period ?? row.planName ?? row.gateway ?? '';
+      const tr = document.createElement('tr'); tr.append(cell(label), cell(fmt(row.revenue))); rb.append(tr);
+    }
+  }
+  const pf = $('profit-stats'); pf.innerHTML = '';
+  if (prof.ok) { add(pf, 'Doanh thu (VND)', fmt(prof.data.revenue)); add(pf, 'Chi phí (VND)', fmt(prof.data.costs)); add(pf, 'Lợi nhuận (VND)', fmt(prof.data.profit)); }
+  else setErr('rp-err', msg(prof.data));
+  const cb = $('cost-body'); cb.innerHTML = '';
+  if (!costs.ok) setErr('cost-err', msg(costs.data));
+  else if (costs.data.items.length === 0) emptyRow(cb, 5, 'Chưa có khoản chi nào.');
+  for (const c of (costs.data.items || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(c.name), cell(c.type === 'fixed' ? 'Cố định' : 'Biến đổi'), cell(fmt(c.amount)), cell(String(c.periodStart || '').slice(0, 10)), cell(String(c.periodEnd || '').slice(0, 10)));
+    cb.append(tr);
+  }
+}
+$('rp-load').onclick = loadReports;
+$('rp-csv').onclick = () => {
+  if (!$('rp-to').value) defaultRange();
+  location.href = `/api/admin/reports/revenue.csv?groupBy=${$('rp-group').value}&${rangeQuery()}`;
+};
+$('cost-form').onsubmit = async e => {
+  e.preventDefault(); setErr('cost-err', '');
+  const el = e.target.elements;
+  const body = { name: el.name.value, type: el.type.value, amount: Number(el.amount.value), periodStart: new Date(el.periodStart.value + 'T00:00:00').toISOString(), periodEnd: new Date(el.periodEnd.value + 'T23:59:59').toISOString() };
+  const r = await api('/api/admin/costs', { method: 'POST', body });
+  if (!r.ok) setErr('cost-err', msg(r.data)); else { e.target.reset(); loadReports(); }
+};
+
+// ---------- Quảng cáo & thống kê IP ----------
+let EDIT_AD = null;
+const PLACE_LABEL = { 'banner-top': 'Banner đầu trang', inline: 'Giữa nội dung', sidebar: 'Cột bên' };
+async function loadTools() {
+  setErr('tools-err', '');
+  const r = await api('/api/admin/tools');
+  const body = $('tools-body'); body.innerHTML = '';
+  if (!r.ok) { setErr('tools-err', msg(r.data)); return; }
+  const fmt = t => t ? new Date(t).toLocaleString('vi-VN') : 'chưa dùng';
+  r.data.tools.forEach(t => {
+    const tr = document.createElement('tr');
+    const cell = (text, title) => { const td = document.createElement('td'); td.textContent = text; if (title) td.title = title; return td; };
+    const name = cell(t.name, t.repo);
+    tr.appendChild(name);
+    tr.appendChild(cell(t.used_in || '—'));
+    tr.appendChild(cell(t.license || 'chưa kiểm tra'));
+    tr.appendChild(cell(t.status + (t.notes ? ' · ' + t.notes : '')));
+    tr.appendChild(cell(String(t.uses)));
+    tr.appendChild(cell(fmt(t.last_used)));
+    const td = document.createElement('td');
+    const b = document.createElement('button'); b.className = 'ghost'; b.textContent = '+1 lần';
+    b.onclick = async () => { const x = await api('/api/admin/tools/' + t.id + '/log', { method: 'POST', body: {} }); if (!x.ok) setErr('tools-err', msg(x.data)); loadTools(); };
+    td.appendChild(b); tr.appendChild(td);
+    body.appendChild(tr);
+  });
+}
+async function loadDiagrams() {
+  setErr('dg-err', '');
+  const r = await api('/api/admin/diagrams');
+  const list = $('dg-list'); list.innerHTML = '';
+  if (!r.ok) { setErr('dg-err', msg(r.data)); $('dg-frame').removeAttribute('src'); return; }
+  const show = d => {
+    $('dg-desc').textContent = d.desc;
+    $('dg-frame').src = d.url;
+    list.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.file === d.file ? 'true' : 'false'));
+  };
+  r.data.items.forEach(d => {
+    const b = document.createElement('button');
+    b.className = 'ghost';
+    b.dataset.file = d.file;
+    b.textContent = d.title;
+    b.onclick = () => show(d);
+    list.appendChild(b);
+  });
+  if (r.data.items.length) show(r.data.items[0]);
+}
+async function loadAds() {
+  setErr('ip-err', ''); setErr('ad-err', '');
+  const [st, ads] = await Promise.all([api('/api/admin/ip-stats?days=' + $('ip-days').value), api('/api/admin/ads')]);
+  const s = $('ip-stats'); s.innerHTML = '';
+  const add = (label, value) => { const b = document.createElement('div'); b.className = 'stat'; const l = document.createElement('span'); l.className = 'muted'; l.textContent = label; const v = document.createElement('b'); v.textContent = fmt(value); b.append(l, v); s.append(b); };
+  const db = $('ip-daily'); db.innerHTML = ''; const tb = $('ip-top'); tb.innerHTML = '';
+  if (!st.ok) setErr('ip-err', msg(st.data));
+  else {
+    add('Tổng tài khoản', st.data.totals.users);
+    add('Tài khoản hoạt động', st.data.totals.activeAccounts);
+    add('IP khác nhau', st.data.totals.uniqueIps);
+    add('Lượt truy cập', st.data.totals.hits);
+    if (!st.data.daily.length) emptyRow(db, 3, 'Chưa có lượt truy cập trong khoảng này.');
+    for (const d of st.data.daily) { const tr = document.createElement('tr'); tr.append(cell(d.day), cell(fmt(d.uniqueIps)), cell(fmt(d.hits))); db.append(tr); }
+    if (!st.data.topIps.length) emptyRow(tb, 4, 'Chưa có IP nào.');
+    for (const t of st.data.topIps) { const tr = document.createElement('tr'); tr.append(cell(t.ip), cell(fmt(t.hits)), cell(fmt(t.accounts)), cell(t.lastDay)); tb.append(tr); }
+  }
+  const ab = $('ads-body'); ab.innerHTML = '';
+  if (!ads.ok) setErr('ad-err', msg(ads.data));
+  else if (!ads.data.ads.length) emptyRow(ab, 6, 'Chưa có quảng cáo nào.');
+  for (const a of (ads.data.ads || [])) {
+    const tr = document.createElement('tr');
+    tr.append(cell(a.id), cell(PLACE_LABEL[a.placement] || a.placement), cell(a.title), cell(a.linkUrl || ''), cell(a.active ? 'Có' : 'Không'));
+    const td = document.createElement('td');
+    td.append(btn('Sửa', () => editAd(a), 'ghost'), document.createTextNode(' '), btn(a.active ? 'Tắt' : 'Bật', async () => {
+      const x = await api(`/api/admin/ads/${a.id}`, { method: 'PUT', body: { active: !a.active } });
+      if (!x.ok) setErr('ad-err', msg(x.data)); loadAds();
+    }, 'ghost'), document.createTextNode(' '), btn('Xóa', async () => {
+      if (!confirm(`Xóa quảng cáo "${a.title}"?`)) return;
+      const x = await api(`/api/admin/ads/${a.id}`, { method: 'DELETE' });
+      if (!x.ok) setErr('ad-err', msg(x.data)); loadAds();
+    }, 'danger'));
+    tr.append(td); ab.append(tr);
+  }
+}
+function resetAdForm() {
+  EDIT_AD = null; $('ad-form').reset(); $('ad-form').elements.active.checked = true;
+  $('ad-form-title').textContent = 'Thêm quảng cáo'; $('ad-submit').textContent = 'Thêm quảng cáo'; $('ad-cancel').classList.add('hidden');
+  $('ad-form').dispatchEvent(new Event('input')); // làm mới khung xem trước
+}
+function editAd(a) {
+  EDIT_AD = a; const f = $('ad-form').elements;
+  f.placement.value = a.placement; f.title.value = a.title; f.body.value = a.body || ''; f.linkUrl.value = a.linkUrl || ''; f.imageUrl.value = a.imageUrl || ''; f.active.checked = !!a.active;
+  $('ad-form-title').textContent = `Sửa quảng cáo #${a.id}`; $('ad-submit').textContent = 'Lưu thay đổi'; $('ad-cancel').classList.remove('hidden');
+  $('ad-form').dispatchEvent(new Event('input'));
+  $('ad-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+$('ad-cancel').onclick = resetAdForm;
+$('ip-load').onclick = loadAds;
+$('ad-form').onsubmit = async e => {
+  e.preventDefault(); setErr('ad-err', '');
+  const f = e.target, el = f.elements;
+  const body = { placement: el.placement.value, title: el.title.value, body: el.body.value, linkUrl: el.linkUrl.value, imageUrl: el.imageUrl.value, active: el.active.checked };
+  const r = EDIT_AD ? await api(`/api/admin/ads/${EDIT_AD.id}`, { method: 'PUT', body }) : await api('/api/admin/ads', { method: 'POST', body });
+  if (!r.ok) { setErr('ad-err', msg(r.data)); return; }
+  resetAdForm(); loadAds();
+};
+resetAdForm();
+
+// Xem trước banner: cập nhật ngay khi nhập, dùng đúng thành phần của app học.
+const PREVIEW_VARIANT = { 'banner-top': 'top', inline: 'inline', sidebar: 'sidebar' };
+function updateAdPreview() {
+  const el = $('ad-form').elements;
+  const ad = { title: el.title.value || 'Tiêu đề quảng cáo', body: el.body.value, linkUrl: el.linkUrl.value, imageUrl: el.imageUrl.value };
+  const box = $('ad-preview');
+  box.replaceChildren(AdBanner.buildBanner(ad, PREVIEW_VARIANT[el.placement.value] || 'inline'));
+}
+$('ad-form').addEventListener('input', updateAdPreview);
+$('ad-form').addEventListener('change', updateAdPreview);
+updateAdPreview();
+
+refresh();
+</script>
+</body>
+</html>

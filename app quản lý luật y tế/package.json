@@ -1,0 +1,16 @@
+{
+  "name": "luat-y-te-quan-ly",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ứng dụng quản lý (admin) cho app luật y tế. Phase 1: đăng nhập có giới hạn, TOTP cho admin, quản lý user, lịch sử đồng ý.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/app.test.mjs test/billing.test.mjs test/ops.test.mjs test/phase567.test.mjs test/access.test.mjs test/ads-ip.test.mjs test/username.test.mjs test/people.test.mjs test/diagrams.test.mjs test/export.test.mjs test/restore.test.mjs test/progress.test.mjs",
+    "create-admin": "node src/cli.mjs create-admin",
+    "restore": "node src/cli.mjs restore"
+  }
+}

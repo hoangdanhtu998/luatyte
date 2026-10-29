@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Vuốt Luật · Mini game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mini game vuốt Đúng/Sai 60 giây: bản điện thoại vuốt thẻ, bản máy tính dùng phím ← →. Học luật y tế nhanh, nhẹ, chơi một tay.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FCFCFA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#173F4A" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  body.game-page{margin:0;padding:0;min-height:100svh;overflow-x:hidden;background:radial-gradient(900px 440px at 50% -12%,var(--color-accent-soft),transparent 72%),var(--color-paper);color:var(--color-ink)}
+  .game-wrap{width:min(100%,980px);min-height:100svh;margin:0 auto;padding:max(10px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-left)) calc(14px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-right));display:flex;flex-direction:column;gap:10px}
+  .game-bar{display:flex;align-items:center;gap:10px;min-height:48px}
+  .game-back{width:42px;height:42px;flex:none;border:1px solid var(--color-rule);border-radius:50%;background:var(--color-paper);color:var(--color-ink);display:grid;place-items:center;text-decoration:none;font-size:20px;line-height:1;transition:background .15s,border-color .15s}
+  .game-back:hover{background:var(--color-paper-2);border-color:var(--color-muted)}
+  .game-brand{display:flex;align-items:center;gap:9px;flex:1;min-width:0}
+  .game-logo{width:34px;height:34px;flex:none;border-radius:10px;background:var(--color-accent);color:var(--color-accent-ink);display:grid;place-items:center;font:700 12px/1 var(--font-fig);letter-spacing:.04em}
+  .game-brand b{display:block;font:700 16px/1.2 var(--font-display);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .game-brand small{display:block;color:var(--color-muted);font-size:11px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .game-switch{min-height:40px;padding:0 14px;border:1px solid var(--color-rule);border-radius:999px;background:var(--color-paper);color:var(--color-ink-2);font:600 12px/1 var(--font-body);cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+  .game-switch:hover{background:var(--color-paper-2);border-color:var(--color-muted)}
+  .game-switch[hidden]{display:none}
+  .game-stage{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0;padding:6px 0 4px}
+  .game-foot{margin:0;padding:6px 0 0;border-top:1px solid var(--color-rule);font-size:11px;line-height:1.5;color:var(--color-muted);text-align:center;max-width:none}
+
+  .eyebrow{font:600 11px/1.4 var(--font-fig);letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent)}
+  .intro-card{width:min(100%,560px);margin:0 auto;position:relative;overflow:hidden;background:var(--color-paper);border:1px solid var(--color-rule);border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 24px 60px oklch(20% .02 220 / .08)}
+  .intro-card:before{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-110px;border-radius:50%;background:var(--color-accent-soft);opacity:.75;pointer-events:none}
+  .intro-card h1{position:relative;font:700 clamp(32px,9vw,46px)/1.03 var(--font-display);letter-spacing:-.05em;margin:6px 0 10px;max-width:none;color:var(--color-ink)}
+  .intro-card .lead{position:relative;margin:0 0 16px;max-width:42ch;color:var(--color-ink-2);font-size:14px;line-height:1.6}
+  .intro-stats{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 18px}
+  .intro-stat{background:var(--color-paper-2);border:1px solid var(--color-rule);border-radius:14px;padding:10px 12px}
+  .intro-stat span{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted);margin-bottom:3px}
+  .intro-stat b{font:700 22px/1.15 var(--font-fig);color:var(--color-ink)}
+  .rules{position:relative;display:grid;gap:6px;list-style:none;margin:0 0 20px;padding:0;font-size:12.5px;line-height:1.55;color:var(--color-muted)}
+  .rules b{color:var(--color-ink)}
+  .rules kbd{font:600 11px/1 var(--font-fig);border:1px solid var(--color-rule);border-bottom-width:2px;border-radius:5px;padding:2px 5px;background:var(--color-paper-2);color:var(--color-ink)}
+  .big-btn{width:100%;min-height:56px;border:0;border-radius:16px;background:var(--color-accent);color:var(--color-accent-ink);font:700 16px/1 var(--font-body);cursor:pointer;box-shadow:0 10px 24px color-mix(in oklch,var(--color-accent) 26%,transparent);transition:transform .15s,filter .15s}
+  .big-btn:hover{filter:brightness(1.06)}
+  .big-btn:active{transform:scale(.985)}
+  .mini{position:relative;margin:10px 0 0;text-align:center;font-size:11px;color:var(--color-muted)}
+
+  .game-play{width:min(100%,560px);margin:0 auto;display:flex;flex-direction:column;min-height:0}
+  .game-hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;margin-bottom:10px}
+  .hud-item{min-width:0}
+  .hud-item.center{text-align:center}
+  .hud-item.right{text-align:right}
+  .hud-label{display:block;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-muted);margin-bottom:2px}
+  .hud-value{font:700 22px/1 var(--font-fig);color:var(--color-ink);letter-spacing:-.03em}
+  .hud-value.small{font-size:18px}
+  .combo-box{display:inline-flex;align-items:baseline;gap:4px;padding:4px 9px;border-radius:999px;background:var(--color-accent-soft);color:var(--color-accent-soft-ink);font:700 13px/1 var(--font-fig);transition:transform .16s}
+  .combo-box.pop{transform:scale(1.16)}
+  .timebar{grid-column:1/-1;height:8px;border-radius:99px;background:var(--color-rule);overflow:hidden;margin-top:7px}
+  .timebar i{display:block;width:100%;height:100%;transform-origin:left;background:var(--color-accent);transition:transform .1s linear,background .2s}
+  .timebar.low i{background:var(--color-error)}
+  .timebar.flash i{background:var(--color-error)}
+
+  .deck{position:relative;width:min(82vw,360px);aspect-ratio:4/5;margin:4px auto 0;touch-action:none;user-select:none;-webkit-user-select:none}
+  .swipe-card{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden;padding:20px;border-radius:24px;border:1px solid var(--color-rule);background:var(--color-paper);box-shadow:0 18px 44px oklch(20% .03 220 / .13);backface-visibility:hidden}
+  .swipe-card.back{background:var(--color-paper-2);box-shadow:0 12px 28px oklch(20% .03 220 / .08)}
+  .swipe-card.d2{transform:translateY(11px) scale(.96);z-index:2}
+  .swipe-card.d3{transform:translateY(22px) scale(.92);z-index:1}
+  .swipe-card.top{z-index:3;cursor:grab}
+  .swipe-card.top:not(.dragging){animation:g-card-in .2s var(--ease-out) both}
+  @keyframes g-card-in{from{transform:scale(.97) translateY(7px)}to{transform:none}}
+  .swipe-card.top.dragging{cursor:grabbing;box-shadow:0 24px 56px oklch(20% .03 220 / .2)}
+  .swipe-card.top:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+  .card-kicker{font:600 10px/1.4 var(--font-fig);letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px;padding-right:70px}
+  .card-main{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  .card-q{margin:0;font:600 clamp(17px,4.5vw,21px)/1.42 var(--font-display);letter-spacing:-.015em;color:var(--color-ink);overflow-wrap:anywhere}
+  .proposed{margin:14px 0 0;padding:10px 12px;border-radius:12px;background:var(--color-accent-soft);border:1px solid color-mix(in oklch,var(--color-accent) 22%,var(--color-rule));color:var(--color-accent-soft-ink)}
+  .proposed span{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:3px}
+  .proposed b{font-size:14px;line-height:1.45;font-weight:700}
+  .card-source{margin-top:12px;padding-top:9px;border-top:1px solid var(--color-rule);font-size:10px;line-height:1.4;color:var(--color-muted);min-height:14px}
+  .drag-hint{margin-top:8px;text-align:center;font-size:10px;color:var(--color-muted);letter-spacing:.02em}
+  .stamp{position:absolute;top:18px;padding:6px 11px;border:3px solid;border-radius:8px;font:800 21px/1 var(--font-fig);letter-spacing:.08em;opacity:0;pointer-events:none;z-index:4;will-change:opacity}
+  .stamp-yes{right:16px;color:var(--color-success);border-color:var(--color-success);transform:rotate(-12deg)}
+  .stamp-no{left:16px;color:var(--color-error);border-color:var(--color-error);transform:rotate(12deg)}
+  .stamp.right{color:var(--color-success);border-color:var(--color-success)}
+  .stamp.wrong{color:var(--color-error);border-color:var(--color-error)}
+  .stamp-yes.slam{opacity:1;animation:g-stamp-yes .24s cubic-bezier(.2,1.2,.3,1) both}
+  .stamp-no.slam{opacity:1;animation:g-stamp-no .24s cubic-bezier(.2,1.2,.3,1) both}
+  @keyframes g-stamp-yes{0%{opacity:0;transform:scale(1.7) rotate(-12deg)}60%{opacity:1;transform:scale(.94) rotate(-12deg)}100%{opacity:1;transform:scale(1) rotate(-12deg)}}
+  @keyframes g-stamp-no{0%{opacity:0;transform:scale(1.7) rotate(12deg)}60%{opacity:1;transform:scale(.94) rotate(12deg)}100%{opacity:1;transform:scale(1) rotate(12deg)}}
+  .shake{animation:g-shake .22s linear 3}
+  @keyframes g-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}60%{transform:translateX(9px)}}
+  .swipe-card.ok-glow,.desk-card.ok-glow{border-color:var(--color-success);box-shadow:0 0 0 3px color-mix(in oklch,var(--color-success) 24%,transparent),0 18px 44px oklch(20% .03 220 / .13)}
+  .swipe-card.bad-glow,.desk-card.bad-glow{border-color:var(--color-error);box-shadow:0 0 0 3px color-mix(in oklch,var(--color-error) 26%,transparent),0 18px 44px oklch(20% .03 220 / .13)}
+  .hud-value.bump{animation:g-bump .28s var(--ease-out)}
+  .hud-value.hit{animation:g-hit .3s var(--ease-out)}
+  @keyframes g-bump{0%{transform:scale(1)}40%{transform:scale(1.26);color:var(--color-success)}100%{transform:scale(1)}}
+  @keyframes g-hit{0%,100%{transform:translateX(0);color:var(--color-ink)}30%{transform:translateX(-4px);color:var(--color-error)}70%{transform:translateX(4px);color:var(--color-error)}}
+  .combo-box.pop{animation:g-combo .22s var(--ease-out)}
+  @keyframes g-combo{0%{transform:scale(1)}50%{transform:scale(1.22)}100%{transform:scale(1)}}
+
+  .answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .answer-btn{min-height:54px;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:15px;border:1px solid var(--color-rule);background:var(--color-paper);color:var(--color-ink);font:700 14px/1 var(--font-body);cursor:pointer;transition:transform .12s,background .15s,border-color .15s}
+  .answer-btn:active{transform:scale(.98)}
+  .answer-btn:disabled{opacity:.55;cursor:default}
+  .answer-btn kbd{font:600 10px/1 var(--font-fig);border:1px solid var(--color-rule);border-bottom-width:2px;border-radius:4px;padding:2px 4px;color:var(--color-muted);background:var(--color-paper-2)}
+  body[data-mode="mobile"] .answer-btn kbd{display:none}
+  .answer-no{color:var(--color-error);border-color:color-mix(in oklch,var(--color-error) 28%,var(--color-rule))}
+  .answer-no:hover:not(:disabled){background:var(--color-error-soft)}
+  .answer-yes{color:var(--color-success);border-color:color-mix(in oklch,var(--color-success) 30%,var(--color-rule))}
+  .answer-yes:hover:not(:disabled){background:var(--color-accent-soft)}
+
+  .game-feedback{min-height:38px;margin-top:10px;padding:0 2px;font-size:12px;line-height:1.5;color:var(--color-muted);transition:opacity .2s}
+  .game-feedback.ok b{color:var(--color-success)}
+  .game-feedback.no b{color:var(--color-error)}
+  .game-feedback b{display:block;font-size:12px;margin-bottom:1px}
+  .game-feedback span{display:block;color:var(--color-ink-2)}
+
+  .desk-wrap{width:min(100%,760px);margin:0 auto;display:flex;flex-direction:column}
+  .desk-card{width:100%;min-height:min(42vh,330px);display:flex;flex-direction:column;justify-content:center;background:var(--color-paper);border:1px solid var(--color-rule);border-radius:24px;padding:clamp(22px,4vw,38px);box-shadow:0 18px 44px oklch(20% .03 220 / .1);transition:transform .28s var(--ease-out),opacity .28s}
+  body[data-mode="desktop"] .desk-card{position:relative;overflow:hidden}
+  body[data-mode="desktop"] .desk-card.ok-glow::after,body[data-mode="desktop"] .desk-card.bad-glow::after{content:attr(data-verdict);position:absolute;top:16px;padding:5px 10px;border:3px solid;border-radius:8px;font:800 20px/1 var(--font-fig);letter-spacing:.08em;opacity:.95}
+  body[data-mode="desktop"] .desk-card.ok-glow::after{right:20px;color:var(--color-success);border-color:var(--color-success);transform:rotate(-8deg)}
+  body[data-mode="desktop"] .desk-card.bad-glow::after{left:20px;color:var(--color-error);border-color:var(--color-error);transform:rotate(8deg)}
+  .desk-card .card-kicker{padding-right:0;font-size:11px}
+  .desk-card .card-main{flex:0 0 auto}
+  .desk-card .card-q{font-size:clamp(21px,3vw,29px);line-height:1.38}
+  .desk-card .proposed{margin-top:18px;padding:13px 15px}
+  .desk-card .proposed b{font-size:16px}
+  .desk-card .card-source{margin-top:16px;font-size:11px}
+  .desk-wrap .answer-row{margin-top:16px}
+  .desk-wrap .answer-btn{min-height:60px;font-size:15px}
+  .desk-wrap .game-hud{margin-bottom:14px}
+
+  .countdown{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:var(--color-paper);color:var(--color-accent);font:800 clamp(80px,24vw,150px)/1 var(--font-fig);letter-spacing:-.05em}
+  .countdown.pop{animation:g-pop .4s var(--ease-out) both}
+  .countdown.go{color:var(--color-ink);font-size:clamp(44px,14vw,90px)}
+  @keyframes g-pop{from{transform:scale(1.28);opacity:.4}to{transform:scale(1);opacity:1}}
+
+  .end-card{width:min(100%,560px);margin:0 auto;text-align:center;background:var(--color-paper);border:1px solid var(--color-rule);border-radius:24px;padding:clamp(22px,5vw,34px);box-shadow:0 24px 60px oklch(20% .02 220 / .08)}
+  .end-score{font:800 clamp(58px,16vw,92px)/1 var(--font-fig);letter-spacing:-.06em;color:var(--color-ink);margin:2px 0 0}
+  .end-sub{font-size:12px;color:var(--color-muted);margin:4px 0 16px}
+  .record{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--color-accent-soft);color:var(--color-accent-soft-ink);font:700 11px/1 var(--font-fig);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+  .end-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:7px 16px;margin:12px 0 18px;font-size:12px;color:var(--color-ink-2)}
+  .end-stats b{color:var(--color-ink)}
+  .end-actions{display:grid;gap:9px}
+  .end-actions .big-btn{min-height:52px}
+  .end-actions .ghost-btn{min-height:44px;border:1px solid var(--color-rule);border-radius:14px;background:var(--color-paper);color:var(--color-ink);font:600 13px/1 var(--font-body);cursor:pointer}
+  .end-link{display:inline-block;margin-top:14px;color:var(--color-muted);font-size:12px;text-decoration:none;border-bottom:1px solid transparent}
+  .end-link:hover{color:var(--color-ink);border-bottom-color:var(--color-accent)}
+
+  .fx-tint{position:fixed;inset:0;z-index:55;pointer-events:none;opacity:0}
+  .fx-tint.ok{background:color-mix(in oklch,var(--color-success) 32%,transparent);animation:g-tint .3s ease-out}
+  .fx-tint.bad{background:color-mix(in oklch,var(--color-error) 32%,transparent);animation:g-tint .3s ease-out}
+  @keyframes g-tint{0%{opacity:0}22%{opacity:.16}100%{opacity:0}}
+  .fx-floats{position:fixed;inset:0;z-index:65;pointer-events:none}
+  .fx-float{position:fixed;left:0;top:0;transform:translate(-50%,-50%);font:800 21px/1 var(--font-fig);pointer-events:none;white-space:nowrap;text-shadow:0 1px 0 var(--color-paper);animation:g-float .85s var(--ease-out) forwards}
+  .fx-float.ok{color:var(--color-success)}
+  .fx-float.bad{color:var(--color-error)}
+  @keyframes g-float{0%{opacity:0;transform:translate(-50%,-50%) scale(.8)}18%{opacity:1;transform:translate(-50%,-62%) scale(1.08)}100%{opacity:0;transform:translate(-50%,-145%) scale(1)}}
+
+  .error-card{width:min(100%,520px);margin:0 auto;text-align:center;background:var(--color-paper);border:1px solid var(--color-rule);border-radius:24px;padding:28px}
+  .error-card h1{font-size:22px;margin:0 0 8px;max-width:none}
+  .error-card p{font-size:13px;line-height:1.55;color:var(--color-muted);margin:0 0 16px}
+  .error-card .big-btn{max-width:280px;margin:0 auto}
+
+  .bursts{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+  .burst-bit{position:absolute;width:8px;height:12px;border-radius:2px;animation:g-burst .85s cubic-bezier(.15,.7,.3,1) forwards}
+  @keyframes g-burst{0%{transform:translate(0,0) rotate(0);opacity:1}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+  .game-toast{position:fixed;left:50%;top:max(12px,env(safe-area-inset-top));transform:translate(-50%,-160%);z-index:70;max-width:calc(100% - 32px);padding:10px 14px;border-radius:10px;background:var(--color-ink);color:var(--color-paper);font:600 12px/1.4 var(--font-body);box-shadow:var(--shadow-card);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;visibility:hidden;transition:transform .22s var(--ease-out)}
+  .game-toast.show{transform:translate(-50%,0);visibility:visible}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  @media (max-width:620px){
+    .game-wrap{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+    .game-brand b{font-size:15px}
+    .game-switch{padding:0 11px}
+    .deck{width:min(86vw,350px)}
+    .swipe-card{padding:18px}
+    .stamp{font-size:18px;padding:5px 9px;border-width:2.5px}
+    .game-feedback{min-height:34px}
+    .end-stats{font-size:11.5px}
+  }
+  @media (max-height:680px){
+    .game-stage{justify-content:flex-start}
+    .deck{width:min(70vw,310px)}
+    .answer-row{margin-top:10px}
+    .answer-btn{min-height:48px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .swipe-card,.timebar i,.combo-box,.game-feedback,.game-toast,.countdown,.desk-card{transition:none !important;animation:none !important}
+    .fx-tint,.fx-floats{display:none !important}
+    .stamp-yes.slam,.stamp-no.slam,.shake,.hud-value.bump,.hud-value.hit,.combo-box.pop{animation:none !important}
+    .big-btn:active,.answer-btn:active{transform:none}
+  }
+</style>
+</head>
+<body class="game-page" data-mode="mobile">
+<div class="game-wrap">
+  <header class="game-bar">
+    <a class="game-back" href="index.html#dungsai" aria-label="Về sổ tay Luật Y tế">←</a>
+    <div class="game-brand">
+      <span class="game-logo" aria-hidden="true">VL</span>
+      <div><b>Vuốt Luật</b><small id="mode-label">Bản điện thoại</small></div>
+    </div>
+    <button type="button" class="game-switch" id="switch-mode" hidden>Đổi bản</button>
+  </header>
+  <main class="game-stage" id="stage">
+    <section class="intro-card"><p class="lead">Đang tải bộ câu…</p></section>
+  </main>
+  <footer class="game-foot">Nội dung học tập tổng hợp, không thay thế tư vấn pháp lý.</footer>
+</div>
+<p id="announce" class="sr-only" aria-live="polite"></p>
+<div class="bursts" id="bursts" aria-hidden="true"></div>
+<div class="fx-tint" id="fx-tint" aria-hidden="true"></div>
+<div class="fx-floats" id="fx-floats" aria-hidden="true"></div>
+<div class="game-toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module">
+import {
+  detectMode, buildSwipeDeck, buildDesktopDeck, createRound, applyAnswer,
+  finishRound, mergeSwipeStats, normalizeSwipeStats, emptySwipeStats, accuracy, todayKey,
+} from "./js/swipe-core.js";
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+const reduce = () => { try { return matchMedia("(prefers-reduced-motion: reduce)").matches; } catch { return false; } };
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const timeout = ms => { try { return AbortSignal.timeout(ms); } catch { return undefined; } };
+
+const params = new URLSearchParams(location.search);
+const mode = detectMode({
+  coarsePointer: matchMedia("(pointer: coarse)").matches,
+  width: innerWidth,
+  query: params.get("ban"),
+});
+document.body.dataset.mode = mode;
+document.title = "Vuốt Luật · " + (mode === "mobile" ? "Bản điện thoại" : "Bản máy tính");
+$("#mode-label").textContent = mode === "mobile" ? "Bản điện thoại · 60 giây" : "Bản máy tính · 60 giây";
+const switchUrl = () => "game.html?ban=" + (mode === "mobile" ? "may-tinh" : "dien-thoai");
+$("#switch-mode").onclick = () => {
+  if (phase === "playing" || phase === "countdown") {
+    if (!confirm("Bỏ ván hiện tại để đổi bản?")) return;
+  }
+  location.href = switchUrl();
+};
+$(".game-back").addEventListener("click", e => {
+  if (phase === "playing" || phase === "countdown") {
+    if (!confirm("Bỏ ván này?")) e.preventDefault();
+  }
+});
+
+let DATA = null;
+let stats = emptySwipeStats();
+let tfBest = 0;
+let round = null;
+let phase = "loading";
+let timerId = 0;
+let lastTick = 0;
+let paused = false;
+let locked = false;
+let fbTimer = 0;
+let me = null;
+let csrf = "";
+
+const readJson = (key, fallback) => {
+  try { const raw = localStorage.getItem("lyt_" + key); return raw == null ? fallback : JSON.parse(raw); }
+  catch { return fallback; }
+};
+const writeJson = (key, value) => {
+  try { localStorage.setItem("lyt_" + key, JSON.stringify(value)); return true; }
+  catch { return false; }
+};
+stats = normalizeSwipeStats(readJson("swipe", null));
+tfBest = (() => { const n = Number(readJson("tfbest", 0)); return Number.isFinite(n) && n > 0 ? Math.round(n) : 0; })();
+
+function setSwitchVisible(v) { $("#switch-mode").hidden = !v; }
+function toast(text) {
+  const el = $("#toast");
+  el.textContent = text;
+  el.classList.add("show");
+  clearTimeout(toast.tm);
+  toast.tm = setTimeout(() => el.classList.remove("show"), 2200);
+}
+function vibrate(ms) {
+  if (reduce()) return;
+  try { if (navigator.vibrate) navigator.vibrate(ms); } catch {}
+}
+function flashTint(kind) {
+  if (reduce()) return;
+  const el = $("#fx-tint");
+  if (!el) return;
+  el.className = "fx-tint";
+  void el.offsetWidth;
+  el.className = "fx-tint " + kind;
+  setTimeout(() => { if (el) el.className = "fx-tint"; }, 330);
+}
+function floatText(text, kind, anchor) {
+  if (reduce()) return;
+  const layer = $("#fx-floats");
+  if (!layer || !anchor) return;
+  const r = anchor.getBoundingClientRect();
+  const el = document.createElement("span");
+  el.className = "fx-float " + kind;
+  el.textContent = text;
+  el.style.left = (r.left + r.width / 2) + "px";
+  el.style.top = (r.top + r.height / 2) + "px";
+  layer.append(el);
+  setTimeout(() => el.remove(), 900);
+}
+function bumpEffect(el, cls) {
+  if (!el) return;
+  el.classList.remove(cls);
+  void el.offsetWidth;
+  el.classList.add(cls);
+  setTimeout(() => el.classList.remove(cls), 330);
+}
+function glowCard(card, kind) {
+  if (!card) return;
+  const cls = kind === "ok" ? "ok-glow" : "bad-glow";
+  card.classList.add(cls);
+  setTimeout(() => card.classList.remove(cls), 480);
+}
+function markDirty() { try { localStorage.setItem("lyt_syncAt", "0"); } catch {} }
+
+async function fetchMe() {
+  if (me) return me;
+  try {
+    const r = await fetch("/api/me", { cache: "no-store", signal: timeout(1200) });
+    if (!r.ok) return null;
+    const d = await r.json();
+    if (!d || !d.user) return null;
+    me = d.user; csrf = d.csrfToken || "";
+    return me;
+  } catch { return null; }
+}
+async function pullGameStats() {
+  if (!(await fetchMe())) return;
+  try {
+    const g = await fetch("/api/progress", { cache: "no-store", signal: timeout(1500) });
+    if (!g.ok) return;
+    const d = await g.json().catch(() => null);
+    const data = d && d.data && typeof d.data === "object" ? d.data : {};
+    if (typeof data.lyt_swipe === "string") {
+      try { stats = mergeSwipeStats(stats, JSON.parse(data.lyt_swipe)); writeJson("swipe", stats); } catch {}
+    }
+    const t = Number(data.lyt_tfbest);
+    if (Number.isFinite(t) && t > tfBest) { tfBest = Math.round(t); writeJson("tfbest", tfBest); }
+    if (phase === "intro") renderIntro();
+  } catch {}
+}
+async function pushGameStats() {
+  if (!(await fetchMe())) { markDirty(); return false; }
+  try {
+    const g = await fetch("/api/progress", { cache: "no-store", signal: timeout(1500) });
+    if (!g.ok) throw new Error("progress");
+    const d = await g.json().catch(() => ({}));
+    const data = d && d.data && typeof d.data === "object" ? { ...d.data } : {};
+    if (typeof data.lyt_swipe === "string") {
+      try { stats = mergeSwipeStats(stats, JSON.parse(data.lyt_swipe)); writeJson("swipe", stats); } catch {}
+    }
+    const remoteTf = Number(data.lyt_tfbest);
+    if (Number.isFinite(remoteTf) && remoteTf > tfBest) { tfBest = Math.round(remoteTf); writeJson("tfbest", tfBest); }
+    data.lyt_swipe = JSON.stringify(stats);
+    data.lyt_tfbest = JSON.stringify(tfBest);
+    const r = await fetch("/api/progress", {
+      method: "PUT",
+      headers: { "content-type": "application/json", "x-csrf-token": csrf },
+      body: JSON.stringify({ data }),
+      signal: timeout(4000),
+    });
+    if (!r.ok) throw new Error("put");
+    const out = await r.json().catch(() => ({}));
+    if (out.updatedAt) localStorage.setItem("lyt_syncAt", String(out.updatedAt));
+    return true;
+  } catch { markDirty(); return false; }
+}
+
+async function loadData() {
+  const load = n => fetch("data/" + n + ".json", { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(n); return r.json(); });
+  const [tf, q1, q2, q3, laws] = await Promise.all([
+    load("tf").catch(() => []),
+    load("quiz").catch(() => []),
+    load("quiz_nentang").catch(() => []),
+    load("quiz_his").catch(() => []),
+    load("laws").catch(() => []),
+  ]);
+  DATA = {
+    tf: Array.isArray(tf) ? tf : [],
+    quiz: [...(Array.isArray(q1) ? q1 : []), ...(Array.isArray(q2) ? q2 : []), ...(Array.isArray(q3) ? q3 : [])],
+    laws: Array.isArray(laws) ? laws : [],
+  };
+  if (!DATA.tf.length && !DATA.quiz.length) throw new Error("empty");
+}
+
+function renderIntro() {
+  phase = "intro"; round = null; stopTimer(); locked = false; paused = false;
+  setSwitchVisible(true);
+  const mobile = mode === "mobile";
+  const best = mobile ? stats.best : tfBest;
+  const streak = stats.streak;
+  $("#stage").innerHTML = `
+    <section class="intro-card">
+      <div class="eyebrow">Mini game · 60 giây</div>
+      <h1>Vuốt Luật</h1>
+      <p class="lead">${mobile
+        ? "Đọc thẻ rồi vuốt: phải là Đúng, trái là Sai. Sai trừ 3 giây. Chơi một tay, không cần chuẩn bị gì."
+        : "Bản máy tính kiểu cũ: đọc nhận định, bấm Đúng/Sai hoặc dùng phím ← →. Sai trừ 3 giây."}</p>
+      <div class="intro-stats">
+        <div class="intro-stat"><span>Kỷ lục${mobile ? " bản điện thoại" : " bản máy tính"}</span><b>${best}</b></div>
+        ${mobile
+          ? `<div class="intro-stat"><span>Chuỗi ngày chơi</span><b>${streak}</b></div>`
+          : `<div class="intro-stat"><span>Cách chơi</span><b style="font-size:14px">← / →</b></div>`}
+      </div>
+      <ul class="rules">
+        <li><b>Đúng:</b> vuốt phải${mobile ? " hoặc bấm Đúng" : " hoặc bấm →"}</li>
+        <li><b>Sai:</b> vuốt trái${mobile ? " hoặc bấm Sai" : " hoặc bấm ←"}; trừ 3 giây</li>
+        <li><b>Combo:</b> đúng liên tiếp để nhận hiệu ứng; sai là reset</li>
+      </ul>
+      <button type="button" class="big-btn" id="start">Bắt đầu</button>
+      <p class="mini">${mobile ? "Bản điện thoại · mẹo: vuốt ngắn cũng được" : "Bản máy tính · phím ← → hoạt động ngay"}</p>
+    </section>`;
+  $("#start").onclick = startRound;
+  $("#announce").textContent = "Màn bắt đầu Vuốt Luật. Kỷ lục " + best + ".";
+}
+
+function renderError(message) {
+  phase = "error"; stopTimer(); round = null;
+  setSwitchVisible(true);
+  $("#stage").innerHTML = `
+    <section class="error-card">
+      <h1>Chưa tải được bộ câu</h1>
+      <p>${esc(message || "Có thể do mạng hoặc tệp dữ liệu chưa sẵn sàng. Thử lại nhé.")}</p>
+      <button type="button" class="big-btn" id="retry">Thử lại</button>
+      <p style="margin-top:14px"><a class="end-link" href="index.html#dungsai">← Về sổ tay</a></p>
+    </section>`;
+  $("#retry").onclick = () => location.reload();
+}
+
+function startRound() {
+  if (!DATA) return;
+  const deck = mode === "mobile"
+    ? buildSwipeDeck({ tf: DATA.tf, quiz: DATA.quiz, laws: DATA.laws, size: 60 })
+    : buildDesktopDeck({ tf: DATA.tf });
+  if (!deck.length) { renderError("Chưa có thẻ nào để chơi. Kiểm tra dữ liệu rồi thử lại."); return; }
+  stopTimer();
+  round = createRound({ mode, deck, durationMs: 60000 });
+  locked = false; paused = false;
+  setSwitchVisible(false);
+  clearFeedback();
+  if (mode === "mobile") {
+    phase = reduce() ? "playing" : "countdown";
+    renderGame();
+    if (reduce()) beginTimer();
+    else runCountdown();
+  } else {
+    phase = "playing";
+    renderGame();
+    beginTimer();
+  }
+}
+
+function renderGame() {
+  const hud = `
+    <div class="game-hud">
+      <div class="hud-item"><span class="hud-label">Điểm</span><b class="hud-value" id="hud-score" aria-live="polite">0</b></div>
+      <div class="hud-item center"><span class="hud-label">Còn lại</span><b class="hud-value small" id="hud-time">60s</b></div>
+      <div class="hud-item right" id="combo-wrap" hidden><span class="hud-label">Chuỗi</span><span class="combo-box" id="hud-combo" hidden>×0</span></div>
+      <div class="timebar" id="timebar" role="timer" aria-label="Thời gian còn lại"><i id="timebar-fill"></i></div>
+    </div>`;
+  if (mode === "mobile") {
+    $("#stage").innerHTML = `
+      <div class="game-play">${hud}
+        <div class="deck" id="deck"></div>
+        <div class="answer-row">
+          <button type="button" class="answer-btn answer-no" data-answer="false" aria-label="Chọn Sai">Sai <kbd>←</kbd></button>
+          <button type="button" class="answer-btn answer-yes" data-answer="true" aria-label="Chọn Đúng">Đúng <kbd>→</kbd></button>
+        </div>
+        <div class="game-feedback" id="feedback" aria-live="polite"></div>
+      </div>`;
+    renderCards();
+  } else {
+    $("#stage").innerHTML = `
+      <div class="desk-wrap">${hud}
+        <div class="desk-card" id="desk-card" aria-live="polite"></div>
+        <div class="answer-row">
+          <button type="button" class="answer-btn answer-no" data-answer="false" aria-label="Chọn Sai">Sai <kbd>←</kbd></button>
+          <button type="button" class="answer-btn answer-yes" data-answer="true" aria-label="Chọn Đúng">Đúng <kbd>→</kbd></button>
+        </div>
+        <div class="game-feedback" id="feedback" aria-live="polite"></div>
+      </div>`;
+    renderDesktopCard();
+  }
+  $$(".answer-btn").forEach(b => b.onclick = () => answer(b.dataset.answer === "true"));
+  updateHud();
+  setAnswerDisabled(phase !== "playing");
+}
+
+function cardBody(card, mobile) {
+  return `
+    <div class="card-main">
+      <div class="card-kicker">${card.kind === "tf" ? "Nhận định" : "Câu hỏi + đáp án đề xuất"}</div>
+      <p class="card-q">${esc(card.text)}</p>
+      ${card.proposed ? `<div class="proposed"><span>Đáp án đề xuất</span><b>${esc(card.proposed)}</b></div>` : ""}
+    </div>
+    <div class="card-source">${esc(card.source || "")}</div>
+    ${mobile ? `<div class="drag-hint">Vuốt phải nếu đúng · trái nếu sai</div>` : ""}`;
+}
+
+function renderCards() {
+  if (!round) return;
+  if (round.index >= round.deck.length) extendDeck();
+  const card = round.deck[round.index];
+  if (!card) { endRound(); return; }
+  const next = round.deck[round.index + 1];
+  const deck = $("#deck");
+  if (!deck) return;
+  deck.innerHTML = `
+    <div class="swipe-card top" id="top-card" role="group" aria-label="Thẻ câu hỏi">
+      <div class="stamp stamp-yes" aria-hidden="true">ĐÚNG</div>
+      <div class="stamp stamp-no" aria-hidden="true">SAI</div>
+      ${cardBody(card, true)}
+    </div>
+    <div class="swipe-card back d2" aria-hidden="true">${next ? cardBody(next, true) : ""}</div>
+    <div class="swipe-card back d3" aria-hidden="true"></div>`;
+  bindDrag($("#top-card"));
+  $("#announce").textContent = card.text + (card.proposed ? ". Đáp án đề xuất: " + card.proposed : "");
+}
+
+function renderDesktopCard() {
+  if (!round) return;
+  if (round.index >= round.deck.length) extendDeck();
+  const card = round.deck[round.index];
+  const el = $("#desk-card");
+  if (!card) { endRound(); return; }
+  if (!el) return;
+  el.style.transition = "";
+  el.style.transform = "";
+  el.style.opacity = "1";
+  el.innerHTML = cardBody(card, false);
+  $("#announce").textContent = card.text + (card.proposed ? ". Đáp án đề xuất: " + card.proposed : "");
+}
+
+function extendDeck() {
+  if (!round) return;
+  const last = round.deck[round.index - 1];
+  let deck = mode === "mobile"
+    ? buildSwipeDeck({ tf: DATA.tf, quiz: DATA.quiz, laws: DATA.laws, size: 60 })
+    : buildDesktopDeck({ tf: DATA.tf });
+  if (deck.length > 1 && last && deck[0].text === last.text) [deck[0], deck[1]] = [deck[1], deck[0]];
+  round.deck = deck;
+  round.index = 0;
+  if (!deck.length) endRound();
+}
+
+function updateHud() {
+  if (!round) return;
+  const score = $("#hud-score"), time = $("#hud-time"), fill = $("#timebar-fill"), bar = $("#timebar"), combo = $("#hud-combo"), comboWrap = $("#combo-wrap");
+  if (score) score.textContent = String(round.score);
+  const sec = Math.max(0, Math.ceil(round.remainMs / 1000));
+  if (time) time.textContent = sec + "s";
+  if (fill) fill.style.transform = "scaleX(" + Math.max(0, Math.min(1, round.remainMs / 60000)) + ")";
+  if (bar) bar.classList.toggle("low", sec <= 10);
+  if (combo) {
+    const c = round.combo || 0;
+    combo.hidden = c < 2;
+    combo.textContent = "×" + c;
+    if (comboWrap) comboWrap.hidden = c < 2;
+  }
+}
+
+function setAnswerDisabled(v) {
+  $$(".answer-btn").forEach(b => { b.disabled = !!v; });
+}
+
+function beginTimer() {
+  phase = "playing";
+  setAnswerDisabled(false);
+  lastTick = performance.now();
+  paused = document.hidden;
+  stopTimer();
+  if (!paused) timerId = setInterval(tick, 100);
+  updateHud();
+}
+
+function stopTimer() {
+  if (timerId) { clearInterval(timerId); timerId = 0; }
+}
+
+function tick() {
+  if (phase !== "playing" || paused || !round) return;
+  const now = performance.now();
+  const dt = Math.max(0, now - lastTick);
+  lastTick = now;
+  round.remainMs = Math.max(0, round.remainMs - dt);
+  updateHud();
+  if (round.remainMs <= 0) endRound();
+}
+
+function runCountdown() {
+  const el = document.createElement("div");
+  el.className = "countdown pop";
+  el.textContent = "3";
+  el.setAttribute("aria-hidden", "true");
+  $("#stage").append(el);
+  let n = 3;
+  const step = () => {
+    if (phase !== "countdown") { el.remove(); return; }
+    n--;
+    if (n > 0) {
+      el.textContent = String(n);
+      el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop");
+      setTimeout(step, 450);
+    } else {
+      el.textContent = "Vuốt!";
+      el.classList.add("go");
+      setTimeout(() => {
+        if (phase === "countdown") { el.remove(); beginTimer(); }
+      }, 420);
+    }
+  };
+  setTimeout(step, 450);
+}
+
+function bindDrag(card) {
+  if (!card) return;
+  let drag = null;
+  card.addEventListener("pointerdown", e => {
+    if (phase !== "playing" || locked || mode !== "mobile" || (e.pointerType === "mouse" && e.button !== 0)) return;
+    drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, lastX: e.clientX, lastT: performance.now(), vx: 0, dx: 0 };
+    try { card.setPointerCapture(e.pointerId); } catch {}
+    card.classList.add("dragging");
+    card.style.transition = "none";
+    e.preventDefault();
+  });
+  card.addEventListener("pointermove", e => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const now = performance.now();
+    const dt = Math.max(1, now - drag.lastT);
+    drag.vx = (e.clientX - drag.lastX) / dt;
+    drag.lastX = e.clientX;
+    drag.lastT = now;
+    const dx = e.clientX - drag.x0;
+    const dy = e.clientY - drag.y0;
+    drag.dx = dx;
+    paintDrag(card, dx, dy);
+  });
+  const finish = e => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const d = drag;
+    drag = null;
+    card.classList.remove("dragging");
+    try { card.releasePointerCapture(e.pointerId); } catch {}
+    const far = Math.abs(d.dx) >= 72;
+    const flick = Math.abs(d.dx) >= 36 && Math.abs(d.vx) >= 0.6;
+    if (far || flick) answer(d.dx > 0);
+    else springBack(card);
+  };
+  card.addEventListener("pointerup", finish);
+  card.addEventListener("pointercancel", finish);
+}
+
+function paintDrag(card, dx, dy) {
+  card.style.transform = "translate(" + dx + "px," + dy * 0.35 + "px) rotate(" + Math.max(-14, Math.min(14, dx * 0.055)) + "deg)";
+  const yes = card.querySelector(".stamp-yes");
+  const no = card.querySelector(".stamp-no");
+  const p = Math.min(1, Math.abs(dx) / 90);
+  if (yes) yes.style.opacity = dx > 0 ? String(p) : "0";
+  if (no) no.style.opacity = dx < 0 ? String(p) : "0";
+}
+
+function springBack(card) {
+  if (!card) return;
+  card.style.transition = "transform .32s cubic-bezier(.2,.9,.25,1.18)";
+  card.style.transform = "";
+  const yes = card.querySelector(".stamp-yes"), no = card.querySelector(".stamp-no");
+  if (yes) yes.style.opacity = "0";
+  if (no) no.style.opacity = "0";
+  setTimeout(() => { if (card) card.style.transition = ""; }, 340);
+}
+
+function answer(value) {
+  if (phase !== "playing" || locked || !round) return;
+  if (round.remainMs <= 0) { endRound(); return; }
+  const top = mode === "mobile" ? $("#top-card") : $("#desk-card");
+  const out = applyAnswer(round, value);
+  if (!out.event) return;
+  round = out.round;
+  locked = true;
+  setAnswerDisabled(true);
+  updateHud();
+  const correct = out.event.isCorrect;
+  flashTint(correct ? "ok" : "bad");
+  glowCard(top, correct ? "ok" : "bad");
+  if (correct) {
+    floatText("+1", "ok", $("#hud-score"));
+    bumpEffect($("#hud-score"), "bump");
+    if (round.combo >= 2) bumpEffect($("#hud-combo"), "pop");
+  } else {
+    floatText("-3s", "bad", $("#hud-time"));
+    bumpEffect($("#hud-time"), "hit");
+  }
+  if (out.event.milestone) burst(out.event.milestone === 10 ? 18 : 12, top);
+  vibrate(correct ? 8 : 25);
+  if (!out.event.isCorrect) {
+    const bar = $("#timebar");
+    if (bar) { bar.classList.add("flash"); setTimeout(() => bar.classList.remove("flash"), 320); }
+    const shakeEl = mode === "mobile" ? $("#deck") : $(".desk-wrap");
+    if (shakeEl) { shakeEl.classList.add("shake"); setTimeout(() => shakeEl.classList.remove("shake"), 380); }
+  }
+  showFeedback(out.event);
+  if (mode === "mobile") flyCard(top, value, correct);
+  else slideDesk(top, value, correct);
+  const willEnd = round.remainMs <= 0;
+  setTimeout(() => {
+    if (phase === "ending") return;
+    locked = false;
+    if (willEnd) { endRound(); return; }
+    if (round.index >= round.deck.length) extendDeck();
+    if (phase !== "playing") return;
+    setAnswerDisabled(false);
+    if (mode === "mobile") renderCards(); else renderDesktopCard();
+  }, reduce() ? 130 : 300);
+}
+
+function flyCard(card, value, correct) {
+  if (!card) return;
+  const dir = value ? 1 : -1;
+  const stamp = card.querySelector(value ? ".stamp-yes" : ".stamp-no");
+  if (stamp) {
+    stamp.textContent = (correct ? "✓ " : "✗ ") + (value ? "ĐÚNG" : "SAI");
+    stamp.classList.remove("right", "wrong");
+    stamp.classList.add(correct ? "right" : "wrong", "slam");
+    stamp.style.opacity = "1";
+  }
+  if (reduce()) {
+    card.style.transition = "transform .12s ease";
+    card.style.transform = "translateX(" + dir * 24 + "px)";
+    return;
+  }
+  card.style.transition = "transform .3s cubic-bezier(.2,.7,.3,1)";
+  card.style.transform = "translate(" + dir * (innerWidth + 160) + "px,-14px) rotate(" + dir * 22 + "deg)";
+}
+
+function slideDesk(card, value, correct) {
+  if (!card) return;
+  card.dataset.verdict = (correct ? "✓ " : "✗ ") + (value ? "ĐÚNG" : "SAI");
+  if (reduce()) return;
+  card.style.transform = "translateX(" + (value ? 40 : -40) + "px)";
+}
+
+function showFeedback(event) {
+  const fb = $("#feedback");
+  if (!fb) return;
+  const why = String(event.card.why || "").slice(0, 150);
+  fb.className = "game-feedback " + (event.isCorrect ? "ok" : "no");
+  fb.innerHTML = "<b>" + (event.isCorrect ? "✓ Đúng" : "✗ Sai · -3 giây") + "</b><span>" + esc(why) + "</span>";
+  clearTimeout(fbTimer);
+  fbTimer = setTimeout(() => {
+    const el = $("#feedback");
+    if (el) { el.className = "game-feedback"; el.innerHTML = ""; }
+  }, 1600);
+}
+
+function clearFeedback() {
+  clearTimeout(fbTimer);
+  const fb = $("#feedback");
+  if (fb) { fb.className = "game-feedback"; fb.innerHTML = ""; }
+}
+
+function burst(count, origin) {
+  if (reduce() || !origin) return;
+  const r = origin.getBoundingClientRect();
+  const layer = $("#bursts");
+  for (let i = 0; i < count; i++) {
+    const bit = document.createElement("span");
+    bit.className = "burst-bit";
+    bit.style.left = (r.left + r.width / 2) + "px";
+    bit.style.top = (r.top + r.height / 2) + "px";
+    bit.style.setProperty("--dx", (Math.random() * 2 - 1) * 190 + "px");
+    bit.style.setProperty("--dy", (-40 - Math.random() * 240) + "px");
+    bit.style.setProperty("--r", (Math.random() * 720 - 360) + "deg");
+    bit.style.background = i % 3 === 0 ? "var(--color-accent)" : i % 3 === 1 ? "var(--color-ink)" : "var(--color-paper-3)";
+    layer.append(bit);
+    setTimeout(() => bit.remove(), 900);
+  }
+}
+
+function endRound() {
+  if (!round || phase === "ending" || phase === "intro" || phase === "error") return;
+  phase = "ending";
+  stopTimer();
+  locked = true;
+  setAnswerDisabled(true);
+  let record = false;
+  let best = 0;
+  if (mode === "mobile") {
+    const out = finishRound(round, stats, todayKey());
+    stats = out.stats;
+    record = out.isRecord;
+    best = stats.best;
+    writeJson("swipe", stats);
+  } else {
+    record = round.score > tfBest;
+    if (record) { tfBest = round.score; writeJson("tfbest", tfBest); }
+    best = tfBest;
+  }
+  renderEnd(record, best);
+  setSwitchVisible(true);
+  pushGameStats();
+}
+
+function renderEnd(record, best) {
+  const score = round ? round.score : 0;
+  const total = round ? round.answered : 0;
+  const right = round ? round.correct : 0;
+  const acc = round ? accuracy(round) : 0;
+  const combo = round ? round.bestCombo : 0;
+  $("#stage").innerHTML = `
+    <section class="end-card">
+      <div class="eyebrow">Hết giờ</div>
+      ${record ? `<div class="record">Kỷ lục mới</div>` : ""}
+      <div class="end-score">${score}</div>
+      <p class="end-sub">điểm · ${mode === "mobile" ? "bản điện thoại" : "bản máy tính"}</p>
+      <div class="end-stats">
+        <span>Đúng <b>${right}/${total}</b></span>
+        <span>Chính xác <b>${acc}%</b></span>
+        ${mode === "mobile" ? `<span>Combo dài nhất <b>${combo}</b></span>` : ""}
+        <span>Kỷ lục <b>${best}</b></span>
+        ${mode === "mobile" ? `<span>Chuỗi ngày <b>${stats.streak}</b></span>` : ""}
+      </div>
+      <div class="end-actions">
+        <button type="button" class="big-btn" id="again">Chơi lại</button>
+        <button type="button" class="ghost-btn" id="switch-end">Đổi bản${mode === "mobile" ? " máy tính" : " điện thoại"}</button>
+      </div>
+      <a class="end-link" href="index.html#dungsai">← Về sổ tay</a>
+    </section>`;
+  $("#again").onclick = startRound;
+  $("#switch-end").onclick = () => { location.href = switchUrl(); };
+  $("#announce").textContent = "Hết giờ. " + score + " điểm, đúng " + right + " trên " + total + ".";
+  setTimeout(() => { const b = $("#again"); if (b) b.focus(); }, 80);
+}
+
+document.addEventListener("keydown", e => {
+  if (phase !== "playing") return;
+  if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+    e.preventDefault();
+    answer(e.key === "ArrowRight");
+  }
+});
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden && phase === "playing" && !paused) {
+    paused = true;
+    stopTimer();
+  } else if (!document.hidden && paused && phase === "playing") {
+    paused = false;
+    lastTick = performance.now();
+    timerId = setInterval(tick, 100);
+  }
+});
+
+(async function init() {
+  try {
+    await loadData();
+    renderIntro();
+    pullGameStats();
+  } catch (e) {
+    renderError(e && e.message === "empty" ? "Kho câu hỏi đang trống." : "Không tải được dữ liệu câu hỏi.");
+  }
+})();
+</script>
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
+</body>
+</html>

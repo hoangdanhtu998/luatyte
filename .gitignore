@@ -1,0 +1,33 @@
+# Runtime and generated data
+.qoder/
+ogam/
+**/node_modules/
+**/output/
+**/audio/
+**/voices/
+**/*.log
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/secrets.env
+
+# Learning app generated/private content
+app luật y tế/archify/
+app luật y tế/img/
+app luật y tế/public/audio/
+app luật y tế/slides-ly-thuyet/public/audio/
+app luật y tế/data/bhyt-cases.draft.json
+app luật y tế/data/secrets.env
+
+# Admin runtime data and generated diagrams
+app quản lý luật y tế/data/
+app quản lý luật y tế/diagrams/
+
+# TTS runtime models and outputs
+tts-service/output/
+tts-service/voices/
+tts-voices/
+
+# Generated hospital asset outputs
+skill-hospital-assets/hospital-assets/
+skill-hospital-assets/tools/*.log

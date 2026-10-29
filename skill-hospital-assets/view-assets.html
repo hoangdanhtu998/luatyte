@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Assets Viewer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; color: #333; }
+    .category { margin-bottom: 40px; }
+    .category h2 { background: #007bff; color: white; padding: 10px 20px; border-radius: 8px; margin-bottom: 15px; }
+    .assets { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .asset { background: white; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .asset svg { max-width: 100%; height: auto; }
+    .asset p { margin-top: 10px; font-size: 14px; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>🏥 Hospital Game Assets</h1>
+  
+  <div class="category">
+    <h2>🛏️ Beds</h2>
+    <div class="assets">
+      <div class="asset">
+        <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#f0f0f0"/>
+          <rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="50%" y="70%" font-family="Arial" font-size="18" fill="#666" text-anchor="middle">Giường bệnh nhân đơn</text>
+        </svg>
+        <p>bed-single</p>
+      </div>
+      <div class="asset">
+        <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#f0f0f0"/>
+          <rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="50%" y="70%" font-family="Arial" font-size="18" fill="#666" text-anchor="middle">Giường bệnh nhân đôi</text>
+        </svg>
+        <p>bed-double</p>
+      </div>
+      <div class="asset">
+        <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#f0f0f0"/>
+          <rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="50%" y="70%" font-family="Arial" font-size="18" fill="#666" text-anchor="middle">Xe đẩy bệnh nhân</text>
+        </svg>
+        <p>gurney</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="category">
+    <h2>🪑 Furniture</h2>
+    <div class="assets">
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Bàn tiếp tân</text></svg><p>reception-desk</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Ghế chờ bệnh nhân</text></svg><p>waiting-chair</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Trạm y tá</text></svg><p>nurse-station</p></div>
+    </div>
+  </div>
+  
+  <div class="category">
+    <h2>🏥 Medical Equipment</h2>
+    <div class="assets">
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Máy siêu âm</text></svg><p>ultrasound</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Máy X-quang</text></svg><p>xray</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Máy MRI</text></svg><p>mri</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Giá truyền dịch</text></svg><p>iv-stand</p></div>
+    </div>
+  </div>
+  
+  <div class="category">
+    <h2>🚗 Vehicles</h2>
+    <div class="assets">
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Xe cứu thương</text></svg><p>ambulance</p></div>
+      <div class="asset"><svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f0f0f0"/><rect x="10" y="10" width="280" height="130" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/><text x="50%" y="70%" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Máy xúc</text></svg><p>excavator</p></div>
+    </div>
+  </div>
+  
+  <script>
+    // Load actual SVGs from files
+    const categories = ['beds', 'furniture', 'medical-equipment', 'signs', 'vehicles', 'construction', 'outdoor', 'props'];
+    // In production, use fetch to load actual SVGs
+  </script>
+</body>
+</html>

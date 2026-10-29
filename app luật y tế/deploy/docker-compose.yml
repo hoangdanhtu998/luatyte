@@ -1,0 +1,45 @@
+# Chạy trên VPS có Docker: cd deploy && docker compose up -d --build
+services:
+  admin:
+    build:
+      context: ../../app quản lý luật y tế
+      dockerfile_inline: |
+        FROM node:24-alpine
+        WORKDIR /app
+        ENV NODE_ENV=production
+        COPY . .
+        RUN mkdir -p data
+        EXPOSE 3200
+        CMD ["node", "scripts/start-admin.mjs"]
+    environment:
+      TRUST_PROXY: "true"
+    volumes:
+      - admin-data:/app/data
+    restart: unless-stopped
+
+  study:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.study
+    environment:
+      ACCOUNTS_URL: http://admin:3200
+      PORT: "4400"
+    depends_on:
+      - admin
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      - study
+    restart: unless-stopped
+
+volumes:
+  admin-data:
+  caddy-data:
