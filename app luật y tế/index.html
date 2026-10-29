@@ -309,6 +309,8 @@ const withTimeout = ms => { try { return AbortSignal.timeout(ms); } catch { retu
 sync = {
   ready: false, syncing: false, user: null, csrf: "", timer: 0, pushing: false,
   lastError: "", lastOk: 0, canPush: false,
+  staticMode: false, // chạy tĩnh (GitHub Pages): không có máy chủ tài khoản, tiến độ chỉ lưu trên máy
+  classify: o => o.networkError || o.status === 404 ? "static" : (o.status === 401 || o.status === 403 ? "anon" : (o.status >= 200 && o.status < 300 ? "ok" : "error")),
   snapshot(){
     const data = {};
     for (let i = 0; i < localStorage.length; i++){
@@ -324,6 +326,7 @@ sync = {
     });
   },
   note(){
+    if (this.staticMode) return "Tiến độ đang lưu trên máy này.";
     if (!this.ready){
       if (this.lastError) return `Chưa kiểm tra được tài khoản: ${esc(this.lastError)}. Bấm “Thử lại”. <a href="dang-nhap.html">Đăng nhập</a>`;
       return `Chưa đăng nhập — tiến độ chỉ lưu trên máy này. <a href="dang-nhap.html">Đăng nhập</a>`;
@@ -338,7 +341,7 @@ sync = {
     if (note) note.innerHTML = this.note();
     const btn = document.getElementById("sync-now");
     if (btn){
-      btn.hidden = !(this.ready || this.lastError);
+      btn.hidden = this.staticMode || !(this.ready || this.lastError);
       btn.textContent = this.lastError ? "Thử lại" : "Đồng bộ ngay";
     }
   },
@@ -347,14 +350,22 @@ sync = {
     this.syncing = true;
     this.lastError = "";
     this.canPush = false;
+    this.staticMode = false;
     try {
-      const r = await fetch("/api/me", { cache: "no-store", signal: withTimeout(1200) });
-      if (r.status === 401 || r.status === 403){
+      let r = null;
+      try { r = await fetch("/api/me", { cache: "no-store", signal: withTimeout(1200) }); } catch { r = null; }
+      const kind = this.classify(r ? { status: r.status } : { networkError: true, hadSync: !!this.localAt() });
+      if (kind === "static"){
+        this.staticMode = true; this.ready = false; this.user = null; this.csrf = "";
+        this.paint();
+        return false;
+      }
+      if (kind === "anon"){
         this.ready = false; this.user = null; this.csrf = "";
         return false;
       }
-      if (!r.ok){
-        this.lastError = "máy chủ tài khoản chưa sẵn sàng (" + r.status + ")";
+      if (kind === "error"){
+        this.lastError = r ? "máy chủ tài khoản chưa sẵn sàng (" + r.status + ")" : "không kết nối được máy chủ tài khoản";
         this.paint();
         return false;
       }
@@ -573,6 +584,10 @@ function renderStats(){
   $("#s-laws").textContent = masteredLaws().length + "/" + LAWS.filter(l => quizOf(l.id).length).length;
   $("#s-badges").textContent = knownBadgeIds().length + "/" + BADGES.length;
 }
+// Tiến độ cũ của bản live (khóa lyt_lyt_progress) được chép sang khóa mới; không mất dữ liệu.
+const compat = await import("./js/progress-compat.js").catch(() => null);
+try { compat?.migrateLegacyProgress(localStorage); } catch {}
+if (compat) sync.classify = compat.classifyAccountProbe;
 await sync.init();
 renderStats(); checkBadges();
 
@@ -1840,8 +1855,8 @@ boot().catch(e => {
 </script>
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 <script>
-/* Nút tài khoản: hiện email nếu đã đăng nhập. Khi không có máy chủ, giữ nhãn "Đăng nhập". */
-fetch("/api/me",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.user&&d.user.email){ const a=document.getElementById("acct-link"); a.textContent=d.user.email; a.title="Tài khoản đang đăng nhập"; } }).catch(()=>{});
+/* Nút tài khoản: hiện email nếu đã đăng nhập; ẩn khi chạy tĩnh (không có máy chủ). */
+fetch("/api/me",{cache:"no-store"}).then(r=>{ if(r.status===404||r.status===405||r.status===501){ const a=document.getElementById("acct-link"); if(a) a.style.display="none"; return null; } return r.ok?r.json():null; }).then(d=>{ if(d&&d.user&&d.user.email){ const a=document.getElementById("acct-link"); a.textContent=d.user.email; a.title="Tài khoản đang đăng nhập"; } }).catch(()=>{});
 </script>
 <script src="js/plan-badge.js" defer></script>
 </body>
