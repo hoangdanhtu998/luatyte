@@ -1,5 +1,5 @@
 /* sw.js — Sổ tay Luật Y tế: network-first (bản mới khi có mạng), cache khi ngoại tuyến */
-const V = "lyt-v26";
+const V = "lyt-v27";
 const CORE = [
   "./", "index.html", "clinic.html", "site.css", "tokens.css", "base.css", "js/hospital.js", "tin_luat.html", "tham_chieu.html", "ly_thuyet.html", "404.html",
   "manifest.json", "icon.svg",

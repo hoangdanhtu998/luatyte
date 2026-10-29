@@ -1,0 +1,472 @@
+{
+  "game": "tim-loi",
+  "title": "Tìm lỗi",
+  "questions": [
+    {
+      "id": "g2-01",
+      "name": "Tràn mảng khi ghi",
+      "topic": "Mảng",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int diem[5];",
+        "    int tong = 0;",
+        "    int i;",
+        "    diem[5] = 9;",
+        "    for (i = 0; i < 5; i++) diem[i] = i * 2;",
+        "    for (i = 0; i < 5; i++) tong += diem[i];",
+        "    printf(\"%d\\n\", tong);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 6,
+      "gt": "Mảng diem có 5 phần tử, chỉ số hợp lệ từ 0 đến 4. diem[5] ghi ra ngoài mảng.",
+      "fixedLine": "    diem[4] = 9;",
+      "proof": "gcc báo đúng dòng 6"
+    },
+    {
+      "id": "g2-02",
+      "name": "So sánh chuỗi bằng ==",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <string.h>",
+        "int main(void) {",
+        "    char ten[10] = \"An\";",
+        "    printf(\"Nhập xong\\n\");",
+        "    if (ten == \"An\") {",
+        "        printf(\"Trùng\\n\");",
+        "    } else {",
+        "        printf(\"Khác\\n\");",
+        "    }",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 6,
+      "gt": "== so sánh địa chỉ, không so sánh nội dung. Dùng strcmp để so sánh hai chuỗi.",
+      "fixedLine": "    if (strcmp(ten, \"An\") == 0) {",
+      "proof": "gcc báo đúng dòng 6"
+    },
+    {
+      "id": "g2-03",
+      "name": "Thiếu ký tự kết thúc \\0",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <string.h>",
+        "int main(void) {",
+        "    char ten[5];",
+        "    strcpy(ten, \"Alice\");",
+        "    printf(\"%s\\n\", ten);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "\"Alice\" có 5 ký tự và cần thêm \\0: tổng 6 byte. Mảng ten[5] không đủ chỗ.",
+      "fixedLine": "    char ten[6];",
+      "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-04",
+      "name": "Giải phóng hai lần",
+      "topic": "Cấp phát động",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <stdlib.h>",
+        "int main(void) {",
+        "    int *p = malloc(sizeof(int));",
+        "    *p = 42;",
+        "    printf(\"%d\\n\", *p);",
+        "    free(p);",
+        "    free(p);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 8,
+      "gt": "free(p) lần thứ hai giải phóng một vùng nhớ đã được trả lại: lỗi double free.",
+      "fixedLine": "",
+      "proof": "gcc báo đúng dòng 8"
+    },
+    {
+      "id": "g2-05",
+      "name": "Dùng bộ nhớ sau khi đã giải phóng",
+      "topic": "Cấp phát động",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <stdlib.h>",
+        "int main(void) {",
+        "    int *p = malloc(sizeof(int));",
+        "    *p = 7;",
+        "    free(p);",
+        "    printf(\"%d\\n\", *p);",
+        "    p = NULL;",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 7,
+      "gt": "Sau free(p), ô nhớ không còn của chương trình. Đọc *p sau đó là hành vi không xác định.",
+      "fixedLine": "    printf(\"%d\\n\", 7);",
+      "proof": "gcc báo đúng dòng 7"
+    },
+    {
+      "id": "g2-06",
+      "name": "Con trỏ NULL bị dùng",
+      "topic": "Con trỏ",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int x = 0;",
+        "    int *p = NULL;",
+        "    *p = 1;",
+        "    printf(\"%d\\n\", x);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "p là NULL nên *p ghi vào địa chỉ 0, chương trình bị lỗi truy cập bộ nhớ.",
+      "fixedLine": "    int *p = &x;",
+      "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-07",
+      "name": "Thiếu & trong scanf",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int x;",
+        "    scanf(\"%d\", x);",
+        "    printf(\"%d\\n\", x);",
+        "    printf(\"bước 1\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "scanf cần địa chỉ của biến để ghi giá trị vào, nên phải có &x.",
+      "fixedLine": "    scanf(\"%d\", &x);",
+      "proof": "gcc báo đúng dòng 4"
+    },
+    {
+      "id": "g2-08",
+      "name": "Dấu = thay cho ==",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int x = 3;",
+        "    printf(\"bắt đầu\\n\");",
+        "    if (x = 5) {",
+        "        printf(\"năm\\n\");",
+        "    }",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "= gán giá trị 5 cho x, còn == so sánh. Điều kiện luôn đúng và x bị đổi.",
+      "fixedLine": "    if (x == 5) {",
+      "proof": "gcc báo đúng dòng 5"
+    },
+    {
+      "id": "g2-09",
+      "name": "Chia cho 0",
+      "topic": "Toán tử",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int a = 10;",
+        "    int b = 0;",
+        "    printf(\"%d\\n\", a / b);",
+        "    printf(\"bước 1\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "Chia số nguyên cho 0 là lỗi nghiêm trọng, chương trình có thể dừng ngay.",
+      "fixedLine": "    int b = 2;",
+      "proof": "chương trình lỗi khi chạy (chạy lỗi, mã thoát 3221225620)"
+    },
+    {
+      "id": "g2-10",
+      "name": "Sai kiểu trong printf",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int x = 5;",
+        "    printf(\"%s\\n\", x);",
+        "    printf(\"bước 1\\n\");",
+        "    printf(\"bước 2\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "%d dùng cho số nguyên, còn %s dùng cho chuỗi. Đối số phải khớp kiểu.",
+      "fixedLine": "    printf(\"%d\\n\", x);",
+      "proof": "gcc báo đúng dòng 4"
+    },
+    {
+      "id": "g2-11",
+      "name": "Biến chưa gán giá trị",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int n = 3;",
+        "    int x;",
+        "    printf(\"chạy\\n\");",
+        "    printf(\"%d\\n\", x + n);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "Biến cục bộ không được khởi tạo có giá trị rác. Đọc nó là sai.",
+      "fixedLine": "    int x = 0;",
+      "proof": "gcc báo lỗi (dòng 6), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-12",
+      "name": "Trả về địa chỉ biến cục bộ",
+      "topic": "Con trỏ",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "int *lay(void) {",
+        "    int x = 1;",
+        "    return &x;",
+        "}",
+        "int main(void) {",
+        "    int *p = lay();",
+        "    printf(\"%d\\n\", *p);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 3,
+      "gt": "x nằm trên stack và bị hủy khi hàm kết thúc. Trả về &x cho thấy vùng nhớ đã không còn hợp lệ.",
+      "fixedLine": "    static int x = 1;",
+      "proof": "gcc báo lỗi (dòng 4,8), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-13",
+      "name": "Tràn mảng khi ghi",
+      "topic": "Mảng",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int a[3] = {1, 2, 3};",
+        "    int i;",
+        "    a[3] = 9;",
+        "    for (i = 0; i < 3; i++) printf(\"%d \", a[i]);",
+        "    printf(\"\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "Mảng a có 3 phần tử, chỉ số hợp lệ từ 0 đến 2. a[3] nằm ngoài mảng.",
+      "fixedLine": "    a[2] = 9;",
+      "proof": "gcc báo đúng dòng 5"
+    },
+    {
+      "id": "g2-14",
+      "name": "Thiếu dấu ngoặc đơn trong điều kiện",
+      "topic": "Toán tử",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int a = 1, b = 0, c = 1;",
+        "    printf(\"kiểm tra\\n\");",
+        "    if (a > 0 && b > 0 || c > 0) {",
+        "        printf(\"đúng\\n\");",
+        "    }",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "Nếu không có ngoặc, && được tính trước || và kết quả khác với ý định.",
+      "fixedLine": "    if (a > 0 && (b > 0 || c > 0)) {",
+      "proof": "gcc báo đúng dòng 5"
+    },
+    {
+      "id": "g2-15",
+      "name": "Hàm không trả về giá trị",
+      "topic": "Hàm",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int cong(int a, int b) {",
+        "    int s = a + b;",
+        "    printf(\"tính xong\\n\");",
+        "    s = s * 1;",
+        "    ;",
+        "}",
+        "int main(void) {",
+        "    printf(\"%d\\n\", cong(2, 3));",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 6,
+      "gt": "Hàm khai báo kiểu int nhưng không có return: giá trị trả về không xác định.",
+      "fixedLine": "    return a + b;",
+      "proof": "gcc báo lỗi (dòng 7), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-16",
+      "name": "Thiếu & khi truyền cho hàm đổi giá trị",
+      "topic": "Con trỏ",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "void swap(int *a, int *b) {",
+        "    int t = *a;",
+        "    *a = *b;",
+        "    *b = t;",
+        "}",
+        "int main(void) {",
+        "    int x = 1, y = 2;",
+        "    swap(x, y);",
+        "    printf(\"%d %d\\n\", x, y);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 9,
+      "gt": "Hàm swap nhận con trỏ, nên phải truyền địa chỉ &x, &y. Truyền x, y là sai kiểu.",
+      "fixedLine": "    swap(&x, &y);",
+      "proof": "gcc báo đúng dòng 9"
+    },
+    {
+      "id": "g2-17",
+      "name": "Nối chuỗi vượt bộ nhớ",
+      "topic": "Chuỗi ký tự",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <string.h>",
+        "int main(void) {",
+        "    char s[4] = \"ab\";",
+        "    strcat(s, \"cde\");",
+        "    printf(\"%s\\n\", s);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "s chỉ có 4 byte, \"ab\" và \"cde\" cần 6 byte cùng \\0. strcat ghi tràn ra ngoài s.",
+      "fixedLine": "    char s[10] = \"ab\";",
+      "proof": "gcc báo lỗi (dòng 5), bản sửa hết cảnh báo"
+    },
+    {
+      "id": "g2-18",
+      "name": "Giải phóng mảng trên stack",
+      "topic": "Cấp phát động",
+      "level": 2,
+      "lines": [
+        "#include <stdio.h>",
+        "#include <stdlib.h>",
+        "int main(void) {",
+        "    int arr[3] = {1, 2, 3};",
+        "    int *a = arr;",
+        "    free(a);",
+        "    printf(\"xong\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 6,
+      "gt": "free chỉ dùng cho vùng nhớ lấy từ malloc. Mảng cục bộ nằm trên stack không được free.",
+      "fixedLine": "    printf(\"%d\\n\", a[0]);",
+      "proof": "gcc báo đúng dòng 6"
+    },
+    {
+      "id": "g2-19",
+      "name": "Sai định dạng số thực",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    double x = 3.5;",
+        "    printf(\"trước\\n\");",
+        "    printf(\"%d\\n\", x);",
+        "    printf(\"bước 1\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "%d đọc đối số như số nguyên, còn x là số thực. Dùng %f hoặc %.2f.",
+      "fixedLine": "    printf(\"%.2f\\n\", x);",
+      "proof": "gcc báo đúng dòng 5"
+    },
+    {
+      "id": "g2-20",
+      "name": "Vòng lặp chạy quá một lượt",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int i, tong = 0;",
+        "    printf(\"bắt đầu\\n\");",
+        "    for (i = 0; i <= 3; i++) {",
+        "        tong += i;",
+        "    }",
+        "    printf(\"%d\\n\", tong);",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "i < 3 cho ba lượt. Điều kiện i <= 3 cho bốn lượt và tổng bị sai.",
+      "fixedLine": "    for (i = 0; i < 3; i++) {",
+      "proof": "đầu ra khác bản đã sửa"
+    },
+    {
+      "id": "g2-21",
+      "name": "Chuỗi dài hơn mảng",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    printf(\"bắt đầu\\n\");",
+        "    char code[4] = \"ABCD\";",
+        "    printf(\"%s\\n\", code);",
+        "    printf(\"bước 1\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 4,
+      "gt": "\"ABCD\" cần 5 byte gồm cả '\\0'. Mảng code[4] không đủ chỗ cho ký tự kết thúc.",
+      "fixedLine": "    char code[5] = \"ABCD\";",
+      "proof": "đầu ra khác bản đã sửa"
+    },
+    {
+      "id": "g2-22",
+      "name": "In con trỏ bằng %d",
+      "topic": "Con trỏ",
+      "level": 1,
+      "lines": [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int arr[3] = {4, 5, 6};",
+        "    printf(\"bắt đầu\\n\");",
+        "    printf(\"%d\\n\", arr);",
+        "    printf(\"bước 1\\n\");",
+        "    return 0;",
+        "}"
+      ],
+      "bugLine": 5,
+      "gt": "%d in số nguyên; truyền tên mảng (địa chỉ) là sai kiểu. Muốn in giá trị phải truy cập phần tử.",
+      "fixedLine": "    printf(\"%d\\n\", arr[0]);",
+      "proof": "gcc báo đúng dòng 5"
+    }
+  ]
+}

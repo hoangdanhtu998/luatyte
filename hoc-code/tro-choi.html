@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trò chơi · Học code</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    /* Giao diện trò chơi: chữ code ≥ 14px, nút ≥ 44px, không cuộn ngang ở 390px (chỉ khối code cuộn trong nó). */
+    .game-wrap { max-width: 720px; margin: 0 auto; padding: 16px 14px 40px; }
+    .game-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .game-top h1 { font-size: 1.35rem; margin: 0; flex: 1 1 auto; }
+    .progress { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 10px 0 8px; font-size: 14px; color: var(--muted); }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--line); display: inline-block; }
+    .dot.done { background: #9aa3b2; }
+    .dot.on { background: var(--amber); }
+    .dot.ok { background: #2E8B57; }
+    .dot.bad { background: var(--brick); }
+    .mascot-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+    .mascot-row img { width: 64px; height: 64px; border-radius: 50%; flex: 0 0 64px; background: var(--paper); object-fit: contain; }
+    .mascot-row img.shake { animation: shake .4s; }
+    .mascot-row img.nod { animation: nod .4s; }
+    .bubble { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; font-size: 15px; line-height: 1.5; flex: 1 1 auto; min-width: 0; }
+    .timer { font-weight: 700; font-size: 15px; color: var(--ink); }
+    .timer.low { color: var(--brick); }
+    .code-box { display: flex; background: #14181F; border-radius: 14px; padding: 0; overflow: hidden; margin: 8px 0; max-width: 100%; }
+    .gutter { flex: 0 0 auto; padding: 14px 8px 14px 12px; color: #6f7a8f; font: 14px/1.6 Consolas, "Courier New", monospace; text-align: right; user-select: none; border-right: 1px solid #2A3346; }
+    .code-box pre { margin: 0; padding: 14px; overflow-x: auto; flex: 1 1 auto; min-width: 0; color: var(--code-ink); font: 14px/1.6 Consolas, "Courier New", monospace; white-space: pre; }
+    .code-lines { flex: 1 1 auto; min-width: 0; overflow-x: auto; }
+    .ln { display: flex; width: 100%; min-height: 44px; align-items: center; gap: 8px; background: transparent; border: 0; border-bottom: 1px solid #242c3d; color: var(--code-ink); font: 14px/1.5 Consolas, "Courier New", monospace; text-align: left; padding: 6px 12px; cursor: pointer; white-space: pre; }
+    .ln:hover { background: #2A3346; }
+    .ln:focus-visible { outline: 3px solid var(--amber); outline-offset: -3px; }
+    .ln .num { color: #6f7a8f; min-width: 2ch; text-align: right; user-select: none; }
+    .ln .mark { font-size: 20px; min-width: 24px; text-align: center; }
+    .ln.ok { background: #1f3a2c; }
+    .ln.bad { background: #4a2219; }
+    .ln.reveal { background: #3b3320; }
+    .ln:disabled { cursor: default; }
+    .answers { display: grid; gap: 10px; margin: 10px 0; }
+    .answers button { min-height: 48px; padding: 12px; border-radius: 14px; border: 2px solid var(--line); background: var(--paper); font: 600 15px/1.4 "Nunito", system-ui, sans-serif; color: var(--ink); text-align: left; cursor: pointer; display: flex; gap: 10px; align-items: center; }
+    .answers button:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+    .answers button.ok { border-color: #2E8B57; background: #e6f4ec; }
+    .answers button.bad { border-color: var(--brick); background: #fbeee8; }
+    .answers button.reveal { border-color: #2E8B57; border-style: dashed; }
+    .answers button:disabled { cursor: default; }
+    .answers .mark { font-size: 24px; flex: 0 0 auto; }
+    .answers code { font: 15px Consolas, "Courier New", monospace; white-space: pre-wrap; word-break: break-word; }
+    .feedback { min-height: 46px; font-size: 15px; line-height: 1.5; margin: 6px 0; }
+    .scorebar { position: sticky; bottom: 0; background: var(--cream); border-top: 1px solid var(--line); padding: 10px 0; font-size: 15px; font-weight: 700; display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+    .btn-row .btn { min-height: 44px; }
+    .menu { display: grid; gap: 14px; margin-top: 16px; }
+    .menu .card { padding: 16px; }
+    .menu .card h2 { font-size: 1.1rem; margin: 0 0 6px; }
+    .menu .card p { margin: 0 0 10px; font-size: 15px; line-height: 1.5; }
+    .review li { margin: 0 0 10px; font-size: 15px; line-height: 1.5; }
+    .review code { font: 14px Consolas, "Courier New", monospace; white-space: pre-wrap; word-break: break-word; }
+    .hidden { display: none !important; }
+    .err { color: var(--brick); font-size: 15px; }
+    @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+    @keyframes nod { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    @media (prefers-reduced-motion: reduce) { .mascot-row img.shake, .mascot-row img.nod { animation: none; } }
+  </style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index-hoccode.html">Học code</a>
+  <nav>
+    <a href="index-hoccode.html">Bài học</a>
+    <a href="setup.html">Chuẩn bị môi trường</a>
+  </nav>
+</header>
+
+<main class="game-wrap">
+  <div class="game-top">
+    <h1 id="title">Trò chơi</h1>
+  </div>
+
+  <!-- Màn chọn trò chơi -->
+  <section id="menu" class="menu">
+    <p class="lead">Chơi ngắn, mỗi ván 10 câu lấy ngẫu nhiên. Không cần máy chủ: bấm là chơi.</p>
+    <article class="card">
+      <h2>1. Đoán kết quả</h2>
+      <p>Xem đoạn code C ngắn rồi chọn kết quả in ra đúng. Mỗi câu có 8 giây.</p>
+      <button class="btn amber" id="start-doan" type="button">Chơi Đoán kết quả</button>
+    </article>
+    <article class="card">
+      <h2>2. Tìm lỗi</h2>
+      <p>Đoạn code có đúng một dòng sai. Chạm vào dòng đó. Mỗi câu có 12 giây.</p>
+      <button class="btn amber" id="start-loi" type="button">Chơi Tìm lỗi</button>
+    </article>
+  </section>
+
+  <!-- Màn chơi -->
+  <section id="play" class="hidden" aria-live="off">
+    <div class="progress" id="progress" aria-label="Tiến độ"></div>
+    <div class="mascot-row">
+      <img id="mascot" src="assets/mascot/m01-meo-chao.png" alt="Chú mèo" width="64" height="64">
+      <div class="bubble" id="bubble">Sẵn sàng chưa?</div>
+    </div>
+    <div class="timer" id="timer" aria-live="off"></div>
+    <div class="meta" id="meta" style="font-size:14px;color:var(--muted);margin-top:6px"></div>
+
+    <div id="code-area"></div>
+    <div id="answers" class="answers"></div>
+    <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+    <div class="btn-row">
+      <button class="btn ghost hidden" id="next" type="button">Câu tiếp →</button>
+      <button class="btn ghost" id="quit" type="button">Thoát ván</button>
+    </div>
+
+    <div class="scorebar" id="scorebar"></div>
+  </section>
+
+  <!-- Màn kết thúc -->
+  <section id="end" class="hidden">
+    <h2 id="end-title" style="margin-top:8px"></h2>
+    <p id="end-streak" style="font-size:15px"></p>
+    <ol class="review" id="review"></ol>
+    <div class="btn-row">
+      <button class="btn amber" id="again" type="button">Chơi lại</button>
+      <button class="btn ghost" id="to-menu" type="button">Chọn trò chơi khác</button>
+      <a class="btn ghost" href="index-hoccode.html">← Trang học code</a>
+    </div>
+  </section>
+
+  <p id="load-error" class="err hidden" role="alert"></p>
+</main>
+
+<script src="assets/tro-choi.js"></script>
+</body>
+</html>

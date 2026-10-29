@@ -1,0 +1,668 @@
+{
+  "game": "doan-ket-qua",
+  "title": "Đoán kết quả",
+  "questions": [
+    {
+      "id": "g1-01",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 5, b = 3;\n    printf(\"%d\\n\", a + b);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "2",
+          "right": false
+        },
+        {
+          "text": "15",
+          "right": false
+        },
+        {
+          "text": "9",
+          "right": false
+        },
+        {
+          "text": "8",
+          "right": true
+        }
+      ],
+      "gt": "5 + 3 = 8.",
+      "answer": "8"
+    },
+    {
+      "id": "g1-02",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 10;\n    x++;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "12",
+          "right": false
+        },
+        {
+          "text": "11",
+          "right": true
+        },
+        {
+          "text": "10",
+          "right": false
+        },
+        {
+          "text": "9",
+          "right": false
+        }
+      ],
+      "gt": "x++ tăng x lên 1 đơn vị.",
+      "answer": "11"
+    },
+    {
+      "id": "g1-03",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int n = 7;\n    n /= 2;\n    printf(\"%d\\n\", n);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "14",
+          "right": false
+        },
+        {
+          "text": "3",
+          "right": true
+        },
+        {
+          "text": "4",
+          "right": false
+        },
+        {
+          "text": "1",
+          "right": false
+        }
+      ],
+      "gt": "Chia số nguyên bỏ phần lẻ: 7 / 2 bằng 3.",
+      "answer": "3"
+    },
+    {
+      "id": "g1-04",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    char c = 'A';\n    printf(\"%d\\n\", c);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "66",
+          "right": false
+        },
+        {
+          "text": "A",
+          "right": false
+        },
+        {
+          "text": "65",
+          "right": true
+        }
+      ],
+      "gt": "%d in mã số của ký tự, 'A' là 65.",
+      "answer": "65"
+    },
+    {
+      "id": "g1-05",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 7, b = 2;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "4 0",
+          "right": false
+        },
+        {
+          "text": "1 3",
+          "right": false
+        },
+        {
+          "text": "3 1",
+          "right": true
+        },
+        {
+          "text": "14 1",
+          "right": false
+        }
+      ],
+      "gt": "7 / 2 = 3 dư 1.",
+      "answer": "3 1"
+    },
+    {
+      "id": "g1-06",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int i, s = 0;\n    for (i = 1; i <= 4; i++) s += i;\n    printf(\"%d\\n\", s);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "6",
+          "right": false
+        },
+        {
+          "text": "10",
+          "right": true
+        },
+        {
+          "text": "11",
+          "right": false
+        },
+        {
+          "text": "4",
+          "right": false
+        }
+      ],
+      "gt": "Vòng lặp cộng 1 + 2 + 3 + 4.",
+      "answer": "10"
+    },
+    {
+      "id": "g1-07",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int n = 3;\n    while (n > 0) {\n        printf(\"%d \", n);\n        n--;\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        {
+          "text": "3 2 1",
+          "right": true
+        },
+        {
+          "text": "3 2",
+          "right": false
+        },
+        {
+          "text": "4 3 2 1",
+          "right": false
+        },
+        {
+          "text": "2 1",
+          "right": false
+        }
+      ],
+      "gt": "In 3, 2, 1 rồi dừng khi n không còn lớn hơn 0.",
+      "answer": "3 2 1"
+    },
+    {
+      "id": "g1-08",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 4;\n    if (x > 5) printf(\"A\\n\");\n    else if (x > 2) printf(\"B\\n\");\n    else printf(\"C\\n\");\n    return 0;\n}",
+      "options": [
+        {
+          "text": "B",
+          "right": true
+        },
+        {
+          "text": "C",
+          "right": false
+        },
+        {
+          "text": "A",
+          "right": false
+        }
+      ],
+      "gt": "x = 4 không lớn hơn 5, nhưng lớn hơn 2.",
+      "answer": "B"
+    },
+    {
+      "id": "g1-09",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 10;\n    if (x > 5) printf(\"A\\n\");\n    if (x > 8) printf(\"B\\n\");\n    printf(\"C\\n\");\n    return 0;\n}",
+      "options": [
+        {
+          "text": "B\nC",
+          "right": false
+        },
+        {
+          "text": "A\nB\nC",
+          "right": true
+        },
+        {
+          "text": "A\nC",
+          "right": false
+        }
+      ],
+      "gt": "if không có else: cả hai điều kiện đều được kiểm tra.",
+      "answer": "A\nB\nC"
+    },
+    {
+      "id": "g1-10",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int i, total = 0;\n    for (i = 0; i < 3; i++) {\n        if (i == 1) continue;\n        total += i;\n    }\n    printf(\"%d\\n\", total);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "3",
+          "right": false
+        },
+        {
+          "text": "2",
+          "right": true
+        },
+        {
+          "text": "0",
+          "right": false
+        },
+        {
+          "text": "5",
+          "right": false
+        }
+      ],
+      "gt": "continue bỏ qua lượt i = 1, nên chỉ cộng 0 và 2.",
+      "answer": "2"
+    },
+    {
+      "id": "g1-11",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "code": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char s[] = \"hello\";\n    printf(\"%zu\\n\", strlen(s));\n    return 0;\n}",
+      "options": [
+        {
+          "text": "6",
+          "right": false
+        },
+        {
+          "text": "4",
+          "right": false
+        },
+        {
+          "text": "5",
+          "right": true
+        }
+      ],
+      "gt": "strlen đếm 5 ký tự, không tính '\\0'.",
+      "answer": "5"
+    },
+    {
+      "id": "g1-12",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    char s[] = \"Hi\";\n    printf(\"%c%c\\n\", s[0], s[1]);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "Hi",
+          "right": true
+        },
+        {
+          "text": "H\u0000",
+          "right": false
+        },
+        {
+          "text": "ii",
+          "right": false
+        },
+        {
+          "text": "HH",
+          "right": false
+        }
+      ],
+      "gt": "s[0] là 'H', s[1] là 'i'.",
+      "answer": "Hi"
+    },
+    {
+      "id": "g1-13",
+      "topic": "Mảng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[5] = {0};\n    a[2] = 9;\n    printf(\"%d\\n\", a[2] + a[4]);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "9",
+          "right": true
+        },
+        {
+          "text": "0",
+          "right": false
+        },
+        {
+          "text": "-1587544647",
+          "right": false
+        },
+        {
+          "text": "18",
+          "right": false
+        }
+      ],
+      "gt": "Các ô chưa gán được khởi tạo bằng 0, a[4] = 0.",
+      "answer": "9"
+    },
+    {
+      "id": "g1-14",
+      "topic": "Mảng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int arr[] = {1, 2, 3};\n    printf(\"%d\\n\", arr[1]);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "3",
+          "right": false
+        },
+        {
+          "text": "1",
+          "right": false
+        },
+        {
+          "text": "2",
+          "right": true
+        }
+      ],
+      "gt": "Chỉ số bắt đầu từ 0: arr[1] là phần tử thứ hai.",
+      "answer": "2"
+    },
+    {
+      "id": "g1-15",
+      "topic": "Con trỏ",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 5;\n    int *p = &x;\n    *p = 8;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "8",
+          "right": true
+        },
+        {
+          "text": "9",
+          "right": false
+        },
+        {
+          "text": "7",
+          "right": false
+        },
+        {
+          "text": "80",
+          "right": false
+        }
+      ],
+      "gt": "*p ghi vào ô mà p trỏ tới, chính là x.",
+      "answer": "8"
+    },
+    {
+      "id": "g1-16",
+      "topic": "Con trỏ",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 1, b = 2;\n    int *p = &a, *q = &b;\n    int *t = p;\n    p = q;\n    q = t;\n    printf(\"%d %d\\n\", *p, *q);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "3 1",
+          "right": false
+        },
+        {
+          "text": "2 1",
+          "right": true
+        },
+        {
+          "text": "2 0",
+          "right": false
+        },
+        {
+          "text": "2 2",
+          "right": false
+        }
+      ],
+      "gt": "Đổi con trỏ p và q cho nhau, không đổi giá trị của a, b.",
+      "answer": "2 1"
+    },
+    {
+      "id": "g1-17",
+      "topic": "Hàm",
+      "level": 1,
+      "code": "#include <stdio.h>\nvoid inc(int x) {\n    x++;\n}\nint main(void) {\n    int v = 3;\n    inc(v);\n    printf(\"%d\\n\", v);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "4",
+          "right": false
+        },
+        {
+          "text": "3",
+          "right": true
+        },
+        {
+          "text": "2",
+          "right": false
+        }
+      ],
+      "gt": "Truyền giá trị: hàm nhận bản sao, v không đổi.",
+      "answer": "3"
+    },
+    {
+      "id": "g1-18",
+      "topic": "Hàm",
+      "level": 1,
+      "code": "#include <stdio.h>\nint add(int a, int b) {\n    return a + b;\n}\nint main(void) {\n    printf(\"%d\\n\", add(2, 5) * 2);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "16",
+          "right": false
+        },
+        {
+          "text": "14",
+          "right": true
+        },
+        {
+          "text": "9",
+          "right": false
+        },
+        {
+          "text": "12",
+          "right": false
+        }
+      ],
+      "gt": "add(2, 5) = 7, nhân 2 bằng 14.",
+      "answer": "14"
+    },
+    {
+      "id": "g1-19",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 5;\n    int y = x++ * 2;\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "5 8",
+          "right": false
+        },
+        {
+          "text": "6 10",
+          "right": true
+        },
+        {
+          "text": "7 12",
+          "right": false
+        },
+        {
+          "text": "6 12",
+          "right": false
+        }
+      ],
+      "gt": "x++ dùng giá trị 5 rồi mới tăng x lên 6.",
+      "answer": "6 10"
+    },
+    {
+      "id": "g1-20",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 7;\n    x = x * 2 + 1;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "22",
+          "right": false
+        },
+        {
+          "text": "15",
+          "right": true
+        },
+        {
+          "text": "13",
+          "right": false
+        },
+        {
+          "text": "17",
+          "right": false
+        }
+      ],
+      "gt": "Nhân trước, cộng sau: 7 * 2 + 1 = 15.",
+      "answer": "15"
+    },
+    {
+      "id": "g1-21",
+      "topic": "Toán tử",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 3;\n    printf(\"%d %d\\n\", x > 2 && x < 5, x < 3 || x > 9);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "0 0",
+          "right": false
+        },
+        {
+          "text": "0 1",
+          "right": false
+        },
+        {
+          "text": "1 1",
+          "right": false
+        },
+        {
+          "text": "1 0",
+          "right": true
+        }
+      ],
+      "gt": "Biểu thức logic cho 1 (đúng) hoặc 0 (sai). x = 3 nên x > 2 && x < 5 đúng, còn x < 3 || x > 9 sai.",
+      "answer": "1 0"
+    },
+    {
+      "id": "g1-22",
+      "topic": "Điều khiển luồng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int dem = 0, i = 0;\n    do {\n        dem++;\n        i++;\n    } while (i < 0);\n    printf(\"%d\\n\", dem);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "1",
+          "right": true
+        },
+        {
+          "text": "-1",
+          "right": false
+        },
+        {
+          "text": "2",
+          "right": false
+        }
+      ],
+      "gt": "do-while luôn chạy thân vòng lặp ít nhất một lần.",
+      "answer": "1"
+    },
+    {
+      "id": "g1-23",
+      "topic": "Mảng",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[3][2] = {{1, 2}, {3, 4}, {5, 6}};\n    printf(\"%d\\n\", a[1][0]);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "3",
+          "right": true
+        },
+        {
+          "text": "4",
+          "right": false
+        },
+        {
+          "text": "5",
+          "right": false
+        },
+        {
+          "text": "2",
+          "right": false
+        }
+      ],
+      "gt": "Hàng thứ hai (chỉ số 1), cột đầu (chỉ số 0) là 3.",
+      "answer": "3"
+    },
+    {
+      "id": "g1-24",
+      "topic": "Biến và kiểu",
+      "level": 1,
+      "code": "#include <stdio.h>\nint main(void) {\n    unsigned char u = 255;\n    u++;\n    printf(\"%d\\n\", u);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "255",
+          "right": false
+        },
+        {
+          "text": "0",
+          "right": true
+        },
+        {
+          "text": "1",
+          "right": false
+        }
+      ],
+      "gt": "unsigned char chỉ chứa 0 đến 255, cộng 1 từ 255 quay về 0.",
+      "answer": "0"
+    },
+    {
+      "id": "g1-25",
+      "topic": "Cấp phát động",
+      "level": 2,
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int *p = malloc(sizeof(int));\n    *p = 5;\n    printf(\"%d\\n\", *p);\n    free(p);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "4",
+          "right": false
+        },
+        {
+          "text": "6",
+          "right": false
+        },
+        {
+          "text": "5",
+          "right": true
+        }
+      ],
+      "gt": "malloc cấp một ô nhớ trên heap, ghi 5 rồi đọc lại.",
+      "answer": "5"
+    },
+    {
+      "id": "g1-26",
+      "topic": "Chuỗi ký tự",
+      "level": 1,
+      "code": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char *name = \"Lan\";\n    printf(\"%s %zu\\n\", name, strlen(name));\n    return 0;\n}",
+      "options": [
+        {
+          "text": "Lan 4",
+          "right": false
+        },
+        {
+          "text": "Lan 3",
+          "right": true
+        },
+        {
+          "text": "Lan 2",
+          "right": false
+        }
+      ],
+      "gt": "\"Lan\" có 3 ký tự.",
+      "answer": "Lan 3"
+    },
+    {
+      "id": "g1-27",
+      "topic": "Con trỏ",
+      "level": 2,
+      "code": "#include <stdio.h>\nvoid swap(int *a, int *b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\nint main(void) {\n    int x = 1, y = 9;\n    swap(&x, &y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}",
+      "options": [
+        {
+          "text": "1 9",
+          "right": false
+        },
+        {
+          "text": "9 0",
+          "right": false
+        },
+        {
+          "text": "9 1",
+          "right": true
+        },
+        {
+          "text": "9 2",
+          "right": false
+        }
+      ],
+      "gt": "swap đổi giá trị hai biến qua địa chỉ.",
+      "answer": "9 1"
+    }
+  ]
+}
