@@ -216,10 +216,10 @@
         },
         {
           "tieu_de": "Cấp cứu và trái tuyến",
-          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào vẫn được hưởng 100%. Khám ngoại trú tại cơ sở cấp ban đầu ở bất kỳ tỉnh nào và điều trị nội trú tại cơ sở cấp cơ bản được hưởng như đúng tuyến. Theo Luật BHYT 51/2024/QH15, điều trị nội trú trái tuyến tại cơ sở cấp chuyên sâu được hưởng 100% mức hưởng; khám ngoại trú trái tuyến được hưởng 50% mức hưởng theo lộ trình. Khám không đúng tuyến hoặc không đúng quy định chuyển tuyến thì quỹ chỉ thanh toán theo một tỷ lệ của mức hưởng.",
-          "vi_du": "Một người bị tai nạn được đưa vào cơ sở chuyên sâu không đúng tuyến: hưởng 100% vì là cấp cứu. Cùng người đó tự đi khám ngoại trú ở cơ sở chuyên sâu, không cấp cứu: không được hưởng như đúng tuyến.",
-          "hay_nham": "Nhầm cấp cứu với trái tuyến. Cấp cứu luôn được 100%, còn trái tuyến là chuyện của ngoại trú và nội trú không cấp cứu.",
-          "nguon": "laws.json, bhyt P3, P6, P8 (Điều 22)",
+          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào được hưởng 100%. Khám trái tuyến (không cấp cứu): nội trú tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh). Khám ngoại trú tại cơ sở cấp ban đầu được hưởng như đúng tuyến; nội trú tại cơ sở cấp cơ bản cũng được hưởng 100% mức hưởng.",
+          "vi_du": "Một người tự đến bệnh viện tuyến trung ương để điều trị nội trú, không thuộc ngoại lệ: quỹ thanh toán 40% mức hưởng. Nếu vào cấp cứu, hưởng 100%.",
+          "hay_nham": "Nghĩ mọi trường hợp nội trú trái tuyến đều hưởng 100%. Chỉ cấp cứu và các ngoại lệ được quy định mới hưởng 100%; nội trú chuyên sâu thông thường là 40%.",
+          "nguon": "Điều 22 khoản 4 Luật BHYT 51/2024/QH15; Điều 22 khoản 1 và khoản 5 về mức hưởng/cấp cứu.",
           "verify": false
         },
         {
