@@ -265,9 +265,11 @@ const HIS = await fetch("data/quiz_his.json").then(r => r.ok ? r.json() : []).ca
 const NENTANG = await fetch("data/quiz_nentang.json").then(r => r.ok ? r.json() : []).catch(() => []);
 const BHYT = await fetch("data/quiz_bhyt.json").then(r => r.ok ? r.json() : []).catch(() => []);
 const ROLES = await fetch("data/lo-trinh-vai-tro.json").then(r => r.ok ? r.json() : null).catch(() => null);
+const LYT_Q = await fetch("data/quiz_lythuyet.json").then(r => r.ok ? r.json() : []).catch(() => []);
 const QUIZ = [...QUIZ0, ...NENTANG];
 const ROLE_BANK = [...QUIZ, ...HIS, ...BHYT];
 const ROLE_BY_TEXT = new Map(ROLE_BANK.map(q => [q.q, q]));
+LYT_Q.forEach(q => { if (!ROLE_BY_TEXT.has(q.q)) ROLE_BY_TEXT.set(q.q, q); }); // chỉ để tra cứu; vào đề theo chương khi có khóa chương trong lo-trinh-vai-tro.json
 // Câu hỏi về số hiệu/ngày văn bản, cấu trúc hoặc văn bản thay thế: tách khỏi phần hiểu nội dung.
 const META_QS = new Set([
   "Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025) gồm bao nhiêu phụ lục khung giá?",
@@ -1358,7 +1360,7 @@ function renderProgress(){
       }).join("") : `<p class="intro" style="margin:6px 0 0">Chưa có dữ liệu theo chủ đề. Làm vài câu trắc nghiệm hoặc một đề thi thử.</p>`}
     </div>
     <div class="card"><span class="label">Lịch sử thi thử</span>
-      ${exams.length ? `<table class="prog-table"><thead><tr><th>Ngày</th><th>Đề</th><th>Kết quả</th><th>Thời gian</th></tr></thead><tbody>${exams.slice(0, 10).map(x => `<tr><td>${esc(x.d)}</td><td>${esc((EX_SETS[x.set] || x.set) + (x.topic ? " · " + x.topic : ""))}</td><td><b>${x.pct}%</b> (${x.r}/${x.n})</td><td>${Math.round((x.used || 0) / 60)} phút</td></tr>`).join("")}</tbody></table>` : `<p class="intro" style="margin:6px 0 0">Chưa thi thử lần nào. Vào tab <b>Thi thử</b> để làm một đề.</p>`}
+      ${exams.length ? `<table class="prog-table"><thead><tr><th>Ngày</th><th>Đề</th><th>Kết quả</th><th>Thời gian</th></tr></thead><tbody>${exams.slice(0, 10).map(examView).map(v => `<tr><td>${esc(v.d)}</td><td>${esc(v.label)}</td><td><b>${v.pct}%</b> (${v.r}/${v.n})</td><td>${v.minutes} phút</td></tr>`).join("")}</tbody></table>` : `<p class="intro" style="margin:6px 0 0">Chưa thi thử lần nào. Vào tab <b>Thi thử</b> để làm một đề.</p>`}
     </div>`;
 
   const gi = $("#goal-input"), gMinus = $("#goal-minus"), gPlus = $("#goal-plus");
@@ -1585,7 +1587,7 @@ function buildExamTopics(){
   $("#ex-topic").innerHTML = html || `<option value="">Chưa có chuyên đề</option>`;
 }
 /* ---- Thi thử theo chương / vai trò (đề luyện tự tạo, không phải cấu trúc đề chính thức) ---- */
-const chapterPool = () => ROLE_BANK.filter(q => !q.verify && !isMetaQ(q));
+const chapterPool = () => EXB.buildChapterPool({ banks: ROLE_BANK, extra: LYT_Q, chapterMap: ROLES.cau_hoi, isExcluded: isMetaQ });
 const examChapterCount = cid => roleChapterQuestions(cid).filter(q => !isMetaQ(q)).length;
 const examRoleChapters = () => {
   const role = $("#ex-role").value;
@@ -1782,9 +1784,7 @@ function finishExam(auto){
 }
 /* Lịch sử thi: giữ tới EXAM_HISTORY_MAX lượt nhưng không vượt giới hạn dung lượng mỗi khóa khi đồng bộ. */
 function saveExamHistory(list){
-  let h = list.slice(0, EXAM_HISTORY_MAX);
-  while (h.length > 1 && JSON.stringify(h).length > EXAM_HISTORY_BYTES) h = h.slice(0, -1);
-  store.set("exams", h);
+  store.set("exams", EXB ? EXB.trimExamHistory(list, EXAM_HISTORY_MAX, EXAM_HISTORY_BYTES) : list.slice(0, EXAM_HISTORY_MAX));
 }
 function examChapterResultHtml(scores, cfg){
   const name = cid => (ROLES && ROLES.chuong[cid] && ROLES.chuong[cid].ten) || cid;
@@ -1797,11 +1797,16 @@ function examChapterResultHtml(scores, cfg){
   const miss = cfg && cfg.shortfall > 0 ? `<p class="meta" style="margin:8px 0 0">Đề chỉ có ${cfg.requested - cfg.shortfall}/${cfg.requested} câu vì các chương đã chọn chưa đủ câu hỏi.</p>` : "";
   return `<div class="card"><span class="label">Điểm theo chương</span><div style="display:grid;gap:8px;margin-top:8px">${rows}</div>${miss}${weakHtml}</div>`;
 }
+/* Một dòng lịch sử thi, chịu được bản ghi cũ thiếu trường (không có topic/sbd/byCh). */
+function examView(x){
+  return EXB ? EXB.examEntryView(x, EX_SETS)
+    : { d: String(x && x.d || ""), label: String(EX_SETS[x && x.set] || (x && x.set) || "Thi thử"), n: +(x && x.n) || 0, r: +(x && x.r) || 0, pct: +(x && x.pct) || 0, minutes: Math.round(((x && x.used) || 0) / 60) };
+}
 function renderExamHistory(){
   const all = store.get("exams", []);
   const h = all.slice(0, EXAM_HISTORY_SHOW);
   $("#ex-history").innerHTML = h.length ? `<div class="card"><span class="label">Lần thi gần đây${all.length > h.length ? ` (${h.length}/${all.length})` : ""}</span>
-    ${h.map(x => `<div class="meta" style="display:flex;justify-content:space-between;gap:12px;padding:3px 0"><span>${x.d} · ${esc((EX_SETS[x.set]||x.set) + (x.topic ? " · " + x.topic : ""))} · ${x.n} câu</span><span><b>${x.r}/${x.n}</b> (${x.pct}%) · ${Math.round(x.used/60)} phút</span></div>`).join("")}</div>` : "";
+    ${h.map(examView).map(v => `<div class="meta" style="display:flex;justify-content:space-between;gap:12px;padding:3px 0"><span>${esc(v.d)} · ${esc(v.label)} · ${v.n} câu</span><span><b>${v.r}/${v.n}</b> (${v.pct}%) · ${v.minutes} phút</span></div>`).join("")}</div>` : "";
 }
 $("#ex-start").onclick = startExam;
 restoreExamSession();

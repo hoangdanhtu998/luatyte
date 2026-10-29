@@ -159,3 +159,39 @@ export function restoreSession(raw, now, lookup) {
   const remaining = remainingSeconds(s.endAt, now);
   return { ok: true, items, answers, exi, cfg: s.cfg || {}, endAt: s.endAt, remaining, expired: remaining <= 0 };
 }
+
+/* Gộp ngân hàng câu cho đề theo chương.
+   banks: các bộ câu đã có trong lộ trình; extra: bộ câu bổ sung (ví dụ câu lý thuyết),
+   chỉ được vào đề khi có khóa chương rõ ràng trong chapterMap (không suy đoán chương). */
+export function buildChapterPool({ banks, extra = [], chapterMap, isExcluded = () => false }) {
+  const seen = new Set();
+  const out = [];
+  const add = q => {
+    if (!q || q.verify || seen.has(q.q) || isExcluded(q)) return;
+    seen.add(q.q);
+    out.push(q);
+  };
+  banks.forEach(add);
+  extra.forEach(q => { if (q && chapterMap[q.q]) add(q); });
+  return out;
+}
+
+/* Hiển thị một lượt thi trong lịch sử; chịu được bản ghi cũ của bản live (thiếu topic/sbd/d10/byCh). */
+export function examEntryView(x, setNames = {}) {
+  const e = x && typeof x === "object" ? x : {};
+  const n = Number.isFinite(Number(e.n)) ? Number(e.n) : 0;
+  const r = Number.isFinite(Number(e.r)) ? Number(e.r) : 0;
+  const rawPct = e.pct === undefined || e.pct === null ? NaN : Number(e.pct);
+  const pct = Number.isFinite(rawPct) ? rawPct : (n ? Math.round(r / n * 100) : 0);
+  const used = Number.isFinite(Number(e.used)) ? Number(e.used) : 0;
+  const label = (setNames[e.set] || e.set || "Thi thử") + (e.topic ? " · " + e.topic : "");
+  return { d: String(e.d || ""), label, n, r, pct, minutes: Math.round(used / 60) };
+}
+
+/* Giữ tối đa `max` lượt mới nhất (đầu danh sách) và không vượt `maxBytes` khi serialize. */
+export function trimExamHistory(list, max, maxBytes) {
+  if (!Array.isArray(list)) return [];
+  let h = list.slice(0, max);
+  while (h.length > 1 && JSON.stringify(h).length > maxBytes) h = h.slice(0, -1);
+  return h;
+}

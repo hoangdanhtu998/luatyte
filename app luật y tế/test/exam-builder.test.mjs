@@ -12,6 +12,9 @@ import {
   serializeSession,
   restoreSession,
   mulberry32,
+  buildChapterPool,
+  examEntryView,
+  trimExamHistory,
 } from "../js/exam-builder.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -206,3 +209,65 @@ for (const role of roadmap.vai_tro) {
     assert.equal(ex.items.length + ex.shortfall, 40);
   });
 }
+
+// ---- Gộp ngân hàng câu: câu lý thuyết chỉ vào đề khi có khóa chương rõ ràng (không đoán) ----
+test("buildChapterPool: câu bổ sung chỉ vào pool khi có khóa trong bản đồ chương", () => {
+  const base = [{ q: "A", o: [1, 2], a: 0 }, { q: "B", o: [1, 2], a: 0, verify: true }];
+  const extra = [{ q: "L1", o: [1, 2], a: 0 }, { q: "L2", o: [1, 2], a: 0 }, { q: "A", o: [1, 2], a: 0 }];
+  const map = { A: ["c1"], L1: ["c4"] };
+  const pool = buildChapterPool({ banks: base, extra, chapterMap: map, isExcluded: () => false });
+  assert.deepEqual(pool.map(q => q.q), ["A", "L1"]); // B (verify) bỏ, L2 không có khóa nên bỏ, A không nhân đôi
+});
+test("buildChapterPool: loại câu đặc thù theo isExcluded", () => {
+  const pool = buildChapterPool({ banks: [{ q: "A", o: [1, 2], a: 0 }, { q: "M", o: [1, 2], a: 0 }], extra: [], chapterMap: { A: ["c1"], M: ["c1"] }, isExcluded: q => q.q === "M" });
+  assert.deepEqual(pool.map(q => q.q), ["A"]);
+});
+test("dữ liệu thật: quiz_lythuyet hiện chưa có khóa chương nào nên không lọt vào đề (chưa đoán)", () => {
+  const lt = read("quiz_lythuyet.json");
+  const pool = buildChapterPool({ banks: [], extra: lt, chapterMap: roadmap.cau_hoi, isExcluded: () => false });
+  assert.equal(pool.length, lt.filter(q => roadmap.cau_hoi[q.q] && !q.verify).length);
+});
+test("dữ liệu thật: mọi khóa chương của quiz_lythuyet (nếu có sau này) trỏ tới chương tồn tại", () => {
+  const lt = new Set(read("quiz_lythuyet.json").map(q => q.q));
+  for (const [q, chs] of Object.entries(roadmap.cau_hoi)) if (lt.has(q)) for (const c of chs) assert.ok(roadmap.chuong[c], `${q} -> ${c}`);
+});
+test("dữ liệu thật: HIS có trường law ở mọi câu để nhóm chuyên đề theo luật", () => {
+  const his = read("quiz_his.json");
+  assert.ok(his.every(q => typeof q.law === "string" && q.law.length > 0));
+  assert.ok(new Set(his.map(q => q.law)).size >= 2);
+});
+
+// ---- Lịch sử thi: dữ liệu cũ (không có byCh/topic/sbd) vẫn hiển thị được ----
+const SETS = { chung: "Luật chung", chapter: "Theo chương" };
+test("examEntryView: bản ghi cũ của bản live (không topic/sbd/d10/byCh)", () => {
+  const v = examEntryView({ d: "2026-10-26", set: "chung", n: 20, r: 15, pct: 75, used: 600 }, SETS);
+  assert.deepEqual(v, { d: "2026-10-26", label: "Luật chung", n: 20, r: 15, pct: 75, minutes: 10 });
+});
+test("examEntryView: bản ghi mới có topic và byCh", () => {
+  const v = examEntryView({ d: "2026-10-29", set: "chapter", topic: "HIS · 5 chương", n: 10, r: 4, pct: 40, used: 90, byCh: [["c7", 2, 4]] }, SETS);
+  assert.equal(v.label, "Theo chương · HIS · 5 chương");
+  assert.equal(v.minutes, 2);
+});
+test("examEntryView: bản ghi thiếu trường hoặc hỏng không ném lỗi", () => {
+  for (const bad of [{}, { set: "lạ" }, { n: "x", r: null, pct: undefined, used: "abc" }]) {
+    const v = examEntryView(bad, SETS);
+    assert.equal(typeof v.label, "string");
+    assert.ok(Number.isFinite(v.pct) && Number.isFinite(v.minutes) && Number.isFinite(v.n) && Number.isFinite(v.r));
+  }
+  assert.equal(examEntryView({ n: 10, r: 5 }, SETS).pct, 50); // thiếu pct thì tính lại
+});
+test("trimExamHistory: trộn bản ghi cũ và mới, giới hạn số lượt và dung lượng", () => {
+  const old = { d: "2026-10-01", set: "chung", n: 20, r: 10, pct: 50, used: 60 };
+  const mixed = [{ ...old, byCh: [["c1", 1, 3]] }, old];
+  assert.equal(trimExamHistory(mixed, 100, 55000).length, 2);
+  const many = Array.from({ length: 150 }, (_, i) => ({ ...old, d: `d${i}` }));
+  const t = trimExamHistory(many, 100, 55000);
+  assert.equal(t.length, 100);
+  assert.equal(t[0].d, "d0"); // giữ lượt mới nhất (đầu danh sách)
+  const fat = Array.from({ length: 50 }, () => ({ ...old, topic: "x".repeat(2000) }));
+  const t2 = trimExamHistory(fat, 100, 20000);
+  assert.ok(JSON.stringify(t2).length <= 20000 && t2.length >= 1);
+});
+test("trimExamHistory: đầu vào không phải mảng thì trả mảng rỗng", () => {
+  assert.deepEqual(trimExamHistory(null, 100, 1000), []);
+});
