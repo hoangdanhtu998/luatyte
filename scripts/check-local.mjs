@@ -35,6 +35,7 @@ await run('Study tests', process.execPath, [
   'test/sync-proxy.test.mjs',
   'test/server-resilience.test.mjs',
   'test/swipe-core.test.mjs',
+  'test/role-roadmap.test.mjs',
 ], STUDY);
 await run('Security smoke', process.execPath, [join(ROOT, 'scripts', 'security-smoke.mjs')], ROOT);
 if (withAdmin) await run('Admin tests', 'npm', ['test'], ADMIN, true);
