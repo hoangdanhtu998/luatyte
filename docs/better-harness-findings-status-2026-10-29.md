@@ -9,7 +9,7 @@ Nguồn finding: `.qoder/better-harness-runs/20261029-1500/findings.json`. Lư�
 | `sync-path-no-test` | Đã sửa | `test/sync-proxy.test.mjs`: 5 test (401, x-forwarded-for, CSRF 403, snapshot 200, ACCOUNTS_UNAVAILABLE 503), chạy bằng `node --test`. |
 | `legal-data-no-gate` | Đã sửa | `test/content-contract.test.mjs`: 3 test; bổ sung cổng `t` phải trỏ tới law id hoặc chủ đề chung; fixture `t=khong_ton_tai`, thiếu `so`, trùng câu, đáp án ngoài phạm vi đều bị bắt. |
 | `hospital-skill-wrong-install` | Đã sửa | `skill-hospital-assets/SKILL.md` không còn clone hallmark; mọi file được nhắc tồn tại; hai generator qua `node --check`. |
-| `session-lane-empty` | Không sửa app — đánh dấu unavailable | Bundle `20261029-1500-evidence`: session lane `available` nhưng 0 eligible/0 selected, workspace label `Luật-y-tế`; lead cùng bundle phân tích 3 session, 313 episode. Đây là lệch source-root/workspace của evidence tooling, không phải lỗi app. |
+| `session-lane-empty` | Không sửa app — đánh dấu unavailable | Bundle `20261029-1500-evidence`: session lane `available` nhưng 0 eligible/0 selected, workspace label `Luật-y-tế`; lead cùng bundle phân tích 3 session, 313 episode. Rerun `20261029-p0p1-evidence` (normal, 29/09–29/10): lane và lead đều 0 session/0 episode; source roots 2/6. Đây là lệch source-root/workspace của evidence tooling, không phải lỗi app. |
 
 ## Kiểm tra baseline và sau sửa
 
