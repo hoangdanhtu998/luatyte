@@ -78,7 +78,7 @@
         {
           "tieu_de": "Hiệu lực và thay thế",
           "giai_thich": "Một văn bản có ngày hiệu lực riêng. Khi văn bản mới có hiệu lực, văn bản cũ có thể bị thay thế hoặc sửa đổi. Quy tắc: nếu hai văn bản trùng nội dung mà đáp án khác nhau, áp dụng văn bản mới hơn theo ngày hiệu lực.",
-          "vi_du": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật 40/2009. Luật Dân số 113/2025 có hiệu lực từ 01/07/2026 và sẽ thay Pháp lệnh Dân số 06/2003 khi có hiệu lực.",
+          "vi_du": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật 40/2009. Luật Dân số 113/2025 có hiệu lực từ 01/07/2026 và đã thay thế Pháp lệnh Dân số 06/2003 từ 01/07/2026.",
           "hay_nham": "Học theo luật cũ đã bị thay. Ví dụ: Luật Phòng bệnh truyền nhiễm 03/2007 đã bị thay bởi Luật Phòng bệnh 114/2025, hiệu lực từ 01/07/2026.",
           "nguon": "laws.json, trường replaces và eff",
           "verify": false
@@ -216,15 +216,15 @@
         },
         {
           "tieu_de": "Cấp cứu và trái tuyến",
-          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào vẫn được hưởng 100%. Khám ngoại trú tại cơ sở cấp ban đầu ở bất kỳ tỉnh nào và điều trị nội trú tại cơ sở cấp cơ bản được hưởng như đúng tuyến. Điều trị nội trú tại cơ sở cấp chuyên sâu, nếu trái tuyến, thường được hưởng 40%. Khám không đúng tuyến hoặc không đúng quy định chuyển tuyến thì quỹ chỉ thanh toán theo một tỷ lệ của mức hưởng.",
-          "vi_du": "Một người bị tai nạn được đưa vào cơ sở chuyên sâu không đúng tuyến: hưởng 100% vì là cấp cứu. Cùng người đó tự đi khám ngoại trú ở cơ sở chuyên sâu, không cấp cứu: không được hưởng như đúng tuyến.",
-          "hay_nham": "Nhầm cấp cứu với trái tuyến. Cấp cứu luôn được 100%, còn trái tuyến là chuyện của ngoại trú và nội trú không cấp cứu.",
-          "nguon": "laws.json, bhyt P3, P6, P8 (Điều 22)",
+          "giai_thich": "Cấp cứu ở bất kỳ cơ sở nào được hưởng 100%. Khám trái tuyến (không cấp cứu): nội trú tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh). Khám ngoại trú tại cơ sở cấp ban đầu được hưởng như đúng tuyến; nội trú tại cơ sở cấp cơ bản cũng được hưởng 100% mức hưởng.",
+          "vi_du": "Một người tự đến bệnh viện tuyến trung ương để điều trị nội trú, không thuộc ngoại lệ: quỹ thanh toán 40% mức hưởng. Nếu vào cấp cứu, hưởng 100%.",
+          "hay_nham": "Nghĩ mọi trường hợp nội trú trái tuyến đều hưởng 100%. Chỉ cấp cứu và các ngoại lệ được quy định mới hưởng 100%; nội trú chuyên sâu thông thường là 40%.",
+          "nguon": "Điều 22 khoản 4 Luật BHYT 51/2024/QH15; Điều 22 khoản 1 và khoản 5 về mức hưởng/cấp cứu.",
           "verify": false
         },
         {
           "tieu_de": "Điều kiện 5 năm và hộ gia đình",
-          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định. Phần con số này chưa đối chiếu được nguyên văn. Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
+          "giai_thich": "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%. Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định. Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất.",
           "vi_du": "Một hộ có 4 người đóng BHYT: người thứ hai đóng 70% mức của người thứ nhất, người thứ tư đóng 50%.",
           "hay_nham": "Dùng con số 6 lần cho mọi trường hợp, hoặc quên điều kiện liên tục 5 năm.",
           "nguon": "Luật BHYT sửa đổi 2024, Điều 22 khoản 1 điểm d: 5 năm liên tục và cùng chi trả trong năm lớn hơn 6 lần mức tham chiếu (đã đối chiếu). Nghị định 188/2025, Điều 18 khoản 2 hướng dẫn (đã đối chiếu).",
@@ -249,19 +249,19 @@
       "buoc": [
         {
           "tieu_de": "Khung giá và mức giá cụ thể",
-          "giai_thich": "Thông tư 21/2023 có bốn phụ lục khung giá: khám bệnh, ngày giường, kỹ thuật và xét nghiệm, và ghi chú tương đương. Hội đồng nhân dân cấp tỉnh quyết định mức giá cụ thể trong cơ sở nhà nước, nhưng không vượt khung giá. Cơ sở chưa được phân hạng áp dụng giá bệnh viện hạng IV. Trạm y tế xã áp dụng 70% giá kỹ thuật quy định. Nguồn tra cứu có ghi thông tư này có thể đã được thay bởi Thông tư 21/2024, cần kiểm tra.",
-          "vi_du": "Một trạm y tế xã thực hiện dịch vụ kỹ thuật được tính 70% giá quy định.",
-          "hay_nham": "Cho rằng bệnh viện tự đặt giá. Giá cụ thể do HĐND tỉnh quyết trong khung.",
-          "nguon": "Thông tư 21/2023, Điều 2, 4; quiz bhyt về giá khám",
+          "giai_thich": "Từ 01/01/2025, Thông tư 21/2023 và Thông tư 22/2023 về giá dịch vụ khám bệnh, chữa bệnh đã hết hiệu lực. Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh (được sửa đổi bởi Thông tư 39/2024/TT-BYT); mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung. Các tỷ lệ 70%/30% và cách xếp hạng cơ sở theo thông tư cũ không còn là căn cứ hiện hành.",
+          "vi_du": "Khi tra giá dịch vụ tại địa phương, xem nghị quyết giá của HĐND tỉnh ban hành theo Thông tư 21/2024/TT-BYT, không dùng khung giá 2023.",
+          "hay_nham": "Vẫn áp dụng 70% cho trạm y tế hoặc 30% cho lần khám chuyên khoa thứ hai theo Thông tư 21/2023 và 22/2023 đã hết hiệu lực.",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 39/2024/TT-BYT; Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
           "verify": false
         },
         {
           "tieu_de": "Khám nhiều lượt trong một lần đến",
-          "giai_thich": "Trong cùng một lần đến khám, lượt khám chuyên khoa từ lần thứ hai được tính 30% giá một lượt khám. Tổng tiền khám không quá 2 lần giá khám.",
-          "vi_du": "Người bệnh khám chuyên khoa thứ hai trong cùng một lần đến: tính 30% giá một lượt khám.",
-          "hay_nham": "Tính đủ 100% cho mọi lượt khám. Quy định giới hạn ở tổng 2 lần giá khám.",
-          "nguon": "Thông tư 21/2023, Điều 5; Thông tư 22/2023, Điều 5",
-          "verify": false
+          "giai_thich": "Quy định 30% cho lần khám chuyên khoa thứ hai thuộc Thông tư 21/2023 và 22/2023, đã hết hiệu lực từ 01/01/2025. Hiện hành, mức giá cụ thể và cách tính khi khám nhiều lượt do Hội đồng nhân dân cấp tỉnh quy định theo Thông tư 21/2024/TT-BYT; cần tra nghị quyết giá của địa phương.",
+          "vi_du": "Một cơ sở ở tỉnh A phải dùng bảng giá của tỉnh A ban hành theo Thông tư 21/2024, không tự lấy tỷ lệ 30% của thông tư cũ.",
+          "hay_nham": "Coi tỷ lệ 30% và mức tối đa 2 lần giá khám của thông tư cũ là quy định đang áp dụng.",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 21/2023 và 22/2023 hết hiệu lực từ 01/01/2025.",
+          "verify": true
         },
         {
           "tieu_de": "Thuốc tự mua được thanh toán khi nào",
@@ -274,12 +274,12 @@
       ],
       "on_nhanh": [
         {
-          "hoi": "Trạm y tế xã áp dụng bao nhiêu % giá kỹ thuật quy định?",
-          "dap": "70%."
+          "hoi": "Từ 01/01/2025, giá dịch vụ khám bệnh, chữa bệnh được quy định theo văn bản nào?",
+          "dap": "Thông tư 21/2024/TT-BYT quy định phương pháp định giá; mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung."
         },
         {
-          "hoi": "Lượt khám chuyên khoa từ lần thứ hai tính bao nhiêu?",
-          "dap": "30% giá một lượt khám."
+          "hoi": "Còn áp dụng tỷ lệ 70% cho trạm y tế và 30% cho lần khám chuyên khoa thứ hai của Thông tư 21/2023 không?",
+          "dap": "Không. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; dùng Thông tư 21/2024 và nghị quyết giá của địa phương."
         }
       ]
     },
@@ -486,7 +486,7 @@
         },
         {
           "tieu_de": "Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng",
-          "giai_thich": "Số hiệu: 22/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Trạng thái: có sửa đổi, bổ sung. Thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
+          "giai_thich": "Số hiệu: 22/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT. Trước đó thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11).",
           "vi_du": "Khi cần tra cứu, dùng số hiệu 22/2023/TT-BYT để tìm đúng văn bản.",
           "hay_nham": "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu.",
           "nguon": "laws.json (tt22_2023)",
@@ -494,10 +494,18 @@
         },
         {
           "tieu_de": "Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước",
-          "giai_thich": "Số hiệu: 21/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Trạng thái: có sửa đổi, bổ sung. Thay thế Thông tư 37/2018 và 14/2019. Nguồn tra cứu ghi đã được thay bởi Thông tư 21/2024/TT-BYT — cần kiểm tra.",
+          "giai_thich": "Số hiệu: 21/2023/TT-BYT. Hiệu lực: 17/11/2023 (ngày ký). Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT. Trước đó thay thế Thông tư 37/2018 và 14/2019.",
           "vi_du": "Khi cần tra cứu, dùng số hiệu 21/2023/TT-BYT để tìm đúng văn bản.",
           "hay_nham": "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu.",
           "nguon": "laws.json (tt21_2023)",
+          "verify": false
+        },
+        {
+          "tieu_de": "Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+          "giai_thich": "Số hiệu: 21/2024/TT-BYT. Hiệu lực: 17/10/2024. Thay thế Thông tư 21/2023 và 22/2023 từ 01/01/2025; quy định phương pháp định giá, mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung. Thông tư 21/2024 được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
+          "vi_du": "Tra giá dịch vụ KCB tại địa phương theo nghị quyết giá của HĐND tỉnh.",
+          "hay_nham": "Dùng khung giá và tỷ lệ 70%/30% của thông tư 2023 đã hết hiệu lực.",
+          "nguon": "Thông tư 21/2024/TT-BYT; Thông tư 39/2024/TT-BYT; chinhphu.vn docid 211506",
           "verify": false
         },
         {
@@ -833,6 +841,129 @@
           "dap": "Nhạy cảm, theo Nghị định 356/2025, Điều 4 khoản 1 điểm d."
         }
       ]
+    },
+    {
+      "id": "c14",
+      "ten": "Cập nhật 2025–2026: luật mới và điểm cần nhớ",
+      "muc_tieu": "Nắm các văn bản mới đã có hiệu lực đến 29/10/2026 và biết chúng thay đổi điều gì; không học vẹt số hiệu, ngày ban hành.",
+      "buoc": [
+        {
+          "tieu_de": "Phòng bệnh và tiêm chủng: từ phòng bệnh truyền nhiễm sang phòng bệnh toàn diện",
+          "giai_thich": "Luật Phòng bệnh 114/2025/QH15 có hiệu lực 01/07/2026, điều chỉnh cả bệnh truyền nhiễm, bệnh không lây nhiễm, rối loạn tâm thần và dinh dưỡng. Nghị định 165/2026/NĐ-CP hướng dẫn thi hành; Thông tư 15/2026 quy định chi tiết; Thông tư 13/2026 quy định hoạt động tiêm chủng; Thông tư 33/2026 hướng dẫn kiểm tra sức khỏe đầu năm học và an toàn sinh học phòng xét nghiệm.",
+          "vi_du": "Một trường học tổ chức kiểm tra sức khỏe đầu năm cho học sinh; cơ sở tiêm chủng phải tuân thủ danh mục bệnh tiêm chủng bắt buộc và quy định an toàn tiêm chủng.",
+          "hay_nham": "Nghĩ Luật Phòng bệnh chỉ nói về bệnh truyền nhiễm. Luật còn điều chỉnh bệnh không lây nhiễm, rối loạn tâm thần, dinh dưỡng và các điều kiện bảo đảm.",
+          "nguon": "Luật 114/2025/QH15; Nghị định 165/2026/NĐ-CP; Thông tư 15/2026/TT-BYT; Thông tư 13/2026/TT-BYT; Thông tư 33/2026/TT-BYT",
+          "verify": false
+        },
+        {
+          "tieu_de": "Dược: chứng chỉ hành nghề, đăng ký thuốc và thuốc kiểm soát đặc biệt",
+          "giai_thich": "Luật Dược 44/2024/QH15 có hiệu lực 01/07/2025. Nghị định 163/2025/NĐ-CP và Thông tư 31/2025/TT-BYT hướng dẫn về hành nghề, kinh doanh dược. Thông tư 29/2025 quy định đăng ký thuốc cổ truyền; Thông tư 50/2025 quy định thử thuốc trên lâm sàng; Thông tư 18/2026 quy định thuốc kiểm soát đặc biệt; Thông tư 32/2026 quy định đăng ký lưu hành thuốc, nguyên liệu làm thuốc.",
+          "vi_du": "Nhà thuốc bán thuốc kê đơn phải có chứng chỉ hành nghề dược và đáp ứng điều kiện kinh doanh; thuốc kiểm soát đặc biệt phải theo Thông tư 18/2026.",
+          "hay_nham": "Lẫn giấy phép hành nghề dược với giấy đăng ký lưu hành thuốc. Một bên là năng lực người hành nghề, một bên là giấy phép cho sản phẩm.",
+          "nguon": "Luật Dược 44/2024/QH15; Nghị định 163/2025/NĐ-CP; Thông tư 31/2025/TT-BYT; 29/2025/TT-BYT; 50/2025/TT-BYT; 18/2026/TT-BYT; 32/2026/TT-BYT",
+          "verify": false
+        },
+        {
+          "tieu_de": "Khám chữa bệnh: giấy phép và hồ sơ bệnh án",
+          "giai_thich": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh 15/2023/QH15 về cấp giấy phép hành nghề, giấy phép hoạt động. Thông tư 32/2023 quy định hồ sơ bệnh án; Thông tư 13/2025 hướng dẫn triển khai hồ sơ bệnh án điện tử.",
+          "vi_du": "Bệnh viện vừa phải có giấy phép hoạt động, vừa phải triển khai hồ sơ bệnh án điện tử đúng lộ trình.",
+          "hay_nham": "Nghĩ hồ sơ bệnh án điện tử không có giá trị pháp lý. Hồ sơ điện tử có giá trị như hồ sơ giấy nếu đáp ứng quy định về lập, ký, lưu trữ và chia sẻ.",
+          "nguon": "Nghị định 96/2023/NĐ-CP; Thông tư 32/2023/TT-BYT; Thông tư 13/2025/TT-BYT",
+          "verify": false
+        },
+        {
+          "tieu_de": "Bảo hiểm y tế: mức hưởng và xác thực dữ liệu",
+          "giai_thich": "Luật Bảo hiểm y tế 51/2024/QH15 có hiệu lực 01/07/2025. Nghị định 188/2025/NĐ-CP hướng dẫn, có hỗ trợ tối thiểu 50% mức đóng cho một số nhóm và yêu cầu xác thực điện tử dữ liệu khám bệnh, chữa bệnh BHYT chậm nhất 01/01/2026. Thông tư 12/2026/TT-BTC quy định giám định, thanh toán, quyết toán chi phí BHYT.",
+          "vi_du": "Cơ sở khám chữa bệnh gửi dữ liệu điện tử để giám định BHYT; người thuộc nhóm được hỗ trợ đóng được ngân sách hỗ trợ tối thiểu 50%.",
+          "hay_nham": "Nghĩ mọi lần khám đều hưởng 100%. Mức 100% hoặc 80% phụ thuộc nhóm đối tượng và trường hợp cụ thể.",
+          "nguon": "Luật BHYT 51/2024/QH15; Nghị định 188/2025/NĐ-CP; Thông tư 12/2026/TT-BTC",
+          "verify": false
+        },
+        {
+          "tieu_de": "Dữ liệu y tế và dữ liệu cá nhân",
+          "giai_thich": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 có hiệu lực 01/01/2026. Nghị định 356/2025/NĐ-CP hướng dẫn thi hành; Nghị định 102/2025/NĐ-CP quản lý dữ liệu y tế. Dữ liệu sức khỏe là dữ liệu cá nhân nhạy cảm.",
+          "vi_du": "Khi xin đồng ý xử lý dữ liệu sức khỏe, cơ sở phải nói rõ đây là dữ liệu cá nhân nhạy cảm và mục đích xử lý.",
+          "hay_nham": "Nghĩ dữ liệu đã ẩn danh vẫn cần đồng ý như dữ liệu cá nhân; cần phân biệt dữ liệu cá nhân với dữ liệu đã ẩn danh theo luật.",
+          "nguon": "Luật 91/2025/QH15; Nghị định 356/2025/NĐ-CP; Nghị định 102/2025/NĐ-CP",
+          "verify": false
+        },
+        {
+          "tieu_de": "Dân số, chuyển đổi số và phân cấp",
+          "giai_thich": "Luật Dân số 113/2025/QH15 có hiệu lực 01/07/2026; Luật Chuyển đổi số 148/2025/QH15 tạo khung pháp lý cho chuyển đổi số; Nghị định 148/2025/NĐ-CP phân quyền, phân cấp trong lĩnh vực y tế.",
+          "vi_du": "Một thủ tục y tế có thể được giải quyết ở Sở Y tế hoặc UBND tỉnh thay vì Bộ Y tế theo phân cấp.",
+          "hay_nham": "Nghĩ phân cấp là chuyển hết trách nhiệm cho địa phương; thực tế vẫn có trách nhiệm hướng dẫn, kiểm tra và giám sát.",
+          "nguon": "Luật Dân số 113/2025/QH15; Luật Chuyển đổi số 148/2025/QH15; Nghị định 148/2025/NĐ-CP",
+          "verify": false
+        }
+      ],
+      "on_nhanh": [
+        {
+          "hoi": "Văn bản nào hướng dẫn chi tiết Luật Phòng bệnh 114/2025?",
+          "dap": "Nghị định 165/2026/NĐ-CP; Thông tư 15/2026 và Thông tư 33/2026 hướng dẫn thêm; Thông tư 13/2026 quy định hoạt động tiêm chủng."
+        },
+        {
+          "hoi": "Thuốc cổ truyền, vị thuốc cổ truyền đăng ký lưu hành theo thông tư nào?",
+          "dap": "Thông tư 29/2025/TT-BYT."
+        },
+        {
+          "hoi": "Dữ liệu sức khỏe thuộc nhóm dữ liệu nào?",
+          "dap": "Dữ liệu cá nhân nhạy cảm theo Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15."
+        }
+      ]
+    },
+    {
+      "id": "c15",
+      "ten": "Xử phạt hành chính trong y tế: đọc đúng mức phạt",
+      "muc_tieu": "Nhận diện nhóm hành vi vi phạm, mức phạt tiền, hình thức xử phạt bổ sung và nguyên tắc trách nhiệm của tổ chức; không học vẹt toàn bộ khung phạt.",
+      "buoc": [
+        {
+          "tieu_de": "Văn bản đang áp dụng và phạm vi điều chỉnh",
+          "giai_thich": "Từ 15/05/2026, Nghị định 90/2026/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực y tế, thay thế Nghị định 117/2020/NĐ-CP và các văn bản sửa đổi, bổ sung. Phạm vi gồm 6 nhóm: y tế dự phòng và phòng, chống HIV/AIDS; khám bệnh, chữa bệnh; dược, mỹ phẩm; thiết bị y tế; bảo hiểm y tế; dân số.",
+          "vi_du": "Một cơ sở bán thuốc không có giấy phép hoạt động được xem xét theo nhóm dược; một phòng khám hoạt động không phép theo nhóm khám bệnh, chữa bệnh.",
+          "hay_nham": "Vẫn tra khung phạt cũ tại Nghị định 117/2020/NĐ-CP dù hành vi xảy ra sau ngày 15/05/2026.",
+          "nguon": "Điều 1 Nghị định 90/2026/NĐ-CP; Điều 4 về mức phạt tối đa.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Mức trần và nguyên tắc tổ chức bị phạt gấp đôi",
+          "giai_thich": "Mức phạt tiền tối đa theo lĩnh vực: dân số 30 triệu đồng với cá nhân, 60 triệu đồng với tổ chức; y tế dự phòng và HIV/AIDS 50/100 triệu đồng; bảo hiểm y tế 75/150 triệu đồng; khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế 100/200 triệu đồng. Cùng một hành vi, tổ chức bị phạt gấp 02 lần cá nhân. Khung phạt ghi trong Chương II là mức của cá nhân, nên khi xác định trách nhiệm tổ chức phải nhân đôi.",
+          "vi_du": "Cá nhân cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt 40-50 triệu đồng; nếu tổ chức thực hiện hành vi đó thì khung áp dụng là 80-100 triệu đồng, trong giới hạn tối đa 200 triệu đồng.",
+          "hay_nham": "Đọc khung tiền phạt của cá nhân rồi áp nguyên cho bệnh viện, công ty hoặc hợp tác xã.",
+          "nguon": "Điều 4 khoản 1-5 Nghị định 90/2026/NĐ-CP.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Nhóm hành vi khám bệnh, chữa bệnh đáng nhớ",
+          "giai_thich": "Các mức thường gặp: hành nghề không có giấy phép/chứng chỉ 30-40 triệu đồng; cơ sở cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động 40-50 triệu đồng; cung cấp dịch vụ vượt phạm vi chuyên môn 40-50 triệu đồng; từ chối hoặc cố ý chậm cấp cứu 30-40 triệu đồng; xâm phạm thân thể, sức khỏe, danh dự, nhân phẩm nhân viên y tế 30-40 triệu đồng; không lập hoặc không lưu hồ sơ bệnh án 1-3 triệu đồng; kê đơn không phù hợp chẩn đoán hoặc kê sản phẩm không được phép 10-20 triệu đồng.",
+          "vi_du": "Một bác sĩ không có giấy phép hành nghề nhưng vẫn khám bệnh bị phạt 30-40 triệu đồng; nếu là cơ sở không có giấy phép hoạt động thì khung là 40-50 triệu đồng.",
+          "hay_nham": "Nhầm hành nghề không phép của cá nhân với cơ sở hoạt động không phép; hai hành vi có khung phạt khác nhau.",
+          "nguon": "Điều 38 khoản 7; Điều 39 khoản 6; Điều 40 khoản 1; Điều 41 khoản 2 Nghị định 90/2026/NĐ-CP.",
+          "verify": false
+        },
+        {
+          "tieu_de": "Hình thức bổ sung, khắc phục và thẩm quyền",
+          "giai_thich": "Ngoài cảnh cáo và phạt tiền, Nghị định còn quy định tước quyền sử dụng giấy phép, chứng chỉ hành nghề từ 01 đến 24 tháng; tịch thu tang vật, phương tiện; đình chỉ hoạt động từ 01 đến 24 tháng. Tùy hành vi, cơ sở có thể bị buộc xin lỗi, nộp lại lợi nhuận bất hợp pháp, khắc phục hậu quả hoặc chi trả chi phí khám bệnh. Thẩm quyền xử phạt được quy định tại Chương III; vi phạm trên môi trường điện tử thực hiện theo Nghị định 118/2021/NĐ-CP (sửa đổi bởi Nghị định 68/2025/NĐ-CP và Nghị định 190/2025/NĐ-CP).",
+          "vi_du": "Cơ sở vượt phạm vi chuyên môn có thể bị đình chỉ hoạt động 12-24 tháng tùy điểm, khoản vi phạm; người hành nghề có thể bị tước giấy phép 1-24 tháng.",
+          "hay_nham": "Chỉ nhìn số tiền phạt mà bỏ qua việc bị đình chỉ hoạt động, tước giấy phép hoặc buộc khắc phục hậu quả.",
+          "nguon": "Điều 3 Nghị định 90/2026/NĐ-CP; Chương III về thẩm quyền xử phạt.",
+          "verify": false
+        }
+      ],
+      "on_nhanh": [
+        {
+          "hoi": "Cơ sở khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt bao nhiêu với cá nhân?",
+          "dap": "40-50 triệu đồng; tổ chức gấp đôi."
+        },
+        {
+          "hoi": "Tổ chức vi phạm cùng hành vi với cá nhân thì mức phạt thế nào?",
+          "dap": "Gấp 02 lần mức phạt của cá nhân."
+        },
+        {
+          "hoi": "Mức phạt tối đa trong lĩnh vực khám bệnh, chữa bệnh, dược và thiết bị y tế là bao nhiêu?",
+          "dap": "100 triệu đồng với cá nhân và 200 triệu đồng với tổ chức."
+        }
+      ]
     }
-  ]
+  ],
+  "nguon": "Luật BHYT 51/2024/QH15"
 }
