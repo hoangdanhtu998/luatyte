@@ -176,6 +176,42 @@ export function exportUserData(db, userId) {
   };
 }
 
+// ---------- Phase 8: xuất/nhập quiz ----------
+export function exportQuizContent() {
+  const fs = require('fs');
+  const path = require('path');
+  const ROOT = path.join(__dirname, '..', '..', 'app luật y tế');
+  const quizFiles = ['quiz.json', 'quiz_bhyt.json', 'quiz_his.json', 'quiz_lythuyet.json', 'quiz_nentang.json', 'tf.json'];
+  const out = { exportedAt: new Date().toISOString(), app: 'luatyte', v: 1 };
+  quizFiles.forEach(f => {
+    try {
+      const raw = fs.readFileSync(path.join(ROOT, 'data', f), 'utf8');
+      out[f] = JSON.parse(raw);
+    } catch { out[f] = []; }
+  });
+  return out;
+}
+
+export function importQuizContent(data) {
+  if (!data || typeof data !== 'object') throw new P567Error('INVALID_INPUT', 'Dữ liệu không hợp lệ.');
+  const fs = require('fs');
+  const path = require('path');
+  const ROOT = path.join(__dirname, '..', '..', 'app luật y tế');
+  const results = {};
+  for (const [file, content] of Object.entries(data)) {
+    if (!file.endsWith('.json')) continue;
+    try {
+      const parsed = JSON.parse(JSON.stringify(content));
+      if (!Array.isArray(parsed)) throw new Error('phải là mảng');
+      fs.writeFileSync(path.join(ROOT, 'data', file), JSON.stringify(parsed, null, 2), 'utf8');
+      results[file] = { ok: true, count: parsed.length };
+    } catch (e) {
+      results[file] = { ok: false, error: e.message };
+    }
+  }
+  return { ok: true, results };
+}
+
 // Xóa dữ liệu cá nhân: ẩn danh tài khoản, xóa phiên, giữ đơn hàng và thống kê không định danh.
 export function anonymizeUser(db, userId, now) {
   const u = db.prepare('SELECT id FROM users WHERE id = ?').get(userId);

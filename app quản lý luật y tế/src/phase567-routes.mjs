@@ -66,6 +66,16 @@ export function createP567Routes({ db, now, helpers }) {
         if (!requireAdmin(req, res)) return true;
         return send(res, 200, P.exportLawContent(db)), true;
       }
+      // ---- Phase 8: xuất/nhập quiz JSON ----
+      if (p === '/api/admin/quiz/export' && m === 'GET') {
+        if (!requireAdmin(req, res)) return true;
+        return send(res, 200, P.exportQuizContent()), true;
+      }
+      if (p === '/api/admin/quiz/import' && m === 'POST') {
+        if (!requireAdmin(req, res)) return true;
+        const body = await readBody(req);
+        return send(res, 200, P.importQuizContent(body)), true;
+      }
       // ---- Phase 8: thống kê dữ liệu học từ JSON ----
       if (p === '/api/admin/stats/content/laws' && m === 'GET') {
         if (!requireAdmin(req, res)) return true;
