@@ -1027,6 +1027,55 @@
           "a": "VssID"
         }
       ]
+    },
+    {
+      "id": "c22",
+      "ten": "Luật Khám chữa bệnh 40/2025 — quyền và nghĩa vụ người bệnh",
+      "muc_tieu": [
+        "Hiểu quyền biết chẩn đoán và từ chối điều trị của người bệnh",
+        "Biết trách nhiệm công khai giá dịch vụ của cơ sở KCB",
+        "Hiểu giá trị pháp lý của hồ sơ bệnh án điện tử"
+      ],
+      "buoc": [
+        {
+          "tieu_de": "Quyền người bệnh (Điều 15)",
+          "giai_thich": "Người bệnh có quyền được biết chẩn đoán, phương án điều trị, rủi ro và được thông tin đầy đủ. Đặc biệt, người bệnh có quyền từ chối điều trị — đây là quyền căn bản được Luật KCB 40/2025 bảo vệ.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+        },
+        {
+          "tieu_de": "Trách nhiệm công khai của cơ sở KCB (Điều 22)",
+          "giai_thich": "Cơ sở KCB phải công khai: giá dịch vụ khám chữa bệnh, thái độ phục vụ, quyền và nghĩa vụ người bệnh. Việc này giúp người bệnh biết rõ chi phí và quyền lợi trước khi đăng ký KCB.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+        },
+        {
+          "tieu_de": "Hồ sơ bệnh án điện tử (Điều 35)",
+          "giai_thich": "Từ 01/07/2026, hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy. Đây là bước tiến quan trọng trong chuyển đổi số y tế, giúp lưu trữ an toàn và tra cứu nhanh.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+        },
+        {
+          "tieu_de": "So sánh với Luật KCB 40/2009",
+          "giai_thich": "Luật KCB 40/2025 thay thế Luật KCB 40/2009. Điểm mới: tăng cường quyền người bệnh, quy định rõ về hồ sơ điện tử, mở rộng trách nhiệm công khai của cơ sở KCB.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+        }
+      ],
+      "on_nhanh": [
+        {
+          "q": "Người bệnh có quyền từ chối điều trị không?",
+          "a": "Có, theo Điều 15"
+        },
+        {
+          "q": "Cơ sở KCB phải công khai điều gì?",
+          "a": "Giá dịch vụ, quyền lợi người bệnh"
+        },
+        {
+          "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý từ khi nào?",
+          "a": "01/07/2026"
+        },
+        {
+          "q": "Luật KCB 40/2025 thay thế luật nào?",
+          "a": "Luật KCB 40/2009"
+        }
+      ]
     }
   ],
   "nguon": "Luật BHYT 51/2024/QH15"

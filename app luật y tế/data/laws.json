@@ -773,5 +773,21 @@
       "Chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện — Điều 8."
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
+  },
+  {
+    "id": "kcb_40_2025",
+    "cat": "Khám bệnh, chữa bệnh",
+    "name": "Luật Khám chữa bệnh 40/2025/QH15",
+    "so": "40/2025/QH15",
+    "pass": "20/11/2025",
+    "eff": "01/07/2026",
+    "status": "on",
+    "replaces": "Thay thế Luật KCB 40/2009/QH12; quy định quyền và nghĩa vụ người bệnh, cơ sở KCB, bác sĩ.",
+    "points": [
+      "Người bệnh có quyền biết chẩn đoán, phương án điều trị và từ chối điều trị — Điều 15.",
+      "Cơ sở KCB phải công khai giá dịch vụ, thái độ phục vụ và quyền lợi người bệnh — Điều 22.",
+      "Hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026 — Điều 35."
+    ],
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
   }
 ]

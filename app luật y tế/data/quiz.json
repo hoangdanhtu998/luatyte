@@ -1077,5 +1077,109 @@
     "e": "Mức phạt tiền tối đa trong lĩnh vực dân số là 30 triệu đồng đối với cá nhân và 60 triệu đồng đối với tổ chức. Căn cứ: Điều 4 khoản 1 Nghị định 90/2026/NĐ-CP.",
     "law": "Nghị định 90/2026/NĐ-CP",
     "src": "Điều 4 khoản 1"
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-85",
+    "q": "Người bệnh có quyền gì đối với phương án điều trị theo Luật KCB 40/2025?",
+    "o": [
+      "Bắt buộc điều trị theo bác sĩ",
+      "Biết chẩn đoán và từ chối điều trị",
+      "Không được biết chẩn đoán",
+      "Chỉ được điều trị tại bệnh viện công"
+    ],
+    "a": 1,
+    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền biết chẩn đoán, phương án điều trị và được quyền từ chối điều trị."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-86",
+    "q": "Cơ sở KCB phải công khai những gì theo Luật KCB 40/2025?",
+    "o": [
+      "Lương bác sĩ",
+      "Giá dịch vụ và quyền lợi người bệnh",
+      "Số giường bệnh",
+      "Thời gian nghỉ của nhân viên"
+    ],
+    "a": 1,
+    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ, thái độ phục vụ và quyền lợi người bệnh."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-87",
+    "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý khi nào?",
+    "o": [
+      "Ngay khi tạo",
+      "Từ 01/07/2026",
+      "Khi có xác nhận của bệnh viện",
+      "Không có giá trị pháp lý"
+    ],
+    "a": 1,
+    "e": "Luật KCB 40/2025 Điều 35: hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-88",
+    "q": "Luật KCB 40/2025 thay thế luật nào?",
+    "o": [
+      "Luật KCB 40/2009",
+      "Luật BHYT 51/2024",
+      "Luật Dược 44/2024",
+      "Luật Phòng bệnh 114/2025"
+    ],
+    "a": 0,
+    "e": "Luật KCB 40/2025/QH15 thay thế Luật KCB 40/2009/QH12."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-89",
+    "q": "Ngày hiệu lực của Luật KCB 40/2025 là khi nào?",
+    "o": [
+      "20/11/2025",
+      "01/01/2026",
+      "01/07/2026",
+      "01/01/2027"
+    ],
+    "a": 2,
+    "e": "Luật KCB 40/2025 có hiệu lực từ 01/07/2026."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-90",
+    "q": "Ai có quyền từ chối điều trị theo Luật KCB 40/2025?",
+    "o": [
+      "Bác sĩ",
+      "Người nhà bệnh nhân",
+      "Người bệnh",
+      "Trưởng bệnh viện"
+    ],
+    "a": 2,
+    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền từ chối điều trị."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-91",
+    "q": "Việc công khai giá dịch vụ KCB thuộc trách nhiệm của ai?",
+    "o": [
+      "Sở Y tế",
+      "Cơ sở KCB",
+      "Bệnh viện đa khoa",
+      "Bảo hiểm y tế"
+    ],
+    "a": 1,
+    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ."
+  },
+  {
+    "t": "kcb",
+    "id": "kcb-92",
+    "q": "Luật KCB 40/2025 quy định về lĩnh vực nào?",
+    "o": [
+      "Thuốc và dược phẩm",
+      "Quyền và nghĩa vụ người bệnh",
+      "Bảo hiểm y tế",
+      "An toàn thực phẩm"
+    ],
+    "a": 1,
+    "e": "Luật KCB 40/2025 quy định về quyền và nghĩa vụ của người bệnh, cơ sở KCB và người hành nghề."
   }
 ]
