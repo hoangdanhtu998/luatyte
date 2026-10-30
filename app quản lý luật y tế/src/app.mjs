@@ -28,9 +28,46 @@ const sha = s => createHash('sha256').update(s).digest('hex');
 
 const USERNAME_RE = /^[A-Za-z0-9_.]{3,30}$/;
 
+// Khóa tài khoản sau 5 lần sai trong 15 phút (bảo mật thêm).
+function lockAccount(db, userId, now) {
+  const row = db.prepare("SELECT * FROM account_locks WHERE user_id = ?").get(userId);
+  const MAX_FAIL = 5;
+  const WINDOW_MS = 15 * 60 * 1000;
+  if (row) {
+    if (now - row.first_fail_at > WINDOW_MS) {
+      db.prepare("UPDATE account_locks SET failed_count = 1, first_fail_at = ?, locked_until = ? WHERE user_id = ?")
+        .run(new Date(now).toISOString(), new Date(now + WINDOW_MS).toISOString(), userId);
+      return false;
+    }
+    const next = row.failed_count + 1;
+    if (next >= MAX_FAIL) {
+      db.prepare("UPDATE account_locks SET failed_count = ?, locked_until = ? WHERE user_id = ?")
+        .run(next, new Date(now + WINDOW_MS).toISOString(), userId);
+      return true;
+    }
+    db.prepare("UPDATE account_locks SET failed_count = ? WHERE user_id = ?").run(next, userId);
+    return false;
+  }
+  db.prepare("INSERT INTO account_locks (user_id, failed_count, first_fail_at, locked_until) VALUES (?, 1, ?, ?)")
+    .run(userId, new Date(now).toISOString(), new Date(now + WINDOW_MS).toISOString());
+  return false;
+}
+function unlockAccount(db, userId) {
+  db.prepare("DELETE FROM account_locks WHERE user_id = ?").run(userId);
+}
+
+// Header bảo mật gắn cho mọi phản hồi. Không đặt CSP ở đây vì giao diện admin đang dùng script nội tuyến.
+const SECURITY_HEADERS = {
+  'x-content-type-options': 'nosniff',
+  'x-frame-options': 'DENY',
+  'referrer-policy': 'no-referrer',
+  'permissions-policy': 'camera=(), microphone=(), geolocation=()',
+};
+
 export function createApp({ db, now = () => Date.now(), trustProxy = false, allowRegistration = true, consentVersion = '2026-10-27', paymentSecret = '', sendEmail = null, cryptoKey = null, allowedOrigins = [], backupDir = './data/backups', fxVndPerUsd = 26000 }) {
   const ipLimiter = createLimiter({ max: 5, windowMs: 15 * 60 * 1000, now });
   const emailLimiter = createLimiter({ max: 3, windowMs: 15 * 60 * 1000, now });
+  const totpLimiter = createLimiter({ max: 5, windowMs: 5 * 60 * 1000, now });
   // Cổng thanh toán chỉ bật khi có PAYMENT_SECRET (ít nhất 16 ký tự).
   const gateways = paymentSecret ? createGateways({ secret: paymentSecret }) : {};
 
@@ -141,9 +178,17 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
       if (!s) return err(res, 401, 'UNAUTHENTICATED', 'Chưa đăng nhập.');
       const body = await readBody(req);
       if (!s.totp_enabled) return err(res, 400, 'TOTP_NOT_ENABLED', 'Tài khoản chưa bật xác minh hai lớp.');
+      // Giới hạn thử TOTP: tối đa 5 lần sai trong 5 phút mỗi tài khoản.
+      if (totpLimiter.blocked(`totp:${s.user_id}`)) {
+        return err(res, 429, 'RATE_LIMITED', 'Bạn thử quá nhiều lần. Vui lòng đợi 5 phút.');
+      }
       const user = db.prepare('SELECT totp_secret, totp_last_step FROM users WHERE id = ?').get(s.user_id);
       const step = matchTotp(user.totp_secret, body.code, now(), user.totp_last_step);
-      if (step === null) return err(res, 401, 'INVALID_TOTP', 'Mã xác minh không đúng hoặc đã dùng.');
+      if (step === null) {
+        totpLimiter.attempt(`totp:${s.user_id}`);
+        return err(res, 401, 'INVALID_TOTP', 'Mã xác minh không đúng hoặc đã dùng.');
+      }
+      totpLimiter.clear(`totp:${s.user_id}`);
       db.prepare('UPDATE users SET totp_last_step = ? WHERE id = ?').run(step, s.user_id);
       db.prepare('UPDATE sessions SET mfa_ok = 1 WHERE token_hash = ?').run(s.token_hash);
       return send(res, 200, { ok: true });
@@ -283,7 +328,13 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
     const file = resolve(PUBLIC, '.' + p);
     if (!file.startsWith(resolve(PUBLIC))) { res.writeHead(404); return res.end('Không tìm thấy'); }
     if (!existsSync(file)) { res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }); return res.end('Không tìm thấy'); }
-    res.writeHead(200, { 'content-type': TYPES[extname(file)] || 'application/octet-stream', 'cache-control': 'no-cache' });
+    const ext = extname(file).toLowerCase();
+    // Static files: cache 1 year for versioned assets, 1 day for others
+    if (['.js', '.css', '.png', '.jpg', '.svg', '.ico'].includes(ext)) {
+      res.writeHead(200, { 'content-type': TYPES[ext] || 'application/octet-stream', 'cache-control': 'public, max-age=31536000, immutable' });
+    } else {
+      res.writeHead(200, { 'content-type': TYPES[ext] || 'application/octet-stream', 'cache-control': 'public, max-age=86400' });
+    }
     res.end(readFileSync(file));
   }
 
@@ -304,7 +355,14 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
     // CORS: chỉ các origin trong ALLOWED_ORIGINS được gọi API từ trình duyệt.
     const cors = corsHeadersFor(req.headers.origin, allowedOrigins);
     for (const [k, v] of Object.entries(cors)) res.setHeader(k, v);
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v);
     if (req.method === 'OPTIONS' && url.pathname.startsWith('/api/')) { res.writeHead(204, cors); return res.end(); }
+    // Kiểm tra sống cho máy triển khai: không cần đăng nhập, không lộ thông tin nhạy cảm.
+    if (req.method === 'GET' && url.pathname === '/api/health') {
+      let dbOk = true;
+      try { db.prepare('SELECT 1').get(); } catch { dbOk = false; }
+      return send(res, dbOk ? 200 : 503, { ok: dbOk, db: dbOk ? 'ok' : 'error', uptimeSec: Math.round(process.uptime()) });
+    }
     try {
       if (url.pathname.startsWith('/api/')) {
         if (!requireJson(req, res)) return;

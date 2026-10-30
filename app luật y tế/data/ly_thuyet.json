@@ -963,6 +963,70 @@
           "dap": "100 triệu đồng với cá nhân và 200 triệu đồng với tổ chức."
         }
       ]
+    },
+    {
+      "id": "c21",
+      "ten": "Bảo hiểm y tế 2025–2026: những điểm mới quan trọng",
+      "muc_tieu": [
+        "Nắm được đối tượng tham gia BHYT bắt buộc mở rộng theo Nghị định 119/2025",
+        "Hiểu mức hưởng 100% nội trú tuyến tỉnh và quy định trái tuyến",
+        "Biết cách đăng ký KCB thường xuyên qua VssID",
+        "Hiểu danh mục 850 dịch vụ kỹ thuật thanh toán BHYT"
+      ],
+      "buoc": [
+        {
+          "tieu_de": "Đối tượng BHYT bắt buộc mở rộng (NĐ 119/2025)",
+          "giai_thich": "Nghị định 119/2025/NĐ-CP Điều 5 mở rộng đối tượng BHYT bắt buộc: người lao động làm việc theo HĐ không xác định thời hạn và HĐ từ 3 đến dưới 12 tháng đều thuộc nhóm người LĐ tham gia BHYT bắt buộc.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+        },
+        {
+          "tieu_de": "Mức hưởng nội trú tại tuyến tỉnh",
+          "giai_thich": "Theo Nghị định 119/2025 Điều 8, người BHYT khám nội trú tại bệnh viện tuyến tỉnh được hưởng 100% chi phí điều trị. Khám trái tuyến tại tuyến trung ương vẫn hưởng 40% mức hưởng.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+        },
+        {
+          "tieu_de": "Thẻ BHYT điện tử và đăng ký KCB trực tuyến",
+          "giai_thich": "Nghị định 119/2025 Điều 12 công nhận thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID. Thông tư 14/2026 cho phép đăng ký KCB thường xuyên qua VssID.",
+          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
+        },
+        {
+          "tieu_de": "Danh mục 850 dịch vụ kỹ thuật BHYT",
+          "giai_thich": "Thông tư 06/2026/TT-BYT ban hành danh mục 850 dịch vụ kỹ thuật được thanh toán BHYT, bao gồm xét nghiệm huyết học, chẩn đoán hình ảnh, nội soi. Giá do HĐND cấp tỉnh quyết định.",
+          "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx"
+        },
+        {
+          "tieu_de": "Chuyển tuyến tự động và đăng ký KCB thường xuyên",
+          "giai_thich": "Thông tư 14/2026 Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện. Người bệnh chọn cơ sở KCB thường xuyên qua app VssID.",
+          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
+        },
+        {
+          "tieu_de": "Tổng kết và lưu ý quan trọng",
+          "giai_thich": "Từ 01/07/2025: mở rộng đối tượng, 100% nội trú tuyến tỉnh, thẻ điện tử tương đương thẻ giấy. Từ 01/08/2026: đăng ký KCB qua VssID. Danh mục 850 DVKT thay thế danh mục cũ.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+        }
+      ],
+      "on_nhanh": [
+        {
+          "q": "HĐLĐ 6 tháng thuộc đối tượng BHYT nào?",
+          "a": "BHYT bắt buộc theo nhóm người lao động"
+        },
+        {
+          "q": "Nội trú tuyến tỉnh hưởng bao nhiêu?",
+          "a": "100% chi phí điều trị"
+        },
+        {
+          "q": "Thẻ BHYT điện tử có giá trị như thẻ giấy?",
+          "a": "Có, tương đương"
+        },
+        {
+          "q": "Danh mục dịch vụ kỹ thuật BHYT có bao nhiêu mục?",
+          "a": "850 dịch vụ"
+        },
+        {
+          "q": "Đăng ký KCB thường xuyên qua ứng dụng gì?",
+          "a": "VssID"
+        }
+      ]
     }
   ],
   "nguon": "Luật BHYT 51/2024/QH15"
