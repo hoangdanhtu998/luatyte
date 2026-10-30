@@ -23,14 +23,16 @@ function addUser(db, email, role = 'user', pw = PW) {
     .run(email, hashPassword(pw), role, 'active', new Date().toISOString());
 }
 
-async function call(base, method, path, { body, cookie } = {}) {
+async function call(base, method, path, { body, cookie, csrfToken } = {}) {
   const headers = {};
-  if (body !== undefined) headers['content-type'] = 'application/json';
+  if (method !== 'GET' && method !== 'DELETE') headers['content-type'] = 'application/json';
   if (cookie) headers.cookie = cookie;
+  const hasExplicitCsrf = csrfToken !== undefined;
+  if (hasExplicitCsrf) headers['x-csrf-token'] = csrfToken;
   if (cookie && method !== 'GET' && !(['/api/auth/login', '/api/auth/register', '/api/auth/logout'].includes(path) || path.startsWith('/api/payments/callback'))) {
     const me = await fetch(base + '/api/me', { headers: { cookie } });
     const j = await me.json().catch(() => ({}));
-    if (j.csrfToken) headers['x-csrf-token'] = j.csrfToken;
+    if (j.csrfToken && !hasExplicitCsrf) headers['x-csrf-token'] = j.csrfToken;
   }
   const r = await fetch(base + path, { method, headers, body: body === undefined ? undefined : JSON.stringify(body) });
   const data = await r.json().catch(() => ({}));
@@ -209,5 +211,70 @@ test('ghi API phải là application/json (chống CSRF đơn giản)', async ()
   try {
     const r = await fetch(base + '/api/auth/login', { method: 'POST', headers: { 'content-type': 'text/plain' }, body: '{}' });
     assert.equal(r.status, 415);
+  } finally { await close(); }
+});
+
+test('RATE_LIMITED: IP bị chặn sau 5 lần sai trong 15 phút', async () => {
+  const { base, close } = await start({ allowRegistration: false });
+  try {
+    // 5 lần sai với email khác nhau để test IP limiter
+    for (let i = 0; i < 5; i++) {
+      const r = await call(base, 'POST', '/api/auth/login', { body: { identifier: `ip-test-${i}@vidu.com`, password: 'wrong' } });
+      assert.equal(r.status, 401);
+    }
+    // Lần 6 bị chặn bởi IP limiter
+    const r6 = await call(base, 'POST', '/api/auth/login', { body: { identifier: 'ip-test-5@vidu.com', password: 'wrong' } });
+    assert.equal(r6.status, 429);
+    assert.equal(r6.data.error.code, 'RATE_LIMITED');
+    // Kiểm tra blocked function
+    const blocked = await call(base, 'POST', '/api/auth/login', { body: { identifier: 'ip-test-6@vidu.com', password: 'wrong' } });
+    assert.equal(blocked.status, 429);
+  } finally { await close(); }
+});
+
+test('RATE_LIMITED: email bị chặn sau 3 lần sai trong 15 phút', async () => {
+  const { base, close } = await start({ allowRegistration: false });
+  try {
+    // 3 lần sai
+    for (let i = 0; i < 3; i++) {
+      const r = await call(base, 'POST', '/api/auth/login', { body: { identifier: 'test@vidu.com', password: 'wrong' } });
+      assert.equal(r.status, 401);
+    }
+    // Lần 4 bị chặn
+    const r4 = await call(base, 'POST', '/api/auth/login', { body: { identifier: 'test@vidu.com', password: 'wrong' } });
+    assert.equal(r4.status, 429);
+    assert.equal(r4.data.error.code, 'RATE_LIMITED');
+  } finally { await close(); }
+});
+
+test('CSRF: POST không có token VỚI SESSION bị từ chối 403', async () => {
+  const { base, close, db } = await start();
+  try {
+    addUser(db, 'user1@vidu.com', 'user');
+    const session = await login(base, 'user1@vidu.com');
+    const r = await call(base, 'PUT', '/api/progress', { body: { data: { qstat: {}, daystat: {}, qstreak: 0, goal: 10 } }, cookie: session.cookie, csrfToken: '' });
+    assert.equal(r.status, 403);
+    assert.equal(r.data.error.code, 'CSRF_INVALID');
+  } finally { await close(); }
+});
+
+test('CSRF: token sai bị từ chối 403', async () => {
+  const { base, close, db } = await start();
+  try {
+    addUser(db, 'user2@vidu.com', 'user');
+    const session = await login(base, 'user2@vidu.com');
+    const r = await call(base, 'PUT', '/api/progress', { body: { data: { qstat: {}, daystat: {}, qstreak: 0, goal: 10 } }, cookie: session.cookie, csrfToken: 'wrong_token' });
+    assert.equal(r.status, 403);
+    assert.equal(r.data.error.code, 'CSRF_INVALID');
+  } finally { await close(); }
+});
+
+test('CSRF: token đúng được chấp nhận', async () => {
+  const { base, close, db } = await start();
+  try {
+    addUser(db, 'user3@vidu.com', 'user');
+    const session = await login(base, 'user3@vidu.com');
+    const r = await call(base, 'PUT', '/api/progress', { body: { data: { qstat: {}, daystat: {}, qstreak: 0, goal: 10 } }, cookie: session.cookie });
+    assert.notEqual(r.status, 403);
   } finally { await close(); }
 });
