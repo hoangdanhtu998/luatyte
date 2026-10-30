@@ -118,6 +118,7 @@
       <select id="qtopic" aria-label="Chủ đề"></select>
       <button class="btn" id="qstart">Lượt mới</button>
       <button class="btn ghost" id="qdaily">Thử thách hôm nay</button>
+      <button class="btn ghost" id="qhard">Ôn câu khó ★</button>
       <a class="btn ghost" href="clinic.html">Chơi ca trực (mini game)</a>      <button class="btn ghost" id="qai" hidden>Nhờ AI ra 5 câu mới</button>
     </div>
     <div class="card" id="quiz"></div>
@@ -956,6 +957,24 @@ function buildTopics(){
 buildTopics();
 $("#qset").onchange = () => { qset = $("#qset").value; buildTopics(); startQuiz(); };
 let qs = [], qi = 0, qscore = 0, qcombo = 0, qbest = 0, qAnswered = false;
+// Star/hard questions: lưu câu khó vào localStorage
+const HARD_KEY = "lyt_hardQs";
+const hardQs = () => store.get(HARD_KEY, []);
+const toggleHardQ = (qText) => {
+  const arr = hardQs();
+  const i = arr.indexOf(qText);
+  if (i < 0) { arr.push(qText); toast("Đã thêm vào câu khó"); }
+  else { arr.splice(i, 1); toast("Đã bỏ câu khó"); }
+  store.set(HARD_KEY, arr);
+  return arr;
+};
+const isHardQ = (qText) => hardQs().includes(qText);
+const startHardPractice = () => {
+  const pool = regularQuiz().filter(q => isHardQ(q.q));
+  if (!pool.length) { toast("Chưa có câu khó nào. Làm quiz và bấm ★ để đánh dấu."); return; }
+  showTab("tracnghiem");
+  startQuiz(pool.map(q => { const idx = shuffle(q.o.map((_,i)=>i)); return {...q, o: idx.map(i=>q.o[i]), a: idx.indexOf(q.a)}; }));
+};
 
 function masteredCount(pool){ const st = qStats(); return pool.filter(q => (st[q.q]||{}).s >= MASTER_AT).length; }
 // Câu đã đúng liên tiếp MASTER_AT lần (không sai lần nào trong chuỗi) xuất hiện ít hơn; câu từng sai thì xuất hiện nhiều hơn.
@@ -1535,8 +1554,11 @@ function renderQ(){
     ${q.verify ? `<p class="intro" style="margin:0 0 8px;font-size:12px">Câu này đang chờ đối chiếu văn bản gốc.</p>` : ""}
     <p class="q">${esc(q.q)}</p>
     <div class="opts">${q.o.map((o,i)=>`<button class="opt in" style="animation-delay:${i*70}ms" data-i="${i}"><span class="k">${"ABCD"[i]}</span><span class="tx">${esc(o)}</span></button>`).join("")}</div>
+    <div class="row" style="margin-top:8px"><button class="btn ghost" id="qstar" style="font-size:13px;padding:4px 10px">${isHardQ(q.q)?"★ Đã khó":"☆ Câu khó"}</button></div>
     <div id="qfb"></div>`;
   box.querySelectorAll(".opt").forEach(b => b.onclick = () => answerQ(+b.dataset.i, b));
+  const starBtn = $("#qstar");
+  if (starBtn) starBtn.onclick = () => { const arr = toggleHardQ(q.q); starBtn.textContent = isHardQ(q.q) ? "★ Đã khó" : "☆ Câu khó"; };
 }
 function answerQ(i, btn){
   if (qAnswered) return; qAnswered = true;
@@ -1561,6 +1583,7 @@ function answerQ(i, btn){
   checkBadges();
 }
 $("#qstart").onclick = () => startQuiz();
+$("#qhard").onclick = () => startHardPractice();
 $("#qdaily").onclick = () => {
   const done = daily().day === todayKey();
   if (done) toast("Hôm nay đã làm rồi. Lượt này chỉ để luyện thêm, không tính vào chuỗi.");
