@@ -14,6 +14,14 @@ import { parseKey } from './crypto.mjs';
 import { processQueue } from './mail.mjs';
 import { runRenewalReminders } from './billing.mjs';
 import { createBackup } from './phase567.mjs';
+import { checkConfig } from './config-check.mjs';
+
+const cfg = checkConfig(process.env);
+for (const w of cfg.warnings) console.warn('Cảnh báo cấu hình:', w);
+if (cfg.errors.length) {
+  for (const e of cfg.errors) console.error('Lỗi cấu hình:', e);
+  process.exit(1);
+}
 
 const PORT = Number(process.env.PORT || 3200);
 const DB_PATH = process.env.DB_PATH || './data/quan-ly.db';

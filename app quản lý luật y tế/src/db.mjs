@@ -106,6 +106,13 @@ export function openDb(path) {
       failed_reason TEXT,
       logged_at INTEGER NOT NULL
     );
+    -- Khóa tài khoản sau 5 lần sai trong 15 phút (bảo mật thêm).
+      CREATE TABLE IF NOT EXISTS account_locks (
+        user_id INTEGER PRIMARY KEY,
+        failed_count INTEGER NOT NULL DEFAULT 0,
+        first_fail_at TEXT NOT NULL,
+        locked_until TEXT NOT NULL
+      );
     CREATE TABLE IF NOT EXISTS audit_logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       admin_id INTEGER NOT NULL,
@@ -218,5 +225,14 @@ export function openDb(path) {
   const cols = db.prepare('PRAGMA table_info(users)').all().map(c => c.name);
   if (!cols.includes('username')) db.exec('ALTER TABLE users ADD COLUMN username TEXT');
   db.exec('CREATE UNIQUE INDEX IF NOT EXISTS users_username_uq ON users(username COLLATE NOCASE)');
+  // Indexes for performance
+  db.exec('CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_sessions_exp ON sessions(exp)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_login_logs_user ON login_logs(user_id)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_login_logs_logged_at ON login_logs(logged_at)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_audit_logs_admin ON audit_logs(admin_id)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_audit_logs_entity ON audit_logs(entity, entity_id)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_settings_key ON settings(key)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_account_locks_locked ON account_locks(locked_until)');
   return db;
 }

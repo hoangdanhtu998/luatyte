@@ -1,6 +1,7 @@
 // Phase 5 (vận hành: tổng quan, sao lưu, cảnh báo), Phase 6 (nội dung luật, trang pháp lý, xuất/xóa dữ liệu), Phase 7 (doanh thu, chi phí, lợi nhuận, chi phí AI).
-import { statfsSync, readdirSync, statSync, unlinkSync, existsSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { statfsSync, readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { cpus, totalmem, freemem, uptime, loadavg } from 'node:os';
 import { enqueue } from './mail.mjs';
 import { setSetting, getSetting } from './ops.mjs';
@@ -263,4 +264,42 @@ export function aiCostReport(db, { from, to, fxVndPerUsd = 26000 }) {
   const rows = db.prepare('SELECT feature, SUM(tokens) tokens, SUM(cost_usd) usd FROM ai_usage_logs WHERE created_at >= ? AND created_at < ? GROUP BY feature').all(from, to);
   const usd = rows.reduce((s, r) => s + r.usd, 0);
   return { totalUsd: Math.round(usd * 10000) / 10000, totalVnd: Math.round(usd * fxVndPerUsd), fxVndPerUsd, byFeature: rows.map(r => ({ feature: r.feature, tokens: r.tokens, usd: Math.round(r.usd * 10000) / 10000 })) };
+}
+
+// ---------- Phase 8: đọc dữ liệu học từ JSON files ----------
+const APP_HOC_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'app luật y tế');
+const DATA_DIR = join(APP_HOC_ROOT, 'data');
+
+function readJsonFile(filename) {
+  try {
+    const raw = readFileSync(join(DATA_DIR, filename), 'utf8');
+    return JSON.parse(raw);
+  } catch (e) {
+    throw new P567Error('DATA_ERROR', `Không đọc được ${filename}: ${e.message}`);
+  }
+}
+
+export function getLawsStats() {
+  const laws = readJsonFile('laws.json');
+  const cats = {};
+  laws.forEach(l => { cats[l.cat] = (cats[l.cat] || 0) + 1; });
+  const byStatus = { on: 0, amend: 0, het: 0, verify: 0 };
+  laws.forEach(l => {
+    if (l.verify) byStatus.verify++;
+    else if (byStatus[l.status] !== undefined) byStatus[l.status]++;
+  });
+  return { total: laws.length, byCategory: cats, byStatus, verifyCount: byStatus.verify };
+}
+
+export function getQuizStats() {
+  const files = ['quiz.json', 'quiz_bhyt.json', 'quiz_his.json', 'quiz_lythuyet.json', 'quiz_nentang.json'];
+  const total = files.reduce((sum, f) => sum + readJsonFile(f).length, 0);
+  return { total, byFile: Object.fromEntries(files.map(f => [f, readJsonFile(f).length])) };
+}
+
+export function getTheoryStats() {
+  const lt = readJsonFile('ly_thuyet.json');
+  const chapters = lt.chuong || [];
+  const totalSteps = chapters.reduce((s, c) => s + (c.buoc || []).length, 0);
+  return { total: chapters.length, totalSteps, byChapter: chapters.map(c => ({ id: c.id, ten: c.ten, steps: c.buoc?.length || 0 })) };
 }

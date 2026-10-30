@@ -66,6 +66,19 @@ export function createP567Routes({ db, now, helpers }) {
         if (!requireAdmin(req, res)) return true;
         return send(res, 200, P.exportLawContent(db)), true;
       }
+      // ---- Phase 8: thống kê dữ liệu học từ JSON ----
+      if (p === '/api/admin/stats/content/laws' && m === 'GET') {
+        if (!requireAdmin(req, res)) return true;
+        return send(res, 200, P.getLawsStats()), true;
+      }
+      if (p === '/api/admin/stats/content/quizzes' && m === 'GET') {
+        if (!requireAdmin(req, res)) return true;
+        return send(res, 200, P.getQuizStats()), true;
+      }
+      if (p === '/api/admin/stats/content/theory' && m === 'GET') {
+        if (!requireAdmin(req, res)) return true;
+        return send(res, 200, P.getTheoryStats()), true;
+      }
       const legalM = p.match(/^\/api\/legal\/(terms|privacy)$/);
       if (legalM && m === 'GET') {
         return send(res, 200, P.getLegal(db, legalM[1])), true;

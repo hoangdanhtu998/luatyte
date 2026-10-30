@@ -161,3 +161,28 @@ test('chi phí AI: ghi nhận và quy đổi sang VND theo tỷ giá', () => {
   assert.equal(r.totalVnd, 19500);
   assert.throws(() => P.logAiUsage(db, { feature: 'x', tokens: -1, costUsd: 1, now: T0 }), /không hợp lệ/);
 });
+
+test('thống kê laws: trả về tổng số, phân loại theo cat và status', () => {
+  const stats = P.getLawsStats();
+  assert.ok(typeof stats.total === 'number' && stats.total > 0);
+  assert.ok(typeof stats.byCategory === 'object');
+  assert.ok(typeof stats.byStatus === 'object');
+  assert.ok('BHYT' in stats.byCategory || 'Bảo hiểm y tế' in stats.byCategory);
+});
+
+test('thống kê quizzes: tổng và theo file', () => {
+  const stats = P.getQuizStats();
+  assert.ok(typeof stats.total === 'number' && stats.total > 0);
+  assert.ok(typeof stats.byFile === 'object');
+  assert.ok(stats.byFile['quiz_bhyt.json'] >= 20); // đã thêm 15 câu mới
+});
+
+test('thống kê lý thuyết: tổng chương và bước', () => {
+  const stats = P.getTheoryStats();
+  assert.ok(typeof stats.total === 'number' && stats.total >= 15);
+  assert.ok(typeof stats.totalSteps === 'number' && stats.totalSteps > 0);
+  assert.ok(Array.isArray(stats.byChapter));
+  const c21 = stats.byChapter.find(c => c.id === 'c21');
+  assert.ok(c21, 'phải có chương c21');
+  assert.equal(c21.steps, 6);
+});
