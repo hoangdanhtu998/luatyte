@@ -88,6 +88,7 @@
     <button role="tab" data-tab="ghepcap">Ghép cặp</button>
     <button role="tab" data-tab="thenho">Thẻ nhớ</button>
     <button role="tab" data-tab="tiendo">Tiến độ</button>
+    <button role="tab" data-tab="lotrinh">Lộ trình</button>
     <button role="tab" data-tab="phantich">Phân tích</button>
   </nav>
 
@@ -189,6 +190,12 @@
   <section class="panel" id="p-tiendo" hidden>
     <p class="intro">Tổng hợp tiến độ trên thiết bị này: tỉ lệ đúng, mục tiêu mỗi ngày, điểm mạnh/yếu theo chủ đề và lịch sử thi thử. Đăng nhập để đồng bộ tiến độ lên tài khoản.</p>
     <div id="tiendo"></div>
+  </section>
+
+  <!-- LỘ TRÌNH THEO VAI TRÒ -->
+  <section class="panel" id="p-lotrinh" hidden>
+    <p class="intro">Chọn vai trò nghề nghiệp để xem lộ trình học cá nhân hóa: các chương ưu tiên, tiến độ từng chương và luyện tập theo chuyên ngành.</p>
+    <div id="lotrinh-root"></div>
   </section>
 
   <!-- PHÂN TÍCH LỖI SAI -->
@@ -605,7 +612,7 @@ await sync.init();
 renderStats(); checkBadges();
 
 /* ================= CHUYỂN TAB ================= */
-const TABS = ["thuvien","tracnghiem","thithu","dungsai","ghepcap","thenho","tiendo","phantich"];
+const TABS = ["thuvien","tracnghiem","thithu","dungsai","ghepcap","thenho","tiendo","lotrinh","phantich"];
 function placeInd(){
   const b = document.querySelector('nav.tabs button[aria-selected="true"]'); if (!b) return;
   const ind = $("#ind"); ind.style.width = b.offsetWidth + "px"; ind.style.transform = `translateX(${b.offsetLeft}px)`;
@@ -622,6 +629,7 @@ function showTab(t){
   if (t==="phantich") renderAnalysis();
   if (t==="thenho") renderSrs();
   if (t==="tiendo") renderProgress();
+  if (t==="lotrinh") { if (ROLES) renderRoleRoadmapInto($("#lotrinh-root")); }
   if (t==="thithu") renderExamHistory();
 }
 document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
@@ -1489,6 +1497,51 @@ function renderRoleRoadmap(){
     ${chapterRows}
     <p class="role-empty">Lộ trình gợi ý, không phải chương trình đào tạo chính thức. ${unmapped ? `Nhóm Khác: ${unmapped} câu chưa gắn lộ trình (gồm câu đang chờ đối chiếu), vẫn luyện được ở tab Trắc nghiệm.` : ""}</p>`;
   body.querySelectorAll("[data-role-practice]").forEach(b => b.onclick = () => practiceRoleChapter(b.dataset.rolePractice));
+}
+
+function renderRoleRoadmapInto(root){
+  if (!ROLES || !Array.isArray(ROLES.vai_tro) || !ROLES.vai_tro.length || !root) return;
+  const roles = ROLES.vai_tro;
+  let selected = store.get("role", roles[0].id);
+  if (!roles.some(r => r.id === selected)) selected = roles[0].id;
+  const st = qStats();
+  const render = () => {
+    const role = ROLES.vai_tro.find(r => r.id === selected);
+    const unique = new Map();
+    role.chuong.forEach(cid => roleChapterQuestions(cid).forEach(q => unique.set(q.q, q)));
+    const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
+    const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
+    const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
+    const chapterRows = role.chuong.map(cid => {
+      const meta = ROLES.chuong[cid] || { ten: cid };
+      const qs = roleChapterQuestions(cid);
+      const total = qs.length;
+      const learned = qs.filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
+      const seen = qs.some(q => { const x = qStats()[q.q]; return x && ((x.r || 0) + (x.w || 0) > 0); });
+      const status = !total ? "Chưa có câu hỏi" : learned === total ? "Đã thuộc" : seen ? "Đang học" : "Chưa học";
+      return `<div class="role-ch">
+        <div class="role-ch-head"><b>${esc(meta.ten || cid)}</b><span class="meta">${learned}/${total} câu · ${status}</span></div>
+        <div class="prog-bar"><i style="width:${total ? Math.round(learned / total * 100) : 0}%"></i></div>
+        <div class="role-ch-actions">
+          <a class="btn ghost" href="ly_thuyet.html?c=${encodeURIComponent(cid)}">Đọc chương</a>
+          <button type="button" class="btn ghost" data-role-practice="${esc(cid)}"${total ? "" : " disabled"}>${total ? "Luyện " + Math.min(10, total) + " câu" : "Chưa có câu hỏi"}</button>
+        </div>
+      </div>`;
+    }).join("");
+    const unique = new Map();
+    role.chuong.forEach(cid => roleChapterQuestions(cid).forEach(q => unique.set(q.q, q)));
+    const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
+    const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
+    const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
+    root.innerHTML = `<div class="role-picker" role="group" aria-label="Chọn vai trò">${ROLES.vai_tro.map(r => `<button type="button" class="role-btn" data-role="${esc(r.id)}" aria-pressed="${r.id === selected}"><b>${esc(r.ten)}</b><span>${esc(r.mo_ta)}</span></button>`).join("")}</div>
+      <div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
+      <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
+      ${chapterRows}
+      <p class="role-empty">Lộ trình gợi ý, không phải chương trình đào tạo chính thức. ${unmapped ? `Nhóm Khác: ${unmapped} câu chưa gắn lộ trình (gồm câu đang chờ đối chiếu), vẫn luyện được ở tab Trắc nghiệm.` : ""}</p>`;
+    root.querySelectorAll("[data-role]").forEach(b => b.onclick = () => { store.set("role", b.dataset.role); renderRoleRoadmapInto(root); });
+    root.querySelectorAll("[data-role-practice]").forEach(b => b.onclick = () => practiceRoleChapter(b.dataset.rolePractice));
+  };
+  render();
 }
 /* ================= SAO LƯU TIẾN ĐỘ ================= */
 function exportProgress(){
