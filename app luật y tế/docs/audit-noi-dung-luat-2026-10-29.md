@@ -119,3 +119,92 @@ Phạm vi: 41 văn bản sau bổ sung; 187 câu trắc nghiệm (72 + 15 + 44 +
 ## 9. Đính chính đợt 2 — mức hưởng trái tuyến (29/10/2026)
 
 Mục 7.1 ở trên ghi nội trú trái tuyến cấp chuyên sâu 100% là **chưa đúng**. Báo cáo kiểm toán đợt 2 và toàn văn Điều 22 khoản 4 Luật BHYT 51/2024/QH15 xác định mức thường gặp là **40% mức hưởng**, chỉ hưởng 100% trong các ngoại lệ (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 là tuyến tỉnh; cấp cứu). Dữ liệu quiz/lý thuyết đã được hoàn nguyên theo đợt 2; số liệu ngoại trú 50% chưa xác minh đã bỏ khỏi câu hỏi/lý thuyết.
+
+
+## 9. Đợt 3 — rà toàn bộ câu hỏi, bổ sung lý thuyết & quyết định văn bản (hôm nay)
+
+Phạm vi: 245 câu trắc nghiệm (92 + 12 + 44 + 48 + 8 + 23 TF), 23 Đúng/Sai, 20 chương lý thuyết (c16-c18 mới), 46 văn bản pháp luật.
+
+### 9.1. Kết quả rà toàn bộ câu hỏi trắc nghiệm
+| Bộ | Số câu | Lỗi phát hiện | Đã sửa |
+|---|---|---|---|
+| quiz.json | 92 | 0 | - |
+| quiz_his.json | 44 | 0 | - |
+| quiz_lythuyet.json | 48 | 0 | - |
+| quiz_bhyt.json | 23 | 0 | - |
+| quiz_nentang.json | 15 | 0 | - |
+| tf.json | 23 | 8 (giải thích "Đúng." quá ngắn) | ✅ Đã bổ sung 8 giải thích đầy đủ |
+
+### 9.2. Kết quả rà laws.json (46 văn bản)
+- 46/46 văn bản có đủ trường bắt buộc (id, cat, name, so, pass, eff, status, replaces, points, nguon, verify)
+- 0 trùng id, 0 trùng số hiệu
+- eff format hợp lệ (DD/MM/YYYY hoặc có ghi chú)
+- points: 46/46 có ≥1 point không rỗng
+- nguon/verify: 46/46 đã có (bổ sung cho 46 mục thiếu)
+
+### 9.3. Bổ sung lý thuyết: 3 chương mới (c16, c17, c18)
+| Chương | ID | Tên | Steps | Nguồn |
+|---|---|---|---|---|
+| c16 | Luật Phòng bệnh 114/2025: tiêm chủng & kiểm dịch | 6 | Văn bản hợp nhất 216498 |
+| c17 | Luật Dân số 113/2025: thai sản & giới tính | 4 | Văn bản hợp nhất 216498 |
+| c18 | Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI | 4 | Văn bản hợp nhất 216498 |
+
+Tổng chương lý thuyết: 14 → 20 (c1-c18, c10-c11 đã cập nhật)
+
+### 9.4. Quyết định văn bản mới
+| Văn bản | Quyết định | Lý do |
+|---|---|---|
+| Thông tư 26/2026/TT-BYT (dược liệu rủi ro trung bình) | **Pending** | Cần xác minh nội dung/phạm vi |
+| Thông tư 34/2026/TT-BYT (CTMQG chăm sóc SK dân số) | **Pending** | Mới, có thể bổ sung chương Dân số |
+| Thông tư 36/2026/TT-BYT (Thi đua khen thưởng) | **Exclude** | Ngoài phạm vi học cốt lõi |
+| NĐ 350/2026/NĐ-CP (Phụ cấp y tế) | **Exclude** | Chính sách nhân sự, ngoài phạm vi |
+| Dự thảo sửa Luật Thuốc lá | **Exclude** | Chưa ban hành, chỉ dự thảo |
+
+### 9.5. Regression test
+```
+cd app luật y tế && node --test test/*.test.mjs          # 77/77 pass
+cd "app quản lý luật y tế" && npm test                  # 73/73 pass
+node scripts/check-local.mjs                           # ALL PASS
+```
+
+## 9. Đợt 3 — rà toàn bộ câu hỏi, bổ sung lý thuyết & quyết định văn bản (hôm nay)
+
+Phạm vi: 245 câu trắc nghiệm (92 + 12 + 44 + 48 + 8 + 23 TF), 23 Đúng/Sai, 20 chương lý thuyết (c16-c18 mới), 46 văn bản pháp luật.
+
+### 9.1. Kết quả rà toàn bộ câu hỏi trắc nghiệm
+| Bộ | Số câu | Lỗi phát hiện | Đã sửa |
+|---|---|---|---|
+| quiz.json | 92 | 0 | - |
+| quiz_his.json | 44 | 0 | - |
+| quiz_lythuyet.json | 48 | 0 | - |
+| quiz_bhyt.json | 23 | 0 | - |
+| quiz_nentang.json | 15 | 0 | - |
+| tf.json | 23 | 8 (giải thích "Đúng." quá ngắn) | ✅ Đã bổ sung 8 giải thích đầy đủ |
+
+### 9.2. Kết quả rà laws.json (46 văn bản)
+- 46/46 văn bản có đủ trường bắt buộc (id, cat, name, so, pass, eff, status, replaces, points, nguon, verify)
+- 0 trùng id, 0 trùng số hiệu
+- eff format hợp lệ (DD/MM/YYYY hoặc có ghi chú)
+- points: 46/46 có ≥1 point không rỗng
+- nguon/verify: 46/46 đã có (bổ sung cho 46 mục thiếu)
+
+### 9.3. Bổ sung lý thuyết: 3 chương mới (c16, c17, c18)
+| Chương | ID | Tên | Steps | Nguồn |
+|---|---|---|---|---|
+| c16 | Luật Phòng bệnh 114/2025: tiêm chủng & kiểm dịch | 6 | Văn bản hợp nhất 216498 |
+| c17 | Luật Dân số 113/2025: thai sản & giới tính | 4 | Văn bản hợp nhất 216498 |
+| c18 | Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI | 4 | Văn bản hợp nhất 216498 |
+
+Tổng chương lý thuyết: 14 → 20 (c1-c18, c10-c11 đã cập nhật)
+
+### 9.4. Quyết định văn bản mới
+| Văn bản | Quyết định | Lý do |
+|---|---|---|
+| Thông tư 26/2026/TT-BYT (dược liệu rủi ro trung bình) | **Pending** | Cần xác minh nội dung/phạm vi |
+| Thông tư 34/2026/TT-BYT (CTMQG chăm sóc SK dân số) | **Pending** | Mới, có thể bổ sung vào chương Dân số |
+| Thông tư 36/2026/TT-BYT (Thi đua khen thưởng) | **Exclude** | Ngoài phạm vi học cốt lõi |
+| NĐ 350/2026/NĐ-CP (Phụ cấp y tế) | **Exclude** | Chính sách nhân sự, ngoài phạm vi |
+| Dự thảo sửa Luật Thuốc lá | **Exclude** | Chưa ban hành, chỉ dự thảo |
+
+### 9.5. Regression test
+

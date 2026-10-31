@@ -1076,6 +1076,167 @@
           "a": "Luật KCB 40/2009"
         }
       ]
+    },
+    {
+      "id": "c16",
+      "ten": "Luật Phòng bệnh 114/2025: tiêm chủng & kiểm dịch",
+      "muc_tieu": [
+        "Hiểu phạm vi điều chỉnh của Luật Phòng bệnh 114/2025",
+        "Nắm rõ quy định về tiêm chủng bắt buộc, tình nguyện và an toàn tiêm chủng",
+        "Hiểu quy định về khám sức khỏe học đường, dịch bệnh và kiểm dịch y tế"
+      ],
+      "buoc": [
+        {
+          "tieu_de": "Phạm vi và đối tượng (Điều 1-2)",
+          "giai_thich": "Luật 114/2025/QH15 quy định về phòng, chống dịch bệnh; tiêm chủng; khám sức khỏe định kỳ; giám sát dịch bệnh; kiểm dịch y tế tại cửa khẩu.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Tiêm chủng (Điều 15-35)",
+          "giai_thich": "Tiêm chủng bắt buộc theo danh mục do Bộ Y tế ban hành (Điều 16). An toàn tiêm chủng: sàng lọc trước tiêm, theo dõi sau tiêm, xử lý phản ứng sau tiêm (Điều 20-24). Cơ sở tiêm phải đủ điều kiện (Điều 27).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Khám sức khỏe & Dịch bệnh (Điều 36-55)",
+          "giai_thich": "Khám sức khỏe định kỳ cho người lao động, học sinh, sinh viên (Điều 36-42). Dịch bệnh: báo dịch, cách ly, phong tỏa, tuyên truyền (Điều 43-50). Cấp phép lưu hành thuốc, hóa chất trong phòng dịch (Điều 51-55).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Kiểm dịch y tế cửa khẩu (Điều 56-65)",
+          "giai_thich": "Kiểm dịch y tế tại cửa khẩu quốc tế: xét nghiệm, cách ly, khử trùng phương tiện, hàng hóa (Điều 56-60). Hợp tác quốc tế phòng, chống dịch bệnh (Điều 61-65).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Trách nhiệm & Xử phạt (Điều 66-80)",
+          "giai_thich": "Trách nhiệm của UBND cấp tỉnh, Bộ Y tế, Bộ Quốc phòng, Bộ Công an (Điều 66-70). Xử phạt vi phạm: phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Hiệu lực & Điều khoản chuyển tiếp",
+          "giai_thich": "Luật có hiệu lực từ 01/07/2026 (Điều 104). Thay thế Luật Phòng, chống dịch bệnh 03/2007/QH12.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        }
+      ],
+      "on_nhanh": [
+        {
+          "q": "Luật 114/2025 có hiệu lực từ khi?",
+          "a": "01/07/2026"
+        },
+        {
+          "q": "Tiêm chủng bắt buộc do ai quy định danh mục?",
+          "a": "Bộ Y tế"
+        },
+        {
+          "q": "Ai chịu trách nhiệm báo dịch bệnh?",
+          "a": "Cơ sở y tế, UBND cấp xã, cá nhân"
+        },
+        {
+          "q": "Vi phạm quy định tiêm chủng bị xử phạt thế nào?",
+          "a": "Phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80)"
+        },
+        {
+          "q": "Luật 114/2025 thay thế luật nào?",
+          "a": "Luật 03/2007/QH12"
+        }
+      ]
+    },
+    {
+      "id": "c17",
+      "ten": "Luật Dân số 113/2025: thai sản & giới tính",
+      "muc_tieu": [
+        "Hiểu mục tiêu dân số bền vững theo Luật 113/2025",
+        "Nắm quy định về khuyến khích sinh con, cân bằng giới tính khi sinh",
+        "Hiểu về chăm sóc người cao tuổi, phân bố dân số"
+      ],
+      "buoc": [
+        {
+          "tieu_de": "Mục tiêu dân số (Điều 1-5)",
+          "giai_thich": "Luật 113/2025/QH15 hướng tới dân số bền vững, chất lượng, cân bằng giới tính khi sinh. Mục tiêu: tỷ số giới tính khi sinh tự nhiên (105-107 nam/100 nữ), giảm tỷ lệ sinh con thứ 3 trở lên.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Khuyến khích sinh con & Chăm sóc mẹ/bé (Điều 6-20)",
+          "giai_thich": "Khuyến khích sinh con thứ 2: hỗ trợ tiền sinh, giảm học phí, ưu tiên gửi trẻ (Điều 6-10). Chăm sóc mẹ/bé: khám thai ≥3 lần, sinh tại cơ sở y tế, screening sơ sinh (Điều 11-15).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Cân bằng giới tính & Chăm sóc người cao tuổi (Điều 21-35)",
+          "giai_thich": "Cấm chọn giới tính thai nhi (Điều 21). Hỗ trợ người cao tuổi: thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao (Điều 22-30).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Phân bố dân số & Dữ liệu (Điều 36-50)",
+          "giai_thich": "Phân bố hợp lý: hạn chế tập trung tại đô thị lớn, khuyến khích đến vùng khó khăn (Điều 36-40). Cơ sở dữ liệu dân số quốc gia: thống nhất, chia sẻ, bảo mật (Điều 41-50).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        }
+      ],
+      "on_nhanh": [
+        {
+          "q": "Luật Dân số 113/2025 có hiệu lực từ khi?",
+          "a": "01/07/2026"
+        },
+        {
+          "q": "Mục tiêu tỷ số giới tính khi sinh?",
+          "a": "105-107 nam/100 nữ"
+        },
+        {
+          "q": "Có được chọn giới tính thai nhi không?",
+          "a": "Cấm (Điều 21)"
+        },
+        {
+          "q": "Người cao tuổi được hỗ trợ gì?",
+          "a": "Thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao"
+        }
+      ]
+    },
+    {
+      "id": "c18",
+      "ten": "Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI",
+      "muc_tieu": [
+        "Hiểu khái niệm chuyển đổi số trong y tế",
+        "Nắm quy định về dữ liệu y tế quốc gia, sổ sức khỏe điện tử",
+        "Hiểu quy định về AI, telemedicine, bảo mật dữ liệu"
+      ],
+      "buoc": [
+        {
+          "tieu_de": "Chuyển đổi số trong y tế (Điều 1-10)",
+          "giai_thich": "Luật 148/2025/QH15 quy định nguyên tắc: người dân trung tâm, chia sẻ dữ liệu, bảo mật, an toàn thông tin. Phạm vi: sổ sức khỏe điện tử, hồ sơ bệnh án điện tử, định danh y tế, telemedicine, AI trong y tế.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Dữ liệu y tế & Sổ sức khỏe điện tử (Điều 11-25)",
+          "giai_thich": "Cơ sở dữ liệu y tế quốc gia: thống nhất, chuẩn hóa, liên thông (Điều 11-15). Sổ sức khỏe điện tử: định danh duy nhất, chủ động cập nhật, chia sẻ an toàn (Điều 16-20). Hồ sơ bệnh án điện tử: giá trị pháp lý = giấy (Điều 21-25).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Telemedicine & AI trong y tế (Điều 26-40)",
+          "giai_thich": "Khám chữa bệnh từ xa: điều kiện, tiêu chuẩn, trách nhiệm (Điều 26-30). AI trong y tế: minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35). Bảo vệ dữ liệu cá nhân y tế: đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        },
+        {
+          "tieu_de": "Hạ tầng & An toàn thông tin (Điều 41-55)",
+          "giai_thich": "Hạ tầng số y tế: trung tâm dữ liệu, băng thông, an ninh mạng (Điều 41-45). Ứng dụng chuyển đổi số: định danh VNeID, thanh toán điện tử, kê đơn điện tử (Điều 46-50). Kiểm soát, giám sát, xử phạt vi phạm (Điều 51-55).",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+        }
+      ],
+      "on_nhanh": [
+        {
+          "q": "Luật 148/2025 có hiệu lực từ khi?",
+          "a": "01/07/2026"
+        },
+        {
+          "q": "Sổ sức khỏe điện tử có giá trị pháp lý như giấy không?",
+          "a": "Có, giá trị pháp lý ngang ngửa (Điều 21)"
+        },
+        {
+          "q": "AI trong y tế cần đáp ứng yêu cầu gì?",
+          "a": "Minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35)"
+        },
+        {
+          "q": "Dữ liệu cá nhân y tế được bảo vệ thế nào?",
+          "a": "Đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40)"
+        }
+      ]
     }
   ],
   "nguon": "Luật BHYT 51/2024/QH15"
