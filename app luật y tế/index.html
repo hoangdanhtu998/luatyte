@@ -562,7 +562,12 @@ const BADGES = [
   { id: "tf20",   name: "Hai mươi câu Đúng/Sai", desc: "Đúng 20 nhận định trong một lượt 60 giây", ok: () => store.get("tfbest", 0) >= 20 },
   { id: "match",  name: "Ghép không lỗi",         desc: "Ghép đủ 5 cặp mà không sai lần nào", ok: () => store.get("matchPerfect", false) },
   { id: "exam80", name: "Thi thử 80%",            desc: "Đạt 80% trở lên trong một lần thi thử", ok: () => store.get("exams", []).some(x => x.pct >= 80) },
-  { id: "review3",name: "Ôn đều ba ngày",         desc: "Ôn hết hàng đợi Ôn hôm nay 3 ngày liên tiếp", ok: () => reviewStreak() >= 3 }
+  { id: "review3",name: "Ôn đều ba ngày",         desc: "Ôn hết hàng đợi Ôn hôm nay 3 ngày liên tiếp", ok: () => reviewStreak() >= 3 },
+  { id: "exam90", name: "Thi thử 90%",      desc: "Đạt 90% trở lên trong một lần thi thử", ok: () => store.get("exams", []).some(x => x.pct >= 90) },
+  { id: "daily10",  name: "Mười ngày liền", desc: "Đạt thử thách hôm nay 10 ngày liên tiếp", ok: () => dailyStreak() >= 10 },
+  { id: "law10",    name: "Thập pháp luật", desc: "Thành thạo toàn bộ câu hỏi của 10 luật", ok: () => masteredLaws().length >= 10 },
+  { id: "combo10",  name: "Mười câu liên tiếp", desc: "Đúng 10 câu liên tiếp trong một lượt", ok: () => store.get("bestcombo", 0) >= 10 },
+  { id: "exam100",  name: "Hoàn hảo thi thử", desc: "Đạt 100% trong một lần thi thử", ok: () => store.get("exams", []).some(x => x.pct === 100) }
 ];
 let badgeExpanded = false;
 function knownBadgeIds(){
