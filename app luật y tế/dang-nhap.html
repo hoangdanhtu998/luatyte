@@ -134,7 +134,11 @@
         </label>
         <label class="check">
           <input type="checkbox" name="acceptTerms" required>
-          <span>Tôi đồng ý với điều khoản sử dụng và chính sách bảo mật.</span>
+          <span>Tôi đã đọc và đồng ý với điều khoản sử dụng.</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" name="acceptPrivacy" required>
+          <span>Tôi đồng ý để luatyte xử lý email và mật khẩu của tôi nhằm tạo và quản lý tài khoản.</span>
         </label>
         <button type="submit" class="primary" id="register-btn">Tạo tài khoản</button>
         <p class="msg err" id="register-err" role="alert"></p>
@@ -232,13 +236,14 @@ $('form-register').onsubmit = async e => {
   const f = e.target, btn = $('register-btn');
   setMsg($('register-err'), ''); setMsg($('register-ok'), '');
   if (!f.acceptTerms.checked) { setMsg($('register-err'), 'Bạn cần đồng ý điều khoản để tạo tài khoản.'); return; }
+  if (!f.acceptPrivacy.checked) { setMsg($('register-err'), 'Bạn cần đọc và đồng ý chính sách bảo mật để tạo tài khoản.'); return; }
   busy(btn, true, 'Tạo tài khoản');
   try {
     const r = await fetch('/api/auth/register', {
       method: 'POST', headers: { 'content-type': 'application/json' }, credentials: 'same-origin',
       body: JSON.stringify({
         username: f.username.value.trim(), email: f.email.value.trim(), name: f.name.value.trim(),
-        password: f.password.value, acceptTerms: f.acceptTerms.checked,
+        password: f.password.value, acceptTerms: f.acceptTerms.checked, acceptPrivacy: f.acceptPrivacy.checked,
       }),
     });
     const data = await r.json().catch(() => ({}));
