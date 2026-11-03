@@ -195,7 +195,7 @@ test("khôi phục chặn chỉ số đáp án bậy", () => {
 const roadmap = read("lo-trinh-vai-tro.json");
 const bank = [...read("quiz.json"), ...read("quiz_nentang.json"), ...read("quiz_his.json"), ...read("quiz_bhyt.json")];
 const META = new Set([
-  "Thông tư 21/2023/TT-BYT (đã hết hiệu lực từ 01/01/2025) gồm bao nhiêu phụ lục khung giá?",
+  "Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh có bao nhiêu phụ lục?",
   "Thông tư 25/2026/TT-BYT thay thế toàn bộ Điều nào của Thông tư 32/2023 về khám sức khỏe?",
   "Thông tư 13/2025/TT-BYT làm hết hiệu lực Thông tư nào về hồ sơ bệnh án điện tử?",
 ]);
