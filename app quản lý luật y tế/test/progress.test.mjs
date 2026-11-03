@@ -28,7 +28,7 @@ async function call(base, method, path, { body, cookie, csrf } = {}) {
 }
 
 async function loginUser(base, email = 'u1@vidu.vn', username = 'nguoi1') {
-  await call(base, 'POST', '/api/auth/register', { body: { email, username, password: PW, acceptTerms: true } });
+  await call(base, 'POST', '/api/auth/register', { body: { email, username, password: PW, acceptTerms: true, acceptPrivacy: true } });
   return call(base, 'POST', '/api/auth/login', { body: { email, password: PW } });
 }
 

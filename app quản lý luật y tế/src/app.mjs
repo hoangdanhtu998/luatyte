@@ -206,6 +206,7 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
       const email = String(body.email || '').trim().toLowerCase();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return err(res, 400, 'INVALID_EMAIL', 'Email không hợp lệ.');
       if (body.acceptTerms !== true) return err(res, 400, 'TERMS_REQUIRED', 'Cần đồng ý điều khoản.');
+      if (body.acceptPrivacy !== true) return err(res, 400, 'PRIVACY_REQUIRED', 'Cần đồng ý xử lý email và mật khẩu.');
       let hash;
       try { hash = hashPassword(body.password); } catch (e) { return err(res, 400, 'WEAK_PASSWORD', e.message); }
       if (db.prepare('SELECT id FROM users WHERE email = ?').get(email)) return err(res, 409, 'EMAIL_TAKEN', 'Email này đã có tài khoản.');
@@ -214,6 +215,7 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
       if (db.prepare('SELECT id FROM users WHERE username = ? COLLATE NOCASE').get(username)) return err(res, 409, 'USERNAME_TAKEN', 'Tên đăng nhập này đã có người dùng.');
       const info = db.prepare('INSERT INTO users (email, username, name, password_hash, role, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)').run(email, username, String(body.name || '').slice(0, 100), hash, 'user', 'active', new Date(now()).toISOString());
       db.prepare('INSERT INTO consents (user_id, type, version, agreed_at, ip) VALUES (?, ?, ?, ?, ?)').run(Number(info.lastInsertRowid), 'terms', consentVersion, new Date(now()).toISOString(), clientIp(req));
+      db.prepare('INSERT INTO consents (user_id, type, version, agreed_at, ip) VALUES (?, ?, ?, ?, ?)').run(Number(info.lastInsertRowid), 'privacy', consentVersion, new Date(now()).toISOString(), clientIp(req));
       return send(res, 201, { ok: true });
     }
 

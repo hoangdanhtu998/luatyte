@@ -22,7 +22,7 @@ test('đăng ký bằng tên đăng nhập; đăng nhập được bằng email 
   await new Promise(r => server.listen(0, '127.0.0.1', r));
   const B = `http://127.0.0.1:${server.address().port}`;
   try {
-    const reg = await post(B, '/api/auth/register', { email: 'hoc@vidu.vn', username: 'hoc_vien.01', password: PW, acceptTerms: true });
+    const reg = await post(B, '/api/auth/register', { email: 'hoc@vidu.vn', username: 'hoc_vien.01', password: PW, acceptTerms: true, acceptPrivacy: true });
     assert.equal(reg.status, 201);
 
     // Đăng nhập bằng tên đăng nhập
@@ -53,12 +53,12 @@ test('tên đăng nhập: không trùng (kể cả khác hoa thường), đúng 
   await new Promise(r => server.listen(0, '127.0.0.1', r));
   const B = `http://127.0.0.1:${server.address().port}`;
   try {
-    assert.equal((await post(B, '/api/auth/register', { email: 'a@vidu.vn', username: 'nguyen_an', password: PW, acceptTerms: true })).status, 201);
-    const taken = await post(B, '/api/auth/register', { email: 'b@vidu.vn', username: 'NGUYEN_AN', password: PW, acceptTerms: true });
+    assert.equal((await post(B, '/api/auth/register', { email: 'a@vidu.vn', username: 'nguyen_an', password: PW, acceptTerms: true, acceptPrivacy: true })).status, 201);
+    const taken = await post(B, '/api/auth/register', { email: 'b@vidu.vn', username: 'NGUYEN_AN', password: PW, acceptTerms: true, acceptPrivacy: true });
     assert.equal(taken.status, 409);
     assert.equal((await taken.json()).error.code, 'USERNAME_TAKEN');
     for (const bad of ['ab', 'có dấu', 'x'.repeat(31), 'bad name', '']) {
-      const r = await post(B, '/api/auth/register', { email: `c${Math.random().toString(36).slice(2)}@vidu.vn`, username: bad, password: PW, acceptTerms: true });
+      const r = await post(B, '/api/auth/register', { email: `c${Math.random().toString(36).slice(2)}@vidu.vn`, username: bad, password: PW, acceptTerms: true, acceptPrivacy: true });
       assert.equal(r.status, 400, `tên "${bad}" phải bị từ chối`);
     }
   } finally {
