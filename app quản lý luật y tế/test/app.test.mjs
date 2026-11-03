@@ -188,20 +188,34 @@ test('admin không tự khóa hoặc tự hạ quyền chính mình', async () =
 test('đăng ký ghi lịch sử đồng ý; admin xem được lịch sử', async () => {
   const { db, base, close } = await start();
   try {
-    const reg = await call(base, 'POST', '/api/auth/register', { body: { email: 'moi@vidu.com', username: 'moi_vidu', password: PW, acceptTerms: true } });
+    const reg = await call(base, 'POST', '/api/auth/register', { body: { email: 'moi@vidu.com', username: 'moi_vidu', password: PW, acceptTerms: true, acceptPrivacy: true } });
     assert.equal(reg.status, 201);
     const row = db.prepare('SELECT type, version FROM consents').get();
     assert.equal(row.type, 'terms');
     const noTerms = await call(base, 'POST', '/api/auth/register', { body: { email: 'x@vidu.com', username: 'x_vidu', password: PW, acceptTerms: false } });
     assert.equal(noTerms.data.error.code, 'TERMS_REQUIRED');
-    assert.equal((await call(base, 'POST', '/api/auth/register', { body: { email: 'moi@vidu.com', username: 'moi_vidu', password: PW, acceptTerms: true } })).status, 409);
+    assert.equal((await call(base, 'POST', '/api/auth/register', { body: { email: 'moi@vidu.com', username: 'moi_vidu', password: PW, acceptTerms: true, acceptPrivacy: true } })).status, 409);
+  } finally { await close(); }
+});
+
+test('đăng ký thiếu đồng ý xử lý dữ liệu thì trả 400; đủ hai ô thì ghi hai loại đồng ý', async () => {
+  const { db, base, close } = await start();
+  try {
+    const noPrivacy = await call(base, 'POST', '/api/auth/register', { body: { email: 'np@vidu.com', username: 'np_vidu', password: PW, acceptTerms: true, acceptPrivacy: false } });
+    assert.equal(noPrivacy.status, 400);
+    assert.equal(noPrivacy.data.error.code, 'PRIVACY_REQUIRED');
+    assert.equal(db.prepare("SELECT COUNT(*) AS c FROM users WHERE email = 'np@vidu.com'").get().c, 0);
+    const ok = await call(base, 'POST', '/api/auth/register', { body: { email: 'ok@vidu.com', username: 'ok_vidu', password: PW, acceptTerms: true, acceptPrivacy: true } });
+    assert.equal(ok.status, 201);
+    const types = db.prepare("SELECT type FROM consents WHERE user_id = (SELECT id FROM users WHERE email = 'ok@vidu.com') ORDER BY id").all().map(r => r.type);
+    assert.deepEqual(types, ['terms', 'privacy']);
   } finally { await close(); }
 });
 
 test('đăng ký đóng thì trả 403', async () => {
   const { base, close } = await start({ allowRegistration: false });
   try {
-    const r = await call(base, 'POST', '/api/auth/register', { body: { email: 'a@vidu.com', username: 'a_vidu', password: PW, acceptTerms: true } });
+    const r = await call(base, 'POST', '/api/auth/register', { body: { email: 'a@vidu.com', username: 'a_vidu', password: PW, acceptTerms: true, acceptPrivacy: true } });
     assert.equal(r.status, 403);
   } finally { await close(); }
 });
