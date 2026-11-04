@@ -1044,46 +1044,46 @@
   {
     "t": "kcb",
     "id": "kcb-85",
-    "q": "Người bệnh có quyền gì đối với phương án điều trị theo Luật KCB 40/2025?",
+    "q": "Theo Luật Khám bệnh, chữa bệnh 15/2023, người bệnh có quyền gì đối với phương pháp điều trị?",
     "o": [
       "Bắt buộc điều trị theo bác sĩ",
-      "Biết chẩn đoán và từ chối điều trị",
-      "Không được biết chẩn đoán",
+      "Được lựa chọn phương pháp điều trị sau khi được cung cấp đủ thông tin",
+      "Không được biết về tình trạng bệnh",
       "Chỉ được điều trị tại bệnh viện công"
     ],
     "a": 1,
-    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền biết chẩn đoán, phương án điều trị và được quyền từ chối điều trị."
+    "e": "Luật KCB 15/2023 Điều 11: người bệnh được lựa chọn phương pháp điều trị sau khi được cung cấp đủ thông tin."
   },
   {
     "t": "kcb",
     "id": "kcb-86",
-    "q": "Cơ sở KCB phải công khai những gì theo Luật KCB 40/2025?",
+    "q": "Cơ sở khám bệnh, chữa bệnh phải niêm yết công khai nội dung nào theo Luật KCB 15/2023?",
     "o": [
       "Lương bác sĩ",
-      "Giá dịch vụ và quyền lợi người bệnh",
+      "Giá dịch vụ khám bệnh, chữa bệnh",
       "Số giường bệnh",
       "Thời gian nghỉ của nhân viên"
     ],
     "a": 1,
-    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ, thái độ phục vụ và quyền lợi người bệnh."
+    "e": "Luật KCB 15/2023 Điều 60 khoản 4: cơ sở phải niêm yết giá dịch vụ tại nơi thu tiền và đăng tải trên hệ thống thông tin quản lý khám bệnh, chữa bệnh quốc gia."
   },
   {
     "t": "kcb",
     "id": "kcb-87",
-    "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý khi nào?",
+    "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý thế nào theo Luật KCB 15/2023?",
     "o": [
-      "Ngay khi tạo",
-      "Từ 01/07/2026",
-      "Khi có xác nhận của bệnh viện",
-      "Không có giá trị pháp lý"
+      "Không có giá trị pháp lý",
+      "Chỉ có giá trị khi in ra giấy",
+      "Có giá trị pháp lý tương đương hồ sơ bệnh án giấy",
+      "Chỉ có giá trị trong nội bộ bệnh viện"
     ],
-    "a": 1,
-    "e": "Luật KCB 40/2025 Điều 35: hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026."
+    "a": 2,
+    "e": "Luật KCB 15/2023 Điều 69 khoản 1: hồ sơ bệnh án có thể lập bằng giấy hoặc điện tử, và cả hai hình thức có giá trị pháp lý như nhau."
   },
   {
     "t": "kcb",
     "id": "kcb-88",
-    "q": "Luật KCB 40/2025 thay thế luật nào?",
+    "q": "Luật Khám bệnh, chữa bệnh 15/2023 thay thế luật nào?",
     "o": [
       "Luật KCB 40/2009",
       "Luật BHYT 51/2024",
@@ -1091,25 +1091,25 @@
       "Luật Phòng bệnh 114/2025"
     ],
     "a": 0,
-    "e": "Luật KCB 40/2025/QH15 thay thế Luật KCB 40/2009/QH12."
+    "e": "Luật KCB 15/2023/QH15 thay thế Luật KCB 40/2009/QH12, có hiệu lực từ 01/01/2024."
   },
   {
     "t": "kcb",
     "id": "kcb-89",
-    "q": "Ngày hiệu lực của Luật KCB 40/2025 là khi nào?",
+    "q": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ ngày nào?",
     "o": [
-      "20/11/2025",
+      "01/01/2024",
       "01/01/2026",
       "01/07/2026",
       "01/01/2027"
     ],
-    "a": 2,
-    "e": "Luật KCB 40/2025 có hiệu lực từ 01/07/2026."
+    "a": 0,
+    "e": "Luật KCB 15/2023 có hiệu lực từ 01/01/2024."
   },
   {
     "t": "kcb",
     "id": "kcb-90",
-    "q": "Ai có quyền từ chối điều trị theo Luật KCB 40/2025?",
+    "q": "Ai có quyền từ chối khám bệnh, chữa bệnh theo Luật KCB 15/2023?",
     "o": [
       "Bác sĩ",
       "Người nhà bệnh nhân",
@@ -1117,32 +1117,32 @@
       "Trưởng bệnh viện"
     ],
     "a": 2,
-    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền từ chối điều trị."
+    "e": "Luật KCB 15/2023 Điều 13 khoản 1: người bệnh có quyền từ chối khám bệnh, chữa bệnh sau khi được người hành nghề tư vấn, và phải cam kết tự chịu trách nhiệm bằng văn bản."
   },
   {
     "t": "kcb",
     "id": "kcb-91",
-    "q": "Việc công khai giá dịch vụ KCB thuộc trách nhiệm của ai?",
+    "q": "Việc niêm yết công khai giá dịch vụ khám chữa bệnh thuộc trách nhiệm của ai?",
     "o": [
       "Sở Y tế",
-      "Cơ sở KCB",
+      "Cơ sở khám bệnh, chữa bệnh",
       "Bệnh viện đa khoa",
       "Bảo hiểm y tế"
     ],
     "a": 1,
-    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ."
+    "e": "Luật KCB 15/2023 Điều 60 khoản 4: cơ sở khám bệnh, chữa bệnh phải niêm yết giá dịch vụ."
   },
   {
     "t": "kcb",
     "id": "kcb-92",
-    "q": "Luật KCB 40/2025 quy định về lĩnh vực nào?",
+    "q": "Luật Khám bệnh, chữa bệnh 15/2023 quy định về lĩnh vực nào?",
     "o": [
       "Thuốc và dược phẩm",
-      "Quyền và nghĩa vụ người bệnh",
+      "Quyền và nghĩa vụ của người bệnh, cơ sở khám bệnh, chữa bệnh và người hành nghề",
       "Bảo hiểm y tế",
       "An toàn thực phẩm"
     ],
     "a": 1,
-    "e": "Luật KCB 40/2025 quy định về quyền và nghĩa vụ của người bệnh, cơ sở KCB và người hành nghề."
+    "e": "Luật KCB 15/2023 Điều 1 (phạm vi điều chỉnh) quy định về khám bệnh, chữa bệnh, trong đó có quyền và nghĩa vụ của người bệnh, người hành nghề và cơ sở khám bệnh, chữa bệnh."
   }
 ]
