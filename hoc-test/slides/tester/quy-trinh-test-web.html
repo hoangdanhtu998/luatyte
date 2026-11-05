@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quy trình kiểm thử một trang web · Slide · Học kiểm thử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">QUY TRÌNH</div><h1>Quy trình kiểm thử một trang web</h1><div class="lead"><p>Từ lúc nhận yêu cầu đến lúc theo dõi sau phát hành: 14 giai đoạn, mỗi giai đoạn có việc cần làm, tiêu chí qua, và bằng chứng cần lưu.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/quy-trinh-test-web.svg" alt="Sơ đồ bốn bước: Smoke, Chức năng, Truy cập, Báo cáo" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÌNH HUỐNG</div><h2>Trang sắp ra mắt, còn hai ngày</h2><div class="content"><p>Bạn nhận một trang đăng ký và thanh toán sắp ra mắt. Không thể kiểm hết mọi thứ. Cần biết kiểm gì trước, theo thứ tự nào, và khi nào được nói "đạt".</p><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TỔNG QUAN</div><h2>14 giai đoạn theo thứ tự</h2><div class="content"><ol class="list"><li>Chuẩn bị</li><li>Hiểu yêu cầu và bối cảnh</li><li>Thiết kế ca</li><li>Môi trường và dữ liệu</li><li>Smoke (kiểm nhanh)</li><li>Chức năng</li><li>Giao diện và responsive</li><li>Truy cập (accessibility)</li><li>Hiệu năng</li><li>Bảo mật cơ bản</li><li>Tương thích trình duyệt</li><li>Hồi quy và tự động hóa</li><li>Báo cáo và quyết định</li><li>Theo dõi sau phát hành</li></ol><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">GIAI ĐOẠN 0 ĐẾN 3</div><h2>Chuẩn bị trước khi bấm</h2><div class="content"><ul class="list"><li><b>Chuẩn bị</b>: mục tiêu, phạm vi, người dùng mục tiêu, quyền truy cập, ai duyệt kết quả.</li><li><b>Hiểu yêu cầu</b>: mỗi tính năng có tiêu chí chấp nhận đo được. Thiếu thì hỏi trước khi kiểm.</li><li><b>Thiết kế ca</b>: luồng chính, phân vùng và biên, bảng trạng thái, tổ hợp cặp, bảng quyết định, chấm rủi ro.</li><li><b>Môi trường và dữ liệu</b>: build đúng phiên bản, dựng môi trường tái tạo được, dữ liệu riêng cho mỗi lần chạy, không dùng dữ liệu thật.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">GIAI ĐOẠN 4 ĐẾN 5</div><h2>Smoke trước, rồi chức năng</h2><div class="content"><ul class="list"><li><b>Smoke test</b>: kiểm nhanh xem trang tải được, không có lỗi máy chủ, các chức năng cốt lõi chạy được. Nếu smoke hỏng, dừng và báo ngay.</li><li><b>Chức năng</b>: từng luồng từ điều kiện trước đến điều kiện sau. Form có ca hợp lệ, không hợp lệ, trống, biên, chuỗi rất dài.</li><li>Thông báo lỗi phải rõ, nằm gần ô sai, và không lộ chi tiết kỹ thuật.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Smoke test</b>: Kiểm nhanh các chức năng cốt lõi sau khi build (xem thêm mục Smoke testing).</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">GIAI ĐOẠN 6 ĐẾN 8</div><h2>Giao diện, truy cập, hiệu năng</h2><div class="content"><ul class="list"><li><b>Giao diện</b>: các mốc màn hình, không tràn ngang, phóng to 200% vẫn dùng được.</li><li><b>Truy cập</b>: đi hết bằng bàn phím, focus nhìn thấy, ô nhập có nhãn, ảnh có alt, tương phản đủ.</li><li><b>Hiệu năng</b>: đo Core Web Vitals trên điện thoại và mạng giống người dùng thật, nhiều lượt, đọc phân vị 75. Đặt ngưỡng trước khi đo.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">GIAI ĐOẠN 9 ĐẾN 10</div><h2>Bảo mật cơ bản và tương thích</h2><div class="content"><ul class="list"><li><b>Bảo mật</b>: chỉ trên môi trường được phép. Thử đầu vào (XSS, SQL injection), đổi mã đối tượng (IDOR), thử yêu cầu thiếu token (CSRF), kiểm thông báo lỗi không lộ chi tiết.</li><li><b>Tương thích</b>: ít nhất ba trình duyệt khác engine (Chromium, Gecko, WebKit), và vài thiết bị thật. Ghi lại khác biệt, kể cả lỗi nhỏ.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">GIAI ĐOẠN 11 ĐẾN 13</div><h2>Hồi quy, báo cáo, theo dõi sau phát hành</h2><div class="content"><ul class="list"><li><b>Hồi quy</b>: ca ổn định đưa vào CI, mỗi lỗi đã sửa có một ca tái hiện.</li><li><b>Báo cáo</b>: ghi số ca đã chạy trên tổng số ca đã lên kế hoạch. Nêu rủi ro còn lại và đề xuất rõ ràng.</li><li><b>Sau phát hành</b>: theo dõi lỗi thật và số đo, kiểm lại lỗi đã sửa trên môi trường thật, viết bài học.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CI</div><h2>Thứ tự stage và cổng chặn</h2><div class="content"><table class="t"><thead><tr><th>Stage</th><th>Chạy gì</th><th>Cổng qua</th></tr></thead><tbody><tr><td>1. Build</td><td>Build, lint</td><td>Build thành công</td></tr><tr><td>2. Unit</td><td>Test đơn vị</td><td>Mọi ca pass</td></tr><tr><td>3. Smoke</td><td>Smoke trên bản vừa build</td><td>Mọi mục smoke đạt</td></tr><tr><td>4. E2E chính</td><td>Luồng ưu tiên cao</td><td>Pass, không ca nào bị bỏ</td></tr><tr><td>5. Truy cập tự động</td><td>Quét tương phản, nhãn</td><td>Không có lỗi nghiêm trọng</td></tr><tr><td>6. Hiệu năng</td><td>Core Web Vitals, ngân sách kích thước</td><td>Trong ngưỡng đã đặt</td></tr><tr><td>7. Bảo mật</td><td>Quét phụ thuộc, quét đầu vào</td><td>Không có lỗ hổng mức cao</td></tr><tr><td>8. Báo cáo</td><td>Gom kết quả và bằng chứng</td><td>Đủ bằng chứng</td></tr></tbody></table><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">BẰNG CHỨNG</div><h2>Lưu gì cho mỗi đợt</h2><div class="content"><ul class="list"><li>Danh sách ca và kết quả, có mẫu số.</li><li>Ảnh chụp hoặc video của lỗi, kèm bước tái hiện.</li><li>Log console, log máy chủ, và file HAR (ghi lại các yêu cầu mạng) khi có lỗi mạng.</li><li>Số đo hiệu năng cùng điều kiện đo: thiết bị, mạng, số lượt.</li><li>Phiên bản build và cấu hình môi trường.</li></ul><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">THỬ THÁCH</div><h2>Khi chỉ còn hai giờ</h2><div class="content"><p>Chỉ còn hai giờ trước khi phát hành. Hãy chọn các giai đoạn phải làm, các giai đoạn có thể để sau, và nêu rõ rủi ro còn lại trong báo cáo.</p><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TỰ KIỂM TRA</div><h2>Smoke hỏng thì sao</h2><div class="content"><p>Smoke test hỏng ở bước đăng nhập. Có nên chạy tiếp kiểm thử giao diện không? Vì sao, và nên báo cáo gì?</p><p><i>Quy trình do người soạn bài tổng hợp từ kiến thức kiểm thử web thông thường. Đây là một gợi ý, không phải chuẩn bắt buộc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Smoke test</b>: Kiểm nhanh các chức năng cốt lõi sau khi build (xem thêm mục Smoke testing).</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section><section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/quy-trinh-test-web-sai.svg" alt="Ba cặp sai và đúng của bài Quy trình kiểm thử một trang web" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Chạy hết mọi bước dù smoke đã hỏng → <b>Đúng:</b> Dừng khi smoke hỏng, báo ngay</li><li><b>Sai:</b> Đo hiệu năng một lần rồi kết luận → <b>Đúng:</b> Đo nhiều lượt, đọc phân vị 75</li><li><b>Sai:</b> Báo "đạt" không ghi mẫu số → <b>Đúng:</b> Ghi số ca đã chạy trên tổng số ca</li></ul></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section><section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Smoke test</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Kiểm nhanh các chức năng cốt lõi sau khi build (xem thêm mục Smoke testing).</li><li><b>Ví dụ:</b> Mở trang, đăng nhập, tìm kiếm. Hỏng bước nào là dừng.</li><li><b>Vì sao quan trọng:</b> Tiết kiệm thời gian khi bản build đã hỏng cơ bản.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Cổng chặn (quality gate)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Tiêu chí bắt buộc phải đạt thì pipeline mới được qua giai đoạn tiếp theo.</li><li><b>Ví dụ:</b> Không đạt nếu có ca E2E đỏ hoặc có lỗ hổng mức cao.</li><li><b>Vì sao quan trọng:</b> Ngăn bản lỗi đi tiếp mà không ai quyết định.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 2/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Ngân sách hiệu năng (performance budget)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Giới hạn đặt trước cho kích thước trang hoặc thời gian tải.</li><li><b>Ví dụ:</b> Ảnh bìa không quá 300 KB, trang không vượt 2 MB tài nguyên.</li><li><b>Vì sao quan trọng:</b> Phát hiện trang chậm đi ngay khi ai đó thêm tài nguyên nặng.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>HAR</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> File ghi lại các yêu cầu mạng mà trình duyệt đã gửi và nhận.</li><li><b>Ví dụ:</b> Mở HAR thấy yêu cầu ảnh 3 MB mất 4 giây, đó là chỗ chậm.</li><li><b>Vì sao quan trọng:</b> Bằng chứng cụ thể cho lỗi mạng và hiệu năng, người khác mở lại được.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>
