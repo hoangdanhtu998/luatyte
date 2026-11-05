@@ -294,7 +294,7 @@
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 39/2024/TT-BYT (sửa đổi Thông tư 21/2024/TT-BYT), khám chuyên khoa từ lần thứ hai trong cùng một lần đến khám được thanh toán bao nhiêu?",
+    "q": "Theo Thông tư 39/2024/TT-BYT (sửa đổi Thông tư 35/2016/TT-BYT về điều kiện thanh toán dịch vụ kỹ thuật y tế BHYT), khám chuyên khoa từ lần thứ hai trong cùng một lần đến khám được thanh toán bao nhiêu?",
     "o": [
       "100% giá một lần khám",
       "50% giá một lần khám",
@@ -302,9 +302,9 @@
       "Không được thanh toán"
     ],
     "a": 2,
-    "e": "Lần khám thứ hai trở đi chỉ tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám. Căn cứ hiện hành: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 21/2024/TT-BYT, áp dụng từ 01/01/2025. Thông tư 22/2023 đã hết hiệu lực từ 01/01/2025.",
+    "e": "Từ lần khám thứ hai trở đi chỉ tính 30% giá một lần khám; tổng tiền khám được thanh toán không quá 2 lần giá khám. Nguồn: Thông tư 39/2024/TT-BYT (thuvienphapluat.vn, luatvietnam.vn).",
     "verify": true,
-    "src": "Thông tư 39/2024/TT-BYT (đối chiếu qua bản tóm tắt, cần kiểm bản gốc)"
+    "src": "Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT (đối chiếu qua trang văn bản; cần kiểm bản gốc)"
   },
   {
     "t": "bhyt",
@@ -343,9 +343,9 @@
       "100%"
     ],
     "a": 1,
-    "e": "Từ lượt khám thứ hai tính 30% giá một lượt khám; tổng tiền khám không quá 2 lần giá khám. Căn cứ hiện hành: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 21/2024/TT-BYT, áp dụng từ 01/01/2025.",
+    "e": "Từ lượt khám thứ hai tính 30% giá một lượt khám; tổng tiền khám không quá 2 lần giá khám. Nguồn: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT.",
     "verify": true,
-    "src": "Thông tư 39/2024/TT-BYT (đối chiếu qua bản tóm tắt, cần kiểm bản gốc)"
+    "src": "Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT (đối chiếu qua trang văn bản; cần kiểm bản gốc)"
   },
   {
     "t": "duoc",
@@ -575,8 +575,8 @@
       "12 tháng"
     ],
     "a": 2,
-    "e": "Luật Phòng bệnh 114/2025 khuyến khích nuôi con bằng sữa mẹ hoàn toàn cho trẻ dưới 06 tháng tuổi và duy trì đến 24 tháng tuổi (Điều khoản 12, đã đối chiếu).",
-    "verify": false
+    "e": "Luật Phòng bệnh 114/2025 khuyến khích nuôi con bằng sữa mẹ hoàn toàn cho trẻ dưới 06 tháng tuổi và duy trì đến 24 tháng tuổi (quy định trong chính sách của Nhà nước; số điều cần đối chiếu lại).",
+    "verify": true
   },
   {
     "t": "phongbenh",
@@ -602,7 +602,8 @@
       "12 tháng"
     ],
     "a": 1,
-    "e": "7 tháng (thay vì 6 tháng thông thường)."
+    "e": "7 tháng, áp dụng cho trường hợp sinh con thứ hai từ 01/07/2026 (Luật Dân số 113/2025, Điều 14 khoản 1 điểm a). Trước 01/07/2026 vẫn là 6 tháng.",
+    "verify": true
   },
   {
     "t": "danso",
