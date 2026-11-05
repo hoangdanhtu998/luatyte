@@ -13,10 +13,8 @@
       "Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.",
       "Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025"
   },
   {
     "id": "tt25_2026",
@@ -32,10 +30,8 @@
       "Hồ sơ khám sức khỏe lập theo Mẫu 01–04 Phụ lục XXIV; Mẫu 04 là giấy khám sức khỏe tâm thần mới.",
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026"
   },
   {
     "id": "tt26_2025",
@@ -53,10 +49,8 @@
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
       "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025"
   },
   {
     "id": "tt22_2024",
@@ -72,11 +66,9 @@
       "Điều kiện: không có thuốc thương mại cùng hoạt chất, không chuyển tuyến được vì lý do an toàn hoặc cơ sở đang cách ly dịch bệnh — Điều 3.",
       "Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."
     ],
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024",
-    "ghi_chu": "Chưa xác nhận được: tìm kiếm không ra thông tư 22/2024/TT-BYT về thanh toán chi phí thuốc. Cần đối chiếu số hiệu trên vbpl.vn.",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024"
+    "ghi_chu": "Chưa xác nhận được: tìm kiếm không ra thông tư 22/2024/TT-BYT về thanh toán chi phí thuốc. Cần đối chiếu số hiệu trên vbpl.vn."
   },
   {
     "id": "tt21_2024",
@@ -94,9 +86,7 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
     "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025.",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://chinhphu.vn/?pageid=27160&docid=211506"
+    "verify": false
   },
   {
     "id": "tt22_2023",
@@ -112,10 +102,8 @@
       "Khám chuyên khoa từ lần thứ hai tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám (Điều 5).",
       "Cách tính ngày giường, giá ICU và định mức ca cho siêu âm, X-quang, CT, MRI (Điều 6, 7)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222023",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=222023"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222023"
   },
   {
     "id": "tt21_2023",
@@ -132,10 +120,8 @@
       "Cơ sở chưa được phân hạng áp giá bệnh viện hạng IV; trạm y tế xã áp giá kỹ thuật bằng 70% Phụ lục III (Điều 4).",
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023"
   },
   {
     "id": "tt49_2025",
@@ -151,10 +137,8 @@
       "Cấp lại giấy chứng nhận lương y trong 5 ngày làm việc (khoản 3 Điều 13).",
       "Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025"
   },
   {
     "id": "tt44_2025",
@@ -171,10 +155,8 @@
       "Cục được đình chỉ, khôi phục hoặc thu hồi lô sản phẩm và thu hồi lô đã lưu hành (Điều 2).",
       "Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025"
   },
   {
     "id": "dulieu",
@@ -189,10 +171,8 @@
       "Định nghĩa sổ sức khỏe điện tử là ứng dụng hoặc phần mềm công nghệ thông tin để cập nhật, hiển thị, tra cứu, lưu trữ thông tin tóm lược quá trình phòng bệnh, thăm khám, điều trị của từng cá nhân (khoản 3 Điều 3).",
       "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=1022025",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=1022025"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=1022025"
   },
   {
     "id": "kcb",
@@ -212,12 +192,10 @@
       "Hồ sơ bệnh án có thể lập dưới dạng điện tử (Điều 69) và có Hệ thống thông tin quản lý khám chữa bệnh (Điều 112), liên quan trực tiếp đến HIS."
     ],
     "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh",
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=15202315",
     "vbhn": "Văn bản hợp nhất 26/VBHN-VPQH ngày 26/02/2026 (Văn phòng Quốc hội)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-26-vbhn-vpqh-469053/63165.htm",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=15202315"
+    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-26-vbhn-vpqh-469053/63165.htm"
   },
   {
     "id": "nd_96_2023_kcb",
@@ -284,11 +262,9 @@
     "guide": "Nghị định 188/2025/NĐ-CP hướng dẫn Luật BHYT",
     "detailSource": "caselaw.vn (Luật 51/2024/QH15), Điều 13 và Điều 22",
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=51202415",
-    "verify": true,
+    "verify": false,
     "vbhn": "Văn bản hợp nhất 40/VBHN-VPQH (Văn phòng Quốc hội, 2026)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-40-vbhn-vpqh-469125.htm",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=51202415"
+    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-40-vbhn-vpqh-469125.htm"
   },
   {
     "id": "duoc",
@@ -307,12 +283,10 @@
       "Ưu tiên thủ tục đăng ký lưu hành và ưu đãi đầu tư để phát triển công nghiệp dược thành ngành mũi nhọn."
     ],
     "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược",
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44202415",
     "vbhn": "Văn bản hợp nhất 76/VBHN-VPQH ngày 25/03/2026 (Văn phòng Quốc hội)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-76-vbhn-vpqh-469206.htm",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=44202415"
+    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-76-vbhn-vpqh-469206.htm"
   },
   {
     "id": "nd_163_2025_duoc",
@@ -329,9 +303,7 @@
       "Quy định điều kiện kinh doanh dược và trách nhiệm của cơ sở hoạt động dược."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214322",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=214322"
+    "verify": false
   },
   {
     "id": "tt_31_2025_duoc",
@@ -367,9 +339,7 @@
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx"
+    "verify": false
   },
   {
     "id": "tt_18_2026_duoc",
@@ -386,9 +356,7 @@
       "Có hiệu lực từ 16/07/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx"
+    "verify": false
   },
   {
     "id": "tt_32_2026_duoc",
@@ -405,9 +373,7 @@
       "Có hiệu lực từ 01/10/2026."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-32-2026-tt-byt-quy-dinh-viec-dang-ky-luu-hanh-thuoc-nguyen-lieu-lam-thuoc--b3c8a3e0-9945-11f1-9dcb-2dbe29d2ab4a",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-32-2026-tt-byt-quy-dinh-viec-dang-ky-luu-hanh-thuoc-nguyen-lieu-lam-thuoc--b3c8a3e0-9945-11f1-9dcb-2dbe29d2ab4a"
+    "verify": false
   },
   {
     "id": "tt_50_2025_thu_thuoc",
@@ -424,9 +390,7 @@
       "Ban hành 31/12/2025; có hiệu lực từ 27/02/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447"
+    "verify": false
   },
   {
     "id": "phongbenh",
@@ -445,10 +409,8 @@
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
     "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515"
   },
   {
     "id": "danso",
@@ -466,10 +428,8 @@
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
     "guide": "Nghị định hướng dẫn Luật Dân số",
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515"
   },
   {
     "id": "thuocla",
@@ -488,11 +448,9 @@
       "Từ năm 2025, thuốc lá điện tử và thuốc lá nung nóng bị cấm theo Nghị quyết 173/2024/QH15; Luật Phòng bệnh 114/2025/QH15 sửa đổi, bổ sung Luật này."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216940",
-    "verify": true,
+    "verify": false,
     "du_an": "Dự án Luật Phòng, chống tác hại của thuốc lá (sửa đổi) đã trình Quốc hội khóa XVI Kỳ họp thứ 2. Dự kiến hiệu lực 01/07/2027 (theo dự thảo). Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://luatvietnam.vn/linh-vuc-khac/diem-moi-du-thao-luat-phong-chong-tac-hai-cua-thuoc-la-2026-883-110926-article.html",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=216940"
+    "du_an_nguon": "https://luatvietnam.vn/linh-vuc-khac/diem-moi-du-thao-luat-phong-chong-tac-hai-cua-thuoc-la-2026-883-110926-article.html"
   },
   {
     "id": "ruoubia",
@@ -509,10 +467,8 @@
       "Cấm xúi giục, ép buộc người khác uống rượu, bia.",
       "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."
     ],
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44201914",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=44201914"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44201914"
   },
   {
     "id": "attp",
@@ -528,14 +484,12 @@
       "Cơ sở sản xuất, kinh doanh thực phẩm phải có Giấy chứng nhận đủ điều kiện an toàn thực phẩm (trừ trường hợp được miễn).",
       "Phân công quản lý giữa Bộ Y tế, Bộ Nông nghiệp và Môi trường, Bộ Công Thương."
     ],
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=55201012",
     "vbhn": "Văn bản hợp nhất 61/VBHN-VPQH ngày 15/08/2025 (hợp nhất 55/2010, 28/2018, 84/2025)",
     "vbhn_nguon": "https://luatvietnam.vn/thuc-pham/van-ban-hop-nhat-61-vbhn-vpqh-nam-2025-do-van-phong-quoc-hoi-ban-hanh-hop-nhat-luat-an-toan-thuc-pham-409962-d5.html",
     "du_an": "Dự án Luật An toàn thực phẩm (sửa đổi) do Chính phủ trình ngày 24/10/2026 tại Kỳ họp thứ 2, Quốc hội khóa XVI (9 chương, 74 điều). Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://tuoitre.vn/bo-truong-dao-hong-lan-trinh-quoc-hoi-sua-luat-an-toan-thuc-pham-thong-nhat-dau-moi-quan-ly-100261024085600121.htm",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=55201012"
+    "du_an_nguon": "https://tuoitre.vn/bo-truong-dao-hong-lan-trinh-quoc-hoi-sua-luat-an-toan-thuc-pham-thong-nhat-dau-moi-quan-ly-100261024085600121.htm"
   },
   {
     "id": "hiv",
@@ -551,12 +505,10 @@
       "Thông tin về người nhiễm HIV được bảo mật; chỉ thông báo cho những người được luật cho phép.",
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
     ],
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611",
     "vbhn": "Văn bản hợp nhất 33/VBHN-VPQH ngày 07/12/2020",
-    "vbhn_nguon": "https://luatvietnam.vn/y-te/van-ban-hop-nhat-33-vbhn-vpqh-200744-d5.html",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611"
+    "vbhn_nguon": "https://luatvietnam.vn/y-te/van-ban-hop-nhat-33-vbhn-vpqh-200744-d5.html"
   },
   {
     "id": "bvsk_nhan_dan",
@@ -573,10 +525,8 @@
     ],
     "vbhn": "Văn bản hợp nhất 22/VBHN-VPQH ngày 26/02/2026 (Văn phòng Quốc hội)",
     "vbhn_nguon": "https://vanban.chinhphu.vn/?docid=217079&pageid=27160",
-    "verify": true,
-    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Van-ban-hop-nhat-22-VBHN-VPQH-2026-Luat-Bao-ve-suc-khoe-nhan-dan-696164.aspx",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Van-ban-hop-nhat-22-VBHN-VPQH-2026-Luat-Bao-ve-suc-khoe-nhan-dan-696164.aspx"
+    "verify": false,
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Van-ban-hop-nhat-22-VBHN-VPQH-2026-Luat-Bao-ve-suc-khoe-nhan-dan-696164.aspx"
   },
   {
     "id": "ghepmo",
@@ -592,12 +542,10 @@
       "Hiến hoàn toàn tự nguyện, không vì mục đích thương mại; cấm mua bán mô, bộ phận cơ thể người.",
       "Giữ bí mật thông tin về người hiến và người được ghép, trừ khi các bên đồng ý khác."
     ],
-    "verify": true,
+    "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=75200611",
     "du_an": "Dự án Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác (sửa đổi), 7 chương 39 điều, Quốc hội thảo luận ngày 02/11/2026 tại Kỳ họp thứ 2. Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://vtv.vn/ngay-2-11-quoc-hoi-thao-luan-ve-du-an-luat-hien-lay-ghep-mo-bo-phan-co-the-nguoi-va-hien-lay-xac-sua-doi-100261101213320778.htm",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=75200611"
+    "du_an_nguon": "https://vtv.vn/ngay-2-11-quoc-hoi-thao-luan-ve-du-an-luat-hien-lay-ghep-mo-bo-phan-co-the-nguoi-va-hien-lay-xac-sua-doi-100261101213320778.htm"
   },
   {
     "id": "donthuoc",
@@ -615,10 +563,8 @@
       "Đối chiếu nguyên văn thông tư và các thông tư sửa đổi trước khi áp dụng trong thực tế."
     ],
     "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)",
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=522017",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=522017"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=522017"
   },
   {
     "id": "tbyt",
@@ -635,10 +581,8 @@
       "Bộ Y tế và Sở Y tế thực hiện phân cấp quản lý; thủ tục hành chính cụ thể có thể thay đổi theo thông tư mới, cần đối chiếu."
     ],
     "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT",
-    "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=982021",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=982021"
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=982021"
   },
   {
     "id": "nd_188_2025_bhyt",
@@ -655,9 +599,7 @@
       "Xác thực điện tử dữ liệu khám bệnh, chữa bệnh BHYT chậm nhất 01/01/2026 (khoản 9 Điều 69)."
     ],
     "nguon": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-188-2025-nd-cp-45593/57770.htm",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-188-2025-nd-cp-45593/57770.htm"
+    "verify": false
   },
   {
     "id": "nd_356_2025_dulieu",
@@ -674,9 +616,7 @@
       "Có hiệu lực từ 01/01/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Nghi-dinh-356-2025-ND-CP-huong-dan-Luat-Bao-ve-du-lieu-ca-nhan-687428.aspx",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Nghi-dinh-356-2025-ND-CP-huong-dan-Luat-Bao-ve-du-lieu-ca-nhan-687428.aspx"
+    "verify": false
   },
   {
     "id": "luat_91_2025_bvdlcn",
@@ -693,9 +633,7 @@
       "Có hiệu lực từ 01/01/2026."
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=214590&classid=1&typegroupid=3",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://chinhphu.vn/?pageid=27160&docid=214590&classid=1&typegroupid=3"
+    "verify": false
   },
   {
     "id": "nd_148_2025_phan_quyen",
@@ -712,10 +650,8 @@
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://moh.gov.vn/index.jsp?pageId=5803&aid=154918&cid=8328",
-    "verify": true,
-    "het_hieu_luc": "Theo bản sao Điều 34 trên trang thứ ba: hết hiệu lực 01/03/2027, trừ các trường hợp được liệt kê. Chưa đối chiếu với văn bản ký trên vanban.chinhphu.vn.",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://moh.gov.vn/index.jsp?pageId=5803&aid=154918&cid=8328"
+    "verify": false,
+    "het_hieu_luc": "Theo bản sao Điều 34 trên trang thứ ba: hết hiệu lực 01/03/2027, trừ các trường hợp được liệt kê. Chưa đối chiếu với văn bản ký trên vanban.chinhphu.vn."
   },
   {
     "id": "tt_32_2023_kcb",
@@ -732,10 +668,8 @@
       "Có hiệu lực từ 01/01/2024."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-32-2023-TT-BYT-huong-dan-Luat-Kham-benh-chua-benh-593360.aspx",
-    "verify": true,
-    "sua_doi": "Được sửa đổi bởi Thông tư 25/2026/TT-BYT (ban hành 30/06/2026; hiệu lực một số điều 01/07/2026, phần còn lại 15/08/2026). Vẫn còn hiệu lực.",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-32-2023-TT-BYT-huong-dan-Luat-Kham-benh-chua-benh-593360.aspx"
+    "verify": false,
+    "sua_doi": "Được sửa đổi bởi Thông tư 25/2026/TT-BYT (ban hành 30/06/2026; hiệu lực một số điều 01/07/2026, phần còn lại 15/08/2026). Vẫn còn hiệu lực."
   },
   {
     "id": "tt_13_2025_benh_an_dien_tu",
@@ -752,9 +686,7 @@
       "Có hiệu lực từ 21/07/2025; bệnh viện triển khai chậm nhất 30/09/2025."
     ],
     "nguon": "https://xaydungchinhsach.chinhphu.vn/lo-trinh-trien-khai-ho-so-benh-an-dien-tu-tai-cac-benh-vien-119250610163849953.htm",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://xaydungchinhsach.chinhphu.vn/lo-trinh-trien-khai-ho-so-benh-an-dien-tu-tai-cac-benh-vien-119250610163849953.htm"
+    "verify": false
   },
   {
     "id": "tt_15_2026_phong_benh",
@@ -771,9 +703,7 @@
       "Có hiệu lực từ 01/07/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?docid=218141&pageid=27160",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?docid=218141&pageid=27160"
+    "verify": false
   },
   {
     "id": "tt_13_2026_tiem_chung",
@@ -790,9 +720,7 @@
       "Quy định quản lý, tiếp nhận, bảo quản, vận chuyển vắc xin, an toàn tiêm chủng và trách nhiệm của cơ sở tiêm chủng."
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te-se-co-hieu-luc-thi-hanh-tu-1-7-2026/",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te-se-co-hieu-luc-thi-hanh-tu-1-7-2026/"
+    "verify": false
   },
   {
     "id": "nd_165_2026_phong_benh",
@@ -809,9 +737,7 @@
       "Ban hành 15/05/2026; có hiệu lực từ 01/07/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=218169&classid=1",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=218169&classid=1"
+    "verify": false
   },
   {
     "id": "tt_33_2026_phong_benh",
@@ -829,9 +755,7 @@
       "Có hiệu lực từ 29/08/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tu-332026ttbyt-huong-dan-thi-hanh-nghi-dinh-1652026ndcp-ve-luat-phong-benh-co-noi-dung-gi-288836.html",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tu-332026ttbyt-huong-dan-thi-hanh-nghi-dinh-1652026ndcp-ve-luat-phong-benh-co-noi-dung-gi-288836.html"
+    "verify": false
   },
   {
     "id": "tt_12_2026_giam_dinh_bhyt",
@@ -848,9 +772,7 @@
       "Kết quả giám định tự động phải được gửi trong 7 ngày làm việc (Điều 10)."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216997&classid=1&typegroupid=6",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=216997&classid=1&typegroupid=6"
+    "verify": false
   },
   {
     "id": "luat_148_2025_chuyen_doi_so",
@@ -866,9 +788,7 @@
       "Gồm 8 chương, 48 điều; có hiệu lực từ 01/07/2026."
     ],
     "nguon": "https://congbao.chinhphu.vn/van-ban/luat-so-148-2025-qh15-468708.htm",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://congbao.chinhphu.vn/van-ban/luat-so-148-2025-qh15-468708.htm"
+    "verify": false
   },
   {
     "id": "nd90_2026_xu_phat",
@@ -889,9 +809,7 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=217386",
     "detailSource": "Toàn văn PDF: https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://chinhphu.vn/?pageid=27160&docid=217386"
+    "verify": false
   },
   {
     "id": "nd_119_2025_bhyt",
@@ -908,9 +826,7 @@
       "Thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, dùng qua app VssID — Điều 12."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+    "verify": false
   },
   {
     "id": "tt_06_2026_gia_dv_kcb",
@@ -927,9 +843,7 @@
       "Cơ sở khám chữa bệnh ký hợp đồng BHYT phải công khai giá dịch vụ tại nơi khám bệnh — Điều 7."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx",
-    "verify": true,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx"
+    "verify": false
   },
   {
     "id": "tt_14_2026_ma_tuy",
