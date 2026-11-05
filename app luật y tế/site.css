@@ -325,9 +325,11 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
   .stat + .stat { padding-left: var(--space-sm); }
   .stat { padding-right: var(--space-sm); }
   .match { gap: var(--space-xs); }
-  .law summary { grid-template-columns: auto 1fr auto; }
-  .law summary .chev { display: none; }
   .law .body { padding-left: 0; }
+  .law .bm { min-width: 44px; min-height: 44px; }
+  .law summary .chev { width: 20px; height: 20px; }
+  nav.tabs { scroll-snap-type: x proximity; padding-right: var(--space-xl); -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
+  nav.tabs button { scroll-snap-align: start; }
   .card { padding: var(--space-md); }
   .cats { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
   .tf-btns button { min-height: 56px; font-size: var(--text-md); }
@@ -554,7 +556,7 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
 @media (max-width: 640px) {
   .hud h1 { font-size: var(--text-md); }
   .hud-stats { gap: var(--space-xs) var(--space-sm); font-size: var(--text-xs); }
-  .hud .btn, .small-btn { min-height: 34px; }
+  .hud .btn, .small-btn { min-height: 44px; }
   .clinic .card { padding: var(--space-sm); }
   .staff-tag { display: none; }
   .room-sign { font-size: 8px; padding: 1px 5px; }
