@@ -1,0 +1,293 @@
+[
+  {
+    "t": "bhyt",
+    "id": "bhyt-01",
+    "q": "Bé 4 tuổi khám ngoại trú. Anh Hùng đưa con gái 4 tuổi đi khám sốt tại trạm y tế xã. Bé có thẻ BHYT còn hạn. Bé được hưởng mức chi trả BHYT bao nhiêu?",
+    "o": [
+      "80%",
+      "95%",
+      "100%"
+    ],
+    "a": 2,
+    "e": "Trẻ em dưới 6 tuổi được hưởng 100% chi phí. Căn cứ: Luật BHYT (sửa đổi 2024), mức hưởng 100% với trẻ em dưới 6 tuổi."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-02",
+    "q": "Ông Thắng nhận lương hưu. Ông Thắng nghỉ hưu, đang nhận lương hưu hằng tháng. Ông đã tham gia BHYT 30 năm và đi khám nội trú ở bệnh viện tuyến tỉnh đúng tuyến. Ông Thắng được hưởng mức chi trả bao nhiêu?",
+    "o": [
+      "80%",
+      "95%",
+      "100%"
+    ],
+    "a": 1,
+    "e": "Người hưởng lương hưu được hưởng 95% chi phí. Căn cứ: Luật BHYT (sửa đổi 2024), người hưởng lương hưu 95%."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-03",
+    "q": "Chị Mai khám ở tỉnh khác. Chị Mai đang làm việc ở tỉnh A nhưng có thẻ BHYT đăng ký ở tỉnh B. Chị đến trạm y tế tuyến ban đầu ở tỉnh A để khám ngoại trú. Chị đã tham gia BHYT được 3 năm. Chị Mai có được hưởng như khám đúng tuyến không, và mức chi trả là bao nhiêu?",
+    "o": [
+      "Không được hưởng",
+      "Được hưởng như đúng tuyến, mức 80%",
+      "Được hưởng 100%"
+    ],
+    "a": 1,
+    "e": "Khám ngoại trú tại cơ sở tuyến ban đầu ở bất kỳ tỉnh nào được hưởng như đúng tuyến. Chị chưa đủ 5 năm tham gia nên mức phổ biến là 80%. Căn cứ: Luật BHYT (sửa đổi 2024): khám ngoại trú tuyến ban đầu ở bất kỳ tỉnh nào hưởng như đúng tuyến; mức 80% phổ biến."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-06",
+    "q": "Cấp cứu ở bệnh viện xa. Ông Tuấn bị tai nạn lúc đi công tác. Ông được đưa vào bệnh viện chuyên sâu ở tỉnh khác, không đúng tuyến đăng ký. Đây là trường hợp cấp cứu. Ông Tuấn được hưởng mức chi trả bao nhiêu cho việc cấp cứu?",
+    "o": [
+      "40%",
+      "80%",
+      "100%"
+    ],
+    "a": 2,
+    "e": "Cấp cứu được hưởng 100% ở mọi cơ sở khám chữa bệnh, kể cả trái tuyến. Căn cứ: Luật BHYT (sửa đổi 2024), Điều 22: khám trái tuyến trong trường hợp cấp cứu hưởng 100% ở mọi cơ sở."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-07",
+    "q": "Nội trú trái tuyến không cấp cứu. Bà Lan đến bệnh viện chuyên sâu tuyến trung ương để điều trị nội trú theo lịch hẹn, không chuyển tuyến. Đây không phải trường hợp cấp cứu và bà không thuộc nhóm ngoại lệ (không phải hộ nghèo, dân tộc thiểu số vùng khó khăn, bệnh hiếm/hiểm nghèo hay cơ sở từng là tuyến tỉnh trước 01/01/2025). Mức chi trả thường gặp trong trường hợp này là bao nhiêu?",
+    "o": [
+      "40%",
+      "80%",
+      "100%"
+    ],
+    "a": 0,
+    "e": "Nội trú trái tuyến tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 là tuyến tỉnh hoặc tuyến huyện; cấp cứu). Căn cứ: Điều 22 khoản 4 Luật BHYT 51/2024/QH15."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-08",
+    "q": "Thẻ điện tử hay thẻ giấy. Anh Đức đưa thẻ BHYT điện tử trên điện thoại đến khám. Lễ tân hỏi thẻ điện tử có được dùng không. Thẻ BHYT điện tử có giá trị so với thẻ giấy thế nào?",
+    "o": [
+      "Thẻ điện tử không có giá trị",
+      "Thẻ điện tử có giá trị pháp lý như thẻ giấy",
+      "Thẻ điện tử chỉ dùng cho người dưới 18 tuổi"
+    ],
+    "a": 1,
+    "e": "Thẻ BHYT điện tử và thẻ giấy có giá trị pháp lý như nhau. Căn cứ: Luật BHYT (sửa đổi 2024): thẻ BHYT điện tử và thẻ giấy có giá trị pháp lý như nhau."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-09",
+    "q": "Hộ nghèo khám bệnh. Gia đình chị Thảo thuộc diện hộ nghèo và có thẻ BHYT còn hạn. Chị đi khám ngoại trú tại trạm y tế xã. Chị Thảo được hưởng mức chi trả bao nhiêu?",
+    "o": [
+      "80%",
+      "95%",
+      "100%"
+    ],
+    "a": 2,
+    "e": "Người thuộc hộ nghèo được hưởng 100% chi phí. Căn cứ: Luật BHYT (sửa đổi 2024), mức 100% với hộ nghèo và một số nhóm khác."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-10",
+    "q": "Chi phí một lần khám dưới mức quy định. Anh Sơn khám ngoại trú và tổng chi phí của một lần khám rất thấp, nằm dưới mức do Chính phủ quy định. Chi phí của lần khám này được hưởng mức chi trả bao nhiêu?",
+    "o": [
+      "80%",
+      "95%",
+      "100%"
+    ],
+    "a": 2,
+    "e": "Chi phí một lần khám chữa bệnh dưới mức do Chính phủ quy định được hưởng 100%. Căn cứ: Luật BHYT (sửa đổi 2024); Điều 17 Nghị định 188/2025/NĐ-CP quy định dưới 15% lương cơ sở."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-09",
+    "q": "Người tham gia BHYT khám nội trú tại bệnh viện tuyến tỉnh thì mức hưởng là bao nhiêu?",
+    "o": [
+      "75% chi phí điều trị",
+      "100% chi phí điều trị",
+      "50% chi phí điều trị",
+      "Không được hưởng"
+    ],
+    "a": 1,
+    "e": "Theo Nghị định 119/2025/NĐ-CP, người BHYT khám nội trú tại bệnh viện tuyến tỉnh được hưởng 100% chi phí điều trị (Điều 8)."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-10",
+    "q": "Thẻ BHYT điện tử có giá trị pháp lý như thế nào so với thẻ giấy?",
+    "o": [
+      "Yếu hơn thẻ giấy",
+      "Tương đương thẻ giấy",
+      "Chỉ dùng được ở bệnh viện công",
+      "Không có giá trị pháp lý"
+    ],
+    "a": 1,
+    "e": "Nghị định 119/2025/NĐ-CP Điều 12: thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-11",
+    "q": "Người HĐLĐ không xác định thời hạn có bắt buộc tham gia BHYT không?",
+    "o": [
+      "Không bắt buộc",
+      "Có, thuộc đối tượng tham gia BHYT bắt buộc",
+      "Chỉ bắt buộc sau 1 năm",
+      "Tùy doanh nghiệp"
+    ],
+    "a": 1,
+    "e": "Nghị định 119/2025/NĐ-CP Điều 5: người lao động làm việc theo HĐ không xác định thời hạn thuộc đối tượng tham gia BHYT bắt buộc."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-12",
+    "q": "Ai là người quyết định giá dịch vụ kỹ thuật KCB trong phạm vi BHYT?",
+    "o": [
+      "Bộ Y tế",
+      "Bệnh viện",
+      "HĐND cấp tỉnh",
+      "Bộ Tài chính"
+    ],
+    "a": 2,
+    "e": "Thông tư 06/2026/TT-BYT Điều 4: giá thanh toán do HĐND cấp tỉnh quyết định trong khung do Bộ Y tế ban hành."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-13",
+    "q": "Số dịch vụ kỹ thuật được thanh toán BHYT trong danh mục mới là bao nhiêu?",
+    "o": [
+      "500 dịch vụ",
+      "850 dịch vụ",
+      "1200 dịch vụ",
+      "300 dịch vụ"
+    ],
+    "a": 1,
+    "e": "Thông tư 06/2026/TT-BYT Phụ lục I: danh mục 850 dịch vụ kỹ thuật được thanh toán theo BHYT."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-14",
+    "q": "Người tham gia BHYT có thể đăng ký khám chữa bệnh thường xuyên qua ứng dụng nào?",
+    "o": [
+      "VNeID",
+      "VssID",
+      "Cà phê Việt Nam",
+      "Zalo"
+    ],
+    "a": 1,
+    "e": "Thông tư 14/2026/TT-BYT Điều 3: đăng ký KCB thường xuyên trực tuyến qua ứng dụng VssID."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-15",
+    "q": "Khi bệnh viện tuyến huyện không đủ điều kiện điều trị, người bệnh được chuyển tuyến như thế nào?",
+    "o": [
+      "Tự chuyển đến bệnh viện lớn",
+      "Chuyển tuyến tự động lên tuyến tỉnh",
+      "Phải xin phép bảo hiểm",
+      "Giữ nguyên tại tuyến huyện"
+    ],
+    "a": 1,
+    "e": "Thông tư 14/2026/TT-BYT Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi cơ sở tuyến dưới không đủ điều kiện."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-16",
+    "q": "Cơ sở KCB phải công khai điều gì liên quan đến BHYT?",
+    "o": [
+      "Lịch nghỉ lễ",
+      "Giá dịch vụ",
+      "Tên bác sĩ",
+      "Số giường bệnh"
+    ],
+    "a": 1,
+    "e": "Thông tư 06/2026/TT-BYT Điều 7: cơ sở KCB ký hợp đồng BHYT phải công khai giá dịch vụ tại nơi khám bệnh."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-17",
+    "q": "Thông tư 06/2026/TT-BYT thay thế thông tư nào về giá dịch vụ KCB?",
+    "o": [
+      "Thông tư 05/2024/TT-BYT",
+      "Thông tư 22/2024/TT-BYT",
+      "Thông tư 13/2026/TT-BYT",
+      "Thông tư 31/2025/TT-BYT"
+    ],
+    "a": 0,
+    "e": "Thông tư 06/2026/TT-BYT thay thế Thông tư 05/2024/TT-BYT về danh mục giá dịch vụ kỹ thuật KCB."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-18",
+    "q": "Ngày hiệu lực của Nghị định 119/2025/NĐ-CP là ngày nào?",
+    "o": [
+      "01/04/2025",
+      "01/07/2025",
+      "15/08/2025",
+      "01/01/2026"
+    ],
+    "a": 1,
+    "e": "Nghị định 119/2025/NĐ-CP có hiệu lực từ 01/07/2025."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-19",
+    "q": "Người BHYT khám trái tuyến tại bệnh viện tuyến trung ương hưởng bao nhiêu phần trăm?",
+    "o": [
+      "40%",
+      "45%",
+      "40% mức hưởng",
+      "100%"
+    ],
+    "a": 2,
+    "e": "Theo Luật BHYT 51/2024 và Nghị định 119/2025: khám trái tuyến tại trung ương hưởng 40% mức hưởng (không phải 40% chi phí)."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-20",
+    "q": "Chi phí một lần khám dưới mức quy định được BHYT thanh toán bao nhiêu?",
+    "o": [
+      "40% chi phí",
+      "50% chi phí",
+      "100% chi phí",
+      "Không thanh toán"
+    ],
+    "a": 2,
+    "e": "Nghị định 188/2025/NĐ-CP: chi phí một lần khám dưới mức quy định (dưới 15% lương cơ sở) được BHYT thanh toán 100%."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-21",
+    "q": "Thông tư 14/2026/TT-BYT có hiệu lực từ ngày nào?",
+    "o": [
+      "01/06/2026",
+      "01/08/2026",
+      "10/06/2026",
+      "01/01/2027"
+    ],
+    "a": 1,
+    "e": "Thông tư 14/2026/TT-BYT có hiệu lực từ 01/08/2026."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-22",
+    "q": "Người HĐLĐ từ 3 đến dưới 12 tháng thuộc đối tượng BHYT nào?",
+    "o": [
+      "BHYT tự nguyện",
+      "BHYT bắt buộc theo nhóm người lao động",
+      "Không tham gia BHYT",
+      "BHYT bắt buộc theo nhóm hộ kinh doanh"
+    ],
+    "a": 1,
+    "e": "Nghị định 119/2025/NĐ-CP Điều 5: người LĐ theo HĐ 3-12 tháng thuộc nhóm người lao động tham gia BHYT bắt buộc."
+  },
+  {
+    "t": "bhyt",
+    "id": "bhyt-23",
+    "q": "Dịch vụ nào sau đây KHÔNG thuộc danh mục 850 dịch vụ kỹ thuật thanh toán BHYT?",
+    "o": [
+      "Xét nghiệm huyết học",
+      "Chẩn đoán hình ảnh",
+      " Thẩm mỹ không chỉ định y khoa",
+      "Nội soi tiêu hóa"
+    ],
+    "a": 2,
+    "e": "Danh mục 850 dịch vụ kỹ thuật BHYT không bao gồm dịch vụ thẩm mỹ không có chỉ định y khoa."
+  }
+]
