@@ -97,7 +97,6 @@
     <p class="intro">Các luật y tế chính, kèm số hiệu, ngày hiệu lực và điểm cần nhớ. Bấm vào từng luật để mở chi tiết.</p>
     <div class="links-row">
       <a class="linkbtn" href="ly_thuyet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5Z"/><path d="M4 5.5V21"/></svg>Học lý thuyết theo chương</a>
-      <a class="linkbtn" href="slides/">Bài giảng slide</a>
       <a class="linkbtn" href="tin_luat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2Z"/><path d="M18 9h2a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2h-1"/><path d="M8 8h7M8 12h7M8 16h4"/></svg>Tin cập nhật luật y tế</a>
     </div>
     <div class="toolbar">
@@ -1533,11 +1532,6 @@ function renderRoleRoadmapInto(root){
         </div>
       </div>`;
     }).join("");
-    const unique = new Map();
-    role.chuong.forEach(cid => roleChapterQuestions(cid).forEach(q => unique.set(q.q, q)));
-    const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
-    const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
-    const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
     root.innerHTML = `<div class="role-picker" role="group" aria-label="Chọn vai trò">${ROLES.vai_tro.map(r => `<button type="button" class="role-btn" data-role="${esc(r.id)}" aria-pressed="${r.id === selected}"><b>${esc(r.ten)}</b><span>${esc(r.mo_ta)}</span></button>`).join("")}</div>
       <div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
       <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
