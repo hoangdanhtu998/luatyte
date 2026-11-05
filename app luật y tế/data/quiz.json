@@ -1002,20 +1002,6 @@
   },
   {
     "t": "nd90_2026_xu_phat",
-    "q": "Mức phạt tiền tối đa đối với cá nhân vi phạm hành chính trong lĩnh vực bảo hiểm y tế là bao nhiêu?",
-    "o": [
-      "50 triệu đồng",
-      "75 triệu đồng",
-      "100 triệu đồng",
-      "150 triệu đồng"
-    ],
-    "a": 1,
-    "e": "Mức phạt tiền tối đa đối với cá nhân trong lĩnh vực bảo hiểm y tế là 75 triệu đồng; tổ chức là 150 triệu đồng. Căn cứ: Điều 4 khoản 3 Nghị định 90/2026/NĐ-CP.",
-    "law": "Nghị định 90/2026/NĐ-CP",
-    "src": "Điều 4 khoản 3"
-  },
-  {
-    "t": "nd90_2026_xu_phat",
     "q": "Cùng một hành vi vi phạm hành chính trong lĩnh vực y tế, mức phạt tiền đối với tổ chức so với cá nhân như thế nào?",
     "o": [
       "Bằng mức của cá nhân",
