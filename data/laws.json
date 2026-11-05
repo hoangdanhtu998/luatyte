@@ -842,20 +842,20 @@
     "verify": true
   },
   {
-    "id": "tt_14_2026_dang_ky_kcb",
-    "cat": "Bảo hiểm y tế",
-    "name": "Thông tư 14/2026/TT-BYT đăng ký/KCB thường xuyên theo BHYT",
+    "id": "tt_14_2026_ma_tuy",
+    "cat": "Phòng chống ma túy",
+    "name": "Thông tư 14/2026/TT-BYT quy định tiêu chuẩn chẩn đoán và quy trình xác định nghiện ma túy",
     "so": "14/2026/TT-BYT",
-    "pass": "10/06/2026",
-    "eff": "01/08/2026",
+    "pass": "16/05/2026",
+    "eff": "01/07/2026",
     "status": "on",
-    "replaces": "Hướng dẫn thủ tục đăng kýKCB thường xuyên và chuyển tuyến qua ứng dụng VssID.",
+    "replaces": "Thực hiện khoản 1 Điều 31 Luật Phòng, chống ma túy 2025.",
     "points": [
-      "Người tham gia BHYT có thể đăng kýKCB thường xuyên trực tuyến qua app VssID — Điều 3.",
-      "Đăng kýKCB tại cơ sở khám chữa bệnh gần nhất nơi cư trú, không phân biệt tỉnh thành — Điều 5.",
-      "Chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện — Điều 8."
+      "Người được chẩn đoán nghiện khi có ít nhất 3 trong 6 tiêu chuẩn đồng thời trong thời gian quy định (Điều 2).",
+      "Có phụ lục hướng dẫn xác định các tiêu chuẩn và trạng thái cai đặc trưng theo từng loại chất."
     ],
-    "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te",
-    "verify": true
+    "nguon": "https://thuvienphapluat.vn/van-ban/Van-hoa-Xa-hoi/Thong-tu-14-2026-TT-BYT-quy-trinh-chuyen-mon-de-xac-dinh-tinh-trang-nghien-ma-tuy-705781.aspx",
+    "verify": true,
+    "ghi_chu": "Đã sửa: bản cũ ghi sai là thông tư về đăng ký KCB BHYT. Nội dung chi tiết cần đối chiếu toàn văn."
   }
 ]

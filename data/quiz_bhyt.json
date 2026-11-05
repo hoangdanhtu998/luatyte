@@ -162,32 +162,6 @@
   },
   {
     "t": "bhyt",
-    "id": "bhyt-14",
-    "q": "Người tham gia BHYT có thể đăng ký khám chữa bệnh thường xuyên qua ứng dụng nào?",
-    "o": [
-      "VNeID",
-      "VssID",
-      "Cà phê Việt Nam",
-      "Zalo"
-    ],
-    "a": 1,
-    "e": "Thông tư 14/2026/TT-BYT Điều 3: đăng ký KCB thường xuyên trực tuyến qua ứng dụng VssID."
-  },
-  {
-    "t": "bhyt",
-    "id": "bhyt-15",
-    "q": "Khi bệnh viện tuyến huyện không đủ điều kiện điều trị, người bệnh được chuyển tuyến như thế nào?",
-    "o": [
-      "Tự chuyển đến bệnh viện lớn",
-      "Chuyển tuyến tự động lên tuyến tỉnh",
-      "Phải xin phép bảo hiểm",
-      "Giữ nguyên tại tuyến huyện"
-    ],
-    "a": 1,
-    "e": "Thông tư 14/2026/TT-BYT Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi cơ sở tuyến dưới không đủ điều kiện."
-  },
-  {
-    "t": "bhyt",
     "id": "bhyt-16",
     "q": "Cơ sở KCB phải công khai điều gì liên quan đến BHYT?",
     "o": [
@@ -250,19 +224,6 @@
     ],
     "a": 2,
     "e": "Nghị định 188/2025/NĐ-CP: chi phí một lần khám dưới mức quy định (dưới 15% lương cơ sở) được BHYT thanh toán 100%."
-  },
-  {
-    "t": "bhyt",
-    "id": "bhyt-21",
-    "q": "Thông tư 14/2026/TT-BYT có hiệu lực từ ngày nào?",
-    "o": [
-      "01/06/2026",
-      "01/08/2026",
-      "10/06/2026",
-      "01/01/2027"
-    ],
-    "a": 1,
-    "e": "Thông tư 14/2026/TT-BYT có hiệu lực từ 01/08/2026."
   },
   {
     "t": "bhyt",
