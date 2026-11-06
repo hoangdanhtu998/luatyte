@@ -35,7 +35,7 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
-    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ."
+    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ. Kiểm 06/11/2026: hiệu lực 15/08/2026 khớp nhiều nguồn; một trang ghi 30/06/2026 (ngày ban hành)."
   },
   {
     "id": "tt26_2025",
@@ -813,7 +813,7 @@
     ],
     "verify": false,
     "nguon": "https://luatvietnam.vn/y-te/thong-tu-10-2026-tt-byt-tieu-chuan-va-dinh-muc-su-dung-may-moc-y-te-434705-d1.html",
-    "ghi_chu": "Đã đối chiếu ngày và điều khoản hiệu lực qua trang nguồn; chưa đối chiếu toàn văn PDF."
+    "ghi_chu": "Đã đối chiếu ngày và điều khoản hiệu lực qua trang nguồn; chưa đối chiếu toàn văn PDF. Kiểm sửa đổi 06/11/2026: không thấy văn bản sửa đổi (lưu ý: Thông tư 20/2026 sửa TT 10/2026 của Bộ KH&CN, không phải của Bộ Y tế)."
   },
   {
     "id": "tt_16_2026_thuoc_mien_phi",
@@ -832,7 +832,7 @@
     ],
     "verify": false,
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-16-2026-TT-BYT-chuong-trinh-ho-tro-thuoc-mien-phi-cho-co-so-kham-benh-chua-benh-706925.aspx",
-    "ghi_chu": "Trang nguồn trả 403 khi truy cập tự động; ngày lấy từ kết quả tìm kiếm, cần mở trang gốc để xác nhận."
+    "ghi_chu": "Trang nguồn trả 403 khi truy cập tự động; ngày lấy từ kết quả tìm kiếm, cần mở trang gốc để xác nhận. Kiểm sửa đổi 06/11/2026: không thấy văn bản sửa đổi."
   },
   {
     "id": "tt_34_2026_csskhoe",
@@ -941,7 +941,7 @@
     ],
     "verify": false,
     "nguon": "https://luatvietnam.vn/y-te/thong-tu-39-2026-tt-byt-quy-chuan-ky-thuat-quoc-gia-ve-gioi-han-vi-sinh-vat-tai-noi-lam-viec-450644-d1.html",
-    "ghi_chu": "Mâu thuẫn: bản văn bản trên Cổng Chính phủ để trống ngày hiệu lực. Cần đối chiếu công báo."
+    "ghi_chu": "Kiểm 06/11/2026: tin tức luatvietnam.vn xác nhận hiệu lực 09/04/2027; chưa có số và ngày công báo. Trang Cổng Chính phủ để trống ngày hiệu lực."
   },
   {
     "id": "tt_41_2026_dien_dan_tre_em",
