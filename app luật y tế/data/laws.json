@@ -56,7 +56,8 @@
     "verify": true,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
     "verify_date": "2026-11-06",
-    "verify_source": "PDF gốc TT 26/2025 (datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/26-byt.pdf): Đ2 thẩm quyền; Đ3 mẫu; Đ6 khoản 4, 5, 6, 8a, 8b; Đ9 khoản 2–3; Đ10 đơn điện tử; Đ13 khoản 1–2 (hiệu lực 01/07/2025, bãi bỏ TT 52/2017, 18/2018, 04/2022, 27/2021)"
+    "verify_source": "PDF gốc TT 26/2025 (datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/26-byt.pdf): Đ2 thẩm quyền; Đ3 mẫu; Đ6 khoản 4, 5, 6, 8a, 8b; Đ9 khoản 2–3; Đ10 đơn điện tử; Đ13 khoản 1–2 (hiệu lực 01/07/2025, bãi bỏ TT 52/2017, 18/2018, 04/2022, 27/2021)",
+    "ghi_chu": "Kiểm sửa đổi ngày 06/11/2026: chưa thấy văn bản sửa đổi TT 26/2025."
   },
   {
     "id": "tt22_2024",
@@ -325,7 +326,8 @@
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748",
     "verify": true,
     "verify_date": "2026-11-06",
-    "verify_source": "PDF TT 31/2025 (kiểm Điều 1, Điều 25)"
+    "verify_source": "PDF TT 31/2025 (kiểm Điều 1, Điều 25)",
+    "ghi_chu": "Kiểm sửa đổi ngày 06/11/2026: chưa thấy văn bản sửa đổi TT 31/2025."
   },
   {
     "id": "tt_29_2025_duoc",
@@ -868,5 +870,95 @@
     "verify": false,
     "nguon": "https://luatnguyen.vn/van-ban-phap-luat/thong-tu-35-2026-tt-byt-quy-dinh-viec-phan-cap-thuc-hien-nhiem-vu-trong-linh-vuc-bao-tro-xa-hoi-thuoc-tham-quyen-cua-bo-y-te-3958.html",
     "ghi_chu": "Nguồn khác ghi hiệu lực 01/11/2026; luatnguyen ghi 02/11/2026. Cần đối chiếu với văn bản gốc."
+  },
+  {
+    "id": "tt_36_2026_thi_dua",
+    "cat": "Thi đua, khen thưởng",
+    "name": "Thông tư 36/2026/TT-BYT quy định chi tiết một số điều của Luật Thi đua, khen thưởng đối với ngành y tế",
+    "so": "36/2026/TT-BYT",
+    "pass": "30/09/2026",
+    "eff": "01/10/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Quy định chi tiết một số điều của Luật Thi đua, khen thưởng đối với ngành y tế.",
+      "Ngày ban hành và hiệu lực theo Cổng văn bản Chính phủ: 30/09/2026 và 01/10/2026."
+    ],
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=219730",
+    "ghi_chu": "Mâu thuẫn: một trang tổng hợp gán số 36/2026/TT-BYT cho hướng dẫn chương trình chăm sóc sức khỏe ngày 08/09/2026. Cần đối chiếu công báo để xác định số hiệu đúng."
+  },
+  {
+    "id": "tt_37_2026_benh_hiem_ngheo",
+    "cat": "Bảo hiểm và chính sách",
+    "name": "Thông tư 37/2026/TT-BYT ban hành Danh mục bệnh hiểm nghèo cho sĩ quan Quân đội nghỉ hưu",
+    "so": "37/2026/TT-BYT",
+    "pass": "30/09/2026",
+    "eff": "30/09/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành Danh mục bệnh hiểm nghèo làm cơ sở thực hiện chế độ, chính sách đối với sĩ quan Quân đội nghỉ hưu theo Nghị định 343/2025/NĐ-CP.",
+      "Ngày ký 30/09/2026 theo Sở Y tế Đồng Nai và luatvietnam.vn."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-37-2026-tt-byt-danh-muc-benh-hiem-ngheo-cho-si-quan-quan-doi-nghi-huu-449216-d1.html",
+    "ghi_chu": "Cần đối chiếu công báo để xác nhận ngày hiệu lực."
+  },
+  {
+    "id": "tt_38_2026_qcvn31_hoa_chat",
+    "cat": "An toàn lao động",
+    "name": "Thông tư 38/2026/TT-BYT ban hành QCVN 31:2026/BYT về giá trị giới hạn tiếp xúc cho phép 80 yếu tố hóa học tại nơi làm việc",
+    "so": "38/2026/TT-BYT",
+    "pass": "09/10/2026",
+    "eff": "09/04/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành QCVN 31:2026/BYT: giá trị giới hạn tiếp xúc cho phép đối với 80 yếu tố hóa học tại nơi làm việc.",
+      "Có hiệu lực từ 09/04/2027 theo nội dung văn bản (tại thời điểm cập nhật chưa có hiệu lực)."
+    ],
+    "verify": false,
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-38-2026-TT-BYT-Quy-chuan-Gia-tri-gioi-han-tiep-xuc-cho-phep-80-yeu-to-hoa-hoc-tai-noi-lam-viec-728732.aspx",
+    "ghi_chu": "Trường hợp trạng thái: đã ban hành nhưng chưa có hiệu lực."
+  },
+  {
+    "id": "tt_39_2026_qcvn32_vi_sinh",
+    "cat": "An toàn lao động",
+    "name": "Thông tư 39/2026/TT-BYT ban hành QCVN 32:2026/BYT về giá trị giới hạn tiếp xúc cho phép một số vi sinh vật tại nơi làm việc",
+    "so": "39/2026/TT-BYT",
+    "pass": "09/10/2026",
+    "eff": "09/04/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành QCVN 32:2026/BYT: giá trị giới hạn tiếp xúc cho phép đối với một số vi sinh vật tại nơi làm việc.",
+      "Có hiệu lực từ 09/04/2027 theo một nguồn (tại thời điểm cập nhật chưa có hiệu lực)."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-39-2026-tt-byt-quy-chuan-ky-thuat-quoc-gia-ve-gioi-han-vi-sinh-vat-tai-noi-lam-viec-450644-d1.html",
+    "ghi_chu": "Mâu thuẫn: bản văn bản trên Cổng Chính phủ để trống ngày hiệu lực. Cần đối chiếu công báo."
+  },
+  {
+    "id": "tt_41_2026_dien_dan_tre_em",
+    "cat": "Trẻ em",
+    "name": "Thông tư 41/2026/TT-BYT hướng dẫn tổ chức diễn đàn trẻ em",
+    "so": "41/2026/TT-BYT",
+    "pass": "12/10/2026",
+    "eff": "01/01/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Hướng dẫn tổ chức diễn đàn trẻ em, gồm mẫu phiếu đồng ý tham gia, phiếu cam kết bảo vệ trẻ em và báo cáo kết quả.",
+      "Ngày ban hành 12/10/2026 và hiệu lực 01/01/2027 theo Cổng văn bản Chính phủ."
+    ],
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?classid=1&docid=219954&orggroupid=4&pageid=27160",
+    "ghi_chu": "Thư viện Pháp luật ghi hiệu lực là Đã biết; cần đối chiếu công báo."
   }
 ]
