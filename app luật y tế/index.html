@@ -638,6 +638,12 @@ function showTab(t){
 }
 document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
 addEventListener("resize", placeInd);
+// Gợi ý cuộn: còn tab bị khuất ở mép phải thì đánh dấu để CSS hiện mũi tên.
+const tabsNav = document.querySelector("nav.tabs");
+const tabsHint = () => { tabsNav.dataset.more = String(tabsNav.scrollLeft + tabsNav.clientWidth < tabsNav.scrollWidth - 4); };
+tabsNav.addEventListener("scroll", tabsHint, { passive: true });
+addEventListener("resize", tabsHint);
+tabsHint();
 
 /* ================= THƯ VIỆN ================= */
 let lawCat = "Tất cả";
