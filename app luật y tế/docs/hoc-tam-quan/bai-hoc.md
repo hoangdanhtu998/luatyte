@@ -151,6 +151,48 @@ Tôn trọng không có nghĩa là đồng ý. Bạn có thể không đồng ý
 
 ---
 
+## Bài 7: Nhân sinh quan là gì? Sống để làm gì?
+
+**Mục tiêu:** Hiểu nhân sinh quan là quan niệm về đời người, và nhận ra mỗi người có cách trả lời riêng cho câu hỏi "tôi sống để làm gì".
+
+**Giải thích:**
+Nhân sinh quan là quan niệm về đời người: lẽ sống, ý nghĩa sống, hạnh phúc và trách nhiệm của cá nhân với bản thân, gia đình và xã hội. Theo nghĩa rộng, nhân sinh quan là một phần của thế giới quan. Nếu thế giới quan trả lời "thế giới là gì", thì nhân sinh quan trả lời "tôi sống thế nào trong thế giới đó".
+
+**Hình dung đời thường:** Nhân sinh quan giống như la bàn cho một chuyến đi dài. Nó không cho biết từng khúc đường, nhưng giúp bạn giữ hướng khi gặp ngã rẽ.
+
+**Ví dụ:**
+1. **Đời sống:** Một người làm việc chăm chỉ để có thời gian ở bên gia đình. Một người khác coi sự nghiệp và việc được công nhận là ý nghĩa chính. Hai cách sống khác nhau xuất phát từ hai quan niệm khác nhau về hạnh phúc.
+2. **Học đường:** Có bạn học để đỗ và có việc làm tốt, có bạn học để hiểu và làm được việc có ích cho người khác. Điều đáng chú ý là điều gì được đặt lên trước khi có xung đột.
+3. **Nghề y, luật y tế:** Có bác sĩ coi việc cứu người là ý nghĩa cốt lõi của nghề, có người coi nghề là công việc mưu sinh. Khi làm việc, cả hai phải tuân theo cùng chuẩn đạo đức nghề nghiệp và pháp luật.
+
+**Tóm tắt:**
+- Nhân sinh quan trả lời câu hỏi về lẽ sống, ý nghĩa sống và trách nhiệm.
+- Nó là một phần của thế giới quan theo nghĩa rộng.
+- Nhân sinh quan khác nhau không có nghĩa là chuẩn đạo đức chung bị bỏ qua.
+
+---
+
+## Bài 8: Các cách trả lời lớn trong lịch sử triết học
+
+**Mục tiêu:** Nhận ra một số hướng trả lời lớn của triết học, để hiểu vì sao người ta có thế giới quan khác nhau. Không cần chọn hướng nào.
+
+**Giải thích:**
+Triết học thường đặt ba nhóm câu hỏi: **bản thể luận** (có gì tồn tại, và cái gì có trước: vật chất hay tinh thần?), **nhận thức luận** (con người biết được gì, và biết bằng cách nào?), và **đạo đức học** (nên làm gì, và căn cứ vào đâu?). Qua lịch sử, các trường phái đưa ra nhiều cách trả lời khác nhau. Không có đáp án nào được mọi người thống nhất, và mỗi hướng đều có điểm mạnh và bị phê phán.
+
+**Hình dung đời thường:** Giống nhiều người cùng vẽ một ngọn núi từ các phía khác nhau. Các bức vẽ khác nhau, nhưng đều mô tả cùng một địa hình.
+
+**Ví dụ:**
+1. **Duy vật và duy tâm:** Duy vật cho rằng vật chất tồn tại trước, ý thức là sự phản ánh của thế giới vật chất. Duy tâm cho rằng tinh thần hoặc ý thức là nền tảng của thế giới. Đây là một trong những cặp đối lập lâu đời nhất của triết học.
+2. **Kinh nghiệm và lý tính:** Chủ nghĩa kinh nghiệm cho rằng tri thức bắt nguồn chủ yếu từ quan sát và trải nghiệm. Chủ nghĩa duy lý nhấn mạnh vai trò của lý trí và suy luận. Khoa học hiện đại thường kết hợp cả hai: thu thập dữ liệu và kiểm chứng bằng lập luận.
+3. **Truyền thống phương Đông:** Nho giáo nhấn mạnh đạo đức, quan hệ xã hội và tu dưỡng bản thân. Đạo giáo đề cao sự hài hòa với tự nhiên. Phật giáo bàn về khổ, nguyên nhân của khổ và con đường giải thoát.
+
+**Tóm tắt:**
+- Triết học đặt ra ba nhóm câu hỏi lớn: bản thể, nhận thức và đạo đức.
+- Các trường phái trả lời khác nhau, và chưa có đáp án được mọi người thống nhất.
+- Biết các hướng này giúp hiểu quan điểm của người khác, không nhất thiết phải chọn một hướng.
+
+---
+
 ## Lưu ý chung
 
 Các câu hỏi về giá trị thường không có đáp án đúng hay sai tuyệt đối. Bài học này không nhằm nói bạn nên nghĩ gì, mà nhằm giúp bạn hiểu vì sao mỗi người nghĩ khác nhau và cách trò chuyện với nhau một cách tôn trọng.
