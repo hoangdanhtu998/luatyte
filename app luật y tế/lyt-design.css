@@ -388,7 +388,7 @@ nav[aria-label="Chuyển khu học"] a[aria-current]{opacity:1;font-weight:700;b
 .lesson-chat{position:fixed;right:24px;top:120px;bottom:24px;width:340px;max-width:calc(100vw - 32px);display:none;flex-direction:column;background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:70;overflow:hidden}
 body.chat-open .lesson-chat{display:flex}
 .lc-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--color-ink,#1c1917);color:var(--color-paper,#fff)}
-.lc-head strong{font-size:16px}
+.lc-head strong{font-size:16px;color:var(--color-paper,#fff)}
 .lc-close{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
 .lc-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:15px}
 .lc-msg{padding:10px 12px;border-radius:12px;max-width:92%;line-height:1.55;word-wrap:break-word}
@@ -433,7 +433,11 @@ body:has(nav[aria-label="Chuyển khu học"]){padding-top:72px!important}
 }
 main.triet .toc-toggle,.toc-toggle{top:92px}
 main.triet > nav.toc{top:120px}
-.lesson-chat{top:96px}
+.lesson-chat{top:128px}
+/* Màn 1600px trở lên: mục lục nằm dưới nút "Ẩn mục lục" để không đè lên tiêu đề */
+@media (min-width:1600px){
+  main.triet > nav.toc{top:156px}
+}
 
 /* ---- Trắc nghiệm trong bài học: thẻ câu hỏi rõ, đáp án có chữ cái tròn, đúng/sai tô màu ---- */
 main.triet .qz-item{background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:14px;padding:18px 18px 12px;margin:0 0 20px;box-shadow:0 1px 3px rgba(28,25,23,.05)}
