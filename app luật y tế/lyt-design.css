@@ -258,3 +258,8 @@ main.triet > p:first-of-type{font-size:1.1rem;color:var(--color-ink-2,#292524)}
 /* ---- Font chung ---- */
 :root{--font-body:"Be Vietnam Pro",system-ui,sans-serif;--font-display:"Be Vietnam Pro",system-ui,sans-serif}
 body,button,input,select,textarea{font-family:var(--font-body)}
+
+/* Mục lục trong trang bài học: khối dọc, tiêu đề phía trên, danh sách lưới bên dưới (không dùng bố cục hàng ngang của site) */
+main.triet nav.toc{display:block;margin:18px 0 28px;gap:0}
+main.triet nav.toc > strong{display:block;margin:0 0 10px;font-size:1.05rem}
+main.triet nav.toc > ol{width:100%}
