@@ -57,7 +57,7 @@
   box.className = 'lesson-chat';
   box.setAttribute('aria-label', 'Trợ lý tra cứu bài học');
   box.innerHTML =
-    '<div class="lc-head"><strong>Trợ lý tra cứu bài</strong><button type="button" class="lc-close" aria-label="Đóng">×</button></div>' +
+    '<div class="lc-head"><strong>Trợ lý · ' + esc(document.body.getAttribute('data-chat-name') || 'Bài học') + '</strong><button type="button" class="lc-close" aria-label="Đóng">×</button></div>' +
     '<div class="lc-log" aria-live="polite"></div>' +
     '<form class="lc-form"><input type="search" class="lc-input" placeholder="Hỏi về nội dung bài, ví dụ: đồng ý có thông tin" aria-label="Câu hỏi"><button type="submit" class="lc-send">Hỏi</button></form>';
   var fab = document.createElement('button');

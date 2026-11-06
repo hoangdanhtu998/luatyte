@@ -10,7 +10,10 @@ window.FaqAnswer = (function () {
     match: function (q) {
       if (!items) return '';
       var nq = norm(q), best = null, bestLen = 0;
+      var pid = document.body.getAttribute('data-chat-id') || '';
       items.forEach(function (it) {
+        var ok = (it.p || []).some(function (x) { return x === '*' || x === pid; });
+        if (!ok) return;
         (it.k || []).forEach(function (p) {
           var np = norm(p);
           if (nq.indexOf(np) >= 0 && np.length > bestLen) { best = it; bestLen = np.length; }
