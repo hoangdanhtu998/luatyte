@@ -3,21 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Chọn khu học trong Sổ tay Luật Y tế: học code, học kiểm thử, hoặc tam quan và thế giới quan.">
+<meta name="description" content="Chọn khu học trong Sổ tay Luật Y tế: học code, học kiểm thử, tam quan và thế giới quan, hoặc triết học từ A đến Z.">
 <title>Học: Sổ tay Luật Y tế</title>
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="lyt-design.css">
+<style>
+.hub-main{max-width:960px;margin:0 auto;padding:var(--space-lg,24px) var(--space-md,16px) 48px}
+.hub-main h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:.2em 0 .15em;letter-spacing:-.01em}
+.hub-lead{color:var(--color-muted,#7A6D5E);margin:0 0 24px;max-width:60ch}
+.hub-grid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:640px){.hub-grid{grid-template-columns:1fr 1fr}}
+.hub-card{display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 22px;border:1px solid var(--color-rule,#D9CFBE);border-radius:var(--radius-card,8px);background:var(--color-paper-2,#fff);box-shadow:var(--shadow-card,none)}
+.hub-card:hover{border-color:var(--color-ink,#2B2118)}
+.hub-card a.hub-link{color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:6px;height:100%}
+.hub-kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted,#7A6D5E)}
+.hub-title{font-size:1.2rem;font-weight:700;color:var(--color-ink,#2B2118);line-height:1.3}
+.hub-desc{color:var(--color-ink-2,#4A3F33);font-size:.97rem;line-height:1.6;margin:0}
+.hub-cta{margin-top:auto;padding-top:8px;font-weight:700;color:var(--color-ink,#2B2118)}
+.hub-card a.hub-link:focus-visible{outline:2px solid var(--color-focus,#8A5A2B);outline-offset:4px;border-radius:4px}
+</style>
 </head>
 <body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html">Luật Y tế</a><a href="hoc.html" aria-current="page" style="font-weight:700">Học</a><a href="tam-quan.html">Tâm quan</a><a href="triet-hoc.html">Triết học</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
-<main style="max-width:720px;margin:0 auto;padding:var(--space-lg);">
+<main class="hub-main">
 <div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="">Theo máy</option><option value="paper">Biên tập sáng</option><option value="ink">Tối sắc</option><option value="warm">Ấm dịu</option><option value="sepia">Giấy cũ</option><option value="terra">Đất nung</option><option value="forest">Rừng đêm</option><option value="plum">Mận</option><option value="mono">Trắng đen</option></select></label></div>
 
 <h1>Học</h1>
-<p>Chọn một khu học:</p>
-<ul style="list-style:none;padding:0;display:grid;gap:var(--space-sm);">
-<li><a href="hoc-code/index-hoccode.html"><strong>Học code</strong></a><br>Lập trình C/C++ cho người mới, học từ bài đầu tiên.</li>
-<li><a href="/hoc-test/"><strong>Học kiểm thử</strong></a><br>Kiểm thử phần mềm từ cơ bản đến thực hành.</li>
-<li><a href="tam-quan.html"><strong>Tam quan và thế giới quan</strong></a><br>Hiểu giá trị và cách nhìn thế giới, qua tình huống thực tế.</li>
-<li><a href="triet-hoc.html"><strong>Triết học từ A đến Z</strong></a><br>Nhập môn triết học cho người mới: khái niệm, ví dụ đời thường, lịch sử và triết học phương Đông.</li>
+<p class="hub-lead">Chọn một khu học. Mỗi khu có thể đọc độc lập, và bạn luôn có thể chuyển sang khu khác qua thanh trên cùng.</p>
+
+<ul class="hub-grid">
+<li class="hub-card"><a class="hub-link" href="triet-hoc.html">
+  <span class="hub-kicker">Nhập môn</span>
+  <span class="hub-title">Triết học từ A đến Z</span>
+  <p class="hub-desc">Khái niệm, ví dụ đời thường, lịch sử từ Hy Lạp đến hiện đại và triết học phương Đông. Có trắc nghiệm.</p>
+  <span class="hub-cta">Vào học →</span>
+</a></li>
+<li class="hub-card"><a class="hub-link" href="tam-quan.html">
+  <span class="hub-kicker">Bài học</span>
+  <span class="hub-title">Tâm quan và thế giới quan</span>
+  <p class="hub-desc">Hiểu giá trị và cách nhìn thế giới qua tình huống thực tế: thế giới quan, nhân sinh quan, giá trị quan. Có 20 câu trắc nghiệm.</p>
+  <span class="hub-cta">Vào học →</span>
+</a></li>
+<li class="hub-card"><a class="hub-link" href="hoc-code/index-hoccode.html">
+  <span class="hub-kicker">Lập trình</span>
+  <span class="hub-title">Học code</span>
+  <p class="hub-desc">Lập trình C/C++ cho người mới, học từ bài đầu tiên.</p>
+  <span class="hub-cta">Vào học →</span>
+</a></li>
+<li class="hub-card"><a class="hub-link" href="/hoc-test/">
+  <span class="hub-kicker">Kiểm thử</span>
+  <span class="hub-title">Học kiểm thử</span>
+  <p class="hub-desc">Kiểm thử phần mềm từ cơ bản đến thực hành.</p>
+  <span class="hub-cta">Vào học →</span>
+</a></li>
 </ul>
 </main>
 <script src="js/theme.js"></script>
