@@ -189,12 +189,12 @@ Dù khác thời đại và truyền thống, triết học thường quay về 
 
 Chọn theo mức độ, từ dễ đến khó:
 
-- **Jostein Gaarder, *Thế giới của Sophie*** (có bản dịch tiếng Việt): tiểu thuyết giới thiệu lịch sử triết học qua đối thoại, phù hợp người mới bắt đầu.
-- **Bertrand Russell, *Lịch sử triết học phương Tây*** (có bản dịch tiếng Việt): tổng quan rõ ràng, nhiều nhận định cá nhân của tác giả. Nên đọc cùng với sách khác để có góc nhìn đa chiều.
-- **Plato, *Cộng hòa***: bàn về công lý và nhà nước qua đối thoại.
-- **Aristotle, *Đạo đức Nicomachus***: nền tảng đạo đức học cổ điển.
-- **René Descartes, *Suy niệm về đệ nhất triết học***: nền tảng của triết học hiện đại.
-- **Immanuel Kant, *Phê phán lý tính thuần túy***: khó, nên đọc sau khi đã có nền tảng và có thể dùng giáo trình hướng dẫn.
+- **Jostein Gaarder,** *Thế giới của Sophie* (có bản dịch tiếng Việt): tiểu thuyết giới thiệu lịch sử triết học qua đối thoại, phù hợp người mới bắt đầu.
+- **Bertrand Russell,** *Lịch sử triết học phương Tây* (có bản dịch tiếng Việt): tổng quan rõ ràng, nhiều nhận định cá nhân của tác giả. Nên đọc cùng với sách khác để có góc nhìn đa chiều.
+- **Plato,** *Cộng hòa*: bàn về công lý và nhà nước qua đối thoại.
+- **Aristotle,** *Đạo đức Nicomachus*: nền tảng đạo đức học cổ điển.
+- **René Descartes,** *Suy niệm về đệ nhất triết học*: nền tảng của triết học hiện đại.
+- **Immanuel Kant,** *Phê phán lý tính thuần túy*: khó, nên đọc sau khi đã có nền tảng và có thể dùng giáo trình hướng dẫn.
 
 Lưu ý khi chọn tài liệu: ưu tiên bản dịch có chú thích rõ ràng, và đối chiếu thuật ngữ với giáo trình triết học có uy tín ở Việt Nam trước khi trích dẫn.
 
