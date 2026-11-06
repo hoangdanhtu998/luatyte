@@ -377,10 +377,10 @@ main.triet .check{box-shadow:none}
 }
 
 /* ---- Header chung: cố định trên cùng, có màu riêng theo giao diện (đảo màu nền/chữ) ---- */
-nav[aria-label="Chuyển khu học"]{position:sticky!important;top:0!important;z-index:60!important;background:var(--color-ink,#1c1917)!important;color:var(--color-paper,#fff)!important;border:0!important;margin:0!important;padding:12px 20px!important;gap:6px 20px!important;box-shadow:0 2px 12px rgba(0,0,0,.14)!important;font-size:15px!important}
-nav[aria-label="Chuyển khu học"] a{color:var(--color-paper,#fff)!important;font-weight:600;text-decoration:none!important;opacity:.82;padding:4px 0;border-bottom:2px solid transparent;transition:opacity .15s,border-color .15s}
-nav[aria-label="Chuyển khu học"] a:hover{opacity:1;border-bottom-color:var(--color-accent,#8a6a3f)}
-nav[aria-label="Chuyển khu học"] a[aria-current]{opacity:1;border-bottom-color:var(--color-accent,#8a6a3f)}
+nav[aria-label="Chuyển khu học"]{position:sticky!important;top:0!important;z-index:60!important;background:var(--color-paper,#fbf8f1)!important;color:var(--color-ink,#1c1917)!important;border:0!important;border-bottom:1px solid rgba(28,25,23,.12)!important;margin:0!important;padding:14px 24px!important;gap:6px 24px!important;box-shadow:none!important;font-size:15px!important}
+nav[aria-label="Chuyển khu học"] a{color:var(--color-ink,#1c1917)!important;font-weight:500;text-decoration:none!important;opacity:.62;padding:6px 0;border-bottom:2px solid transparent;transition:opacity .15s,border-color .15s}
+nav[aria-label="Chuyển khu học"] a:hover{opacity:1;border-bottom-color:rgba(28,25,23,.35)}
+nav[aria-label="Chuyển khu học"] a[aria-current]{opacity:1;font-weight:700;border-bottom-color:var(--color-accent,#8a6a3f)}
 @media (max-width:640px){nav[aria-label="Chuyển khu học"]{padding:10px 14px!important;gap:4px 14px!important;font-size:14px!important}}
 
 /* ---- Trợ lý tra cứu bài học (bên phải) ---- */
