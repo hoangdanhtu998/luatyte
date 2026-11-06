@@ -77,3 +77,38 @@ body{padding-bottom:88px}
   .hero > *,.stats::after{animation:none!important}
   *{transition:none!important}
 }
+
+/* ---- Hệ thống chữ và khối nội dung: một kiểu, không trang trí ---- */
+body{font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-weight:600;letter-spacing:-.01em}
+
+/* Thanh tab: chữ rõ hơn, vạch chỉ dưới mảnh */
+nav.tabs{border-bottom:1px solid var(--color-rule,#D9CFBE)}
+nav.tabs button{font-size:15px;font-weight:600;min-height:46px}
+nav.tabs button[aria-selected="true"]{font-weight:700}
+
+/* Tiêu đề panel và ghi chú */
+.panel > .intro{font-size:16px;color:var(--color-ink-2,#4A3F33);max-width:68ch;margin:0}
+
+/* Nút: cùng bán kính, cùng cỡ chữ */
+.btn{border-radius:6px;font-weight:700;letter-spacing:.005em;min-height:42px}
+.btn.ghost{font-weight:600}
+
+/* Danh sách luật: tiêu đề theo kiểu biên tập, dòng kẻ thay cho khung nặng */
+.laws{gap:0;border-top:1px solid var(--color-rule,#D9CFBE)}
+.law{border:0;border-bottom:1px solid var(--color-rule,#D9CFBE);border-radius:0;background:transparent}
+.law[open]{border-color:var(--color-rule,#D9CFBE);background:var(--color-paper-3,#F3EDE2)}
+.law summary{padding:16px 4px}
+.law:hover summary h3{text-decoration:none}
+.law h3{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-size:1.22rem;font-weight:600}
+.law .meta{font-size:13px;color:var(--color-muted,#7A6D5E)}
+.law .body{padding:0 4px 18px 4px}
+
+/* Thẻ nội dung: phẳng, không đổ bóng */
+.card{box-shadow:none;border:1px solid var(--color-rule,#D9CFBE);border-radius:8px}
+
+/* Chip lọc: gọn hơn */
+.chip{font-size:14px;min-height:36px}
+
+/* Số liệu bằng chữ serif cho dễ đọc */
+.stat b{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-weight:600}
