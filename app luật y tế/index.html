@@ -451,7 +451,8 @@ sync = {
   }
 };
 
-const PALETTE = ["#0F766E","#C2410C","#A16207","#1D4ED8","#0E7490","#BE123C","#15803D","#44403C"];
+/* Màu nhóm lấy từ token của site.css (--c-*), không dùng mã cứng; đổi theo chế độ sáng/tối. */
+const PALETTE = ["var(--accent)","var(--c-orange)","var(--c-gold)","var(--c-blue)","var(--c-violet)","var(--c-rose)","var(--c-green)","var(--muted)"];
 const CATCOLOR = {}; [...new Set(LAWS.map(l=>l.cat))].forEach((c,i)=>CATCOLOR[c]=PALETTE[i%PALETTE.length]);
 
 /* Thông báo nổi */
@@ -472,7 +473,7 @@ function pop(el){ if (!el || REDUCE()) return; el.classList.remove("combo-hot");
 /* Pháo giấy */
 function burst(x, y){
   if (REDUCE()) return;
-  const cols = ["#0F766E","#F26B4F","#D9961A","#2DD4BF","#5EEAD4","#FB7185"];
+  const cols = ["var(--accent)","var(--c-orange)","var(--c-gold)","var(--c-green)","var(--c-blue)","var(--c-rose)"];
   const cx = x ?? innerWidth/2, cy = y ?? innerHeight*.4;
   for (let i=0;i<44;i++){
     const s = document.createElement("i");
@@ -1533,11 +1534,6 @@ function renderRoleRoadmapInto(root){
         </div>
       </div>`;
     }).join("");
-    const unique = new Map();
-    role.chuong.forEach(cid => roleChapterQuestions(cid).forEach(q => unique.set(q.q, q)));
-    const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
-    const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
-    const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
     root.innerHTML = `<div class="role-picker" role="group" aria-label="Chọn vai trò">${ROLES.vai_tro.map(r => `<button type="button" class="role-btn" data-role="${esc(r.id)}" aria-pressed="${r.id === selected}"><b>${esc(r.ten)}</b><span>${esc(r.mo_ta)}</span></button>`).join("")}</div>
       <div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
       <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
