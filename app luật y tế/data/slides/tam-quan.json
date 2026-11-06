@@ -1,0 +1,415 @@
+{
+  "title": "Tam quan và thế giới quan",
+  "slides": [
+    {
+      "type": "text",
+      "title": "Giới thiệu bài Tam quan",
+      "body": [
+        "Bài học gồm 8 phần. Mỗi phần có slide giải thích, slide ví dụ, một câu trắc nghiệm ôn nhớ và một câu điền chỗ trống.",
+        "Cuối bài có phần tổng ôn bằng tự luận. Tự luận không tính điểm, bạn tự so với đáp án mẫu.",
+        "Bài học không nhằm nói bạn nên nghĩ gì, mà giúp hiểu vì sao mỗi người nghĩ khác nhau."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 1: Thế giới quan là gì?",
+      "body": [
+        "Mục tiêu: hiểu thế giới quan là gì và vì sao nó khác với việc chỉ biết nhiều thông tin.",
+        "Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội: thế giới vận hành theo quy luật nào, con người biết được gì và không biết được gì.",
+        "Ai cũng có thế giới quan, dù không phải lúc nào cũng gọi tên được. Nó hình thành dần qua gia đình, trường học, sách báo và trải nghiệm sống."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 1: Ví dụ",
+      "body": [
+        "Đời sống: một người tin mọi việc đều có nguyên nhân và tìm hiểu được; người khác cho rằng có nhiều điều vượt ngoài hiểu biết. Khi gặp chuyện bất ngờ, họ phản ứng khác nhau.",
+        "Học đường: 'xã hội thay đổi nhờ hiểu biết và hợp tác' hay 'xã hội thay đổi do hoàn cảnh'. Cách bạn trả lời là một phần thế giới quan.",
+        "Nghề y: bác sĩ nhìn sức khỏe là kết quả của yếu tố sinh học, môi trường và xã hội, nên quan tâm cả chỗ ở và thu nhập của bệnh nhân."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Thế giới quan trả lời câu hỏi nào?",
+      "options": [
+        "Tôi nên mua gì hôm nay?",
+        "Thế giới vận hành theo quy luật nào, và con người đứng ở đâu?",
+        "Tôi thích món ăn nào?",
+        "Ai là người giàu nhất?"
+      ],
+      "answer": 1,
+      "feedback": "Thế giới quan hỏi về bản chất của thế giới, con người và xã hội (Bài 1)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Thế giới quan giống như {1} trong đầu bạn: không phải con đường cụ thể, nhưng giúp biết mình đang ở đâu.",
+      "blanks": [
+        {
+          "options": [
+            "tấm bản đồ",
+            "chiếc la bàn",
+            "bài kiểm tra",
+            "cuốn sách"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 2: Giá trị quan là gì?",
+      "body": [
+        "Mục tiêu: hiểu giá trị quan là gì và nhận ra nó qua các lựa chọn hằng ngày.",
+        "Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nó trả lời câu hỏi 'điều gì quan trọng với tôi?'",
+        "Các giá trị thường gặp: trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp chúng theo thứ tự khác nhau."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 2: Ví dụ",
+      "body": [
+        "Đời sống: hai người cùng mức lương, một dành dụm mua nhà, một ưu tiên du lịch cùng gia đình. Không ai đúng hơn ai, chỉ khác thứ tự giá trị.",
+        "Học đường: thấy bạn bị trêu, bạn chọn lên tiếng hay im lặng? Lựa chọn cho thấy bạn coi trọng an toàn cá nhân hay công bằng cho người khác.",
+        "Nghề y: bệnh nhân từ chối một phương pháp bác sĩ khuyên. Bác sĩ cân nhắc giữa tôn trọng quyền tự quyết và bảo vệ sức khỏe."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Giá trị quan lộ rõ nhất khi nào?",
+      "options": [
+        "Khi người ta nói về lý tưởng",
+        "Khi phải chọn giữa hai điều đều tốt nhưng không thể có cả hai",
+        "Khi đọc sách",
+        "Khi nghỉ ngơi"
+      ],
+      "answer": 1,
+      "feedback": "Giá trị quan lộ ra qua các lựa chọn khi phải đánh đổi (Bài 2)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Thế giới quan trả lời 'thế giới là gì', còn giá trị quan trả lời '{1}'.",
+      "blanks": [
+        {
+          "options": [
+            "điều gì quan trọng với tôi",
+            "hôm nay ăn gì",
+            "ai là bạn",
+            "thời tiết ra sao"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 3: Khác nhau và liên hệ giữa hai khái niệm",
+      "body": [
+        "Mục tiêu: phân biệt thế giới quan và giá trị quan, và hiểu vì sao chúng thường đi cùng nhau.",
+        "Thế giới quan hỏi: 'Thế giới là gì, và tôi đứng ở đâu?' Giá trị quan hỏi: 'Tôi nên chọn điều gì và sống thế nào?'",
+        "Nói đơn giản: thế giới quan là phần hiểu, còn giá trị quan là phần chọn. Nhân sinh quan nằm giữa hai phần đó."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 3: Ví dụ",
+      "body": [
+        "Đời sống: tin rằng sức khỏe phụ thuộc vào thói quen sinh hoạt (thế giới quan), nên ưu tiên tập thể dục và ăn lành mạnh (giá trị quan).",
+        "Học đường: tin kiến thức đổi được cuộc đời (thế giới quan), nên coi trọng học chăm chỉ và kiên trì (giá trị quan).",
+        "Nghề y: tin mỗi người có phẩm giá (thế giới quan), nên đề cao sự tôn trọng và bảo mật thông tin bệnh nhân (giá trị quan)."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Trong bài, thế giới quan là phần nào và giá trị quan là phần nào?",
+      "options": [
+        "Thế giới quan là phần hiểu; giá trị quan là phần chọn",
+        "Thế giới quan là phần chọn; giá trị quan là phần hiểu",
+        "Cả hai đều là phần hiểu",
+        "Cả hai đều là phần chọn"
+      ],
+      "answer": 0,
+      "feedback": "Thế giới quan là phần hiểu, giá trị quan là phần chọn (Bài 3)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Trong hình dung của bài, {1} là tấm bản đồ, còn {2} là la bàn.",
+      "blanks": [
+        {
+          "options": [
+            "thế giới quan",
+            "giá trị quan",
+            "nhân sinh quan",
+            "tôn giáo"
+          ],
+          "answer": 0
+        },
+        {
+          "options": [
+            "thế giới quan",
+            "giá trị quan",
+            "nhân sinh quan",
+            "tôn giáo"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 4: Vì sao hai người nhìn cùng một việc khác nhau?",
+      "body": [
+        "Mục tiêu: hiểu những yếu tố khiến cùng một sự việc được đánh giá khác nhau, và biết khác biệt quan điểm không nhất thiết có nghĩa là ai đó sai.",
+        "Năm lý do chính: trải nghiệm sống; gia đình và môi trường lớn lên; thông tin khác nhau; hoàn cảnh hiện tại; thứ tự ưu tiên giá trị.",
+        "Hình dung: hai người đứng hai phía một ngọn núi, cùng nói đúng theo góc nhìn của mình, nhưng cần đi quanh núi mới thấy đủ toàn cảnh."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 4: Ví dụ",
+      "body": [
+        "Đời sống: đổi sang công việc mới. Người vừa trải qua công ty đóng cửa thấy rủi ro; người coi trọng phát triển thấy cơ hội.",
+        "Học đường: kiểm tra theo nhóm. Có bạn thấy cơ hội học hỏi; có bạn thấy bất công với người học chậm.",
+        "Nghề y: gia đình muốn bệnh nhân lớn tuổi biết đầy đủ chẩn đoán, người thân khác muốn giấu để họ bớt lo. Cả hai đều xuất phát từ mong muốn bảo vệ người bệnh."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Yếu tố nào KHÔNG nằm trong năm lý do khiến người ta nhìn một việc khác nhau?",
+      "options": [
+        "Trải nghiệm sống",
+        "Thông tin khác nhau",
+        "Thời tiết hôm qua",
+        "Thứ tự ưu tiên giá trị"
+      ],
+      "answer": 2,
+      "feedback": "Thời tiết hôm qua không thuộc các yếu tố trong bài (Bài 4)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Khác biệt quan điểm không nhất thiết có nghĩa là ai đó {1}.",
+      "blanks": [
+        {
+          "options": [
+            "sai",
+            "lười",
+            "giỏi",
+            "đúng"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 5: Giá trị quan trong nghề y và nghề luật liên quan đến sức khỏe",
+      "body": [
+        "Mục tiêu: hiểu vai trò của giá trị đạo đức trong nghề y và các nghề liên quan đến luật y tế.",
+        "Nghề y thường gặp nhiều giá trị cùng lúc: an toàn cho người bệnh, quyền tự quyết, bảo mật thông tin, công bằng, trách nhiệm cộng đồng.",
+        "Khi các giá trị va chạm, người làm nghề cần lập luận rõ ràng, minh bạch, dựa trên pháp luật hiện hành và chuẩn mực nghề nghiệp."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 5: Lưu ý văn bản và ví dụ",
+      "body": [
+        "Ví dụ văn bản: Luật Khám bệnh, chữa bệnh số 15/2023/QH15 ghi nhận quyền giữ bí mật thông tin đời tư (Điều 10 khoản 2) và quyền lựa chọn phương pháp sau khi được tư vấn đầy đủ (Điều 11 khoản 1).",
+        "Cần đối chiếu với văn bản chính thức trước khi trích dẫn. Quy định có thể thay đổi theo thời gian.",
+        "Ví dụ: bệnh viện phải phân bổ nguồn lực giữa cấp cứu và phòng ngừa. Cả hai đều quan trọng; cần cân nhắc cứu người trước mắt và sức khỏe cộng đồng lâu dài."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Khi các giá trị trong nghề y va chạm, người làm nghề nên làm gì?",
+      "options": [
+        "Chọn giá trị mình thích nhất và không giải thích",
+        "Lập luận rõ ràng, minh bạch, dựa trên pháp luật và chuẩn mực nghề nghiệp",
+        "Bỏ qua quy định để làm nhanh",
+        "Hỏi người ngoài ngành rồi làm theo"
+      ],
+      "answer": 1,
+      "feedback": "Cần lập luận minh bạch và tuân theo pháp luật, chuẩn mực nghề nghiệp (Bài 5)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Bài học chỉ nêu khái niệm chung; quy định cụ thể cần tra cứu ở {1} và có thể thay đổi theo thời gian.",
+      "blanks": [
+        {
+          "options": [
+            "nguồn chính thức",
+            "mạng xã hội",
+            "ý kiến bạn bè",
+            "quảng cáo"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 6: Lắng nghe người có quan điểm khác và vẫn tôn trọng họ",
+      "body": [
+        "Mục tiêu: biết lắng nghe và nêu quan điểm mà không công kích người khác. Tôn trọng không có nghĩa là đồng ý.",
+        "Bốn bước: (1) lắng nghe hết ý; (2) hỏi để hiểu 'bạn nghĩ như vậy vì lý do gì?'; (3) nhắc lại ý của họ bằng lời của bạn; (4) nêu quan điểm của mình bằng chữ 'tôi', kèm lý do.",
+        "Nhiều văn bản pháp luật và chuẩn mực nghề nghiệp đặt an toàn, quyền con người và không kỳ thị làm chuẩn chung. Đây là chuẩn đã thống nhất, khác với các câu hỏi giá trị còn mở."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 6: Ví dụ",
+      "body": [
+        "Đời sống: cha mẹ và con bàn về mạng xã hội. Mỗi bên nói rõ lo lắng của mình, rồi cùng đặt ra giới hạn chung.",
+        "Học đường: lớp tranh luận về tự chọn môn học. Cô giáo gợi ý: 'Bạn đồng ý với điểm nào trong ý kiến của bạn kia?'",
+        "Nghề y: bác sĩ giải thích lợi ích và rủi ro, lắng nghe lý do của bệnh nhân, và tôn trọng quyết định của họ trong phạm vi an toàn và pháp luật."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Bước đầu tiên khi gặp người có quan điểm khác là gì?",
+      "options": [
+        "Phản bác ngay",
+        "Lắng nghe hết ý, chưa vội phản bác",
+        "Nói họ sai",
+        "Im lặng bỏ đi"
+      ],
+      "answer": 1,
+      "feedback": "Lắng nghe hết ý là bước đầu tiên (Bài 6)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Tôn trọng không có nghĩa là {1}, mà là đối xử đàng hoàng với người khác.",
+      "blanks": [
+        {
+          "options": [
+            "đồng ý",
+            "lắng nghe",
+            "hỏi thăm",
+            "nhớ tên"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 7: Nhân sinh quan là gì? Sống để làm gì?",
+      "body": [
+        "Mục tiêu: hiểu nhân sinh quan là quan niệm về đời người, và mỗi người có cách trả lời riêng cho câu hỏi 'tôi sống để làm gì'.",
+        "Nhân sinh quan là quan niệm về lẽ sống, ý nghĩa sống, hạnh phúc và trách nhiệm. Theo nghĩa rộng, nó là một phần của thế giới quan: thế giới quan trả lời 'thế giới là gì', nhân sinh quan trả lời 'tôi sống thế nào trong thế giới đó'.",
+        "Hình dung: nhân sinh quan giống la bàn cho một chuyến đi dài, giúp giữ hướng khi gặp ngã rẽ."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 7: Ví dụ",
+      "body": [
+        "Đời sống: một người làm việc để có thời gian bên gia đình; người khác coi sự nghiệp là ý nghĩa chính.",
+        "Học đường: học để đỗ và có việc tốt, hay học để hiểu và làm việc có ích cho người khác.",
+        "Nghề y: bác sĩ coi việc cứu người là ý nghĩa cốt lõi; người khác coi nghề là mưu sinh. Cả hai đều phải tuân theo chuẩn đạo đức và pháp luật."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Nhân sinh quan trả lời câu hỏi nào?",
+      "options": [
+        "Thế giới là gì?",
+        "Tôi sống để làm gì và điều gì có ý nghĩa?",
+        "Tôi nên mua gì?",
+        "Ai là người giỏi nhất?"
+      ],
+      "answer": 1,
+      "feedback": "Nhân sinh quan trả lời về lẽ sống và ý nghĩa sống (Bài 7)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Theo nghĩa rộng, nhân sinh quan là một phần của {1}.",
+      "blanks": [
+        {
+          "options": [
+            "thế giới quan",
+            "giá trị quan",
+            "kinh tế",
+            "toán học"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 8: Các cách trả lời lớn trong lịch sử triết học",
+      "body": [
+        "Mục tiêu: nhận ra một số hướng trả lời lớn của triết học, để hiểu vì sao người ta có thế giới quan khác nhau. Không cần chọn hướng nào.",
+        "Triết học thường đặt ba nhóm câu hỏi: bản thể luận (có gì tồn tại, vật chất hay tinh thần có trước?), nhận thức luận (biết được gì, biết bằng cách nào?), đạo đức học (nên làm gì, căn cứ vào đâu?).",
+        "Không có đáp án nào được mọi người thống nhất. Mỗi hướng đều có điểm mạnh và bị phê phán."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Bài 8: Ví dụ các hướng",
+      "body": [
+        "Duy vật và duy tâm: duy vật cho vật chất tồn tại trước, ý thức phản ánh thế giới vật chất; duy tâm cho tinh thần hoặc ý thức là nền tảng.",
+        "Kinh nghiệm và lý tính: kinh nghiệm cho rằng tri thức đến từ quan sát và trải nghiệm; duy lý nhấn mạnh lý trí và suy luận. Khoa học hiện đại thường kết hợp cả hai.",
+        "Phương Đông: Nho giáo nhấn mạnh đạo đức và tu dưỡng; Đạo giáo đề cao hài hòa với tự nhiên; Phật giáo bàn về khổ và con đường giải thoát."
+      ]
+    },
+    {
+      "type": "mcq",
+      "q": "Ba nhóm câu hỏi lớn của triết học là gì?",
+      "options": [
+        "Toán, lý, hóa",
+        "Bản thể luận, nhận thức luận, đạo đức học",
+        "Kinh tế, chính trị, văn hóa",
+        "Lịch sử, địa lý, văn học"
+      ],
+      "answer": 1,
+      "feedback": "Ba nhóm câu hỏi lớn: bản thể, nhận thức và đạo đức (Bài 8)."
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Duy vật cho rằng {1} tồn tại trước, còn duy tâm cho rằng tinh thần là nền tảng.",
+      "blanks": [
+        {
+          "options": [
+            "vật chất",
+            "ý thức",
+            "tiền bạc",
+            "thời gian"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Tổng ôn",
+      "body": [
+        "Thế giới quan là phần hiểu. Giá trị quan là phần chọn. Nhân sinh quan trả lời 'sống để làm gì'.",
+        "Khác biệt quan điểm thường đến từ trải nghiệm, thông tin, hoàn cảnh và thứ tự ưu tiên giá trị.",
+        "Khi tranh luận: lắng nghe, hỏi để hiểu, nhắc lại ý người khác, rồi nêu quan điểm của mình kèm lý do."
+      ]
+    },
+    {
+      "type": "essay",
+      "q": "Giải thích bằng ví dụ của bạn sự khác nhau giữa thế giới quan và giá trị quan.",
+      "model": "Thế giới quan trả lời 'thế giới là gì và tôi đứng ở đâu' (phần hiểu). Giá trị quan trả lời 'điều gì quan trọng với tôi và nên chọn gì' (phần chọn). Ví dụ: người tin sức khỏe phụ thuộc thói quen (thế giới quan) nên ưu tiên tập thể dục (giá trị quan)."
+    },
+    {
+      "type": "essay",
+      "q": "Một người bạn có quan điểm khác bạn về học nhóm. Bạn sẽ trò chuyện thế nào để vẫn tôn trọng?",
+      "model": "Lắng nghe hết ý, hỏi để hiểu lý do của bạn, nhắc lại ý bạn bằng lời mình, rồi nêu quan điểm của mình bằng chữ 'tôi' kèm lý do. Tìm điểm chung trước khi tìm điểm khác biệt."
+    },
+    {
+      "type": "essay",
+      "q": "Vì sao cùng một sự việc có thể được đánh giá khác nhau?",
+      "model": "Vì trải nghiệm sống, môi trường lớn lên, thông tin khác nhau, hoàn cảnh hiện tại và thứ tự ưu tiên giá trị khác nhau. Khác biệt không nhất thiết có nghĩa là ai đó sai."
+    }
+  ]
+}
