@@ -237,7 +237,7 @@ main.triet p{margin:0 0 1em;color:var(--color-ink-2,#292524)}
 main.triet strong{color:var(--color-ink,#1c1917);font-weight:700;background:none;padding:0}
 main.triet p:has(> strong:first-child){background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:12px;padding:14px 18px;margin:16px 0;box-shadow:0 1px 2px rgba(28,25,23,.05)}
 main.triet p:has(> strong:first-child) > strong:first-child{display:inline-block;color:var(--color-accent-soft-ink,#5b4424);background:var(--color-accent-soft,#f3ecdf);padding:2px 10px;border-radius:999px;margin-right:6px;font-size:.92em}
-main.triet p a,main.triet li a{color:var(--color-accent-soft-ink,#5b4424);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+main.triet p a:not(.btn),main.triet li a:not(.btn){color:var(--color-accent-soft-ink,#5b4424);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 main.triet ul,main.triet ol{padding-left:1.4em;margin:0 0 1em}
 main.triet li{margin:.45em 0;color:var(--color-ink-2,#292524)}
 main.triet ul li::marker{color:var(--color-accent,#8a6a3f)}

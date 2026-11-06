@@ -7,7 +7,8 @@
   var sel = document.getElementById('theme-pick');
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  var current = saved === null ? DEFAULT : saved;
+  var retired = ['indigo'];
+  var current = (saved === null || retired.indexOf(saved) >= 0) ? DEFAULT : saved;
   function apply(v) { if (v && v !== 'system') root.setAttribute('data-theme', v); else root.removeAttribute('data-theme'); }
   apply(current);
   if (sel) {
