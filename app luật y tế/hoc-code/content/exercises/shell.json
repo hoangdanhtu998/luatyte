@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Thư mục và lệnh cơ bản",
+    "prompt": "Thử thách: tạo thư mục test, tạo file, liệt kê, in nội dung, xóa.",
+    "starter": "#!/bin/bash\n# TODO: viết các lệnh shell để hoàn thành bài tập\n\necho \"Bắt đầu bài tập Shell\\n\"\n\n# 1. Tạo thư mục test_dir (mkdir)\n# 2. Vào thư mục test_dir (cd)\n# 3. Tạo file test.txt rỗng (touch)\n# 4. Ghi \"Xin chào\" vào file test.txt (echo > file)\n# 5. In nội dung file test.txt (cat)\n# 6. Liệt kê file trong thư mục hiện tại (ls -l)\n# 7. Thư mục trên cùng (cd ..)\n# 8. Xóa thư mục test_dir (rm -r)\n\necho \"Kết thúc bài tập Shell\\n\"",
+    "language": "bash",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Bắt đầu bài tập Shell\n\nXin chào\n\nKết thúc bài tập Shell\n"
+      }
+    ]
+  },
+  {
+    "id": "ex2",
+    "title": "Bài 2: Pipe và tìm kiếm",
+    "prompt": "Sử dụng pipe lồng ghép các lệnh: ls, grep, wc, sort.",
+    "starter": "#!/bin/bash\n# TODO: viết lệnh pipe đếm file .txt trong thư mục\n\necho \"Số file .txt: \"\n\n# TODO: lệnh pipe: ls *.txt | wc -l\n\necho \"Kết thúc\"\n",
+    "language": "bash",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Số file .txt: 0\nKết thúc\n"
+      }
+    ]
+  },
+  {
+    "id": "ex3",
+    "title": "Bài 3: Biến môi trường và điều kiện",
+    "prompt": "Sử dụng biến môi trường, if so sánh, và lệnh test `[ ]`.",
+    "starter": "#!/bin/bash\n# TODO: kiểm tra số lượng argument truyền vào\n# Nếu đúng 1 argument → in ra \"Xin chào <argument>\"\n# Nếu không có argument → in ra \"Bạn chưa nhập tên\"\n# Nếu hơn 1 argument → in ra \"Quá nhiều argument\"\n\necho \"Kiểm tra argument\\n\"\n\n# TODO: kiểm tra $# (số lượng argument)\n# TODO: in ra thông báo phù hợp\n\necho \"Kết thúc\"\n",
+    "language": "bash",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Bạn chưa nhập tên\nKết thúc\n"
+      }
+    ]
+  },
+  {
+    "id": "ex4",
+    "title": "Bài 4: Vòng lặp in số chẵn",
+    "prompt": "Viết vòng lặp in ra các số chẵn từ 1 đến 20.",
+    "starter": "#!/bin/bash\n# TODO: viết vòng lặp in ra các số chẵn từ 1 đến 20\n\necho \"Số chẵn từ 1 đến 20:\"\n\n# TODO: for i in $(seq 1 20) hoặc for i in {1..20}\n# TODO: nếu [ $((i % 2)) -eq 0 ] thì in i\n\necho \"Kết thúc\"\n",
+    "language": "bash",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Số chẵn từ 1 đến 20:\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\nKết thúc\n"
+      }
+    ]
+  },
+  {
+    "id": "ex5",
+    "title": "Bài 5: Tìm file lớn và in ra",
+    "prompt": "Sử dụng find để tìm file lớn hơn 1KB, sau đó in ra tên file.",
+    "starter": "#!/bin/bash\n# TODO: dùng find để tìm file lớn hơn 1KB trong thư mục hiện tại\n# TODO: in ra tên file (có thể dùng -exec basename {})\\n\necho \"File lớn hơn 1KB:\\n\"\n\n# TODO: find . -type f -size +1k -exec basename {}\\;\\n\necho \"Kết thúc\"\n",
+    "language": "bash",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "File lớn hơn 1KB:\n\nKết thúc\n"
+      }
+    ]
+  }
+]

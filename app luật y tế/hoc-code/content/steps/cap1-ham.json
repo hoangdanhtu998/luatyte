@@ -1,0 +1,14 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Hàm giống như một cái máy. Bạn đưa đồ vào, máy làm việc và trả về kết quả.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là hai hộp đầu vào: a và b. Bấm nút để bỏ số 3 vào a và số 4 vào b.", "boxes": ["a", "b"], "code": "cong(3, 4)", "run": { "a": 3, "b": 4 }, "after": "Xong! Hai đầu vào là 3 và 4." },
+    { "img": "m03-meo-vui.png", "say": "Máy cộng hai đầu vào lại rồi trả về kết quả. Bấm để máy trả về kết quả và bỏ vào hộp kq.", "boxes": ["a", "b", "kq"], "code": "int kq = cong(3, 4);", "run": { "kq": 7 }, "after": "Xong! kq là 7. Máy đã cộng 3 với 4." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bây giờ có một hàm khác: tang. Nó nhận một số, cộng thêm 10 cho bản sao của số đó. Hộp x đang có số 5.", "boxes": ["x"], "code": "int x = 5;", "run": { "x": 5 }, "after": "Xong! x là 5." },
+    { "img": "m04-meo-nhe-nhang.png", "say": "Khi đưa x vào hàm tang, hàm chỉ nhận một bản sao. Bản sao trong hàm là n, và n thành 15. Bấm để chạy.", "boxes": ["x", "n"], "code": "tang(x);", "run": { "n": 15 }, "after": "Trong hàm, n là 15. Hộp x vẫn là 5 vì hàm chỉ đổi bản sao." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau khi gọi tang(x), hộp x chứa số mấy?", "boxes": ["x"], "code": "tang(x);", "quiz": [
+        { "text": "15", "right": false, "hint": "15 là số của bản sao n trong hàm. Hộp x không đổi." },
+        { "text": "5", "right": true, "hint": "Đúng! Hàm chỉ đổi bản sao, nên x vẫn là 5." },
+        { "text": "10", "right": false, "hint": "Không có ai gán 10 cho x. Hàm chỉ đổi bản sao." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: hàm nhận đồ vào, làm việc và trả kết quả. Hàm nhận bản sao, nên đổi bản sao không làm đổi hộp gốc.", "boxes": ["x", "kq"], "end": true }
+  ]
+}

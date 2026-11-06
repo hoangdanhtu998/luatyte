@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Máy ảo là một chương trình giả làm máy tính. Nó đọc từng lệnh, hiểu lệnh và làm theo, trên các ô nhớ gọi là thanh ghi.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Lệnh SET 0 5: đặt thanh ghi 0 bằng 5. Lệnh SET 1 7: đặt thanh ghi 1 bằng 7.", "boxes": ["r0", "r1"], "code": "SET 0 5; SET 1 7", "run": { "r0": 5, "r1": 7 }, "after": "r0 là 5, r1 là 7." },
+    { "img": "m03-meo-vui.png", "say": "Lệnh ADD 0 1: cộng r1 vào r0 rồi để kết quả trong r0. 5 + 7 là 12.", "boxes": ["r0", "r1"], "code": "ADD 0 1", "run": { "r0": 12 }, "after": "r0 giờ là 12." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau lệnh PRINT 0, máy in ra số mấy?", "boxes": ["r0", "r1"], "code": "PRINT 0", "quiz": [
+        { "text": "12", "right": true, "hint": "Đúng! PRINT 0 in giá trị của r0, đang là 12." },
+        { "text": "5", "right": false, "hint": "5 là giá trị cũ của r0, trước khi ADD." },
+        { "text": "7", "right": false, "hint": "7 nằm ở r1, PRINT 0 không in r1." } ] },
+    { "img": "m03-meo-vui.png", "say": "Vòng lặp của máy ảo: đọc lệnh, hiểu lệnh, làm lệnh, rồi sang lệnh tiếp theo. Lặp lại đến hết chương trình.", "boxes": ["r0", "r1"], "end": true }
+  ]
+}

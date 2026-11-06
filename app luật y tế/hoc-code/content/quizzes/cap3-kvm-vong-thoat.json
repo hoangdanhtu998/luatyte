@@ -1,0 +1,27 @@
+{
+  "quizzes": [
+    {
+      "q": "Khi máy ảo cần hypervisor, CPU làm gì?",
+      "options": [
+        {
+          "text": "Thoát về chương trình quản lý để xử lý",
+          "why": "Đúng."
+        },
+        {
+          "text": "Dừng vĩnh viễn",
+          "why": "Không dừng vĩnh viễn."
+        },
+        {
+          "text": "Tự xử lý không cần ai",
+          "why": "Cần hypervisor."
+        },
+        {
+          "text": "Xóa máy ảo",
+          "why": "Không xóa."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thoát là cách máy ảo nhờ hypervisor."
+    }
+  ]
+}

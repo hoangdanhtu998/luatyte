@@ -1,0 +1,20 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Chào bạn! Mình là Mèo. Hôm nay mình học về biến cùng bạn nhé.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Biến giống như một cái hộp có tên dán ngoài. Đây là hộp tên là tuoi. Lúc này hộp đang trống.", "boxes": ["tuoi"] },
+    { "img": "m03-meo-vui.png", "say": "Dòng lệnh này nghĩa là: tạo hộp tên tuoi, rồi bỏ số 20 vào. Bấm nút bên dưới để máy chạy dòng này.", "boxes": ["tuoi"], "code": "int tuoi = 20;", "run": { "tuoi": 20 }, "after": "Xong! Hộp tuoi giờ có số 20." },
+    { "img": "m03-meo-vui.png", "say": "Dòng này: bỏ đồ cũ ra và bỏ số 21 vào. Vẫn là hộp tuoi, chỉ đổi đồ bên trong.", "boxes": ["tuoi"], "code": "tuoi = 21;", "run": { "tuoi": 21 }, "after": "Xong! Hộp tuoi giờ có số 21." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán nhé: sau dòng vừa chạy, hộp tuoi chứa số mấy?", "boxes": ["tuoi"], "code": "tuoi = 21;", "quiz": [
+        { "text": "20", "right": false, "hint": "Số 20 là số cũ. Dòng vừa rồi đã thay nó." },
+        { "text": "21", "right": true, "hint": "Đúng! Dòng tuoi = 21 đã bỏ 21 vào hộp." },
+        { "text": "22", "right": false, "hint": "Máy không cộng thêm. Nó chỉ bỏ 21 vào hộp." } ] },
+    { "img": "m03-meo-vui.png", "say": "Bây giờ có hai hộp: a và b. Dòng đầu tiên bỏ số 5 vào hộp a.", "boxes": ["a", "b"], "code": "int a = 5;", "run": { "a": 5 }, "after": "Xong! Hộp a giờ có số 5." },
+    { "img": "m04-meo-nhe-nhang.png", "say": "Dòng này: nhìn vào hộp a, chép số đang có trong đó, rồi bỏ bản sao vào hộp b.", "boxes": ["a", "b"], "code": "int b = a;", "run": { "b": 5 }, "after": "Xong! Hộp b giờ cũng có số 5, là bản sao của a." },
+    { "img": "m04-meo-nhe-nhang.png", "say": "Dòng này đổi hộp a thành số 7. Hộp b có đổi theo không nhỉ?", "boxes": ["a", "b"], "code": "a = 7;", "run": { "a": 7 }, "after": "Xong! Hộp a giờ là 7. Mình xem hộp b." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: bây giờ hộp b chứa số mấy?", "boxes": ["a", "b"], "code": "a = 7;", "quiz": [
+        { "text": "7", "right": false, "hint": "Hộp a mới là 7. Hộp b là hộp riêng, không đổi theo a." },
+        { "text": "5", "right": true, "hint": "Đúng! b đã nhận bản sao số 5 từ trước. Đổi a không làm đổi b." },
+        { "text": "12", "right": false, "hint": "Không có phép cộng nào ở đây." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: biến là hộp có tên, chứa một giá trị. Dấu = nghĩa là bỏ đồ vào hộp. Dòng b = a là chép đồ từ hộp a sang hộp b.", "boxes": ["a", "b"], "end": true }
+  ]
+}

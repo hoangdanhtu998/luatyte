@@ -1,0 +1,234 @@
+{
+  "quizzes": [
+    {
+      "q": "Hàm băm làm gì?",
+      "options": [
+        {
+          "text": "Mã hóa mật khẩu để giữ bí mật",
+          "why": "Mục đích của bảng băm khác. Nó không dùng để giữ bí mật, mà để tìm nhanh."
+        },
+        {
+          "text": "Biến khóa thành một chỉ số ô trong bảng",
+          "why": "Đúng. Ví dụ 'Charlie' thành một số, rồi số đó thành vị trí ô."
+        },
+        {
+          "text": "Sắp xếp các khóa theo thứ tự",
+          "why": "Bảng băm không sắp xếp. Nó chỉ tìm đúng ô của một khóa."
+        },
+        {
+          "text": "Xóa khóa cũ khỏi bảng",
+          "why": "Xóa là một thao tác riêng (delete). Hàm băm chỉ tính ra vị trí."
+        }
+      ],
+      "answer": 1,
+      "explain": "Hàm băm giúp đi thẳng tới đúng ô, thay vì duyệt từng khóa."
+    },
+    {
+      "q": "Vì sao phải viết index = hash(key) % capacity?",
+      "options": [
+        {
+          "text": "Để chỉ số luôn nằm trong khoảng từ 0 đến capacity − 1",
+          "why": "Đúng. Số băm có thể rất lớn. Phép % đưa nó về đúng phạm vi các ô."
+        },
+        {
+          "text": "Để hàm băm chạy nhanh hơn",
+          "why": "Phép % không làm hàm băm nhanh hơn. Mục đích là giữ chỉ số trong phạm vi."
+        },
+        {
+          "text": "Để khóa dài hơn",
+          "why": "Phép % không liên quan đến độ dài khóa."
+        },
+        {
+          "text": "Để đổi thứ tự các khóa",
+          "why": "Đây không phải đổi thứ tự. Đây là đưa về vị trí hợp lệ."
+        }
+      ],
+      "answer": 0,
+      "explain": "% là phép chia lấy dư. Nó giữ chỉ số trong các ô hiện có."
+    },
+    {
+      "q": "Hai khóa cùng rơi vào một ô (va chạm). Chaining làm gì?",
+      "options": [
+        {
+          "text": "Ghi đè giá trị cũ bằng giá trị mới",
+          "why": "Ghi đè làm mất dữ liệu cũ. Chaining không làm vậy."
+        },
+        {
+          "text": "Nối thêm nút mới vào danh sách của ô đó",
+          "why": "Đúng. Mỗi ô là một danh sách, nên khóa mới được nối vào, khóa cũ vẫn còn."
+        },
+        {
+          "text": "Báo lỗi và dừng chương trình",
+          "why": "Va chạm là chuyện bình thường, không phải lỗi."
+        },
+        {
+          "text": "Chuyển khóa mới sang ô trống ngay",
+          "why": "Đó là một cách khác (open addressing). Chaining thì nối vào danh sách trong cùng ô."
+        }
+      ],
+      "answer": 1,
+      "explain": "Chaining: mỗi ô là một danh sách. Khóa trùng ô thì xếp thành hàng trong ô đó."
+    },
+    {
+      "q": "Vì sao va chạm không phải lỗi của hàm băm?",
+      "options": [
+        {
+          "text": "Vì số khóa có thể vô hạn còn số ô thì có hạn",
+          "why": "Đúng. Không thể có đủ ô riêng cho mọi khóa, nên va chạm luôn có thể xảy ra."
+        },
+        {
+          "text": "Vì hàm băm không bao giờ sai",
+          "why": "Hàm băm có thể phân bố kém, nhưng va chạm vẫn có lúc không tránh khỏi."
+        },
+        {
+          "text": "Vì bảng luôn có đủ ô cho mọi khóa",
+          "why": "Không. Số ô có hạn, còn khóa thì có thể rất nhiều."
+        },
+        {
+          "text": "Vì va chạm làm bảng chạy nhanh hơn",
+          "why": "Va chạm làm chậm đi một chút. Nó không có lợi."
+        }
+      ],
+      "answer": 0,
+      "explain": "Va chạm là chuyện bình thường. Ta xử lý nó bằng cách nối danh sách, không phải bằng cách đổ lỗi cho hàm băm."
+    },
+    {
+      "q": "Load factor được tính như thế nào?",
+      "options": [
+        {
+          "text": "Số ô chia cho số khóa",
+          "why": "Ngược lại. Cách này không cho biết bảng đầy đến đâu."
+        },
+        {
+          "text": "Số khóa chia cho số ô",
+          "why": "Đúng. Ví dụ 6 khóa trong 8 ô thì load factor là 0,75."
+        },
+        {
+          "text": "Số khóa trừ số ô",
+          "why": "Phép trừ không cho tỉ lệ. Load factor là phép chia."
+        },
+        {
+          "text": "Tổng giá trị của các khóa",
+          "why": "Load factor chỉ liên quan đến số lượng khóa và số ô."
+        }
+      ],
+      "answer": 1,
+      "explain": "Load factor = số khóa / số ô. Số này càng lớn thì danh sách trong mỗi ô càng dài."
+    },
+    {
+      "q": "Khi load factor vượt 0,75, nên làm gì?",
+      "options": [
+        {
+          "text": "Xóa bớt một nửa các khóa",
+          "why": "Không. Xóa dữ liệu là sai, vì mất thông tin."
+        },
+        {
+          "text": "Tạo bảng mới lớn gấp đôi, rồi băm lại mọi khóa vào bảng mới",
+          "why": "Đúng. Bảng lớn hơn làm danh sách trong mỗi ô ngắn lại."
+        },
+        {
+          "text": "Thêm ô mới vào cuối mảng là đủ",
+          "why": "Thêm ô vào cuối không làm chỉ số của các khóa hiện có thay đổi đúng cách. Phải băm lại."
+        },
+        {
+          "text": "Bỏ chaining đi",
+          "why": "Chaining vẫn cần. Vấn đề là bảng quá đầy, nên cần bảng lớn hơn."
+        }
+      ],
+      "answer": 1,
+      "explain": "Ngưỡng 0,75 là một quy ước phổ biến. Khi vượt qua, hãy mở rộng bảng và băm lại."
+    },
+    {
+      "q": "Tra cứu (get) trong trường hợp xấu nhất có độ phức tạp là gì?",
+      "options": [
+        {
+          "text": "O(1): luôn nhanh",
+          "why": "O(1) chỉ đúng khi các khóa được rải đều. Khi mọi khóa dồn vào một ô, sẽ chậm."
+        },
+        {
+          "text": "O(n): khi mọi khóa nằm trong cùng một ô, phải duyệt hết danh sách",
+          "why": "Đúng. Khi đó bảng biến thành một danh sách dài, và duyệt từng phần tử."
+        },
+        {
+          "text": "O(log n): như cây tìm kiếm",
+          "why": "Bảng băm chaining không phải cây, nên không có độ phức tạp O(log n)."
+        },
+        {
+          "text": "O(n²): duyệt hai vòng lặp lồng nhau",
+          "why": "Tra cứu chỉ duyệt một danh sách, không lồng nhau."
+        }
+      ],
+      "answer": 1,
+      "explain": "Trung bình là O(1) khi khóa được rải đều. Trường hợp xấu nhất là O(n)."
+    },
+    {
+      "q": "Vì sao rehash phải băm lại từng khóa, không chỉ chép con trỏ sang bảng mới?",
+      "options": [
+        {
+          "text": "Vì chỉ số phụ thuộc vào capacity. Khi bảng lớn hơn, cùng một khóa có thể nằm ở ô khác",
+          "why": "Đúng. Chỉ số = hash % capacity, nên đổi capacity là đổi chỗ của khóa."
+        },
+        {
+          "text": "Để xóa dữ liệu cũ đi",
+          "why": "Rehash không xóa dữ liệu. Mục đích là đặt lại đúng vị trí."
+        },
+        {
+          "text": "Để tiết kiệm bộ nhớ",
+          "why": "Rehash thường dùng thêm bộ nhớ, không phải để tiết kiệm."
+        },
+        {
+          "text": "Vì hàm băm bị lỗi",
+          "why": "Hàm băm không lỗi. Chỉ là bảng mới có kích thước khác."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đổi số ô thì phép % cho kết quả khác. Mỗi khóa phải được tính lại vị trí."
+    },
+    {
+      "q": "Vì sao phải cẩn thận khi hàm băm cho ra số âm?",
+      "options": [
+        {
+          "text": "Số âm không ảnh hưởng gì",
+          "why": "Có ảnh hưởng. Chỉ số âm dẫn tới ghi ra ngoài mảng."
+        },
+        {
+          "text": "Chỉ số âm sẽ trỏ ra ngoài mảng, nên nên dùng kiểu không dấu (unsigned)",
+          "why": "Đúng. Dùng unsigned đảm bảo số băm luôn không âm."
+        },
+        {
+          "text": "Số âm làm bảng chạy nhanh hơn",
+          "why": "Số âm gây lỗi, không làm nhanh hơn."
+        },
+        {
+          "text": "Số âm chỉ là vấn đề của hàm băm khác",
+          "why": "Nó có thể xảy ra với mọi hàm băm nếu dùng kiểu có dấu."
+        }
+      ],
+      "answer": 1,
+      "explain": "Mảng chỉ có chỉ số từ 0 trở lên. Chỉ số âm là ghi vào vùng không thuộc về bảng."
+    },
+    {
+      "q": "Rehash xong, bảng cũ đã được free. Nếu vẫn dùng con trỏ của bảng cũ thì sao?",
+      "options": [
+        {
+          "text": "An toàn, miễn là không in ra",
+          "why": "Vẫn là dùng sau free. Chỉ không in không làm cho nó an toàn."
+        },
+        {
+          "text": "Là dùng sau free, gây lỗi không xác định",
+          "why": "Đúng. Bảng cũ đã trả bộ nhớ, dùng lại là lỗi."
+        },
+        {
+          "text": "Bình thường, vì bảng mới được trỏ tới tự động",
+          "why": "Con trỏ cũ không tự đổi. Phải dùng con trỏ của bảng mới."
+        },
+        {
+          "text": "Máy sẽ tự sửa lại",
+          "why": "Máy không tự sửa lỗi này. Lập trình viên phải đảm bảo không dùng con trỏ cũ."
+        }
+      ],
+      "answer": 1,
+      "explain": "Sau rehash, chỉ dùng con trỏ của bảng mới. Con trỏ cũ đã hết hiệu lực."
+    }
+  ]
+}

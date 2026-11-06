@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Tính biểu thức",
+    "prompt": "Đọc một dòng gồm số nguyên và các dấu + và * (không có khoảng trắng bắt buộc, không có ngoặc). Tính theo đúng thứ tự: * trước, + sau. In kết quả.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1+2*3\n",
+        "expected": "7\n"
+      },
+      {
+        "stdin": "2*3+4*5\n",
+        "expected": "26\n"
+      }
+    ]
+  }
+]

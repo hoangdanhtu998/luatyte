@@ -1,0 +1,14 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Ngăn xếp giống chồng đĩa. Đặt đĩa mới lên trên, lấy đĩa ra cũng từ trên. Vào sau thì ra trước.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đặt số 1 lên chồng. Hộp đỉnh là phần trên cùng của chồng.", "boxes": ["đỉnh"], "code": "push(1);", "run": { "đỉnh": 1 }, "after": "Chồng có 1. Đỉnh là 1." },
+    { "img": "m03-meo-vui.png", "say": "Đặt số 2 lên trên số 1. Bây giờ đỉnh là 2.", "boxes": ["đỉnh"], "code": "push(2);", "run": { "đỉnh": 2 }, "after": "Chồng có 1 ở dưới, 2 ở trên. Đỉnh là 2." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: lệnh pop() lấy số nào ra trước?", "boxes": ["đỉnh"], "code": "pop();", "quiz": [
+        { "text": "2", "right": true, "hint": "Đúng! 2 nằm trên cùng nên lấy ra trước." },
+        { "text": "1", "right": false, "hint": "1 nằm dưới 2. Phải lấy 2 ra trước." },
+        { "text": "Cả hai cùng lúc", "right": false, "hint": "Mỗi lần pop chỉ lấy một số trên cùng." } ] },
+    { "img": "m03-meo-vui.png", "say": "Lấy số trên cùng ra. Số 2 được lấy ra, đỉnh còn lại là 1.", "boxes": ["đỉnh", "lấy ra"], "code": "pop();", "run": { "đỉnh": 1, "lấy ra": 2 }, "after": "Đã lấy 2 ra. Đỉnh bây giờ là 1." },
+    { "img": "m03-meo-vui.png", "say": "Lấy tiếp số 1 ra. Chồng trống.", "boxes": ["đỉnh", "lấy ra"], "code": "pop();", "run": { "đỉnh": "trống", "lấy ra": 1 }, "after": "Đã lấy 1 ra. Chồng không còn gì." },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: ngăn xếp là vào sau ra trước. Tiếng Anh gọi là LIFO: Last In, First Out.", "boxes": ["đỉnh", "lấy ra"], "end": true }
+  ]
+}
