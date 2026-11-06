@@ -326,3 +326,18 @@ main.triet .lesson-frame > p:has(> strong:first-child){margin-left:0;margin-righ
   main.triet nav.toc > ol{grid-template-columns:1fr;gap:6px}
   main.triet nav.toc > ol > li{padding:7px 10px;font-size:15px}
 }
+
+/* Mục lục sát mép trái (màn hình đủ rộng), cố định khi cuộn; có nút ẩn/hiện */
+.toc-toggle{display:none}
+@media (min-width:1200px){
+  .toc-toggle{display:inline-flex;align-items:center;position:fixed;left:0;top:96px;z-index:30;min-height:38px;padding:0 14px;border:1px solid var(--color-rule,#D9CFBE);border-left:0;border-radius:0 10px 10px 0;background:var(--color-paper-2,#fff);color:var(--color-ink,#1c1917);font:600 14px/1 var(--font-body);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .toc-toggle:hover{background:var(--color-paper-3,#f7f4ee)}
+  main.triet{display:block;max-width:880px;margin:0 auto;padding:48px 32px 96px}
+  main.triet > nav.toc{position:fixed;left:0;top:140px;width:250px;max-height:calc(100vh - 170px);overflow:auto;margin:0;padding:16px;border-radius:0 14px 14px 0;border-left:0;z-index:20;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+  main.triet > nav.toc > ol{grid-template-columns:1fr;gap:6px}
+  body.toc-off main.triet > nav.toc{display:none}
+}
+@media (min-width:1200px) and (max-width:1399px){
+  /* Ở màn hình vừa, mục lục che bớt nội dung: thu mục lục nhỏ hơn */
+  main.triet > nav.toc{width:220px}
+}
