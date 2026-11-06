@@ -402,8 +402,10 @@
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
     "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 114/2025/QH15 (kiểm Đ1, Đ3, Đ8, Đ14, Đ22, Đ27, Đ45, Đ46)"
   },
   {
     "id": "danso",
@@ -416,7 +418,7 @@
     "replaces": "Thay thế Pháp lệnh Dân số 06/2003 (hết hiệu lực khi Luật này có hiệu lực). Điều 14 điểm c, d có hiệu lực từ 01/01/2027.",
     "points": [
       "Mục tiêu: duy trì mức sinh thay thế, giảm mất cân bằng giới tính khi sinh, thích ứng già hóa dân số, nâng cao chất lượng dân số.",
-      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai, nếu đủ điều kiện hưởng chế độ thai sản theo pháp luật bảo hiểm xã hội.",
+      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai.",
       "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
