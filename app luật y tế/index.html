@@ -52,7 +52,8 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <div class="hero-top">
+    <div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="">Theo máy</option><option value="paper">Biên tập sáng</option><option value="ink">Tối sắc</option><option value="warm">Ấm dịu</option></select></label></div>
+  <div class="hero-top">
       <div class="brand">
         <img class="logo" src="icon.svg" alt="" width="48" height="48">
         <div>
@@ -2057,5 +2058,6 @@ boot().catch(e => {
 fetch("/api/me",{cache:"no-store"}).then(r=>{ if(r.status===404||r.status===405||r.status===501){ const a=document.getElementById("acct-link"); if(a) a.style.display="none"; return null; } return r.ok?r.json():null; }).then(d=>{ if(d&&d.user&&d.user.email){ const a=document.getElementById("acct-link"); a.textContent=d.user.email; a.title="Tài khoản đang đăng nhập"; } }).catch(()=>{});
 </script>
 <script src="js/plan-badge.js" defer></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
