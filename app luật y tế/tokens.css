@@ -13,7 +13,7 @@
   --color-rule: #CBD5E1; --color-rule-2: #E9EEF5;
   --color-accent: #1E3A8A; --color-accent-ink: #FFFFFF; --color-accent-soft: #E9EEF5; --color-accent-soft-ink: #1E3A8A;
   --color-focus: #1E3A8A;
-  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif; --font-body: var(--font-display);
+  --font-display: "EB Garamond", Georgia, serif; --font-body: "Lato", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "IBM Plex Mono", ui-monospace, monospace;
   --radius-card: 12px; --radius-pill: 999px; --rule-hair: 1px;
   --shadow-card: 0 20px 40px oklch(20% 0 0 / 0.16);
