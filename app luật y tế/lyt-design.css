@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
 /* Lớp giao diện cho trang chủ: chỉnh bố cục, không đổi markup hay JS.
    Nạp sau site.css trên index.html. */
 
@@ -80,7 +81,7 @@ body{padding-bottom:88px}
 
 /* ---- Hệ thống chữ và khối nội dung: một kiểu, không trang trí ---- */
 body{font-size:17px;line-height:1.6}
-h1,h2,h3{font-family:"EB Garamond",Georgia,serif;font-weight:600;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em}
 
 /* Thanh tab: chữ rõ hơn, vạch chỉ dưới mảnh */
 nav.tabs{border-bottom:1px solid var(--color-rule,#D9CFBE)}
@@ -100,7 +101,7 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 .law[open]{border-color:var(--color-rule,#D9CFBE);background:var(--color-paper-3,#F3EDE2)}
 .law summary{padding:16px 4px}
 .law:hover summary h3{text-decoration:none}
-.law h3{font-family:"EB Garamond",Georgia,serif;font-size:1.22rem;font-weight:600}
+.law h3{font-family:var(--font-display);font-size:1.22rem;font-weight:600}
 .law .meta{font-size:13px;color:var(--color-muted,#7A6D5E)}
 .law .body{padding:0 4px 18px 4px}
 
@@ -111,7 +112,7 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 .chip{font-size:14px;min-height:36px}
 
 /* Số liệu bằng chữ serif cho dễ đọc */
-.stat b{font-family:"EB Garamond",Georgia,serif;font-weight:600}
+.stat b{font-family:var(--font-display);font-weight:600}
 
 /* ---- Màu chữ toàn site: giữ tông nâu/kem, phân cấp rõ hơn ---- */
 body{color:var(--color-ink-2,#4A3F33)}
@@ -129,8 +130,8 @@ main h2{margin-top:2.2em;padding-top:.5em;border-top:1px solid var(--color-rule,
 main h2:first-of-type{border-top:0;margin-top:1em}
 
 /* Tiêu đề: serif hệ thống để dấu tiếng Việt đặt đúng vị trí; không thu khoảng cách chữ */
-h1,h2,h3,h4{font-family:"EB Garamond",Georgia,"Times New Roman",serif;letter-spacing:0}
-.brand h1{font-family:"EB Garamond",Georgia,"Times New Roman",serif}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:0}
+.brand h1{font-family:var(--font-display)}
 
 /* Chỉ gạch chân liên kết trong đoạn văn; liên kết điều hướng và mục lục không gạch */
 a{text-decoration:none}
@@ -253,3 +254,7 @@ main.triet .check::before{content:"?";position:absolute;left:14px;top:12px;width
 main.triet .toc ol li{font-size:1rem}
 main.triet .toc ol li a{color:var(--color-ink,#1c1917)}
 main.triet > p:first-of-type{font-size:1.1rem;color:var(--color-ink-2,#292524)}
+
+/* ---- Font chung ---- */
+:root{--font-body:"Be Vietnam Pro",system-ui,sans-serif;--font-display:"Be Vietnam Pro",system-ui,sans-serif}
+body,button,input,select,textarea{font-family:var(--font-body)}
