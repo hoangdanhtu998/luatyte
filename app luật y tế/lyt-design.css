@@ -408,3 +408,9 @@ body.chat-open .lesson-chat{display:flex}
 @media (max-width:640px){
   .lesson-chat{top:auto;left:12px;right:12px;bottom:12px;width:auto;max-height:70vh}
 }
+
+/* Trợ lý tra cứu trên các trang khác: nhãn mục và chừa chỗ cho khung bên phải trên màn hình rộng */
+.lc-label{font-weight:700;color:var(--color-ink,#1c1917);font-size:15px}
+@media (min-width:1400px){
+  body.chat-open main:not(.triet){margin-right:384px}
+}
