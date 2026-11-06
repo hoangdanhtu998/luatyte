@@ -2,8 +2,8 @@
 
 ## Cách đọc
 
-- **Thế giới quan**: cách một người hiểu về bản chất của thế giới và con người. Ví dụ: người ta tin con người về cơ bản tốt hay xấu, mọi việc có nguyên nhân hay do may rủi, mình có thể thay đổi hoàn cảnh hay không.
-- **Tâm quan**: thứ tự ưu tiên giá trị trong lòng người khi phải quyết định. Cùng một hoàn cảnh, hai người có thể chọn khác nhau vì họ coi trọng điều khác nhau.
+- **Thế giới quan** là cách một người hiểu bản chất của thế giới, con người và xã hội. Ví dụ: người ta tin con người về cơ bản tốt hay xấu, mọi việc có nguyên nhân hay do may rủi, mình có thể thay đổi hoàn cảnh hay không.
+- **Tâm quan** là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Cùng một hoàn cảnh, hai người có thể chọn khác nhau vì họ coi trọng điều khác nhau.
 
 Mỗi tình huống dưới đây không có đáp án đúng hay sai. Mỗi lựa chọn đều có lý lẽ riêng. Hãy đọc từng lựa chọn, tự hỏi mình đang ưu tiên điều gì, rồi trả lời câu hỏi suy ngẫm.
 
@@ -43,7 +43,7 @@ Mỗi tình huống dưới đây không có đáp án đúng hay sai. Mỗi l�
 
 **Lựa chọn:**
 - **A.** Nói thật là ngủ quên và xin lỗi. *(Tâm quan: ưu tiên trung thực. Lý lẽ: nói thật giúp trưởng nhóm đánh giá đúng và tự rút ra bài học.)*
-- **B.** Nói đường tắc để tránh làm mất mặt. *(Tâm quan: ưu tiên giữ thể diện và hòa khí. Lý lẽ: lỗi nhỏ, không ảnh hưởng nhiều, không cần thiết phải kể chi tiết.)*
+- **B.** Nói đường tắc để tránh làm mất mặt. *(Tâm quan: ưu tiên giữ thể diện và hòa khí. Lý lẽ: tránh làm mất mặt trước cả nhóm, dù việc trễ họp là đáng kể.)*
 - **C.** Nói ngắn gọn "có việc riêng" và hứa bù giờ. *(Tâm quan: ưu tiên sự tế nhị. Lý lẽ: không nói dối, cũng không kể chuyện riêng, vẫn chịu trách nhiệm.)*
 
 **Câu hỏi suy ngẫm:** Bạn muốn người khác nhìn mình là người như thế nào khi mắc lỗi?
@@ -139,7 +139,7 @@ Mỗi tình huống dưới đây không có đáp án đúng hay sai. Mỗi l�
 **Lựa chọn:**
 - **A.** Dừng lại, gọi hỏi lại bác sĩ trước khi cấp thuốc. *(Tâm quan: ưu tiên an toàn. Lý lẽ: kiểm tra thêm một bước nhỏ có thể ngăn một sai sót lớn.)*
 - **B.** Cấp thuốc theo đơn vì bác sĩ là người có thẩm quyền. *(Tâm quan: ưu tiên sự tôn trọng chuyên môn và trật tự. Lý lẽ: dược sĩ không phải lúc nào cũng nắm đủ bệnh án của người bệnh.)*
-- **C.** Cấp thuốc, nhưng ghi chú lại và nhắc bệnh nhân theo dõi triệu chứng bất thường. *(Tâm quan: ưu tiên sự chủ động và chịu trách nhiệm. Lý lẽ: vừa đáp ứng nhu cầu, vừa để lại dấu vết để kiểm tra sau.)*
+- **C.** Đề nghị bệnh nhân chờ, rồi chuyển đơn cho dược sĩ trưởng xem lại. *(Tâm quan: ưu tiên sự chủ động và chịu trách nhiệm. Lý lẽ: người có kinh nghiệm hơn cùng kiểm tra, nên không phải một mình quyết định khi còn nghi ngờ.)*
 
 **Câu hỏi suy ngẫm:** Bạn nghĩ đâu là ranh giới giữa việc tôn trọng người có chuyên môn và việc tự kiểm tra lại?
 

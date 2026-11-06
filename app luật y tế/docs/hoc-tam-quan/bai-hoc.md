@@ -6,10 +6,10 @@ Bài học này dành cho mọi người, không cần kiến thức triết h�
 
 ## Bài 1: Thế giới quan là gì?
 
-**Mục tiêu:** Hiểu thế giới quan là cách mỗi người trả lời những câu hỏi lớn về thế giới. Biết rằng thế giới quan khác với việc chỉ biết nhiều thông tin.
+**Mục tiêu:** Hiểu thế giới quan là gì và vì sao nó khác với việc chỉ biết nhiều thông tin.
 
 **Giải thích:**
-Thế giới quan là bức tranh tổng thể trong đầu mỗi người về thế giới. Nó trả lời những câu hỏi như: thế giới vận hành theo quy luật nào? Con người biết được điều gì và không biết được điều gì? Con người đứng ở đâu trong tự nhiên và xã hội?
+Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội. Có thể hình dung đó là bức tranh tổng thể trong đầu mỗi người. Nó trả lời những câu hỏi như: thế giới vận hành theo quy luật nào? Con người biết được điều gì và không biết được điều gì? Con người đứng ở đâu trong tự nhiên và xã hội?
 
 Không ai trả lời hết những câu hỏi này một cách hoàn chỉnh. Nhưng ai cũng có cách trả lời riêng, dù nhiều khi chưa bao giờ nói thành lời.
 
@@ -21,7 +21,7 @@ Không ai trả lời hết những câu hỏi này một cách hoàn chỉnh. N
 3. **Nghề y, luật y tế:** Một bác sĩ nhìn sức khỏe là kết quả của yếu tố sinh học, môi trường và xã hội. Vì vậy họ quan tâm cả đến chỗ ở, thu nhập và thói quen sinh hoạt của bệnh nhân, không chỉ kê đơn thuốc.
 
 **Tóm tắt:**
-- Thế giới quan là cách mỗi người hiểu về thế giới và vị trí con người trong đó.
+- Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội.
 - Nó hình thành dần qua gia đình, trường học, sách báo và trải nghiệm sống.
 - Ai cũng có thế giới quan, dù không phải lúc nào cũng gọi tên được.
 
@@ -29,10 +29,10 @@ Không ai trả lời hết những câu hỏi này một cách hoàn chỉnh. N
 
 ## Bài 2: Tâm quan là gì?
 
-**Mục tiêu:** Hiểu tâm quan (còn gọi là giá trị quan) là hệ thống những điều mỗi người coi là quan trọng và đáng theo đuổi. Nhận ra tâm quan thể hiện qua các lựa chọn hằng ngày.
+**Mục tiêu:** Hiểu tâm quan là gì và nhận ra tâm quan thể hiện qua các lựa chọn hằng ngày.
 
 **Giải thích:**
-Nếu thế giới quan trả lời câu "thế giới là gì", thì tâm quan trả lời câu "điều gì quan trọng với tôi". Tâm quan gồm những điều như trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp các điều này theo thứ tự ưu tiên khác nhau.
+Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nếu thế giới quan trả lời câu "thế giới là gì", thì tâm quan trả lời câu "điều gì quan trọng với tôi". Tâm quan gồm những điều như trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp các điều này theo thứ tự ưu tiên khác nhau.
 
 Điều đáng chú ý: tâm quan không chỉ là điều người ta nói. Nó lộ rõ nhất khi người ta phải chọn. Khi hai điều đều tốt nhưng không thể có cả hai, cách bạn chọn cho thấy bạn coi trọng điều gì hơn.
 
@@ -44,7 +44,7 @@ Nếu thế giới quan trả lời câu "thế giới là gì", thì tâm quan 
 3. **Nghề y, luật y tế:** Một bệnh nhân muốn từ chối một phương pháp điều trị mà bác sĩ khuyên. Bác sĩ phải cân nhắc giữa việc tôn trọng quyền tự quyết của bệnh nhân và mong muốn bảo vệ sức khỏe của họ. Cả hai đều là giá trị quan trọng.
 
 **Tóm tắt:**
-- Tâm quan là những điều một người coi là quan trọng và đáng theo đuổi.
+- Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử.
 - Tâm quan lộ ra rõ nhất qua các lựa chọn khi phải đánh đổi.
 - Thứ tự ưu tiên của mỗi người là riêng, và có thể thay đổi theo thời gian.
 
@@ -133,7 +133,7 @@ Khi gặp người có quan điểm khác, nhiều người phản ứng ngay b�
 3. **Nhắc lại ý của họ** bằng lời của bạn, để họ biết bạn đã hiểu.
 4. **Nêu quan điểm của mình** bằng chữ "tôi" thay vì "bạn sai", kèm lý do rõ ràng.
 
-Tôn trọng không có nghĩa là đồng ý. Bạn có thể không đồng ý nhưng vẫn không xúc phạm. Đồng thời, vẫn có những nền tảng chung cần giữ như an toàn, quyền con người và không kỳ thị.
+Tôn trọng không có nghĩa là đồng ý. Bạn có thể không đồng ý nhưng vẫn không xúc phạm. Đồng thời, nhiều xã hội và văn bản pháp luật đặt những nền tảng như an toàn, quyền con người và không kỳ thị làm chuẩn chung.
 
 **Hình dung đời thường:** Giống hai người cùng xem một tấm bản đồ cũ nhưng đứng ở hai góc khác nhau. Thay vì giành tấm bản đồ, họ đặt xuống và chỉ cho nhau thấy mình đang nhìn vào chỗ nào.
 
