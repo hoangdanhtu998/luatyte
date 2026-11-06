@@ -12,7 +12,7 @@
   .bv-wrap { max-width: 960px; margin: 0 auto; padding: var(--space-md) var(--space-sm) 48px; }
   .bv-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: var(--space-md); }
   .bv-top a { font-size: var(--text-sm); }
-  #map { width: 100%; height: auto; aspect-ratio: 60 / 34; image-rendering: pixelated; border-radius: 14px; border: 1px solid var(--color-rule); display: block; cursor: pointer; background: #8fbf8a; }
+  #map { width: 100%; height: auto; aspect-ratio: 60 / 34; image-rendering: pixelated; border-radius: 14px; border: 1px solid var(--color-rule); display: block; cursor: pointer; background: #afa49a; }
   .bv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 14px; }
   .bv-grid button { text-align: left; }
   .bv-card { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper-2); min-height: 5em; }
@@ -54,12 +54,12 @@
     { id: "tmh", name: "Tai Mũi Họng", x: 38, y: 1, w: 7, h: 6, door: "b", col: "#ede9fe", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
     { id: "tiepdon", name: "Tiếp đón", x: 1, y: 8, w: 13, h: 6, door: "t", col: "#fef9c3", act: "greet", law: "Thẻ BHYT điện tử có giá trị pháp lý như thẻ giấy. Nên kiểm tra thẻ còn hiệu lực trước khi khám." },
     { id: "sanhi", name: "Sản phụ - Nhi", x: 17, y: 8, w: 8, h: 5, door: "b", col: "#fce7f3", act: "examine", law: "Trẻ em dưới 6 tuổi được hưởng 100% mức hưởng BHYT khi khám đúng tuyến." },
-    { id: "truyennhiem", name: "Truyền nhiễm", x: 25, y: 8, w: 7, h: 5, door: "b", col: "#dcfce7", act: "inject", law: "Luật Phòng bệnh điều chỉnh phòng, chống bệnh truyền nhiễm. Số hiệu cụ thể cần bổ sung." },
+    { id: "truyennhiem", name: "Truyền nhiễm", x: 25, y: 8, w: 7, h: 5, door: "b", col: "#eeecea", act: "inject", law: "Luật Phòng bệnh điều chỉnh phòng, chống bệnh truyền nhiễm. Số hiệu cụ thể cần bổ sung." },
     { id: "rhm", name: "Răng Hàm Mặt", x: 32, y: 8, w: 8, h: 5, door: "b", col: "#e0f2fe", act: "examine", law: "Khám chữa bệnh theo cấp chuyên môn kỹ thuật, như các chuyên khoa khác." },
     { id: "yhct", name: "Y học cổ truyền", x: 41, y: 8, w: 7, h: 5, door: "b", col: "#fef3c7", act: "carry", law: "Lương y và bài thuốc gia truyền được cấp giấy chứng nhận theo Thông tư 49/2025/TT-BYT." },
     { id: "xetnghiem", name: "Xét nghiệm", x: 1, y: 14, w: 8, h: 6, door: "t", col: "#ede9fe", act: "write", law: "Phòng thử nghiệm phải đáp ứng GLP. Thay đổi phải báo cáo theo Thông tư 36/2025/TT-BYT." },
     { id: "cdha", name: "Chẩn đoán hình ảnh", x: 10, y: 14, w: 8, h: 6, door: "t", col: "#e0e7ff", act: "examine", law: "Khám đúng cấp chuyên môn kỹ thuật theo quy định." },
-    { id: "duoc", name: "Dược", x: 32, y: 14, w: 6, h: 6, door: "t", col: "#dcfce7", act: "carry", law: "Đơn thuốc chỉ do bác sĩ hoặc y sĩ có chứng chỉ hành nghề kê (Thông tư 26/2025/TT-BYT)." },
+    { id: "duoc", name: "Dược", x: 32, y: 14, w: 6, h: 6, door: "t", col: "#eeecea", act: "carry", law: "Đơn thuốc chỉ do bác sĩ hoặc y sĩ có chứng chỉ hành nghề kê (Thông tư 26/2025/TT-BYT)." },
     { id: "vltl", name: "Vật lý trị liệu", x: 38, y: 14, w: 9, h: 6, door: "t", col: "#e0f2fe", act: "sit", law: "Chưa có nội dung luật riêng trong bài giảng." },
     { id: "hanhchinh", name: "Hành chính", x: 1, y: 20, w: 5, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Hồ sơ và dữ liệu y tế: Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế." },
     { id: "phonghop", name: "Phòng họp", x: 7, y: 20, w: 4, h: 6, door: "t", col: "#f1f5f9", act: "write", law: "Khu hỗ trợ, chưa có nội dung luật riêng." },
@@ -97,10 +97,10 @@
   var bctx = base.getContext("2d");
   function br(x, y, w, h, c) { bctx.fillStyle = c; bctx.fillRect(x, y, w, h); }
   function drawBase() {
-    br(0, 0, W, H, "#7fb27a");
-    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) if (((x + y) % 2) === 0) br(x * TS, y * TS, TS, TS, "#86bb82");
+    br(0, 0, W, H, "#a39689");
+    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) if (((x + y) % 2) === 0) br(x * TS, y * TS, TS, TS, "#aa9f93");
     // cây viền
-    for (var i = 0; i < COLS; i += 3) { br(i * TS, 0, TS, TS, "#3e7d3a"); br(i * TS, H - TS, TS, TS, "#3e7d3a"); }
+    for (var i = 0; i < COLS; i += 3) { br(i * TS, 0, TS, TS, "#665c51"); br(i * TS, H - TS, TS, TS, "#665c51"); }
     // Đường và sân trước
     br(20 * TS, 22 * TS, 12 * TS, 12 * TS, "#c9c3b5");
     br(21 * TS, 22 * TS, 10 * TS, 1 * TS, "#e2ddd1");

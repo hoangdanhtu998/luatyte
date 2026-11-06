@@ -17,7 +17,7 @@
   .mg-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .mg-btns button { flex: 1 1 160px; }
   .mg-btns button[data-k="cc"] { border-color: #DC2626; }
-  .mg-btns button[data-k="dt"] { border-color: #16A34A; }
+  .mg-btns button[data-k="dt"] { border-color: #685d51; }
   .mg-btns button[data-k="tt"] { border-color: #D97706; }
   .mg-rule { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper-2); color: var(--color-muted); font-size: 14px; line-height: 1.5; }
   .mg-rule b { color: var(--color-ink); }
@@ -69,12 +69,12 @@
     r(x + 4, y, 8, 4, "#3b2a22"); r(x + 4, y + 4, 8, 5, "#f2c9a0"); r(x + 2, y + 9, 12, 8, "#ffffff"); r(x + 4, y + 17, 3, 4, "#2c5f9e"); r(x + 9, y + 17, 3, 4, "#2c5f9e");
     // Biểu tượng luồng
     if (p.t === "cc") { r(x + 2, y - 10, 12, 8, "#ffffff"); r(x + 6, y - 9, 4, 6, "#DC2626"); r(x + 4, y - 7, 8, 2, "#DC2626"); }
-    if (p.t === "dt") { r(x + 2, y - 10, 12, 8, "#16A34A"); r(x + 4, y - 8, 8, 1, "#ffffff"); r(x + 4, y - 6, 5, 1, "#ffffff"); }
+    if (p.t === "dt") { r(x + 2, y - 10, 12, 8, "#685d51"); r(x + 4, y - 8, 8, 1, "#ffffff"); r(x + 4, y - 6, 5, 1, "#ffffff"); }
     if (p.t === "tt") { r(x + 2, y - 10, 12, 8, "#D97706"); r(x + 4, y - 8, 8, 1, "#ffffff"); r(x + 4, y - 6, 5, 1, "#ffffff"); }
   }
 
   function drawCounters() {
-    var names = { cc: "CẤP CỨU", dt: "ĐÚNG TUYẾN", tt: "TRÁI TUYẾN" }, colors = { cc: "#DC2626", dt: "#16A34A", tt: "#D97706" };
+    var names = { cc: "CẤP CỨU", dt: "ĐÚNG TUYẾN", tt: "TRÁI TUYẾN" }, colors = { cc: "#DC2626", dt: "#685d51", tt: "#D97706" };
     TYPES.forEach(function (t) {
       r(LANES[t] - 20, H - 26, 40, 12, "#2a3b40");
       r(LANES[t] - 20, H - 26, 40, 2, colors[t]);
@@ -141,7 +141,7 @@
     ctx.imageSmoothingEnabled = false;
     ctx.drawImage(im, Math.round(cx - w / 2), Math.round(feetY - h), w, h);
   }
-  function flash_color() { return feedback === "ok" ? "#16A34A" : "#DC2626"; }
+  function flash_color() { return feedback === "ok" ? "#685d51" : "#DC2626"; }
 
   function drawOverlay(title, lines) {
     ctx.fillStyle = "rgba(13,27,31,0.82)"; ctx.fillRect(0, 0, W, H);
@@ -158,7 +158,7 @@
     drawDoctorMini();
     if (feedback && flash > 0) {
       ctx.font = "8px monospace"; ctx.textAlign = "center";
-      ctx.fillStyle = feedback === "ok" ? "#86efac" : "#fca5a5";
+      ctx.fillStyle = feedback === "ok" ? "#c3bbb2" : "#fca5a5";
       ctx.fillText(feedback === "ok" ? "Đúng luồng" : "Sai luồng", W / 2, 14);
     }
     if (state === "idle") drawOverlay("Phân luồng bệnh nhân", ["Bấm Bắt đầu để chơi", "Phím 1 · 2 · 3 để chọn luồng"]);

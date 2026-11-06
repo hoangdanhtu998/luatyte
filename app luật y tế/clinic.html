@@ -17,7 +17,7 @@
 <meta property="og:locale" content="vi_VN">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="site.css">
-<style>.plan-badge{display:inline-block;margin-left:10px;padding:3px 10px;border-radius:999px;font:600 12px/1.4 system-ui,sans-serif;vertical-align:middle;border:1px solid transparent;white-space:nowrap}.plan-free{background:#ECFDF3;color:#067647;border-color:#ABEFC6}.plan-paid{background:#F0F9FF;color:#026AA2;border-color:#B9E6FE}.plan-admin{background:#F4F3FF;color:#5925DC;border-color:#D9D6FE}.plan-guest{background:#F1F5F9;color:#475569;border-color:#E2E8F0}</style>
+<style>.plan-badge{display:inline-block;margin-left:10px;padding:3px 10px;border-radius:999px;font:600 12px/1.4 system-ui,sans-serif;vertical-align:middle;border:1px solid transparent;white-space:nowrap}.plan-free{background:#ECFDF3;color:#453e37;border-color:#d3cdc7}.plan-paid{background:#F0F9FF;color:#026AA2;border-color:#B9E6FE}.plan-admin{background:#F4F3FF;color:#5925DC;border-color:#D9D6FE}.plan-guest{background:#F1F5F9;color:#475569;border-color:#E2E8F0}</style>
 </head>
 <style>
   .beta-tag{display:inline-block;vertical-align:middle;margin-left:6px;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#7C2D12;background:#FED7AA;border:1px solid #FDBA74}
@@ -296,10 +296,10 @@ body.immersive .case-right{overflow-y:auto;height:100%;min-height:0;padding:12px
 #scene #px-bubble,#scene.maxi #px-bubble,body.immersive #px-bubble{font-size:clamp(12px,1.25vw,19px);padding:6px 10px;transform:translateX(-50%)}
 #px-bubble.chat,#px-bubble2{position:absolute;transform:translate(-50%,-100%);white-space:normal;text-align:left;line-height:1.35;max-width:52%;z-index:6;pointer-events:none}
 #px-bubble.chat::after,#px-bubble2::after{left:50%;transform:translateX(-50%)}
-#px-bubble2{background:#E7F6F1;border:2.5px solid #2E8F6B;border-radius:9px;padding:6px 10px;color:#0F3D33;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.18)}
-#px-bubble2::after{content:"";position:absolute;bottom:-9px;width:14px;height:10px;background:#E7F6F1;border:2px solid #2E8F6B;border-top:none;border-radius:0 0 4px 4px;clip-path:polygon(0 0,100% 0,72% 100%,0 0)}
+#px-bubble2{background:#E7F6F1;border:2.5px solid #6a5f53;border-radius:9px;padding:6px 10px;color:#0F3D33;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+#px-bubble2::after{content:"";position:absolute;bottom:-9px;width:14px;height:10px;background:#E7F6F1;border:2px solid #6a5f53;border-top:none;border-radius:0 0 4px 4px;clip-path:polygon(0 0,100% 0,72% 100%,0 0)}
 #px-bubble.chat.bad{background:#FFF1EF;border-color:#E5534B}
-#px-bubble.chat.good{background:#EFFBF3;border-color:#2E9D57}
+#px-bubble.chat.good{background:#EFFBF3;border-color:#726659}
 .bub-who{display:block;font-size:.7em;font-weight:700;opacity:.6;margin-bottom:1px}
 #v-case.await .case-right{opacity:.18;pointer-events:none;transition:opacity .25s}
 #scene.zoomed .room-sign,#scene.zoomed .staff-tag{display:none}
@@ -458,7 +458,7 @@ const C = {
   floorA: "#D9C6A2", floorB: "#C2AC86", floorSeam: "rgba(58,44,26,.22)",
   frame: "#3B4A5A", wood: "#8A5A36", woodD: "#6B4426", woodL: "#A5744A",
   teal: "#2E6E8E", tealD: "#1E4B63", tealL: "#4A90C4",
-  cream: "#FBF7EE", ink: "#1C1710", red: "#B3543F", green: "#2E6E4F",
+  cream: "#FBF7EE", ink: "#1C1710", red: "#B3543F", green: "#574e45",
   outline: "#241D14"
 };
 
@@ -478,7 +478,7 @@ const THEMES = {
   "KHÁM THAI":       { wall: "#F0E8DC", wain: "#9A6FA8", board: "heartBaby", prop: "exbed" },
   "KHOA NHI":        { wall: "#F2ECDA", wain: "#5B8BBF", board: "kidsArt",  prop: "toys" },
   "DƯỢC":            { wall: "#EDE8DA", wain: "#4E8A7E", board: "mortar",   prop: null, jars: true },
-  "TIÊM CHỦNG":      { wall: "#EFECD9", wain: "#5F9463", board: "syringe",  prop: "fridge" },
+  "TIÊM CHỦNG":      { wall: "#EFECD9", wain: "#887a6b", board: "syringe",  prop: "fridge" },
   "BHYT":            { wall: "#F0EBDD", wain: "#5C6B7A", board: "card",     prop: "cab" },
   "PHÒNG BỆNH":      { wall: "#F1ECDA", wain: "#7A8A4E", board: "lungs",    prop: "ivbed" },
   "TƯ VẤN SÀNG LỌC": { wall: "#F2EBDB", wain: "#B08145", board: "ribbon",   prop: "chairs2" },
@@ -525,10 +525,10 @@ const ARCHS = {
   "Phụ nữ mang thai": { hair: "#3A2818", dress: "#4E8A7E", longHair: true, belly: true, bun: true },
   "Bị thương":        { hair: "#5F3A1E", shirt: "#E8834A", pants: "#5A6470", bandage: true },
   "Người hói":        { hair: "#4E4438", shirt: "#8E86C0", pants: "#475569", bald: true, glasses: true, fat: true },
-  "Đội mũ":           { hair: "#241D14", shirt: "#7FA77B", pants: "#2C4356", hat: "#B3543F", beard: true },
+  "Đội mũ":           { hair: "#241D14", shirt: "#9e9184", pants: "#2C4356", hat: "#B3543F", beard: true },
   "Bé gái":           { hair: "#241D14", dress: "#F2A7C3", longHair: true, kid: true, toy: true },
   "Bà cụ":            { hair: "#D6D3CB", dress: "#7B6FA8", longHair: true, bun: true, glasses: true, cane: true, elder: true },
-  "Xe lăn":           { hair: "#4E4438", shirt: "#6B8E7B", pants: "#3A4654", wheelchair: true, elder: true },
+  "Xe lăn":           { hair: "#4E4438", shirt: "#8b7d6e", pants: "#3A4654", wheelchair: true, elder: true },
   "Cô gái khăn":      { hair: "#111827", shirt: "#D98BA5", pants: "#4E4438", longHair: true },
   "Anh áo vest":      { hair: "#111827", shirt: "#4E6E8E", pants: "#2C3540", tie: true }
 };
@@ -568,7 +568,7 @@ function drawRoom(t){
       R(x0 + 21.6, 19.6, 20.8, 5, amb.skyHi);
       R(x0 + 30.6, 19.6, 1.8, 14.8, "#3B4A5A");
       R(x0 + 21.6, 26, 20.8, 1.4, "#3B4A5A");
-      R(x0 + 23, 21.4, 4, 2.4, "#8FBF6F");
+      R(x0 + 23, 21.4, 4, 2.4, "#a3978b");
     } else {
       R(x0 + 20, 18, 24, 18, "#B9AE97");
       R(x0 + 21.4, 19.4, 21.2, 15.2, "#FFFDF4");
@@ -641,7 +641,7 @@ function drawBayFurniture(i, x0, w, t, th2, active){
     isoBox(x0 + 32, 52, 26, 16, 3.2, "#D9E4EC", "#2E6E8E", "#1E4B63");
     for (let p2 = 0; p2 < 4; p2++) R(x0 + 35 + p2 * 6.4, 58, 5, 7, "rgba(0,0,0,.15)");
     R(x0 + 4, 30, 22, 2.4, "#C89A6C"); R(x0 + 4, 40, 22, 2.4, "#C89A6C");
-    const bot = ["#D9836B", "#8FC79B", "#D9B25F", "#7FA7C6", "#C78BA6", "#D9836B"];
+    const bot = ["#D9836B", "#b5aba1", "#D9B25F", "#7FA7C6", "#C78BA6", "#D9836B"];
     bot.forEach((c, k2) => { R(x0 + 5.4 + k2 * 3.4, 25, 2.2, 5, c); R(x0 + 5.4 + k2 * 3.4, 35, 2.2, 5, c); });
     R(x0 + 6, 46, 20, 7, "#1C232C");
     g.fillStyle = "#FF5A4A"; g.fillRect(x0 + 12, 48, 8, 3.4);
@@ -667,7 +667,7 @@ function drawBayFurniture(i, x0, w, t, th2, active){
     /* DƯỢC: tủ thuốc full + quầy + cối */
     R(x0 + 2, 20, 56, 22, vgrad(0, 20, 0, [[0, "#B98A5C"], [1, "#7A4E2E"]]));
     R(x0 + 3.4, 21.4, 53.2, 19.2, "#A97C50");
-    const cols = ["#D9836B", "#7FA7C6", "#8FC79B", "#D9B25F", "#A58FC6", "#C78BA6", "#F2C14E"];
+    const cols = ["#D9836B", "#7FA7C6", "#b5aba1", "#D9B25F", "#A58FC6", "#C78BA6", "#F2C14E"];
     for (let r3 = 0; r3 < 2; r3++){
       R(x0 + 5, 26 + r3 * 8, 52, 2, "#C89A6C");
       for (let k3 = 0; k3 < 11; k3++){
@@ -688,8 +688,8 @@ function drawBayFurniture(i, x0, w, t, th2, active){
     R(x0 + 28, 64.4, 28, 3, "#B3543F");
     for (const wx of [x0 + 33, x0 + 49]) ell(wx, 69, 3, 3, "#1C232C");
     for (const ox of [x0 + 4, x0 + 12]){
-      R(ox, 40, 5, 22, vgrad(0, 40, 0, [[0, "#3E8E6E"], [1, "#2E6E4F"]]));
-      ell(ox + 2.5, 39.4, 2.5, 1.6, "#3E8E6E");
+      R(ox, 40, 5, 22, vgrad(0, 40, 0, [[0, "#72665a"], [1, "#574e45"]]));
+      ell(ox + 2.5, 39.4, 2.5, 1.6, "#72665a");
       R(ox + 1.6, 44, 2.4, 2, "#D9DCE0");
     }
     R(x0 + 22, 30, 16, 12, "#FBF7EE");
@@ -718,11 +718,11 @@ function drawBoard(kind){
     R(79, 27, 3, 3, "#FFFDF4");
   } else if (kind === "kidsArt"){
     R(72, 21, 10, 10, "#F9E79A"); R(76, 24, 3, 3, "#E8A33F");
-    R(84, 26, 12, 2, "#8FBF6F"); R(88, 22, 2, 6, "#5F8A5F");
-    R(71, 36, 24, 2, "#8FBF6F"); R(74, 32, 5, 4, "#E8A33F"); R(80, 31, 6, 5, "#7FA7C6");
+    R(84, 26, 12, 2, "#a3978b"); R(88, 22, 2, 6, "#827567");
+    R(71, 36, 24, 2, "#a3978b"); R(74, 32, 5, 4, "#E8A33F"); R(80, 31, 6, 5, "#7FA7C6");
   } else if (kind === "mortar"){
     R(74, 26, 18, 4, "#3E6E64"); R(76, 30, 14, 8, "#4E8A7E"); R(78, 38, 10, 2, "#3E6E64");
-    R(80, 22, 6, 4, "#8FC79B");
+    R(80, 22, 6, 4, "#b5aba1");
   } else if (kind === "syringe"){
     R(72, 28, 20, 6, "#D9DCE0"); R(72, 28, 20, 1, "#9AA3A8");
     R(92, 30, 4, 2, "#3B4A5A"); R(70, 29, 2, 4, "#8A7A5A");
@@ -740,7 +740,7 @@ function drawBoard(kind){
     R(71, 21, 26, 19, "#E9E1CE");
     R(73, 23, 22, 13, "#3B4A5A"); R(74.4, 24.4, 19.2, 10.2, "#2E6E8E");
     R(76, 26, 13, 1.8, "#FBF7EE"); R(76, 28.8, 9, 1.8, "rgba(255,255,255,.75)"); R(76, 31.6, 15, 1.8, "#7DD3FC");
-    R(75, 36.4, 3, 1.2, "#8FBF6F"); R(79, 36.4, 3, 1.2, "#E8C468");
+    R(75, 36.4, 3, 1.2, "#a3978b"); R(79, 36.4, 3, 1.2, "#E8C468");
     R(80, 40, 8, 1.6, "#B9AE97");
   } else if (kind === "caneHeart"){
     R(73, 22, 2, 18, "#8A5A36"); R(73, 21, 5, 2, "#8A5A36");
@@ -763,7 +763,7 @@ function drawFloorProp(kind){
     R(54, 94, 9, 3, "#FBF7EE");
   } else if (kind === "toys"){
     R(62, 96, 18, 10, "#E8A33F"); R(62, 96, 18, 2, "#C77F2A");
-    R(66, 92, 4, 4, C.red); R(72, 93, 4, 3, "#7FA7C6"); R(68, 89, 5, 3, "#8FBF6F");
+    R(66, 92, 4, 4, C.red); R(72, 93, 4, 3, "#7FA7C6"); R(68, 89, 5, 3, "#a3978b");
   } else if (kind === "fridge"){
     R(58, 72, 20, 30, "#FBF7EE"); R(58, 72, 20, 2, "#C9BFA4");
     R(58, 86, 20, 1, "#9AA3A8"); R(74, 78, 2, 4, "#7FA7C6");
@@ -783,7 +783,7 @@ function drawFloorProp(kind){
     R(76, 92, 14, 3, "#A67C4A"); R(76, 86, 14, 6, "#C08A4A");
   } else if (kind === "server"){
     R(60, 72, 17, 30, "#2A323C"); R(60, 72, 17, 2, "#3E4A58");
-    for (let r2 = 0; r2 < 5; r2++){ R(62, 76 + r2 * 5, 13, 3, "#1C232C"); R(63, 77 + r2 * 5, 2, 1, (tickN / 30 + r2) % 2 < 1 ? "#8FBF6F" : "#3E6E4F"); R(66, 77 + r2 * 5, 2, 1, (tickN / 22 + r2) % 2 < 1 ? "#7FA7C6" : "#3E6E64"); }
+    for (let r2 = 0; r2 < 5; r2++){ R(62, 76 + r2 * 5, 13, 3, "#1C232C"); R(63, 77 + r2 * 5, 2, 1, (tickN / 30 + r2) % 2 < 1 ? "#a3978b" : "#60564c"); R(66, 77 + r2 * 5, 2, 1, (tickN / 22 + r2) % 2 < 1 ? "#7FA7C6" : "#3E6E64"); }
   } else if (kind === "armchair"){
     R(60, 86, 22, 12, "#A67C4A"); R(62, 80, 18, 7, "#C08A4A");
     R(58, 84, 3, 14, "#8A5A36"); R(81, 84, 3, 14, "#8A5A36");
@@ -806,10 +806,10 @@ function drawBench(t){
 }
 /* cây */
 function plant(x, y){
-  R(x - 3, y - 14, 3, 2, "#5F8A5F"); R(x + 1, y - 16, 3, 2, "#79AB6C"); R(x - 1, y - 18, 3, 2, "#79AB6C");
-  R(x - 4.4, y - 15.4, 1.6, 3.4, "#63945B"); R(x + 4.4, y - 14.8, 1.6, 3, "#63945B");
-  R(x, y - 12, 2, 4, "#4E7A4E");
-  R(x - 2, y - 10, 6, 2, "#63945B"); R(x + 2, y - 11, 3, 2, "#4E7A4E");
+  R(x - 3, y - 14, 3, 2, "#827567"); R(x + 1, y - 16, 3, 2, "#998b7e"); R(x - 1, y - 18, 3, 2, "#998b7e");
+  R(x - 4.4, y - 15.4, 1.6, 3.4, "#867869"); R(x + 4.4, y - 14.8, 1.6, 3, "#867869");
+  R(x, y - 12, 2, 4, "#706458");
+  R(x - 2, y - 10, 6, 2, "#867869"); R(x + 2, y - 11, 3, 2, "#706458");
   R(x - 3, y - 8, 8, 4, "#B5653F");
   R(x - 2, y - 4, 6, 4, "#A45A3A");
   R(x - 3, y, 8, 1, "rgba(58,44,26,.2)");
@@ -821,7 +821,7 @@ function drawCounterProp(kind){
     R(176, 56, 10, 3, "#FFFDF4"); R(178, 57, 6, 1, "#9AA3A8");
     R(175, 58, 12, 1, "rgba(0,0,0,.12)");
   } else if (kind === "jars"){
-    R(172, 52, 5, 7, "#8FC79B"); R(173, 51, 3, 1, "#5F4B33");
+    R(172, 52, 5, 7, "#b5aba1"); R(173, 51, 3, 1, "#5F4B33");
     R(179, 54, 5, 5, "#D9B25F"); R(180, 53, 3, 1, "#5F4B33");
     R(186, 51, 5, 8, "#C78BA6"); R(187, 50, 3, 1, "#5F4B33");
   }
@@ -1281,7 +1281,7 @@ function incomePerSec(){
   return IDLE_SLOW * t * (1 + 0.2 * stats.camp) * (0.6 + 0.4 * rep / 100) * (evState && evState.end > Date.now() ? evState.mult : 1);
 }
 function syncLevels(){ HOSP.setLevels(stats.eqLv, stats.stLv); updateTags(); }
-const ROOM_COL = ["#B9852A", "#2F6FB5", "#2E8F6B", "#C2527A", "#6D44C8", "#8A6A1E", "#C2581A", "#0E6F8A"];
+const ROOM_COL = ["#B9852A", "#2F6FB5", "#6a5f53", "#C2527A", "#6D44C8", "#8A6A1E", "#C2581A", "#0E6F8A"];
 function buildTags(host){
   if (!host) return;
   host.querySelectorAll(".room-sign,.staff-tag").forEach(el => el.remove());
@@ -1325,7 +1325,7 @@ function tickIdle(sec){
   const whole = Math.floor(idleAcc);
   if (whole > 0){
     idleAcc -= whole; gold += whole; stats.earned += whole; showStats();
-    if (Math.random() < 0.25) HOSP.fx("+" + whole, "#2E7D32", (Math.random() * nAct()) | 0);
+    if (Math.random() < 0.25) HOSP.fx("+" + whole, "#60564b", (Math.random() * nAct()) | 0);
   }
   if (!document.hidden) stats.playSec++;
   if (++idleN % 10 === 0){ saveStats(); if (!$("#v-start").classList.contains("hidden")) renderRooms(); }
@@ -1730,7 +1730,7 @@ function answer(i){
     gold += reward; sessGold += reward; stats.earned += reward; stats.correctTotal++; stats.bestStreak = Math.max(stats.bestStreak, streak); stats.gold = gold; stats.healed++;
     sfx("ting");
     floatText("+" + reward + " vàng");
-    HOSP.fx("+" + reward, "#2E7D32", caseRoom);
+    HOSP.fx("+" + reward, "#60564b", caseRoom);
     rep = Math.min(100, rep + 2 + (stats.decor.includes("plant") ? 1 : 0));
   } else {
     streak = 0;
@@ -1810,7 +1810,7 @@ let PARTS = [];
 function burst(kind, x, y, txt){
   if (kind === "ok"){
     for (let i = 0; i < 16; i++){
-      PARTS.push({ x: x + Math.random() * 14 - 7, y: y - 26 + Math.random() * 8, vx: Math.random() * 1.6 - .8, vy: -Math.random() * 1.3 - .5, g: .055, life: 42 + Math.random() * 22, c: ["#D9A03F", "#7FA7C6", "#8FC79B", "#C78BA6", "#E8834A"][(Math.random() * 5) | 0], s: 2 });
+      PARTS.push({ x: x + Math.random() * 14 - 7, y: y - 26 + Math.random() * 8, vx: Math.random() * 1.6 - .8, vy: -Math.random() * 1.3 - .5, g: .055, life: 42 + Math.random() * 22, c: ["#D9A03F", "#7FA7C6", "#b5aba1", "#C78BA6", "#E8834A"][(Math.random() * 5) | 0], s: 2 });
     }
     if (txt) PARTS.push({ x, y: y - 32, vx: 0, vy: -.45, g: 0, life: 55, txt, c: "#8A5A10" });
   } else {
