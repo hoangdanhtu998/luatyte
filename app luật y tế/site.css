@@ -117,13 +117,15 @@ nav.tabs {
   margin: var(--space-lg) 0; background: var(--color-paper); border-bottom: 1px solid var(--color-rule);
 }
 nav.tabs::-webkit-scrollbar { display: none; }
-nav.tabs .ind { position: absolute; bottom: -1px; left: 0; width: 0; height: 2px; background: var(--color-ink); transition: transform var(--dur-short) var(--ease-out); z-index: 1; }
+nav.tabs .ind { position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--color-ink); transition: transform var(--dur-short) var(--ease-out); z-index: 1; }
+nav.tabs[data-more="true"]::after { content: "›"; position: sticky; right: 0; flex: none; align-self: stretch; display: grid; place-items: center; min-width: 40px; background: var(--color-paper); color: var(--color-muted); font-size: var(--text-lg); font-weight: 700; box-shadow: -1px 0 0 var(--color-rule); pointer-events: none; }
 nav.tabs button { flex: none; min-height: 44px; padding: 0 var(--space-md); background: none; border: 0; color: var(--color-muted); font-size: var(--text-sm); font-weight: 600; white-space: nowrap; cursor: pointer; transition: color var(--dur-micro) var(--ease-out); }
 nav.tabs button:hover { color: var(--color-ink); }
 nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
 @media (min-width: 900px) {
   nav.tabs { gap: 2px; flex-wrap: wrap; overflow-x: visible; }
   nav.tabs button { padding: 0 12px; }
+  nav.tabs[data-more="true"]::after { display: none; }
 }
 
 /* ===== Panel ===== */
