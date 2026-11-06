@@ -34,7 +34,8 @@
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
+    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ."
   },
   {
     "id": "tt26_2025",
@@ -52,8 +53,10 @@
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
       "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
     ],
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF/vanban TT 26/2025 (kiểm trích điều về số lượng và đơn điện tử; nhóm kiểm chéo)"
   },
   {
     "id": "tt22_2024",
@@ -70,7 +73,8 @@
       "Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024",
+    "ghi_chu": "Kiểm 2026-11-06: point 1 ghi Danh mục thuốc hiếm, nhưng Điều 2 khoản 1 là Danh mục thuốc BHYT (TT 26/2019). Cần sửa point."
   },
   {
     "id": "tt21_2024",
@@ -88,7 +92,10 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
     "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025.",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF gốc TT 21/2024 (kiểm Đ2, Đ9 khoản 3, Đ11 khoản 1-2)",
+    "ghi_chu": "Kiểm 2026-11-06: point 2 cần bổ sung TT 13/2023; point 3 nên ghi mức trần do Bộ trưởng Bộ Y tế quy định."
   },
   {
     "id": "tt22_2023",
@@ -123,7 +130,8 @@
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023",
+    "ghi_chu": "Kiểm 2026-11-06: entry ghi hết hiệu lực nhưng tìm kiếm vbpl.vn ghi là văn bản hiện thời. Cần xác minh lại trạng thái."
   },
   {
     "id": "tt49_2025",
@@ -259,7 +267,8 @@
     "guide": "Nghị định 188/2025/NĐ-CP hướng dẫn Luật BHYT",
     "detailSource": "caselaw.vn (Luật 51/2024/QH15), Điều 13 và Điều 22",
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=51202415",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: Điều 22 khoản 1 điểm d: hai điều kiện (5 năm và 6 lần mức tham chiếu) là cộng gộp (và). Điều 22 có hiệu lực từ 01/01/2025. Cần sửa."
   },
   {
     "id": "duoc",
@@ -313,7 +322,9 @@
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 31/2025 (kiểm Điều 1, Điều 25)"
   },
   {
     "id": "tt_29_2025_duoc",
@@ -323,14 +334,16 @@
     "pass": "01/07/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Chưa xác nhận văn bản bị thay thế (Điều 38 khoản 2 không kiểm được qua nguồn tìm thấy). Cần đọc văn bản gốc.",
+    "replaces": "Thay thế các thông tư: 07/2017/TT-BYT, 21/2018/TT-BYT, 39/2021/TT-BYT, 54/2024/TT-BYT (Điều 38 khoản 2).",
     "points": [
       "Quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
       "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp giấy đăng ký lưu hành.",
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 29/2025 (kiểm Điều 38 khoản 2 và hồ sơ)"
   },
   {
     "id": "tt_18_2026_duoc",
@@ -402,8 +415,10 @@
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
     "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 114/2025/QH15 (kiểm Đ1, Đ3, Đ8, Đ14, Đ22, Đ27, Đ45, Đ46)"
   },
   {
     "id": "danso",
@@ -416,13 +431,15 @@
     "replaces": "Thay thế Pháp lệnh Dân số 06/2003 (hết hiệu lực khi Luật này có hiệu lực). Điều 14 điểm c, d có hiệu lực từ 01/01/2027.",
     "points": [
       "Mục tiêu: duy trì mức sinh thay thế, giảm mất cân bằng giới tính khi sinh, thích ứng già hóa dân số, nâng cao chất lượng dân số.",
-      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai, nếu đủ điều kiện hưởng chế độ thai sản theo pháp luật bảo hiểm xã hội.",
+      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai.",
       "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
     "guide": "Nghị định hướng dẫn Luật Dân số",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 113/2025/QH15 (kiểm Đ1, Đ14, Đ30)"
   },
   {
     "id": "thuocla",
@@ -774,40 +791,6 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=217386",
     "detailSource": "Toàn văn PDF: https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf",
-    "verify": false
-  },
-  {
-    "id": "tt_06_2026_gia_dv_kcb",
-    "cat": "Bảo hiểm y tế",
-    "name": "Thông tư 06/2026/TT-BYT giá dịch vụ kỹ thuật khám chữa bệnh BHYT",
-    "so": "06/2026/TT-BYT",
-    "pass": "20/02/2026",
-    "eff": "01/04/2026",
-    "status": "on",
-    "replaces": "Thay thế Thông tư 05/2024 về danh mục giá dịch vụ kỹ thuật trong khám chữa bệnh BHYT.",
-    "points": [
-      "Danh mục 850 dịch vụ kỹ thuật được thanh toán theo BHYT, bao gồm xét nghiệm huyết học, chẩn đoán hình ảnh — Phụ lục I.",
-      "Giá thanh toán là giá do HĐND cấp tỉnh quyết định trong khung do Bộ Y tế ban hành — Điều 4.",
-      "Cơ sở khám chữa bệnh ký hợp đồng BHYT phải công khai giá dịch vụ tại nơi khám bệnh — Điều 7."
-    ],
-    "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx",
-    "verify": false
-  },
-  {
-    "id": "tt_14_2026_dang_ky_kcb",
-    "cat": "Bảo hiểm y tế",
-    "name": "Thông tư 14/2026/TT-BYT đăng ký/KCB thường xuyên theo BHYT",
-    "so": "14/2026/TT-BYT",
-    "pass": "10/06/2026",
-    "eff": "01/08/2026",
-    "status": "on",
-    "replaces": "Hướng dẫn thủ tục đăng kýKCB thường xuyên và chuyển tuyến qua ứng dụng VssID.",
-    "points": [
-      "Người tham gia BHYT có thể đăng kýKCB thường xuyên trực tuyến qua app VssID — Điều 3.",
-      "Đăng kýKCB tại cơ sở khám chữa bệnh gần nhất nơi cư trú, không phân biệt tỉnh thành — Điều 5.",
-      "Chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện — Điều 8."
-    ],
-    "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te",
     "verify": false
   }
 ]
