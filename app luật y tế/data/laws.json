@@ -777,24 +777,6 @@
     "verify": false
   },
   {
-    "id": "nd_119_2025_bhyt",
-    "cat": "Bảo hiểm y tế",
-    "name": "Nghị định 119/2025/NĐ-CP hướng dẫn Luật BHYT 51/2024",
-    "so": "119/2025/NĐ-CP",
-    "pass": "15/04/2025",
-    "eff": "01/07/2025",
-    "status": "on",
-    "replaces": "Hướng dẫn chi tiết Luật BHYT 51/2024 về đối tượng, mức hưởng và thủ tục khám chữa bệnh.",
-    "points": [
-      "Đối tượng tham gia BHYT mở rộng: người lao động làm việc theo hợp đồng không xác định thời hạn, hợp đồng từ 3 đến dưới 12 tháng — Điều 5.",
-      "Mức hưởng 100% với nội trú tại tuyến tỉnh trở lên, kể cả trái tuyến cấp huyện — Điều 8.",
-      "Thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, dùng qua app VssID — Điều 12."
-    ],
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890",
-    "verify": false,
-    "ghi_chu": "119/2025/NĐ-CP là nghị định sửa NĐ 06/2022 về giảm phát thải khí nhà kính, không phải BHYT (kiểm 2026-11-06). Cần gỡ hoặc thay bằng văn bản BHYT đúng."
-  },
-  {
     "id": "tt_06_2026_gia_dv_kcb",
     "cat": "Bảo hiểm y tế",
     "name": "Thông tư 06/2026/TT-BYT giá dịch vụ kỹ thuật khám chữa bệnh BHYT",
@@ -827,23 +809,5 @@
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te",
     "verify": false
-  },
-  {
-    "id": "kcb_40_2025",
-    "cat": "Khám bệnh, chữa bệnh",
-    "name": "Luật Khám chữa bệnh 40/2025/QH15",
-    "so": "40/2025/QH15",
-    "pass": "20/11/2025",
-    "eff": "01/07/2026",
-    "status": "on",
-    "replaces": "Thay thế Luật KCB 40/2009/QH12; quy định quyền và nghĩa vụ người bệnh, cơ sở KCB, bác sĩ.",
-    "points": [
-      "Người bệnh có quyền biết chẩn đoán, phương án điều trị và từ chối điều trị — Điều 15.",
-      "Cơ sở KCB phải công khai giá dịch vụ, thái độ phục vụ và quyền lợi người bệnh — Điều 22.",
-      "Hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026 — Điều 35."
-    ],
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500",
-    "verify": false,
-    "ghi_chu": "Không tìm thấy số hiệu 40/2025/QH15 khi kiểm 2026-11-06. Cần xác nhận hoặc gỡ."
   }
 ]
