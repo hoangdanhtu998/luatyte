@@ -1,4 +1,4 @@
-# Bài học: Thế giới quan và tâm quan
+# Bài học: Thế giới quan và giá trị quan
 
 Bài học này dành cho mọi người, không cần kiến thức triết học. Gồm 6 bài, học theo thứ tự. Mỗi bài có mục tiêu, giải thích, một hình dung đời thường, ba ví dụ và phần tóm tắt.
 
@@ -27,16 +27,16 @@ Không ai trả lời hết những câu hỏi này một cách hoàn chỉnh. N
 
 ---
 
-## Bài 2: Tâm quan là gì?
+## Bài 2: Giá trị quan là gì?
 
-**Mục tiêu:** Hiểu tâm quan là gì và nhận ra tâm quan thể hiện qua các lựa chọn hằng ngày.
+**Mục tiêu:** Hiểu giá trị quan là gì và nhận ra giá trị quan thể hiện qua các lựa chọn hằng ngày.
 
 **Giải thích:**
-Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nếu thế giới quan trả lời câu "thế giới là gì", thì tâm quan trả lời câu "điều gì quan trọng với tôi". Tâm quan gồm những điều như trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp các điều này theo thứ tự ưu tiên khác nhau.
+Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nếu thế giới quan trả lời câu "thế giới là gì", thì giá trị quan trả lời câu "điều gì quan trọng với tôi". Giá trị quan gồm những điều như trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp các điều này theo thứ tự ưu tiên khác nhau.
 
-Điều đáng chú ý: tâm quan không chỉ là điều người ta nói. Nó lộ rõ nhất khi người ta phải chọn. Khi hai điều đều tốt nhưng không thể có cả hai, cách bạn chọn cho thấy bạn coi trọng điều gì hơn.
+Điều đáng chú ý: giá trị quan không chỉ là điều người ta nói. Nó lộ rõ nhất khi người ta phải chọn. Khi hai điều đều tốt nhưng không thể có cả hai, cách bạn chọn cho thấy bạn coi trọng điều gì hơn.
 
-**Hình dung đời thường:** Tâm quan giống như chiếc la bàn trong túi bạn. La bàn không cho biết toàn bộ địa hình, nhưng giúp bạn biết hướng nào là hướng mình muốn đi.
+**Hình dung đời thường:** Giá trị quan giống như chiếc la bàn trong túi bạn. La bàn không cho biết toàn bộ địa hình, nhưng giúp bạn biết hướng nào là hướng mình muốn đi.
 
 **Ví dụ:**
 1. **Đời sống:** Hai người có mức lương như nhau. Một người ưu tiên dành dụm để mua nhà, người kia ưu tiên đưa gia đình đi du lịch mỗi năm. Không ai đúng hơn ai. Họ chỉ có thứ tự giá trị khác nhau về việc đáng chi tiêu vào đâu.
@@ -44,30 +44,32 @@ Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một ngườ
 3. **Nghề y, luật y tế:** Một bệnh nhân muốn từ chối một phương pháp điều trị mà bác sĩ khuyên. Bác sĩ phải cân nhắc giữa việc tôn trọng quyền tự quyết của bệnh nhân và mong muốn bảo vệ sức khỏe của họ. Cả hai đều là giá trị quan trọng.
 
 **Tóm tắt:**
-- Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử.
-- Tâm quan lộ ra rõ nhất qua các lựa chọn khi phải đánh đổi.
+- Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử.
+- Giá trị quan lộ ra rõ nhất qua các lựa chọn khi phải đánh đổi.
 - Thứ tự ưu tiên của mỗi người là riêng, và có thể thay đổi theo thời gian.
 
 ---
 
 ## Bài 3: Khác nhau và liên hệ giữa hai khái niệm
 
-**Mục tiêu:** Phân biệt được thế giới quan và tâm quan. Hiểu vì sao hai khái niệm này thường đi cùng nhau.
+**Mục tiêu:** Phân biệt được thế giới quan và giá trị quan. Hiểu vì sao hai khái niệm này thường đi cùng nhau.
 
 **Giải thích:**
-Hai khái niệm khác nhau ở câu hỏi mà chúng trả lời. Thế giới quan hỏi: "Thế giới là gì, và tôi đứng ở đâu?" Tâm quan hỏi: "Tôi nên chọn điều gì và sống thế nào?" Nói đơn giản, thế giới quan là phần **hiểu**, còn tâm quan là phần **chọn**.
+Hai khái niệm khác nhau ở câu hỏi mà chúng trả lời. Thế giới quan hỏi: "Thế giới là gì, và tôi đứng ở đâu?" Giá trị quan hỏi: "Tôi nên chọn điều gì và sống thế nào?" Nói đơn giản, thế giới quan là phần **hiểu**, còn giá trị quan là phần **chọn**.
 
-Nhưng chúng liên hệ chặt chẽ. Nếu bạn tin con người có thể cải thiện cuộc sống nhờ hợp tác, bạn có xu hướng đề cao tinh thần đoàn kết. Ngược lại, người coi trọng sự cẩn trọng thường nhìn thấy rủi ro nhiều hơn khi quan sát thế giới.
+Trong cách gọi phổ biến, ba quan điểm này được gọi là tam quan: thế giới quan (thế giới là gì), nhân sinh quan (sống để làm gì) và giá trị quan (điều gì đáng quý và nên làm). Bài học này tập trung vào thế giới quan và giá trị quan. Nhân sinh quan nằm giữa hai phần đó: đó là chỗ mỗi người trả lời câu hỏi sống để làm gì.
 
-**Hình dung đời thường:** Thế giới quan là tấm bản đồ, còn tâm quan là la bàn. Bản đồ cho biết địa hình, la bàn cho biết bạn muốn đi hướng nào. Hai thứ dùng cùng nhau mới đi được đường.
+Nhưng chúng liên hệ chặt chẽ. Nếu bạn tin con người có thể cải thiện cuộc sống nhờ hợp tác, bạn có xu hướng đề cao tinh thần đoàn kết. Ngược lại, người coi trọng sự cẩn trọng có thể nhìn thấy rủi ro nhiều hơn khi quan sát thế giới.
+
+**Hình dung đời thường:** Thế giới quan là tấm bản đồ, còn giá trị quan là la bàn. Bản đồ cho biết địa hình, la bàn cho biết bạn muốn đi hướng nào. Hai thứ dùng cùng nhau mới đi được đường.
 
 **Ví dụ:**
-1. **Đời sống:** Một người tin rằng sức khỏe phụ thuộc phần lớn vào thói quen sinh hoạt (thế giới quan). Vì thế, họ đặt việc tập thể dục và ăn uống lành mạnh lên trước nhiều thú vui khác (tâm quan).
-2. **Học đường:** Bạn tin rằng kiến thức có thể thay đổi cuộc đời mình (thế giới quan). Vì vậy, bạn coi việc học chăm chỉ và kiên trì là điều quan trọng (tâm quan).
-3. **Nghề y, luật y tế:** Người làm nghề y tin rằng mỗi người có phẩm giá và xứng đáng được tôn trọng (thế giới quan về con người). Vì vậy, họ đề cao sự tôn trọng và giữ bí mật thông tin của bệnh nhân (tâm quan).
+1. **Đời sống:** Một người tin rằng sức khỏe phụ thuộc phần lớn vào thói quen sinh hoạt (thế giới quan). Vì thế, họ đặt việc tập thể dục và ăn uống lành mạnh lên trước nhiều thú vui khác (giá trị quan).
+2. **Học đường:** Bạn tin rằng kiến thức có thể thay đổi cuộc đời mình (thế giới quan). Vì vậy, bạn coi việc học chăm chỉ và kiên trì là điều quan trọng (giá trị quan).
+3. **Nghề y, luật y tế:** Người làm nghề y tin rằng mỗi người có phẩm giá và xứng đáng được tôn trọng (thế giới quan về con người). Vì vậy, họ đề cao sự tôn trọng và giữ bí mật thông tin của bệnh nhân (giá trị quan).
 
 **Tóm tắt:**
-- Thế giới quan trả lời "thế giới là gì", tâm quan trả lời "điều gì quan trọng với tôi".
+- Thế giới quan trả lời "thế giới là gì", giá trị quan trả lời "điều gì quan trọng với tôi".
 - Hai thứ ảnh hưởng qua lại: cách hiểu thế giới góp phần hình thành giá trị, và giá trị định hướng cách nhìn thế giới.
 - Khi hiểu cả hai, ta dễ giải thích vì sao một người hành động như vậy.
 
@@ -99,16 +101,16 @@ Có nhiều lý do khiến người ta nhìn cùng một việc theo cách khác
 
 ---
 
-## Bài 5: Tâm quan trong nghề y và nghề luật liên quan đến sức khỏe
+## Bài 5: Giá trị quan trong nghề y và nghề luật liên quan đến sức khỏe
 
 **Mục tiêu:** Hiểu vai trò của giá trị đạo đức trong nghề y và các nghề liên quan đến luật y tế. Biết vì sao những nghề này thường có quy tắc ứng xử và cần cân nhắc nhiều phía.
 
 **Giải thích:**
 Nghề y và các công việc liên quan đến sức khỏe thường gặp tình huống mà nhiều giá trị cùng quan trọng: an toàn cho người bệnh, quyền tự quyết, bảo mật thông tin, công bằng trong tiếp cận dịch vụ, và trách nhiệm với cộng đồng. Khi các giá trị này va chạm, người làm nghề cần lập luận rõ ràng, minh bạch và dựa trên pháp luật hiện hành cùng chuẩn mực nghề nghiệp.
 
-Bài học chỉ nêu khái niệm chung. Các quy định cụ thể cần tra cứu ở nguồn chính thức và có thể thay đổi theo thời gian.
+Bài học chỉ nêu khái niệm chung. Các quy định cụ thể cần tra cứu ở nguồn chính thức và có thể thay đổi theo thời gian. Ví dụ, Luật Khám bệnh, chữa bệnh số 15/2023/QH15 ghi nhận quyền được giữ bí mật thông tin đời tư người bệnh đã cung cấp cho người hành nghề (Điều 10 khoản 2), và quyền lựa chọn phương pháp khám, chữa bệnh sau khi được tư vấn đầy đủ về tình trạng bệnh, kết quả và rủi ro (Điều 11 khoản 1). [Cần đối chiếu với văn bản chính thức trước khi trích dẫn.]
 
-**Hình dung đời thường:** Người làm trong lĩnh vực sức khỏe giống người điều khiển một con đường đông xe. Họ phải giữ an toàn, bảo đảm mọi người đều được đi, và làm theo luật lệ chung, dù lúc nào cũng có nhiều yêu cầu đồng thời.
+**Hình dung đời thường:** Người làm trong lĩnh vực sức khỏe giống người điều khiển giao thông trên một con đường đông xe. Họ phải giữ an toàn, bảo đảm mọi người đều được đi, và làm theo luật lệ chung, dù lúc nào cũng có nhiều yêu cầu đồng thời.
 
 **Ví dụ:**
 1. **Đời sống:** Khi người thân lớn tuổi sức khỏe yếu, gia đình phải cân nhắc giữa chăm sóc tại nhà và đưa vào cơ sở y tế. Mỗi lựa chọn đề cao một giá trị khác nhau: sự gần gũi và sự chăm sóc chuyên môn.
@@ -118,11 +120,11 @@ Bài học chỉ nêu khái niệm chung. Các quy định cụ thể cần tra 
 **Tóm tắt:**
 - Nghề y và các nghề liên quan sức khỏe luôn có nhiều giá trị cùng lúc: an toàn, tự quyết, bảo mật, công bằng.
 - Khi giá trị va chạm, cần lập luận rõ ràng và tuân theo quy định, chuẩn mực nghề nghiệp.
-- Hiểu tâm quan giúp người làm nghề giải thích quyết định của mình một cách tôn trọng người khác.
+- Hiểu giá trị quan giúp người làm nghề giải thích quyết định của mình một cách tôn trọng người khác.
 
 ---
 
-## Bài 6: Nghe người khác có quan điểm khác mà vẫn tôn trọng
+## Bài 6: Lắng nghe người có quan điểm khác và vẫn tôn trọng họ
 
 **Mục tiêu:** Biết cách lắng nghe và nêu quan điểm của mình mà không công kích người khác. Hiểu rằng tôn trọng không có nghĩa là đồng ý.
 
@@ -133,7 +135,7 @@ Khi gặp người có quan điểm khác, nhiều người phản ứng ngay b�
 3. **Nhắc lại ý của họ** bằng lời của bạn, để họ biết bạn đã hiểu.
 4. **Nêu quan điểm của mình** bằng chữ "tôi" thay vì "bạn sai", kèm lý do rõ ràng.
 
-Tôn trọng không có nghĩa là đồng ý. Bạn có thể không đồng ý nhưng vẫn không xúc phạm. Đồng thời, nhiều xã hội và văn bản pháp luật đặt những nền tảng như an toàn, quyền con người và không kỳ thị làm chuẩn chung.
+Tôn trọng không có nghĩa là đồng ý. Bạn có thể không đồng ý nhưng vẫn không xúc phạm. Đồng thời, nhiều văn bản pháp luật và chuẩn mực đạo đức nghề nghiệp đặt những nền tảng như an toàn, quyền con người và không kỳ thị làm chuẩn chung. Đây là chuẩn đã được thống nhất, khác với các câu hỏi giá trị còn mở.
 
 **Hình dung đời thường:** Giống hai người cùng xem một tấm bản đồ cũ nhưng đứng ở hai góc khác nhau. Thay vì giành tấm bản đồ, họ đặt xuống và chỉ cho nhau thấy mình đang nhìn vào chỗ nào.
 

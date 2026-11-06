@@ -1,4 +1,4 @@
-# Bộ câu hỏi kiểm tra: Thế giới quan và Tâm quan
+# Bộ câu hỏi kiểm tra: Thế giới quan và Giá trị quan
 
 **Số câu:** 15 câu trắc nghiệm (4 lựa chọn, 1 đáp án đúng)
 **Phân bố:** 5 câu phân biệt khái niệm, 5 câu nhận diện ví dụ, 5 câu tình huống tôn trọng khác biệt
@@ -6,7 +6,7 @@
 
 **Khái niệm dùng trong bộ đề**
 - Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội.
-- Tâm quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử.
+- Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử.
 
 ---
 
@@ -24,15 +24,15 @@
 
 ---
 
-**Câu 2.** Câu nào mô tả đúng sự khác nhau giữa thế giới quan và tâm quan?
+**Câu 2.** Câu nào mô tả đúng sự khác nhau giữa thế giới quan và giá trị quan?
 
-- A. Thế giới quan trả lời "thế giới vận động thế nào"; tâm quan trả lời "điều gì quan trọng với tôi".
-- B. Thế giới quan là cảm xúc nhất thời, còn tâm quan là lý trí khi phân tích một tình huống mới.
-- C. Thế giới quan chỉ dành cho người làm nghề triết học, còn tâm quan dành cho người làm nghề y.
+- A. Thế giới quan trả lời "thế giới vận động thế nào"; giá trị quan trả lời "điều gì quan trọng với tôi".
+- B. Thế giới quan là cảm xúc nhất thời, còn giá trị quan là lý trí khi phân tích một tình huống mới.
+- C. Thế giới quan chỉ dành cho người làm nghề triết học, còn giá trị quan dành cho người làm nghề y.
 - D. Hai khái niệm này giống nhau về nội dung, chỉ khác cách gọi tên trong các sách vở khác nhau.
 
 **Đáp án: A**
-*Giải thích:* Thế giới quan trả lời câu hỏi thế giới vận động thế nào, còn tâm quan trả lời câu hỏi điều gì quan trọng với mình khi chọn và ứng xử, nên A đúng. Ba lựa chọn còn lại đưa ra cách phân biệt sai.
+*Giải thích:* Thế giới quan trả lời câu hỏi thế giới vận động thế nào, còn giá trị quan trả lời câu hỏi điều gì quan trọng với mình khi chọn và ứng xử, nên A đúng. Ba lựa chọn còn lại đưa ra cách phân biệt sai.
 
 ---
 
@@ -48,7 +48,7 @@
 
 ---
 
-**Câu 4.** Tâm quan thường thể hiện ở điều gì?
+**Câu 4.** Giá trị quan thường thể hiện ở điều gì?
 
 - A. Số lượng kiến thức khoa học mà người đó đã tích lũy được qua nhiều năm học tập.
 - B. Điều người đó chọn là quan trọng hơn khi phải đánh đổi giữa hai điều đều tốt đẹp.
@@ -56,19 +56,19 @@
 - D. Tốc độ đọc sách và khả năng ghi nhớ các con số, tên gọi trong một thời gian ngắn.
 
 **Đáp án: B**
-*Giải thích:* Bài học cho biết tâm quan lộ rõ nhất khi người ta phải chọn giữa các điều đều tốt, nên B đúng. Ba lựa chọn còn lại là kiến thức, thể chất hoặc kỹ năng, không phản ánh giá trị và thứ tự ưu tiên của một người.
+*Giải thích:* Bài học cho biết giá trị quan lộ rõ nhất khi người ta phải chọn giữa các điều đều tốt, nên B đúng. Ba lựa chọn còn lại là kiến thức, thể chất hoặc kỹ năng, không phản ánh giá trị và thứ tự ưu tiên của một người.
 
 ---
 
 **Câu 5.** Phát biểu nào đúng?
 
 - A. Thế giới quan có thể ảnh hưởng đến giá trị và cách một người quyết định, ứng xử; hai yếu tố này thường liên hệ với nhau.
-- B. Thế giới quan và tâm quan là hai khái niệm tách biệt, không ảnh hưởng gì đến việc một người ra quyết định trong đời sống.
+- B. Thế giới quan và giá trị quan là hai khái niệm tách biệt, không ảnh hưởng gì đến việc một người ra quyết định trong đời sống.
 - C. Chỉ những người đã trưởng thành, có nhiều kinh nghiệm sống và học vấn cao mới thật sự có thế giới quan riêng.
-- D. Tâm quan do bẩm sinh quyết định gần như hoàn toàn và hầu như không thay đổi trong suốt cuộc đời mỗi người.
+- D. Giá trị quan do bẩm sinh quyết định gần như hoàn toàn và hầu như không thay đổi trong suốt cuộc đời mỗi người.
 
 **Đáp án: A**
-*Giải thích:* Bài học nêu thế giới quan và tâm quan ảnh hưởng qua lại, nên A đúng. Ba lựa chọn còn lại trái với bài học: hai khái niệm không tách biệt, ai cũng có thế giới quan, và tâm quan có thể thay đổi theo thời gian.
+*Giải thích:* Bài học nêu thế giới quan và giá trị quan ảnh hưởng qua lại, nên A đúng. Ba lựa chọn còn lại trái với bài học: hai khái niệm không tách biệt, ai cũng có thế giới quan, và giá trị quan có thể thay đổi theo thời gian.
 
 ---
 
@@ -86,7 +86,7 @@
 
 ---
 
-**Câu 7.** Đoạn nào thể hiện tâm quan?
+**Câu 7.** Đoạn nào thể hiện giá trị quan?
 
 - A. Anh B biết rằng nước sôi ở 100°C ở áp suất khí quyển tiêu chuẩn và đun sôi nước ở nhiệt độ đó.
 - B. Bác C giải thích hiện tượng mưa bằng quá trình bay hơi, ngưng tụ và rơi xuống mặt đất.
@@ -94,11 +94,11 @@
 - D. Em D cho rằng Trái Đất quay quanh Mặt Trời, và điều này đã được nhiều quan sát khoa học xác nhận.
 
 **Đáp án: C**
-*Giải thích:* Chị A thể hiện thái độ ứng xử trước thất bại, đó là đặc trưng của tâm quan. Ba lựa chọn còn lại là kiến thức khoa học hoặc thông tin về thế giới tự nhiên.
+*Giải thích:* Chị A thể hiện thái độ ứng xử trước thất bại, đó là đặc trưng của giá trị quan. Ba lựa chọn còn lại là kiến thức khoa học hoặc thông tin về thế giới tự nhiên.
 
 ---
 
-**Câu 8.** Ví dụ nào là kỹ năng cụ thể, không phải thế giới quan hay tâm quan?
+**Câu 8.** Ví dụ nào là kỹ năng cụ thể, không phải thế giới quan hay giá trị quan?
 
 - A. Một người cho rằng mọi người đều có giá trị như nhau, bất kể địa vị hay hoàn cảnh sống.
 - B. Một người biết cách sơ cứu vết bỏng bằng cách làm mát vùng da dưới nước sạch trong vài phút.
@@ -136,7 +136,7 @@
 
 ## Phần 3: Tình huống tôn trọng khác biệt
 
-**Câu 11.** Trong nhóm học tập, bạn A cho rằng nên học thật giỏi trước rồi mới tham gia hoạt động tình nguyện, còn bạn B cho rằng nên vừa học vừa tham gia tình nguyện ngay. Theo bài học, cách ứng xử nào thể hiện sự tôn trọng khác biệt?
+**Câu 11.** Trong nhóm học tập, bạn A cho rằng nên học thật giỏi trước rồi mới tham gia hoạt động tình nguyện, còn bạn B cho rằng nên vừa học vừa tham gia tình nguyện ngay. Theo bài học, cách ứng xử nào thể hiện sự tôn trọng những khác biệt?
 
 - A. Đưa ra kế hoạch của bạn A ngay từ đầu, vì mục tiêu học tốt là quan trọng nhất với cả nhóm lúc này.
 - B. Tách riêng, mỗi người tự làm theo cách của mình, vì cách này giúp tránh tranh cãi và đỡ mất thời gian.
@@ -160,7 +160,7 @@
 
 ---
 
-**Câu 13.** Trong một dự án chung, đồng nghiệp A làm việc theo kế hoạch chi tiết, còn đồng nghiệp B thích làm việc linh hoạt và ngẫu hứng. Cách làm nào thể hiện tôn trọng khác biệt và vẫn giữ được sự phối hợp?
+**Câu 13.** Trong một dự án chung, đồng nghiệp A làm việc theo kế hoạch chi tiết, còn đồng nghiệp B thích làm việc linh hoạt và ngẫu hứng. Cách làm nào thể hiện sự tôn trọng những khác biệt và vẫn giữ được sự phối hợp?
 
 - A. Thống nhất mốc thời gian và kết quả chung, rồi để mỗi người tự chọn cách làm trong phạm vi đó.
 - B. Tách việc, mỗi người tự làm phần mình theo cách riêng, không cần họp hay trao đổi thêm với nhau.
@@ -172,7 +172,7 @@
 
 ---
 
-**Câu 14.** Trong lúc thảo luận về cách sắp xếp thời gian rảnh, bạn gặp một người có quan điểm khác hẳn mình. Theo bài học, cách đối thoại nào tôn trọng nhận thức khác biệt?
+**Câu 14.** Trong lúc thảo luận về cách sắp xếp thời gian rảnh, bạn gặp một người có quan điểm khác hẳn mình. Theo bài học, cách đối thoại nào tôn trọng những nhận thức khác biệt?
 
 - A. Chỉ lắng nghe và chấp nhận ý kiến giống mình, vì ý kiến khác mình thường khó hiểu và ít đáng tin.
 - B. Nói thẳng rằng ý kiến của đối phương chưa đúng, vì đối đầu sớm giúp cuộc trò chuyện đi đúng hướng.
