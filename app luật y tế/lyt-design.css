@@ -135,3 +135,33 @@ h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;letter-spacing:0}
 /* Chỉ gạch chân liên kết trong đoạn văn; liên kết điều hướng và mục lục không gạch */
 a{text-decoration:none}
 p a,li p a,.note a,.intro a{text-decoration:underline}
+
+/* ---- Dễ dùng: bớt khoảng trống, nội dung dày hơn, cấu trúc nhìn thấy rõ ---- */
+
+/* Đầu trang: nền dải nhẹ để tách khỏi phần nội dung, khoảng cách gọn lại */
+.hero{padding-top:var(--space-sm,12px);background:var(--color-paper-3,#F3EDE2);border-bottom:1px solid var(--color-rule,#D9CFBE);max-width:none;padding-left:max(16px,calc((100% - 960px)/2));padding-right:max(16px,calc((100% - 960px)/2));margin-bottom:var(--space-md,16px)}
+.hero .brand{padding-bottom:4px}
+.hero > .stats{border:0;background:var(--color-paper-2,#fff);border-radius:8px;overflow:hidden;box-shadow:0 1px 0 var(--color-rule,#D9CFBE)}
+.hero > .stats::after{display:none}
+.stat{padding:14px 16px}
+.stat b{font-size:clamp(1.6rem,4.8vw,2.1rem)}
+
+/* Khối "Hôm nay nên ôn" là điểm bắt đầu: nổi bật hơn */
+.today{background:var(--color-paper-2,#fff);border-color:var(--color-ink,#2B2118);border-width:1px}
+.today .label,.today small{color:var(--color-muted,#7A6D5E)}
+
+/* Thanh tab: dính đầu khi cuộn để chuyển mục nhanh */
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--color-paper,#FBF7F0)}
+
+/* Mục lục bài học: lưới các mục thay vì danh sách dài */
+.triet .toc ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 16px;list-style-position:inside}
+.triet .toc li{margin:0;padding:6px 8px;border-radius:6px;background:var(--color-paper-2,#fff)}
+.triet .toc li:hover{background:var(--color-paper,#FBF7F0)}
+.triet .toc summary{font-weight:700}
+
+/* Trang Học: thẻ có chiều cao đều và điểm bắt đầu rõ */
+.hub-card{background:var(--color-paper-2,#fff);box-shadow:0 1px 0 var(--color-rule,#D9CFBE)}
+.hub-card .hub-title{font-size:1.3rem}
+.hub-card .hub-cta{display:inline-block;align-self:flex-start;padding:6px 12px;border-radius:6px;background:var(--color-ink,#2B2118);color:var(--color-paper,#FBF7F0)}
+.hub-card:hover .hub-cta{background:var(--color-ink-2,#4A3F33)}
+.hub-lead{margin-bottom:28px}
