@@ -112,3 +112,26 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 
 /* Số liệu bằng chữ serif cho dễ đọc */
 .stat b{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-weight:600}
+
+/* ---- Màu chữ toàn site: giữ tông nâu/kem, phân cấp rõ hơn ---- */
+body{color:var(--color-ink-2,#4A3F33)}
+h1,h2,h3,h4{color:var(--color-ink,#2B2118)}
+strong,b{color:var(--color-ink,#2B2118)}
+p,li{color:var(--color-ink-2,#4A3F33)}
+small,.meta,.note,figcaption,.hint{color:var(--color-muted,#7A6D5E)}
+a{color:var(--color-ink,#2B2118);text-decoration-color:var(--color-muted,#7A6D5E);text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--color-ink,#2B2118)}
+.check,.intro{color:var(--color-ink-2,#4A3F33)}
+
+/* Khoảng cách đọc cho các trang bài học */
+main p{max-width:72ch}
+main h2{margin-top:2.2em;padding-top:.5em;border-top:1px solid var(--color-rule,#D9CFBE)}
+main h2:first-of-type{border-top:0;margin-top:1em}
+
+/* Tiêu đề: serif hệ thống để dấu tiếng Việt đặt đúng vị trí; không thu khoảng cách chữ */
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;letter-spacing:0}
+.brand h1{font-family:Georgia,"Times New Roman",serif}
+
+/* Chỉ gạch chân liên kết trong đoạn văn; liên kết điều hướng và mục lục không gạch */
+a{text-decoration:none}
+p a,li p a,.note a,.intro a{text-decoration:underline}
