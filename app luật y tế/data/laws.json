@@ -49,14 +49,14 @@
     "points": [
       "Chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề được kê đơn; người kê đơn chịu trách nhiệm về nội dung đơn.",
       "Đơn phải ghi tên thuốc, nồng độ, hàm lượng, liều dùng, đường dùng và số ngày dùng; trẻ dưới 72 tháng ghi tuổi theo tháng và cân nặng.",
-      "Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.",
+      "Tối đa 30 ngày dùng cho mỗi thuốc (Điều 6 khoản 8a); với bệnh thuộc Danh mục Phụ lục VII, người kê đơn quyết định nhưng không quá 90 ngày (khoản 8b).",
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
-      "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
+      "Thuốc gây nghiện (mẫu N, Phụ lục II) và thuốc hướng thần, tiền chất (mẫu H, Phụ lục III) có mẫu đơn riêng; thuốc gây nghiện kê không quá 10 ngày (cấp tính) hoặc 30 ngày (mạn tính) (Điều 7, Điều 9 khoản 2–3)."
     ],
     "verify": true,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
     "verify_date": "2026-11-06",
-    "verify_source": "PDF/vanban TT 26/2025 (kiểm trích điều về số lượng và đơn điện tử; nhóm kiểm chéo)"
+    "verify_source": "PDF gốc TT 26/2025 (datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/26-byt.pdf): Đ2 thẩm quyền; Đ3 mẫu; Đ6 khoản 4, 5, 6, 8a, 8b; Đ9 khoản 2–3; Đ10 đơn điện tử; Đ13 khoản 1–2 (hiệu lực 01/07/2025, bãi bỏ TT 52/2017, 18/2018, 04/2022, 27/2021)"
   },
   {
     "id": "tt22_2024",
