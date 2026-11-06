@@ -192,3 +192,14 @@ nav.tabs{position:sticky;top:0;z-index:20;background:var(--color-paper,#FBF7F0)}
 :root[data-theme="indigo"] .slides .opt,:root[data-theme="indigo"] .slide-card .opt{background:#ffffff;color:#0f172a;border-color:#cbd5e1}
 :root[data-theme="indigo"] .slide-card .fill-sel,:root[data-theme="indigo"] .slide-card .essay{background:#ffffff;color:#0f172a;border-color:#94a3b8}
 :root[data-theme="indigo"] .opt .k{background:#0f172a;color:#ffffff;border-radius:6px}
+
+/* Minh họa SVG trong slide: màu theo giao diện */
+.slide-art{margin:0 0 16px;padding:12px;border-radius:10px;background:var(--color-paper-3,#F3EDE2)}
+.slide-art svg{display:block;width:100%;max-width:340px;height:auto;margin:0 auto}
+.slide-art .a-accent{fill:var(--color-accent,#3F6B4E)}
+.slide-art .a-glow{fill:var(--color-accent,#3F6B4E)}
+.slide-art .a-soft{fill:var(--color-paper-2,#fff)}
+.slide-art .a-line{fill:var(--color-rule,#D9CFBE);stroke:var(--color-muted,#7A6D5E)}
+.slide-art .a-ink{fill:var(--color-ink,#2B2118);stroke:var(--color-ink,#2B2118)}
+.slide-art svg [fill="none"]{fill:none !important;stroke:var(--color-accent,#3F6B4E)}
+.slide-art text{font-family:"Lato",system-ui,sans-serif}
