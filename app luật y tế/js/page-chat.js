@@ -103,6 +103,8 @@
     if (!q || !chunks) return;
     addMsg(esc(q), 'me');
     input.value = '';
+    var faq = window.FaqAnswer ? window.FaqAnswer.match(q) : '';
+    if (faq) { addMsg(esc(faq), 'bot'); return; }
     var res = search(chunks, q);
     if (!res.length) {
       addMsg('Mình chưa tìm thấy nội dung này trong trang. Thử từ khóa khác, ví dụ tên luật, số hiệu hoặc khái niệm.', 'bot');
