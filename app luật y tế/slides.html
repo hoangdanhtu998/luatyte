@@ -28,6 +28,7 @@
 .slide-nav .counter{color:var(--color-muted,#7A6D5E);font-size:14px}
 .slides .opt{width:100%}
 .tts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}.tts-bar select{font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper-2,#fff);color:var(--color-ink,#2B2118)}.tts-note{font-size:13px;color:var(--color-muted,#7A6D5E)}
+.slide-narr{font-size:13px;color:var(--color-muted,#7A6D5E);margin:0 0 10px;font-style:italic}
 </style>
 </head>
 <body>
@@ -36,7 +37,7 @@
   <p><a href="hoc.html">← Học</a></p>
   <div class="slides-head"><h1 id="lesson-title">Đang tải bài học…</h1></div>
   <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-  <div class="tts-bar" id="tts-bar"><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><span class="tts-note" id="tts-note"></span></div>
+  <div class="tts-bar" id="tts-bar"><label>Người giảng <select id="narrator-pick" aria-label="Chọn người giảng"></select></label><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><span class="tts-note" id="tts-note"></span></div>
 <div id="stage" aria-live="polite"></div>
   <div class="slide-nav">
     <button class="btn ghost" type="button" id="prev">← Trước</button>
@@ -46,7 +47,10 @@
   <p class="note" style="margin-top:14px">Mẹo: dùng phím mũi tên trái/phải để chuyển slide.</p>
 </main>
 <script src="js/theme.js"></script>
+<script src="js/slide-persona.js"></script>
+<script src="js/slide-art.js"></script>
 <script src="js/slides.js"></script>
 <script src="js/slides-tts.js"></script>
+<script id="narr-init">(function(){var sel=document.getElementById('narrator-pick');if(!sel||!window.SlidePersona)return;SlidePersona.list().forEach(function(p){var o=new Option(p.label,p.id);sel.appendChild(o);});sel.value=SlidePersona.get();sel.addEventListener('change',function(){SlidePersona.set(sel.value);location.reload();});})();</script>
 </body>
 </html>

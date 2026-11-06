@@ -1,63 +1,297 @@
 {
   "title": "Đạo đức học và đạo đức nghề y",
   "slides": [
-    { "type": "text", "title": "Đạo đức là gì?", "body": [
-      "Đạo đức là những chuẩn mực mà một cộng đồng dùng để phân biệt điều nên làm với điều không nên làm.",
-      "Pháp luật có chế tài cưỡng chế. Đạo đức dựa phần lớn vào lương tâm, dư luận và sự tự nguyện.",
-      "Pháp luật thường là mức tối thiểu. Đạo đức thường cao hơn mức đó."
-    ]},
-    { "type": "mcq", "q": "Điểm khác biệt chính giữa đạo đức và pháp luật là gì?", "options": [
-      "Đạo đức có chế tài cưỡng chế, pháp luật thì không.",
-      "Pháp luật có chế tài cưỡng chế; đạo đức dựa nhiều vào lương tâm và dư luận.",
-      "Hai khái niệm này giống hệt nhau.",
-      "Đạo đức chỉ liên quan đến tôn giáo."
-    ], "answer": 1, "feedback": "Pháp luật được nhà nước cưỡng chế thi hành; đạo đức dựa vào lương tâm và dư luận." },
-    { "type": "text", "title": "Ba cách tiếp cận lớn", "body": [
-      "Vị lợi: hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất.",
-      "Nghĩa vụ (Kant): hành động đúng là hành động có thể trở thành nguyên tắc chung, và đối xử với người khác như mục đích.",
-      "Đức hạnh (Aristotle): hành động đúng là hành động của người có đức hạnh như can đảm, trung thực, công bằng."
-    ]},
-    { "type": "fill", "title": "Điền vào chỗ trống", "text": "Cách tiếp cận đánh giá hành động dựa trên hậu quả gọi là {1}. Cách tiếp cận dựa trên nguyên tắc có thể trở thành luật chung gọi là {2}.", "blanks": [
-      { "options": ["vị lợi", "nghĩa vụ", "đức hạnh", "phong tục"], "answer": 0 },
-      { "options": ["vị lợi", "nghĩa vụ", "đức hạnh", "phong tục"], "answer": 1 }
-    ]},
-    { "type": "text", "title": "Các nguyên tắc nền tảng trong nghề y", "body": [
-      "Tôn trọng quyền tự quyết của người bệnh.",
-      "Làm lợi và không gây hại.",
-      "Công bằng: không phân biệt giàu nghèo, tôn giáo, giới tính hay tình trạng bệnh.",
-      "Trung thực: thông tin về bệnh, rủi ro và chi phí phải rõ ràng."
-    ]},
-    { "type": "text", "title": "Sự đồng ý có thông tin", "body": [
-      "Người bệnh đồng ý với can thiệp y tế sau khi được giải thích đầy đủ về mục đích, lợi ích, rủi ro và các lựa chọn khác.",
-      "Ký giấy không đồng nghĩa với đồng ý có thông tin nếu người bệnh chưa hiểu rõ.",
-      "Trường hợp cấp cứu, người bệnh không tỉnh táo hoặc trẻ em có quy trình khác. Cần đối chiếu Luật Khám bệnh, chữa bệnh hiện hành."
-    ]},
-    { "type": "mcq", "q": "Bệnh nhân ký giấy đồng ý phẫu thuật nhưng chưa hiểu rõ rủi ro. Sự đồng ý này có đầy đủ không?", "options": [
-      "Có, vì đã ký giấy.",
-      "Không đầy đủ, vì đồng ý có thông tin cần người bệnh hiểu rõ các thông tin liên quan.",
-      "Có, vì bác sĩ đã quyết định.",
-      "Có, miễn là người nhà đồng ý."
-    ], "answer": 1, "feedback": "Đồng ý có thông tin đòi hỏi người bệnh hiểu rõ mục đích, lợi ích, rủi ro và lựa chọn khác." },
-    { "type": "text", "title": "Bảo mật và xung đột lợi ích", "body": [
-      "Bảo mật: thông tin sức khỏe là thông tin nhạy cảm. Chỉ chia sẻ khi cần cho việc điều trị hoặc khi pháp luật yêu cầu.",
-      "Xung đột lợi ích: lợi ích cá nhân có thể làm lệch quyết định nghề nghiệp. Cần công khai và đặt lợi ích người bệnh lên trước."
-    ]},
-    { "type": "essay", "q": "Một bác sĩ thấy việc nói thật về tiên lượng xấu sẽ khiến bệnh nhân hoảng sợ. Bác sĩ nên làm gì? Giải thích bằng ít nhất hai nguyên tắc.", "model": "Bác sĩ nên hỏi người bệnh muốn biết đến đâu và muốn chia sẻ với ai, đồng thời trung thực về tình trạng bệnh. Các nguyên tắc: tôn trọng quyền tự quyết (người bệnh chọn mức thông tin họ muốn) và trung thực (không che giấu thông tin cần thiết). Có thể kết hợp cách trình bày nhẹ nhàng và thời gian để bệnh nhân tiếp nhận." },
-    { "type": "fill", "title": "Điền vào chỗ trống", "text": "Khi một quyết định nghề nghiệp có thể bị lệch vì lợi ích cá nhân, đó gọi là {1}. Cách xử lý thường gặp là {2} mối quan hệ đó.", "blanks": [
-      { "options": ["xung đột lợi ích", "đồng ý có thông tin", "tự quyết", "bảo mật"], "answer": 0 },
-      { "options": ["che giấu", "công khai", "bỏ qua", "tăng cường"], "answer": 1 }
-    ]},
-    { "type": "mcq", "q": "Điều dưỡng thấy đồng nghiệp ghi sai liều thuốc nhưng chưa gây hậu quả. Hành động phù hợp là gì?", "options": [
-      "Im lặng vì chưa có hậu quả.",
-      "Báo cáo đúng quy trình để sửa sai và phòng tránh về sau.",
-      "Tự sửa mà không báo cho ai.",
-      "Nói với bệnh nhân khác."
-    ], "answer": 1, "feedback": "Im lặng có thể gây hại cho bệnh nhân khác, nên cần báo cáo đúng quy trình." },
-    { "type": "essay", "q": "Vì sao xung đột lợi ích tiềm ẩn vẫn đáng lo ngại, ngay cả khi quyết định cuối cùng đúng?", "model": "Vì xung đột lợi ích làm giảm niềm tin vào quyết định, khiến người khác không chắc quyết định xuất phát từ lợi ích người bệnh hay từ lợi ích cá nhân. Ngay cả khi kết quả đúng, quá trình không minh bạch vẫn gây hại cho uy tín nghề nghiệp và sự tin cậy của người bệnh." },
-    { "type": "text", "title": "Tổng kết", "body": [
-      "Đạo đức nghề y dựa trên ba cách nhìn: hậu quả, nghĩa vụ và đức hạnh.",
-      "Người bệnh có quyền được thông tin và tự quyết. Người làm nghề có nghĩa vụ trung thực, bảo mật và tránh xung đột lợi ích.",
-      "Khi gặp tình huống khó, hãy mô tả sự việc, xác định giá trị xung đột, xem xét lựa chọn, kiểm tra bằng ba cách nhìn, rồi quyết định và giải thích."
-    ]}
+    {
+      "type": "text",
+      "title": "Đạo đức là gì?",
+      "body": [
+        "Đạo đức là những chuẩn mực mà một cộng đồng dùng để phân biệt điều nên làm với điều không nên làm.",
+        "Pháp luật có chế tài cưỡng chế. Đạo đức dựa phần lớn vào lương tâm, dư luận và sự tự nguyện.",
+        "Pháp luật thường là mức tối thiểu. Đạo đức thường cao hơn mức đó."
+      ],
+      "audio": "audio/slides/dao-duc/01.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Điểm khác biệt chính giữa đạo đức và pháp luật là gì?",
+      "options": [
+        "Đạo đức có chế tài cưỡng chế, pháp luật thì không.",
+        "Pháp luật có chế tài cưỡng chế; đạo đức dựa nhiều vào lương tâm và dư luận.",
+        "Hai khái niệm này giống hệt nhau.",
+        "Đạo đức chỉ liên quan đến tôn giáo."
+      ],
+      "answer": 1,
+      "feedback": "Pháp luật được nhà nước cưỡng chế thi hành; đạo đức dựa vào lương tâm và dư luận.",
+      "audio": "audio/slides/dao-duc/02.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ba cách tiếp cận lớn",
+      "body": [
+        "Vị lợi: hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất.",
+        "Nghĩa vụ (Kant): hành động đúng là hành động có thể trở thành nguyên tắc chung, và đối xử với người khác như mục đích.",
+        "Đức hạnh (Aristotle): hành động đúng là hành động của người có đức hạnh như can đảm, trung thực, công bằng."
+      ],
+      "audio": "audio/slides/dao-duc/03.mp3"
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Cách tiếp cận đánh giá hành động dựa trên hậu quả gọi là {1}. Cách tiếp cận dựa trên nguyên tắc có thể trở thành luật chung gọi là {2}.",
+      "blanks": [
+        {
+          "options": [
+            "vị lợi",
+            "nghĩa vụ",
+            "đức hạnh",
+            "phong tục"
+          ],
+          "answer": 0
+        },
+        {
+          "options": [
+            "vị lợi",
+            "nghĩa vụ",
+            "đức hạnh",
+            "phong tục"
+          ],
+          "answer": 1
+        }
+      ],
+      "audio": "audio/slides/dao-duc/04.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Các nguyên tắc nền tảng trong nghề y",
+      "body": [
+        "Tôn trọng quyền tự quyết của người bệnh.",
+        "Làm lợi và không gây hại.",
+        "Công bằng: không phân biệt giàu nghèo, tôn giáo, giới tính hay tình trạng bệnh.",
+        "Trung thực: thông tin về bệnh, rủi ro và chi phí phải rõ ràng."
+      ],
+      "audio": "audio/slides/dao-duc/05.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Sự đồng ý có thông tin",
+      "body": [
+        "Người bệnh đồng ý với can thiệp y tế sau khi được giải thích đầy đủ về mục đích, lợi ích, rủi ro và các lựa chọn khác.",
+        "Ký giấy không đồng nghĩa với đồng ý có thông tin nếu người bệnh chưa hiểu rõ.",
+        "Trường hợp cấp cứu, người bệnh không tỉnh táo hoặc trẻ em có quy trình khác. Cần đối chiếu Luật Khám bệnh, chữa bệnh hiện hành."
+      ],
+      "audio": "audio/slides/dao-duc/06.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Bệnh nhân ký giấy đồng ý phẫu thuật nhưng chưa hiểu rõ rủi ro. Sự đồng ý này có đầy đủ không?",
+      "options": [
+        "Có, vì đã ký giấy.",
+        "Không đầy đủ, vì đồng ý có thông tin cần người bệnh hiểu rõ các thông tin liên quan.",
+        "Có, vì bác sĩ đã quyết định.",
+        "Có, miễn là người nhà đồng ý."
+      ],
+      "answer": 1,
+      "feedback": "Đồng ý có thông tin đòi hỏi người bệnh hiểu rõ mục đích, lợi ích, rủi ro và lựa chọn khác.",
+      "audio": "audio/slides/dao-duc/07.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bảo mật và xung đột lợi ích",
+      "body": [
+        "Bảo mật: thông tin sức khỏe là thông tin nhạy cảm. Chỉ chia sẻ khi cần cho việc điều trị hoặc khi pháp luật yêu cầu.",
+        "Xung đột lợi ích: lợi ích cá nhân có thể làm lệch quyết định nghề nghiệp. Cần công khai và đặt lợi ích người bệnh lên trước."
+      ],
+      "audio": "audio/slides/dao-duc/08.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Một bác sĩ thấy việc nói thật về tiên lượng xấu sẽ khiến bệnh nhân hoảng sợ. Bác sĩ nên làm gì? Giải thích bằng ít nhất hai nguyên tắc.",
+      "model": "Bác sĩ nên hỏi người bệnh muốn biết đến đâu và muốn chia sẻ với ai, đồng thời trung thực về tình trạng bệnh. Các nguyên tắc: tôn trọng quyền tự quyết (người bệnh chọn mức thông tin họ muốn) và trung thực (không che giấu thông tin cần thiết). Có thể kết hợp cách trình bày nhẹ nhàng và thời gian để bệnh nhân tiếp nhận.",
+      "audio": "audio/slides/dao-duc/09.mp3"
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Khi một quyết định nghề nghiệp có thể bị lệch vì lợi ích cá nhân, đó gọi là {1}. Cách xử lý thường gặp là {2} mối quan hệ đó.",
+      "blanks": [
+        {
+          "options": [
+            "xung đột lợi ích",
+            "đồng ý có thông tin",
+            "tự quyết",
+            "bảo mật"
+          ],
+          "answer": 0
+        },
+        {
+          "options": [
+            "che giấu",
+            "công khai",
+            "bỏ qua",
+            "tăng cường"
+          ],
+          "answer": 1
+        }
+      ],
+      "audio": "audio/slides/dao-duc/10.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Điều dưỡng thấy đồng nghiệp ghi sai liều thuốc nhưng chưa gây hậu quả. Hành động phù hợp là gì?",
+      "options": [
+        "Im lặng vì chưa có hậu quả.",
+        "Báo cáo đúng quy trình để sửa sai và phòng tránh về sau.",
+        "Tự sửa mà không báo cho ai.",
+        "Nói với bệnh nhân khác."
+      ],
+      "answer": 1,
+      "feedback": "Im lặng có thể gây hại cho bệnh nhân khác, nên cần báo cáo đúng quy trình.",
+      "audio": "audio/slides/dao-duc/11.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Vì sao xung đột lợi ích tiềm ẩn vẫn đáng lo ngại, ngay cả khi quyết định cuối cùng đúng?",
+      "model": "Vì xung đột lợi ích làm giảm niềm tin vào quyết định, khiến người khác không chắc quyết định xuất phát từ lợi ích người bệnh hay từ lợi ích cá nhân. Ngay cả khi kết quả đúng, quá trình không minh bạch vẫn gây hại cho uy tín nghề nghiệp và sự tin cậy của người bệnh.",
+      "audio": "audio/slides/dao-duc/12.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ôn tập Đạo đức",
+      "body": [
+        "Phần ôn tập: trả lời các câu dưới đây để kiểm tra mình đã nhớ kiến thức chưa. Đúng/sai là kiểu câu có hai lựa chọn."
+      ],
+      "extra": true,
+      "audio": "audio/slides/dao-duc/13.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đúng hay sai: pháp luật có chế tài cưỡng chế, đạo đức dựa nhiều vào lương tâm và dư luận.",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 0,
+      "feedback": "Đúng (Phần 1).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/14.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đúng hay sai: vị lợi đánh giá hành động dựa trên hậu quả.",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 0,
+      "feedback": "Đúng (Phần 2).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/15.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đúng hay sai: Kant cho rằng nói dối để có lợi là đúng nếu mang lại lợi ích lớn.",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "feedback": "Theo Kant, nguyên tắc này không thể thành luật chung (Phần 2).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/16.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đồng ý có thông tin nghĩa là gì?",
+      "options": [
+        "Người bệnh ký giấy là đủ",
+        "Người bệnh hiểu rõ lợi ích, rủi ro và lựa chọn khác rồi mới đồng ý",
+        "Bác sĩ quyết định thay",
+        "Người nhà đồng ý là đủ"
+      ],
+      "answer": 1,
+      "feedback": "Đồng ý cần người bệnh hiểu thông tin liên quan (Phần 4).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/17.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đúng hay sai: bảo mật thông tin người bệnh nghĩa là không chia sẻ với đồng nghiệp đang trực tiếp điều trị.",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 1,
+      "feedback": "Các đồng nghiệp trực tiếp điều trị cần thông tin để điều trị (Phần 5).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/18.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Xung đột lợi ích cần được xử lý thế nào?",
+      "options": [
+        "Giấu đi",
+        "Công khai và đặt lợi ích người bệnh lên trước",
+        "Bỏ qua",
+        "Chỉ nói với bạn bè"
+      ],
+      "answer": 1,
+      "feedback": "Công khai và ưu tiên người bệnh (Phần 6).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/19.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Đúng hay sai: một quyết định đúng vẫn có thể đáng lo nếu có xung đột lợi ích tiềm ẩn.",
+      "options": [
+        "Đúng",
+        "Sai"
+      ],
+      "answer": 0,
+      "feedback": "Đúng, vì nó làm giảm niềm tin vào quyết định (Phần 6).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/20.mp3"
+    },
+    {
+      "type": "mcq",
+      "q": "Bước nào đứng đầu trong lập luận đạo đức?",
+      "options": [
+        "Quyết định ngay",
+        "Mô tả sự việc",
+        "Chọn phương án nhanh nhất",
+        "Bỏ qua người liên quan"
+      ],
+      "answer": 1,
+      "feedback": "Bắt đầu bằng mô tả sự việc (Phần 7).",
+      "extra": true,
+      "audio": "audio/slides/dao-duc/21.mp3"
+    },
+    {
+      "type": "fill",
+      "title": "Ôn nhớ: điền chỗ trống",
+      "text": "Khi gặp tình huống khó, cần kiểm tra quyết định bằng {1} cách nhìn: hậu quả, nghĩa vụ và đức hạnh.",
+      "blanks": [
+        {
+          "options": [
+            "ba",
+            "hai",
+            "năm",
+            "bốn"
+          ],
+          "answer": 0
+        }
+      ],
+      "extra": true,
+      "audio": "audio/slides/dao-duc/22.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Tổng kết",
+      "body": [
+        "Đạo đức nghề y dựa trên ba cách nhìn: hậu quả, nghĩa vụ và đức hạnh.",
+        "Người bệnh có quyền được thông tin và tự quyết. Người làm nghề có nghĩa vụ trung thực, bảo mật và tránh xung đột lợi ích.",
+        "Khi gặp tình huống khó, hãy mô tả sự việc, xác định giá trị xung đột, xem xét lựa chọn, kiểm tra bằng ba cách nhìn, rồi quyết định và giải thích."
+      ],
+      "audio": "audio/slides/dao-duc/23.mp3"
+    }
   ]
 }
