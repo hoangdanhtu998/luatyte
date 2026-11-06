@@ -1,8 +1,8 @@
-// Chọn giao diện. Mặc định là "Biên tập sáng" (paper); người dùng vẫn chọn được giao diện khác.
+// Chọn giao diện. Mặc định là giao diện "Trắng đen" (mono); người dùng vẫn chọn được giao diện khác.
 // Lựa chọn "Theo máy" được lưu là "system" để không bị đổi lại về mặc định.
 (function () {
   var KEY = 'luatyte-theme';
-  var DEFAULT = 'paper';
+  var DEFAULT = 'mono';
   var root = document.documentElement;
   var sel = document.getElementById('theme-pick');
   var saved = null;

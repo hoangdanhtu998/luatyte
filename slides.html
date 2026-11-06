@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bài học dạng slide: đọc nội dung, làm trắc nghiệm, điền chỗ trống có ô chọn đáp án, và tự luận có đáp án mẫu.">
+<title>Bài học · Sổ tay Luật Y tế</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="lyt-design.css">
+<style>
+.slides{max-width:760px;margin:0 auto;padding:var(--space-md,16px) var(--space-md,16px) 40px}
+.slides-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin:8px 0 12px}
+.slides-head h1{font-size:1.5rem;margin:0}
+.progress{height:4px;background:var(--color-rule,#D9CFBE);border-radius:2px;overflow:hidden;margin-bottom:16px}
+.progress > span{display:block;height:100%;width:0;background:var(--color-ink,#2B2118);transition:width .3s ease}
+.slide-card{background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:8px;padding:clamp(18px,4vw,32px);min-height:280px}
+.slide-card h2{margin-top:0}
+.slide-card p{font-size:1.05rem;line-height:1.7}
+.slide-kind{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted,#7A6D5E);margin:0 0 6px}
+.fill-text{font-size:1.1rem;line-height:2.1}
+.fill-sel{font:inherit;font-size:1rem;padding:4px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper,#FBF7F0);color:var(--color-ink,#2B2118);margin:0 4px;max-width:100%}
+.essay{width:100%;font:inherit;padding:10px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper,#FBF7F0);color:var(--color-ink,#2B2118);resize:vertical}
+.model-answer{margin-top:12px;padding:12px 14px;border-left:3px solid var(--color-ink,#2B2118);background:var(--color-paper-3,#F3EDE2);border-radius:4px}
+.slide-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.slide-nav .counter{color:var(--color-muted,#7A6D5E);font-size:14px}
+.slides .opt{width:100%}
+.tts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}.tts-bar select{font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper-2,#fff);color:var(--color-ink,#2B2118)}.tts-note{font-size:13px;color:var(--color-muted,#7A6D5E)}
+</style>
+</head>
+<body>
+<nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html">Luật Y tế</a><a href="hoc.html" style="font-weight:700">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html" aria-current="page" style="font-weight:700">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
+<main class="slides">
+  <p><a href="hoc.html">← Học</a></p>
+  <div class="slides-head"><h1 id="lesson-title">Đang tải bài học…</h1></div>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <div class="tts-bar" id="tts-bar"><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><span class="tts-note" id="tts-note"></span></div>
+<div id="stage" aria-live="polite"></div>
+  <div class="slide-nav">
+    <button class="btn ghost" type="button" id="prev">← Trước</button>
+    <span class="counter" id="counter"></span>
+    <button class="btn" type="button" id="next">Tiếp →</button>
+  </div>
+  <p class="note" style="margin-top:14px">Mẹo: dùng phím mũi tên trái/phải để chuyển slide.</p>
+</main>
+<script src="js/theme.js"></script>
+<script src="js/slides.js"></script>
+<script src="js/slides-tts.js"></script>
+</body>
+</html>

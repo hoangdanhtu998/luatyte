@@ -80,7 +80,7 @@ body{padding-bottom:88px}
 
 /* ---- Hệ thống chữ và khối nội dung: một kiểu, không trang trí ---- */
 body{font-size:17px;line-height:1.6}
-h1,h2,h3{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-weight:600;letter-spacing:-.01em}
+h1,h2,h3{font-family:"EB Garamond",Georgia,serif;font-weight:600;letter-spacing:-.01em}
 
 /* Thanh tab: chữ rõ hơn, vạch chỉ dưới mảnh */
 nav.tabs{border-bottom:1px solid var(--color-rule,#D9CFBE)}
@@ -100,7 +100,7 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 .law[open]{border-color:var(--color-rule,#D9CFBE);background:var(--color-paper-3,#F3EDE2)}
 .law summary{padding:16px 4px}
 .law:hover summary h3{text-decoration:none}
-.law h3{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-size:1.22rem;font-weight:600}
+.law h3{font-family:"EB Garamond",Georgia,serif;font-size:1.22rem;font-weight:600}
 .law .meta{font-size:13px;color:var(--color-muted,#7A6D5E)}
 .law .body{padding:0 4px 18px 4px}
 
@@ -111,7 +111,7 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 .chip{font-size:14px;min-height:36px}
 
 /* Số liệu bằng chữ serif cho dễ đọc */
-.stat b{font-family:var(--font-display,"EB Garamond",Georgia,serif);font-weight:600}
+.stat b{font-family:"EB Garamond",Georgia,serif;font-weight:600}
 
 /* ---- Màu chữ toàn site: giữ tông nâu/kem, phân cấp rõ hơn ---- */
 body{color:var(--color-ink-2,#4A3F33)}
@@ -129,8 +129,8 @@ main h2{margin-top:2.2em;padding-top:.5em;border-top:1px solid var(--color-rule,
 main h2:first-of-type{border-top:0;margin-top:1em}
 
 /* Tiêu đề: serif hệ thống để dấu tiếng Việt đặt đúng vị trí; không thu khoảng cách chữ */
-h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;letter-spacing:0}
-.brand h1{font-family:Georgia,"Times New Roman",serif}
+h1,h2,h3,h4{font-family:"EB Garamond",Georgia,"Times New Roman",serif;letter-spacing:0}
+.brand h1{font-family:"EB Garamond",Georgia,"Times New Roman",serif}
 
 /* Chỉ gạch chân liên kết trong đoạn văn; liên kết điều hướng và mục lục không gạch */
 a{text-decoration:none}
@@ -165,3 +165,30 @@ nav.tabs{position:sticky;top:0;z-index:20;background:var(--color-paper,#FBF7F0)}
 .hub-card .hub-cta{display:inline-block;align-self:flex-start;padding:6px 12px;border-radius:6px;background:var(--color-ink,#2B2118);color:var(--color-paper,#FBF7F0)}
 .hub-card:hover .hub-cta{background:var(--color-ink-2,#4A3F33)}
 .hub-lead{margin-bottom:28px}
+
+/* ---- Giao diện mặc định "Tím đêm": nền xanh đen, thẻ nổi, nhấn tím ---- */
+:root[data-theme="indigo"]{
+  color-scheme: dark;
+  --color-paper:#0f172a; --color-paper-2:#1e293b; --color-paper-3:#162033;
+  --color-ink:#f1f5f9; --color-ink-2:#cbd5e1; --color-muted:#94a3b8;
+  --color-rule:#334155; --color-rule-2:#1e293b; --color-field:#475569;
+  --color-accent:#a78bfa; --color-accent-ink:#0f172a; --color-accent-soft:#2e1065; --color-accent-soft-ink:#ddd6fe;
+  --color-action:#7c3aed; --color-action-ink:#ffffff;
+  --color-focus:#c4b5fd; --radius-card:12px; --shadow-card:0 1px 2px rgba(0,0,0,.4);
+}
+:root[data-theme="indigo"] body{font-family:"Inter","Segoe UI",system-ui,sans-serif}
+:root[data-theme="indigo"] h1,:root[data-theme="indigo"] h2,:root[data-theme="indigo"] h3{font-family:"Inter","Segoe UI",system-ui,sans-serif;font-weight:700;letter-spacing:-.01em}
+:root[data-theme="indigo"] .btn:not(.ghost){background:var(--color-action);border-color:var(--color-action);color:#fff}
+:root[data-theme="indigo"] .btn:not(.ghost):hover{background:#6d28d9}
+:root[data-theme="indigo"] .card,:root[data-theme="indigo"] .slide-card{background:var(--color-paper-2);border-color:var(--color-rule)}
+:root[data-theme="indigo"] .chip{background:var(--color-accent-soft);color:var(--color-accent-soft-ink);border-color:transparent}
+:root[data-theme="indigo"] .slides .opt{background:var(--color-paper-2);color:var(--color-ink);border-color:var(--color-rule)}
+:root[data-theme="indigo"] .opt:hover{border-color:var(--color-accent)}
+/* Thẻ nội dung trắng với chữ tối, như mẫu tham chiếu */
+:root[data-theme="indigo"] .card,:root[data-theme="indigo"] .slide-card,:root[data-theme="indigo"] .hub-card,:root[data-theme="indigo"] .today{
+  --color-ink:#0f172a; --color-ink-2:#334155; --color-muted:#64748b; --color-rule:#cbd5e1;
+  background:#ffffff; color:var(--color-ink-2); border-color:#cbd5e1;
+}
+:root[data-theme="indigo"] .slides .opt,:root[data-theme="indigo"] .slide-card .opt{background:#ffffff;color:#0f172a;border-color:#cbd5e1}
+:root[data-theme="indigo"] .slide-card .fill-sel,:root[data-theme="indigo"] .slide-card .essay{background:#ffffff;color:#0f172a;border-color:#94a3b8}
+:root[data-theme="indigo"] .opt .k{background:#0f172a;color:#ffffff;border-radius:6px}
