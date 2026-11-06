@@ -48,6 +48,22 @@
 .slides .feedback.no{background:#fef2f2;color:#991b1b;border-radius:10px;padding:10px 12px}
 .slides .slide-narr{color:#64748b}
 .slides .tts-bar select,.slides .tts-bar .btn{border-radius:10px}
+
+/* Máy tính: khung slide rộng hơn, chữ lớn hơn, thẻ đủ cao để không co lại */
+@media (min-width:1024px){
+  .slides{max-width:1080px;padding:32px 40px 64px}
+  .slides-head h1{font-size:1.9rem}
+  .slides .slide-card{min-height:440px;padding:44px 52px;border-radius:20px}
+  .slides .slide-card h2{font-size:1.75rem;margin-bottom:18px}
+  .slides .slide-card p{font-size:1.15rem;line-height:1.8}
+  .slides .slide-card > p{max-width:72ch}
+  .slides .opt{padding:14px 18px;font-size:1.05rem}
+  .slides .slide-nav{margin-top:24px}
+  .slides .slide-nav .btn{min-width:120px;min-height:44px}
+}
+@media (min-width:1400px){
+  .slides{max-width:1200px}
+}
 </style>
 </head>
 <body>
