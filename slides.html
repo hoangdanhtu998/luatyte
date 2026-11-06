@@ -28,15 +28,37 @@
 .slide-nav .counter{color:var(--color-muted,#7A6D5E);font-size:14px}
 .slides .opt{width:100%}
 .tts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}.tts-bar select{font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper-2,#fff);color:var(--color-ink,#2B2118)}.tts-note{font-size:13px;color:var(--color-muted,#7A6D5E)}
+.slide-narr{font-size:13px;color:var(--color-muted,#7A6D5E);margin:0 0 10px;font-style:italic}
+/* slide-look */
+.slides .slide-kind{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--color-accent-soft,#f3ecdf);color:var(--color-accent-soft-ink,#5b4424);font-weight:700;font-size:12px;letter-spacing:.06em;margin:0 0 12px}
+.slides .progress{background:#e2e8f0;height:6px;border-radius:999px}
+.slides .progress > span{background:var(--color-accent,#8a6a3f);border-radius:999px}
+.slides .slide-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 1px 2px rgba(15,23,42,.06);padding:clamp(20px,4vw,34px);color:#0f172a}
+.slides .slide-card h2{color:#0f172a;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-weight:700;font-size:1.35rem;line-height:1.35}
+.slides .slide-card p{color:#334155}
+.slides .opt{border-radius:12px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;transition:border-color .15s,background .15s}
+.slides .opt:hover:not(:disabled){border-color:var(--color-accent,#8a6a3f);background:var(--color-paper-3,#f7f4ee)}
+.slides .opt .k{background:#f1f5f9;color:#0f172a;border-radius:8px;font-weight:700}
+.slides .btn:not(.ghost){border-radius:10px}
+
+.slides .btn.ghost{border-radius:10px}
+.slides .slide-nav .counter{color:#64748b}
+.slides .fill-sel,.slides .essay{border-radius:8px;border-color:#94a3b8;background:#fff;color:#0f172a}
+.slides .feedback.ok{background:#ecfdf5;color:#065f46;border-radius:10px;padding:10px 12px}
+.slides .feedback.no{background:#fef2f2;color:#991b1b;border-radius:10px;padding:10px 12px}
+.slides .slide-narr{color:#64748b}
+.slides .tts-bar select,.slides .tts-bar .btn{border-radius:10px}
 </style>
 </head>
 <body>
 <nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html">Luật Y tế</a><a href="hoc.html" style="font-weight:700">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html" aria-current="page" style="font-weight:700">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
+<div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
+
 <main class="slides">
   <p><a href="hoc.html">← Học</a></p>
   <div class="slides-head"><h1 id="lesson-title">Đang tải bài học…</h1></div>
   <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-  <div class="tts-bar" id="tts-bar"><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><span class="tts-note" id="tts-note"></span></div>
+  <div class="tts-bar" id="tts-bar"><label>Người giảng <select id="narrator-pick" aria-label="Chọn người giảng"></select></label><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><span class="tts-note" id="tts-note"></span></div>
 <div id="stage" aria-live="polite"></div>
   <div class="slide-nav">
     <button class="btn ghost" type="button" id="prev">← Trước</button>
@@ -46,7 +68,10 @@
   <p class="note" style="margin-top:14px">Mẹo: dùng phím mũi tên trái/phải để chuyển slide.</p>
 </main>
 <script src="js/theme.js"></script>
+<script src="js/slide-persona.js"></script>
+<script src="js/slide-art.js"></script>
 <script src="js/slides.js"></script>
 <script src="js/slides-tts.js"></script>
+<script id="narr-init">(function(){var sel=document.getElementById('narrator-pick');if(!sel||!window.SlidePersona)return;SlidePersona.list().forEach(function(p){var o=new Option(p.label,p.id);sel.appendChild(o);});sel.value=SlidePersona.get();sel.addEventListener('change',function(){SlidePersona.set(sel.value);location.reload();});})();</script>
 </body>
 </html>

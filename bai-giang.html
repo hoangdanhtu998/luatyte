@@ -55,11 +55,13 @@
   @media (prefers-reduced-motion:reduce){ .slide-enter{animation:none} }
 </style>
 </head>
-<body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
+<body data-chat-src="data/bai-giang.json" data-chat-id="bai-giang" data-chat-name="Bài giảng"><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
+<div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
+
 <main class="lec-wrap">
   <div class="lec-top">
     <a href="index.html">← Về sổ tay</a>
-    <a href="slides/">Bài giảng đầy đủ theo chương →</a>
+    <a href="ly_thuyet.html">Bài giảng đầy đủ theo chương →</a>
     <a href="clinic.html">Ca trực phòng khám →</a>
   </div>
 
@@ -201,5 +203,7 @@
 })();
 </script>
 <script src="js/theme.js"></script>
+<script src="js/faq-answer.js"></script>
+<script src="js/page-chat.js"></script>
 </body>
 </html>

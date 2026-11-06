@@ -9,6 +9,16 @@
   var counter = document.getElementById('counter');
   var titleEl = document.getElementById('lesson-title');
   var slides = [], idx = 0, score = { ok: 0, total: 0 }, answered = {};
+  var PROG_KEY = 'luatyte-slides-progress';
+  function allProg() { try { return JSON.parse(localStorage.getItem(PROG_KEY) || '{}'); } catch (e) { return {}; } }
+  function saveProg() {
+    try {
+      var all = allProg();
+      all[lesson] = { index: idx, score: score, answered: answered, updated: new Date().toISOString() };
+      localStorage.setItem(PROG_KEY, JSON.stringify(all));
+    } catch (e) {}
+  }
+  function clearProg() { try { var all = allProg(); delete all[lesson]; localStorage.setItem(PROG_KEY, JSON.stringify(all)); } catch (e) {} }
 
   if (!/^[a-z0-9-]+$/.test(lesson)) { stage.textContent = 'Bài học không hợp lệ.'; return; }
 
@@ -55,7 +65,7 @@
     if (done) {
       var ok = answered[i] === s.answer;
       fb.className = 'feedback qz-fb ' + (ok ? 'ok' : 'no');
-      fb.textContent = (ok ? 'Đúng. ' : 'Chưa đúng. Đáp án đúng là ' + letters[s.answer] + '. ') + (s.feedback || '');
+      fb.textContent = (ok ? (window.SlidePersona ? SlidePersona.line('praise') : 'Đúng.') + ' ' : (window.SlidePersona ? SlidePersona.line('retry') : 'Chưa đúng.') + ' Đáp án đúng là ' + letters[s.answer] + '. ') + (s.feedback || '');
       fb.style.display = '';
     }
     host.appendChild(fb);
@@ -105,7 +115,7 @@
       var correctNow = s.blanks.every(function (b, bi) { return answered[i][bi] === b.answer; });
       var names = s.blanks.map(function (b) { return b.options[b.answer]; });
       fb.className = 'feedback qz-fb ' + (correctNow ? 'ok' : 'no');
-      fb.textContent = (correctNow ? 'Đúng. ' : 'Chưa đúng. Đáp án: ') + names.join(' / ') + '.';
+      fb.textContent = (correctNow ? (window.SlidePersona ? SlidePersona.line('praise') : 'Đúng.') + ' ' : (window.SlidePersona ? SlidePersona.line('retry') : 'Chưa đúng.') + ' Đáp án: ') + names.join(' / ') + '.';
       fb.style.display = '';
     }
   }
@@ -140,12 +150,21 @@
     var s = slides[i];
     stage.innerHTML = '';
     var card = el('section', 'slide-card');
+    card.dataset.audio = s.audio || '';
+    if (window.SlidePersona) card.appendChild(el('p', 'slide-narr', SlidePersona.label() + ': ' + SlidePersona.intro()));
+    if (window.SlideArt && s.type === 'text') {
+      var key = window.SlideArt.forTitle(s.title);
+      var fig = el('figure', 'slide-art');
+      fig.innerHTML = window.SlideArt.svg(key);
+      card.appendChild(fig);
+    }
     if (s.type === 'text') renderText(s, card);
     else if (s.type === 'mcq') renderMcq(s, i, card);
     else if (s.type === 'fill') renderFill(s, i, card);
     else if (s.type === 'essay') renderEssay(s, i, card);
     stage.appendChild(card);
     idx = i;
+    saveProg();
     counter.textContent = (i + 1) + ' / ' + slides.length;
     bar.style.width = ((i + 1) / slides.length * 100) + '%';
     prev.disabled = i === 0;
@@ -165,7 +184,7 @@
     card.appendChild(el('p', null, 'Đúng ' + score.ok + '/' + score.total + ' câu có chấm điểm (' + pct + '%). Câu tự luận không tính điểm, bạn tự so với đáp án mẫu.'));
     var back = el('button', 'btn ghost', 'Xem lại từ đầu');
     back.type = 'button';
-    back.addEventListener('click', function () { showingResult = false; answered = {}; score = { ok: 0, total: 0 }; show(0); });
+    back.addEventListener('click', function () { showingResult = false; answered = {}; score = { ok: 0, total: 0 }; clearProg(); show(0); });
     card.appendChild(back);
     stage.appendChild(card);
     counter.textContent = 'Hết bài';
@@ -192,7 +211,15 @@
       titleEl.textContent = data.title || 'Bài học';
       document.title = (data.title || 'Bài học') + ' · Sổ tay Luật Y tế';
       if (!slides.length) { stage.textContent = 'Bài học chưa có nội dung.'; return; }
-      var start = Math.max(1, Math.min(slides.length, Number(params.get('s')) || 1)) - 1;
+      var prog = allProg()[lesson];
+      var start = 0;
+      if (params.get('s')) {
+        start = Math.max(1, Math.min(slides.length, Number(params.get('s')) || 1)) - 1;
+      } else if (prog && typeof prog.index === 'number') {
+        start = Math.min(slides.length - 1, prog.index);
+        answered = prog.answered || {};
+        score = prog.score || { ok: 0, total: 0 };
+      }
       show(start);
     })
     .catch(function () { stage.textContent = 'Không tải được bài học. Thử tải lại trang.'; });

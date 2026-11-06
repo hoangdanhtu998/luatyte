@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="lyt-design.css">
 </head>
-<body>
+<body data-lesson="dao-duc" data-chat-id="dao-duc" data-chat-name="Đạo đức">
 <nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="hoc.html">Học</a><a href="index.html">Luật Y tế</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html" aria-current="page" style="font-weight:700">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
+<div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
+
 <main class="triet">
 <p><a href="hoc.html">← Học</a></p>
 <h1>Đạo đức học và đạo đức nghề y</h1>
@@ -165,7 +167,11 @@
 <p id="qz-result" style="margin-top:var(--space-sm);font-weight:700" aria-live="polite"></p>
 
 </main>
+<script src="js/icons.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/lesson-frames.js"></script>
+<script src="js/faq-answer.js"></script>
+<script src="js/lesson-chat.js"></script>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('.qz-item'));
