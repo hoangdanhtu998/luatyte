@@ -13,8 +13,11 @@
       "Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.",
       "Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."
     ],
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025",
+    "verify_date": "2026-11-06",
+    "verify_source": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/36-byt.pdf",
+    "ghi_chu": "Đã đối chiếu PDF gốc (datafiles.chinhphu.vn/36-byt.pdf): Điều 1 khoản 1 và khoản 2, Điều 2 hiệu lực 11/09/2025. Kiểm chéo: luatvietnam.vn, hue.gov.vn. Chưa ghi điều chuyển tiếp Điều 3 (hồ sơ nộp trước 11/09/2025)."
   },
   {
     "id": "tt25_2026",
@@ -344,7 +347,8 @@
       "Có hiệu lực từ 16/07/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Điều 17 khoản 1: Etomidate và Carisoprodol có hiệu lực từ 01/06/2026 (kiểm 2 nguồn thứ cấp, chưa đọc PDF gốc)."
   },
   {
     "id": "tt_32_2026_duoc",
@@ -785,7 +789,8 @@
       "Thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, dùng qua app VssID — Điều 12."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "119/2025/NĐ-CP là nghị định sửa NĐ 06/2022 về giảm phát thải khí nhà kính, không phải BHYT (kiểm 2026-11-06). Cần gỡ hoặc thay bằng văn bản BHYT đúng."
   },
   {
     "id": "tt_06_2026_gia_dv_kcb",
@@ -836,6 +841,7 @@
       "Hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026 — Điều 35."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Không tìm thấy số hiệu 40/2025/QH15 khi kiểm 2026-11-06. Cần xác nhận hoặc gỡ."
   }
 ]
