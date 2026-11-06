@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Giai thừa bằng đệ quy",
+    "prompt": "Đọc số nguyên n (0 ≤ n ≤ 10). Tính n! bằng hàm đệ quy và in kết quả.",
+    "starter": "#include <stdio.h>\n\n// viết hàm đệ quy giai_thua ở đây\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    // in kết quả ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "5\n",
+        "expected": "120\n"
+      },
+      {
+        "stdin": "0\n",
+        "expected": "1\n"
+      },
+      {
+        "stdin": "10\n",
+        "expected": "3628800\n"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Xử lý lý do thoát",
+    "prompt": "Đọc số lượt thoát n, rồi n lý do. Mỗi lý do là `IO c` (in ký tự c) hoặc `HALT` (dừng). In các ký tự theo thứ tự, rồi xuống dòng.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\nIO H\nIO i\nHALT\n",
+        "expected": "Hi\n"
+      }
+    ]
+  }
+]

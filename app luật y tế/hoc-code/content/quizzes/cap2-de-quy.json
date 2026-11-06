@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Hàm đệ quy bắt buộc phải có gì?",
+      "options": [
+        {
+          "text": "Điều kiện dừng",
+          "why": "Đúng. Không có điều kiện dừng thì hàm gọi mãi."
+        },
+        {
+          "text": "Biến toàn cục",
+          "why": "Không bắt buộc."
+        },
+        {
+          "text": "Vòng for",
+          "why": "Đệ quy không cần vòng for."
+        },
+        {
+          "text": "Con trỏ",
+          "why": "Không bắt buộc con trỏ."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đệ quy cần một trường hợp cơ sở để dừng lại."
+    },
+    {
+      "q": "Giai thừa 5 (5!) bằng bao nhiêu?",
+      "options": [
+        {
+          "text": "120",
+          "why": "Đúng. 5 × 4 × 3 × 2 × 1 = 120."
+        },
+        {
+          "text": "25",
+          "why": "25 là 5 bình phương."
+        },
+        {
+          "text": "60",
+          "why": "60 không phải giai thừa của 5."
+        },
+        {
+          "text": "5",
+          "why": "5 chỉ là số đầu tiên."
+        }
+      ],
+      "answer": 0,
+      "explain": "n! = n × (n−1)!, với 0! = 1."
+    },
+    {
+      "q": "Thiếu điều kiện dừng trong hàm đệ quy thì sao?",
+      "options": [
+        {
+          "text": "Tràn ngăn xếp (stack overflow) và chương trình dừng lỗi",
+          "why": "Đúng. Mỗi lần gọi thêm một khung trên stack, cuối cùng hết chỗ."
+        },
+        {
+          "text": "Hàm tự kết thúc sau một lần",
+          "why": "Không tự dừng."
+        },
+        {
+          "text": "Kết quả luôn đúng",
+          "why": "Không có điều kiện dừng thì không có kết quả."
+        },
+        {
+          "text": "Trình biên dịch sửa lại",
+          "why": "Trình biên dịch không tự thêm điều kiện dừng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mỗi lần gọi đệ quy dùng thêm bộ nhớ stack."
+    },
+    {
+      "q": "Với fib(0)=0, fib(1)=1, fib(5) bằng bao nhiêu?",
+      "options": [
+        {
+          "text": "5",
+          "why": "Đúng. Dãy 0, 1, 1, 2, 3, 5 nên fib(5) = 5."
+        },
+        {
+          "text": "8",
+          "why": "8 là fib(6)."
+        },
+        {
+          "text": "3",
+          "why": "3 là fib(4)."
+        },
+        {
+          "text": "4",
+          "why": "Không khớp dãy Fibonacci."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đếm từ fib(0) = 0 để không lệch chỉ số."
+    },
+    {
+      "q": "So với vòng lặp, đệ quy có nhược điểm gì thường gặp?",
+      "options": [
+        {
+          "text": "Tốn nhiều bộ nhớ stack hơn khi đi sâu",
+          "why": "Đúng. Mỗi lời gọi giữ một khung trên stack."
+        },
+        {
+          "text": "Không chạy được trên máy tính",
+          "why": "Đệ quy chạy được."
+        },
+        {
+          "text": "Luôn chậm hơn gấp trăm lần",
+          "why": "Không luôn luôn như vậy, tùy bài toán."
+        },
+        {
+          "text": "Không thể dùng với mảng",
+          "why": "Đệ quy dùng được với mảng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đệ quy đẹp và gọn, nhưng đi sâu quá có thể tốn bộ nhớ."
+    },
+    {
+      "q": "Đặc điểm của một lời gọi đệ quy đúng là gì?",
+      "options": [
+        {
+          "text": "Gọi lại chính hàm đó với đối số nhỏ hơn dần về điều kiện dừng",
+          "why": "Đúng. Mỗi bước tiến gần đến trường hợp cơ sở."
+        },
+        {
+          "text": "Gọi lại với đối số lớn hơn mãi",
+          "why": "Sẽ không bao giờ dừng."
+        },
+        {
+          "text": "Không gọi hàm nào",
+          "why": "Đó không phải đệ quy."
+        },
+        {
+          "text": "Gọi một hàm khác có tên giống",
+          "why": "Đệ quy là gọi chính nó."
+        }
+      ],
+      "answer": 0,
+      "explain": "Bài toán lớn được chia thành bài toán nhỏ hơn cùng dạng."
+    }
+  ]
+}

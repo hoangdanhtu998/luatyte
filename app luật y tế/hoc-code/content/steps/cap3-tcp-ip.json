@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Mỗi gói tin mạng có một phần đầu gọi là tiêu đề. Trong tiêu đề có một số kiểm tra gọi là checksum, để phát hiện gói bị lỗi khi truyền.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bước 1: đặt ô checksum bằng 0. Sau đó cộng tất cả các số 16 bit trong tiêu đề.", "boxes": ["tổng"], "code": "cộng các số 16 bit", "run": { "tổng": "cộng xong, còn nhớ" }, "after": "Tổng vẫn còn phần nhớ (carry) ở bit cao." },
+    { "img": "m03-meo-vui.png", "say": "Bước 2: gấp phần nhớ về phía thấp, cộng lại cho đến khi chỉ còn 16 bit. Bước 3: lấy bù một, tức là đảo tất cả các bit.", "boxes": ["tổng"], "code": "gấp nhớ, rồi lấy bù một", "run": { "tổng": "checksum = B861" }, "after": "Với tiêu đề mẫu trong bài, checksum là B861." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: nếu quên đặt ô checksum bằng 0 trước khi tính, điều gì xảy ra?", "boxes": ["tổng"], "code": "tính checksum", "quiz": [
+        { "text": "Kết quả sai, vì ô checksum cũ được tính vào", "right": true, "hint": "Đúng! Phải đặt 0 trước, để kết quả tính đúng cho cùng một tiêu đề." },
+        { "text": "Kết quả vẫn đúng", "right": false, "hint": "Ô checksum cũ có giá trị khác 0 sẽ làm tổng bị sai." },
+        { "text": "Máy tự sửa lỗi này", "right": false, "hint": "Máy không tự sửa. Người viết code phải đặt 0 trước." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: checksum là phép cộng 16 bit, gấp nhớ, rồi lấy bù một. Người nhận làm lại phép tính để biết gói có bị lỗi không.", "boxes": ["tổng"], "end": true }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Ghi rồi đọc lại file",
+    "prompt": "Đọc số n. Ghi các số 1 đến n, mỗi số một dòng, vào file `so.txt`. Sau đó mở lại file và in số dòng đã ghi.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "5\n",
+        "expected": "5\n"
+      }
+    ]
+  }
+]

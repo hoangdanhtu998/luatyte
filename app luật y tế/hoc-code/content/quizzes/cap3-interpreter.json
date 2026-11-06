@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Interpreter khác compiler ở điểm nào?",
+      "options": [
+        {
+          "text": "Interpreter đọc và chạy code ngay, không tạo file máy riêng",
+          "why": "Đúng. Compiler sinh ra file chạy riêng, interpreter thực thi trực tiếp."
+        },
+        {
+          "text": "Interpreter chỉ dùng cho C",
+          "why": "Interpreter có cho nhiều ngôn ngữ."
+        },
+        {
+          "text": "Compiler không đọc code",
+          "why": "Compiler cũng đọc và phân tích code."
+        },
+        {
+          "text": "Không có khác biệt",
+          "why": "Có khác biệt về cách thực thi."
+        }
+      ],
+      "answer": 0,
+      "explain": "Interpreter thực thi trực tiếp, compiler sinh mã trước."
+    },
+    {
+      "q": "Bước đầu tiên của interpreter làm gì?",
+      "options": [
+        {
+          "text": "Chia văn bản thành các token (số, toán tử)",
+          "why": "Đúng. Lexer nhận diện từng phần tử."
+        },
+        {
+          "text": "Chạy chương trình ngay",
+          "why": "Phải phân tích trước khi chạy."
+        },
+        {
+          "text": "Xóa khoảng trắng và bỏ qua",
+          "why": "Bỏ khoảng trắng là một phần của lexer, nhưng không phải toàn bộ."
+        },
+        {
+          "text": "In kết quả",
+          "why": "Kết quả đến cuối cùng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Lexer biến văn bản thành token."
+    },
+    {
+      "q": "Vì sao cần phân biệt độ ưu tiên của `*` và `+`?",
+      "options": [
+        {
+          "text": "Vì 2 + 3 * 4 phải tính 3 * 4 trước",
+          "why": "Đúng. Parser phải áp dụng đúng thứ tự toán học."
+        },
+        {
+          "text": "Vì * luôn chạy trước mọi thứ",
+          "why": "Không phải luôn."
+        },
+        {
+          "text": "Vì + không có ý nghĩa",
+          "why": "+ có ý nghĩa."
+        },
+        {
+          "text": "Không cần phân biệt",
+          "why": "Cần để kết quả đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Thứ tự phép tính quyết định kết quả."
+    },
+    {
+      "q": "Parser đệ quy xử lý dấu ngoặc đơn như thế nào?",
+      "options": [
+        {
+          "text": "Gọi lại hàm phân tích cho phần trong ngoặc",
+          "why": "Đúng. Biểu thức lồng nhau được xử lý bằng đệ quy."
+        },
+        {
+          "text": "Bỏ qua phần trong ngoặc",
+          "why": "Phần trong ngoặc vẫn được tính."
+        },
+        {
+          "text": "Coi ngoặc là số",
+          "why": "Ngoặc không phải số."
+        },
+        {
+          "text": "Báo lỗi luôn",
+          "why": "Ngoặc hợp lệ thì được xử lý."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đệ quy giúp xử lý biểu thức lồng nhau."
+    }
+  ]
+}

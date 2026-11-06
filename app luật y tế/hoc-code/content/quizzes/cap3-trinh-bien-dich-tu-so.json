@@ -1,0 +1,50 @@
+{
+  "quizzes": [
+    {
+      "q": "`ret` trong assembly làm gì?",
+      "options": [
+        {
+          "text": "Trả về từ hàm",
+          "why": "Đúng."
+        },
+        {
+          "text": "Nhân hai số",
+          "why": "Không."
+        },
+        {
+          "text": "Xóa thanh ghi",
+          "why": "Không."
+        },
+        {
+          "text": "Đọc file",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "ret kết thúc hàm."
+    },
+    {
+      "q": "Thanh ghi `%eax` thường dùng để chứa gì?",
+      "options": [
+        {
+          "text": "Giá trị trả về của hàm",
+          "why": "Đúng theo quy ước x86."
+        },
+        {
+          "text": "Địa chỉ màn hình",
+          "why": "Không."
+        },
+        {
+          "text": "Số ngắt",
+          "why": "Không."
+        },
+        {
+          "text": "Tên file",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "eax thường chứa kết quả trả về."
+    }
+  ]
+}

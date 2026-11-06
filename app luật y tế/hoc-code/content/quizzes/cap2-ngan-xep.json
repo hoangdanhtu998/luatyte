@@ -1,0 +1,119 @@
+{
+  "quizzes": [
+    {
+      "q": "Ngăn xếp hoạt động theo nguyên tắc nào?",
+      "options": [
+        {
+          "text": "Vào sau, ra trước (LIFO)",
+          "why": "Đúng. Phần tử đẩy vào cuối cùng được lấy ra đầu tiên."
+        },
+        {
+          "text": "Vào trước, ra trước (FIFO)",
+          "why": "Đó là hàng đợi."
+        },
+        {
+          "text": "Ngẫu nhiên",
+          "why": "Ngăn xếp có thứ tự rõ ràng."
+        },
+        {
+          "text": "Sắp xếp theo giá trị",
+          "why": "Ngăn xếp không sắp xếp."
+        }
+      ],
+      "answer": 0,
+      "explain": "LIFO: chồng đĩa, lấy cái trên cùng trước."
+    },
+    {
+      "q": "Thao tác `pop` làm gì?",
+      "options": [
+        {
+          "text": "Lấy phần tử trên cùng ra khỏi ngăn xếp",
+          "why": "Đúng. pop lấy và bỏ phần tử trên đỉnh."
+        },
+        {
+          "text": "Thêm phần tử vào đáy",
+          "why": "Thêm vào là push, và không thêm vào đáy."
+        },
+        {
+          "text": "Sắp xếp ngăn xếp",
+          "why": "pop không sắp xếp."
+        },
+        {
+          "text": "Đếm số phần tử",
+          "why": "Đếm không phải pop."
+        }
+      ],
+      "answer": 0,
+      "explain": "push thêm vào đỉnh, pop lấy từ đỉnh."
+    },
+    {
+      "q": "Vì sao phải kiểm tra rỗng trước khi pop?",
+      "options": [
+        {
+          "text": "Để tránh đọc phần tử không tồn tại ngoài mảng",
+          "why": "Đúng. Pop khi rỗng là lỗi truy cập."
+        },
+        {
+          "text": "Để ngăn xếp chạy nhanh hơn",
+          "why": "Không liên quan tốc độ."
+        },
+        {
+          "text": "Vì pop luôn trả về 0",
+          "why": "Không đúng."
+        },
+        {
+          "text": "Vì C bắt buộc",
+          "why": "Đây là thói quen cần thiết, không phải bắt buộc của C."
+        }
+      ],
+      "answer": 0,
+      "explain": "Pop khi rỗng đọc ra ngoài mảng."
+    },
+    {
+      "q": "Ứng dụng nào dùng ngăn xếp?",
+      "options": [
+        {
+          "text": "Lời gọi hàm và kiểm tra ngoặc đúng",
+          "why": "Đúng. Các lời gọi lồng nhau cần đúng thứ tự quay về."
+        },
+        {
+          "text": "Xếp hàng mua vé",
+          "why": "Đó là hàng đợi."
+        },
+        {
+          "text": "Lưu ảnh trên mạng",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Tính tổng một mảng",
+          "why": "Không cần ngăn xếp."
+        }
+      ],
+      "answer": 0,
+      "explain": "Lời gọi hàm lồng nhau là ví dụ điển hình."
+    },
+    {
+      "q": "Khi ngăn xếp đầy mà còn push, điều gì xảy ra với cài đặt bằng mảng?",
+      "options": [
+        {
+          "text": "Ghi ra ngoài mảng, gây lỗi",
+          "why": "Đúng. Phải kiểm tra top < MAX trước khi push."
+        },
+        {
+          "text": "Mảng tự mở rộng",
+          "why": "Mảng cố định không tự mở rộng."
+        },
+        {
+          "text": "Phần tử cũ bị xóa tự động",
+          "why": "Không tự xóa."
+        },
+        {
+          "text": "Không có gì xảy ra",
+          "why": "Ghi ra ngoài mảng là lỗi."
+        }
+      ],
+      "answer": 0,
+      "explain": "Kiểm tra giới hạn trước khi push."
+    }
+  ]
+}

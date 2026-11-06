@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Trình biên dịch dịch mã nguồn thành assembly, là dạng gần với lệnh của CPU. Bài này làm một việc đơn giản: hàm trả về một số.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Hàm trả về 42. Lệnh đầu tiên đưa số 42 vào thanh ghi eax, là chỗ CPU để giá trị trả về.", "boxes": ["eax"], "code": "mov $42, %eax", "run": { "eax": 42 }, "after": "eax giờ là 42." },
+    { "img": "m03-meo-vui.png", "say": "Lệnh ret kết thúc hàm và trả quyền điều khiển về nơi đã gọi hàm.", "boxes": ["eax"], "code": "ret", "after": "Hàm kết thúc, kết quả 42 nằm trong eax." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: hàm trả về 7 thì lệnh mov sẽ là gì?", "boxes": ["eax"], "code": "mov ? , %eax", "quiz": [
+        { "text": "mov $7, %eax", "right": true, "hint": "Đúng! Giống bài 42, chỉ thay số 42 bằng 7." },
+        { "text": "mov $42, %eax", "right": false, "hint": "42 là số của ví dụ, không phải số trả về của hàm này." },
+        { "text": "mov %eax, $7", "right": false, "hint": "Chiều đưa giá trị vào thanh ghi là từ số sang eax, không ngược lại." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: với một số trả về, trình biên dịch sinh lệnh đưa số vào eax, rồi ret. Các trình biên dịch thật làm nhiều việc hơn, nhưng ý tưởng vẫn vậy.", "boxes": ["eax"], "end": true }
+  ]
+}

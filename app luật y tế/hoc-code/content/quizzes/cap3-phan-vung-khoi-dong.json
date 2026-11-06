@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Byte trạng thái `0x80` trong bảng phân vùng nghĩa là gì?",
+      "options": [
+        {
+          "text": "Phân vùng có thể khởi động",
+          "why": "Đúng. Đây là cờ boot."
+        },
+        {
+          "text": "Phân vùng bị lỗi",
+          "why": "Không phải cờ lỗi."
+        },
+        {
+          "text": "Phân vùng trống",
+          "why": "Trống dùng 0x00."
+        },
+        {
+          "text": "Phân vùng mã hóa",
+          "why": "Không phải cờ này."
+        }
+      ],
+      "answer": 0,
+      "explain": "0x80 là cờ khởi động."
+    },
+    {
+      "q": "MBR của ổ đĩa dài bao nhiêu byte?",
+      "options": [
+        {
+          "text": "512 byte",
+          "why": "Đúng. Đây là kích thước sector truyền thống."
+        },
+        {
+          "text": "64 byte",
+          "why": "Quá ngắn."
+        },
+        {
+          "text": "4096 byte",
+          "why": "Đó là kích thước sector hiện đại, không phải MBR cổ điển."
+        },
+        {
+          "text": "1 MB",
+          "why": "Quá lớn."
+        }
+      ],
+      "answer": 0,
+      "explain": "MBR là sector 512 byte đầu tiên."
+    },
+    {
+      "q": "Bảng phân vùng MBR có tối đa bao nhiêu mục chính?",
+      "options": [
+        {
+          "text": "4 mục",
+          "why": "Đúng. Mỗi mục 16 byte."
+        },
+        {
+          "text": "8 mục",
+          "why": "Không đúng với MBR."
+        },
+        {
+          "text": "1 mục",
+          "why": "Có nhiều hơn một."
+        },
+        {
+          "text": "16 mục",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "MBR có bốn mục phân vùng chính."
+    }
+  ]
+}

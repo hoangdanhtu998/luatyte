@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Con trỏ hàm là hộp chứa địa chỉ của một hàm. Nhờ đó có thể gọi hàm qua tên hộp, và đổi được hàm nào được gọi.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Đây là một hàm nhân đôi số: nhận v, trả về 2 nhân v. Hộp pf là con trỏ hàm, ban đầu chưa trỏ đi đâu.", "boxes": ["pf"], "code": "int dbl(int v) { return 2 * v; }", "after": "Hàm dbl đã có sẵn. pf chưa trỏ tới đâu." },
+    { "img": "m03-meo-vui.png", "say": "Cho pf trỏ tới hàm dbl. Bây giờ pf là một cách gọi khác của dbl.", "boxes": ["pf"], "code": "pf = dbl;", "run": { "pf": "trỏ tới dbl" }, "after": "pf giờ trỏ tới dbl." },
+    { "img": "m03-meo-vui.png", "say": "Gọi pf với số 5. Vì pf là dbl, kết quả là 2 nhân 5.", "boxes": ["pf", "kết quả"], "code": "pf(5)", "run": { "kết quả": 10 }, "after": "Kết quả là 10." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: pf(5) cho kết quả là mấy?", "boxes": ["pf", "kết quả"], "code": "pf(5)", "quiz": [
+        { "text": "10", "right": true, "hint": "Đúng! pf trỏ tới dbl, nên tính 2 nhân 5 bằng 10." },
+        { "text": "5", "right": false, "hint": "5 là số truyền vào, không phải kết quả. Hàm đã nhân đôi nó." },
+        { "text": "25", "right": false, "hint": "25 là bình phương, không phải nhân đôi. Hàm này chỉ nhân 2." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: con trỏ hàm chứa địa chỉ của hàm, dùng để gọi hàm qua biến. Ví dụ hay gặp là truyền hàm vào hàm khác.", "boxes": ["pf", "kết quả"], "end": true }
+  ]
+}
