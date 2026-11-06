@@ -618,3 +618,11 @@ button, a, [role="tab"], summary { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ===== Ba giao diện chọn được: paper (biên tập sáng), ink (tối sắc), warm (ấm dịu) ===== */
+:root[data-theme="paper"] { color-scheme: light; --color-paper: #F7F3EA; --color-paper-2: #FFFDF8; --color-paper-3: #EFE9DC; --color-ink: #1F1A14; --color-ink-2: #3D342A; --color-muted: #6F6356; --color-rule: #D9CFBE; --color-rule-2: #ECE5D6; --color-accent: #1F1A14; --color-accent-ink: #FFFDF8; --color-accent-soft: #EFE9DC; --color-accent-soft-ink: #1F1A14; --color-focus: #8A5A2B; --radius-card: 4px; --shadow-card: none; }
+:root[data-theme="ink"] { color-scheme: dark; --color-paper: #0E0E0C; --color-paper-2: #171714; --color-paper-3: #22221E; --color-ink: #F2EFE8; --color-ink-2: #D6D1C4; --color-muted: #9A9486; --color-rule: #34332D; --color-rule-2: #262520; --color-accent: #E8E2D0; --color-accent-ink: #0E0E0C; --color-accent-soft: #2A2A24; --color-accent-soft-ink: #F2EFE8; --color-focus: #E8E2D0; --radius-card: 4px; --shadow-card: none; }
+:root[data-theme="warm"] { color-scheme: light; --color-paper: #FBF7F0; --color-paper-2: #FFFFFF; --color-paper-3: #F3EDE2; --color-ink: #2B2118; --color-ink-2: #4A3F33; --color-muted: #7A6D5E; --color-rule: #DCD2C2; --color-rule-2: #EFE8DC; --color-accent: #3F6B4E; --color-accent-ink: #FFFFFF; --color-accent-soft: #E4EDE6; --color-accent-soft-ink: #23402E; --color-focus: #3F6B4E; }
+.theme-row { display: flex; justify-content: flex-end; margin: 0 0 var(--space-sm); }
+.theme-row label { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: var(--text-sm); color: var(--color-muted); }
+.theme-row select { min-height: 44px; padding: 0 var(--space-sm); border: 1px solid var(--color-rule); border-radius: 8px; background: var(--color-paper-2); color: var(--color-ink); font: inherit; }
