@@ -45,3 +45,35 @@ body{padding-bottom:88px}
   .stat span{font-size:12px}
   .today .btn{width:100%}
 }
+
+/* ---- Chuyển động: tiết chế, một nhịp vào trang, không hiệu ứng trang trí ---- */
+@keyframes lyt-rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes lyt-rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.hero > *{animation:lyt-rise .55s cubic-bezier(.2,.7,.2,1) both}
+.hero > .theme-row{animation-delay:0ms}
+.hero > .hero-top{animation-delay:60ms}
+.hero > .stats{animation-delay:140ms;transform-origin:left}
+.hero > .today{animation-delay:200ms}
+.hero > .remind{animation-delay:260ms}
+.hero > .achv-row{animation-delay:320ms}
+.hero > .hub-link{animation-delay:380ms}
+
+/* Vạch kẻ dưới chỉ số chạy ngang một lần khi vào trang */
+.stats{position:relative}
+.stats::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--color-ink,#2B2118);transform-origin:left;animation:lyt-rule .9s .15s cubic-bezier(.6,0,.2,1) both}
+
+/* Số liệu: đếm nhẹ bằng độ mờ, không nhảy */
+.stat b{transition:opacity .25s ease}
+
+/* Liên kết và nút: gạch chân trượt thay cho đổ bóng hay nâng lên */
+.hub-link .btn,.today .btn,.remind .btn{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.hub-link .btn:hover,.today .btn:hover,.remind .btn:hover{filter:brightness(.97)}
+.hero a:not(.btn){background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease}
+.hero a:not(.btn):hover{background-size:100% 1px}
+
+/* Tôn trọng người dùng bật "giảm chuyển động" */
+@media (prefers-reduced-motion:reduce){
+  .hero > *,.stats::after{animation:none!important}
+  *{transition:none!important}
+}
