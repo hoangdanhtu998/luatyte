@@ -323,7 +323,7 @@
     "pass": "01/07/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Quy định đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền, dược liệu.",
+    "replaces": "Chưa xác nhận văn bản bị thay thế (Điều 38 khoản 2 không kiểm được qua nguồn tìm thấy). Cần đọc văn bản gốc.",
     "points": [
       "Quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
       "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp giấy đăng ký lưu hành.",
@@ -382,7 +382,8 @@
       "Ban hành 31/12/2025; có hiệu lực từ 27/02/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: ban hành 31/12/2025, hiệu lực 27/02/2026, ký Nguyễn Tri Thức (vanban.chinhphu.vn docid 216447; thuvienphapluat). Một nguồn ghi 01/03/2026 — không dùng."
   },
   {
     "id": "phongbenh",
@@ -492,7 +493,8 @@
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611",
+    "ghi_chu": "Kiểm 2026-11-06: Luật 71/2020/QH14 bãi bỏ Điều 42 và Điều 44 của Luật 64/2006 (khoản 16 Điều 1; VBHN 33/VBHN-VPQH, vanban.chinhphu.vn docid 202612; thuvienphapluat, luatvietnam). Cần bổ sung vào points."
   },
   {
     "id": "ghepmo",
@@ -547,7 +549,7 @@
     ],
     "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=982021"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=204442"
   },
   {
     "id": "nd_188_2025_bhyt",
