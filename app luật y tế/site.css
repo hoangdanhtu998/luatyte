@@ -14,8 +14,8 @@
     --color-paper: #0B1220; --color-paper-2: #111B2E; --color-paper-3: #1E293B;
     --color-ink: #E2E8F0; --color-ink-2: #CBD5E1; --color-muted: #94A3B8;
     --color-rule: #334155; --color-rule-2: #1E293B;
-    --color-accent: #93C5FD; --color-accent-ink: #0B1220; --color-accent-soft: #1E3A8A; --color-accent-soft-ink: #DBEAFE;
-    --color-focus: #93C5FD;
+    --color-accent: #9CC5A8; --color-accent-ink: #1C1915; --color-accent-soft: #2F4A38; --color-accent-soft-ink: #DCEFE2;
+    --color-focus: #9CC5A8;
     --color-focus: oklch(80% 0.12 172); --color-field: oklch(66% 0.03 210);
     --color-error: oklch(72% 0.14 27); --color-error-soft: oklch(28% 0.05 27); --color-error-ink: oklch(88% 0.06 27);
     --shadow-card: 0 20px 40px oklch(12% 0.03 215 / 0.55);
@@ -495,11 +495,11 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
 .shop button:disabled { opacity: .45; cursor: not-allowed; }
 
 /* ===== Màu nhấn, khung câu hỏi, tính năng mới (clinic) ===== */
-:root { --c-gold: oklch(60% 0.14 78); --c-green: oklch(52% 0.13 155); --c-blue: oklch(52% 0.14 250); --c-violet: oklch(52% 0.16 295); --c-orange: oklch(60% 0.16 48); --c-rose: oklch(56% 0.17 10); }
+:root { --c-gold: oklch(60% 0.14 78); --c-green: oklch(52% 0.13 155); --c-blue: oklch(50% 0.04 60); --c-violet: oklch(52% 0.16 295); --c-orange: oklch(60% 0.16 48); --c-rose: oklch(56% 0.17 10); }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --c-gold: oklch(82% 0.13 85); --c-green: oklch(80% 0.14 155); --c-blue: oklch(78% 0.12 245); --c-violet: oklch(78% 0.13 295); --c-orange: oklch(80% 0.14 55); --c-rose: oklch(78% 0.13 10); }
+  :root:not([data-theme="light"]) { --c-gold: oklch(82% 0.13 85); --c-green: oklch(80% 0.14 155); --c-blue: oklch(78% 0.04 60); --c-violet: oklch(78% 0.13 295); --c-orange: oklch(80% 0.14 55); --c-rose: oklch(78% 0.13 10); }
 }
-:root[data-theme="dark"] { --c-gold: oklch(82% 0.13 85); --c-green: oklch(80% 0.14 155); --c-blue: oklch(78% 0.12 245); --c-violet: oklch(78% 0.13 295); --c-orange: oklch(80% 0.14 55); --c-rose: oklch(78% 0.13 10); }
+:root[data-theme="dark"] { --c-gold: oklch(82% 0.13 85); --c-green: oklch(80% 0.14 155); --c-blue: oklch(78% 0.04 60); --c-violet: oklch(78% 0.13 295); --c-orange: oklch(80% 0.14 55); --c-rose: oklch(78% 0.13 10); }
 .f-gold b { color: var(--c-gold); } .f-inc b { color: var(--c-green); } .f-rep b { color: var(--c-blue); } .f-lvl b { color: var(--c-violet); } .f-streak b { color: var(--c-orange); }
 .save-ind { color: var(--color-muted); font-size: var(--text-xs); }
 .btn:not(.ghost):not(:disabled) { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
