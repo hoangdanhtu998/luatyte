@@ -207,6 +207,14 @@ nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
 .feedback.no { background: var(--color-error-soft); color: var(--color-error-ink); }
 .feedback .hd { font-weight: 700; }
 .feedback p { font-size: var(--text-sm); }
+/* Khung trắc nghiệm: số câu, số đúng, thanh tiến độ và phản hồi */
+#quiz .gtop { margin-bottom: var(--space-sm); }
+#quiz .stat-row { font-size: var(--text-sm); color: var(--color-ink-2); }
+#quiz .stat-row b { font-size: var(--text-md); color: var(--color-ink); }
+#quiz .segs { gap: var(--space-3xs); margin-bottom: var(--space-md); }
+#quiz .segs i { height: 8px; }
+#qfb .feedback { margin-top: var(--space-md); }
+#qfb .feedback .hd { font-size: var(--text-lg); }
 
 /* ===== Đúng hay Sai ===== */
 .tf-timer { height: 6px; border-radius: var(--radius-pill); background: var(--color-paper-3); overflow: hidden; margin-bottom: var(--space-md); }
