@@ -446,3 +446,8 @@ main.triet .qz-fb .hd{font-weight:800;margin-bottom:2px}
 :root[data-theme="ink"] main.triet .qz-item{background:#1B1B17;border-color:#44433B}
 :root[data-theme="ink"] main.triet .opt{background:#22221E;color:#ECE8DE;border-color:#44433B}
 :root[data-theme="mono"] main.triet .qz-item{background:#fff;border-color:#e2e2e2}
+
+/* ---- Icon đường nét ---- */
+.lx-ico{width:22px;height:22px;flex:0 0 auto;color:var(--color-accent,#8a6a3f);vertical-align:-4px;margin-right:10px;display:inline-block}
+main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
+.hub-card .lx-ico{width:26px;height:26px;margin-bottom:4px;display:block;color:var(--color-ink,#1c1917)}
