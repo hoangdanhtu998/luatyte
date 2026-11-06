@@ -316,3 +316,13 @@ main.triet .lesson-frame > p:has(> strong:first-child){margin-left:0;margin-righ
 /* Khung phần bài học rõ hơn trên nền trắng-be: nền be nhạt, viền ấm, vạch màu trên đầu */
 :root[data-theme="trang-be"] main.triet .lesson-frame{background:#faf6ee;border:1px solid #e2d8c4;border-top:3px solid #8a6a3f;box-shadow:0 2px 10px rgba(92,70,30,.08)}
 :root[data-theme="trang-be"] main.triet .lesson-frame > p:has(> strong:first-child){background:#ffffff;border-color:#e6dccb}
+
+/* Màn hình rộng: mục lục cố định bên trái để nhảy phần, nội dung bên phải; điện thoại giữ một cột */
+@media (min-width:1100px){
+  main.triet{max-width:1240px;display:grid;grid-template-columns:260px minmax(0,1fr);column-gap:56px;align-items:start;padding:48px 40px 96px}
+  main.triet > *{grid-column:2;min-width:0}
+  main.triet > nav.toc{grid-column:1;grid-row:1 / span 60;position:sticky;top:24px;max-height:calc(100vh - 48px);overflow:auto;margin:0;padding:16px 16px;align-self:start}
+  main.triet nav.toc > strong{font-size:1rem}
+  main.triet nav.toc > ol{grid-template-columns:1fr;gap:6px}
+  main.triet nav.toc > ol > li{padding:7px 10px;font-size:15px}
+}
