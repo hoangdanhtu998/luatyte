@@ -590,21 +590,27 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
 .role-card { display: grid; gap: var(--space-sm); }
 .role-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-sm); flex-wrap: wrap; }
 .role-picker { display: grid; grid-template-columns: 1fr; gap: var(--space-xs); }
-.role-btn { min-height: 48px; padding: 10px 12px; text-align: left; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper); color: var(--color-ink); font: inherit; cursor: pointer; }
+.role-btn { min-height: 48px; padding: var(--space-sm); text-align: left; border: 1px solid var(--color-rule); border-radius: 12px; background: var(--color-paper); color: var(--color-ink); font: inherit; cursor: pointer; }
 .role-btn:hover { border-color: var(--color-ink); }
 .role-btn[aria-pressed="true"] { border-color: var(--color-accent); background: var(--color-accent-soft); }
-.role-btn b { display: block; font-size: 14px; }
-.role-btn span { display: block; margin-top: 3px; color: var(--color-muted); font-size: 12px; line-height: 1.4; }
+.role-btn b { display: block; font-size: var(--text-sm); }
+.role-btn span { display: block; margin-top: var(--space-3xs); color: var(--color-muted); font-size: var(--text-xs); line-height: 1.4; }
 .role-summary { display: flex; justify-content: space-between; gap: var(--space-sm); align-items: baseline; flex-wrap: wrap; }
-.role-ch { padding: 12px 0; border-top: 1px solid var(--color-rule); }
+.role-ch { padding: var(--space-sm) 0; border-top: 1px solid var(--color-rule); }
 .role-ch:first-child { border-top: 0; padding-top: 0; }
 .role-ch-head { display: flex; justify-content: space-between; gap: var(--space-sm); align-items: baseline; }
-.role-ch-head b { font-size: 14px; }
-.role-ch .prog-bar { margin-top: 8px; }
-.role-ch-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.role-ch-head b { font-size: var(--text-sm); }
+.role-ch .prog-bar { margin-top: var(--space-xs); }
+.role-ch-actions { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-top: var(--space-xs); }
 .role-ch-actions .btn, .role-ch-actions a.btn { min-height: 44px; }
-.role-empty { margin: 6px 0 0; color: var(--color-muted); font-size: 13px; }
+.role-empty { margin: var(--space-2xs) 0 0; color: var(--color-muted); font-size: var(--text-sm); }
 @media (min-width: 620px) { .role-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ===== Trang chủ: khoảng cách và tiêu đề phần thống nhất, bỏ khung lồng nhau ===== */
+.today, .remind { margin-top: var(--space-md); }
+#tiendo, #analysis, #lotrinh-root, #ex-history { display: grid; gap: var(--space-md); }
+.card > .label:first-child { display: block; font-size: var(--text-md); font-weight: 700; color: var(--color-ink); letter-spacing: -0.01em; padding-bottom: var(--space-xs); margin-bottom: var(--space-sm); border-bottom: 1px solid var(--color-rule); }
+.card .card { background: none; border: 0; border-radius: 0; padding: 0; }
 
 /* ===== Tinh chỉnh redesign: trạng thái focus rõ cho bàn phím, giảm chuyển động ===== */
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; border-radius: 6px; }
