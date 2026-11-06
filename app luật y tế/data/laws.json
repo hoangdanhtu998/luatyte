@@ -41,7 +41,7 @@
     "pass": "30/06/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Đã đối chiếu văn bản gốc (Điều 13 khoản 2 Thông tư 26/2025 và các phụ lục liên quan).",
+    "replaces": "Thay thế Thông tư 52/2017/TT-BYT (hết hiệu lực từ 01/07/2025, Điều 13 khoản 2 Thông tư 26/2025).",
     "points": [
       "Chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề được kê đơn; người kê đơn chịu trách nhiệm về nội dung đơn.",
       "Đơn phải ghi tên thuốc, nồng độ, hàm lượng, liều dùng, đường dùng và số ngày dùng; trẻ dưới 72 tháng ghi tuổi theo tháng và cân nặng.",
@@ -77,7 +77,7 @@
     "pass": "17/10/2024",
     "eff": "17/10/2024",
     "status": "amend",
-    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
+    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Chưa xác nhận sửa đổi bởi Thông tư 39/2024/TT-BYT (TT 39/2024 sửa Thông tư 35/2016).",
     "points": [
       "Quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh.",
       "Từ 01/01/2025, Thông tư 21/2023 và 22/2023 về giá dịch vụ khám bệnh, chữa bệnh hết hiệu lực.",
@@ -171,7 +171,7 @@
       "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=1022025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=213607"
   },
   {
     "id": "kcb",
@@ -427,7 +427,7 @@
     "pass": "18/06/2012",
     "eff": "01/05/2013",
     "status": "amend",
-    "replaces": "Được sửa đổi, bổ sung bởi Luật Phòng bệnh 114/2025/QH15 (hiệu lực 01/07/2026) và Luật Giá 16/2023/QH15; hợp nhất tại 11/VBHN-VPQH 2026. Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025.",
+    "replaces": "Luật Phòng bệnh 114/2025/QH15 (hiệu lực 01/07/2026, khoản 2 Điều 44) bãi bỏ Điều 28–30 của luật này và Luật Giá 16/2023/QH15; hợp nhất tại 11/VBHN-VPQH 2026. Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025.",
     "points": [
       "Cấm bán thuốc lá cho người dưới 18 tuổi và cấm người dưới 18 tuổi bán thuốc lá.",
       "Cảnh báo sức khỏe bằng chữ và hình ảnh chiếm ít nhất 50% diện tích mỗi mặt chính của bao bì.",
@@ -741,7 +741,7 @@
     "pass": "11/12/2025",
     "eff": "01/07/2026",
     "status": "on",
-    "replaces": "Thay thế Luật Công nghệ thông tin 67/2006/QH11. Một nguồn ghi ngày thông qua 10/12/2025.",
+    "replaces": "Thay thế Luật Công nghệ thông tin 67/2006/QH11. Các nguồn kiểm chéo ghi ngày thông qua 11/12/2025.",
     "points": [
       "Quy định nguyên tắc, chính sách, điều phối quốc gia về chuyển đổi số; hạ tầng số, dữ liệu số và dịch vụ số.",
       "Gồm 8 chương, 48 điều; có hiệu lực từ 01/07/2026."
