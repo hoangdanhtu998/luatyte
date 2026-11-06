@@ -90,7 +90,10 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
     "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025.",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF gốc TT 21/2024 (kiểm Đ2, Đ9 khoản 3, Đ11 khoản 1-2)",
+    "ghi_chu": "Kiểm 2026-11-06: point 2 cần bổ sung TT 13/2023; point 3 nên ghi mức trần do Bộ trưởng Bộ Y tế quy định."
   },
   {
     "id": "tt22_2023",
