@@ -414,3 +414,14 @@ body.chat-open .lesson-chat{display:flex}
 @media (min-width:1400px){
   body.chat-open main:not(.triet){margin-right:384px}
 }
+
+/* Header chung phủ kín chiều ngang màn hình, cố định trên cùng; nội dung được chừa khoảng phía trên */
+nav[aria-label="Chuyển khu học"]{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;box-sizing:border-box!important;border-radius:0!important;margin:0!important;min-height:56px}
+body:has(nav[aria-label="Chuyển khu học"]){padding-top:72px!important}
+@media (max-width:640px){
+  nav[aria-label="Chuyển khu học"]{min-height:0}
+  body:has(nav[aria-label="Chuyển khu học"]){padding-top:112px!important}
+}
+main.triet .toc-toggle,.toc-toggle{top:92px}
+main.triet > nav.toc{top:120px}
+.lesson-chat{top:96px}
