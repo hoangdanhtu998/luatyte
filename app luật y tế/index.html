@@ -661,7 +661,7 @@ function renderLaws(){
         <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
         <div>
           <h3>${esc(l.name)}</h3>
-          <div class="meta"><span class="mono">${esc(l.so)}</span><span>Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>${masteryLine(l)}
+          <div class="meta"><span class="mono">${esc(l.so)}</span><span class="eff">Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>${masteryLine(l)}
         </div>
         <button class="bm ${bmHas(l.id) ? "on" : ""}" data-bm="${esc(l.id)}" title="Đánh dấu luật này" aria-label="Đánh dấu luật này" aria-pressed="${bmHas(l.id)}">${bmHas(l.id) ? "★" : "☆"}</button>
         <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
