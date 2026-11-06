@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Hệ điều hành chia thời gian CPU cho nhiều chương trình. Round-robin cho mỗi chương trình chạy một lượng thời gian cố định, gọi là quantum, rồi chuyển sang chương trình kế tiếp.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Ba tiến trình cần 5, 3 và 1 đơn vị thời gian. Quantum là 2. Bắt đầu với P1.", "boxes": ["P1", "P2", "P3"], "code": "P1=5, P2=3, P3=1, quantum=2", "after": "P1 cần 5, P2 cần 3, P3 cần 1." },
+    { "img": "m03-meo-vui.png", "say": "P1 chạy 2 đơn vị, còn cần 3. P2 chạy 2 đơn vị, còn cần 1. P3 chạy 1 đơn vị và xong ở thời điểm 5.", "boxes": ["P1", "P2", "P3"], "code": "t = 5: P3 xong", "run": { "P3": "xong lúc 5" }, "after": "P3 xong lúc 5." },
+    { "img": "m03-meo-vui.png", "say": "Vòng tiếp: P1 chạy 2 nữa, còn 1. P2 chạy 1 và xong ở thời điểm 8. Cuối cùng P1 chạy 1 và xong ở thời điểm 9.", "boxes": ["P1", "P2", "P3"], "code": "t = 8: P2 xong, t = 9: P1 xong", "run": { "P1": "xong lúc 9", "P2": "xong lúc 8" }, "after": "P1 xong lúc 9, P2 xong lúc 8." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: với quantum là 2, tiến trình nào xong sớm nhất?", "boxes": ["P1", "P2", "P3"], "code": "so sánh thời điểm xong", "quiz": [
+        { "text": "P3", "right": true, "hint": "Đúng! P3 chỉ cần 1 đơn vị nên xong ở thời điểm 5, sớm nhất." },
+        { "text": "P1", "right": false, "hint": "P1 cần nhiều thời gian nhất, nên xong muộn nhất, lúc 9." },
+        { "text": "P2", "right": false, "hint": "P2 xong lúc 8, sau P3." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: round-robin công bằng, mỗi tiến trình được chạy đều. Tiến trình chưa xong thì quay lại cuối hàng.", "boxes": ["P1", "P2", "P3"], "end": true }
+  ]
+}

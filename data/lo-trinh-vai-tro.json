@@ -86,7 +86,7 @@
         "tt_12_2026_giam_dinh_bhyt",
         "tt22_2024"
       ],
-      "so_cau": 53,
+      "so_cau": 54,
       "so_chuong_chuyen_mon": 3
     },
     {
@@ -417,6 +417,9 @@
     ],
     "Mức hưởng BHYT phổ biến (đi đúng quy định) là bao nhiêu?": [
       "c4"
+    ],
+    "Mức phạt tiền tối đa đối với cá nhân vi phạm hành chính trong lĩnh vực bảo hiểm y tế là bao nhiêu?": [
+      "c15"
     ],
     "Mức phạt tiền tối đa đối với tổ chức vi phạm hành chính trong lĩnh vực dân số là bao nhiêu?": [
       "c15"

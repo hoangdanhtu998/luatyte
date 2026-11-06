@@ -294,7 +294,7 @@
   },
   {
     "t": "bhyt",
-    "q": "Theo Thông tư 39/2024/TT-BYT (sửa đổi Thông tư 35/2016/TT-BYT về điều kiện thanh toán dịch vụ kỹ thuật y tế BHYT), khám chuyên khoa từ lần thứ hai trong cùng một lần đến khám được thanh toán bao nhiêu?",
+    "q": "Theo Thông tư 39/2024/TT-BYT (sửa đổi Thông tư 21/2024/TT-BYT), khám chuyên khoa từ lần thứ hai trong cùng một lần đến khám được thanh toán bao nhiêu?",
     "o": [
       "100% giá một lần khám",
       "50% giá một lần khám",
@@ -302,9 +302,9 @@
       "Không được thanh toán"
     ],
     "a": 2,
-    "e": "Từ lần khám thứ hai trở đi chỉ tính 30% giá một lần khám; tổng tiền khám được thanh toán không quá 2 lần giá khám. Nguồn: Thông tư 39/2024/TT-BYT (thuvienphapluat.vn, luatvietnam.vn).",
+    "e": "Lần khám thứ hai trở đi chỉ tính 30% giá một lần khám; tổng tiền khám tối đa bằng 2 lần giá khám. Căn cứ hiện hành: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 21/2024/TT-BYT, áp dụng từ 01/01/2025. Thông tư 22/2023 đã hết hiệu lực từ 01/01/2025.",
     "verify": true,
-    "src": "Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT (đối chiếu qua trang văn bản; cần kiểm bản gốc)"
+    "src": "Thông tư 39/2024/TT-BYT (đối chiếu qua bản tóm tắt, cần kiểm bản gốc)"
   },
   {
     "t": "bhyt",
@@ -343,9 +343,9 @@
       "100%"
     ],
     "a": 1,
-    "e": "Từ lượt khám thứ hai tính 30% giá một lượt khám; tổng tiền khám không quá 2 lần giá khám. Nguồn: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT.",
+    "e": "Từ lượt khám thứ hai tính 30% giá một lượt khám; tổng tiền khám không quá 2 lần giá khám. Căn cứ hiện hành: Thông tư 39/2024/TT-BYT sửa đổi Thông tư 21/2024/TT-BYT, áp dụng từ 01/01/2025.",
     "verify": true,
-    "src": "Thông tư 39/2024/TT-BYT sửa đổi Thông tư 35/2016/TT-BYT (đối chiếu qua trang văn bản; cần kiểm bản gốc)"
+    "src": "Thông tư 39/2024/TT-BYT (đối chiếu qua bản tóm tắt, cần kiểm bản gốc)"
   },
   {
     "t": "duoc",
@@ -575,8 +575,8 @@
       "12 tháng"
     ],
     "a": 2,
-    "e": "Luật Phòng bệnh 114/2025 khuyến khích nuôi con bằng sữa mẹ hoàn toàn cho trẻ dưới 06 tháng tuổi và duy trì đến 24 tháng tuổi (quy định trong chính sách của Nhà nước; số điều cần đối chiếu lại).",
-    "verify": true
+    "e": "Luật Phòng bệnh 114/2025 khuyến khích nuôi con bằng sữa mẹ hoàn toàn cho trẻ dưới 06 tháng tuổi và duy trì đến 24 tháng tuổi (Điều khoản 12, đã đối chiếu).",
+    "verify": false
   },
   {
     "t": "phongbenh",
@@ -602,8 +602,7 @@
       "12 tháng"
     ],
     "a": 1,
-    "e": "7 tháng, áp dụng cho trường hợp sinh con thứ hai từ 01/07/2026 (Luật Dân số 113/2025, Điều 14 khoản 1 điểm a). Trước 01/07/2026 vẫn là 6 tháng.",
-    "verify": true
+    "e": "7 tháng (thay vì 6 tháng thông thường)."
   },
   {
     "t": "danso",
@@ -1002,6 +1001,20 @@
   },
   {
     "t": "nd90_2026_xu_phat",
+    "q": "Mức phạt tiền tối đa đối với cá nhân vi phạm hành chính trong lĩnh vực bảo hiểm y tế là bao nhiêu?",
+    "o": [
+      "50 triệu đồng",
+      "75 triệu đồng",
+      "100 triệu đồng",
+      "150 triệu đồng"
+    ],
+    "a": 1,
+    "e": "Mức phạt tiền tối đa đối với cá nhân trong lĩnh vực bảo hiểm y tế là 75 triệu đồng; tổ chức là 150 triệu đồng. Căn cứ: Điều 4 khoản 3 Nghị định 90/2026/NĐ-CP.",
+    "law": "Nghị định 90/2026/NĐ-CP",
+    "src": "Điều 4 khoản 3"
+  },
+  {
+    "t": "nd90_2026_xu_phat",
     "q": "Cùng một hành vi vi phạm hành chính trong lĩnh vực y tế, mức phạt tiền đối với tổ chức so với cá nhân như thế nào?",
     "o": [
       "Bằng mức của cá nhân",
@@ -1031,46 +1044,46 @@
   {
     "t": "kcb",
     "id": "kcb-85",
-    "q": "Theo Luật Khám bệnh, chữa bệnh 15/2023, người bệnh có quyền gì đối với phương pháp điều trị?",
+    "q": "Người bệnh có quyền gì đối với phương án điều trị theo Luật KCB 40/2025?",
     "o": [
       "Bắt buộc điều trị theo bác sĩ",
-      "Được lựa chọn phương pháp điều trị sau khi được cung cấp đủ thông tin",
-      "Không được biết về tình trạng bệnh",
+      "Biết chẩn đoán và từ chối điều trị",
+      "Không được biết chẩn đoán",
       "Chỉ được điều trị tại bệnh viện công"
     ],
     "a": 1,
-    "e": "Luật KCB 15/2023 Điều 11: người bệnh được lựa chọn phương pháp điều trị sau khi được cung cấp đủ thông tin."
+    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền biết chẩn đoán, phương án điều trị và được quyền từ chối điều trị."
   },
   {
     "t": "kcb",
     "id": "kcb-86",
-    "q": "Cơ sở khám bệnh, chữa bệnh phải niêm yết công khai nội dung nào theo Luật KCB 15/2023?",
+    "q": "Cơ sở KCB phải công khai những gì theo Luật KCB 40/2025?",
     "o": [
       "Lương bác sĩ",
-      "Giá dịch vụ khám bệnh, chữa bệnh",
+      "Giá dịch vụ và quyền lợi người bệnh",
       "Số giường bệnh",
       "Thời gian nghỉ của nhân viên"
     ],
     "a": 1,
-    "e": "Luật KCB 15/2023 Điều 60 khoản 4: cơ sở phải niêm yết giá dịch vụ tại nơi thu tiền và đăng tải trên hệ thống thông tin quản lý khám bệnh, chữa bệnh quốc gia."
+    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ, thái độ phục vụ và quyền lợi người bệnh."
   },
   {
     "t": "kcb",
     "id": "kcb-87",
-    "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý thế nào theo Luật KCB 15/2023?",
+    "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý khi nào?",
     "o": [
-      "Không có giá trị pháp lý",
-      "Chỉ có giá trị khi in ra giấy",
-      "Có giá trị pháp lý tương đương hồ sơ bệnh án giấy",
-      "Chỉ có giá trị trong nội bộ bệnh viện"
+      "Ngay khi tạo",
+      "Từ 01/07/2026",
+      "Khi có xác nhận của bệnh viện",
+      "Không có giá trị pháp lý"
     ],
-    "a": 2,
-    "e": "Luật KCB 15/2023 Điều 69 khoản 1: hồ sơ bệnh án có thể lập bằng giấy hoặc điện tử, và cả hai hình thức có giá trị pháp lý như nhau."
+    "a": 1,
+    "e": "Luật KCB 40/2025 Điều 35: hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy từ 01/07/2026."
   },
   {
     "t": "kcb",
     "id": "kcb-88",
-    "q": "Luật Khám bệnh, chữa bệnh 15/2023 thay thế luật nào?",
+    "q": "Luật KCB 40/2025 thay thế luật nào?",
     "o": [
       "Luật KCB 40/2009",
       "Luật BHYT 51/2024",
@@ -1078,25 +1091,25 @@
       "Luật Phòng bệnh 114/2025"
     ],
     "a": 0,
-    "e": "Luật KCB 15/2023/QH15 thay thế Luật KCB 40/2009/QH12, có hiệu lực từ 01/01/2024."
+    "e": "Luật KCB 40/2025/QH15 thay thế Luật KCB 40/2009/QH12."
   },
   {
     "t": "kcb",
     "id": "kcb-89",
-    "q": "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ ngày nào?",
+    "q": "Ngày hiệu lực của Luật KCB 40/2025 là khi nào?",
     "o": [
-      "01/01/2024",
+      "20/11/2025",
       "01/01/2026",
       "01/07/2026",
       "01/01/2027"
     ],
-    "a": 0,
-    "e": "Luật KCB 15/2023 có hiệu lực từ 01/01/2024."
+    "a": 2,
+    "e": "Luật KCB 40/2025 có hiệu lực từ 01/07/2026."
   },
   {
     "t": "kcb",
     "id": "kcb-90",
-    "q": "Ai có quyền từ chối khám bệnh, chữa bệnh theo Luật KCB 15/2023?",
+    "q": "Ai có quyền từ chối điều trị theo Luật KCB 40/2025?",
     "o": [
       "Bác sĩ",
       "Người nhà bệnh nhân",
@@ -1104,32 +1117,32 @@
       "Trưởng bệnh viện"
     ],
     "a": 2,
-    "e": "Luật KCB 15/2023 Điều 13 khoản 1: người bệnh có quyền từ chối khám bệnh, chữa bệnh sau khi được người hành nghề tư vấn, và phải cam kết tự chịu trách nhiệm bằng văn bản."
+    "e": "Luật KCB 40/2025 Điều 15: người bệnh có quyền từ chối điều trị."
   },
   {
     "t": "kcb",
     "id": "kcb-91",
-    "q": "Việc niêm yết công khai giá dịch vụ khám chữa bệnh thuộc trách nhiệm của ai?",
+    "q": "Việc công khai giá dịch vụ KCB thuộc trách nhiệm của ai?",
     "o": [
       "Sở Y tế",
-      "Cơ sở khám bệnh, chữa bệnh",
+      "Cơ sở KCB",
       "Bệnh viện đa khoa",
       "Bảo hiểm y tế"
     ],
     "a": 1,
-    "e": "Luật KCB 15/2023 Điều 60 khoản 4: cơ sở khám bệnh, chữa bệnh phải niêm yết giá dịch vụ."
+    "e": "Luật KCB 40/2025 Điều 22: cơ sở KCB phải công khai giá dịch vụ."
   },
   {
     "t": "kcb",
     "id": "kcb-92",
-    "q": "Luật Khám bệnh, chữa bệnh 15/2023 quy định về lĩnh vực nào?",
+    "q": "Luật KCB 40/2025 quy định về lĩnh vực nào?",
     "o": [
       "Thuốc và dược phẩm",
-      "Quyền và nghĩa vụ của người bệnh, cơ sở khám bệnh, chữa bệnh và người hành nghề",
+      "Quyền và nghĩa vụ người bệnh",
       "Bảo hiểm y tế",
       "An toàn thực phẩm"
     ],
     "a": 1,
-    "e": "Luật KCB 15/2023 Điều 1 (phạm vi điều chỉnh) quy định về khám bệnh, chữa bệnh, trong đó có quyền và nghĩa vụ của người bệnh, người hành nghề và cơ sở khám bệnh, chữa bệnh."
+    "e": "Luật KCB 40/2025 quy định về quyền và nghĩa vụ của người bệnh, cơ sở KCB và người hành nghề."
   }
 ]

@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Khi máy khởi động ở chế độ văn bản, màn hình là một vùng nhớ tại địa chỉ 0xB8000. Ghi vào đó là hiện chữ lên màn hình.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Màn hình có 80 cột và 25 hàng. Mỗi ô 2 byte: một byte ký tự và một byte màu.", "boxes": ["cột", "hàng", "byte mỗi ô"], "code": "80 × 25 × 2", "run": { "cột": "80", "hàng": "25", "byte mỗi ô": "2" }, "after": "Tổng cộng 4000 byte cho một màn hình." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Tìm ô ở hàng 1, cột 2. Trước hết tính số ô đứng trước: 1 hàng đầy là 80 ô, cộng 2 ô của hàng này.", "boxes": ["cột", "hàng", "byte mỗi ô"], "code": "1 × 80 + 2", "run": { "cột": "2", "hàng": "1", "byte mỗi ô": "2" }, "after": "Ô này là ô thứ 82 (tính từ 0)." },
+    { "img": "m03-meo-vui.png", "say": "Mỗi ô 2 byte, nên offset nhân thêm 2. Đó là chỗ hay bị quên.", "boxes": ["cột", "hàng", "byte mỗi ô"], "code": "(1 × 80 + 2) × 2 = 164", "after": "Offset của ô là 164 byte tính từ 0xB8000." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: ô ở hàng 0, cột 3 có offset là bao nhiêu?", "boxes": ["cột", "hàng", "byte mỗi ô"], "code": "(0 × 80 + 3) × 2", "quiz": [
+        { "text": "6", "right": true, "hint": "Đúng! (0 × 80 + 3) × 2 = 6." },
+        { "text": "3", "right": false, "hint": "Quên nhân 2 vì mỗi ô 2 byte." },
+        { "text": "160", "right": false, "hint": "160 là offset của cột 0 hàng 1, không phải hàng 0 cột 3." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: màn hình văn bản VGA là vùng 80 × 25 ô, mỗi ô 2 byte. Offset = (hàng × 80 + cột) × 2.", "boxes": ["cột", "hàng", "byte mỗi ô"], "end": true }
+  ]
+}

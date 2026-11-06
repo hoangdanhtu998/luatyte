@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "fopen trả về NULL khi nào?",
+      "options": [
+        {
+          "text": "Khi không mở được file (không tồn tại, không có quyền...)",
+          "why": "Đúng. Luôn kiểm tra kết quả fopen trước khi dùng."
+        },
+        {
+          "text": "Khi file có nội dung",
+          "why": "Có nội dung không làm fopen thất bại."
+        },
+        {
+          "text": "Khi đọc xong file",
+          "why": "Đọc xong không làm fopen trả về NULL."
+        },
+        {
+          "text": "Khi file rất lớn",
+          "why": "Kích thước không phải lý do chính."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đừng dùng con trỏ FILE khi fopen trả về NULL."
+    },
+    {
+      "q": "Mode \"w\" trong fopen làm gì?",
+      "options": [
+        {
+          "text": "Mở để ghi và xóa nội dung cũ nếu file đã có",
+          "why": "Đúng. Mode w ghi đè từ đầu file."
+        },
+        {
+          "text": "Mở để đọc",
+          "why": "Đọc là mode r."
+        },
+        {
+          "text": "Mở để ghi thêm vào cuối",
+          "why": "Ghi thêm là mode a."
+        },
+        {
+          "text": "Xóa file",
+          "why": "fopen không xóa file."
+        }
+      ],
+      "answer": 0,
+      "explain": "r đọc, w ghi đè, a ghi thêm vào cuối."
+    },
+    {
+      "q": "Vì sao phải gọi fclose sau khi dùng file?",
+      "options": [
+        {
+          "text": "Để giải phóng tài nguyên và đảm bảo dữ liệu đã được ghi xuống đĩa",
+          "why": "Đúng. Dữ liệu có thể nằm trong bộ đệm cho đến khi đóng."
+        },
+        {
+          "text": "Để file tự xóa",
+          "why": "fclose không xóa file."
+        },
+        {
+          "text": "Để tăng tốc máy",
+          "why": "Không liên quan tốc độ."
+        },
+        {
+          "text": "Không cần thiết",
+          "why": "Nên luôn đóng file."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mở rồi phải đóng, giống mượn đồ phải trả."
+    },
+    {
+      "q": "fgets(buf, n, f) đọc gì?",
+      "options": [
+        {
+          "text": "Một dòng văn bản, tối đa n − 1 ký tự",
+          "why": "Đúng. fgets dừng khi gặp xuống dòng hoặc đủ kích thước."
+        },
+        {
+          "text": "Toàn bộ file trong một lần",
+          "why": "Chỉ đọc một dòng mỗi lần."
+        },
+        {
+          "text": "Một số nguyên",
+          "why": "fgets đọc chuỗi."
+        },
+        {
+          "text": "Một byte",
+          "why": "Đọc theo dòng, không phải từng byte."
+        }
+      ],
+      "answer": 0,
+      "explain": "fgets an toàn hơn gets vì có giới hạn kích thước."
+    },
+    {
+      "q": "Dùng con trỏ FILE sau khi fclose thì sao?",
+      "options": [
+        {
+          "text": "Là lỗi, vì con trỏ không còn hợp lệ",
+          "why": "Đúng. Giống dùng sau free, hành vi không xác định."
+        },
+        {
+          "text": "Vẫn đọc được bình thường",
+          "why": "Không đảm bảo, đây là lỗi."
+        },
+        {
+          "text": "Tự mở lại file",
+          "why": "Không tự mở lại."
+        },
+        {
+          "text": "File tự được tạo",
+          "why": "Không có chuyện tự tạo."
+        }
+      ],
+      "answer": 0,
+      "explain": "Sau fclose, đặt con trỏ về NULL để tránh dùng nhầm."
+    },
+    {
+      "q": "Vì sao nên kiểm tra kết quả fopen trước khi đọc?",
+      "options": [
+        {
+          "text": "Nếu fopen thất bại mà vẫn dùng, chương trình có thể crash",
+          "why": "Đúng. Dùng con trỏ NULL là lỗi nghiêm trọng."
+        },
+        {
+          "text": "Để file mở nhanh hơn",
+          "why": "Kiểm tra không làm mở nhanh hơn."
+        },
+        {
+          "text": "Vì C bắt buộc",
+          "why": "Không bắt buộc, nhưng là thói quen cần có."
+        },
+        {
+          "text": "Để đổi tên file",
+          "why": "Không liên quan đến tên file."
+        }
+      ],
+      "answer": 0,
+      "explain": "Kiểm tra lỗi là thói quen cơ bản khi làm việc với file."
+    }
+  ]
+}

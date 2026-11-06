@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Có ba kiểu lập trình với AI. Bài này giúp bạn phân biệt và biết khi nào tin, khi nào kiểm tra.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "AI coding: bạn vẫn hiểu và kiểm soát từng dòng. Vibe coding: nhận gần như toàn bộ kết quả mà không đọc kỹ.", "boxes": ["kiểu", "bạn làm gì"], "code": "AI coding  ≠  Vibe coding", "run": { "kiểu": "AI coding / vibe coding", "bạn làm gì": "đọc từng dòng / tin hết" }, "after": "Khác nhau ở chỗ bạn có đọc và hiểu hay không." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Copilot: AI phụ, bạn lái. Pilot: AI tự lái, bạn giao việc và kiểm tra kết quả.", "boxes": ["kiểu", "bạn làm gì"], "code": "copilot → bạn lái\npilot → AI lái", "after": "Chọn vai theo độ khó và mức bạn đang học." },
+    { "img": "m03-meo-vui.png", "say": "Ví dụ: AI viết hàm tính 1 + 2 + ... + n nhưng vòng lặp chạy đến n - 1. Chạy thử với n = 5 phải ra 15, nếu ra khác là sai.", "boxes": ["kiểu", "bạn làm gì"], "code": "n = 5 → phải ra 15", "after": "Thử một trường hợp nhỏ là cách bắt lỗi nhanh nhất." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: vì sao phải đọc lại code AI viết?", "boxes": ["kiểu", "bạn làm gì"], "code": "AI có thể sai", "quiz": [
+        { "text": "Vì AI có thể viết code sai mà vẫn trông hợp lý", "right": true, "hint": "Đúng! Đọc và thử là cách kiểm tra trước khi chấp nhận." },
+        { "text": "Vì AI không biết viết code", "right": false, "hint": "AI viết được code, nhưng vẫn có thể sai. Vấn đề là kiểm tra." },
+        { "text": "Vì luật bắt buộc", "right": false, "hint": "Lý do là chất lượng code, không phải luật." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: giao việc nhỏ, đọc lại, thử với ví dụ đơn giản, và đừng để khóa API hay mật khẩu trong code.", "boxes": ["kiểu", "bạn làm gì"], "end": true }
+  ]
+}

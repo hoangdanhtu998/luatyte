@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Tìm kiếm nhị phân yêu cầu điều kiện gì về mảng?",
+      "options": [
+        {
+          "text": "Mảng đã được sắp xếp",
+          "why": "Đúng. Nhờ sắp xếp, mỗi bước loại được nửa mảng."
+        },
+        {
+          "text": "Mảng chỉ có số chẵn",
+          "why": "Không cần điều kiện này."
+        },
+        {
+          "text": "Mảng có đúng 10 phần tử",
+          "why": "Không cần số lượng cố định."
+        },
+        {
+          "text": "Mảng không có số trùng",
+          "why": "Số trùng vẫn tìm được."
+        }
+      ],
+      "answer": 0,
+      "explain": "Tìm nhị phân chỉ đúng khi dữ liệu đã có thứ tự."
+    },
+    {
+      "q": "Độ phức tạp của tìm nhị phân trong trường hợp trung bình là gì?",
+      "options": [
+        {
+          "text": "O(log n)",
+          "why": "Đúng. Mỗi bước giảm một nửa phạm vi tìm kiếm."
+        },
+        {
+          "text": "O(n)",
+          "why": "O(n) là tìm tuyến tính."
+        },
+        {
+          "text": "O(1)",
+          "why": "Chỉ có khi biết ngay vị trí."
+        },
+        {
+          "text": "O(n²)",
+          "why": "Quá chậm so với tìm nhị phân."
+        }
+      ],
+      "answer": 0,
+      "explain": "Mỗi bước chia đôi, nên cần khoảng log₂ n bước."
+    },
+    {
+      "q": "Sắp xếp chọn (selection sort) có độ phức tạp trung bình là gì?",
+      "options": [
+        {
+          "text": "O(n²)",
+          "why": "Đúng. Phải tìm phần tử nhỏ nhất qua nhiều lượt lồng nhau."
+        },
+        {
+          "text": "O(log n)",
+          "why": "Quá nhanh so với thực tế của sắp xếp chọn."
+        },
+        {
+          "text": "O(n)",
+          "why": "Sắp xếp chọn không chạy tuyến tính."
+        },
+        {
+          "text": "O(1)",
+          "why": "Không thể sắp xếp trong thời gian hằng số."
+        }
+      ],
+      "answer": 0,
+      "explain": "Hai vòng lặp lồng nhau thường cho O(n²)."
+    },
+    {
+      "q": "Quicksort trong trường hợp xấu nhất có độ phức tạp là gì?",
+      "options": [
+        {
+          "text": "O(n²), khi mảng đã sắp xếp và chọn pivot kém",
+          "why": "Đúng. Pivot chia mảng lệch hoàn toàn thì mất n lượt."
+        },
+        {
+          "text": "O(log n) luôn luôn",
+          "why": "Không đúng cho quicksort."
+        },
+        {
+          "text": "O(n) luôn luôn",
+          "why": "Đó là điều không đúng."
+        },
+        {
+          "text": "O(1)",
+          "why": "Không thể."
+        }
+      ],
+      "answer": 0,
+      "explain": "Quicksort nhanh trung bình (O(n log n)), nhưng trường hợp xấu cần cẩn thận khi chọn pivot."
+    },
+    {
+      "q": "Sắp xếp ổn định (stable) nghĩa là gì?",
+      "options": [
+        {
+          "text": "Các phần tử bằng nhau giữ nguyên thứ tự ban đầu",
+          "why": "Đúng. Quan trọng khi sắp theo nhiều tiêu chí."
+        },
+        {
+          "text": "Sắp xếp không bao giờ bị lỗi",
+          "why": "Không liên quan đến lỗi."
+        },
+        {
+          "text": "Sắp xếp chỉ dùng cho số dương",
+          "why": "Không liên quan đến dấu."
+        },
+        {
+          "text": "Sắp xếp chạy trong một bước",
+          "why": "Không liên quan đến số bước."
+        }
+      ],
+      "answer": 0,
+      "explain": "Ổn định giữ được thứ tự cũ của các phần tử bằng nhau."
+    },
+    {
+      "q": "Vì sao tính mid trong tìm nhị phân nên viết `low + (high - low) / 2`?",
+      "options": [
+        {
+          "text": "Để tránh tràn số khi low và high đều rất lớn",
+          "why": "Đúng. Cộng hai số lớn trước có thể vượt giới hạn kiểu int."
+        },
+        {
+          "text": "Để kết quả luôn là số chẵn",
+          "why": "Không phải mục đích."
+        },
+        {
+          "text": "Vì C không cho phép phép cộng",
+          "why": "Cộng là phép hợp lệ."
+        },
+        {
+          "text": "Để mảng tự sắp xếp",
+          "why": "Không liên quan đến sắp xếp."
+        }
+      ],
+      "answer": 0,
+      "explain": "Cách viết này cho kết quả giống (low + high) / 2 nhưng an toàn hơn."
+    }
+  ]
+}

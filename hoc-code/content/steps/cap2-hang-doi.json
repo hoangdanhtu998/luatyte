@@ -1,0 +1,14 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Hàng đợi giống xếp hàng mua vé. Ai đến trước được phục vụ trước.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Số 1 vào cuối hàng.", "boxes": ["hàng"], "code": "enqueue(1);", "run": { "hàng": "1" }, "after": "Hàng có 1." },
+    { "img": "m03-meo-vui.png", "say": "Số 2 xếp ra sau số 1.", "boxes": ["hàng"], "code": "enqueue(2);", "run": { "hàng": "1, 2" }, "after": "Hàng có 1, rồi đến 2." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: lệnh dequeue() lấy số nào ra trước?", "boxes": ["hàng"], "code": "dequeue();", "quiz": [
+        { "text": "1", "right": true, "hint": "Đúng! 1 đến trước nên được phục vụ trước." },
+        { "text": "2", "right": false, "hint": "2 đến sau 1. Phải lấy 1 ra trước." },
+        { "text": "Cả hai cùng lúc", "right": false, "hint": "Mỗi lần dequeue chỉ lấy người đứng đầu hàng." } ] },
+    { "img": "m03-meo-vui.png", "say": "Lấy người đứng đầu ra. Số 1 được lấy ra, còn 2 đứng đầu.", "boxes": ["hàng", "lấy ra"], "code": "dequeue();", "run": { "hàng": "2", "lấy ra": 1 }, "after": "Đã lấy 1 ra. Hàng còn 2." },
+    { "img": "m03-meo-vui.png", "say": "Lấy tiếp số 2 ra. Hàng trống.", "boxes": ["hàng", "lấy ra"], "code": "dequeue();", "run": { "hàng": "trống", "lấy ra": 2 }, "after": "Đã lấy 2 ra. Hàng không còn ai." },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: hàng đợi là vào trước ra trước. Tiếng Anh gọi là FIFO: First In, First Out.", "boxes": ["hàng", "lấy ra"], "end": true }
+  ]
+}

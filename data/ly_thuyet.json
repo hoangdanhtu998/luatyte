@@ -986,7 +986,7 @@
         },
         {
           "tieu_de": "Thẻ BHYT điện tử và đăng ký KCB trực tuyến",
-          "giai_thich": "Nghị định 119/2025 Điều 12 công nhận thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID.",
+          "giai_thich": "Nghị định 119/2025 Điều 12 công nhận thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID. Thông tư 14/2026 cho phép đăng ký KCB thường xuyên qua VssID.",
           "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
         },
         {
@@ -996,7 +996,7 @@
         },
         {
           "tieu_de": "Chuyển tuyến tự động và đăng ký KCB thường xuyên",
-          "giai_thich": "Người bệnh chọn cơ sở KCB thường xuyên qua app VssID.",
+          "giai_thich": "Thông tư 14/2026 Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện. Người bệnh chọn cơ sở KCB thường xuyên qua app VssID.",
           "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
         },
         {
@@ -1030,50 +1030,50 @@
     },
     {
       "id": "c22",
-      "ten": "Luật Khám bệnh, chữa bệnh 15/2023 — quyền và nghĩa vụ người bệnh",
+      "ten": "Luật Khám chữa bệnh 40/2025 — quyền và nghĩa vụ người bệnh",
       "muc_tieu": [
-        "Hiểu quyền được cung cấp thông tin và quyền từ chối khám bệnh, chữa bệnh (Điều 12, 13)",
-        "Biết trách nhiệm niêm yết giá dịch vụ của cơ sở KCB (Điều 60 khoản 4)",
-        "Hiểu giá trị pháp lý của hồ sơ bệnh án điện tử (Điều 69 khoản 1)"
+        "Hiểu quyền biết chẩn đoán và từ chối điều trị của người bệnh",
+        "Biết trách nhiệm công khai giá dịch vụ của cơ sở KCB",
+        "Hiểu giá trị pháp lý của hồ sơ bệnh án điện tử"
       ],
       "buoc": [
         {
-          "tieu_de": "Quyền của người bệnh (Điều 9–15)",
-          "giai_thich": "Người bệnh được cung cấp thông tin về tình trạng bệnh, phương pháp điều trị và chi phí (Điều 12), rồi được lựa chọn phương pháp điều trị (Điều 11). Người bệnh có quyền từ chối khám bệnh, chữa bệnh, nhưng phải được người hành nghề tư vấn và cam kết tự chịu trách nhiệm bằng văn bản (Điều 13 khoản 1).",
-          "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Luat-15-2023-QH15-kham-benh-chua-benh-372143.aspx"
+          "tieu_de": "Quyền người bệnh (Điều 15)",
+          "giai_thich": "Người bệnh có quyền được biết chẩn đoán, phương án điều trị, rủi ro và được thông tin đầy đủ. Đặc biệt, người bệnh có quyền từ chối điều trị — đây là quyền căn bản được Luật KCB 40/2025 bảo vệ.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
         },
         {
-          "tieu_de": "Trách nhiệm niêm yết giá của cơ sở KCB (Điều 60 khoản 4)",
-          "giai_thich": "Cơ sở khám bệnh, chữa bệnh phải niêm yết giá dịch vụ tại nơi thu tiền và đăng tải trên hệ thống thông tin quản lý khám bệnh, chữa bệnh quốc gia. Khi người bệnh hỏi, cơ sở phải giải thích chi tiết các khoản chi phí (Điều 12 khoản 2).",
-          "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Luat-15-2023-QH15-kham-benh-chua-benh-372143.aspx"
+          "tieu_de": "Trách nhiệm công khai của cơ sở KCB (Điều 22)",
+          "giai_thich": "Cơ sở KCB phải công khai: giá dịch vụ khám chữa bệnh, thái độ phục vụ, quyền và nghĩa vụ người bệnh. Việc này giúp người bệnh biết rõ chi phí và quyền lợi trước khi đăng ký KCB.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
         },
         {
-          "tieu_de": "Hồ sơ bệnh án điện tử (Điều 69)",
-          "giai_thich": "Hồ sơ bệnh án có thể lập bằng giấy hoặc bằng điện tử, và hai hình thức có giá trị pháp lý như nhau (Điều 69 khoản 1). Bộ trưởng Bộ Y tế ban hành mẫu hồ sơ.",
-          "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Luat-15-2023-QH15-kham-benh-chua-benh-372143.aspx"
+          "tieu_de": "Hồ sơ bệnh án điện tử (Điều 35)",
+          "giai_thich": "Từ 01/07/2026, hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy. Đây là bước tiến quan trọng trong chuyển đổi số y tế, giúp lưu trữ an toàn và tra cứu nhanh.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
         },
         {
           "tieu_de": "So sánh với Luật KCB 40/2009",
-          "giai_thich": "Luật KCB 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật KCB 40/2009/QH12. Chứng chỉ hành nghề được đổi thành giấy phép hành nghề có thời hạn 5 năm.",
-          "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Luat-15-2023-QH15-kham-benh-chua-benh-372143.aspx"
+          "giai_thich": "Luật KCB 40/2025 thay thế Luật KCB 40/2009. Điểm mới: tăng cường quyền người bệnh, quy định rõ về hồ sơ điện tử, mở rộng trách nhiệm công khai của cơ sở KCB.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
         }
       ],
       "on_nhanh": [
         {
           "q": "Người bệnh có quyền từ chối điều trị không?",
-          "a": "Có, Điều 13 khoản 1 (phải cam kết bằng văn bản)"
+          "a": "Có, theo Điều 15"
         },
         {
           "q": "Cơ sở KCB phải công khai điều gì?",
-          "a": "Giá dịch vụ (Điều 60 khoản 4)"
+          "a": "Giá dịch vụ, quyền lợi người bệnh"
         },
         {
-          "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý thế nào?",
-          "a": "Tương đương hồ sơ giấy (Điều 69 khoản 1)"
+          "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý từ khi nào?",
+          "a": "01/07/2026"
         },
         {
-          "q": "Luật KCB 15/2023 thay thế luật nào?",
-          "a": "Luật KCB 40/2009/QH12"
+          "q": "Luật KCB 40/2025 thay thế luật nào?",
+          "a": "Luật KCB 40/2009"
         }
       ]
     },
@@ -1113,7 +1113,7 @@
         },
         {
           "tieu_de": "Hiệu lực & Điều khoản chuyển tiếp",
-          "giai_thich": "Luật Phòng bệnh 114/2025 có hiệu lực từ 01/07/2026. Thay thế Luật Phòng, chống bệnh truyền nhiễm 03/2007/QH12.",
+          "giai_thich": "Luật có hiệu lực từ 01/07/2026 (Điều 104). Thay thế Luật Phòng, chống dịch bệnh 03/2007/QH12.",
           "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
         }
       ],

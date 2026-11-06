@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Đảo ngược bằng ngăn xếp",
+    "prompt": "Đọc các số nguyên dương cho đến khi gặp 0. Đẩy vào ngăn xếp, rồi lấy ra và in theo thứ tự ngược, cách nhau một dấu cách, xuống dòng cuối.",
+    "starter": "#include <stdio.h>\n\n#define MAX 100\nint st[MAX];\nint top = 0;\n\nvoid push(int x) { st[top++] = x; }\nint pop(void) { return st[--top]; }\nint empty(void) { return top == 0; }\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1 2 3 0\n",
+        "expected": "3 2 1\n"
+      },
+      {
+        "stdin": "7 0\n",
+        "expected": "7\n"
+      }
+    ]
+  }
+]

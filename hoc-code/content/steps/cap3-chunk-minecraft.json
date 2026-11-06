@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Thế giới trong trò chơi kiểu Minecraft được chia thành các chunk, mỗi chunk là một khối 16 × 16 × 16 ô. Mỗi ô có tọa độ x, y, z.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Muốn lưu các ô vào một mảng một chiều, cần đổi (x, y, z) thành một số thứ tự. Công thức là x + z × 16 + y × 256.", "boxes": [], "code": "x + z*16 + y*256", "after": "Công thức đổi tọa độ thành một số." },
+    { "img": "m03-meo-vui.png", "say": "Thử với ô (x = 1, y = 2, z = 3). Thay vào: 1 + 3 × 16 + 2 × 256.", "boxes": ["chỉ số"], "code": "1 + 3*16 + 2*256", "run": { "chỉ số": 561 }, "after": "Ô này có chỉ số 561." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: ô (0, 0, 0) có chỉ số là mấy?", "boxes": ["chỉ số"], "code": "0 + 0*16 + 0*256", "quiz": [
+        { "text": "0", "right": true, "hint": "Đúng! Ô góc đầu tiên có chỉ số 0." },
+        { "text": "1", "right": false, "hint": "Chỉ số bắt đầu từ 0, không phải 1." },
+        { "text": "256", "right": false, "hint": "256 là bước nhảy theo y, không phải của ô (0, 0, 0)." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: chia thế giới thành chunk để dễ xử lý. Đổi tọa độ thành một số để lưu vào mảng.", "boxes": ["chỉ số"], "end": true }
+  ]
+}

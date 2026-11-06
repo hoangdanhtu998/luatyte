@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "LLVM IR là gì?",
+      "options": [
+        {
+          "text": "Dạng trung gian độc lập với máy",
+          "why": "Đúng."
+        },
+        {
+          "text": "Mã máy của Intel",
+          "why": "Không phải mã máy cụ thể."
+        },
+        {
+          "text": "Ngôn ngữ C",
+          "why": "Không phải C."
+        },
+        {
+          "text": "Trình soạn văn bản",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "IR là lớp trung gian."
+    },
+    {
+      "q": "Dấu % trước tên trong IR nghĩa là gì?",
+      "options": [
+        {
+          "text": "Đây là một giá trị cục bộ (biến)",
+          "why": "Đúng."
+        },
+        {
+          "text": "Phép chia",
+          "why": "Không phải phép chia trong IR."
+        },
+        {
+          "text": "Ghi chú",
+          "why": "Không phải ghi chú."
+        },
+        {
+          "text": "Số thập phân",
+          "why": "Không phải."
+        }
+      ],
+      "answer": 0,
+      "explain": "%name là biến cục bộ."
+    },
+    {
+      "q": "Vì sao dùng IR chung cho nhiều ngôn ngữ?",
+      "options": [
+        {
+          "text": "Chỉ cần viết phần tối ưu một lần cho mọi ngôn ngữ",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để tránh lỗi",
+          "why": "Không phải mục đích chính."
+        },
+        {
+          "text": "Vì IR chạy nhanh hơn luôn",
+          "why": "Không chắc."
+        },
+        {
+          "text": "Vì không có trình biên dịch",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "IR tách phần tối ưu khỏi ngôn ngữ nguồn."
+    }
+  ]
+}

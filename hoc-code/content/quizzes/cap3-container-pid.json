@@ -1,0 +1,50 @@
+{
+  "quizzes": [
+    {
+      "q": "Vì sao PID trong container bắt đầu từ 1?",
+      "options": [
+        {
+          "text": "Container có không gian PID riêng",
+          "why": "Đúng."
+        },
+        {
+          "text": "Vì máy chủ thiếu PID",
+          "why": "Không phải."
+        },
+        {
+          "text": "Vì PID 0 bị cấm",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Ngẫu nhiên",
+          "why": "Có quy tắc."
+        }
+      ],
+      "answer": 0,
+      "explain": "Namespace PID cho container số riêng."
+    },
+    {
+      "q": "Container khác máy ảo ở điểm nào?",
+      "options": [
+        {
+          "text": "Dùng chung nhân hệ điều hành, cô lập bằng namespace",
+          "why": "Đúng."
+        },
+        {
+          "text": "Có nhân riêng hoàn toàn",
+          "why": "Đó là máy ảo."
+        },
+        {
+          "text": "Không cô lập",
+          "why": "Có cô lập."
+        },
+        {
+          "text": "Chỉ chạy trên Windows",
+          "why": "Không."
+        }
+      ],
+      "answer": 0,
+      "explain": "Container không có nhân riêng."
+    }
+  ]
+}

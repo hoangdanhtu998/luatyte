@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Vì sao đổi biểu thức sang RPN giúp máy tính dễ hơn?",
+      "options": [
+        {
+          "text": "Máy chỉ cần đọc từ trái sang phải, không cần nhớ ưu tiên",
+          "why": "Đúng. Thứ tự phép tính đã nằm sẵn trong dãy."
+        },
+        {
+          "text": "RPN dài hơn nên chính xác hơn",
+          "why": "Độ dài không liên quan."
+        },
+        {
+          "text": "RPN không có phép cộng",
+          "why": "RPN vẫn có cộng."
+        },
+        {
+          "text": "RPN chỉ dùng cho số thập phân",
+          "why": "Không giới hạn kiểu số."
+        }
+      ],
+      "answer": 0,
+      "explain": "RPN bỏ được ngoặc và ưu tiên."
+    },
+    {
+      "q": "`1 + 2 * 3` đổi sang RPN là gì?",
+      "options": [
+        {
+          "text": "1 2 3 * +",
+          "why": "Đúng. Nhân trước, rồi cộng."
+        },
+        {
+          "text": "1 2 + 3 *",
+          "why": "Thứ tự này tính 1+2 trước, sai ưu tiên."
+        },
+        {
+          "text": "+ 1 * 2 3",
+          "why": "Không phải dạng hậu tố."
+        },
+        {
+          "text": "1 + 2 3 *",
+          "why": "Không đúng dạng RPN."
+        }
+      ],
+      "answer": 0,
+      "explain": "* có ưu tiên cao hơn +."
+    },
+    {
+      "q": "Trong thuật toán shunting-yard, dấu `(` làm gì?",
+      "options": [
+        {
+          "text": "Đẩy vào ngăn xếp và chờ dấu `)` đóng lại",
+          "why": "Đúng. Các toán tử trong ngoặc được xử lý trước."
+        },
+        {
+          "text": "In ra ngay",
+          "why": "Dấu ngoặc không in ra."
+        },
+        {
+          "text": "Xóa ngăn xếp",
+          "why": "Không xóa."
+        },
+        {
+          "text": "Bỏ qua",
+          "why": "Không bỏ qua, nó có vai trò rõ."
+        }
+      ],
+      "answer": 0,
+      "explain": "Ngoặc tạo vùng ưu tiên."
+    }
+  ]
+}

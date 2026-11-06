@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Byte mã máy",
+    "prompt": "Đọc số nguyên n. In các byte hex của đoạn mã `mov eax, n; ret` theo thứ tự x86-64, cách nhau một dấu cách, viết chữ hoa hai chữ số.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "5\n",
+        "expected": "B8 05 00 00 00 C3\n"
+      },
+      {
+        "stdin": "258\n",
+        "expected": "B8 02 01 00 00 C3\n"
+      }
+    ]
+  }
+]

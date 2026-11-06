@@ -1,0 +1,435 @@
+{
+  "lessons": [
+    {
+      "id": "cap1-bien-va-kieu-du-lieu",
+      "title": "Biến và kiểu dữ liệu",
+      "level": 1,
+      "desc": "Biến là ô nhớ có tên. Đoán giá trị, theo dõi từng dòng bằng bảng, hiểu gán là chép giá trị.",
+      "minutes": 35,
+      "slides": "slides/cap1-bien-va-kieu-du-lieu.html",
+      "exercises": "content/exercises/cap1-bien-va-kieu-du-lieu.json"
+    },
+    {
+      "id": "cap1-toan-tu",
+      "title": "Toán tử",
+      "level": 1,
+      "desc": "Phép chia và phần dư, so sánh cho 1 hoặc 0, i++ khác ++i. Theo dõi bằng bảng.",
+      "minutes": 35,
+      "slides": "slides/cap1-toan-tu.html",
+      "exercises": "content/exercises/cap1-toan-tu.json"
+    },
+    {
+      "id": "cap1-dieu-khien-luong",
+      "title": "Điều khiển luồng",
+      "level": 1,
+      "desc": "Đường đi của if, else if và vòng lặp while, for; break và continue. Theo dõi từng lượt.",
+      "minutes": 40,
+      "slides": "slides/cap1-dieu-khien-luong.html",
+      "exercises": "content/exercises/cap1-dieu-khien-luong.json"
+    },
+    {
+      "id": "cap1-ham",
+      "title": "Hàm",
+      "level": 1,
+      "desc": "Hàm gói một việc có tên. Truyền giá trị thì hàm làm việc trên bản sao; muốn đổi biến gốc thì truyền địa chỉ.",
+      "minutes": 40,
+      "slides": "slides/cap1-ham.html",
+      "exercises": "content/exercises/cap1-ham.json"
+    },
+    {
+      "id": "cap1-mang",
+      "title": "Mảng",
+      "level": 1,
+      "desc": "Mảng là dãy ô đánh số từ 0. Duyệt bằng for với i < n, và không truy cập ngoài mảng.",
+      "minutes": 40,
+      "slides": "slides/cap1-mang.html",
+      "exercises": "content/exercises/cap1-mang.json"
+    },
+    {
+      "id": "cap1-chuoi-ky-tu",
+      "title": "Chuỗi ký tự",
+      "level": 1,
+      "desc": "Chuỗi là mảng char kết thúc bằng '\\0'. So sánh bằng strcmp, sao chép bằng hàm có kiểm tra kích thước.",
+      "minutes": 35,
+      "slides": "slides/cap1-chuoi-ky-tu.html",
+      "exercises": "content/exercises/cap1-chuoi-ky-tu.json"
+    },
+    {
+      "id": "con-tro-va-bo-nho",
+      "title": "Con trỏ và bộ nhớ",
+      "level": 1,
+      "desc": "Biến là ô nhớ có địa chỉ, con trỏ giữ địa chỉ, và cách xin – trả bộ nhớ trên heap mà không rò rỉ.",
+      "minutes": 45,
+      "slides": "slides/con-tro-va-bo-nho.html",
+      "exercises": "content/exercises/con-tro-va-bo-nho.json"
+    },
+    {
+      "id": "cap2-de-quy",
+      "title": "Đệ quy",
+      "level": 2,
+      "desc": "Hàm tự gọi chính nó với bài toán nhỏ hơn, cần điều kiện dừng.",
+      "minutes": 40,
+      "slides": "slides/cap2-de-quy.html",
+      "exercises": "content/exercises/cap2-de-quy.json"
+    },
+    {
+      "id": "cap2-sap-xep-tim-kiem",
+      "title": "Sắp xếp và tìm kiếm",
+      "level": 2,
+      "desc": "Tìm nhị phân trên mảng đã sắp xếp, độ phức tạp của các thuật toán sắp xếp cơ bản.",
+      "minutes": 45,
+      "slides": "slides/cap2-sap-xep-tim-kiem.html",
+      "exercises": "content/exercises/cap2-sap-xep-tim-kiem.json"
+    },
+    {
+      "id": "cap2-ngan-xep",
+      "title": "Ngăn xếp (stack)",
+      "level": 2,
+      "desc": "Cấu trúc vào sau ra trước: push, pop, và ứng dụng trong gọi hàm và ngoặc.",
+      "minutes": 40,
+      "slides": "slides/cap2-ngan-xep.html",
+      "exercises": "content/exercises/cap2-ngan-xep.json"
+    },
+    {
+      "id": "cap2-hang-doi",
+      "title": "Hàng đợi (queue)",
+      "level": 2,
+      "desc": "Cấu trúc vào trước ra trước: enqueue, dequeue, và ứng dụng xếp hàng.",
+      "minutes": 40,
+      "slides": "slides/cap2-hang-doi.html",
+      "exercises": "content/exercises/cap2-hang-doi.json"
+    },
+    {
+      "id": "cap2-danh-sach-lien-ket",
+      "title": "Danh sách liên kết",
+      "level": 2,
+      "desc": "Các nút nối nhau bằng con trỏ. Thêm vào đầu, đi qua cả danh sách, và vì sao khác mảng.",
+      "minutes": 35,
+      "slides": "",
+      "exercises": "content/exercises/cap2-danh-sach-lien-ket.json"
+    },
+    {
+      "id": "lam-viec-voi-ai",
+      "title": "Làm việc với AI",
+      "level": 1,
+      "desc": "Ba kiểu lập trình với AI, copilot và pilot, quy trình giao việc, và cách kiểm tra code AI viết.",
+      "minutes": 30,
+      "slides": "",
+      "exercises": "content/exercises/lam-viec-voi-ai.json"
+    },
+    {
+      "id": "bang-bam",
+      "title": "Bảng băm",
+      "level": 1,
+      "desc": "Hash table: biến khóa thành chỉ số mảng, chaining, va chạm, rehash, ứng dụng O(1).",
+      "minutes": 50,
+      "slides": "slides/bang-bam.html",
+      "exercises": "content/exercises/bang-bam.json"
+    },
+    {
+      "id": "shell",
+      "title": "Shell",
+      "level": 1,
+      "desc": "Lệnh cơ bản, path, pipe, biến môi trường, vòng lặp, file management trên hệ điều hành Linux/macOS/Windows.",
+      "minutes": 45,
+      "slides": "slides/shell.html",
+      "exercises": "content/exercises/shell.json"
+    },
+    {
+      "id": "cap1-bien-dich-go-loi",
+      "title": "Biên dịch và gỡ lỗi",
+      "level": 1,
+      "desc": "Đọc lỗi biên dịch, bật cảnh báo với -Wall -Wextra, và gỡ lỗi bằng gdb.",
+      "minutes": 35,
+      "slides": "slides/cap1-bien-dich-go-loi.html",
+      "exercises": "content/exercises/cap1-bien-dich-go-loi.json"
+    },
+    {
+      "id": "cap2-con-tro-ham",
+      "title": "Con trỏ hàm",
+      "level": 2,
+      "desc": "Lưu địa chỉ hàm trong con trỏ, truyền hàm làm tham số (callback).",
+      "minutes": 40,
+      "slides": "slides/cap2-con-tro-ham.html",
+      "exercises": "content/exercises/cap2-con-tro-ham.json"
+    },
+    {
+      "id": "cap2-doc-ghi-file",
+      "title": "Đọc và ghi file",
+      "level": 2,
+      "desc": "Mở, đọc, ghi và đóng file bằng fopen, fgets, fprintf, fclose; kiểm tra lỗi.",
+      "minutes": 40,
+      "slides": "slides/cap2-doc-ghi-file.html",
+      "exercises": "content/exercises/cap2-doc-ghi-file.json"
+    },
+    {
+      "id": "cap2-cpp-class",
+      "title": "Class trong C++",
+      "level": 2,
+      "desc": "Class, constructor, destructor và đóng gói dữ liệu.",
+      "minutes": 45,
+      "slides": "slides/cap2-cpp-class.html",
+      "exercises": "content/exercises/cap2-cpp-class.json"
+    },
+    {
+      "id": "cap2-raii",
+      "title": "RAII và con trỏ thông minh",
+      "level": 2,
+      "desc": "Quản lý tài nguyên bằng đối tượng, unique_ptr và shared_ptr tự giải phóng.",
+      "minutes": 45,
+      "slides": "slides/cap2-raii.html",
+      "exercises": "content/exercises/cap2-raii.json"
+    },
+    {
+      "id": "cap2-stl-template",
+      "title": "STL và template",
+      "level": 2,
+      "desc": "vector, map, sort và template trong thư viện chuẩn C++.",
+      "minutes": 45,
+      "slides": "slides/cap2-stl-template.html",
+      "exercises": "content/exercises/cap2-stl-template.json"
+    },
+    {
+      "id": "cap1-struct",
+      "title": "Cấu trúc (struct)",
+      "level": 1,
+      "desc": "Gom nhiều thông tin khác kiểu thành một kiểu mới, truy cập bằng dấu chấm và mũi tên.",
+      "minutes": 35,
+      "slides": "slides/cap1-struct.html",
+      "exercises": "content/exercises/cap1-struct.json"
+    },
+    {
+      "id": "cap3-interpreter",
+      "title": "Viết interpreter",
+      "level": 3,
+      "desc": "Lexer, parser và đánh giá biểu thức.",
+      "minutes": 60,
+      "slides": "slides/cap3-interpreter.html",
+      "exercises": "content/exercises/cap3-interpreter.json"
+    },
+    {
+      "id": "cap3-tcp-ip",
+      "title": "Checksum và tiêu đề IPv4",
+      "level": 3,
+      "desc": "Tính checksum internet cho gói tin, nền tảng của TCP/IP.",
+      "minutes": 50,
+      "slides": "slides/cap3-tcp-ip.html",
+      "exercises": "content/exercises/cap3-tcp-ip.json"
+    },
+    {
+      "id": "cap3-redis-resp",
+      "title": "Giao thức RESP của Redis",
+      "level": 3,
+      "desc": "Đọc lệnh Redis theo định dạng RESP.",
+      "minutes": 45,
+      "slides": "slides/cap3-redis-resp.html",
+      "exercises": "content/exercises/cap3-redis-resp.json"
+    },
+    {
+      "id": "cap3-mqtt",
+      "title": "Bộ lọc chủ đề MQTT",
+      "level": 3,
+      "desc": "Ký tự + và # trong chủ đề, nền tảng của broker MQTT.",
+      "minutes": 45,
+      "slides": "slides/cap3-mqtt.html",
+      "exercises": "content/exercises/cap3-mqtt.json"
+    },
+    {
+      "id": "cap3-trinh-bien-dich-rpn",
+      "title": "Trình biên dịch: biểu thức sang RPN",
+      "level": 3,
+      "desc": "Phân tích biểu thức trung tố có ngoặc và sinh mã theo thứ tự hậu tố (RPN).",
+      "minutes": 50,
+      "slides": "slides/cap3-trinh-bien-dich-rpn.html",
+      "exercises": "content/exercises/cap3-trinh-bien-dich-rpn.json"
+    },
+    {
+      "id": "cap3-may-ao-don-gian",
+      "title": "Máy ảo đơn giản",
+      "level": 3,
+      "desc": "Máy ảo thực thi chương trình gồm các lệnh đơn giản trên thanh ghi.",
+      "minutes": 45,
+      "slides": "slides/cap3-may-ao-don-gian.html",
+      "exercises": "content/exercises/cap3-may-ao-don-gian.json"
+    },
+    {
+      "id": "cap3-phan-vung-khoi-dong",
+      "title": "Phân vùng khởi động (bootloader)",
+      "level": 3,
+      "desc": "Bảng phân vùng MBR có 4 mục, mỗi mục có byte trạng thái; đọc đúng để biết phân vùng nào có cờ khởi động.",
+      "minutes": 40,
+      "slides": "slides/cap3-phan-vung-khoi-dong.html",
+      "exercises": "content/exercises/cap3-phan-vung-khoi-dong.json"
+    },
+    {
+      "id": "cap3-doc-file-elf",
+      "title": "Đọc tiêu đề file ELF",
+      "level": 3,
+      "desc": "Nhận diện file chương trình Linux (ELF) qua 4 byte đầu.",
+      "minutes": 40,
+      "slides": "slides/cap3-doc-file-elf.html",
+      "exercises": "content/exercises/cap3-doc-file-elf.json"
+    },
+    {
+      "id": "cap2-cay-tep-tin",
+      "title": "Cây thư mục trong bộ nhớ (FUSE)",
+      "level": 2,
+      "desc": "Biểu diễn đường dẫn và tra cứu tệp, nền tảng của một hệ thống tệp.",
+      "minutes": 45,
+      "slides": "slides/cap2-cay-tep-tin.html",
+      "exercises": "content/exercises/cap2-cay-tep-tin.json"
+    },
+    {
+      "id": "cap3-chunk-minecraft",
+      "title": "Chunk và tọa độ khối (Minecraft)",
+      "level": 3,
+      "desc": "Thế giới chia thành chunk 16×16×16; đổi tọa độ khối thành chỉ số một chiều.",
+      "minutes": 40,
+      "slides": "slides/cap3-chunk-minecraft.html",
+      "exercises": "content/exercises/cap3-chunk-minecraft.json"
+    },
+    {
+      "id": "cap3-lap-lich-round-robin",
+      "title": "Lập lịch round-robin (hệ điều hành)",
+      "level": 3,
+      "desc": "Mỗi tiến trình được chạy một lượng thời gian cố định theo vòng; tính thời điểm hoàn thành.",
+      "minutes": 50,
+      "slides": "slides/cap3-lap-lich-round-robin.html",
+      "exercises": "content/exercises/cap3-lap-lich-round-robin.json"
+    },
+    {
+      "id": "cap3-jit-ma-may",
+      "title": "JIT: sinh mã máy",
+      "level": 3,
+      "desc": "Sinh các byte mã máy x86-64 đơn giản cho hàm trả về một hằng số.",
+      "minutes": 45,
+      "slides": "slides/cap3-jit-ma-may.html",
+      "exercises": "content/exercises/cap3-jit-ma-may.json"
+    },
+    {
+      "id": "cap3-nes-bang-ten",
+      "title": "NES: tính vị trí ô trên bảng tên",
+      "level": 3,
+      "desc": "Máy NES vẽ nền theo lưới 32×30 ô; đổi tọa độ ô thành chỉ số trong bảng tên.",
+      "minutes": 40,
+      "slides": "slides/cap3-nes-bang-ten.html",
+      "exercises": "content/exercises/cap3-nes-bang-ten.json"
+    },
+    {
+      "id": "cap3-llvm-ir",
+      "title": "LLVM: sinh mã trung gian",
+      "level": 3,
+      "desc": "Sinh dòng LLVM IR cho một phép cộng; LLVM dùng biểu diễn trung gian độc lập máy.",
+      "minutes": 45,
+      "slides": "slides/cap3-llvm-ir.html",
+      "exercises": "content/exercises/cap3-llvm-ir.json"
+    },
+    {
+      "id": "cap3-mang-goi-tin",
+      "title": "Đóng gói gói tin mạng",
+      "level": 3,
+      "desc": "Thêm tiền tố độ dài 2 byte (big-endian) cho một thông điệp, nền tảng của giao thức có khung.",
+      "minutes": 45,
+      "slides": "slides/cap3-mang-goi-tin.html",
+      "exercises": "content/exercises/cap3-mang-goi-tin.json"
+    },
+    {
+      "id": "cap3-do-hoa-pixel",
+      "title": "Pixel và đệm khung (Handmade)",
+      "level": 3,
+      "desc": "Một pixel 32 bit gồm các thành phần màu; đóng gói RGB vào một số nguyên.",
+      "minutes": 40,
+      "slides": "slides/cap3-do-hoa-pixel.html",
+      "exercises": "content/exercises/cap3-do-hoa-pixel.json"
+    },
+    {
+      "id": "cap3-debugger-breakpoint",
+      "title": "Breakpoint: thay byte bằng 0xCC",
+      "level": 3,
+      "desc": "Cách debugger đặt điểm dừng: ghi lệnh ngắt 0xCC và giữ byte gốc để khôi phục.",
+      "minutes": 45,
+      "slides": "slides/cap3-debugger-breakpoint.html",
+      "exercises": "content/exercises/cap3-debugger-breakpoint.json"
+    },
+    {
+      "id": "cap3-vga-van-ban-os",
+      "title": "Chữ trên màn hình VGA (OS tutorial)",
+      "level": 3,
+      "desc": "Bộ đệm văn bản VGA 80×25, mỗi ô 2 byte; tính địa chỉ ô (hàng, cột).",
+      "minutes": 40,
+      "slides": "slides/cap3-vga-van-ban-os.html",
+      "exercises": "content/exercises/cap3-vga-van-ban-os.json"
+    },
+    {
+      "id": "cap3-kvm-vong-thoat",
+      "title": "KVM: xử lý lý do thoát khỏi máy ảo",
+      "level": 3,
+      "desc": "Vòng lặp của hypervisor: chạy vCPU, rồi xử lý khi máy ảo thoát để nhờ hypervisor (ví dụ ghi cổng I/O).",
+      "minutes": 50,
+      "slides": "slides/cap3-kvm-vong-thoat.html",
+      "exercises": "content/exercises/cap3-kvm-vong-thoat.json"
+    },
+    {
+      "id": "cap3-container-pid",
+      "title": "Container: không gian PID riêng",
+      "level": 3,
+      "desc": "Container thấy tiến trình với số PID riêng bắt đầu từ 1; ánh xạ PID thật sang PID trong container.",
+      "minutes": 45,
+      "slides": "slides/cap3-container-pid.html",
+      "exercises": "content/exercises/cap3-container-pid.json"
+    },
+    {
+      "id": "cap3-server-su-kien",
+      "title": "Server đồng thời: vòng lặp sự kiện",
+      "level": 3,
+      "desc": "Một luồng xử lý nhiều kết nối bằng hàng đợi sự kiện, thay vì mỗi kết nối một luồng.",
+      "minutes": 50,
+      "slides": "slides/cap3-server-su-kien.html",
+      "exercises": "content/exercises/cap3-server-su-kien.json"
+    },
+    {
+      "id": "cap3-kernel-ngat",
+      "title": "Kernel: bảng vector ngắt",
+      "level": 3,
+      "desc": "Khi có ngắt, CPU tra bảng vector để gọi đúng trình xử lý.",
+      "minutes": 50,
+      "slides": "slides/cap3-kernel-ngat.html",
+      "exercises": "content/exercises/cap3-kernel-ngat.json"
+    },
+    {
+      "id": "cap3-mang-tu-viet",
+      "title": "Mạng từ đầu: gửi theo gói và số thứ tự",
+      "level": 3,
+      "desc": "Chia thông điệp thành gói có kích thước tối đa, đánh số thứ tự để người nhận ghép lại.",
+      "minutes": 50,
+      "slides": "slides/cap3-mang-tu-viet.html",
+      "exercises": "content/exercises/cap3-mang-tu-viet.json"
+    },
+    {
+      "id": "cap3-trinh-bien-dich-tu-so",
+      "title": "Trình biên dịch: số nguyên sang assembly",
+      "level": 3,
+      "desc": "Biến một số nguyên trong mã nguồn thành lệnh assembly đơn giản; bước đầu của trình biên dịch.",
+      "minutes": 40,
+      "slides": "slides/cap3-trinh-bien-dich-tu-so.html",
+      "exercises": "content/exercises/cap3-trinh-bien-dich-tu-so.json"
+    }
+  ],
+  "levels": [
+    {
+      "id": 1,
+      "name": "Cấp 1 · Làm quen",
+      "desc": "Con trỏ, bộ nhớ, cấu trúc dữ liệu cơ bản."
+    },
+    {
+      "id": 2,
+      "name": "Cấp 2 · Trung bình",
+      "desc": "Chương trình nhiều module, sự kiện, đồ họa đơn giản."
+    },
+    {
+      "id": 3,
+      "name": "Cấp 3 · Nâng cao",
+      "desc": "Trình biên dịch, hệ điều hành, mạng."
+    }
+  ]
+}
