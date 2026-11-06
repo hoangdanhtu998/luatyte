@@ -355,6 +355,7 @@ main.triet .lesson-frame > p:has(> strong:first-child){margin-left:0;margin-righ
 /* Màn hình rộng (từ 1600px): mục lục cố định cách mép trái một khoảng, nội dung ở giữa */
 @media (min-width:1600px){
   main.triet{display:block;max-width:880px;padding:48px 32px 96px}
+  body.chat-open main.triet{max-width:880px}
   main.triet > nav.toc{position:fixed;left:28px;top:150px;width:250px;max-height:calc(100vh - 190px);overflow:auto;margin:0;padding:16px;border-radius:14px;border:1px solid var(--color-rule,#D9CFBE);box-shadow:0 4px 18px rgba(0,0,0,.08);z-index:20}
   .toc-toggle{top:112px;left:28px;right:auto;bottom:auto;border-radius:10px;border:1px solid var(--color-rule,#D9CFBE);box-shadow:0 2px 8px rgba(0,0,0,.1)}
 }
@@ -402,8 +403,16 @@ body.chat-open .lesson-chat{display:flex}
 .lc-input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--color-field,#c9bfae);border-radius:10px;font:inherit;background:var(--color-paper,#fff);color:var(--color-ink,#1c1917)}
 .lc-send{padding:0 16px;border-radius:10px;border:0;background:var(--color-ink,#1c1917);color:var(--color-paper,#fff);font:700 15px var(--font-body);cursor:pointer}
 .lc-fab{position:fixed;right:20px;bottom:20px;z-index:70;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--color-rule,#D9CFBE);background:var(--color-ink,#1c1917);color:var(--color-paper,#fff);font:600 15px var(--font-body);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-@media (min-width:1400px){
+@media (min-width:1200px){
   body.chat-open main.triet{margin-left:auto;margin-right:384px}
+}
+@media (min-width:1200px) and (max-width:1599px){
+  body.chat-open main.triet{max-width:min(1200px,calc(100% - 432px))}
+}
+/* Màn hình 1200–1399 px: khi mở trợ lý thì ẩn mục lục để đoạn văn không bị bóp hẹp */
+@media (min-width:1200px) and (max-width:1399px){
+  body.chat-open main.triet{grid-template-columns:minmax(0,1fr)}
+  body.chat-open main.triet > nav.toc{display:none}
 }
 @media (max-width:640px){
   .lesson-chat{top:auto;left:12px;right:12px;bottom:12px;width:auto;max-height:70vh}
@@ -411,7 +420,7 @@ body.chat-open .lesson-chat{display:flex}
 
 /* Trợ lý tra cứu trên các trang khác: nhãn mục và chừa chỗ cho khung bên phải trên màn hình rộng */
 .lc-label{font-weight:700;color:var(--color-ink,#1c1917);font-size:15px}
-@media (min-width:1400px){
+@media (min-width:1200px){
   body.chat-open main:not(.triet){margin-right:384px}
 }
 
