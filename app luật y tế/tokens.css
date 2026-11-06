@@ -11,7 +11,7 @@
   --color-paper: #FBF7F0; --color-paper-2: #FFFFFF; --color-paper-3: #F3EDE2;
   --color-ink: #2B2118; --color-ink-2: #4A3F33; --color-muted: #7A6D5E;
   --color-rule: #DCD2C2; --color-rule-2: #EFE8DC;
-  --color-accent: #3F6B4E; --color-accent-ink: #FFFFFF; --color-accent-soft: #E4EDE6; --color-accent-soft-ink: #23402E;
+  --color-accent: #3F6B4E; --color-action: #2B2118; --color-action-ink: #FBF7F0; --color-accent-ink: #FFFFFF; --color-accent-soft: #E4EDE6; --color-accent-soft-ink: #23402E;
   --color-focus: #3F6B4E;
   --font-display: "EB Garamond", Georgia, serif; --font-body: "Lato", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "IBM Plex Mono", ui-monospace, monospace;
