@@ -382,3 +382,29 @@ nav[aria-label="Chuyển khu học"] a{color:var(--color-paper,#fff)!important;f
 nav[aria-label="Chuyển khu học"] a:hover{opacity:1;border-bottom-color:var(--color-accent,#8a6a3f)}
 nav[aria-label="Chuyển khu học"] a[aria-current]{opacity:1;border-bottom-color:var(--color-accent,#8a6a3f)}
 @media (max-width:640px){nav[aria-label="Chuyển khu học"]{padding:10px 14px!important;gap:4px 14px!important;font-size:14px!important}}
+
+/* ---- Trợ lý tra cứu bài học (bên phải) ---- */
+.lesson-chat{position:fixed;right:24px;top:120px;bottom:24px;width:340px;max-width:calc(100vw - 32px);display:none;flex-direction:column;background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:70;overflow:hidden}
+body.chat-open .lesson-chat{display:flex}
+.lc-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--color-ink,#1c1917);color:var(--color-paper,#fff)}
+.lc-head strong{font-size:16px}
+.lc-close{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+.lc-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.lc-msg{padding:10px 12px;border-radius:12px;max-width:92%;line-height:1.55;word-wrap:break-word}
+.lc-bot{background:var(--color-paper-3,#f7f4ee);color:var(--color-ink-2,#292524);align-self:flex-start}
+.lc-me{background:var(--color-ink,#1c1917);color:var(--color-paper,#fff);align-self:flex-end}
+.lc-list{margin:8px 0 0;padding:0;list-style:none}
+.lc-list li{margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--color-rule,#D9CFBE)}
+.lc-list li:last-child{border-bottom:0}
+.lc-list a{font-weight:700;color:var(--color-ink,#1c1917);text-decoration:underline;text-underline-offset:3px}
+.lc-snip{font-size:14px;color:var(--color-muted,#78716c);margin-top:3px}
+.lc-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--color-rule,#D9CFBE)}
+.lc-input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--color-field,#c9bfae);border-radius:10px;font:inherit;background:var(--color-paper,#fff);color:var(--color-ink,#1c1917)}
+.lc-send{padding:0 16px;border-radius:10px;border:0;background:var(--color-ink,#1c1917);color:var(--color-paper,#fff);font:700 15px var(--font-body);cursor:pointer}
+.lc-fab{position:fixed;right:20px;bottom:20px;z-index:70;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--color-rule,#D9CFBE);background:var(--color-ink,#1c1917);color:var(--color-paper,#fff);font:600 15px var(--font-body);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+@media (min-width:1400px){
+  body.chat-open main.triet{margin-left:auto;margin-right:384px}
+}
+@media (max-width:640px){
+  .lesson-chat{top:auto;left:12px;right:12px;bottom:12px;width:auto;max-height:70vh}
+}
