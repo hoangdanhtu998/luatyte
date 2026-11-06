@@ -358,3 +358,20 @@ main.triet .lesson-frame > p:has(> strong:first-child){margin-left:0;margin-righ
   main.triet > nav.toc{position:fixed;left:28px;top:150px;width:250px;max-height:calc(100vh - 190px);overflow:auto;margin:0;padding:16px;border-radius:14px;border:1px solid var(--color-rule,#D9CFBE);box-shadow:0 4px 18px rgba(0,0,0,.08);z-index:20}
   .toc-toggle{top:112px;left:28px;right:auto;bottom:auto;border-radius:10px;border:1px solid var(--color-rule,#D9CFBE);box-shadow:0 2px 8px rgba(0,0,0,.1)}
 }
+
+/* ---- Tinh chỉnh bố cục bài học: mục lục dạng danh sách đơn giản, khung phần mảnh, bớt lồng hộp ---- */
+main.triet nav.toc{background:none;border:0;box-shadow:none;border-radius:0;padding:0}
+main.triet nav.toc > strong{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-muted,#78716c);margin:0 0 12px}
+main.triet nav.toc > ol{display:block;gap:0}
+main.triet nav.toc > ol > li{background:none;border:0;border-left:2px solid var(--color-rule,#D9CFBE);border-radius:0;padding:7px 0 7px 12px;margin:0 0 2px;font-size:15px;line-height:1.4}
+main.triet nav.toc > ol > li:hover{border-left-color:var(--color-ink,#1c1917);background:none}
+main.triet nav.toc > ol > li::before{font-weight:600}
+main.triet .lesson-frame{border:1px solid var(--color-rule,#D9CFBE);border-top:1px solid var(--color-rule,#D9CFBE);padding:24px 28px 16px;box-shadow:none}
+main.triet .lesson-frame > h2::before{width:4px}
+main.triet .lesson-frame > p:has(> strong:first-child){background:transparent;border:0;border-left:3px solid var(--color-accent,#8a6a3f);border-radius:0;padding:4px 0 4px 14px;margin:14px 0;box-shadow:none}
+main.triet .lesson-frame > p:has(> strong:first-child) > strong:first-child{background:none;padding:0;margin-right:0;font-size:.85em;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:2px;color:var(--color-accent-soft-ink,#5b4424)}
+main.triet .check{box-shadow:none}
+@media (min-width:1600px){
+  main.triet > nav.toc{width:280px;max-height:none;overflow:visible;top:140px;left:32px}
+  .toc-toggle{top:100px;left:32px}
+}
