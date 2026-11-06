@@ -793,5 +793,80 @@
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=217386",
     "detailSource": "Toàn văn PDF: https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf",
     "verify": false
+  },
+  {
+    "id": "tt_10_2026_may_moc",
+    "cat": "Thiết bị y tế",
+    "name": "Thông tư 10/2026/TT-BYT về tiêu chuẩn, định mức sử dụng máy móc, thiết bị chuyên dùng trong y tế",
+    "so": "10/2026/TT-BYT",
+    "pass": "14/05/2026",
+    "eff": "01/07/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 08/2019/TT-BYT và Thông tư 46/2025/TT-BYT (hết hiệu lực từ 01/07/2026, Điều 7 khoản 2).",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực (trang nguồn ghi đang cập nhật).",
+    "points": [
+      "Quy định tiêu chuẩn, định mức sử dụng máy móc, thiết bị chuyên dùng trong lĩnh vực y tế thuộc quản lý nhà nước của Bộ Y tế.",
+      "Có hiệu lực từ 01/07/2026 (Điều 7 khoản 1).",
+      "Thay thế Thông tư 08/2019/TT-BYT và Thông tư 46/2025/TT-BYT."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-10-2026-tt-byt-tieu-chuan-va-dinh-muc-su-dung-may-moc-y-te-434705-d1.html",
+    "ghi_chu": "Đã đối chiếu ngày và điều khoản hiệu lực qua trang nguồn; chưa đối chiếu toàn văn PDF."
+  },
+  {
+    "id": "tt_16_2026_thuoc_mien_phi",
+    "cat": "Dược",
+    "name": "Thông tư 16/2026/TT-BYT về chương trình hỗ trợ thuốc miễn phí cho cơ sở khám bệnh, chữa bệnh",
+    "so": "16/2026/TT-BYT",
+    "pass": "25/05/2026",
+    "eff": "10/07/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 31/2018/TT-BYT (theo thuvienphapluat.vn, chưa đối chiếu PDF).",
+    "het_hieu_luc": "Chưa xác định ngày hết hiệu lực.",
+    "points": [
+      "Quy định chương trình hỗ trợ thuốc miễn phí cho cơ sở khám bệnh, chữa bệnh.",
+      "Có hiệu lực từ 10/07/2026 (theo nguồn tìm kiếm).",
+      "Cần mở trang gốc để đối chiếu điều khoản."
+    ],
+    "verify": false,
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-16-2026-TT-BYT-chuong-trinh-ho-tro-thuoc-mien-phi-cho-co-so-kham-benh-chua-benh-706925.aspx",
+    "ghi_chu": "Trang nguồn trả 403 khi truy cập tự động; ngày lấy từ kết quả tìm kiếm, cần mở trang gốc để xác nhận."
+  },
+  {
+    "id": "tt_34_2026_csskhoe",
+    "cat": "Chương trình y tế",
+    "name": "Thông tư 34/2026/TT-BYT hướng dẫn Chương trình chăm sóc sức khỏe 2026–2035",
+    "so": "34/2026/TT-BYT",
+    "pass": "08/09/2026",
+    "eff": "08/09/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nội dung đã đọc.",
+    "het_hieu_luc": "Giai đoạn I đến hết năm 2030 (theo trích yếu). Ngày kết thúc cụ thể chưa có trong văn bản đã đọc.",
+    "points": [
+      "Hướng dẫn thi hành Chương trình chăm sóc sức khỏe 2026–2035; giai đoạn I từ 2026 đến hết 2030.",
+      "Có hiệu lực kể từ ngày ký 08/09/2026 (Điều 4 khoản 1).",
+      "Chưa đối chiếu toàn văn, chỉ đọc được phần đầu trang nguồn."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-34-2026-tt-byt-huong-dan-chuong-trinh-cham-soc-suc-khoe-2026-2035-446910-d1.html",
+    "ghi_chu": "Điều 4 khoản 1: có hiệu lực kể từ ngày ký. Trang đọc được đến ký tự 100.000/344.581; chưa đọc phần còn lại."
+  },
+  {
+    "id": "tt_35_2026_bao_tro_xh",
+    "cat": "Bảo trợ xã hội",
+    "name": "Thông tư 35/2026/TT-BYT quy định phân cấp nhiệm vụ trong lĩnh vực bảo trợ xã hội thuộc thẩm quyền Bộ Y tế",
+    "so": "35/2026/TT-BYT",
+    "pass": "18/09/2026",
+    "eff": "02/11/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực.",
+    "points": [
+      "Quy định phân cấp một số nhiệm vụ trong lĩnh vực bảo trợ xã hội thuộc thẩm quyền Bộ Y tế cho Cục Bảo trợ xã hội.",
+      "Ngày hiệu lực: 02/11/2026 theo một nguồn; nguồn khác ghi 01/11/2026, cần đối chiếu."
+    ],
+    "verify": false,
+    "nguon": "https://luatnguyen.vn/van-ban-phap-luat/thong-tu-35-2026-tt-byt-quy-dinh-viec-phan-cap-thuc-hien-nhiem-vu-trong-linh-vuc-bao-tro-xa-hoi-thuoc-tham-quyen-cua-bo-y-te-3958.html",
+    "ghi_chu": "Nguồn khác ghi hiệu lực 01/11/2026; luatnguyen ghi 02/11/2026. Cần đối chiếu với văn bản gốc."
   }
 ]
