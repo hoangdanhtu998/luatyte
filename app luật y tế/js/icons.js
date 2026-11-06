@@ -34,20 +34,6 @@ window.LytIcons = (function () {
       var kicker = a.querySelector('.hub-kicker');
       if (kicker) kicker.insertAdjacentHTML('beforebegin', window.LytIcons.svg(name));
     });
-    // Tiêu đề phần bài học
-    document.querySelectorAll('main.triet .lesson-frame > h2').forEach(function (h) {
-      var t = h.textContent.toLowerCase();
-      var name = 'book';
-      if (/ngụy|lỗi|suy diễn|quy nạp|phản ví/.test(t)) name = 'question';
-      else if (/đồng ý|tình huống|lắng nghe|tranh luận/.test(t)) name = 'chat';
-      else if (/bảo mật|nguyên tắc|tôn trọng/.test(t)) name = 'shield';
-      else if (/xung đột|cân nhắc|công bằng/.test(t)) name = 'scale';
-      else if (/phương pháp|lập luận|tư duy|cách đọc/.test(t)) name = 'bulb';
-      else if (/các cách|ba cách|trường phái|ngành/.test(t)) name = 'layers';
-      else if (/phương đông|đông|việt nam|hy lạp|trung cổ|cận đại|thế kỷ|cổ đại/.test(t)) name = 'compass';
-      else if (/bài tập|trắc nghiệm|ôn|tổng/.test(t)) name = 'check';
-      else if (/người|bạn|gia đình/.test(t)) name = 'users';
-      h.insertAdjacentHTML('afterbegin', window.LytIcons.svg(name));
-    });
+    // Icon ở tiêu đề các khung phần bài học đã bỏ theo yêu cầu; chỉ còn icon ở thẻ khu Học
   });
 })();
