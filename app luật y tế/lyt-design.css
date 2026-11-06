@@ -302,3 +302,13 @@ main.triet th,main.triet td{padding:8px 10px;border-bottom:1px solid var(--color
 :root[data-theme="mono"] main.triet nav.toc{border-color:#e2e2e2;background:#fff}
 :root[data-theme="mono"] main.triet nav.toc > ol > li{border-color:#e2e2e2;background:#fafafa}
 :root[data-theme="mono"] .btn:not(.ghost){background:#2b2b2b;border-color:#2b2b2b;color:#fff}
+
+/* Khung cho từng phần của bài học */
+main.triet .lesson-frame{background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:16px;padding:22px 26px 14px;margin:28px 0;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+main.triet .lesson-frame > h2{margin-top:0;padding-left:14px}
+main.triet .lesson-frame > h2::before{top:.2em;bottom:.2em}
+main.triet .lesson-frame > *:last-child{margin-bottom:8px}
+main.triet .lesson-frame > p:has(> strong:first-child){margin-left:0;margin-right:0}
+@media (max-width:640px){main.triet .lesson-frame{padding:16px 16px 10px;border-radius:12px;margin:20px 0}}
+:root[data-theme="ink"] main.triet .lesson-frame{background:#1B1B17;border-color:#44433B;box-shadow:none}
+:root[data-theme="mono"] main.triet .lesson-frame{background:#fff;border-color:#e2e2e2;box-shadow:none}
