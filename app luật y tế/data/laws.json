@@ -34,7 +34,8 @@
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
+    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ."
   },
   {
     "id": "tt26_2025",
@@ -72,7 +73,8 @@
       "Giá thanh toán không vượt giá trúng thầu gần nhất tại cơ sở — Điều 4."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024",
+    "ghi_chu": "Kiểm 2026-11-06: point 1 ghi Danh mục thuốc hiếm, nhưng Điều 2 khoản 1 là Danh mục thuốc BHYT (TT 26/2019). Cần sửa point."
   },
   {
     "id": "tt21_2024",
@@ -128,7 +130,8 @@
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023",
+    "ghi_chu": "Kiểm 2026-11-06: entry ghi hết hiệu lực nhưng tìm kiếm vbpl.vn ghi là văn bản hiện thời. Cần xác minh lại trạng thái."
   },
   {
     "id": "tt49_2025",
@@ -264,7 +267,8 @@
     "guide": "Nghị định 188/2025/NĐ-CP hướng dẫn Luật BHYT",
     "detailSource": "caselaw.vn (Luật 51/2024/QH15), Điều 13 và Điều 22",
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=51202415",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: Điều 22 khoản 1 điểm d: hai điều kiện (5 năm và 6 lần mức tham chiếu) là cộng gộp (và). Điều 22 có hiệu lực từ 01/01/2025. Cần sửa."
   },
   {
     "id": "duoc",
@@ -804,7 +808,8 @@
       "Cơ sở khám chữa bệnh ký hợp đồng BHYT phải công khai giá dịch vụ tại nơi khám bệnh — Điều 7."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: SAI NỘI DUNG. 06/2026/TT-BYT (ban hành 02/04/2026) quy định mã hóa ICD-10, không phải giá dịch vụ KCB BHYT. Cần xác nhận hoặc gỡ."
   },
   {
     "id": "tt_14_2026_dang_ky_kcb",
@@ -821,6 +826,7 @@
       "Chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện — Điều 8."
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: 14/2026/TT-BYT theo nguồn thứ cấp là chẩn đoán nghiện ma túy, không phải đăng ký KCB. Không tìm thấy PDF đăng ký KCB tương ứng. Cần xác nhận hoặc gỡ."
   }
 ]
