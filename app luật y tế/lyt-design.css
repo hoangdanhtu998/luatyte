@@ -268,3 +268,18 @@ main.triet th,main.triet td{padding:8px 10px;border-bottom:1px solid var(--color
   main.triet{padding:44px 32px 88px}
 }
 @media (prefers-reduced-motion:reduce){main.triet *{transition:none!important}}
+
+/* ---- Giao diện Tối sắc: khung nội dung sáng hơn nền, chữ dịu để dễ đọc ---- */
+:root[data-theme="ink"] main.triet{color:#ECE8DE}
+:root[data-theme="ink"] main.triet p,:root[data-theme="ink"] main.triet li{color:#DCD7CA}
+:root[data-theme="ink"] main.triet strong{color:#FFFFFF}
+:root[data-theme="ink"] main.triet h1,:root[data-theme="ink"] main.triet h2,:root[data-theme="ink"] main.triet h3{color:#F7F4EC}
+:root[data-theme="ink"] main.triet p:has(> strong:first-child){background:#2A2A24;border-color:#44433B;box-shadow:none}
+:root[data-theme="ink"] main.triet p:has(> strong:first-child) > strong:first-child{background:#3B3A32;color:#F7F4EC}
+:root[data-theme="ink"] main.triet .check{background:#2A2A24;border:1px solid #44433B;border-left:4px solid #E8E2D0;color:#ECE8DE}
+:root[data-theme="ink"] main.triet .check::before{background:#E8E2D0;color:#0E0E0C}
+:root[data-theme="ink"] main.triet nav.toc{background:#1B1B17;border-color:#44433B}
+:root[data-theme="ink"] main.triet nav.toc > ol > li{background:#262620;border-color:#44433B}
+:root[data-theme="ink"] main.triet nav.toc a{color:#F7F4EC}
+:root[data-theme="ink"] main.triet p a:not(.btn),:root[data-theme="ink"] main.triet li a:not(.btn){color:#F2EFE8;text-decoration-color:#9A9486}
+:root[data-theme="ink"] main.triet th,:root[data-theme="ink"] main.triet td{border-color:#44433B}
