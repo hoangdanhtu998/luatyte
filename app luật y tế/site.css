@@ -14,7 +14,7 @@
     --color-paper: #0B1220; --color-paper-2: #111B2E; --color-paper-3: #1E293B;
     --color-ink: #E2E8F0; --color-ink-2: #CBD5E1; --color-muted: #94A3B8;
     --color-rule: #334155; --color-rule-2: #1E293B;
-    --color-accent: #9CC5A8; --color-accent-ink: #1C1915; --color-accent-soft: #2F4A38; --color-accent-soft-ink: #DCEFE2;
+    --color-accent: #9CC5A8; --color-accent-ink: #1C1915; --color-accent-soft: #2F4A38; --color-accent-soft-ink: #DCEFE2; --color-action: #E6DDC8; --color-action-ink: #1C1915;
     --color-focus: #9CC5A8;
     --color-focus: oklch(80% 0.12 172); --color-field: oklch(66% 0.03 210);
     --color-error: oklch(72% 0.14 27); --color-error-soft: oklch(28% 0.05 27); --color-error-ink: oklch(88% 0.06 27);
@@ -27,7 +27,7 @@
   --color-paper: oklch(30% 0.05 225); --color-paper-2: oklch(34% 0.055 225); --color-paper-3: oklch(39% 0.06 225);
   --color-ink: oklch(96% 0.01 200); --color-ink-2: oklch(88% 0.02 205); --color-muted: oklch(77% 0.03 210);
   --color-rule: oklch(46% 0.05 225); --color-rule-2: oklch(38% 0.05 225);
-  --color-accent: oklch(80% 0.12 172); --color-accent-ink: oklch(22% 0.04 215); --color-accent-soft: oklch(30% 0.045 190); --color-accent-soft-ink: oklch(90% 0.04 190);
+  --color-accent: oklch(80% 0.12 172); --color-action: oklch(88% 0.03 80); --color-action-ink: oklch(22% 0.03 60); --color-accent-ink: oklch(22% 0.04 215); --color-accent-soft: oklch(30% 0.045 190); --color-accent-soft-ink: oklch(90% 0.04 190);
   --color-focus: oklch(80% 0.12 172); --color-field: oklch(66% 0.03 210);
   --color-error: oklch(72% 0.14 27); --color-error-soft: oklch(28% 0.05 27); --color-error-ink: oklch(88% 0.06 27);
   --shadow-card: 0 20px 40px oklch(12% 0.03 215 / 0.55);
@@ -520,7 +520,7 @@ footer { margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--co
 :root[data-theme="dark"] { --c-gold: oklch(82% 0.13 85); --c-green: oklch(80% 0.14 155); --c-blue: oklch(78% 0.04 60); --c-violet: oklch(78% 0.13 295); --c-orange: oklch(80% 0.14 55); --c-rose: oklch(78% 0.13 10); }
 .f-gold b { color: var(--c-gold); } .f-inc b { color: var(--c-green); } .f-rep b { color: var(--c-blue); } .f-lvl b { color: var(--c-violet); } .f-streak b { color: var(--c-orange); }
 .save-ind { color: var(--color-muted); font-size: var(--text-xs); }
-.btn:not(.ghost):not(:disabled) { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.btn:not(.ghost):not(:disabled) { background: var(--color-action); border-color: var(--color-action); color: var(--color-action-ink); }
 .btn:not(.ghost):hover:not(:disabled) { background: color-mix(in oklch, var(--color-accent) 85%, var(--color-ink)); border-color: transparent; }
 .btn.danger { color: var(--color-error-ink); border-color: var(--color-error); }
 .section-title { border-top: 2px solid var(--color-accent); }
@@ -625,7 +625,7 @@ button, a, [role="tab"], summary { cursor: pointer; }
 /* ===== Ba giao diện chọn được: paper (biên tập sáng), ink (tối sắc), warm (ấm dịu) ===== */
 :root[data-theme="paper"] { color-scheme: light; --color-paper: #F7F3EA; --color-paper-2: #FFFDF8; --color-paper-3: #EFE9DC; --color-ink: #1F1A14; --color-ink-2: #3D342A; --color-muted: #6F6356; --color-rule: #D9CFBE; --color-rule-2: #ECE5D6; --color-accent: #1F1A14; --color-accent-ink: #FFFDF8; --color-accent-soft: #EFE9DC; --color-accent-soft-ink: #1F1A14; --color-focus: #8A5A2B; --radius-card: 4px; --shadow-card: none; }
 :root[data-theme="ink"] { color-scheme: dark; --color-paper: #0E0E0C; --color-paper-2: #171714; --color-paper-3: #22221E; --color-ink: #F2EFE8; --color-ink-2: #D6D1C4; --color-muted: #9A9486; --color-rule: #34332D; --color-rule-2: #262520; --color-accent: #E8E2D0; --color-accent-ink: #0E0E0C; --color-accent-soft: #2A2A24; --color-accent-soft-ink: #F2EFE8; --color-focus: #E8E2D0; --radius-card: 4px; --shadow-card: none; }
-:root[data-theme="warm"] { color-scheme: light; --color-paper: #FBF7F0; --color-paper-2: #FFFFFF; --color-paper-3: #F3EDE2; --color-ink: #2B2118; --color-ink-2: #4A3F33; --color-muted: #7A6D5E; --color-rule: #DCD2C2; --color-rule-2: #EFE8DC; --color-accent: #3F6B4E; --color-accent-ink: #FFFFFF; --color-accent-soft: #E4EDE6; --color-accent-soft-ink: #23402E; --color-focus: #3F6B4E; }
+:root[data-theme="warm"] { --color-action: #7A4A2B; --color-action-ink: #FFFFFF; color-scheme: light; --color-paper: #FBF7F0; --color-paper-2: #FFFFFF; --color-paper-3: #F3EDE2; --color-ink: #2B2118; --color-ink-2: #4A3F33; --color-muted: #7A6D5E; --color-rule: #DCD2C2; --color-rule-2: #EFE8DC; --color-accent: #3F6B4E; --color-accent-ink: #FFFFFF; --color-accent-soft: #E4EDE6; --color-accent-soft-ink: #23402E; --color-focus: #3F6B4E; }
 .theme-row { display: flex; justify-content: flex-end; margin: 0 0 var(--space-sm); }
 .theme-row label { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: var(--text-sm); color: var(--color-muted); }
 .theme-row select { min-height: 44px; padding: 0 var(--space-sm); border: 1px solid var(--color-rule); border-radius: 8px; background: var(--color-paper-2); color: var(--color-ink); font: inherit; }
@@ -633,6 +633,6 @@ button, a, [role="tab"], summary { cursor: pointer; }
 /* ===== Thêm năm giao diện: sepia (giấy cũ), terra (đất nung), forest (rừng đêm), plum (mận), mono (trắng đen) ===== */
 :root[data-theme="sepia"] { color-scheme: light; --color-paper: #F4ECD8; --color-paper-2: #FBF5E6; --color-paper-3: #E9DFC6; --color-ink: #3B2F1E; --color-ink-2: #574630; --color-muted: #7D6B51; --color-rule: #D4C5A4; --color-rule-2: #E6DAC0; --color-accent: #6B4E2E; --color-accent-ink: #FBF5E6; --color-accent-soft: #E9DFC6; --color-accent-soft-ink: #3B2F1E; --color-focus: #6B4E2E; --radius-card: 6px; --shadow-card: none; }
 :root[data-theme="terra"] { color-scheme: light; --color-paper: #FAF1EA; --color-paper-2: #FFFFFF; --color-paper-3: #F4E3D7; --color-ink: #3A1F14; --color-ink-2: #5A3324; --color-muted: #876353; --color-rule: #E5CDBE; --color-rule-2: #F1E0D4; --color-accent: #B4532A; --color-accent-ink: #FFFFFF; --color-accent-soft: #F6DED1; --color-accent-soft-ink: #6B2E14; --color-focus: #B4532A; }
-:root[data-theme="forest"] { color-scheme: dark; --color-paper: #0F1A14; --color-paper-2: #15241B; --color-paper-3: #1D3026; --color-ink: #E6EFE8; --color-ink-2: #C6D5CA; --color-muted: #8DA293; --color-rule: #2F4A3B; --color-rule-2: #22372B; --color-accent: #A7D7B4; --color-accent-ink: #0F1A14; --color-accent-soft: #24402F; --color-accent-soft-ink: #DCF0E1; --color-focus: #A7D7B4; --radius-card: 8px; --shadow-card: none; }
+:root[data-theme="forest"] { --color-action: #C9B37A; --color-action-ink: #0F1A14; color-scheme: dark; --color-paper: #0F1A14; --color-paper-2: #15241B; --color-paper-3: #1D3026; --color-ink: #E6EFE8; --color-ink-2: #C6D5CA; --color-muted: #8DA293; --color-rule: #2F4A3B; --color-rule-2: #22372B; --color-accent: #A7D7B4; --color-accent-ink: #0F1A14; --color-accent-soft: #24402F; --color-accent-soft-ink: #DCF0E1; --color-focus: #A7D7B4; --radius-card: 8px; --shadow-card: none; }
 :root[data-theme="plum"] { color-scheme: dark; --color-paper: #1E1424; --color-paper-2: #2A1D33; --color-paper-3: #362843; --color-ink: #F3E9F5; --color-ink-2: #DCCBE0; --color-muted: #A893AD; --color-rule: #4A3A55; --color-rule-2: #362A41; --color-accent: #E7B8D8; --color-accent-ink: #1E1424; --color-accent-soft: #3F2C48; --color-accent-soft-ink: #F7E4F2; --color-focus: #E7B8D8; --radius-card: 8px; --shadow-card: none; }
 :root[data-theme="mono"] { color-scheme: light; --color-paper: #FFFFFF; --color-paper-2: #FFFFFF; --color-paper-3: #F2F2F2; --color-ink: #000000; --color-ink-2: #262626; --color-muted: #595959; --color-rule: #000000; --color-rule-2: #D9D9D9; --color-accent: #000000; --color-accent-ink: #FFFFFF; --color-accent-soft: #EDEDED; --color-accent-soft-ink: #000000; --color-focus: #000000; --radius-card: 0px; --shadow-card: none; }
