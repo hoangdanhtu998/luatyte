@@ -52,7 +52,8 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <div class="hero-top">
+    <div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="">Theo máy</option><option value="paper">Biên tập sáng</option><option value="ink">Tối sắc</option><option value="warm">Ấm dịu</option></select></label></div>
+  <div class="hero-top">
       <div class="brand">
         <img class="logo" src="icon.svg" alt="" width="48" height="48">
         <div>
@@ -639,6 +640,12 @@ function showTab(t){
 }
 document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
 addEventListener("resize", placeInd);
+// Gợi ý cuộn: còn tab bị khuất ở mép phải thì đánh dấu để CSS hiện mũi tên.
+const tabsNav = document.querySelector("nav.tabs");
+const tabsHint = () => { tabsNav.dataset.more = String(tabsNav.scrollLeft + tabsNav.clientWidth < tabsNav.scrollWidth - 4); };
+tabsNav.addEventListener("scroll", tabsHint, { passive: true });
+addEventListener("resize", tabsHint);
+tabsHint();
 
 /* ================= THƯ VIỆN ================= */
 let lawCat = "Tất cả";
@@ -662,7 +669,7 @@ function renderLaws(){
         <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
         <div>
           <h3>${esc(l.name)}</h3>
-          <div class="meta"><span class="mono">${esc(l.so)}</span><span>Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>${masteryLine(l)}
+          <div class="meta"><span class="mono">${esc(l.so)}</span><span class="eff">Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>${masteryLine(l)}
         </div>
         <button class="bm ${bmHas(l.id) ? "on" : ""}" data-bm="${esc(l.id)}" title="Đánh dấu luật này" aria-label="Đánh dấu luật này" aria-pressed="${bmHas(l.id)}">${bmHas(l.id) ? "★" : "☆"}</button>
         <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
@@ -2052,5 +2059,6 @@ boot().catch(e => {
 fetch("/api/me",{cache:"no-store"}).then(r=>{ if(r.status===404||r.status===405||r.status===501){ const a=document.getElementById("acct-link"); if(a) a.style.display="none"; return null; } return r.ok?r.json():null; }).then(d=>{ if(d&&d.user&&d.user.email){ const a=document.getElementById("acct-link"); a.textContent=d.user.email; a.title="Tài khoản đang đăng nhập"; } }).catch(()=>{});
 </script>
 <script src="js/plan-badge.js" defer></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
