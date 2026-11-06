@@ -283,3 +283,22 @@ main.triet th,main.triet td{padding:8px 10px;border-bottom:1px solid var(--color
 :root[data-theme="ink"] main.triet nav.toc a{color:#F7F4EC}
 :root[data-theme="ink"] main.triet p a:not(.btn),:root[data-theme="ink"] main.triet li a:not(.btn){color:#F2EFE8;text-decoration-color:#9A9486}
 :root[data-theme="ink"] main.triet th,:root[data-theme="ink"] main.triet td{border-color:#44433B}
+
+/* ---- Trắng đen: dịu độ tương phản, viền xám nhạt, khung nội dung nền xám rất nhạt ---- */
+:root[data-theme="mono"]{
+  --color-ink:#1f1f1f; --color-ink-2:#3d3d3d; --color-muted:#6b6b6b;
+  --color-rule:#d4d4d4; --color-rule-2:#ececec; --color-field:#b5b5b5;
+  --color-paper-3:#f5f5f5; --color-accent:#3a3a3a; --color-accent-soft:#eeeeee; --color-accent-soft-ink:#2b2b2b;
+}
+:root[data-theme="mono"] main.triet{color:#2b2b2b}
+:root[data-theme="mono"] main.triet p,:root[data-theme="mono"] main.triet li{color:#3a3a3a}
+:root[data-theme="mono"] main.triet strong{color:#1f1f1f}
+:root[data-theme="mono"] main.triet h1,:root[data-theme="mono"] main.triet h2,:root[data-theme="mono"] main.triet h3{color:#1f1f1f}
+:root[data-theme="mono"] main.triet p:has(> strong:first-child){background:#fafafa;border-color:#e2e2e2;box-shadow:none}
+:root[data-theme="mono"] main.triet p:has(> strong:first-child) > strong:first-child{background:#ececec;color:#2b2b2b}
+:root[data-theme="mono"] main.triet .check{background:#f5f5f5;border-color:#e2e2e2;border-left-color:#3a3a3a;color:#2b2b2b}
+:root[data-theme="mono"] main.triet .check::before{background:#3a3a3a;color:#fff}
+:root[data-theme="mono"] main.triet h2::before{background:#3a3a3a}
+:root[data-theme="mono"] main.triet nav.toc{border-color:#e2e2e2;background:#fff}
+:root[data-theme="mono"] main.triet nav.toc > ol > li{border-color:#e2e2e2;background:#fafafa}
+:root[data-theme="mono"] .btn:not(.ghost){background:#2b2b2b;border-color:#2b2b2b;color:#fff}
