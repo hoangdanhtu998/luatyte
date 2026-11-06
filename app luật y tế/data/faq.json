@@ -7,7 +7,10 @@
       "chao ban",
       "chao"
     ],
-    "a": "Chào bạn! Bạn muốn hỏi gì về nội dung bài này?"
+    "a": "Chào bạn! Bạn muốn hỏi gì về nội dung bài này?",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -15,7 +18,10 @@
       "gioi thieu ban than",
       "ban la gi"
     ],
-    "a": "Mình là trợ lý tra cứu của Sổ tay Luật Y tế. Mình trả lời dựa trên nội dung có sẵn trên trang, không phải AI tổng quát."
+    "a": "Mình là trợ lý tra cứu của Sổ tay Luật Y tế. Mình trả lời dựa trên nội dung có sẵn trên trang, không phải AI tổng quát.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -23,7 +29,10 @@
       "thank",
       "thanks"
     ],
-    "a": "Không có gì! Bạn cứ hỏi tiếp nhé."
+    "a": "Không có gì! Bạn cứ hỏi tiếp nhé.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -31,7 +40,10 @@
       "ai tao",
       "la ai"
     ],
-    "a": "Mình là trợ lý tra cứu, không phải người thật. Mình chỉ trả lời từ nội dung trên trang."
+    "a": "Mình là trợ lý tra cứu, không phải người thật. Mình chỉ trả lời từ nội dung trên trang.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -39,7 +51,10 @@
       "ban co phai ai",
       "la ai khong"
     ],
-    "a": "Có, mình là một chương trình tra cứu, không phải AI tổng quát. Mình chỉ tìm trong nội dung trên trang."
+    "a": "Có, mình là một chương trình tra cứu, không phải AI tổng quát. Mình chỉ tìm trong nội dung trên trang.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -48,7 +63,12 @@
       "slide la gi",
       "lam sao hoc slide"
     ],
-    "a": "Bấm nút \"Học dạng slide có bài tập\" ở đầu bài. Dùng nút Trước/Tiếp hoặc phím mũi tên để chuyển slide."
+    "a": "Bấm nút \"Học dạng slide có bài tập\" ở đầu bài. Dùng nút Trước/Tiếp hoặc phím mũi tên để chuyển slide.",
+    "p": [
+      "dao-duc",
+      "triet-hoc",
+      "tam-quan"
+    ]
   },
   {
     "k": [
@@ -56,7 +76,12 @@
       "doc to",
       "nghe doc"
     ],
-    "a": "Trên slide có nút Giọng đọc để nghe nội dung. Chọn tốc độ ở ô bên cạnh. Mỗi slide có giọng đọc riêng."
+    "a": "Trên slide có nút Giọng đọc để nghe nội dung. Chọn tốc độ ở ô bên cạnh. Mỗi slide có giọng đọc riêng.",
+    "p": [
+      "dao-duc",
+      "triet-hoc",
+      "tam-quan"
+    ]
   },
   {
     "k": [
@@ -64,7 +89,12 @@
       "luu tien do",
       "luu lai"
     ],
-    "a": "Trang slide tự lưu tiến độ trên trình duyệt của bạn. Bấm \"Làm lại\" ở màn hình kết quả để xóa tiến độ."
+    "a": "Trang slide tự lưu tiến độ trên trình duyệt của bạn. Bấm \"Làm lại\" ở màn hình kết quả để xóa tiến độ.",
+    "p": [
+      "dao-duc",
+      "triet-hoc",
+      "tam-quan"
+    ]
   },
   {
     "k": [
@@ -72,14 +102,22 @@
       "giao dien nao",
       "mau nen"
     ],
-    "a": "Chọn giao diện ở ô \"Giao diện\" dưới thanh trên cùng. Lựa chọn được lưu trên máy bạn."
+    "a": "Chọn giao diện ở ô \"Giao diện\" dưới thanh trên cùng. Lựa chọn được lưu trên máy bạn.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
       "nguoi giang",
       "chon nguoi giang"
     ],
-    "a": "Ở slide có ô \"Người giảng\": giáo viên, giáo sư, học sinh giỏi, người thân hoặc bạn thân. Người giảng đổi lời dẫn và cách góp ý; giọng đọc AI vẫn là một giọng."
+    "a": "Ở slide có ô \"Người giảng\": giáo viên, giáo sư, học sinh giỏi, người thân hoặc bạn thân. Người giảng đổi lời dẫn và cách góp ý; giọng đọc AI vẫn là một giọng.",
+    "p": [
+      "dao-duc",
+      "triet-hoc",
+      "tam-quan"
+    ]
   },
   {
     "k": [
@@ -87,7 +125,10 @@
       "tro ly nay la ai",
       "la ai the nay"
     ],
-    "a": "Đây là trợ lý tra cứu. Nó tìm đoạn liên quan trong nội dung trang và chỉ tới đúng phần đó."
+    "a": "Đây là trợ lý tra cứu. Nó tìm đoạn liên quan trong nội dung trang và chỉ tới đúng phần đó.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
@@ -95,14 +136,20 @@
       "la ai khong",
       "la ai the"
     ],
-    "a": "Không. Đây là trợ lý tra cứu tìm trong nội dung có sẵn trên trang."
+    "a": "Không. Đây là trợ lý tra cứu tìm trong nội dung có sẵn trên trang.",
+    "p": [
+      "*"
+    ]
   },
   {
     "k": [
       "dao duc la gi",
       "khai niem dao duc"
     ],
-    "a": "Đạo đức là những chuẩn mực mà một cộng đồng dùng để phân biệt điều nên làm với điều không nên làm, và điều đúng với điều sai trong quan hệ giữa người với người (Phần 1)."
+    "a": "Đạo đức là những chuẩn mực mà một cộng đồng dùng để phân biệt điều nên làm với điều không nên làm, và điều đúng với điều sai trong quan hệ giữa người với người (Phần 1).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
@@ -110,14 +157,20 @@
       "khac nhau dao duc va phap luat",
       "dao duc va phap luat"
     ],
-    "a": "Pháp luật do nhà nước ban hành và có chế tài cưỡng chế. Đạo đức dựa phần lớn vào lương tâm, dư luận và sự tự nguyện. Pháp luật thường là mức tối thiểu (Phần 1)."
+    "a": "Pháp luật do nhà nước ban hành và có chế tài cưỡng chế. Đạo đức dựa phần lớn vào lương tâm, dư luận và sự tự nguyện. Pháp luật thường là mức tối thiểu (Phần 1).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
       "vi loi",
       "chu nghia vi loi"
     ],
-    "a": "Vị lợi: hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất cho những người liên quan (Phần 2)."
+    "a": "Vị lợi: hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất cho những người liên quan (Phần 2).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
@@ -126,35 +179,50 @@
       "menh lenh tuyet doi",
       "kant"
     ],
-    "a": "Nghĩa vụ (Kant): hành động đúng là hành động theo nguyên tắc có thể trở thành luật chung, và đối xử với người khác như mục đích, không chỉ là phương tiện (Phần 2)."
+    "a": "Nghĩa vụ (Kant): hành động đúng là hành động theo nguyên tắc có thể trở thành luật chung, và đối xử với người khác như mục đích, không chỉ là phương tiện (Phần 2).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
       "duc hanh",
       "aristotle"
     ],
-    "a": "Đức hạnh (Aristotle): hành động đúng là hành động của người có đức hạnh như can đảm, trung thực, công bằng (Phần 2)."
+    "a": "Đức hạnh (Aristotle): hành động đúng là hành động của người có đức hạnh như can đảm, trung thực, công bằng (Phần 2).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
       "dong y co thong tin",
       "dong y"
     ],
-    "a": "Đồng ý có thông tin: người bệnh đồng ý với một can thiệp y tế sau khi được giải thích đầy đủ về mục đích, lợi ích, rủi ro và các lựa chọn khác (Phần 4)."
+    "a": "Đồng ý có thông tin: người bệnh đồng ý với một can thiệp y tế sau khi được giải thích đầy đủ về mục đích, lợi ích, rủi ro và các lựa chọn khác (Phần 4).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
       "bao mat",
       "bi mat thong tin"
     ],
-    "a": "Bảo mật: thông tin sức khỏe là thông tin nhạy cảm. Người hành nghề chỉ chia sẻ khi cần cho việc điều trị hoặc khi pháp luật yêu cầu (Phần 5)."
+    "a": "Bảo mật: thông tin sức khỏe là thông tin nhạy cảm. Người hành nghề chỉ chia sẻ khi cần cho việc điều trị hoặc khi pháp luật yêu cầu (Phần 5).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
       "xung dot loi ich",
       "loi ich ca nhan"
     ],
-    "a": "Xung đột lợi ích: lợi ích cá nhân có thể làm lệch quyết định nghề nghiệp. Cách xử lý thường gặp là công khai và đặt lợi ích người bệnh lên trước (Phần 6)."
+    "a": "Xung đột lợi ích: lợi ích cá nhân có thể làm lệch quyết định nghề nghiệp. Cách xử lý thường gặp là công khai và đặt lợi ích người bệnh lên trước (Phần 6).",
+    "p": [
+      "dao-duc"
+    ]
   },
   {
     "k": [
@@ -162,62 +230,90 @@
       "ngụy biện",
       "tan cong ca nhan"
     ],
-    "a": "Ngụy biện là lỗi trong lập luận, ví dụ tấn công cá nhân, người rơm, lưỡng phân giả, khái quát vội, chứng minh bằng quyền uy, trượt nghĩa (Phần 4 triết học)."
+    "a": "Ngụy biện là lỗi trong lập luận, ví dụ tấn công cá nhân, người rơm, lưỡng phân giả, khái quát vội, chứng minh bằng quyền uy, trượt nghĩa (Phần 4 triết học).",
+    "p": [
+      "triet-hoc"
+    ]
   },
   {
     "k": [
       "the gioi quan la gi",
       "the gioi quan"
     ],
-    "a": "Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội: thế giới vận hành theo quy luật nào, con người đứng ở đâu (Tam quan, Bài 1)."
+    "a": "Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội: thế giới vận hành theo quy luật nào, con người đứng ở đâu (Tam quan, Bài 1).",
+    "p": [
+      "tam-quan"
+    ]
   },
   {
     "k": [
       "gia tri quan la gi",
       "gia tri quan"
     ],
-    "a": "Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nó lộ rõ khi phải chọn giữa hai điều đều tốt (Tam quan, Bài 2)."
+    "a": "Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nó lộ rõ khi phải chọn giữa hai điều đều tốt (Tam quan, Bài 2).",
+    "p": [
+      "tam-quan"
+    ]
   },
   {
     "k": [
       "nhan sinh quan"
     ],
-    "a": "Nhân sinh quan là quan niệm về đời người: lẽ sống, ý nghĩa sống, hạnh phúc và trách nhiệm (Tam quan, Bài 7)."
+    "a": "Nhân sinh quan là quan niệm về đời người: lẽ sống, ý nghĩa sống, hạnh phúc và trách nhiệm (Tam quan, Bài 7).",
+    "p": [
+      "tam-quan"
+    ]
   },
   {
     "k": [
       "tam quan la gi",
       "tam quan"
     ],
-    "a": "Tam quan gồm thế giới quan (thế giới là gì), nhân sinh quan (sống để làm gì) và giá trị quan (điều gì đáng quý). Thế giới quan là phần hiểu, giá trị quan là phần chọn."
+    "a": "Tam quan gồm thế giới quan (thế giới là gì), nhân sinh quan (sống để làm gì) và giá trị quan (điều gì đáng quý). Thế giới quan là phần hiểu, giá trị quan là phần chọn.",
+    "p": [
+      "tam-quan"
+    ]
   },
   {
     "k": [
       "triet hoc la gi",
       "triet hoc"
     ],
-    "a": "Triết học đặt những câu hỏi nền tảng về tồn tại, nhận thức và đạo đức. Từ này có nghĩa gốc là yêu mến sự thông thái (Triết học, Phần 1)."
+    "a": "Triết học đặt những câu hỏi nền tảng về tồn tại, nhận thức và đạo đức. Từ này có nghĩa gốc là yêu mến sự thông thái (Triết học, Phần 1).",
+    "p": [
+      "triet-hoc"
+    ]
   },
   {
     "k": [
       "duy vat",
       "duy tam"
     ],
-    "a": "Duy vật cho rằng vật chất tồn tại trước, ý thức là sự phản ánh của thế giới vật chất. Duy tâm cho rằng tinh thần hoặc ý thức là nền tảng (Triết học, Phần 8 và Tam quan, Bài 8)."
+    "a": "Duy vật cho rằng vật chất tồn tại trước, ý thức là sự phản ánh của thế giới vật chất. Duy tâm cho rằng tinh thần hoặc ý thức là nền tảng (Triết học, Phần 8 và Tam quan, Bài 8).",
+    "p": [
+      "triet-hoc",
+      "tam-quan"
+    ]
   },
   {
     "k": [
       "socrates",
       "biet minh khong biet"
     ],
-    "a": "Socrates nổi tiếng với phương pháp đối thoại bằng câu hỏi và câu \"Tôi biết mình không biết\" (Triết học, Phần 5)."
+    "a": "Socrates nổi tiếng với phương pháp đối thoại bằng câu hỏi và câu \"Tôi biết mình không biết\" (Triết học, Phần 5).",
+    "p": [
+      "triet-hoc"
+    ]
   },
   {
     "k": [
       "popper",
       "khoa hoc bi bac bo"
     ],
-    "a": "Popper cho rằng một lý thuyết khoa học phải có khả năng bị bác bỏ bằng quan sát (Triết học, Phần 9)."
+    "a": "Popper cho rằng một lý thuyết khoa học phải có khả năng bị bác bỏ bằng quan sát (Triết học, Phần 9).",
+    "p": [
+      "triet-hoc"
+    ]
   },
   {
     "k": [
@@ -225,7 +321,13 @@
       "luat kham benh",
       "kham benh chua benh"
     ],
-    "a": "Luật Khám bệnh, chữa bệnh số 15/2023/QH15, ban hành 09/01/2023, có hiệu lực từ 01/01/2024 (theo dữ liệu trang)."
+    "a": "Luật Khám bệnh, chữa bệnh số 15/2023/QH15, ban hành 09/01/2023, có hiệu lực từ 01/01/2024 (theo dữ liệu trang).",
+    "p": [
+      "ly_thuyet",
+      "tin_luat",
+      "tham_chieu",
+      "bai-giang"
+    ]
   },
   {
     "k": [
@@ -233,7 +335,13 @@
       "da doi chieu",
       "xac minh"
     ],
-    "a": "verify = đã đối chiếu điều khoản với văn bản gốc. Các mục chưa đối chiếu vẫn chỉ là tóm tắt tham khảo."
+    "a": "verify = đã đối chiếu điều khoản với văn bản gốc. Các mục chưa đối chiếu vẫn chỉ là tóm tắt tham khảo.",
+    "p": [
+      "ly_thuyet",
+      "tin_luat",
+      "tham_chieu",
+      "bai-giang"
+    ]
   },
   {
     "k": [
@@ -242,6 +350,12 @@
       "tin duoc khong",
       "chinh xac"
     ],
-    "a": "Nội dung là tóm tắt phục vụ học tập. Khi áp dụng thực tế, hãy đối chiếu văn bản gốc và tình trạng hiệu lực trên cơ sở dữ liệu chính thức."
+    "a": "Nội dung là tóm tắt phục vụ học tập. Khi áp dụng thực tế, hãy đối chiếu văn bản gốc và tình trạng hiệu lực trên cơ sở dữ liệu chính thức.",
+    "p": [
+      "ly_thuyet",
+      "tin_luat",
+      "tham_chieu",
+      "bai-giang"
+    ]
   }
 ]
