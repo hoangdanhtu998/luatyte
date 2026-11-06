@@ -49,14 +49,14 @@
     "points": [
       "Chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề được kê đơn; người kê đơn chịu trách nhiệm về nội dung đơn.",
       "Đơn phải ghi tên thuốc, nồng độ, hàm lượng, liều dùng, đường dùng và số ngày dùng; trẻ dưới 72 tháng ghi tuổi theo tháng và cân nặng.",
-      "Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.",
+      "Tối đa 30 ngày dùng cho mỗi thuốc (Điều 6 khoản 8a); với bệnh thuộc Danh mục Phụ lục VII, người kê đơn quyết định nhưng không quá 90 ngày (khoản 8b).",
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
-      "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
+      "Thuốc gây nghiện (mẫu N, Phụ lục II) và thuốc hướng thần, tiền chất (mẫu H, Phụ lục III) có mẫu đơn riêng; thuốc gây nghiện kê không quá 10 ngày (cấp tính) hoặc 30 ngày (mạn tính) (Điều 7, Điều 9 khoản 2–3)."
     ],
     "verify": true,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
     "verify_date": "2026-11-06",
-    "verify_source": "PDF/vanban TT 26/2025 (kiểm trích điều về số lượng và đơn điện tử; nhóm kiểm chéo)"
+    "verify_source": "PDF gốc TT 26/2025 (datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/26-byt.pdf): Đ2 thẩm quyền; Đ3 mẫu; Đ6 khoản 4, 5, 6, 8a, 8b; Đ9 khoản 2–3; Đ10 đơn điện tử; Đ13 khoản 1–2 (hiệu lực 01/07/2025, bãi bỏ TT 52/2017, 18/2018, 04/2022, 27/2021)"
   },
   {
     "id": "tt22_2024",
@@ -148,7 +148,8 @@
       "Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025",
+    "ghi_chu": "Kiểm 2026-11-06: đường dẫn nguon (docid 492025) trả chuyển hướng rỗng, chưa tìm được trang thay thế. Văn bản hợp nhất TT 02/2024 đã sửa bởi TT 49/2025: datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/01-vbhn-byt.pdf (VBHN, cần đối chiếu gốc)."
   },
   {
     "id": "tt44_2025",
@@ -203,7 +204,7 @@
     ],
     "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=15202315"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=207396"
   },
   {
     "id": "nd_96_2023_kcb",
@@ -288,7 +289,7 @@
     ],
     "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44202415"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212466"
   },
   {
     "id": "nd_163_2025_duoc",
@@ -476,7 +477,7 @@
       "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44201914"
+    "nguon": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=197311"
   },
   {
     "id": "attp",
@@ -510,8 +511,8 @@
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611",
-    "ghi_chu": "Kiểm 2026-11-06: Luật 71/2020/QH14 bãi bỏ Điều 42 và Điều 44 của Luật 64/2006 (khoản 16 Điều 1; VBHN 33/VBHN-VPQH, vanban.chinhphu.vn docid 202612; thuvienphapluat, luatvietnam). Cần bổ sung vào points."
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=202612",
+    "ghi_chu": "Kiểm 2026-11-06: Luật 71/2020/QH14 bãi bỏ Điều 42 và Điều 44 của Luật 64/2006 (khoản 16 Điều 1; VBHN 33/VBHN-VPQH, vanban.chinhphu.vn docid 202612; thuvienphapluat, luatvietnam). Cần bổ sung vào points. Nguồn sửa 2026-11-06: docid 202612 là Luật 71/2020/QH14 (văn bản sửa đổi), nơi có quy định bãi bỏ Điều 42, 44 của Luật 64/2006. Đường dẫn Luật 64/2006 cũ (docid 64200611) trả lỗi 500."
   },
   {
     "id": "ghepmo",
@@ -684,7 +685,7 @@
       "Hướng dẫn giám sát bệnh truyền nhiễm, quản lý mẫu bệnh phẩm và nội dung phòng, chống bệnh không lây nhiễm.",
       "Có hiệu lực từ 01/07/2026."
     ],
-    "nguon": "https://vanban.chinhphu.vn/?docid=218141&pageid=27160",
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=218141&classid=1",
     "verify": false
   },
   {
