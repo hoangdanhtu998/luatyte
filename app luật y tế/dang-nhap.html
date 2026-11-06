@@ -8,9 +8,9 @@
 <link rel="icon" href="icon.svg">
 <style>
   :root{
-    --brand:#0F766E; --brand-600:#115E59; --brand-50:#F0FDFA; --brand-200:#99F6E4;
+    --brand:#0F766E; --brand-600:#115E59; --brand-50:#F0FDFA; --brand-200:#cec8c1;
     --ink:#0F172A; --ink-2:#334155; --muted:#64748B; --line:#E2E8F0; --line-2:#CBD5E1;
-    --surface:#FFFFFF; --bad:#B42318; --bad-50:#FEF3F2; --ok:#067647; --ok-50:#ECFDF3;
+    --surface:#FFFFFF; --bad:#B42318; --bad-50:#FEF3F2; --ok:#453e37; --ok-50:#ECFDF3;
     --radius:16px;
   }
   *{box-sizing:border-box}
@@ -40,7 +40,7 @@
   .seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#F1F5F9;border-radius:12px;padding:4px;margin:0 0 22px}
   .seg button{border:0;background:transparent;border-radius:9px;padding:9px 10px;min-height:40px;font:inherit;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer}
   .seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(15,23,42,.12)}
-  .seg button:focus-visible{outline:3px solid #5EEAD4;outline-offset:1px}
+  .seg button:focus-visible{outline:3px solid #afa499;outline-offset:1px}
 
   form{display:flex;flex-direction:column;gap:14px}
   .field{display:flex;flex-direction:column;gap:6px}
@@ -68,7 +68,7 @@
   }
   button.primary:hover{background:var(--brand-600)}
   button.primary:disabled{opacity:.6;cursor:default}
-  button.primary:focus-visible{outline:3px solid #5EEAD4;outline-offset:2px}
+  button.primary:focus-visible{outline:3px solid #afa499;outline-offset:2px}
 
   .msg{font-size:14px;border-radius:10px;padding:10px 12px;margin:0;display:none;line-height:1.45}
   .msg.show{display:block}
