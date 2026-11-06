@@ -425,3 +425,24 @@ body:has(nav[aria-label="Chuyển khu học"]){padding-top:72px!important}
 main.triet .toc-toggle,.toc-toggle{top:92px}
 main.triet > nav.toc{top:120px}
 .lesson-chat{top:96px}
+
+/* ---- Trắc nghiệm trong bài học: thẻ câu hỏi rõ, đáp án có chữ cái tròn, đúng/sai tô màu ---- */
+main.triet .qz-item{background:var(--color-paper-2,#fff);border:1px solid var(--color-rule,#D9CFBE);border-radius:14px;padding:18px 18px 12px;margin:0 0 20px;box-shadow:0 1px 3px rgba(28,25,23,.05)}
+main.triet .qz-stem{font-size:1.1rem;font-weight:600;line-height:1.5;color:var(--color-ink,#1c1917);margin:0 0 14px;padding-left:14px;border-left:4px solid var(--color-accent,#8a6a3f)}
+main.triet .qz-stem strong{display:inline-block;background:var(--color-accent-soft,#f3ecdf);color:var(--color-accent-soft-ink,#5b4424);padding:2px 10px;border-radius:999px;margin-right:8px;font-size:.9em;font-weight:700}
+main.triet .opts{display:grid;gap:8px}
+main.triet .opt{display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;padding:12px 14px;border:1.5px solid var(--color-rule,#D9CFBE);border-radius:12px;background:var(--color-paper,#fff);color:var(--color-ink-2,#292524);font:inherit;font-size:1rem;line-height:1.5;cursor:pointer;margin:0}
+main.triet .opt:hover:not(:disabled){border-color:var(--color-accent,#8a6a3f);background:var(--color-paper-3,#f7f4ee)}
+main.triet .opt .k{flex:0 0 28px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--color-accent-soft,#f3ecdf);color:var(--color-accent-soft-ink,#5b4424);font-weight:800;font-size:14px}
+main.triet .opt .tx{flex:1}
+main.triet .opt.right{border-color:#15803d;background:#f0fdf4;color:#14532d}
+main.triet .opt.right .k{background:#15803d;color:#fff}
+main.triet .opt.wrong{border-color:#b91c1c;background:#fef2f2;color:#7f1d1d}
+main.triet .opt.wrong .k{background:#b91c1c;color:#fff}
+main.triet .qz-fb{margin:12px 0 6px;padding:12px 14px;border-radius:10px;font-size:1rem;line-height:1.6}
+main.triet .qz-fb.ok{background:#f0fdf4;color:#14532d;border:1px solid #bbf7d0}
+main.triet .qz-fb.no{background:#fef2f2;color:#7f1d1d;border:1px solid #fecaca}
+main.triet .qz-fb .hd{font-weight:800;margin-bottom:2px}
+:root[data-theme="ink"] main.triet .qz-item{background:#1B1B17;border-color:#44433B}
+:root[data-theme="ink"] main.triet .opt{background:#22221E;color:#ECE8DE;border-color:#44433B}
+:root[data-theme="mono"] main.triet .qz-item{background:#fff;border-color:#e2e2e2}
