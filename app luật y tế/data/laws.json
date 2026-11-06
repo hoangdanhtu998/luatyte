@@ -52,8 +52,10 @@
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
       "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
     ],
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF/vanban TT 26/2025 (kiểm trích điều về số lượng và đơn điện tử; nhóm kiểm chéo)"
   },
   {
     "id": "tt22_2024",
@@ -313,7 +315,9 @@
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 31/2025 (kiểm Điều 1, Điều 25)"
   },
   {
     "id": "tt_29_2025_duoc",
@@ -323,14 +327,16 @@
     "pass": "01/07/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Chưa xác nhận văn bản bị thay thế (Điều 38 khoản 2 không kiểm được qua nguồn tìm thấy). Cần đọc văn bản gốc.",
+    "replaces": "Thay thế các thông tư: 07/2017/TT-BYT, 21/2018/TT-BYT, 39/2021/TT-BYT, 54/2024/TT-BYT (Điều 38 khoản 2).",
     "points": [
       "Quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
       "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp giấy đăng ký lưu hành.",
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 29/2025 (kiểm Điều 38 khoản 2 và hồ sơ)"
   },
   {
     "id": "tt_18_2026_duoc",
@@ -423,8 +429,10 @@
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
     "guide": "Nghị định hướng dẫn Luật Dân số",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 113/2025/QH15 (kiểm Đ1, Đ14, Đ30)"
   },
   {
     "id": "thuocla",
