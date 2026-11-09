@@ -35,7 +35,9 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
-    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ. Kiểm 06/11/2026: hiệu lực 15/08/2026 khớp nhiều nguồn; một trang ghi 30/06/2026 (ngày ban hành)."
+    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ. Kiểm 06/11/2026: hiệu lực 15/08/2026 khớp nhiều nguồn; một trang ghi 30/06/2026 (ngày ban hành). Kiểm 2026-11-09 (thứ cấp): nhiều nguồn ghi hiệu lực chung 15/08/2026, Điều 2–3 có hiệu lực 01/07/2026; một nguồn ghi 30/06/2026 (ngày ban hành). Chưa mở văn bản gốc.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt26_2025",
@@ -75,7 +77,9 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024",
-    "ghi_chu": "Kiểm 2026-11-06: point 1 ghi Danh mục thuốc hiếm, nhưng Điều 2 khoản 1 là Danh mục thuốc BHYT (TT 26/2019). Cần sửa point."
+    "ghi_chu": "Kiểm 2026-11-06: point 1 ghi Danh mục thuốc hiếm, nhưng Điều 2 khoản 1 là Danh mục thuốc BHYT (TT 26/2019). Cần sửa point. Kiểm 2026-11-09 (thứ cấp): ban hành 18/10/2024, hiệu lực 01/01/2025, một nguồn ghi còn hiệu lực; chưa thấy văn bản sửa đổi. Tên thông tư cần tránh nhầm với 22/2024/TT-BGDĐT và 22/2024/TT-BKHĐT.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt21_2024",
@@ -168,7 +172,10 @@
       "Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hiệu lực từ 22/11/2025, chưa thấy văn bản sửa đổi chính thông tư này."
   },
   {
     "id": "dulieu",
@@ -364,7 +371,9 @@
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx",
     "verify": false,
-    "ghi_chu": "Điều 17 khoản 1: Etomidate và Carisoprodol có hiệu lực từ 01/06/2026 (kiểm 2 nguồn thứ cấp, chưa đọc PDF gốc)."
+    "ghi_chu": "Điều 17 khoản 1: Etomidate và Carisoprodol có hiệu lực từ 01/06/2026 (kiểm 2 nguồn thứ cấp, chưa đọc PDF gốc). Kiểm 2026-11-09 (thứ cấp): ban hành 01/06/2026, hiệu lực 16/07/2026 (Công báo). Khoản 1 Điều 17 có hiệu lực từ 01/06/2026; một nguồn ghi 01/06/2026 cho cả văn bản, cần đối chiếu công báo.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt_32_2026_duoc",
@@ -381,7 +390,10 @@
       "Có hiệu lực từ 01/10/2026."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-32-2026-tt-byt-quy-dinh-viec-dang-ky-luu-hanh-thuoc-nguyen-lieu-lam-thuoc--b3c8a3e0-9945-11f1-9dcb-2dbe29d2ab4a",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 29/7/2026, hiệu lực 01/10/2026; nhiều nguồn thống nhất. Một nguồn cho rằng thay thế TT 12/2025/TT-BYT."
   },
   {
     "id": "tt_50_2025_thu_thuoc",
@@ -399,7 +411,9 @@
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447",
     "verify": false,
-    "ghi_chu": "Kiểm 2026-11-06: ban hành 31/12/2025, hiệu lực 27/02/2026, ký Nguyễn Tri Thức (vanban.chinhphu.vn docid 216447; thuvienphapluat). Một nguồn ghi 01/03/2026 — không dùng."
+    "ghi_chu": "Kiểm 2026-11-06: ban hành 31/12/2025, hiệu lực 27/02/2026, ký Nguyễn Tri Thức (vanban.chinhphu.vn docid 216447; thuvienphapluat). Một nguồn ghi 01/03/2026 — không dùng. Kiểm 2026-11-09 (thứ cấp): hiệu lực 27/02/2026 (Điều 27, khớp các trang vanban.chinhphu và Hue); một nguồn ghi 01/03/2026 là sai, một nguồn ghi 31/12/2025 là ngày ban hành. Thay thế TT 29/2018/TT-BYT.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "phongbenh",
@@ -705,7 +719,10 @@
       "Quy định quản lý, tiếp nhận, bảo quản, vận chuyển vắc xin, an toàn tiêm chủng và trách nhiệm của cơ sở tiêm chủng."
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te-se-co-hieu-luc-thi-hanh-tu-1-7-2026/",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 16/5/2026, hiệu lực 01/07/2026; một nguồn liệt kê TT 24/2018, 34/2018, 05/2020, 52/2025 hết hiệu lực. Danh mục bệnh tiêm chủng bắt buộc cần đối chiếu văn bản gốc."
   },
   {
     "id": "nd_165_2026_phong_benh",
@@ -740,7 +757,10 @@
       "Có hiệu lực từ 29/08/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tu-332026ttbyt-huong-dan-thi-hanh-nghi-dinh-1652026ndcp-ve-luat-phong-benh-co-noi-dung-gi-288836.html",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành và hiệu lực 29/08/2026 theo nhiều nguồn; một trang tra cứu ghi còn hiệu lực. Công văn địa phương ghi 02/09/2026 là ngày triển khai, không phải ngày hiệu lực thông tư."
   },
   {
     "id": "tt_12_2026_giam_dinh_bhyt",
