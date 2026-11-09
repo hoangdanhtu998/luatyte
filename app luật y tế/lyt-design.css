@@ -464,3 +464,23 @@ main.triet .qz-fb .hd{font-weight:800;margin-bottom:2px}
 .lx-ico{width:22px;height:22px;flex:0 0 auto;color:var(--color-accent,#8a6a3f);vertical-align:-4px;margin-right:10px;display:inline-block}
 main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 .hub-card .lx-ico{width:26px;height:26px;margin-bottom:4px;display:block;color:var(--color-ink,#1c1917)}
+
+/* ---- Trắng & be: nền trắng, các ô tính năng và nút bấm màu tím nhạt ---- */
+:root[data-theme="trang-be"]{
+  --color-accent:#6b4fbb; --color-accent-soft:#f1edfb; --color-accent-soft-ink:#4c3797;
+  --color-action:#ece6fa; --color-action-ink:#2e1f63; --color-focus:#6b4fbb;
+}
+:root[data-theme="trang-be"] .btn:not(.ghost){background:#ece6fa;border-color:#c9b9ee;color:#2e1f63}
+:root[data-theme="trang-be"] .btn:not(.ghost):hover:not(:disabled){background:#e0d5f7;border-color:#b29fe3}
+:root[data-theme="trang-be"] .btn.ghost{background:#ffffff;border-color:#d9cdf3;color:#2e1f63}
+:root[data-theme="trang-be"] .tile,:root[data-theme="trang-be"] .hub-card{border-color:#d9cdf3}
+:root[data-theme="trang-be"] .tile:hover:not(.done),:root[data-theme="trang-be"] .hub-card:hover{border-color:#6b4fbb}
+:root[data-theme="trang-be"] .chip{background:#f1edfb;border-color:#d9cdf3;color:#4c3797}
+:root[data-theme="trang-be"] nav.tabs .ind{background:#6b4fbb}
+:root[data-theme="trang-be"] nav.tabs button[aria-selected="true"]{color:#4c3797}
+
+/* Thanh tab trên máy tính: một hàng cân đều, không để sót một tab ở hàng dưới */
+@media (min-width:900px){
+  nav.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;overflow:visible}
+  nav.tabs button{padding:0 8px;justify-content:center;text-align:center}
+}
