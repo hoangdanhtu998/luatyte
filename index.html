@@ -49,6 +49,11 @@
 .prog-table th,.prog-table td{text-align:left;padding:var(--space-xs) var(--space-2xs);border-bottom:1px solid var(--rule)}
 .prog-table th{font-weight:600;color:var(--muted)}
 </style>
+<style>/* Mỗi nhóm luật có màu riêng: thanh bên, số hiệu và nhãn đổi theo nhóm */
+.law{border-left:4px solid var(--c)}
+.law .badge{color:var(--c);border-color:color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 12%,var(--color-paper-2));font-weight:700}
+.law .meta .mono{color:var(--c)}
+</style>
 </head>
 <body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
 <div class="wrap">
@@ -456,6 +461,8 @@ sync = {
 /* Màu nhóm lấy từ token của site.css (--c-*), không dùng mã cứng; đổi theo chế độ sáng/tối. */
 const PALETTE = ["var(--accent)","var(--c-orange)","var(--c-gold)","var(--c-blue)","var(--c-violet)","var(--c-rose)","var(--c-green)","var(--muted)"];
 const CATCOLOR = {}; [...new Set(LAWS.map(l=>l.cat))].forEach((c,i)=>CATCOLOR[c]=PALETTE[i%PALETTE.length]);
+// Màu của mỗi luật theo tình trạng hiệu lực (khớp nhãn trạng thái): xanh = đang hiệu lực, vàng = có sửa đổi, xám = hết hiệu lực
+const STATCOLOR = {on:"var(--c-green)", amend:"var(--c-gold)", het:"var(--muted)"};
 
 /* Thông báo nổi */
 function toast(msg){
@@ -666,7 +673,7 @@ function renderLaws(){
   bmBtn.setAttribute("aria-pressed", String(bmOnly));
   bmBtn.onclick = () => { bmOnly = !bmOnly; renderLaws(); };
   $("#laws").innerHTML = list.length ? list.map((l,i) => `
-    <details class="law" style="--c:${CATCOLOR[l.cat]}" ${i<1 && !q ? "open":""}>
+    <details class="law" style="--c:${STATCOLOR[l.status]||"var(--muted)"}" ${i<1 && !q ? "open":""}>
       <summary>
         <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
         <div>
