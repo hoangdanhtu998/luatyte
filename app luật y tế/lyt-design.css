@@ -485,10 +485,11 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
   nav.tabs button{padding:0 8px;justify-content:center;text-align:center}
 }
 
-/* Minh họa slide: giữ màu gốc của bộ minh họa (xanh rêu và xám ấm), không đổi theo màu nhấn của giao diện */
-:root[data-theme="trang-be"] .slide-art{background:#f5f3ef;border:1px solid #e7e5e4}
-:root[data-theme="trang-be"] .slide-art .a-accent,:root[data-theme="trang-be"] .slide-art .a-glow{fill:#3F6B4E}
+/* Minh họa slide trong giao diện Trắng & be: chủ yếu trắng và tím; giữ vàng gốc ở các điểm cần nhấn */
+:root[data-theme="trang-be"] .slide-art{background:#f4f1fc;border:1px solid #e4dcf6}
+:root[data-theme="trang-be"] .slide-art .a-accent{fill:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-glow{fill:#c9a227}
 :root[data-theme="trang-be"] .slide-art .a-soft{fill:#ffffff}
-:root[data-theme="trang-be"] .slide-art .a-line{fill:#D9CFBE;stroke:#7A6D5E}
-:root[data-theme="trang-be"] .slide-art .a-ink{fill:#1c1917;stroke:#1c1917}
-:root[data-theme="trang-be"] .slide-art svg [fill="none"]{stroke:#3F6B4E}
+:root[data-theme="trang-be"] .slide-art .a-line{fill:#b9a6e6;stroke:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-ink{fill:#2e1f63;stroke:#2e1f63}
+:root[data-theme="trang-be"] .slide-art svg [fill="none"]{stroke:#6b4fbb}
