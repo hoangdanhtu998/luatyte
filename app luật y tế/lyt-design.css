@@ -484,3 +484,12 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
   nav.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;overflow:visible}
   nav.tabs button{padding:0 8px;justify-content:center;text-align:center}
 }
+
+/* Minh họa slide trong giao diện Trắng & be: có màu tím, nhấn vàng nhẹ, nền tím rất nhạt */
+:root[data-theme="trang-be"] .slide-art{background:#f4f1fc;border:1px solid #e4dcf6}
+:root[data-theme="trang-be"] .slide-art .a-accent{fill:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-glow{fill:#c9a227}
+:root[data-theme="trang-be"] .slide-art .a-soft{fill:#ddd2f5}
+:root[data-theme="trang-be"] .slide-art .a-line{fill:#b9a6e6;stroke:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-ink{fill:#2e1f63;stroke:#2e1f63}
+:root[data-theme="trang-be"] .slide-art svg [fill="none"]{stroke:#6b4fbb}
