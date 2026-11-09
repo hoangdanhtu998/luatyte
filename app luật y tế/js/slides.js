@@ -151,6 +151,7 @@
     stage.innerHTML = '';
     var card = el('section', 'slide-card');
     card.dataset.audio = s.audio || '';
+    card.dataset.audios = JSON.stringify(s.audios || {});
     if (window.SlidePersona) card.appendChild(el('p', 'slide-narr', SlidePersona.label() + ': ' + SlidePersona.intro()));
     if (window.SlideArt && s.type === 'text') {
       var key = window.SlideArt.forTitle(s.title);

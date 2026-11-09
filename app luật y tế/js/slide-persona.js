@@ -1,10 +1,12 @@
 // Người giảng cho slide: đổi lời dẫn, cách xưng hô và cách góp ý.
-// Lưu ý: hệ thống giọng AI hiện có một giọng tiếng Việt, nên người giảng không đổi giọng; chỉ đổi phong cách lời nói.
+// Mỗi người giảng có giọng AI riêng (voice: khóa giọng trong scripts/make-slide-audio.mjs) và hệ số tốc độ (rate).
+// Có 3 giọng nên hai người giảng có thể dùng chung một giọng; khi đó khác nhau ở tốc độ.
 window.SlidePersona = (function () {
   var KEY = 'luatyte-narrator';
   var DEFAULT = 'giao_vien';
   var P = {
     giao_vien: {
+      voice: 'vais', rate: 1,
       label: 'Giáo viên',
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
@@ -12,6 +14,7 @@ window.SlidePersona = (function () {
       style: 'Rõ ràng, nhẹ nhàng, có gợi ý từng bước.'
     },
     giao_su: {
+      voice: 'vais', rate: 0.9,
       label: 'Giáo sư',
       intro: 'Ta hãy xem xét vấn đề này một cách có hệ thống.',
       praise: 'Lập luận đúng. Hãy ghi nhớ lý do đằng sau.',
@@ -19,6 +22,7 @@ window.SlidePersona = (function () {
       style: 'Trang trọng, chính xác, nhấn mạnh lập luận và khái niệm.'
     },
     hoc_sinh_gioi: {
+      voice: 'vivos', rate: 1,
       label: 'Học sinh giỏi',
       intro: 'Mình sẽ đi qua phần này cùng bạn nhé.',
       praise: 'Đúng rồi, bạn làm tốt!',
@@ -26,6 +30,7 @@ window.SlidePersona = (function () {
       style: 'Gần gũi, dễ hiểu, như bạn học cùng lớp đã hiểu bài.'
     },
     nguoi_than: {
+      voice: 'hours', rate: 0.9,
       label: 'Người thân',
       intro: 'Con nghe này, mình học từ từ thôi nhé.',
       praise: 'Giỏi quá, con đúng rồi!',
@@ -33,6 +38,7 @@ window.SlidePersona = (function () {
       style: 'Ấm áp, quan tâm, nói chậm và kiên nhẫn.'
     },
     ban_than: {
+      voice: 'vivos', rate: 1.05,
       label: 'Bạn thân',
       intro: 'Vào học nè, dễ mà.',
       praise: 'Chuẩn luôn!',
@@ -52,6 +58,8 @@ window.SlidePersona = (function () {
       try { localStorage.setItem(KEY, id); } catch (e) {}
     },
     line: function (name) { return P[current][name]; },
+    voice: function () { return P[current].voice; },
+    rate: function () { return P[current].rate; },
     intro: function () { return P[current].intro; },
     label: function () { return P[current].label; }
   };
