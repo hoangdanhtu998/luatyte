@@ -52,6 +52,25 @@
     });
   }
 
+  // Khung "lời giảng" nằm ngay dưới khung slide (ngoài stage để không kích hoạt bộ theo dõi đổi slide)
+  function lectureBox() {
+    var box = document.getElementById('lecture');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'lecture';
+      box.className = 'lecture';
+      box.setAttribute('aria-live', 'polite');
+      stage.insertAdjacentElement('afterend', box);
+    }
+    return box;
+  }
+
+  function showLecture(text) {
+    var box = lectureBox();
+    box.textContent = text || '';
+    box.classList.toggle('on', !!text);
+  }
+
   function setLit(i) {
     if (i === lit) return;
     if (lit >= 0 && units[lit]) units[lit].classList.remove('tts-on');
@@ -59,6 +78,7 @@
     if (i >= 0 && units[i]) {
       units[i].classList.add('tts-on');
       units[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      showLecture(units[i].textContent.replace(/s+/g, ' ').trim());
     }
   }
 
@@ -89,6 +109,7 @@
     playing = false;
     btn.textContent = 'Giọng đọc';
     setLit(-1);
+    showLecture('');
   }
 
   function stop() {
