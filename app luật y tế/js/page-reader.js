@@ -1,7 +1,8 @@
 // Nghe cả bài: đọc lần lượt các tiêu đề và đoạn văn trong khung bài (main.triet), làm sáng đoạn đang đọc,
 // tự cuộn theo. Dùng giọng có sẵn của trình duyệt (Web Speech API). Không gửi nội dung đi đâu.
 (function () {
-  var main = document.querySelector('main.triet');
+  // Khung nội dung bài: main.triet, hoặc main của các trang tra cứu/lý thuyết
+  var main = document.querySelector('main.triet') || document.querySelector('main.page') || document.querySelector('main');
   if (!main || !window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
 
   var synth = window.speechSynthesis;
