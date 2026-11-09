@@ -6,6 +6,7 @@ window.SlidePersona = (function () {
   var DEFAULT = 'giao_vien';
   var P = {
     giao_vien: {
+      lead: 'Em chú ý ý này:',
       voice: 'vais', rate: 1,
       label: 'Giáo viên',
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
@@ -14,6 +15,7 @@ window.SlidePersona = (function () {
       style: 'Rõ ràng, nhẹ nhàng, có gợi ý từng bước.'
     },
     giao_su: {
+      lead: 'Ta xét ý này:',
       voice: 'gs', rate: 0.95,
       label: 'Giáo sư',
       intro: 'Ta hãy xem xét vấn đề này một cách có hệ thống.',
@@ -22,6 +24,7 @@ window.SlidePersona = (function () {
       style: 'Trang trọng, chính xác, nhấn mạnh lập luận và khái niệm.'
     },
     hoc_sinh_gioi: {
+      lead: 'Ý này mình thấy:',
       voice: 'hsg', rate: 1,
       label: 'Học sinh giỏi',
       intro: 'Mình sẽ đi qua phần này cùng bạn nhé.',
@@ -30,6 +33,7 @@ window.SlidePersona = (function () {
       style: 'Gần gũi, dễ hiểu, như bạn học cùng lớp đã hiểu bài.'
     },
     nguoi_than: {
+      lead: 'Con để ý chỗ này:',
       voice: 'nt', rate: 0.9,
       label: 'Người thân',
       intro: 'Con nghe này, mình học từ từ thôi nhé.',
@@ -38,6 +42,7 @@ window.SlidePersona = (function () {
       style: 'Ấm áp, quan tâm, nói chậm và kiên nhẫn.'
     },
     ban_than: {
+      lead: 'Ờ, ý này nè:',
       voice: 'bt', rate: 1,
       label: 'Bạn thân',
       intro: 'Vào học nè, dễ mà.',
@@ -61,6 +66,9 @@ window.SlidePersona = (function () {
     voice: function () { return P[current].voice; },
     rate: function () { return P[current].rate; },
     intro: function () { return P[current].intro; },
+    lead: function () { return P[current].lead; },
+    // Khóa file câu mở đầu đã tạo sẵn (audio/persona/<khóa>.mp3)
+    opener: function () { return current; },
     label: function () { return P[current].label; }
   };
 })();
