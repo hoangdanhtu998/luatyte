@@ -30,8 +30,16 @@
   }
 
   function renderText(s, host) {
+    // Nhãn phần (nếu có) đặt trên tiêu đề, như slide trình chiếu
+    if (s.kicker) host.appendChild(el('p', 'slide-label', s.kicker));
     host.appendChild(el('h2', null, s.title));
-    s.body.forEach(function (p) { host.appendChild(el('p', null, p)); });
+    if (s.style === 'bullets') {
+      var ul = el('ul', 'slide-bullets');
+      s.body.forEach(function (p) { ul.appendChild(el('li', null, p)); });
+      host.appendChild(ul);
+    } else {
+      s.body.forEach(function (p) { host.appendChild(el('p', null, p)); });
+    }
   }
 
   function renderMcq(s, i, host) {
