@@ -1,0 +1,4477 @@
+{
+  "title": "Lý thuyết luật y tế theo trình tự học",
+  "slides": [
+    {
+      "type": "text",
+      "title": "Kiến thức nền cho người mới",
+      "body": [
+        "Hiểu một số khái niệm cơ bản về y tế và pháp luật trước khi học các quy định chi tiết."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/01.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/01.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Trách nhiệm pháp lý có ba loại",
+      "body": [
+        "Khi làm sai pháp luật, có thể chịu ba loại trách nhiệm.",
+        "Trách nhiệm hành chính là bị xử phạt, thường là phạt tiền hoặc biện pháp khác theo quy định.",
+        "Trách nhiệm dân sự là bồi thường thiệt hại cho người bị ảnh hưởng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/02.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/02.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Trách nhiệm pháp lý có ba loại (tiếp)",
+      "body": [
+        "Trách nhiệm hình sự chỉ đặt ra khi hành vi là tội phạm theo Bộ luật Hình sự."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/03.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/03.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Trách nhiệm pháp lý có ba loại",
+      "body": [
+        "Một cơ sở kê khai sai thông tin có thể bị phạt hành chính. Một cơ sở làm người bệnh bị thiệt hại có thể phải bồi thường dân sự."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/04.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/04.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Trách nhiệm pháp lý có ba loại",
+      "body": [
+        "Nghĩ rằng mọi sai sót đều là tội hình sự. Phần lớn sai sót chỉ đến mức xử phạt hành chính hoặc bồi thường."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/05.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/05.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Đơn thuốc là gì",
+      "body": [
+        "Đơn thuốc là giấy bác sĩ hoặc người được phép kê đơn viết để người bệnh mua và dùng thuốc.",
+        "Đơn cần ghi tên thuốc, hàm lượng, liều dùng, cách dùng và thời gian dùng.",
+        "Theo Luật Khám bệnh, chữa bệnh, người hành nghề phải ghi đầy đủ các nội dung này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/06.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/06.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Đơn thuốc là gì",
+      "body": [
+        "Bác sĩ viết đơn ghi tên thuốc, liều mỗi lần uống, số lần trong ngày và số ngày dùng. Nhà thuốc chỉ bán thuốc kê đơn khi có đơn này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/07.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/07.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Đơn thuốc là gì",
+      "body": [
+        "Nghĩ rằng chỉ cần nói tên thuốc là đủ. Đơn cần có đủ các thông tin trên."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/08.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/08.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hồ sơ bệnh án là gì",
+      "body": [
+        "Hồ sơ bệnh án là tài liệu ghi lại quá trình khám và điều trị của một người bệnh: triệu chứng, kết quả khám, xét nghiệm, chẩn đoán, thuốc và các chăm sóc đã thực hiện.",
+        "Hồ sơ có thể là bản giấy hoặc bản điện tử, và có giá trị pháp lý như nhau."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/09.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/09.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Hồ sơ bệnh án là gì",
+      "body": [
+        "Mỗi lần người bệnh nhập viện, bác sĩ ghi diễn biến bệnh vào hồ sơ. Hồ sơ này được dùng để theo dõi điều trị và khi cần giải quyết tranh chấp."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/10.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/10.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Hồ sơ bệnh án là gì",
+      "body": [
+        "Nghĩ rằng hồ sơ bệnh án chỉ dành cho bác sĩ. Người bệnh có quyền xem và sao chụp hồ sơ của mình."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/11.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/11.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thẻ BHYT dùng để làm gì",
+      "body": [
+        "Thẻ bảo hiểm y tế là giấy tờ chứng nhận người đó đã tham gia bảo hiểm.",
+        "Thẻ giúp quỹ bảo hiểm thanh toán một phần chi phí khám chữa bệnh theo phạm vi quyền lợi và mức hưởng của luật.",
+        "Có thẻ không có nghĩa là mọi chi phí đều miễn phí."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/12.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/12.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thẻ BHYT dùng để làm gì",
+      "body": [
+        "Người có thẻ BHYT đi khám đúng nơi đăng ký, quỹ BHYT thanh toán phần đủ điều kiện. Phần còn lại người bệnh tự trả theo quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/13.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/13.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thẻ BHYT dùng để làm gì",
+      "body": [
+        "Nghĩ rằng có thẻ BHYT thì khám ở đâu cũng được thanh toán toàn bộ. Mức hưởng phụ thuộc vào đối tượng, nơi khám và điều kiện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/14.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/14.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bệnh truyền nhiễm nhóm A là gì",
+      "body": [
+        "Luật Phòng bệnh 114/2025 chia bệnh truyền nhiễm thành ba nhóm: nhóm A là các bệnh đặc biệt nguy hiểm, nhóm B là bệnh nguy hiểm, nhóm C là bệnh ít nguy hiểm.",
+        "Khi có bệnh nhóm A, cơ quan chức năng có thể áp dụng biện pháp cách ly y tế."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/15.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/15.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Bệnh truyền nhiễm nhóm A là gì",
+      "body": [
+        "Khi một bệnh thuộc nhóm A xuất hiện, cơ quan y tế có thể thông báo và triển khai biện pháp cách ly theo quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/16.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/16.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Bệnh truyền nhiễm nhóm A là gì",
+      "body": [
+        "Nghĩ rằng mọi bệnh truyền nhiễm đều thuộc nhóm A. Nhóm A chỉ là nhóm nguy hiểm nhất."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/17.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/17.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Đơn thuốc cần ghi những gì?",
+      "model": "Tên thuốc, hàm lượng, liều dùng, cách dùng và thời gian dùng.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/18.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/18.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Có thẻ BHYT thì có miễn phí toàn bộ không?",
+      "model": "Không. BHYT thanh toán một phần theo quy định, người bệnh có thể phải trả phần còn lại.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/19.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/19.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Đọc hiểu văn bản y tế",
+      "body": [
+        "Biết văn bản nào có hiệu lực, văn bản nào đã thay thế, để không học nhầm quy định cũ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/20.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/20.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Số hiệu nói gì",
+      "body": [
+        "Số hiệu như 15/2023/QH15 gồm ba phần: số thứ tự 15, năm ban hành 2023, và QH15 là Quốc hội khóa XV.",
+        "Đuôi /TT-BYT là thông tư của Bộ Y tế, /NĐ-CP là nghị định của Chính phủ.",
+        "Khi gặp số hiệu, hãy đọc được ngay loại văn bản và năm ban hành."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/21.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/21.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Số hiệu nói gì",
+      "body": [
+        "Luật Khám bệnh, chữa bệnh có số hiệu 15/2023/QH15 là một luật do Quốc hội ban hành năm 2023."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/22.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/22.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Số hiệu nói gì",
+      "body": [
+        "Nhầm Luật 51/2024/QH15 (Bảo hiểm y tế) với Luật 44/2024/QH15 (Dược). Hai luật khác nhau dù cùng năm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/23.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/23.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hiệu lực và thay thế",
+      "body": [
+        "Một văn bản có ngày hiệu lực riêng.",
+        "Khi văn bản mới có hiệu lực, văn bản cũ có thể bị thay thế hoặc sửa đổi.",
+        "Quy tắc: nếu hai văn bản trùng nội dung mà đáp án khác nhau, áp dụng văn bản mới hơn theo ngày hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/24.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/24.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Hiệu lực và thay thế",
+      "body": [
+        "Luật Khám bệnh, chữa bệnh 15/2023 có hiệu lực từ 01/01/2024 và thay thế Luật 40/2009. Luật Dân số 113/2025 có hiệu lực từ 01/07/2026 và đã thay thế Pháp lệnh Dân số 06/2003 từ 01/07/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/25.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/25.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Hiệu lực và thay thế",
+      "body": [
+        "Học theo luật cũ đã bị thay. Ví dụ: Luật Phòng bệnh truyền nhiễm 03/2007 đã bị thay bởi Luật Phòng bệnh 114/2025, hiệu lực từ 01/07/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/26.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/26.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thứ tự hiệu lực của các văn bản",
+      "body": [
+        "Hệ thống văn bản pháp luật có thứ bậc.",
+        "Hiến pháp đứng đầu.",
+        "Tiếp theo là luật, nghị quyết của Quốc hội; rồi pháp lệnh; lệnh và quyết định của Chủ tịch nước; nghị định của Chính phủ; quyết định của Thủ tướng; thông tư của bộ trưởng; và văn bản của chính quyền địa phương."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/27.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/27.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thứ tự hiệu lực của các văn bản (tiếp)",
+      "body": [
+        "Văn bản cấp dưới phải phù hợp với văn bản cấp trên."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/28.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/28.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thứ tự hiệu lực của các văn bản",
+      "body": [
+        "Thông tư hướng dẫn một luật không được quy định trái với luật đó. Nếu trái, luật được áp dụng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/29.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/29.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thứ tự hiệu lực của các văn bản",
+      "body": [
+        "Coi thông tư của Bộ Y tế có hiệu lực cao hơn luật vì ban hành gần đây hơn. Hiệu lực pháp lý theo thứ bậc, không theo thời điểm ban hành."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/30.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/30.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật, nghị định, thông tư, án lệ khác nhau thế nào",
+      "body": [
+        "Luật do Quốc hội ban hành, có hiệu lực cao nhất dưới Hiến pháp, quy định các vấn đề cơ bản như y tế, kinh tế, giáo dục.",
+        "Nghị định do Chính phủ ban hành để hướng dẫn luật, hoặc quy định việc chưa có luật điều chỉnh.",
+        "Thông tư do bộ trưởng ban hành để hướng dẫn nghị định và luật trong một ngành. Án lệ là phán quyết của tòa án đã có hiệu lực, được Chánh án Tòa án nhân dân tối cao công bố để các tòa án áp dụng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/31.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/31.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật, nghị định, thông tư, án lệ khác nhau thế nào",
+      "body": [
+        "Luật Khám bệnh, chữa bệnh là luật. Nghị định hướng dẫn luật đó là nghị định của Chính phủ. Thông tư hướng dẫn chi tiết về giá dịch vụ là thông tư của Bộ Y tế."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/32.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/32.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật, nghị định, thông tư, án lệ khác nhau thế nào",
+      "body": [
+        "Nhầm vai trò: nghị định không hướng dẫn thông tư, mà thông tư hướng dẫn nghị định và luật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/33.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/33.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Luật 15/2023/QH15 do cơ quan nào ban hành và năm nào?",
+      "model": "Quốc hội, năm 2023 (QH15 là Quốc hội khóa XV).",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/34.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/34.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Luật Khám bệnh, chữa bệnh 2023 thay thế luật nào?",
+      "model": "Luật 40/2009/QH12.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/35.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/35.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Người, cơ sở và giấy phép khám chữa bệnh",
+      "body": [
+        "Phân biệt rõ người hành nghề, cơ sở khám chữa bệnh, và hai loại giấy phép khác nhau."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/36.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/36.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Các khái niệm nền",
+      "body": [
+        "Khám bệnh là việc người hành nghề dùng kiến thức và kỹ thuật chuyên môn để đánh giá tình trạng sức khỏe, nguy cơ và nhu cầu chăm sóc.",
+        "Người bệnh là người sử dụng dịch vụ khám bệnh, chữa bệnh.",
+        "Người hành nghề là người đã được cơ quan có thẩm quyền cấp giấy phép hành nghề."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/37.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/37.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Các khái niệm nền (tiếp)",
+      "body": [
+        "Khi làm bài, hãy phân biệt người (người hành nghề) với cơ sở (nơi cung cấp dịch vụ)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/38.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/38.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Các khái niệm nền",
+      "body": [
+        "Một bác sĩ có giấy phép hành nghề là người hành nghề. Bệnh viện có giấy phép hoạt động là cơ sở khám bệnh, chữa bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/39.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/39.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Các khái niệm nền",
+      "body": [
+        "Cho rằng giấy phép hành nghề và giấy phép hoạt động là một. Thực ra đây là hai giấy phép cho hai đối tượng khác nhau."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/40.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/40.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Giấy phép hành nghề: 5 năm và phải gia hạn",
+      "body": [
+        "Giấy phép hành nghề có thời hạn 5 năm và phải được gia hạn khi hết hạn.",
+        "Luật cũng quy định lộ trình kiểm tra và đánh giá năng lực trước khi cấp phép.",
+        "Điều kiện thực hành trước khi cấp giấy phép được quy định chi tiết tại Nghị định 96/2023, chưa đối chiếu được số tháng cụ thể."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/41.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/41.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Giấy phép hành nghề: 5 năm và phải gia hạn",
+      "body": [
+        "Giấy phép cấp năm 2019 đã quá 5 năm thì cần gia hạn trước khi tiếp tục ký đơn khám chữa bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/42.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/42.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Giấy phép hành nghề: 5 năm và phải gia hạn",
+      "body": [
+        "Tưởng giấy phép có giá trị vĩnh viễn như chứng chỉ hành nghề cũ. Luật 2023 đã đổi tên thành giấy phép hành nghề và đặt thời hạn 5 năm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/43.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/43.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ba cấp chuyên môn kỹ thuật",
+      "body": [
+        "Cơ sở khám chữa bệnh được tổ chức theo ba cấp chuyên môn kỹ thuật: cấp ban đầu, cấp cơ bản, cấp chuyên sâu.",
+        "Cách phân cấp này thay thế cách chia bốn tuyến trung ương, tỉnh, huyện, xã.",
+        "Quy định áp dụng từ 01/01/2025."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/44.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/44.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Ba cấp chuyên môn kỹ thuật",
+      "body": [
+        "Một cơ sở chỉ làm được nhiệm vụ của cấp ban đầu thì xếp vào cấp ban đầu. Một cơ sở làm được nhiệm vụ của cả ba cấp thì xếp cấp chuyên sâu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/45.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/45.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Ba cấp chuyên môn kỹ thuật",
+      "body": [
+        "Vẫn dùng cách gọi tuyến trung ương, tuyến tỉnh khi nói về mức chuyên môn. Cần đổi sang cấp ban đầu, cơ bản, chuyên sâu, và chú ý mốc 01/01/2025."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/46.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/46.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quy tắc không bao giờ được vi phạm",
+      "body": [
+        "Luật nghiêm cấm từ chối hoặc cố ý chậm cấp cứu người bệnh.",
+        "Hồ sơ bệnh án có thể lập điện tử và có giá trị như bản giấy.",
+        "Người hành nghề nước ngoài phải dùng thành thạo tiếng Việt hoặc có người phiên dịch."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/47.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/47.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Quy tắc không bao giờ được vi phạm",
+      "body": [
+        "Người bệnh cấp cứu đến cơ sở trái tuyến. Cơ sở không được từ chối hay chậm xử trí chỉ vì trái tuyến."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/48.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/48.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Quy tắc không bao giờ được vi phạm",
+      "body": [
+        "Nhầm việc trái tuyến với việc từ chối cấp cứu. Trái tuyến ảnh hưởng đến mức thanh toán BHYT, nhưng không được phép làm chậm cấp cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/49.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/49.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Giấy phép hành nghề có thời hạn bao lâu?",
+      "model": "5 năm, hết hạn phải gia hạn.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/50.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/50.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Cơ sở khám chữa bệnh có mấy cấp chuyên môn kỹ thuật?",
+      "model": "Ba cấp: ban đầu, cơ bản, chuyên sâu, áp dụng từ 01/01/2025.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/51.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/51.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quyền của người bệnh",
+      "body": [
+        "Biết người bệnh được biết gì, được quyết định gì, và được giữ bí mật gì."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/52.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/52.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Được cung cấp thông tin",
+      "body": [
+        "Người bệnh được cung cấp thông tin về tình trạng sức khỏe, phương pháp chữa bệnh, giá dịch vụ, và hướng dẫn tự chăm sóc.",
+        "Đây là điều tạo nên sự đồng thuận khi điều trị.",
+        "Người bệnh cũng được đọc và sao chụp hồ sơ bệnh án, và được nhận tóm tắt, giải thích về chi phí."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/53.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/53.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Được cung cấp thông tin",
+      "body": [
+        "Người bệnh hỏi giá một dịch vụ trước khi làm. Cơ sở phải cung cấp thông tin giá, không được che giấu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/54.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/54.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Được cung cấp thông tin",
+      "body": [
+        "Cho rằng người bệnh không có quyền xem hồ sơ của mình."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/55.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/55.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quyền chấp nhận hoặc từ chối",
+      "body": [
+        "Người bệnh có quyền chấp nhận hoặc từ chối tham gia nghiên cứu y sinh học.",
+        "Mỗi người bệnh có một người đại diện tại một thời điểm, nên việc đại diện không được chia cho nhiều người cùng lúc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/56.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/56.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Quyền chấp nhận hoặc từ chối",
+      "body": [
+        "Một người bệnh được đề nghị tham gia nghiên cứu. Họ có thể đồng ý hoặc từ chối mà không bị ảnh hưởng đến việc điều trị."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/57.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/57.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Quyền chấp nhận hoặc từ chối",
+      "body": [
+        "Nghĩ rằng người bệnh không thể từ chối tham gia nghiên cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/58.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/58.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bí mật thông tin",
+      "body": [
+        "Người bệnh được giữ bí mật thông tin sức khỏe và đời tư.",
+        "Đây là quyền gắn với nghĩa vụ của cơ sở và người hành nghề khi xử lý hồ sơ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/59.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/59.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Bí mật thông tin",
+      "body": [
+        "Nhân viên không được tiết lộ tình trạng bệnh của người bệnh cho người không liên quan."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/60.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/60.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Bí mật thông tin",
+      "body": [
+        "Coi thông tin sức khỏe là chuyện nội bộ, có thể chia sẻ tùy ý."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/61.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/61.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Mỗi người bệnh có bao nhiêu người đại diện tại một thời điểm?",
+      "model": "Một người.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/62.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/62.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Người bệnh có quyền từ chối nghiên cứu y sinh học không?",
+      "model": "Có, được chấp nhận hoặc từ chối.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/63.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/63.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bảo hiểm y tế: đọc đúng mức hưởng",
+      "body": [
+        "Tính được mức hưởng BHYT trong từng tình huống, không nhầm giữa cấp cứu, trái tuyến và điều kiện 5 năm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/64.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/64.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bắt đầu từ mức phổ biến",
+      "body": [
+        "Mức hưởng phổ biến là 80% chi phí trong phạm vi quyền lợi.",
+        "Một số đối tượng được cao hơn: trẻ em dưới 6 tuổi, người có công, hộ nghèo và một số nhóm khác hưởng 100%.",
+        "Người hưởng lương hưu hưởng 95%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/65.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/65.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bắt đầu từ mức phổ biến (tiếp)",
+      "body": [
+        "Hãy học mức 80% trước, rồi mới học các trường hợp ngoại lệ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/66.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/66.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Bắt đầu từ mức phổ biến",
+      "body": [
+        "Người đi làm đúng quy định, không thuộc nhóm ưu tiên, được hưởng 80%. Trẻ dưới 6 tuổi trong phạm vi được hưởng 100%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/67.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/67.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Bắt đầu từ mức phổ biến",
+      "body": [
+        "Áp dụng 100% cho mọi người. Mức 100% chỉ áp dụng khi thuộc nhóm được quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/68.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/68.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Cấp cứu và trái tuyến",
+      "body": [
+        "Cấp cứu ở bất kỳ cơ sở nào được hưởng 100%.",
+        "Khám trái tuyến (không cấp cứu): nội trú tại cơ sở cấp chuyên sâu hưởng 40% mức hưởng, trừ các ngoại lệ 100% (bệnh hiếm/hiểm nghèo/kỹ thuật cao; hộ nghèo, dân tộc thiểu số vùng khó khăn/đặc biệt khó khăn/xã đảo; cơ sở trước 01/01/2025 đã được xác định là tuyến tỉnh hoặc tuyến huyện).",
+        "Khám ngoại trú tại cơ sở cấp ban đầu được hưởng như đúng tuyến; nội trú tại cơ sở cấp cơ bản cũng được hưởng 100% mức hưởng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/69.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/69.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Cấp cứu và trái tuyến (tiếp)",
+      "body": [
+        "Ngoại trú trái tuyến chỉ có mức 50% trong trường hợp hẹp: cơ sở cấp chuyên sâu mà trước 01/01/2025 là tuyến tỉnh, từ 01/07/2026 (Nghị định 188/2025 Điều 19 khoản 4); không áp dụng chung cho mọi bệnh viện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/70.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/70.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Cấp cứu và trái tuyến",
+      "body": [
+        "Một người tự đến bệnh viện tuyến trung ương để điều trị nội trú, không thuộc ngoại lệ: quỹ thanh toán 40% mức hưởng. Nếu vào cấp cứu, hưởng 100%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/71.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/71.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Cấp cứu và trái tuyến",
+      "body": [
+        "Nghĩ mọi trường hợp nội trú trái tuyến đều hưởng 100%. Chỉ cấp cứu và các ngoại lệ được quy định mới hưởng 100%; nội trú chuyên sâu thông thường là 40%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/72.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/72.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Điều kiện 5 năm và hộ gia đình",
+      "body": [
+        "Người tham gia liên tục từ 5 năm trở lên và có số tiền cùng chi trả trong năm vượt ngưỡng sẽ được hưởng 100%.",
+        "Ngưỡng là 6 lần mức tham chiếu do Chính phủ quy định (Luật dùng cụm “6 lần mức tham chiếu”; Nghị định 188/2025 Điều 18 khoản 2 viết là “06 tháng lương cơ sở”).",
+        "Khi đóng theo hộ gia đình: người thứ nhất tối đa 6% mức tham chiếu, người thứ hai bằng 70%, thứ ba 60%, thứ tư 50%, từ người thứ năm bằng 40% mức người thứ nhất."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/73.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/73.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Điều kiện 5 năm và hộ gia đình",
+      "body": [
+        "Một hộ có 4 người đóng BHYT: người thứ hai đóng 70% mức của người thứ nhất, người thứ tư đóng 50%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/74.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/74.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Điều kiện 5 năm và hộ gia đình",
+      "body": [
+        "Dùng con số 6 lần cho mọi trường hợp, hoặc quên điều kiện liên tục 5 năm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/75.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/75.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Cấp cứu trái tuyến được hưởng bao nhiêu?",
+      "model": "100% ở mọi cơ sở.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/76.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/76.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Mức hưởng phổ biến là bao nhiêu?",
+      "model": "80% trong phạm vi quyền lợi.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/77.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/77.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Giá dịch vụ và thanh toán thuốc tự mua",
+      "body": [
+        "Hiểu ai quyết định giá, cách tính khi khám nhiều lượt, và khi nào thuốc tự mua được thanh toán."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/78.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/78.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khung giá và mức giá cụ thể",
+      "body": [
+        "Từ 01/01/2025, Thông tư 21/2023 và Thông tư 22/2023 về giá dịch vụ khám bệnh, chữa bệnh đã hết hiệu lực.",
+        "Thông tư 21/2024/TT-BYT quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh (được sửa đổi bởi Thông tư 39/2024/TT-BYT); mức giá cụ thể do Hội đồng nhân dân cấp tỉnh quyết định trong phạm vi khung.",
+        "Các tỷ lệ 70%/30% và cách xếp hạng cơ sở theo thông tư cũ không còn là căn cứ hiện hành."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/79.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/79.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khung giá và mức giá cụ thể",
+      "body": [
+        "Khi tra giá dịch vụ tại địa phương, xem nghị quyết giá của HĐND tỉnh ban hành theo Thông tư 21/2024/TT-BYT, không dùng khung giá 2023."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/80.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/80.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khung giá và mức giá cụ thể",
+      "body": [
+        "Vẫn áp dụng 70% cho trạm y tế hoặc 30% cho lần khám chuyên khoa thứ hai theo Thông tư 21/2023 và 22/2023 đã hết hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/81.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/81.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khám nhiều lượt trong một lần đến",
+      "body": [
+        "Quy định 30% cho lần khám chuyên khoa thứ hai thuộc Thông tư 21/2023 và 22/2023, đã hết hiệu lực từ 01/01/2025.",
+        "Hiện hành, mức giá cụ thể và cách tính khi khám nhiều lượt do Hội đồng nhân dân cấp tỉnh quy định theo Thông tư 21/2024/TT-BYT; cần tra nghị quyết giá của địa phương."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/82.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/82.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khám nhiều lượt trong một lần đến",
+      "body": [
+        "Một cơ sở ở tỉnh A phải dùng bảng giá của tỉnh A ban hành theo Thông tư 21/2024, không tự lấy tỷ lệ 30% của thông tư cũ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/83.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/83.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khám nhiều lượt trong một lần đến",
+      "body": [
+        "Coi tỷ lệ 30% và mức tối đa 2 lần giá khám của thông tư cũ là quy định đang áp dụng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/84.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/84.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thuốc tự mua được thanh toán khi nào",
+      "body": [
+        "Thông tư 22/2024 có hiệu lực từ 01/01/2025.",
+        "Thuốc được thanh toán trực tiếp gồm thuốc trong Danh mục thuốc hiếm, và thiết bị y tế loại C, D, trừ chẩn đoán in vitro và thiết bị cá nhân hóa.",
+        "Giá thanh toán tối đa không vượt giá trúng thầu gần nhất tại cơ sở."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/85.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/85.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thuốc tự mua được thanh toán khi nào (tiếp)",
+      "body": [
+        "Nếu không có giá trúng thầu gần nhất thì áp dụng các mức ưu tiên khác."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/86.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/86.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thuốc tự mua được thanh toán khi nào",
+      "body": [
+        "Thuốc hiếm trong danh mục được thanh toán trực tiếp. Giá tối đa không được vượt giá trúng thầu gần nhất của cơ sở."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/87.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/87.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thuốc tự mua được thanh toán khi nào",
+      "body": [
+        "Nhầm với thuốc thông thường. Chỉ thuốc trong danh mục và thiết bị loại C, D mới thuộc diện này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/88.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/88.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Từ 01/01/2025, giá dịch vụ khám bệnh, chữa bệnh được quy định theo văn bản nào?",
+      "model": "Thông tư 21/2024/TT-BYT quy định phương pháp định giá; mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/89.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/89.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Còn áp dụng tỷ lệ 70% cho trạm y tế và 30% cho lần khám chuyên khoa thứ hai của Thông tư 21/2023 không?",
+      "model": "Không. Thông tư 21/2023 và 22/2023 đã hết hiệu lực từ 01/01/2025; dùng Thông tư 21/2024 và nghị quyết giá của địa phương.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/90.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/90.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thuốc và đơn thuốc",
+      "body": [
+        "Biết ai được kê đơn, kê bao nhiêu ngày, và khi nào được bán thuốc kê đơn."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/91.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/91.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ai được kê đơn và đơn cần gì",
+      "body": [
+        "Theo Thông tư 26/2025 (đã đối chiếu), chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề mới được kê thuốc hóa dược, sinh phẩm trong điều trị ngoại trú.",
+        "Đơn thuốc cho trẻ dưới 72 tháng tuổi phải ghi tuổi tính theo tháng và cân nặng.",
+        "Đơn thuốc điện tử có giá trị như đơn giấy khi được ký số, lưu trữ và chia sẻ đúng quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/92.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/92.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ai được kê đơn và đơn cần gì (tiếp)",
+      "body": [
+        "Thông tin này lấy từ tóm tắt, cần đối chiếu văn bản gốc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/93.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/93.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Ai được kê đơn và đơn cần gì",
+      "body": [
+        "Đơn cho bé 18 tháng tuổi phải ghi tuổi theo tháng và cân nặng của bé."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/94.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/94.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Ai được kê đơn và đơn cần gì",
+      "body": [
+        "Chỉ kiểm tra tên thuốc mà quên các trường bắt buộc, như tuổi theo tháng và cân nặng với trẻ nhỏ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/95.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/95.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Số ngày kê đơn ngoại trú",
+      "body": [
+        "Đơn ngoại trú tối đa 30 ngày cho mỗi thuốc.",
+        "Bệnh mạn tính ổn định có thể kê đến 90 ngày theo Phụ lục VII.",
+        "Điểm cần nhớ là 30 ngày là mặc định, 90 ngày chỉ áp dụng khi là bệnh mạn tính."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/96.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/96.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Số ngày kê đơn ngoại trú (tiếp)",
+      "body": [
+        "Theo các nguồn đã kiểm tra, mức 90 ngày chỉ áp dụng cho các bệnh trong danh mục Phụ lục VII (252 bệnh mạn tính).",
+        "Không phải bệnh mạn tính nào cũng tự động được kê 90 ngày: bác sĩ quyết định số ngày dựa trên tình trạng ổn định của từng người bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/97.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/97.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Số ngày kê đơn ngoại trú",
+      "body": [
+        "Đơn cho bệnh viêm họng cấp tính 45 ngày không hợp lệ, cần chỉnh về tối đa 30 ngày. Đơn cho bệnh mạn tính ổn định 60 ngày được chấp nhận."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/98.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/98.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Số ngày kê đơn ngoại trú",
+      "body": [
+        "Áp 90 ngày cho bệnh cấp tính, hoặc áp 30 ngày cho bệnh mạn tính."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/99.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/99.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bán thuốc kê đơn và kinh doanh online",
+      "body": [
+        "Nhà thuốc chỉ được bán thuốc kê đơn khi có đơn thuốc.",
+        "Luật Dược sửa đổi 44/2024 cho phép kinh doanh thuốc qua thương mại điện tử theo danh mục được phép.",
+        "Thuốc kê đơn không được bán lẻ qua thương mại điện tử theo điều khoản đã ghi trong bộ câu hỏi, cần đối chiếu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/100.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/100.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bán thuốc kê đơn và kinh doanh online (tiếp)",
+      "body": [
+        "Luật cũng yêu cầu thuốc kê đơn công bố giá bán buôn dự kiến và không được bán qua tầng trung gian vượt mức giá đã công bố."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/101.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/101.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Bán thuốc kê đơn và kinh doanh online",
+      "body": [
+        "Khách gửi ảnh đơn thuốc và đặt mua thuốc kê đơn qua website. Nhà thuốc không được bán nếu thuốc thuộc nhóm kê đơn không được bán lẻ qua thương mại điện tử."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/102.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/102.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Bán thuốc kê đơn và kinh doanh online",
+      "body": [
+        "Nghĩ rằng có đơn thuốc là đủ điều kiện bán online. Điều kiện bán online là thuốc thuộc danh mục được phép, và thuốc kê đơn nằm ngoài phạm vi này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/103.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/103.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Đơn ngoại trú tối đa bao nhiêu ngày cho một thuốc?",
+      "model": "30 ngày; bệnh mạn tính ổn định đến 90 ngày.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/104.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/104.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Nhà thuốc được bán thuốc kê đơn khi nào?",
+      "model": "Khi có đơn thuốc.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/105.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/105.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dữ liệu y tế và bảo mật",
+      "body": [
+        "Hiểu hồ sơ điện tử, sổ sức khỏe điện tử, và các quy tắc bảo mật, nhất là với thông tin HIV."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/106.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/106.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hồ sơ bệnh án và HIS",
+      "body": [
+        "Hồ sơ bệnh án có thể lập bằng giấy hoặc bản điện tử, và có giá trị pháp lý như nhau.",
+        "Cơ sở khám chữa bệnh phải cung cấp thông tin lên Hệ thống thông tin quản lý khám chữa bệnh đầy đủ, chính xác và kịp thời.",
+        "Hệ thống này do Bộ Y tế thống nhất quản lý."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/107.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/107.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Hồ sơ bệnh án và HIS",
+      "body": [
+        "Bệnh viện nhập dữ liệu khám muộn, sai hoặc thiếu lên hệ thống thì vi phạm yêu cầu đầy đủ, chính xác, kịp thời."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/108.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/108.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Hồ sơ bệnh án và HIS",
+      "body": [
+        "Nghĩ rằng bản điện tử kém giá trị hơn bản giấy. Cả hai có giá trị như nhau."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/109.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/109.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Sửa hồ sơ và sổ sức khỏe điện tử",
+      "body": [
+        "Cấm tẩy xóa, sửa chữa hồ sơ bệnh án nhằm làm sai lệch thông tin, hoặc lập hồ sơ giả.",
+        "Sổ sức khỏe điện tử là ứng dụng hoặc phần mềm tóm lược quá trình phòng bệnh, thăm khám, điều trị của từng cá nhân.",
+        "Khi dữ liệu thay đổi hoặc có sai sót, phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/110.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/110.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Sửa hồ sơ và sổ sức khỏe điện tử",
+      "body": [
+        "Nhân viên sửa kết quả khám cũ mà không ghi nhận lại là vi phạm. Đúng cách là ghi nhận thay đổi và thông báo theo quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/111.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/111.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Sửa hồ sơ và sổ sức khỏe điện tử",
+      "body": [
+        "Sửa thẳng vào dữ liệu cũ khi phát hiện sai, mà không để lại dấu vết hay thông báo."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/112.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/112.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tin HIV được bảo mật",
+      "body": [
+        "Thông tin về người nhiễm HIV được bảo mật.",
+        "Kết quả dương tính chỉ được thông báo cho những người luật cho phép, như vợ, chồng, người dự định kết hôn, người chung sống như vợ chồng.",
+        "Người được tiếp cận có trách nhiệm giữ bí mật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/113.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/113.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tin HIV được bảo mật (tiếp)",
+      "body": [
+        "Cấm kỳ thị, phân biệt đối xử với người nhiễm HIV."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/114.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/114.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tin HIV được bảo mật",
+      "body": [
+        "Đồng nghiệp trong khoa hỏi kết quả HIV dương tính của bệnh nhân. Cơ sở từ chối và chỉ thông báo cho người được luật cho phép."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/115.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/115.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tin HIV được bảo mật",
+      "body": [
+        "Thông báo rộng cho cả khoa để phòng ngừa lây nhiễm. Cách làm này vi phạm bảo mật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/116.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/116.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Hồ sơ bệnh án điện tử có giá trị như bản giấy không?",
+      "model": "Có, như nhau.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/117.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/117.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Kết quả HIV dương tính được thông báo cho ai?",
+      "model": "Chỉ cho những người luật cho phép, như vợ, chồng, người dự định kết hôn.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/118.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/118.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dân số và thai sản",
+      "body": [
+        "Nắm được quyền nghỉ thai sản khi sinh con thứ hai và các quy định về giới tính thai nhi."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/119.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/119.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghỉ thai sản khi sinh con thứ hai",
+      "body": [
+        "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng.",
+        "Lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai.",
+        "Điều kiện là đủ điều kiện hưởng chế độ thai sản theo pháp luật bảo hiểm xã hội."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/120.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/120.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghỉ thai sản khi sinh con thứ hai (tiếp)",
+      "body": [
+        "Luật Dân số 113/2025 có hiệu lực từ 01/07/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/121.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/121.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Nghỉ thai sản khi sinh con thứ hai",
+      "body": [
+        "Người lao động nam có vợ sinh con thứ hai, đủ điều kiện BHXH: được nghỉ 10 ngày làm việc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/122.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/122.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Nghỉ thai sản khi sinh con thứ hai",
+      "body": [
+        "Quên điều kiện đóng BHXH. Chế độ chỉ áp dụng khi đủ điều kiện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/123.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/123.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Cấm lựa chọn giới tính thai nhi",
+      "body": [
+        "Cấm lựa chọn giới tính thai nhi dưới mọi hình thức.",
+        "Cấm thông báo, tiết lộ giới tính thai nhi, trừ trường hợp phục vụ chẩn đoán và điều trị bệnh liên quan đến giới tính.",
+        "Hành vi tiết lộ giới tính để phá thai là căn cứ đình chỉ hành nghề khám chữa bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/124.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/124.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Cấm lựa chọn giới tính thai nhi",
+      "body": [
+        "Bác sĩ siêu âm và nói giới tính thai nhi cho gia đình để phá thai: vi phạm, có thể bị đình chỉ hành nghề."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/125.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/125.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Cấm lựa chọn giới tính thai nhi",
+      "body": [
+        "Nghĩ rằng chỉ cấm lựa chọn, còn tiết lộ thì không sao. Việc tiết lộ cũng bị cấm, trừ trường hợp điều trị."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/126.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/126.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Lao động nam được nghỉ bao nhiêu ngày khi vợ sinh con thứ hai?",
+      "model": "10 ngày làm việc, nếu đủ điều kiện BHXH.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/127.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/127.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Có được tiết lộ giới tính thai nhi không?",
+      "model": "Không, trừ trường hợp chẩn đoán và điều trị bệnh liên quan đến giới tính.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/128.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/128.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hiến pháp và quyền sức khỏe",
+      "body": [
+        "Biết các điều Hiến pháp liên quan đến sức khỏe: quyền được bảo hộ, nghĩa vụ, trách nhiệm của Nhà nước, và giới hạn khi hạn chế quyền con người."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/129.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/129.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quyền được bảo hộ về sức khỏe (Điều 20)",
+      "body": [
+        "Hiến pháp khẳng định mọi người có quyền bất khả xâm phạm về thân thể, được pháp luật bảo hộ về sức khỏe, danh dự và nhân phẩm.",
+        "Không ai bị tra tấn, bạo lực hay đối xử xâm phạm thân thể.",
+        "Thử nghiệm y học, dược học, khoa học trên cơ thể người phải có sự đồng ý của người được thử nghiệm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/130.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/130.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quyền được bảo hộ về sức khỏe (Điều 20) (tiếp)",
+      "body": [
+        "Việc hiến mô, bộ phận cơ thể và hiến xác theo quy định của luật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/131.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/131.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Quyền được bảo hộ về sức khỏe (Điều 20)",
+      "body": [
+        "Một nghiên cứu thử thuốc trên người tham gia phải có sự đồng ý của chính người đó trước khi thực hiện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/132.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/132.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Quyền được bảo hộ về sức khỏe (Điều 20)",
+      "body": [
+        "Cho rằng người nhà có thể thay người bệnh đồng ý thử nghiệm trong mọi trường hợp. Theo bài giảng, Hiến pháp yêu cầu sự đồng ý của người được thử nghiệm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/133.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/133.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghĩa vụ và quyền được chăm sóc y tế (Điều 38)",
+      "body": [
+        "Mọi người có quyền được bảo vệ, chăm sóc sức khỏe, bình đẳng trong sử dụng dịch vụ y tế.",
+        "Đồng thời mọi người có nghĩa vụ thực hiện quy định về phòng bệnh, khám bệnh, chữa bệnh.",
+        "Hiến pháp nghiêm cấm các hành vi đe dọa cuộc sống, sức khỏe của người khác và cộng đồng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/134.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/134.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Nghĩa vụ và quyền được chăm sóc y tế (Điều 38)",
+      "body": [
+        "Một người biết mình mắc bệnh truyền nhiễm nhưng cố ý lây cho người khác là hành vi bị Hiến pháp nghiêm cấm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/135.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/135.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Nghĩa vụ và quyền được chăm sóc y tế (Điều 38)",
+      "body": [
+        "Chỉ nhìn thấy quyền mà quên nghĩa vụ phòng bệnh và tuân thủ quy định khám, chữa bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/136.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/136.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Trách nhiệm của Nhà nước về bảo hiểm y tế và chăm sóc mẹ, trẻ em (Điều 58)",
+      "body": [
+        "Nhà nước và xã hội đầu tư phát triển sự nghiệp bảo vệ, chăm sóc sức khỏe.",
+        "Nhà nước thực hiện bảo hiểm y tế toàn dân và ưu tiên chăm sóc sức khỏe cho đồng bào dân tộc thiểu số, miền núi, hải đảo và vùng khó khăn.",
+        "Nhà nước, xã hội và gia đình có trách nhiệm bảo vệ, chăm sóc sức khỏe người mẹ, trẻ em và thực hiện kế hoạch hóa gia đình."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/137.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/137.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Trách nhiệm của Nhà nước về bảo hiểm y tế và chăm sóc mẹ, trẻ em (Điều 58)",
+      "body": [
+        "Chính sách ưu tiên chăm sóc sức khỏe cho vùng miền núi là thể hiện trực tiếp của Điều 58."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/138.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/138.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Trách nhiệm của Nhà nước về bảo hiểm y tế và chăm sóc mẹ, trẻ em (Điều 58)",
+      "body": [
+        "Nghĩ rằng bảo hiểm y tế chỉ dành cho người có thu nhập. Theo Hiến pháp, mục tiêu là bảo hiểm y tế toàn dân."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/139.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/139.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khi nào quyền con người bị hạn chế (Điều 14)",
+      "body": [
+        "Quyền con người, quyền công dân được công nhận và bảo đảm theo Hiến pháp và pháp luật.",
+        "Chỉ khi cần thiết và theo quy định của luật thì quyền này mới bị hạn chế, vì quốc phòng, an ninh, trật tự, đạo đức xã hội hoặc sức khỏe của cộng đồng.",
+        "Khi có vấn đề về sức khỏe cộng đồng, luật có thể quy định hạn chế một số quyền."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/140.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/140.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khi nào quyền con người bị hạn chế (Điều 14)",
+      "body": [
+        "Khi có dịch bệnh nguy hiểm, luật có thể quy định cách ly hoặc hạn chế đi lại vì sức khỏe cộng đồng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/141.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/141.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khi nào quyền con người bị hạn chế (Điều 14)",
+      "body": [
+        "Cho rằng mọi quyền đều có thể hạn chế tùy ý. Chỉ được hạn chế khi cần thiết và có quy định của luật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/142.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/142.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Theo Hiến pháp, thử nghiệm y học trên cơ thể người cần điều kiện gì?",
+      "model": "Phải có sự đồng ý của người được thử nghiệm (Điều 20 khoản 3).",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/143.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/143.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Nhà nước thực hiện chính sách gì về bảo hiểm y tế theo Điều 58?",
+      "model": "Bảo hiểm y tế toàn dân.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/144.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/144.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Văn bản và mốc hiệu lực cần nhớ",
+      "body": [
+        "Nhớ các văn bản chính và mốc hiệu lực. Ngày ban hành không cần nhớ; chỉ nhớ mốc có hiệu lực hoặc có hạn."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/145.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/145.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)",
+      "body": [
+        "Số hiệu: 36/2025/TT-BYT.",
+        "Hiệu lực: 11/09/2025.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/146.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/146.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP) (tiếp)",
+      "body": [
+        "Sửa đổi một số điều về phân cấp của Thông tư 04/2018/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/147.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/147.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 36/2025/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/148.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/148.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 36/2025/TT-BYT sửa đổi phân cấp Thực hành tốt phòng thí nghiệm (GLP)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/149.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/149.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)",
+      "body": [
+        "Số hiệu: 25/2026/TT-BYT.",
+        "Hiệu lực: Điều 2, 3: 01/07/2026; phần còn lại: 15/08/2026.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/150.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/150.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe) (tiếp)",
+      "body": [
+        "Sửa đổi Thông tư 01/2013/TT-BYT và Thông tư 32/2023/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/151.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/151.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 25/2026/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/152.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/152.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 25/2026/TT-BYT sửa đổi Thông tư 32/2023 (khám sức khỏe)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/153.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/153.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú",
+      "body": [
+        "Số hiệu: 26/2025/TT-BYT.",
+        "Hiệu lực: 01/07/2025.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/154.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/154.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú (tiếp)",
+      "body": [
+        "Đã đối chiếu văn bản gốc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/155.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/155.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 26/2025/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/156.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/156.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 26/2025/TT-BYT về đơn thuốc và kê đơn thuốc ngoại trú",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/157.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/157.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua",
+      "body": [
+        "Số hiệu: 22/2024/TT-BYT.",
+        "Hiệu lực: 01/01/2025.",
+        "Trạng thái: đang có hiệu lực. Áp dụng cho người bệnh tại cơ sở hợp đồng khám chữa bệnh BHYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/158.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/158.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 22/2024/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/159.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/159.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 22/2024/TT-BYT thanh toán chi phí thuốc, thiết bị y tế cho người có thẻ BHYT tự mua",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/160.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/160.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng",
+      "body": [
+        "Số hiệu: 22/2023/TT-BYT.",
+        "Hiệu lực: 17/11/2023 (ngày ký).",
+        "Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/161.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/161.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng (tiếp)",
+      "body": [
+        "Trước đó thay thế Thông tư 39/2018/TT-BYT và Thông tư 13/2019/TT-BYT (Điều 11)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/162.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/162.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 22/2023/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/163.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/163.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 22/2023/TT-BYT giá khám chữa bệnh BHYT thống nhất giữa bệnh viện cùng hạng",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/164.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/164.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước",
+      "body": [
+        "Số hiệu: 21/2023/TT-BYT.",
+        "Hiệu lực: 17/11/2023 (ngày ký).",
+        "Hết hiệu lực từ 01/01/2025, thay thế bởi Thông tư 21/2024/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/165.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/165.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước (tiếp)",
+      "body": [
+        "Trước đó thay thế Thông tư 37/2018 và 14/2019."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/166.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/166.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 21/2023/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/167.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/167.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 21/2023/TT-BYT khung giá dịch vụ khám chữa bệnh trong cơ sở Nhà nước",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/168.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/168.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+      "body": [
+        "Số hiệu: 21/2024/TT-BYT.",
+        "Hiệu lực: 17/10/2024.",
+        "Thay thế Thông tư 21/2023 và 22/2023 từ 01/01/2025; quy định phương pháp định giá, mức giá cụ thể do HĐND cấp tỉnh quyết định trong phạm vi khung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/169.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/169.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh (tiếp)",
+      "body": [
+        "Thông tư 21/2024 được sửa đổi bởi Thông tư 39/2024/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/170.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/170.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+      "body": [
+        "Tra giá dịch vụ KCB tại địa phương theo nghị quyết giá của HĐND tỉnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/171.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/171.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 21/2024/TT-BYT phương pháp định giá dịch vụ khám bệnh, chữa bệnh",
+      "body": [
+        "Dùng khung giá và tỷ lệ 70%/30% của thông tư 2023 đã hết hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/172.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/172.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền",
+      "body": [
+        "Số hiệu: 49/2025/TT-BYT.",
+        "Hiệu lực: 31/12/2025 (ngày ký).",
+        "Trạng thái: có sửa đổi, bổ sung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/173.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/173.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền (tiếp)",
+      "body": [
+        "Sửa đổi Thông tư 02/2024/TT-BYT.",
+        "Hồ sơ đã nộp trước ngày hiệu lực được giải quyết theo quy định cũ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/174.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/174.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 49/2025/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/175.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/175.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 49/2025/TT-BYT sửa đổi cấp giấy chứng nhận lương y và bài thuốc gia truyền",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/176.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/176.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế",
+      "body": [
+        "Số hiệu: 44/2025/TT-BYT.",
+        "Hiệu lực: 22/11/2025.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/177.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/177.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế (tiếp)",
+      "body": [
+        "Thay thế Thông tư 19/2021/TT-BYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/178.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/178.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 44/2025/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/179.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/179.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 44/2025/TT-BYT phân cấp và quản lý trang thiết bị y tế",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/180.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/180.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế",
+      "body": [
+        "Số hiệu: 102/2025/NĐ-CP.",
+        "Hiệu lực: 01/07/2025.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/181.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/181.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế (tiếp)",
+      "body": [
+        "Trạng thái hiệu lực cần đối chiếu Công báo trước khi dùng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/182.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/182.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 102/2025/NĐ-CP để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/183.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/183.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Nghị định 102/2025/NĐ-CP quy định quản lý dữ liệu y tế",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/184.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/184.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Khám bệnh, chữa bệnh",
+      "body": [
+        "Số hiệu: 15/2023/QH15.",
+        "Hiệu lực: 01/01/2024.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/185.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/185.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Khám bệnh, chữa bệnh (tiếp)",
+      "body": [
+        "Thay thế Luật Khám bệnh, chữa bệnh 40/2009/QH12 (đã sửa đổi bởi Luật 21/2017/QH14).",
+        "Chứng chỉ hành nghề đổi thành giấy phép hành nghề."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/186.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/186.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Khám bệnh, chữa bệnh",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 15/2023/QH15 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/187.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/187.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Khám bệnh, chữa bệnh",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/188.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/188.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Bảo hiểm y tế (sửa đổi 2024)",
+      "body": [
+        "Số hiệu: 51/2024/QH15.",
+        "Hiệu lực: 01/07/2025.",
+        "Trạng thái: có sửa đổi, bổ sung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/189.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/189.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Bảo hiểm y tế (sửa đổi 2024) (tiếp)",
+      "body": [
+        "Sửa đổi Luật BHYT 25/2008/QH12 (đã sửa đổi bởi Luật 46/2014/QH13).",
+        "Một số quy định có hiệu lực sớm từ 01/01/2025."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/190.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/190.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Bảo hiểm y tế (sửa đổi 2024)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 51/2024/QH15 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/191.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/191.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Bảo hiểm y tế (sửa đổi 2024)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/192.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/192.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Dược (sửa đổi 2024)",
+      "body": [
+        "Số hiệu: 44/2024/QH15.",
+        "Hiệu lực: 01/07/2025.",
+        "Trạng thái: có sửa đổi, bổ sung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/193.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/193.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Dược (sửa đổi 2024) (tiếp)",
+      "body": [
+        "Sửa đổi 50 điều và bổ sung 3 điều của Luật Dược 105/2016/QH13 (hiệu lực từ 01/01/2017)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/194.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/194.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Dược (sửa đổi 2024)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 44/2024/QH15 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/195.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/195.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Dược (sửa đổi 2024)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/196.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/196.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng bệnh",
+      "body": [
+        "Số hiệu: 114/2025/QH15.",
+        "Hiệu lực: 01/07/2026.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/197.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/197.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng bệnh (tiếp)",
+      "body": [
+        "Thay thế Luật Phòng, chống bệnh truyền nhiễm 2007 (hết hiệu lực 01/07/2026).",
+        "6 chương, 46 điều; chuyển trọng tâm từ chữa bệnh sang chủ động phòng bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/198.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/198.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Phòng bệnh",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 114/2025/QH15 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/199.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/199.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Phòng bệnh",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/200.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/200.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Dân số",
+      "body": [
+        "Số hiệu: 113/2025/QH15.",
+        "Hiệu lực: 01/07/2026.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/201.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/201.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Dân số (tiếp)",
+      "body": [
+        "Thay thế Pháp lệnh Dân số 06/2003 (hết hiệu lực khi Luật này có hiệu lực).",
+        "Điều 14 điểm c, d có hiệu lực từ 01/01/2027."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/202.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/202.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Dân số",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 113/2025/QH15 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/203.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/203.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Dân số",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/204.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/204.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng, chống tác hại của thuốc lá",
+      "body": [
+        "Số hiệu: 09/2012/QH13.",
+        "Hiệu lực: 01/05/2013.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/205.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/205.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng, chống tác hại của thuốc lá (tiếp)",
+      "body": [
+        "Bổ sung: Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/206.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/206.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Phòng, chống tác hại của thuốc lá",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 09/2012/QH13 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/207.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/207.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Phòng, chống tác hại của thuốc lá",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/208.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/208.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng, chống tác hại của rượu, bia",
+      "body": [
+        "Số hiệu: 44/2019/QH14.",
+        "Hiệu lực: 01/01/2020.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/209.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/209.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Phòng, chống tác hại của rượu, bia",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 44/2019/QH14 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/210.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/210.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Phòng, chống tác hại của rượu, bia",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/211.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/211.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật An toàn thực phẩm",
+      "body": [
+        "Số hiệu: 55/2010/QH12.",
+        "Hiệu lực: 01/07/2011.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/212.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/212.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật An toàn thực phẩm (tiếp)",
+      "body": [
+        "Hướng dẫn chính: Nghị định 15/2018/NĐ-CP"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/213.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/213.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật An toàn thực phẩm",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 55/2010/QH12 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/214.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/214.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật An toàn thực phẩm",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/215.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/215.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng, chống HIV/AIDS",
+      "body": [
+        "Số hiệu: 64/2006/QH11.",
+        "Hiệu lực: 01/01/2007.",
+        "Trạng thái: có sửa đổi, bổ sung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/216.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/216.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng, chống HIV/AIDS (tiếp)",
+      "body": [
+        "Sửa đổi bởi Luật 71/2020/QH14 (hiệu lực 01/07/2021)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/217.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/217.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Phòng, chống HIV/AIDS",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 64/2006/QH11 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/218.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/218.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Phòng, chống HIV/AIDS",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/219.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/219.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác",
+      "body": [
+        "Số hiệu: 75/2006/QH11.",
+        "Hiệu lực: 01/07/2007.",
+        "Trạng thái: đang có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/220.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/220.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 75/2006/QH11 để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/221.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/221.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/222.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/222.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)",
+      "body": [
+        "Số hiệu: 52/2017/TT-BYT.",
+        "Hiệu lực: 01/03/2018.",
+        "Trạng thái: hết hiệu lực từ 01/07/2025, thay thế bởi Thông tư 26/2025/TT-BYT (Điều 13 khoản 2)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/223.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/223.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi) (tiếp)",
+      "body": [
+        "Sửa đổi bởi Thông tư 18/2018/TT-BYT, Thông tư 04/2022/TT-BYT; Thông tư 27/2021/TT-BYT quy định kê đơn thuốc bằng hình thức điện tử."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/224.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/224.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 52/2017/TT-BYT để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/225.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/225.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tư 52/2017/TT-BYT về đơn thuốc và kê đơn thuốc (sửa đổi)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/226.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/226.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)",
+      "body": [
+        "Số hiệu: 98/2021/NĐ-CP.",
+        "Hiệu lực: 01/01/2022.",
+        "Trạng thái: có sửa đổi, bổ sung."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/227.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/227.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi) (tiếp)",
+      "body": [
+        "Được sửa đổi bởi Nghị định 07/2023/NĐ-CP và Nghị định 04/2025/NĐ-CP (có hiệu lực từ 01/01/2025)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/228.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/228.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)",
+      "body": [
+        "Khi cần tra cứu, dùng số hiệu 98/2021/NĐ-CP để tìm đúng văn bản."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/229.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/229.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Nghị định 98/2021/NĐ-CP quản lý trang thiết bị y tế (sửa đổi)",
+      "body": [
+        "Nhớ nhầm số hiệu hoặc mốc hiệu lực với văn bản khác. Hãy kiểm tra lại số hiệu khi tra cứu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/230.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/230.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Luật Khám bệnh, chữa bệnh 15/2023 có số hiệu nào?",
+      "model": "15/2023/QH15.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/231.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/231.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Luật Khám bệnh, chữa bệnh có hiệu lực từ khi nào?",
+      "model": "01/01/2024.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/232.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/232.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Các khoa trong bệnh viện và quy định",
+      "body": [
+        "Biết mỗi khoa làm gì, bệnh nhân đi qua những đâu, và quy định áp dụng cho khoa đó (có số điều)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/233.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/233.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa khám bệnh (ngoại trú)",
+      "body": [
+        "Có nơi tiếp đón, phòng cấp cứu, phòng lưu, phòng khám, phòng thực hiện kỹ thuật và thủ thuật (nếu có).",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Người chịu trách nhiệm chuyên môn kỹ thuật phải là người hành nghề toàn thời gian, có phạm vi hành nghề phù hợp và thời gian hành nghề tối thiểu 36 tháng.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 40 khoản 4b)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/234.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/234.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa khám bệnh (ngoại trú)",
+      "body": [
+        "Bệnh nhân đến tiếp đón, đăng ký khám. Nếu cấp cứu thì được đưa thẳng vào phòng cấp cứu, không chờ thủ tục. Nếu khám thường, bệnh nhân vào phòng khám chuyên khoa phù hợp; cần làm xét nghiệm hoặc chụp chiếu thì chuyển sang khoa cận lâm sàng; sau đó có thể được điều trị ngoại trú, kê đơn, hoặc nhập viện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/235.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/235.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa khám bệnh (ngoại trú)",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/236.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/236.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa cấp cứu",
+      "body": [
+        "Bệnh viện và phòng khám đa khoa phải có phòng cấp cứu.",
+        "Phòng cấp cứu của phòng khám đa khoa có diện tích tối thiểu 12 m².",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b; Điều 42 khoản 2a) Có hộp cấp cứu phản vệ và đủ thuốc cấp cứu chuyên khoa phù hợp."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/237.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/237.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa cấp cứu (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 42 khoản 3; Điều 43 khoản 3) Bệnh viện phải tổ chức trực chuyên môn 24/24 giờ, mọi ngày.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 6)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/238.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/238.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa cấp cứu",
+      "body": [
+        "Người cấp cứu được xử trí ngay, không chờ đủ giấy tờ. Theo luật, việc từ chối hoặc cố ý chậm cấp cứu bị nghiêm cấm (Luật Khám bệnh, chữa bệnh 15/2023, Điều 7)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/239.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/239.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa cấp cứu",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/240.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/240.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa nội và khoa ngoại",
+      "body": [
+        "Bệnh viện đa khoa phải có tối thiểu hai trong bốn khoa nội, ngoại, sản, nhi.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Phòng khám đa khoa phải có tối thiểu hai trong bốn chuyên khoa nội, ngoại, sản, nhi.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 42 khoản 1a) Trưởng khoa phải là người hành nghề toàn thời gian, có giấy phép hành nghề phù hợp với chuyên khoa và thời gian hành nghề về chuyên khoa đó tối thiểu 36 tháng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/241.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/241.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa nội và khoa ngoại (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 5b) Số người hành nghề toàn thời gian trong mỗi khoa phải đạt tối thiểu 70% tổng số người hành nghề trong khoa.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 5a)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/242.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/242.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa nội và khoa ngoại",
+      "body": [
+        "Sau khi khám ở khoa khám bệnh, bệnh nhân cần điều trị nội trú hoặc phẫu thuật thì được chuyển vào khoa lâm sàng phù hợp. Khoa nội điều trị các bệnh nội khoa, khoa ngoại điều trị các trường hợp cần can thiệp phẫu thuật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/243.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/243.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa nội và khoa ngoại",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/244.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/244.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa sản và khoa nhi",
+      "body": [
+        "Thuộc nhóm khoa lâm sàng (nội, ngoại, sản, nhi) mà bệnh viện đa khoa và phòng khám đa khoa phải có tối thiểu hai.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b; Điều 42 khoản 1a) Nhà hộ sinh phải có bác sĩ với phạm vi hành nghề chuyên khoa phụ sản hoặc hộ sinh có trình độ cử nhân trở lên làm người chịu trách nhiệm chuyên môn kỹ thuật, và phải trực 24/24 giờ.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 51 khoản 3 và 4)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/245.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/245.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa sản và khoa nhi",
+      "body": [
+        "Người mang thai đi khám thai, sinh con; trẻ em đi khám nhi. Quy trình cụ thể theo từng cơ sở."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/246.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/246.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa sản và khoa nhi",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/247.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/247.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa dược",
+      "body": [
+        "Bệnh viện phải có khoa dược và các bộ phận phụ trợ.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/248.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/248.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa dược",
+      "body": [
+        "Sau khi có chỉ định dùng thuốc, người bệnh nhận thuốc tại khoa dược hoặc tại nhà thuốc theo quy định. Thuốc kê đơn chỉ được bán khi có đơn thuốc (xem chương 6)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/249.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/249.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa dược",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/250.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/250.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa xét nghiệm",
+      "body": [
+        "Bệnh viện phải có tối thiểu một phòng xét nghiệm.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Kỹ thuật y có trình độ đại học, phạm vi xét nghiệm y học, được đọc và ký kết quả xét nghiệm.",
+        "Nếu cơ sở không có bác sĩ chuyên khoa xét nghiệm thì quy định khác được áp dụng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/251.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/251.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa xét nghiệm (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 40 khoản 4đ) Cơ sở xét nghiệm phải có nơi chờ lấy bệnh phẩm, nơi nhận bệnh phẩm, nơi vệ sinh dụng cụ, và diện tích phòng xét nghiệm tùy theo loại xét nghiệm.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 53 khoản 1a)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/252.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/252.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa xét nghiệm",
+      "body": [
+        "Bác sĩ chỉ định xét nghiệm, bệnh nhân lấy mẫu, mẫu được đưa vào phòng xét nghiệm. Kết quả do kỹ thuật y có phạm vi phù hợp đọc và ký trước khi trả cho bệnh nhân."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/253.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/253.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa xét nghiệm",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/254.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/254.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa chẩn đoán hình ảnh (X-quang, siêu âm, CT, MRI)",
+      "body": [
+        "Bệnh viện phải có tối thiểu một phòng chẩn đoán hình ảnh.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Kỹ thuật y có trình độ đại học, phạm vi hình ảnh y học, được đọc và mô tả hình ảnh chẩn đoán.",
+        "Nếu cơ sở không có bác sĩ chuyên khoa kỹ thuật hình ảnh y học thì quy định khác được áp dụng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/255.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/255.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa chẩn đoán hình ảnh (X-quang, siêu âm, CT, MRI) (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 40 khoản 4e)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/256.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/256.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa chẩn đoán hình ảnh (X-quang, siêu âm, CT, MRI)",
+      "body": [
+        "Bác sĩ chỉ định chụp, bệnh nhân được chụp tại phòng chẩn đoán hình ảnh. Kết quả được đọc và mô tả bởi người có phạm vi phù hợp."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/257.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/257.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa chẩn đoán hình ảnh (X-quang, siêu âm, CT, MRI)",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/258.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/258.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa dinh dưỡng và kiểm soát nhiễm khuẩn",
+      "body": [
+        "Bệnh viện từ 100 giường trở lên phải có khoa dinh dưỡng, cứ 100 giường có tối thiểu một người làm chuyên môn dinh dưỡng.",
+        "Dưới 100 giường phải có bộ phận hoặc người phụ trách dinh dưỡng.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Bệnh viện từ 150 giường trở lên phải có khoa kiểm soát nhiễm khuẩn, cứ 150 giường có tối thiểu một nhân viên giám sát."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/259.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/259.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khoa dinh dưỡng và kiểm soát nhiễm khuẩn (tiếp)",
+      "body": [
+        "Dưới 150 giường phải có bộ phận hoặc người phụ trách.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/260.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/260.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khoa dinh dưỡng và kiểm soát nhiễm khuẩn",
+      "body": [
+        "Không trực tiếp tiếp nhận bệnh nhân; hỗ trợ khoa lâm sàng về chế độ ăn và phòng lây nhiễm trong bệnh viện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/261.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/261.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khoa dinh dưỡng và kiểm soát nhiễm khuẩn",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/262.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/262.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Y học cổ truyền",
+      "body": [
+        "Phòng khám y học cổ truyền phải có phòng đón tiếp, phòng khám có diện tích tối thiểu 10 m²; nếu có châm cứu, xoa bóp thì phải có giường và dụng cụ tương ứng.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 46 khoản 1 và 2) Người chịu trách nhiệm chuyên môn kỹ thuật phải là bác sĩ với phạm vi hành nghề y học cổ truyền hoặc chuyên khoa y học cổ truyền.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 46 khoản 3) Phòng chẩn trị y học cổ truyền có thể do lương y, người có bài thuốc gia truyền, người có phương pháp chữa bệnh gia truyền làm người chịu trách nhiệm chuyên môn."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/263.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/263.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Y học cổ truyền (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 52)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/264.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/264.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Y học cổ truyền",
+      "body": [
+        "Bệnh nhân đến khám, bác sĩ hoặc lương y xem bệnh theo phương pháp y học cổ truyền. Nếu bốc thuốc, phải có tủ thuốc và cân thuốc đúng quy định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/265.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/265.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Y học cổ truyền",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/266.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/266.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Răng hàm mặt",
+      "body": [
+        "Phòng khám răng hàm mặt có tối thiểu một ghế răng, mỗi ghế có diện tích tối thiểu 5 m².",
+        "(Nghị định 96/2023/NĐ-CP, Điều 47 khoản 1b) Nếu làm cấy ghép răng (implant) phải có phòng riêng diện tích tối thiểu 10 m².",
+        "(Nghị định 96/2023/NĐ-CP, Điều 47 khoản 1c) Người chịu trách nhiệm chuyên môn kỹ thuật là bác sĩ với phạm vi hành nghề răng hàm mặt hoặc chuyên khoa răng hàm mặt."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/267.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/267.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Răng hàm mặt (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 47 khoản 2)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/268.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/268.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Răng hàm mặt",
+      "body": [
+        "Bệnh nhân đến khám răng, được bác sĩ răng hàm mặt khám, chụp phim nếu cần, và điều trị tại ghế răng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/269.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/269.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Răng hàm mặt",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/270.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/270.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mắt",
+      "body": [
+        "Bệnh viện chuyên khoa mắt phải có tối thiểu 10 giường bệnh (các bệnh viện chuyên khoa khác là 20 giường).",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 1c) Khoa cận lâm sàng: nếu bệnh viện chuyên khoa mắt không có chẩn đoán hình ảnh thì phải có hợp đồng hỗ trợ chuyên môn với cơ sở có bộ phận này.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 41 khoản 4b) Phòng khám chuyên khoa mắt là phòng khám chuyên khoa, phải có tối thiểu một chuyên khoa và phòng khám bệnh tối thiểu 10 m²."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/271.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/271.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mắt (tiếp)",
+      "body": [
+        "(Nghị định 96/2023/NĐ-CP, Điều 43 khoản 1a, 2a)"
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/272.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/272.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Mắt",
+      "body": [
+        "Bệnh nhân khám mắt, kiểm tra thị lực và khám chuyên khoa mắt. Nếu cần phẫu thuật thì vào bệnh viện chuyên khoa mắt hoặc khoa mắt của bệnh viện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/273.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/273.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Mắt",
+      "body": [
+        "Nhầm nhiệm vụ của khoa này với khoa khác. Mỗi khoa có phạm vi riêng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/274.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/274.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Da liễu",
+      "body": [
+        "Văn bản không có quy định riêng cho khoa da liễu. Áp dụng quy định chung về phòng khám chuyên khoa (tối thiểu một chuyên khoa, phòng khám bệnh tối thiểu 10 m²).",
+        "(Nghị định 96/2023/NĐ-CP, Điều 43) Lưu ý: văn bản không có quy định riêng cho khoa này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/275.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/275.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Da liễu",
+      "body": [
+        "Bệnh nhân khám da, bác sĩ da liễu khám và kê đơn hoặc chỉ định thủ thuật. Quy trình cụ thể theo cơ sở."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/276.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/276.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Da liễu",
+      "body": [
+        "Nghĩ rằng có luật riêng cho khoa này. Hiện chưa có trong văn bản đã đọc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/277.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/277.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Tai mũi họng",
+      "body": [
+        "Văn bản không có quy định riêng cho khoa tai mũi họng. Áp dụng quy định chung về phòng khám chuyên khoa và điều kiện nhân sự chung.",
+        "(Nghị định 96/2023/NĐ-CP, Điều 40 khoản 4; Điều 43) Lưu ý: văn bản không có quy định riêng cho khoa này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/278.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/278.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Tai mũi họng",
+      "body": [
+        "Bệnh nhân khám tai, mũi, họng, bác sĩ tai mũi họng khám và chỉ định xét nghiệm hoặc thủ thuật. Quy trình cụ thể theo cơ sở."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/279.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/279.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Tai mũi họng",
+      "body": [
+        "Nghĩ rằng có luật riêng cho khoa này. Hiện chưa có trong văn bản đã đọc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/280.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/280.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Bệnh viện đa khoa cần ít nhất mấy khoa lâm sàng trong bốn khoa nội, ngoại, sản, nhi?",
+      "model": "Tối thiểu hai (Điều 41 khoản 4b).",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/281.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/281.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Trưởng khoa phải có thời gian hành nghề chuyên khoa tối thiểu bao lâu?",
+      "model": "36 tháng (Điều 41 khoản 5b).",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/282.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/282.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tư mới: bệnh án điện tử, khám sức khỏe, lương y, thiết bị y tế",
+      "body": [
+        "Biết các thông tư mới đã thay đổi gì, ai phải làm gì, và khi nào có hiệu lực."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/283.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/283.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hồ sơ bệnh án điện tử là gì?",
+      "body": [
+        "Hồ sơ bệnh án điện tử là hồ sơ bệnh án được lập, cập nhật, hiển thị, ký, lưu trữ, quản lý và khai thác bằng phương tiện điện tử.",
+        "Đây là hồ sơ bệnh án theo khoản 17 Điều 2 Luật Khám bệnh, chữa bệnh 2023."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/284.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/284.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Hồ sơ bệnh án điện tử là gì?",
+      "body": [
+        "Bác sĩ ghi diễn biến bệnh trên máy tính, ký điện tử, và dữ liệu được lưu trong hệ thống của bệnh viện."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/285.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/285.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Hồ sơ bệnh án điện tử là gì?",
+      "body": [
+        "Nghĩ rằng bản điện tử không có giá trị. Đây chỉ là hình thức lập và lưu trữ; nội dung vẫn phải đầy đủ theo Thông tư 32/2023."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/286.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/286.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khi nào bệnh viện phải có bệnh án điện tử?",
+      "body": [
+        "Bệnh viện được cấp giấy phép hoạt động phải triển khai hồ sơ bệnh án điện tử chậm nhất ngày 30/09/2025.",
+        "Các cơ sở khám bệnh, chữa bệnh khác có điều trị nội trú, ban ngày hoặc ngoại trú phải hoàn thành chậm nhất ngày 31/12/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/287.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/287.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khi nào bệnh viện phải có bệnh án điện tử?",
+      "body": [
+        "Một phòng khám có điều trị ngoại trú nhưng không phải bệnh viện cần hoàn thành trước 31/12/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/288.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/288.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khi nào bệnh viện phải có bệnh án điện tử?",
+      "body": [
+        "Nhầm mốc của bệnh viện với mốc của cơ sở khác."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/289.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/289.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ký điện tử trong bệnh án điện tử",
+      "body": [
+        "Nhân viên y tế, người bệnh hoặc người đại diện có thể ký hoặc xác nhận điện tử bằng một trong ba cách: chữ ký điện tử hợp pháp; kỹ thuật sinh trắc học; hoặc hình thức xác nhận bằng phương tiện điện tử khác theo khoản 4 Điều 22 Luật Giao dịch điện tử."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/290.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/290.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Ký điện tử trong bệnh án điện tử",
+      "body": [
+        "Bác sĩ ký số trên phần mềm khi phê duyệt y lệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/291.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/291.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Ký điện tử trong bệnh án điện tử",
+      "body": [
+        "Nghĩ rằng chỉ cần gõ tên vào ô ghi chú là đủ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/292.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/292.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thông tin sức khỏe là dữ liệu nhạy cảm",
+      "body": [
+        "Tình trạng sức khỏe thuộc danh mục dữ liệu cá nhân nhạy cảm (Nghị định 356/2025, Điều 4 khoản 1 điểm d).",
+        "Khi xin đồng ý xử lý loại dữ liệu này, phải thông báo rõ đó là dữ liệu cá nhân nhạy cảm (Điều 6 khoản 4).",
+        "Luật Bảo vệ dữ liệu cá nhân 91/2025 có hiệu lực từ 01/01/2026, và Điều 26 yêu cầu có sự đồng ý khi xử lý thông tin sức khỏe."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/293.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/293.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thông tin sức khỏe là dữ liệu nhạy cảm",
+      "body": [
+        "Phòng khám hỏi số điện thoại để nhắc lịch khám là dữ liệu cơ bản. Ghi nhận bệnh nền là dữ liệu nhạy cảm, phải xin đồng ý rõ ràng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/294.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/294.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thông tin sức khỏe là dữ liệu nhạy cảm",
+      "body": [
+        "Nghĩ rằng mọi thông tin khám bệnh đều có thể chia sẻ tự do."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/295.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/295.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khám sức khỏe: hồ sơ và người mất năng lực",
+      "body": [
+        "Thông tư 25/2026 sửa Điều 34 và Điều 36 của Thông tư 32/2023.",
+        "Hồ sơ khám sức khỏe dùng mẫu theo nhóm tuổi: dưới 06 tuổi, từ 06 đến dưới 18 tuổi, từ 18 tuổi trở lên, và khám sức khỏe tâm thần.",
+        "Người mất năng lực hoặc hạn chế năng lực hành vi dân sự đề nghị khám mà không thuộc các trường hợp trên thì cần văn bản đồng ý của thân nhân."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/296.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/296.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khám sức khỏe: hồ sơ và người mất năng lực (tiếp)",
+      "body": [
+        "Điều 2 và Điều 3 có hiệu lực từ 01/07/2026; phần còn lại từ 15/08/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/297.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/297.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khám sức khỏe: hồ sơ và người mất năng lực",
+      "body": [
+        "Người 70 tuổi khám sức khỏe định kỳ dùng mẫu hồ sơ dành cho người từ 18 tuổi trở lên."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/298.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/298.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khám sức khỏe: hồ sơ và người mất năng lực",
+      "body": [
+        "Nghĩ rằng Thông tư 25/2026 áp dụng ngay từ ngày ký."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/299.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/299.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thực hành tốt phòng thí nghiệm: các mốc xử lý",
+      "body": [
+        "Thông tư 36/2025 sửa khoản 4 Điều 11 của Thông tư 04/2018 về GLP.",
+        "Khi Sở Y tế thông báo cần khắc phục, cơ sở thử nghiệm có 45 ngày để khắc phục và báo cáo kèm bằng chứng.",
+        "Sau khi nhận báo cáo khắc phục, Sở Y tế đánh giá trong 10 ngày."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/300.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/300.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thực hành tốt phòng thí nghiệm: các mốc xử lý (tiếp)",
+      "body": [
+        "Thông tư có hiệu lực từ 11/09/2025."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/301.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/301.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thực hành tốt phòng thí nghiệm: các mốc xử lý",
+      "body": [
+        "Cơ sở thử nghiệm nhận thông báo cần khắc phục thì có 45 ngày để hoàn thành và gửi báo cáo kèm bằng chứng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/302.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/302.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thực hành tốt phòng thí nghiệm: các mốc xử lý",
+      "body": [
+        "Nhầm 45 ngày với 10 ngày của bước đánh giá."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/303.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/303.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Giấy chứng nhận lương y: thời hạn xử lý",
+      "body": [
+        "Thông tư 49/2025 sửa Thông tư 02/2024.",
+        "Hồ sơ chưa hợp lệ: cơ quan tiếp nhận thông báo bổ sung trong 05 ngày làm việc kể từ ngày ghi trên phiếu tiếp nhận.",
+        "Hồ sơ hợp lệ: cơ quan có thẩm quyền cấp giấy chứng nhận trong 05 ngày làm việc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/304.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/304.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Giấy chứng nhận lương y: thời hạn xử lý (tiếp)",
+      "body": [
+        "Thông tư có hiệu lực từ ngày ký (31/12/2025)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/305.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/305.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Giấy chứng nhận lương y: thời hạn xử lý",
+      "body": [
+        "Một người nộp hồ sơ xin giấy lương y ngày 02 tháng 3 mà thiếu giấy tờ sẽ được thông báo bổ sung trong 05 ngày làm việc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/306.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/306.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Giấy chứng nhận lương y: thời hạn xử lý",
+      "body": [
+        "Nhầm thời hạn bổ sung hồ sơ với thời hạn cấp giấy."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/307.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/307.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thiết bị y tế: Cục Hạ tầng và Thiết bị y tế được giao việc gì?",
+      "body": [
+        "Thông tư 44/2025 giao cho Cục Hạ tầng và Thiết bị y tế 11 nhiệm vụ.",
+        "Ví dụ: cấp mới số lưu hành thiết bị y tế loại C, D; cấp giấy phép nhập khẩu thiết bị y tế; thu hồi số lưu hành; kiểm tra chuyên ngành.",
+        "Thông tư có hiệu lực từ 22/11/2025."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/308.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/308.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Thiết bị y tế: Cục Hạ tầng và Thiết bị y tế được giao việc gì?",
+      "body": [
+        "Một công ty muốn nhập khẩu thiết bị loại C nộp hồ sơ xin giấy phép tại Cục này."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/309.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/309.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Thiết bị y tế: Cục Hạ tầng và Thiết bị y tế được giao việc gì?",
+      "body": [
+        "Nghĩ rằng việc này do Sở Y tế tỉnh làm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/310.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/310.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Thông tư 13/2025 có làm hết hiệu lực Thông tư bệnh án điện tử cũ không?",
+      "model": "Có. Thông tư 46/2018 hết hiệu lực kể từ ngày Thông tư 13/2025 được ban hành (Điều 4 khoản 3).",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/311.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/311.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Tình trạng sức khỏe là dữ liệu cá nhân nhạy cảm hay thông thường?",
+      "model": "Nhạy cảm, theo Nghị định 356/2025, Điều 4 khoản 1 điểm d.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/312.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/312.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Cập nhật 2025–2026: luật mới và điểm cần nhớ",
+      "body": [
+        "Nắm các văn bản mới đã có hiệu lực đến 29/10/2026 và biết chúng thay đổi điều gì; không học vẹt số hiệu, ngày ban hành."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/313.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/313.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Phòng bệnh và tiêm chủng: từ phòng bệnh truyền nhiễm sang phòng bệnh toàn diện",
+      "body": [
+        "Luật Phòng bệnh 114/2025/QH15 có hiệu lực 01/07/2026, điều chỉnh cả bệnh truyền nhiễm, bệnh không lây nhiễm, rối loạn tâm thần và dinh dưỡng.",
+        "Nghị định 165/2026/NĐ-CP hướng dẫn thi hành; Thông tư 15/2026 quy định chi tiết; Thông tư 13/2026 quy định hoạt động tiêm chủng; Thông tư 33/2026 hướng dẫn kiểm tra sức khỏe đầu năm học và an toàn sinh học phòng xét nghiệm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/314.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/314.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Phòng bệnh và tiêm chủng: từ phòng bệnh truyền nhiễm sang phòng bệnh toàn diện",
+      "body": [
+        "Một trường học tổ chức kiểm tra sức khỏe đầu năm cho học sinh; cơ sở tiêm chủng phải tuân thủ danh mục bệnh tiêm chủng bắt buộc và quy định an toàn tiêm chủng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/315.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/315.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Phòng bệnh và tiêm chủng: từ phòng bệnh truyền nhiễm sang phòng bệnh toàn diện",
+      "body": [
+        "Nghĩ Luật Phòng bệnh chỉ nói về bệnh truyền nhiễm. Luật còn điều chỉnh bệnh không lây nhiễm, rối loạn tâm thần, dinh dưỡng và các điều kiện bảo đảm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/316.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/316.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dược: chứng chỉ hành nghề, đăng ký thuốc và thuốc kiểm soát đặc biệt",
+      "body": [
+        "Luật Dược 44/2024/QH15 có hiệu lực 01/07/2025.",
+        "Nghị định 163/2025/NĐ-CP và Thông tư 31/2025/TT-BYT hướng dẫn về hành nghề, kinh doanh dược.",
+        "Thông tư 29/2025 quy định đăng ký thuốc cổ truyền; Thông tư 50/2025 quy định thử thuốc trên lâm sàng; Thông tư 18/2026 quy định thuốc kiểm soát đặc biệt; Thông tư 32/2026 quy định đăng ký lưu hành thuốc, nguyên liệu làm thuốc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/317.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/317.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Dược: chứng chỉ hành nghề, đăng ký thuốc và thuốc kiểm soát đặc biệt",
+      "body": [
+        "Nhà thuốc bán thuốc kê đơn phải có chứng chỉ hành nghề dược và đáp ứng điều kiện kinh doanh; thuốc kiểm soát đặc biệt phải theo Thông tư 18/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/318.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/318.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Dược: chứng chỉ hành nghề, đăng ký thuốc và thuốc kiểm soát đặc biệt",
+      "body": [
+        "Lẫn giấy phép hành nghề dược với giấy đăng ký lưu hành thuốc. Một bên là năng lực người hành nghề, một bên là giấy phép cho sản phẩm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/319.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/319.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khám chữa bệnh: giấy phép và hồ sơ bệnh án",
+      "body": [
+        "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh 15/2023/QH15 về cấp giấy phép hành nghề, giấy phép hoạt động.",
+        "Thông tư 32/2023 quy định hồ sơ bệnh án; Thông tư 13/2025 hướng dẫn triển khai hồ sơ bệnh án điện tử."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/320.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/320.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Khám chữa bệnh: giấy phép và hồ sơ bệnh án",
+      "body": [
+        "Bệnh viện vừa phải có giấy phép hoạt động, vừa phải triển khai hồ sơ bệnh án điện tử đúng lộ trình."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/321.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/321.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Khám chữa bệnh: giấy phép và hồ sơ bệnh án",
+      "body": [
+        "Nghĩ hồ sơ bệnh án điện tử không có giá trị pháp lý. Hồ sơ điện tử có giá trị như hồ sơ giấy nếu đáp ứng quy định về lập, ký, lưu trữ và chia sẻ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/322.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/322.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bảo hiểm y tế: mức hưởng và xác thực dữ liệu",
+      "body": [
+        "Luật Bảo hiểm y tế 51/2024/QH15 có hiệu lực 01/07/2025.",
+        "Nghị định 188/2025/NĐ-CP hướng dẫn, có hỗ trợ tối thiểu 50% mức đóng cho một số nhóm và yêu cầu xác thực điện tử dữ liệu khám bệnh, chữa bệnh BHYT chậm nhất 01/01/2026.",
+        "Thông tư 12/2026/TT-BTC quy định giám định, thanh toán, quyết toán chi phí BHYT."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/323.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/323.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Bảo hiểm y tế: mức hưởng và xác thực dữ liệu",
+      "body": [
+        "Cơ sở khám chữa bệnh gửi dữ liệu điện tử để giám định BHYT; người thuộc nhóm được hỗ trợ đóng được ngân sách hỗ trợ tối thiểu 50%."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/324.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/324.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Bảo hiểm y tế: mức hưởng và xác thực dữ liệu",
+      "body": [
+        "Nghĩ mọi lần khám đều hưởng 100%. Mức 100% hoặc 80% phụ thuộc nhóm đối tượng và trường hợp cụ thể."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/325.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/325.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dữ liệu y tế và dữ liệu cá nhân",
+      "body": [
+        "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 có hiệu lực 01/01/2026.",
+        "Nghị định 356/2025/NĐ-CP hướng dẫn thi hành; Nghị định 102/2025/NĐ-CP quản lý dữ liệu y tế.",
+        "Dữ liệu sức khỏe là dữ liệu cá nhân nhạy cảm."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/326.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/326.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Dữ liệu y tế và dữ liệu cá nhân",
+      "body": [
+        "Khi xin đồng ý xử lý dữ liệu sức khỏe, cơ sở phải nói rõ đây là dữ liệu cá nhân nhạy cảm và mục đích xử lý."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/327.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/327.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Dữ liệu y tế và dữ liệu cá nhân",
+      "body": [
+        "Nghĩ dữ liệu đã ẩn danh vẫn cần đồng ý như dữ liệu cá nhân; cần phân biệt dữ liệu cá nhân với dữ liệu đã ẩn danh theo luật."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/328.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/328.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dân số, chuyển đổi số và phân cấp",
+      "body": [
+        "Luật Dân số 113/2025/QH15 có hiệu lực 01/07/2026; Luật Chuyển đổi số 148/2025/QH15 tạo khung pháp lý cho chuyển đổi số; Nghị định 148/2025/NĐ-CP phân quyền, phân cấp trong lĩnh vực y tế."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/329.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/329.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Dân số, chuyển đổi số và phân cấp",
+      "body": [
+        "Một thủ tục y tế có thể được giải quyết ở Sở Y tế hoặc UBND tỉnh thay vì Bộ Y tế theo phân cấp."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/330.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/330.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Dân số, chuyển đổi số và phân cấp",
+      "body": [
+        "Nghĩ phân cấp là chuyển hết trách nhiệm cho địa phương; thực tế vẫn có trách nhiệm hướng dẫn, kiểm tra và giám sát."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/331.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/331.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Văn bản nào hướng dẫn chi tiết Luật Phòng bệnh 114/2025?",
+      "model": "Nghị định 165/2026/NĐ-CP; Thông tư 15/2026 và Thông tư 33/2026 hướng dẫn thêm; Thông tư 13/2026 quy định hoạt động tiêm chủng.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/332.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/332.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Thuốc cổ truyền, vị thuốc cổ truyền đăng ký lưu hành theo thông tư nào?",
+      "model": "Thông tư 29/2025/TT-BYT.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/333.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/333.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Dữ liệu sức khỏe thuộc nhóm dữ liệu nào?",
+      "model": "Dữ liệu cá nhân nhạy cảm theo Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/334.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/334.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Xử phạt hành chính trong y tế: đọc đúng mức phạt",
+      "body": [
+        "Nhận diện nhóm hành vi vi phạm, mức phạt tiền, hình thức xử phạt bổ sung và nguyên tắc trách nhiệm của tổ chức; không học vẹt toàn bộ khung phạt."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/335.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/335.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Văn bản đang áp dụng và phạm vi điều chỉnh",
+      "body": [
+        "Từ 15/05/2026, Nghị định 90/2026/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực y tế, thay thế Nghị định 117/2020/NĐ-CP và các văn bản sửa đổi, bổ sung.",
+        "Phạm vi gồm 6 nhóm: y tế dự phòng và phòng, chống HIV/AIDS; khám bệnh, chữa bệnh; dược, mỹ phẩm; thiết bị y tế; bảo hiểm y tế; dân số."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/336.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/336.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Văn bản đang áp dụng và phạm vi điều chỉnh",
+      "body": [
+        "Một cơ sở bán thuốc không có giấy phép hoạt động được xem xét theo nhóm dược; một phòng khám hoạt động không phép theo nhóm khám bệnh, chữa bệnh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/337.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/337.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Văn bản đang áp dụng và phạm vi điều chỉnh",
+      "body": [
+        "Vẫn tra khung phạt cũ tại Nghị định 117/2020/NĐ-CP dù hành vi xảy ra sau ngày 15/05/2026."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/338.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/338.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mức trần và nguyên tắc tổ chức bị phạt gấp đôi",
+      "body": [
+        "Mức phạt tiền tối đa theo lĩnh vực: dân số 30 triệu đồng với cá nhân, 60 triệu đồng với tổ chức; y tế dự phòng và HIV/AIDS 50/100 triệu đồng; bảo hiểm y tế 75/150 triệu đồng; khám bệnh, chữa bệnh, dược, mỹ phẩm và thiết bị y tế 100/200 triệu đồng.",
+        "Cùng một hành vi, tổ chức bị phạt gấp 02 lần cá nhân.",
+        "Khung phạt ghi trong Chương II là mức của cá nhân, nên khi xác định trách nhiệm tổ chức phải nhân đôi."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/339.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/339.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Mức trần và nguyên tắc tổ chức bị phạt gấp đôi",
+      "body": [
+        "Cá nhân cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt 40-50 triệu đồng; nếu tổ chức thực hiện hành vi đó thì khung áp dụng là 80-100 triệu đồng, trong giới hạn tối đa 200 triệu đồng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/340.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/340.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Mức trần và nguyên tắc tổ chức bị phạt gấp đôi",
+      "body": [
+        "Đọc khung tiền phạt của cá nhân rồi áp nguyên cho bệnh viện, công ty hoặc hợp tác xã."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/341.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/341.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Nhóm hành vi khám bệnh, chữa bệnh đáng nhớ",
+      "body": [
+        "Các mức thường gặp: hành nghề không có giấy phép/chứng chỉ 30-40 triệu đồng; cơ sở cung cấp dịch vụ khám bệnh, chữa bệnh không có giấy phép hoạt động 40-50 triệu đồng; cung cấp dịch vụ vượt phạm vi chuyên môn 40-50 triệu đồng; từ chối hoặc cố ý chậm cấp cứu 30-40 triệu đồng; xâm phạm thân thể, sức khỏe, danh dự, nhân phẩm nhân viên y tế 30-40 triệu đồng; không lập hoặc không lưu hồ sơ bệnh án 1-3 triệu đồng; kê đơn không phù hợp chẩn đoán hoặc kê sản phẩm không được phép 10-20 triệu đồng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/342.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/342.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Nhóm hành vi khám bệnh, chữa bệnh đáng nhớ",
+      "body": [
+        "Một bác sĩ không có giấy phép hành nghề nhưng vẫn khám bệnh bị phạt 30-40 triệu đồng; nếu là cơ sở không có giấy phép hoạt động thì khung là 40-50 triệu đồng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/343.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/343.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Nhóm hành vi khám bệnh, chữa bệnh đáng nhớ",
+      "body": [
+        "Nhầm hành nghề không phép của cá nhân với cơ sở hoạt động không phép; hai hành vi có khung phạt khác nhau."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/344.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/344.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hình thức bổ sung, khắc phục và thẩm quyền",
+      "body": [
+        "Ngoài cảnh cáo và phạt tiền, Nghị định còn quy định tước quyền sử dụng giấy phép, chứng chỉ hành nghề từ 01 đến 24 tháng; tịch thu tang vật, phương tiện; đình chỉ hoạt động từ 01 đến 24 tháng.",
+        "Tùy hành vi, cơ sở có thể bị buộc xin lỗi, nộp lại lợi nhuận bất hợp pháp, khắc phục hậu quả hoặc chi trả chi phí khám bệnh.",
+        "Thẩm quyền xử phạt được quy định tại Chương III; vi phạm trên môi trường điện tử thực hiện theo Nghị định 118/2021/NĐ-CP (sửa đổi bởi Nghị định 68/2025/NĐ-CP và Nghị định 190/2025/NĐ-CP)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/345.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/345.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Ví dụ: Hình thức bổ sung, khắc phục và thẩm quyền",
+      "body": [
+        "Cơ sở vượt phạm vi chuyên môn có thể bị đình chỉ hoạt động 12-24 tháng tùy điểm, khoản vi phạm; người hành nghề có thể bị tước giấy phép 1-24 tháng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/346.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/346.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hay nhầm: Hình thức bổ sung, khắc phục và thẩm quyền",
+      "body": [
+        "Chỉ nhìn số tiền phạt mà bỏ qua việc bị đình chỉ hoạt động, tước giấy phép hoặc buộc khắc phục hậu quả."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/347.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/347.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Cơ sở khám bệnh, chữa bệnh không có giấy phép hoạt động bị phạt bao nhiêu với cá nhân?",
+      "model": "40-50 triệu đồng; tổ chức gấp đôi.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/348.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/348.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Tổ chức vi phạm cùng hành vi với cá nhân thì mức phạt thế nào?",
+      "model": "Gấp 02 lần mức phạt của cá nhân.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/349.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/349.mp3"
+    },
+    {
+      "type": "essay",
+      "q": "Mức phạt tối đa trong lĩnh vực khám bệnh, chữa bệnh, dược và thiết bị y tế là bao nhiêu?",
+      "model": "100 triệu đồng với cá nhân và 200 triệu đồng với tổ chức.",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/350.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/350.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Bảo hiểm y tế 2025–2026: những điểm mới quan trọng",
+      "body": [
+        [
+          "Nắm được đối tượng tham gia BHYT bắt buộc mở rộng theo Nghị định 119/2025",
+          "Hiểu mức hưởng 100% nội trú tuyến tỉnh và quy định trái tuyến",
+          "Biết cách đăng ký KCB thường xuyên qua VssID",
+          "Hiểu danh mục 850 dịch vụ kỹ thuật thanh toán BHYT"
+        ]
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/351.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/351.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Đối tượng BHYT bắt buộc mở rộng (NĐ 119/2025)",
+      "body": [
+        "Nghị định 119/2025/NĐ-CP Điều 5 mở rộng đối tượng BHYT bắt buộc: người lao động làm việc theo HĐ không xác định thời hạn và HĐ từ 3 đến dưới 12 tháng đều thuộc nhóm người LĐ tham gia BHYT bắt buộc."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/352.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/352.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mức hưởng nội trú tại tuyến tỉnh",
+      "body": [
+        "Theo Nghị định 119/2025 Điều 8, người BHYT khám nội trú tại bệnh viện tuyến tỉnh được hưởng 100% chi phí điều trị.",
+        "Khám trái tuyến tại tuyến trung ương vẫn hưởng 40% mức hưởng."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/353.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/353.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Thẻ BHYT điện tử và đăng ký KCB trực tuyến",
+      "body": [
+        "Nghị định 119/2025 Điều 12 công nhận thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID.",
+        "Thông tư 14/2026 cho phép đăng ký KCB thường xuyên qua VssID."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/354.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/354.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Danh mục 850 dịch vụ kỹ thuật BHYT",
+      "body": [
+        "Thông tư 06/2026/TT-BYT ban hành danh mục 850 dịch vụ kỹ thuật được thanh toán BHYT, bao gồm xét nghiệm huyết học, chẩn đoán hình ảnh, nội soi.",
+        "Giá do HĐND cấp tỉnh quyết định."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/355.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/355.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Chuyển tuyến tự động và đăng ký KCB thường xuyên",
+      "body": [
+        "Thông tư 14/2026 Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện.",
+        "Người bệnh chọn cơ sở KCB thường xuyên qua app VssID."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/356.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/356.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Tổng kết và lưu ý quan trọng",
+      "body": [
+        "Từ 01/07/2025: mở rộng đối tượng, 100% nội trú tuyến tỉnh, thẻ điện tử tương đương thẻ giấy.",
+        "Từ 01/08/2026: đăng ký KCB qua VssID.",
+        "Danh mục 850 DVKT thay thế danh mục cũ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/357.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/357.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/358.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/358.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/359.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/359.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/360.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/360.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/361.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/361.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/362.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/362.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Khám chữa bệnh 40/2025 — quyền và nghĩa vụ người bệnh",
+      "body": [
+        [
+          "Hiểu quyền biết chẩn đoán và từ chối điều trị của người bệnh",
+          "Biết trách nhiệm công khai giá dịch vụ của cơ sở KCB",
+          "Hiểu giá trị pháp lý của hồ sơ bệnh án điện tử"
+        ]
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/363.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/363.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Quyền người bệnh (Điều 15)",
+      "body": [
+        "Người bệnh có quyền được biết chẩn đoán, phương án điều trị, rủi ro và được thông tin đầy đủ.",
+        "Đặc biệt, người bệnh có quyền từ chối điều trị — đây là quyền căn bản được Luật KCB 40/2025 bảo vệ."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/364.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/364.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Trách nhiệm công khai của cơ sở KCB (Điều 22)",
+      "body": [
+        "Cơ sở KCB phải công khai: giá dịch vụ khám chữa bệnh, thái độ phục vụ, quyền và nghĩa vụ người bệnh.",
+        "Việc này giúp người bệnh biết rõ chi phí và quyền lợi trước khi đăng ký KCB."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/365.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/365.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hồ sơ bệnh án điện tử (Điều 35)",
+      "body": [
+        "Từ 01/07/2026, hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy.",
+        "Đây là bước tiến quan trọng trong chuyển đổi số y tế, giúp lưu trữ an toàn và tra cứu nhanh."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/366.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/366.mp3"
+    },
+    {
+      "type": "text",
+      "title": "So sánh với Luật KCB 40/2009",
+      "body": [
+        "Luật KCB 40/2025 thay thế Luật KCB 40/2009.",
+        "Điểm mới: tăng cường quyền người bệnh, quy định rõ về hồ sơ điện tử, mở rộng trách nhiệm công khai của cơ sở KCB."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/367.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/367.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/368.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/368.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/369.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/369.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/370.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/370.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/371.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/371.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Phòng bệnh 114/2025: tiêm chủng & kiểm dịch",
+      "body": [
+        [
+          "Hiểu phạm vi điều chỉnh của Luật Phòng bệnh 114/2025",
+          "Nắm rõ quy định về tiêm chủng bắt buộc, tình nguyện và an toàn tiêm chủng",
+          "Hiểu quy định về khám sức khỏe học đường, dịch bệnh và kiểm dịch y tế"
+        ]
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/372.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/372.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Phạm vi và đối tượng (Điều 1-2)",
+      "body": [
+        "Luật 114/2025/QH15 quy định về phòng, chống dịch bệnh; tiêm chủng; khám sức khỏe định kỳ; giám sát dịch bệnh; kiểm dịch y tế tại cửa khẩu."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/373.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/373.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Tiêm chủng (Điều 15-35)",
+      "body": [
+        "Tiêm chủng bắt buộc theo danh mục do Bộ Y tế ban hành (Điều 16).",
+        "An toàn tiêm chủng: sàng lọc trước tiêm, theo dõi sau tiêm, xử lý phản ứng sau tiêm (Điều 20-24).",
+        "Cơ sở tiêm phải đủ điều kiện (Điều 27)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/374.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/374.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khám sức khỏe & Dịch bệnh (Điều 36-55)",
+      "body": [
+        "Khám sức khỏe định kỳ cho người lao động, học sinh, sinh viên (Điều 36-42).",
+        "Dịch bệnh: báo dịch, cách ly, phong tỏa, tuyên truyền (Điều 43-50).",
+        "Cấp phép lưu hành thuốc, hóa chất trong phòng dịch (Điều 51-55)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/375.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/375.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Kiểm dịch y tế cửa khẩu (Điều 56-65)",
+      "body": [
+        "Kiểm dịch y tế tại cửa khẩu quốc tế: xét nghiệm, cách ly, khử trùng phương tiện, hàng hóa (Điều 56-60).",
+        "Hợp tác quốc tế phòng, chống dịch bệnh (Điều 61-65)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/376.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/376.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Trách nhiệm & Xử phạt (Điều 66-80)",
+      "body": [
+        "Trách nhiệm của UBND cấp tỉnh, Bộ Y tế, Bộ Quốc phòng, Bộ Công an (Điều 66-70).",
+        "Xử phạt vi phạm: phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/377.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/377.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hiệu lực & Điều khoản chuyển tiếp",
+      "body": [
+        "Luật có hiệu lực từ 01/07/2026 (Điều 104).",
+        "Thay thế Luật Phòng, chống dịch bệnh 03/2007/QH12."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/378.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/378.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/379.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/379.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/380.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/380.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/381.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/381.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/382.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/382.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/383.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/383.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Dân số 113/2025: thai sản & giới tính",
+      "body": [
+        [
+          "Hiểu mục tiêu dân số bền vững theo Luật 113/2025",
+          "Nắm quy định về khuyến khích sinh con, cân bằng giới tính khi sinh",
+          "Hiểu về chăm sóc người cao tuổi, phân bố dân số"
+        ]
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/384.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/384.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Mục tiêu dân số (Điều 1-5)",
+      "body": [
+        "Luật 113/2025/QH15 hướng tới dân số bền vững, chất lượng, cân bằng giới tính khi sinh.",
+        "Mục tiêu: tỷ số giới tính khi sinh tự nhiên (105-107 nam/100 nữ), giảm tỷ lệ sinh con thứ 3 trở lên."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/385.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/385.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Khuyến khích sinh con & Chăm sóc mẹ/bé (Điều 6-20)",
+      "body": [
+        "Khuyến khích sinh con thứ 2: hỗ trợ tiền sinh, giảm học phí, ưu tiên gửi trẻ (Điều 6-10).",
+        "Chăm sóc mẹ/bé: khám thai ≥3 lần, sinh tại cơ sở y tế, screening sơ sinh (Điều 11-15)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/386.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/386.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Cân bằng giới tính & Chăm sóc người cao tuổi (Điều 21-35)",
+      "body": [
+        "Cấm chọn giới tính thai nhi (Điều 21).",
+        "Hỗ trợ người cao tuổi: thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao (Điều 22-30)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/387.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/387.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Phân bố dân số & Dữ liệu (Điều 36-50)",
+      "body": [
+        "Phân bố hợp lý: hạn chế tập trung tại đô thị lớn, khuyến khích đến vùng khó khăn (Điều 36-40).",
+        "Cơ sở dữ liệu dân số quốc gia: thống nhất, chia sẻ, bảo mật (Điều 41-50)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/388.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/388.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/389.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/389.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/390.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/390.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/391.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/391.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/392.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/392.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI",
+      "body": [
+        [
+          "Hiểu khái niệm chuyển đổi số trong y tế",
+          "Nắm quy định về dữ liệu y tế quốc gia, sổ sức khỏe điện tử",
+          "Hiểu quy định về AI, telemedicine, bảo mật dữ liệu"
+        ]
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/393.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/393.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Chuyển đổi số trong y tế (Điều 1-10)",
+      "body": [
+        "Luật 148/2025/QH15 quy định nguyên tắc: người dân trung tâm, chia sẻ dữ liệu, bảo mật, an toàn thông tin.",
+        "Phạm vi: sổ sức khỏe điện tử, hồ sơ bệnh án điện tử, định danh y tế, telemedicine, AI trong y tế."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/394.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/394.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Dữ liệu y tế & Sổ sức khỏe điện tử (Điều 11-25)",
+      "body": [
+        "Cơ sở dữ liệu y tế quốc gia: thống nhất, chuẩn hóa, liên thông (Điều 11-15).",
+        "Sổ sức khỏe điện tử: định danh duy nhất, chủ động cập nhật, chia sẻ an toàn (Điều 16-20).",
+        "Hồ sơ bệnh án điện tử: giá trị pháp lý = giấy (Điều 21-25)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/395.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/395.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Telemedicine & AI trong y tế (Điều 26-40)",
+      "body": [
+        "Khám chữa bệnh từ xa: điều kiện, tiêu chuẩn, trách nhiệm (Điều 26-30).",
+        "AI trong y tế: minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35).",
+        "Bảo vệ dữ liệu cá nhân y tế: đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/396.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/396.mp3"
+    },
+    {
+      "type": "text",
+      "title": "Hạ tầng & An toàn thông tin (Điều 41-55)",
+      "body": [
+        "Hạ tầng số y tế: trung tâm dữ liệu, băng thông, an ninh mạng (Điều 41-45). Ứng dụng chuyển đổi số: định danh VNeID, thanh toán điện tử, kê đơn điện tử (Điều 46-50).",
+        "Kiểm soát, giám sát, xử phạt vi phạm (Điều 51-55)."
+      ],
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/397.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/397.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/398.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/398.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/399.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/399.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/400.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/400.mp3"
+    },
+    {
+      "type": "essay",
+      "audios": {
+        "vais": "audio/slides/ly-thuyet/vais/401.mp3"
+      },
+      "audio": "audio/slides/ly-thuyet/vais/401.mp3"
+    }
+  ]
+}
