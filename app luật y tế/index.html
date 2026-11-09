@@ -461,6 +461,8 @@ sync = {
 /* Màu nhóm lấy từ token của site.css (--c-*), không dùng mã cứng; đổi theo chế độ sáng/tối. */
 const PALETTE = ["var(--accent)","var(--c-orange)","var(--c-gold)","var(--c-blue)","var(--c-violet)","var(--c-rose)","var(--c-green)","var(--muted)"];
 const CATCOLOR = {}; [...new Set(LAWS.map(l=>l.cat))].forEach((c,i)=>CATCOLOR[c]=PALETTE[i%PALETTE.length]);
+// Màu của mỗi luật theo tình trạng hiệu lực (khớp nhãn trạng thái): xanh = đang hiệu lực, vàng = có sửa đổi, xám = hết hiệu lực
+const STATCOLOR = {on:"var(--c-green)", amend:"var(--c-gold)", het:"var(--muted)"};
 
 /* Thông báo nổi */
 function toast(msg){
@@ -671,7 +673,7 @@ function renderLaws(){
   bmBtn.setAttribute("aria-pressed", String(bmOnly));
   bmBtn.onclick = () => { bmOnly = !bmOnly; renderLaws(); };
   $("#laws").innerHTML = list.length ? list.map((l,i) => `
-    <details class="law" style="--c:${CATCOLOR[l.cat]}" ${i<1 && !q ? "open":""}>
+    <details class="law" style="--c:${STATCOLOR[l.status]||"var(--muted)"}" ${i<1 && !q ? "open":""}>
       <summary>
         <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
         <div>
