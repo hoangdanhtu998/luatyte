@@ -14,7 +14,7 @@ window.SlidePersona = (function () {
       style: 'Rõ ràng, nhẹ nhàng, có gợi ý từng bước.'
     },
     giao_su: {
-      voice: 'vais', rate: 0.9,
+      voice: 'vais', rate: 0.95,
       label: 'Giáo sư',
       intro: 'Ta hãy xem xét vấn đề này một cách có hệ thống.',
       praise: 'Lập luận đúng. Hãy ghi nhớ lý do đằng sau.',
@@ -22,7 +22,7 @@ window.SlidePersona = (function () {
       style: 'Trang trọng, chính xác, nhấn mạnh lập luận và khái niệm.'
     },
     hoc_sinh_gioi: {
-      voice: 'vivos', rate: 1,
+      voice: 'vais', rate: 0.95,
       label: 'Học sinh giỏi',
       intro: 'Mình sẽ đi qua phần này cùng bạn nhé.',
       praise: 'Đúng rồi, bạn làm tốt!',
@@ -38,7 +38,7 @@ window.SlidePersona = (function () {
       style: 'Ấm áp, quan tâm, nói chậm và kiên nhẫn.'
     },
     ban_than: {
-      voice: 'vivos', rate: 1.05,
+      voice: 'hours', rate: 1,
       label: 'Bạn thân',
       intro: 'Vào học nè, dễ mà.',
       praise: 'Chuẩn luôn!',
