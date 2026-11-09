@@ -78,6 +78,16 @@
 .slides .slide-card h2{font-size:1.5rem}
 .slides .slide-card .slide-narr{font-size:15px;font-weight:600;font-style:normal;color:#4c3797}
 .slides .slide-card{border-top:4px solid #6b4fbb}
+/* Thẻ slide dạng trình chiếu trên máy tính: chiều cao tối thiểu gần 16:9 (nội dung dài thì thẻ tự cao thêm), nhấn đầu thẻ, tiêu đề lớn, chân slide */
+@media (min-width:1024px){
+  .slides .slide-card{position:relative;min-height:min(560px,70vh);display:flex;flex-direction:column;justify-content:flex-start;padding:64px 80px 84px 96px;border:0;border-radius:14px;box-shadow:0 14px 40px rgba(28,25,23,.12)}
+  .slides .slide-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(#c9a227,#6b4fbb 55%,#2e1f63)}
+  .slides .slide-kind{background:none;padding:0;border-radius:0;color:#8a6a3f;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px}
+  .slides .slide-card h2{font-size:2.6rem;font-weight:800;line-height:1.15;margin:0 0 26px;color:#1c1917}
+  .slides .slide-card p{font-size:1.35rem;line-height:1.75}
+  .slides .slide-foot{position:absolute;left:96px;right:80px;bottom:28px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#78716c;display:block}
+}
+.slides .slide-foot{display:none}
 </style>
 </head>
 <body>
