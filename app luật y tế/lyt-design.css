@@ -502,3 +502,9 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 .reader select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--color-field,#c9c5bf);background:#fff}
 .reader-note{font-size:13px;color:var(--color-muted,#78716c)}
 .read-on{background:rgba(107,79,187,.12);border-radius:6px;box-shadow:-4px 0 0 #6b4fbb;transition:background .25s ease}
+
+/* Bớt bo góc toàn giao diện: thẻ và khung tối đa 8px, nút, ô nhập và nhãn tối đa 6px.
+   Khối này ghi đè các giá trị cũ; xóa khối này nếu muốn trả lại bo góc gốc. */
+.slide-card,.lecture,.lesson-chat,.lesson-frame,main.triet .lesson-frame,.law,.hub-card,.slide-art,.reader,.qz-item,.tile,.lc-msg,.check,.model-answer,.toc-toggle,nav.tabs,.lc-head{border-radius:8px !important}
+.btn,.btn.ghost,.chip,.badge,.pill,.plan-badge,.lc-fab,.lc-send,.lc-input,.lc-form input,.opt,.bm,.achv,.reader select,.reader .btn,.slides .opt,main.triet .opt,nav.tabs button{border-radius:6px !important}
+.slide-card .feedback,.feedback{border-radius:6px !important}
