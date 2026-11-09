@@ -17,11 +17,13 @@ const PYTHON = process.env.PYTHON_PATH || 'C:/Python313/python.exe';
 const LETTERS = ['A', 'B', 'C', 'D'];
 
 // Các giọng người giảng. Khóa (key) dùng làm tên thư mục và trong slide-persona.js.
-export const VOICE_SETS = [
+const ALL_VOICE_SETS = [
   { key: 'vais', voice: 'vi_VN-vais1000-medium', speed: 0.9 },
   { key: 'vivos', voice: 'vi_VN-vivos-x_low', speed: 0.9 },
   { key: 'hours', voice: 'vi_VN-25hours_single-low', speed: 0.9 },
 ];
+// Có thể giới hạn giọng bằng biến môi trường, ví dụ VOICE_KEYS=vais để chỉ tạo giọng mặc định
+export const VOICE_SETS = process.env.VOICE_KEYS ? ALL_VOICE_SETS.filter((v) => process.env.VOICE_KEYS.split(",").includes(v.key)) : ALL_VOICE_SETS;
 
 // Máy chủ TTS nhúng văn bản vào mã Python: bỏ dấu nháy và ký tự gây lỗi cú pháp.
 export function clean(t) {
