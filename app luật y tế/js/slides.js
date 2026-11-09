@@ -163,6 +163,8 @@
     else if (s.type === 'mcq') renderMcq(s, i, card);
     else if (s.type === 'fill') renderFill(s, i, card);
     else if (s.type === 'essay') renderEssay(s, i, card);
+    // Chân slide: tên bài và số trang, như slide trình chiếu
+    card.appendChild(el('div', 'slide-foot', (titleEl ? titleEl.textContent : '') + '  ·  ' + (i + 1) + ' / ' + slides.length));
     stage.appendChild(card);
     idx = i;
     saveProg();
