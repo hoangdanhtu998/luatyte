@@ -30,7 +30,9 @@
 .tts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}.tts-bar select{font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper-2,#fff);color:var(--color-ink,#2B2118)}.tts-note{font-size:13px;color:var(--color-muted,#7A6D5E)}
 .slide-narr{font-size:13px;color:var(--color-muted,#7A6D5E);margin:0 0 10px;font-style:italic}
 /* slide-look */
-.lecture{display:none;max-width:72ch;margin:14px auto 0;padding:12px 18px;border-radius:12px;background:#f5f3ff;border:1px solid #d9cdf3;color:#2e1f63;font-size:1.05rem;line-height:1.7;text-align:center}
+/* Khung lời giảng: cùng khung, bo góc, bóng và cỡ chữ với thẻ slide, nằm ngay dưới thẻ */
+.lecture{display:none;margin:12px 0 0;padding:clamp(18px,3.5vw,28px);border-radius:16px;background:#ffffff;border:1px solid #e2e8f0;border-top:4px solid #6b4fbb;box-shadow:0 1px 2px rgba(15,23,42,.06);color:#0f172a;font-size:1.15rem;line-height:1.85;text-align:left}
+.lecture::before{content:"Lời giảng";display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#4c3797;margin-bottom:8px}
 .lecture.on{display:block}
 .tts-on{background:rgba(107,79,187,.10);border-radius:6px;box-shadow:-3px 0 0 #6b4fbb;transition:background .25s ease}
 .tts-auto{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--color-ink-2,#44403c)}
@@ -58,7 +60,7 @@
   .slides{max-width:1080px;padding:32px 40px 64px}
   .slides .slide-card p{font-size:1.35rem;line-height:1.85}
   .slides .slide-card h2{font-size:1.95rem}
-  .lecture{font-size:1.3rem}
+  .lecture{font-size:1.35rem;padding:36px 52px;border-radius:20px}
   .slides-head h1{font-size:1.9rem}
   .slides .slide-card{min-height:440px;padding:44px 52px;border-radius:20px}
   .slides .slide-card h2{font-size:1.75rem;margin-bottom:18px}
