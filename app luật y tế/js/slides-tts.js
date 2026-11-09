@@ -103,7 +103,9 @@
   function pickVoice() {
     var voices = synth.getVoices() || [];
     var vi = voices.filter(function (v) { return /^vi/i.test(v.lang); });
-    return vi[0] || null;
+    // Ưu tiên giọng miền Bắc (NamMinh) nếu máy có; không có thì dùng giọng tiếng Việt đầu tiên
+    var north = vi.filter(function (v) { return /NamMinh|Nam Minh/i.test(v.name); });
+    return north[0] || vi[0] || null;
   }
 
   function setIdle() {
