@@ -30,7 +30,9 @@
 .tts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}.tts-bar select{font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--color-field,#D9CFBE);background:var(--color-paper-2,#fff);color:var(--color-ink,#2B2118)}.tts-note{font-size:13px;color:var(--color-muted,#7A6D5E)}
 .slide-narr{font-size:13px;color:var(--color-muted,#7A6D5E);margin:0 0 10px;font-style:italic}
 /* slide-look */
-.lecture{display:none;max-width:72ch;margin:14px auto 0;padding:12px 18px;border-radius:12px;background:#f5f3ff;border:1px solid #d9cdf3;color:#2e1f63;font-size:1.05rem;line-height:1.7;text-align:center}
+/* Khung lời giảng: cùng khung, bo góc, bóng và cỡ chữ với thẻ slide, nằm ngay dưới thẻ */
+.lecture{display:none;margin:12px 0 0;padding:clamp(18px,3.5vw,28px);border-radius:16px;background:#ffffff;border:1px solid #e2e8f0;border-top:4px solid #6b4fbb;box-shadow:0 1px 2px rgba(15,23,42,.06);color:#0f172a;font-size:1.15rem;line-height:1.85;text-align:left}
+.lecture::before{content:"Lời giảng";display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#4c3797;margin-bottom:8px}
 .lecture.on{display:block}
 .tts-on{background:rgba(107,79,187,.10);border-radius:6px;box-shadow:-3px 0 0 #6b4fbb;transition:background .25s ease}
 .tts-auto{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--color-ink-2,#44403c)}
@@ -56,6 +58,9 @@
 /* Máy tính: khung slide rộng hơn, chữ lớn hơn, thẻ đủ cao để không co lại */
 @media (min-width:1024px){
   .slides{max-width:1080px;padding:32px 40px 64px}
+  .slides .slide-card p{font-size:1.35rem;line-height:1.85}
+  .slides .slide-card h2{font-size:1.95rem}
+  .lecture{font-size:1.35rem;padding:36px 52px;border-radius:20px}
   .slides-head h1{font-size:1.9rem}
   .slides .slide-card{min-height:440px;padding:44px 52px;border-radius:20px}
   .slides .slide-card h2{font-size:1.75rem;margin-bottom:18px}
@@ -68,6 +73,27 @@
 @media (min-width:1400px){
   .slides{max-width:1200px}
 }
+/* Cỡ chữ và nhấn màu slide: đặt sau các quy tắc cũ để có hiệu lực */
+.slides .slide-card p{font-size:1.2rem;line-height:1.85}
+.slides .slide-card h2{font-size:1.5rem}
+.slides .slide-card .slide-narr{font-size:15px;font-weight:600;font-style:normal;color:#4c3797}
+.slides .slide-card{border-top:4px solid #6b4fbb}
+/* Thẻ slide dạng trình chiếu trên máy tính: chiều cao tối thiểu gần 16:9 (nội dung dài thì thẻ tự cao thêm), nhấn đầu thẻ, tiêu đề lớn, chân slide */
+@media (min-width:1024px){
+  .slides .slide-card{position:relative;min-height:min(560px,70vh);display:flex;flex-direction:column;justify-content:flex-start;padding:64px 80px 84px 96px;border:0;border-radius:14px;box-shadow:0 14px 40px rgba(28,25,23,.12)}
+  .slides .slide-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(#c9a227,#6b4fbb 55%,#2e1f63)}
+  .slides .slide-kind{background:none;padding:0;border-radius:0;color:#8a6a3f;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px}
+  .slides .slide-card h2{font-size:2.6rem;font-weight:800;line-height:1.15;margin:0 0 26px;color:#1c1917}
+  .slides .slide-card p{font-size:1.35rem;line-height:1.75}
+  .slides .slide-foot{position:absolute;left:96px;right:80px;bottom:28px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#78716c;display:block}
+}
+.slide-foot{display:none}
+/* Slide chữ kiểu trình chiếu: nhãn phần, gạch đầu dòng ngắn */
+.slides .slide-card .slide-label{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b4fbb;margin:0 0 8px}
+.slides .slide-bullets{list-style:none;margin:20px 0 0;padding:0}
+.slides .slide-bullets li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid #eee9f8;font-size:1.2rem;line-height:1.6;color:#1c1917}
+.slides .slide-bullets li:last-child{border-bottom:0}
+.slides .slide-bullets li::before{content:"";position:absolute;left:4px;top:22px;width:9px;height:9px;border-radius:50%;background:#6b4fbb}
 </style>
 </head>
 <body>
@@ -78,7 +104,7 @@
   <p><a href="hoc.html">← Học</a></p>
   <div class="slides-head"><h1 id="lesson-title">Đang tải bài học…</h1></div>
   <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-  <div class="tts-bar" id="tts-bar"><label>Người giảng <select id="narrator-pick" aria-label="Chọn người giảng"></select></label><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><label class="tts-auto"><input type="checkbox" id="tts-auto"> Tự chuyển slide</label><span class="tts-note" id="tts-note"></span></div>
+  <div class="tts-bar" id="tts-bar"><label>Người giảng <select id="narrator-pick" aria-label="Chọn người giảng"></select></label><label>Tốc độ <select id="tts-speed" aria-label="Tốc độ đọc"><option value="0.75">0.75×</option><option value="0.9" selected>0.9× (mặc định)</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label><button class="btn ghost" type="button" id="tts-play">Giọng đọc</button><label class="tts-auto"><input type="checkbox" id="tts-auto"> Tự chuyển slide</label><span class="tts-note" id="tts-note"></span></div>
 <div id="stage" aria-live="polite"></div>
   <div class="slide-nav">
     <button class="btn ghost" type="button" id="prev">← Trước</button>

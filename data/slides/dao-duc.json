@@ -11,7 +11,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/01.mp3",
         "vivos": "audio/slides/dao-duc/vivos/01.mp3",
-        "hours": "audio/slides/dao-duc/hours/01.mp3"
+        "hours": "audio/slides/dao-duc/hours/01.mp3",
+        "gs": "audio/slides/dao-duc/gs/01.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/01.mp3",
+        "nt": "audio/slides/dao-duc/nt/01.mp3",
+        "bt": "audio/slides/dao-duc/bt/01.mp3"
       }
     },
     {
@@ -27,7 +31,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/02.mp3",
         "vivos": "audio/slides/dao-duc/vivos/02.mp3",
-        "hours": "audio/slides/dao-duc/hours/02.mp3"
+        "hours": "audio/slides/dao-duc/hours/02.mp3",
+        "gs": "audio/slides/dao-duc/gs/02.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/02.mp3",
+        "nt": "audio/slides/dao-duc/nt/02.mp3",
+        "bt": "audio/slides/dao-duc/bt/02.mp3"
       }
     },
     {
@@ -45,7 +53,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/03.mp3",
         "vivos": "audio/slides/dao-duc/vivos/03.mp3",
-        "hours": "audio/slides/dao-duc/hours/03.mp3"
+        "hours": "audio/slides/dao-duc/hours/03.mp3",
+        "gs": "audio/slides/dao-duc/gs/03.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/03.mp3",
+        "nt": "audio/slides/dao-duc/nt/03.mp3",
+        "bt": "audio/slides/dao-duc/bt/03.mp3"
       }
     },
     {
@@ -61,7 +73,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/04.mp3",
         "vivos": "audio/slides/dao-duc/vivos/04.mp3",
-        "hours": "audio/slides/dao-duc/hours/04.mp3"
+        "hours": "audio/slides/dao-duc/hours/04.mp3",
+        "gs": "audio/slides/dao-duc/gs/04.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/04.mp3",
+        "nt": "audio/slides/dao-duc/nt/04.mp3",
+        "bt": "audio/slides/dao-duc/bt/04.mp3"
       }
     },
     {
@@ -75,7 +91,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/05.mp3",
         "vivos": "audio/slides/dao-duc/vivos/05.mp3",
-        "hours": "audio/slides/dao-duc/hours/05.mp3"
+        "hours": "audio/slides/dao-duc/hours/05.mp3",
+        "gs": "audio/slides/dao-duc/gs/05.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/05.mp3",
+        "nt": "audio/slides/dao-duc/nt/05.mp3",
+        "bt": "audio/slides/dao-duc/bt/05.mp3"
       }
     },
     {
@@ -97,7 +117,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/06.mp3",
         "vivos": "audio/slides/dao-duc/vivos/06.mp3",
-        "hours": "audio/slides/dao-duc/hours/06.mp3"
+        "hours": "audio/slides/dao-duc/hours/06.mp3",
+        "gs": "audio/slides/dao-duc/gs/06.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/06.mp3",
+        "nt": "audio/slides/dao-duc/nt/06.mp3",
+        "bt": "audio/slides/dao-duc/bt/06.mp3"
       }
     },
     {
@@ -115,7 +139,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/07.mp3",
         "vivos": "audio/slides/dao-duc/vivos/07.mp3",
-        "hours": "audio/slides/dao-duc/hours/07.mp3"
+        "hours": "audio/slides/dao-duc/hours/07.mp3",
+        "gs": "audio/slides/dao-duc/gs/07.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/07.mp3",
+        "nt": "audio/slides/dao-duc/nt/07.mp3",
+        "bt": "audio/slides/dao-duc/bt/07.mp3"
       }
     },
     {
@@ -133,7 +161,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/08.mp3",
         "vivos": "audio/slides/dao-duc/vivos/08.mp3",
-        "hours": "audio/slides/dao-duc/hours/08.mp3"
+        "hours": "audio/slides/dao-duc/hours/08.mp3",
+        "gs": "audio/slides/dao-duc/gs/08.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/08.mp3",
+        "nt": "audio/slides/dao-duc/nt/08.mp3",
+        "bt": "audio/slides/dao-duc/bt/08.mp3"
       }
     },
     {
@@ -149,7 +181,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/09.mp3",
         "vivos": "audio/slides/dao-duc/vivos/09.mp3",
-        "hours": "audio/slides/dao-duc/hours/09.mp3"
+        "hours": "audio/slides/dao-duc/hours/09.mp3",
+        "gs": "audio/slides/dao-duc/gs/09.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/09.mp3",
+        "nt": "audio/slides/dao-duc/nt/09.mp3",
+        "bt": "audio/slides/dao-duc/bt/09.mp3"
       }
     },
     {
@@ -163,7 +199,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/10.mp3",
         "vivos": "audio/slides/dao-duc/vivos/10.mp3",
-        "hours": "audio/slides/dao-duc/hours/10.mp3"
+        "hours": "audio/slides/dao-duc/hours/10.mp3",
+        "gs": "audio/slides/dao-duc/gs/10.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/10.mp3",
+        "nt": "audio/slides/dao-duc/nt/10.mp3",
+        "bt": "audio/slides/dao-duc/bt/10.mp3"
       }
     },
     {
@@ -179,7 +219,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/11.mp3",
         "vivos": "audio/slides/dao-duc/vivos/11.mp3",
-        "hours": "audio/slides/dao-duc/hours/11.mp3"
+        "hours": "audio/slides/dao-duc/hours/11.mp3",
+        "gs": "audio/slides/dao-duc/gs/11.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/11.mp3",
+        "nt": "audio/slides/dao-duc/nt/11.mp3",
+        "bt": "audio/slides/dao-duc/bt/11.mp3"
       }
     },
     {
@@ -192,7 +236,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/12.mp3",
         "vivos": "audio/slides/dao-duc/vivos/12.mp3",
-        "hours": "audio/slides/dao-duc/hours/12.mp3"
+        "hours": "audio/slides/dao-duc/hours/12.mp3",
+        "gs": "audio/slides/dao-duc/gs/12.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/12.mp3",
+        "nt": "audio/slides/dao-duc/nt/12.mp3",
+        "bt": "audio/slides/dao-duc/bt/12.mp3"
       }
     },
     {
@@ -210,7 +258,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/13.mp3",
         "vivos": "audio/slides/dao-duc/vivos/13.mp3",
-        "hours": "audio/slides/dao-duc/hours/13.mp3"
+        "hours": "audio/slides/dao-duc/hours/13.mp3",
+        "gs": "audio/slides/dao-duc/gs/13.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/13.mp3",
+        "nt": "audio/slides/dao-duc/nt/13.mp3",
+        "bt": "audio/slides/dao-duc/bt/13.mp3"
       }
     },
     {
@@ -226,7 +278,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/14.mp3",
         "vivos": "audio/slides/dao-duc/vivos/14.mp3",
-        "hours": "audio/slides/dao-duc/hours/14.mp3"
+        "hours": "audio/slides/dao-duc/hours/14.mp3",
+        "gs": "audio/slides/dao-duc/gs/14.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/14.mp3",
+        "nt": "audio/slides/dao-duc/nt/14.mp3",
+        "bt": "audio/slides/dao-duc/bt/14.mp3"
       }
     },
     {
@@ -240,7 +296,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/15.mp3",
         "vivos": "audio/slides/dao-duc/vivos/15.mp3",
-        "hours": "audio/slides/dao-duc/hours/15.mp3"
+        "hours": "audio/slides/dao-duc/hours/15.mp3",
+        "gs": "audio/slides/dao-duc/gs/15.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/15.mp3",
+        "nt": "audio/slides/dao-duc/nt/15.mp3",
+        "bt": "audio/slides/dao-duc/bt/15.mp3"
       }
     },
     {
@@ -258,7 +318,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/16.mp3",
         "vivos": "audio/slides/dao-duc/vivos/16.mp3",
-        "hours": "audio/slides/dao-duc/hours/16.mp3"
+        "hours": "audio/slides/dao-duc/hours/16.mp3",
+        "gs": "audio/slides/dao-duc/gs/16.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/16.mp3",
+        "nt": "audio/slides/dao-duc/nt/16.mp3",
+        "bt": "audio/slides/dao-duc/bt/16.mp3"
       }
     },
     {
@@ -274,7 +338,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/17.mp3",
         "vivos": "audio/slides/dao-duc/vivos/17.mp3",
-        "hours": "audio/slides/dao-duc/hours/17.mp3"
+        "hours": "audio/slides/dao-duc/hours/17.mp3",
+        "gs": "audio/slides/dao-duc/gs/17.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/17.mp3",
+        "nt": "audio/slides/dao-duc/nt/17.mp3",
+        "bt": "audio/slides/dao-duc/bt/17.mp3"
       }
     },
     {
@@ -296,7 +364,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/18.mp3",
         "vivos": "audio/slides/dao-duc/vivos/18.mp3",
-        "hours": "audio/slides/dao-duc/hours/18.mp3"
+        "hours": "audio/slides/dao-duc/hours/18.mp3",
+        "gs": "audio/slides/dao-duc/gs/18.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/18.mp3",
+        "nt": "audio/slides/dao-duc/nt/18.mp3",
+        "bt": "audio/slides/dao-duc/bt/18.mp3"
       }
     },
     {
@@ -314,7 +386,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/19.mp3",
         "vivos": "audio/slides/dao-duc/vivos/19.mp3",
-        "hours": "audio/slides/dao-duc/hours/19.mp3"
+        "hours": "audio/slides/dao-duc/hours/19.mp3",
+        "gs": "audio/slides/dao-duc/gs/19.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/19.mp3",
+        "nt": "audio/slides/dao-duc/nt/19.mp3",
+        "bt": "audio/slides/dao-duc/bt/19.mp3"
       }
     },
     {
@@ -330,7 +406,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/20.mp3",
         "vivos": "audio/slides/dao-duc/vivos/20.mp3",
-        "hours": "audio/slides/dao-duc/hours/20.mp3"
+        "hours": "audio/slides/dao-duc/hours/20.mp3",
+        "gs": "audio/slides/dao-duc/gs/20.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/20.mp3",
+        "nt": "audio/slides/dao-duc/nt/20.mp3",
+        "bt": "audio/slides/dao-duc/bt/20.mp3"
       }
     },
     {
@@ -348,7 +428,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/21.mp3",
         "vivos": "audio/slides/dao-duc/vivos/21.mp3",
-        "hours": "audio/slides/dao-duc/hours/21.mp3"
+        "hours": "audio/slides/dao-duc/hours/21.mp3",
+        "gs": "audio/slides/dao-duc/gs/21.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/21.mp3",
+        "nt": "audio/slides/dao-duc/nt/21.mp3",
+        "bt": "audio/slides/dao-duc/bt/21.mp3"
       }
     },
     {
@@ -364,7 +448,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/22.mp3",
         "vivos": "audio/slides/dao-duc/vivos/22.mp3",
-        "hours": "audio/slides/dao-duc/hours/22.mp3"
+        "hours": "audio/slides/dao-duc/hours/22.mp3",
+        "gs": "audio/slides/dao-duc/gs/22.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/22.mp3",
+        "nt": "audio/slides/dao-duc/nt/22.mp3",
+        "bt": "audio/slides/dao-duc/bt/22.mp3"
       }
     },
     {
@@ -377,7 +465,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/23.mp3",
         "vivos": "audio/slides/dao-duc/vivos/23.mp3",
-        "hours": "audio/slides/dao-duc/hours/23.mp3"
+        "hours": "audio/slides/dao-duc/hours/23.mp3",
+        "gs": "audio/slides/dao-duc/gs/23.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/23.mp3",
+        "nt": "audio/slides/dao-duc/nt/23.mp3",
+        "bt": "audio/slides/dao-duc/bt/23.mp3"
       }
     },
     {
@@ -395,7 +487,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/24.mp3",
         "vivos": "audio/slides/dao-duc/vivos/24.mp3",
-        "hours": "audio/slides/dao-duc/hours/24.mp3"
+        "hours": "audio/slides/dao-duc/hours/24.mp3",
+        "gs": "audio/slides/dao-duc/gs/24.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/24.mp3",
+        "nt": "audio/slides/dao-duc/nt/24.mp3",
+        "bt": "audio/slides/dao-duc/bt/24.mp3"
       }
     },
     {
@@ -410,7 +506,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/25.mp3",
         "vivos": "audio/slides/dao-duc/vivos/25.mp3",
-        "hours": "audio/slides/dao-duc/hours/25.mp3"
+        "hours": "audio/slides/dao-duc/hours/25.mp3",
+        "gs": "audio/slides/dao-duc/gs/25.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/25.mp3",
+        "nt": "audio/slides/dao-duc/nt/25.mp3",
+        "bt": "audio/slides/dao-duc/bt/25.mp3"
       }
     },
     {
@@ -428,7 +528,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/26.mp3",
         "vivos": "audio/slides/dao-duc/vivos/26.mp3",
-        "hours": "audio/slides/dao-duc/hours/26.mp3"
+        "hours": "audio/slides/dao-duc/hours/26.mp3",
+        "gs": "audio/slides/dao-duc/gs/26.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/26.mp3",
+        "nt": "audio/slides/dao-duc/nt/26.mp3",
+        "bt": "audio/slides/dao-duc/bt/26.mp3"
       }
     },
     {
@@ -444,7 +548,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/27.mp3",
         "vivos": "audio/slides/dao-duc/vivos/27.mp3",
-        "hours": "audio/slides/dao-duc/hours/27.mp3"
+        "hours": "audio/slides/dao-duc/hours/27.mp3",
+        "gs": "audio/slides/dao-duc/gs/27.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/27.mp3",
+        "nt": "audio/slides/dao-duc/nt/27.mp3",
+        "bt": "audio/slides/dao-duc/bt/27.mp3"
       }
     },
     {
@@ -460,7 +568,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/28.mp3",
         "vivos": "audio/slides/dao-duc/vivos/28.mp3",
-        "hours": "audio/slides/dao-duc/hours/28.mp3"
+        "hours": "audio/slides/dao-duc/hours/28.mp3",
+        "gs": "audio/slides/dao-duc/gs/28.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/28.mp3",
+        "nt": "audio/slides/dao-duc/nt/28.mp3",
+        "bt": "audio/slides/dao-duc/bt/28.mp3"
       }
     },
     {
@@ -478,7 +590,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/29.mp3",
         "vivos": "audio/slides/dao-duc/vivos/29.mp3",
-        "hours": "audio/slides/dao-duc/hours/29.mp3"
+        "hours": "audio/slides/dao-duc/hours/29.mp3",
+        "gs": "audio/slides/dao-duc/gs/29.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/29.mp3",
+        "nt": "audio/slides/dao-duc/nt/29.mp3",
+        "bt": "audio/slides/dao-duc/bt/29.mp3"
       }
     },
     {
@@ -489,7 +605,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/30.mp3",
         "vivos": "audio/slides/dao-duc/vivos/30.mp3",
-        "hours": "audio/slides/dao-duc/hours/30.mp3"
+        "hours": "audio/slides/dao-duc/hours/30.mp3",
+        "gs": "audio/slides/dao-duc/gs/30.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/30.mp3",
+        "nt": "audio/slides/dao-duc/nt/30.mp3",
+        "bt": "audio/slides/dao-duc/bt/30.mp3"
       }
     },
     {
@@ -500,7 +620,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/31.mp3",
         "vivos": "audio/slides/dao-duc/vivos/31.mp3",
-        "hours": "audio/slides/dao-duc/hours/31.mp3"
+        "hours": "audio/slides/dao-duc/hours/31.mp3",
+        "gs": "audio/slides/dao-duc/gs/31.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/31.mp3",
+        "nt": "audio/slides/dao-duc/nt/31.mp3",
+        "bt": "audio/slides/dao-duc/bt/31.mp3"
       }
     },
     {
@@ -511,7 +635,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/32.mp3",
         "vivos": "audio/slides/dao-duc/vivos/32.mp3",
-        "hours": "audio/slides/dao-duc/hours/32.mp3"
+        "hours": "audio/slides/dao-duc/hours/32.mp3",
+        "gs": "audio/slides/dao-duc/gs/32.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/32.mp3",
+        "nt": "audio/slides/dao-duc/nt/32.mp3",
+        "bt": "audio/slides/dao-duc/bt/32.mp3"
       }
     },
     {
@@ -522,7 +650,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/33.mp3",
         "vivos": "audio/slides/dao-duc/vivos/33.mp3",
-        "hours": "audio/slides/dao-duc/hours/33.mp3"
+        "hours": "audio/slides/dao-duc/hours/33.mp3",
+        "gs": "audio/slides/dao-duc/gs/33.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/33.mp3",
+        "nt": "audio/slides/dao-duc/nt/33.mp3",
+        "bt": "audio/slides/dao-duc/bt/33.mp3"
       }
     },
     {
@@ -533,7 +665,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/34.mp3",
         "vivos": "audio/slides/dao-duc/vivos/34.mp3",
-        "hours": "audio/slides/dao-duc/hours/34.mp3"
+        "hours": "audio/slides/dao-duc/hours/34.mp3",
+        "gs": "audio/slides/dao-duc/gs/34.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/34.mp3",
+        "nt": "audio/slides/dao-duc/nt/34.mp3",
+        "bt": "audio/slides/dao-duc/bt/34.mp3"
       }
     },
     {
@@ -544,7 +680,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/35.mp3",
         "vivos": "audio/slides/dao-duc/vivos/35.mp3",
-        "hours": "audio/slides/dao-duc/hours/35.mp3"
+        "hours": "audio/slides/dao-duc/hours/35.mp3",
+        "gs": "audio/slides/dao-duc/gs/35.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/35.mp3",
+        "nt": "audio/slides/dao-duc/nt/35.mp3",
+        "bt": "audio/slides/dao-duc/bt/35.mp3"
       }
     },
     {
@@ -555,7 +695,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/36.mp3",
         "vivos": "audio/slides/dao-duc/vivos/36.mp3",
-        "hours": "audio/slides/dao-duc/hours/36.mp3"
+        "hours": "audio/slides/dao-duc/hours/36.mp3",
+        "gs": "audio/slides/dao-duc/gs/36.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/36.mp3",
+        "nt": "audio/slides/dao-duc/nt/36.mp3",
+        "bt": "audio/slides/dao-duc/bt/36.mp3"
       }
     },
     {
@@ -573,7 +717,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/37.mp3",
         "vivos": "audio/slides/dao-duc/vivos/37.mp3",
-        "hours": "audio/slides/dao-duc/hours/37.mp3"
+        "hours": "audio/slides/dao-duc/hours/37.mp3",
+        "gs": "audio/slides/dao-duc/gs/37.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/37.mp3",
+        "nt": "audio/slides/dao-duc/nt/37.mp3",
+        "bt": "audio/slides/dao-duc/bt/37.mp3"
       }
     },
     {
@@ -591,7 +739,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/38.mp3",
         "vivos": "audio/slides/dao-duc/vivos/38.mp3",
-        "hours": "audio/slides/dao-duc/hours/38.mp3"
+        "hours": "audio/slides/dao-duc/hours/38.mp3",
+        "gs": "audio/slides/dao-duc/gs/38.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/38.mp3",
+        "nt": "audio/slides/dao-duc/nt/38.mp3",
+        "bt": "audio/slides/dao-duc/bt/38.mp3"
       }
     },
     {
@@ -604,7 +756,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/39.mp3",
         "vivos": "audio/slides/dao-duc/vivos/39.mp3",
-        "hours": "audio/slides/dao-duc/hours/39.mp3"
+        "hours": "audio/slides/dao-duc/hours/39.mp3",
+        "gs": "audio/slides/dao-duc/gs/39.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/39.mp3",
+        "nt": "audio/slides/dao-duc/nt/39.mp3",
+        "bt": "audio/slides/dao-duc/bt/39.mp3"
       }
     },
     {
@@ -617,7 +773,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/40.mp3",
         "vivos": "audio/slides/dao-duc/vivos/40.mp3",
-        "hours": "audio/slides/dao-duc/hours/40.mp3"
+        "hours": "audio/slides/dao-duc/hours/40.mp3",
+        "gs": "audio/slides/dao-duc/gs/40.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/40.mp3",
+        "nt": "audio/slides/dao-duc/nt/40.mp3",
+        "bt": "audio/slides/dao-duc/bt/40.mp3"
       }
     },
     {
@@ -630,7 +790,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/41.mp3",
         "vivos": "audio/slides/dao-duc/vivos/41.mp3",
-        "hours": "audio/slides/dao-duc/hours/41.mp3"
+        "hours": "audio/slides/dao-duc/hours/41.mp3",
+        "gs": "audio/slides/dao-duc/gs/41.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/41.mp3",
+        "nt": "audio/slides/dao-duc/nt/41.mp3",
+        "bt": "audio/slides/dao-duc/bt/41.mp3"
       }
     },
     {
@@ -643,7 +807,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/42.mp3",
         "vivos": "audio/slides/dao-duc/vivos/42.mp3",
-        "hours": "audio/slides/dao-duc/hours/42.mp3"
+        "hours": "audio/slides/dao-duc/hours/42.mp3",
+        "gs": "audio/slides/dao-duc/gs/42.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/42.mp3",
+        "nt": "audio/slides/dao-duc/nt/42.mp3",
+        "bt": "audio/slides/dao-duc/bt/42.mp3"
       }
     },
     {
@@ -656,7 +824,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/43.mp3",
         "vivos": "audio/slides/dao-duc/vivos/43.mp3",
-        "hours": "audio/slides/dao-duc/hours/43.mp3"
+        "hours": "audio/slides/dao-duc/hours/43.mp3",
+        "gs": "audio/slides/dao-duc/gs/43.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/43.mp3",
+        "nt": "audio/slides/dao-duc/nt/43.mp3",
+        "bt": "audio/slides/dao-duc/bt/43.mp3"
       }
     },
     {
@@ -669,7 +841,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/44.mp3",
         "vivos": "audio/slides/dao-duc/vivos/44.mp3",
-        "hours": "audio/slides/dao-duc/hours/44.mp3"
+        "hours": "audio/slides/dao-duc/hours/44.mp3",
+        "gs": "audio/slides/dao-duc/gs/44.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/44.mp3",
+        "nt": "audio/slides/dao-duc/nt/44.mp3",
+        "bt": "audio/slides/dao-duc/bt/44.mp3"
       }
     },
     {
@@ -685,7 +861,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/45.mp3",
         "vivos": "audio/slides/dao-duc/vivos/45.mp3",
-        "hours": "audio/slides/dao-duc/hours/45.mp3"
+        "hours": "audio/slides/dao-duc/hours/45.mp3",
+        "gs": "audio/slides/dao-duc/gs/45.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/45.mp3",
+        "nt": "audio/slides/dao-duc/nt/45.mp3",
+        "bt": "audio/slides/dao-duc/bt/45.mp3"
       }
     },
     {
@@ -699,7 +879,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/46.mp3",
         "vivos": "audio/slides/dao-duc/vivos/46.mp3",
-        "hours": "audio/slides/dao-duc/hours/46.mp3"
+        "hours": "audio/slides/dao-duc/hours/46.mp3",
+        "gs": "audio/slides/dao-duc/gs/46.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/46.mp3",
+        "nt": "audio/slides/dao-duc/nt/46.mp3",
+        "bt": "audio/slides/dao-duc/bt/46.mp3"
       }
     },
     {
@@ -712,7 +896,11 @@
       "audios": {
         "vais": "audio/slides/dao-duc/vais/47.mp3",
         "vivos": "audio/slides/dao-duc/vivos/47.mp3",
-        "hours": "audio/slides/dao-duc/hours/47.mp3"
+        "hours": "audio/slides/dao-duc/hours/47.mp3",
+        "gs": "audio/slides/dao-duc/gs/47.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/47.mp3",
+        "nt": "audio/slides/dao-duc/nt/47.mp3",
+        "bt": "audio/slides/dao-duc/bt/47.mp3"
       }
     }
   ]

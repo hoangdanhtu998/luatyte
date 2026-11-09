@@ -3,48 +3,66 @@
   "slides": [
     {
       "type": "text",
-      "title": "Giới thiệu khóa Triết học từ A đến Z",
+      "kicker": "Giới thiệu",
+      "title": "Triết học từ A đến Z",
       "body": [
-        "Khóa học dành cho người mới, đi từ khái niệm đến lịch sử và triết học phương Đông, gồm 14 phần.",
-        "Mỗi phần có slide khái niệm, slide chi tiết hoặc ví dụ, và câu hỏi ôn nhớ (trắc nghiệm, điền chỗ trống, có một số câu tự luận).",
-        "Đây là tổng quan nhập môn, không thay thế giáo trình đại học. Các nhận định về tác giả là tóm tắt khái quát."
+        "14 phần, từ khái niệm đến lịch sử và triết học phương Đông",
+        "Mỗi phần: khái niệm, ví dụ, câu hỏi ôn",
+        "Tổng quan nhập môn, không thay giáo trình đại học"
       ],
-      "audio": "audio/slides/triet-hoc/vais/01.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/01.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/01.mp3",
-        "hours": "audio/slides/triet-hoc/hours/01.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/01.mp3",
+        "gs": "audio/slides/triet-hoc/gs/01.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/01.mp3",
+        "nt": "audio/slides/triet-hoc/nt/01.mp3",
+        "bt": "audio/slides/triet-hoc/bt/01.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/01.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 1. Triết học là gì?",
+      "kicker": "Phần 1",
+      "title": "Triết học là gì?",
       "body": [
-        "Từ 'triết học' (philosophy) bắt nguồn từ tiếng Hy Lạp philosophia: 'yêu mến sự thông thái'. Tương truyền thuật ngữ này gắn với Pythagoras.",
-        "Triết học đặt những câu hỏi nền tảng: có gì thực sự tồn tại? biết được gì và biết bằng cách nào? đúng sai, tốt xấu dựa trên cái gì? con người là gì và sống để làm gì?",
-        "Ghi nhớ: triết học không tìm một đáp án cuối cùng được mọi người công nhận. Giá trị của nó là đặt câu hỏi rõ ràng, lập luận chặt chẽ và kiểm tra lại giả định của chính mình."
+        "Từ philosophia: \"yêu mến sự thông thái\"",
+        "Đặt câu hỏi nền tảng: tồn tại, tri thức, đúng–sai, ý nghĩa",
+        "Không có đáp án được mọi người công nhận; giá trị nằm ở lập luận rõ ràng"
       ],
-      "audio": "audio/slides/triet-hoc/vais/02.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/02.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/02.mp3",
-        "hours": "audio/slides/triet-hoc/hours/02.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/02.mp3",
+        "gs": "audio/slides/triet-hoc/gs/02.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/02.mp3",
+        "nt": "audio/slides/triet-hoc/nt/02.mp3",
+        "bt": "audio/slides/triet-hoc/bt/02.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/02.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 1. Khác với khoa học và tôn giáo",
+      "kicker": "Phần 1",
+      "title": "Khác khoa học và tôn giáo",
       "body": [
-        "So với khoa học: khoa học kiểm chứng bằng thí nghiệm và quan sát. Triết học xem xét chính các khái niệm nền của khoa học, như 'nguyên nhân' là gì, hoặc một lý thuyết có thể bị bác bỏ không.",
-        "So với tôn giáo: nhiều hệ thống triết học bàn về những vấn đề tôn giáo cũng bàn, nhưng dựa chủ yếu vào lập luận và có thể bị phản biện công khai. Triết học không nhất thiết bác bỏ hay chấp nhận tôn giáo.",
-        "Ví dụ: 'Mặt trời mọc ở đằng đông' được khoa học giải thích bằng việc Trái Đất quay. Triết học hỏi thêm: mình biết điều đó thật hay chỉ tin vì quen?"
+        "Khoa học: kiểm chứng bằng thí nghiệm và quan sát",
+        "Triết học: xem xét chính các khái niệm nền của khoa học",
+        "Với tôn giáo: dựa vào lập luận, có thể bị phản biện công khai"
       ],
-      "audio": "audio/slides/triet-hoc/vais/03.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/03.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/03.mp3",
-        "hours": "audio/slides/triet-hoc/hours/03.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/03.mp3",
+        "gs": "audio/slides/triet-hoc/gs/03.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/03.mp3",
+        "nt": "audio/slides/triet-hoc/nt/03.mp3",
+        "bt": "audio/slides/triet-hoc/bt/03.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/03.mp3"
     },
     {
       "type": "mcq",
@@ -61,7 +79,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/04.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/04.mp3",
-        "hours": "audio/slides/triet-hoc/hours/04.mp3"
+        "hours": "audio/slides/triet-hoc/hours/04.mp3",
+        "gs": "audio/slides/triet-hoc/gs/04.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/04.mp3",
+        "nt": "audio/slides/triet-hoc/nt/04.mp3",
+        "bt": "audio/slides/triet-hoc/bt/04.mp3"
       }
     },
     {
@@ -83,7 +105,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/05.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/05.mp3",
-        "hours": "audio/slides/triet-hoc/hours/05.mp3"
+        "hours": "audio/slides/triet-hoc/hours/05.mp3",
+        "gs": "audio/slides/triet-hoc/gs/05.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/05.mp3",
+        "nt": "audio/slides/triet-hoc/nt/05.mp3",
+        "bt": "audio/slides/triet-hoc/bt/05.mp3"
       }
     },
     {
@@ -94,38 +120,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/06.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/06.mp3",
-        "hours": "audio/slides/triet-hoc/hours/06.mp3"
+        "hours": "audio/slides/triet-hoc/hours/06.mp3",
+        "gs": "audio/slides/triet-hoc/gs/06.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/06.mp3",
+        "nt": "audio/slides/triet-hoc/nt/06.mp3",
+        "bt": "audio/slides/triet-hoc/bt/06.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 2. Các ngành chính của triết học",
+      "kicker": "Phần 2",
+      "title": "Các ngành chính",
       "body": [
-        "Bản thể luận (siêu hình học): cái gì tồn tại? vật chất hay tinh thần có trước?",
-        "Nhận thức luận: con người biết được gì, và biết bằng cách nào?",
-        "Logic học: lập luận nào hợp lệ? Đạo đức học: nên làm gì, dựa trên tiêu chuẩn nào? Mỹ học: cái đẹp là gì, đánh giá nghệ thuật dựa trên cơ sở nào?"
+        "Bản thể luận: cái gì tồn tại?",
+        "Nhận thức luận: biết được gì, biết bằng cách nào?",
+        "Logic, đạo đức, mỹ học: lập luận, nên làm gì, cái đẹp là gì?"
       ],
-      "audio": "audio/slides/triet-hoc/vais/07.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/07.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/07.mp3",
-        "hours": "audio/slides/triet-hoc/hours/07.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/07.mp3",
+        "gs": "audio/slides/triet-hoc/gs/07.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/07.mp3",
+        "nt": "audio/slides/triet-hoc/nt/07.mp3",
+        "bt": "audio/slides/triet-hoc/bt/07.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/07.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 2. Ví dụ phân loại câu hỏi",
+      "kicker": "Phần 2",
+      "title": "Phân loại câu hỏi",
       "body": [
-        "'Thế giới có tồn tại độc lập với người quan sát không?' là câu hỏi bản thể luận.",
-        "'Bạn biết quê mình mưa vào tháng Bảy vì đã trải nghiệm, hay vì ai nói?' là câu hỏi nhận thức luận.",
-        "'Ý chí tự do có tồn tại không?' có thể thuộc bản thể luận hoặc triết học tâm trí, tùy cách đặt câu hỏi. Ngoài ra còn triết học chính trị, tâm trí, khoa học, tôn giáo và ngôn ngữ."
+        "\"Mọi A là B, C là A, vậy C là B?\" → Logic",
+        "\"Hành động đúng là hành động đem lại hậu quả tốt?\" → Đạo đức",
+        "\"Cái đẹp nằm ở vật hay người cảm nhận?\" → Mỹ học"
       ],
-      "audio": "audio/slides/triet-hoc/vais/08.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/08.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/08.mp3",
-        "hours": "audio/slides/triet-hoc/hours/08.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/08.mp3",
+        "gs": "audio/slides/triet-hoc/gs/08.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/08.mp3",
+        "nt": "audio/slides/triet-hoc/nt/08.mp3",
+        "bt": "audio/slides/triet-hoc/bt/08.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/08.mp3"
     },
     {
       "type": "mcq",
@@ -142,7 +184,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/09.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/09.mp3",
-        "hours": "audio/slides/triet-hoc/hours/09.mp3"
+        "hours": "audio/slides/triet-hoc/hours/09.mp3",
+        "gs": "audio/slides/triet-hoc/gs/09.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/09.mp3",
+        "nt": "audio/slides/triet-hoc/nt/09.mp3",
+        "bt": "audio/slides/triet-hoc/bt/09.mp3"
       }
     },
     {
@@ -173,38 +219,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/10.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/10.mp3",
-        "hours": "audio/slides/triet-hoc/hours/10.mp3"
+        "hours": "audio/slides/triet-hoc/hours/10.mp3",
+        "gs": "audio/slides/triet-hoc/gs/10.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/10.mp3",
+        "nt": "audio/slides/triet-hoc/nt/10.mp3",
+        "bt": "audio/slides/triet-hoc/bt/10.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 3. Phương pháp tư duy triết học",
+      "kicker": "Phần 3",
+      "title": "Phương pháp tư duy",
       "body": [
-        "Định nghĩa khái niệm: thống nhất 'công lý', 'tự do' là gì trước khi tranh luận. Nhiều tranh cãi thực ra do hiểu khác nhau về khái niệm.",
-        "Suy diễn: từ tiền đề đúng, kết luận bắt buộc đúng. Quy nạp: từ nhiều quan sát, suy ra quy luật có khả năng đúng.",
-        "Phản ví dụ: tìm một trường hợp để bác bỏ khẳng định chung. Thí nghiệm tư duy: tưởng tượng tình huống để kiểm tra trực giác."
+        "Định nghĩa khái niệm trước khi tranh luận",
+        "Suy diễn: tiền đề đúng thì kết luận bắt buộc đúng",
+        "Quy nạp, phản ví dụ, thí nghiệm tư duy"
       ],
-      "audio": "audio/slides/triet-hoc/vais/11.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/11.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/11.mp3",
-        "hours": "audio/slides/triet-hoc/hours/11.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/11.mp3",
+        "gs": "audio/slides/triet-hoc/gs/11.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/11.mp3",
+        "nt": "audio/slides/triet-hoc/nt/11.mp3",
+        "bt": "audio/slides/triet-hoc/bt/11.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/11.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 3. Ví dụ từng phương pháp",
+      "kicker": "Phần 3",
+      "title": "Ví dụ từng phương pháp",
       "body": [
-        "Suy diễn: 'Mọi người đều sẽ chết. Socrates là người. Vậy Socrates sẽ chết.'",
-        "Quy nạp: thấy 100 con quạ đều đen nên kết luận 'quạ đều đen'. Một con quạ trắng sẽ bác bỏ kết luận này.",
-        "Thí nghiệm tư duy: con tàu Theseus. Nếu thay dần mọi tấm ván, nó còn là con tàu cũ không?"
+        "Suy diễn: mọi người sẽ chết; Socrates là người; vậy Socrates sẽ chết",
+        "Quy nạp: nhiều quan sát dẫn tới quy luật có khả năng đúng",
+        "Phản ví dụ: một trường hợp đủ để bác bỏ khẳng định chung"
       ],
-      "audio": "audio/slides/triet-hoc/vais/12.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/12.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/12.mp3",
-        "hours": "audio/slides/triet-hoc/hours/12.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/12.mp3",
+        "gs": "audio/slides/triet-hoc/gs/12.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/12.mp3",
+        "nt": "audio/slides/triet-hoc/nt/12.mp3",
+        "bt": "audio/slides/triet-hoc/bt/12.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/12.mp3"
     },
     {
       "type": "mcq",
@@ -221,7 +283,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/13.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/13.mp3",
-        "hours": "audio/slides/triet-hoc/hours/13.mp3"
+        "hours": "audio/slides/triet-hoc/hours/13.mp3",
+        "gs": "audio/slides/triet-hoc/gs/13.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/13.mp3",
+        "nt": "audio/slides/triet-hoc/nt/13.mp3",
+        "bt": "audio/slides/triet-hoc/bt/13.mp3"
       }
     },
     {
@@ -243,7 +309,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/14.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/14.mp3",
-        "hours": "audio/slides/triet-hoc/hours/14.mp3"
+        "hours": "audio/slides/triet-hoc/hours/14.mp3",
+        "gs": "audio/slides/triet-hoc/gs/14.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/14.mp3",
+        "nt": "audio/slides/triet-hoc/nt/14.mp3",
+        "bt": "audio/slides/triet-hoc/bt/14.mp3"
       }
     },
     {
@@ -254,38 +324,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/15.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/15.mp3",
-        "hours": "audio/slides/triet-hoc/hours/15.mp3"
+        "hours": "audio/slides/triet-hoc/hours/15.mp3",
+        "gs": "audio/slides/triet-hoc/gs/15.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/15.mp3",
+        "nt": "audio/slides/triet-hoc/nt/15.mp3",
+        "bt": "audio/slides/triet-hoc/bt/15.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 4. Các lỗi lập luận (ngụy biện)",
+      "kicker": "Phần 4",
+      "title": "Lỗi lập luận (ngụy biện)",
       "body": [
-        "Tấn công cá nhân: công kích người nói thay vì bàn nội dung. Người rơm: dựng lại quan điểm đối phương theo cách yếu hơn để dễ bác bỏ.",
-        "Lưỡng phân giả: chỉ đưa ra hai lựa chọn. Khái quát vội: kết luận chung từ một vài trường hợp.",
-        "Chứng minh bằng quyền uy: 'người nổi tiếng nói vậy nên đúng'. Trượt nghĩa: dùng một từ với hai nghĩa trong cùng lập luận."
+        "Tấn công cá nhân: bác ý kiến bằng cách công kích người nói",
+        "Người rơm: dựng lại quan điểm đối phương yếu hơn",
+        "Lưỡng phân giả: chỉ đưa ra hai lựa chọn"
       ],
-      "audio": "audio/slides/triet-hoc/vais/16.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/16.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/16.mp3",
-        "hours": "audio/slides/triet-hoc/hours/16.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/16.mp3",
+        "gs": "audio/slides/triet-hoc/gs/16.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/16.mp3",
+        "nt": "audio/slides/triet-hoc/nt/16.mp3",
+        "bt": "audio/slides/triet-hoc/bt/16.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/16.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 4. Nhận diện ngụy biện",
+      "kicker": "Phần 4",
+      "title": "Nhận diện ngụy biện",
       "body": [
-        "'Anh ấy hay đi trễ nên ý kiến về tiết kiệm sai.' → tấn công cá nhân.",
-        "'Bạn muốn giảm giờ học nghĩa là muốn học sinh không học gì.' → người rơm.",
-        "'Hoặc ủng hộ tôi, hoặc chống tôi.' → lưỡng phân giả."
+        "Khái quát vội: kết luận chung từ vài trường hợp",
+        "Quyền uy: \"người nổi tiếng nói vậy nên đúng\"",
+        "Trượt nghĩa: một từ hai nghĩa trong cùng lập luận"
       ],
-      "audio": "audio/slides/triet-hoc/vais/17.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/17.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/17.mp3",
-        "hours": "audio/slides/triet-hoc/hours/17.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/17.mp3",
+        "gs": "audio/slides/triet-hoc/gs/17.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/17.mp3",
+        "nt": "audio/slides/triet-hoc/nt/17.mp3",
+        "bt": "audio/slides/triet-hoc/bt/17.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/17.mp3"
     },
     {
       "type": "mcq",
@@ -302,7 +388,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/18.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/18.mp3",
-        "hours": "audio/slides/triet-hoc/hours/18.mp3"
+        "hours": "audio/slides/triet-hoc/hours/18.mp3",
+        "gs": "audio/slides/triet-hoc/gs/18.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/18.mp3",
+        "nt": "audio/slides/triet-hoc/nt/18.mp3",
+        "bt": "audio/slides/triet-hoc/bt/18.mp3"
       }
     },
     {
@@ -324,38 +414,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/19.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/19.mp3",
-        "hours": "audio/slides/triet-hoc/hours/19.mp3"
+        "hours": "audio/slides/triet-hoc/hours/19.mp3",
+        "gs": "audio/slides/triet-hoc/gs/19.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/19.mp3",
+        "nt": "audio/slides/triet-hoc/nt/19.mp3",
+        "bt": "audio/slides/triet-hoc/bt/19.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 5. Cổ đại Hy Lạp (thế kỷ VI–IV TCN): phần đầu",
+      "kicker": "Phần 5",
+      "title": "Cổ đại Hy Lạp: thời kỳ đầu",
       "body": [
-        "Thales: tìm nguyên lý chung của vạn vật bằng lý do tự nhiên thay vì thần thoại; ông cho rằng nước là bản nguyên.",
-        "Heraclitus: nhấn mạnh biến đổi liên tục, 'không ai tắm hai lần trên cùng một dòng sông'.",
-        "Parmenides: sự thay đổi chỉ là ảo giác, cái thật là bất biến. Democritus: thế giới cấu tạo từ các hạt không chia nhỏ được (nguyên tử)."
+        "Thales: nước là bản nguyên, giải thích bằng lý do tự nhiên",
+        "Heraclitus: mọi thứ biến đổi liên tục",
+        "Parmenides cho sự thay đổi là ảo giác; Democritus: nguyên tử"
       ],
-      "audio": "audio/slides/triet-hoc/vais/20.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/20.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/20.mp3",
-        "hours": "audio/slides/triet-hoc/hours/20.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/20.mp3",
+        "gs": "audio/slides/triet-hoc/gs/20.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/20.mp3",
+        "nt": "audio/slides/triet-hoc/nt/20.mp3",
+        "bt": "audio/slides/triet-hoc/bt/20.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/20.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 5. Cổ đại Hy Lạp: Socrates, Plato, Aristotle",
+      "kicker": "Phần 5",
+      "title": "Socrates, Plato, Aristotle",
       "body": [
-        "Socrates: đối thoại bằng câu hỏi, nói 'tôi biết mình không biết'. Không để lại tác phẩm.",
-        "Plato: có thế giới ý niệm bất biến, thế giới giác quan là bóng của nó. Tác phẩm Cộng hòa bàn về công lý và nhà nước.",
-        "Aristotle: sáng lập nhiều ngành (logic, sinh học, chính trị, đạo đức). Đạo đức 'trung dung', hạnh phúc là mục đích đời người. Hậu kỳ: Khắc kỷ, Epicurus, Hoài nghi."
+        "Socrates: đối thoại bằng câu hỏi, \"tôi biết mình không biết\"",
+        "Plato: thế giới ý niệm bất biến; Cộng hòa bàn về công lý",
+        "Aristotle: logic, đạo đức trung dung, hạnh phúc là mục đích đời người"
       ],
-      "audio": "audio/slides/triet-hoc/vais/21.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/21.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/21.mp3",
-        "hours": "audio/slides/triet-hoc/hours/21.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/21.mp3",
+        "gs": "audio/slides/triet-hoc/gs/21.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/21.mp3",
+        "nt": "audio/slides/triet-hoc/nt/21.mp3",
+        "bt": "audio/slides/triet-hoc/bt/21.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/21.mp3"
     },
     {
       "type": "mcq",
@@ -372,7 +478,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/22.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/22.mp3",
-        "hours": "audio/slides/triet-hoc/hours/22.mp3"
+        "hours": "audio/slides/triet-hoc/hours/22.mp3",
+        "gs": "audio/slides/triet-hoc/gs/22.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/22.mp3",
+        "nt": "audio/slides/triet-hoc/nt/22.mp3",
+        "bt": "audio/slides/triet-hoc/bt/22.mp3"
       }
     },
     {
@@ -394,7 +504,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/23.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/23.mp3",
-        "hours": "audio/slides/triet-hoc/hours/23.mp3"
+        "hours": "audio/slides/triet-hoc/hours/23.mp3",
+        "gs": "audio/slides/triet-hoc/gs/23.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/23.mp3",
+        "nt": "audio/slides/triet-hoc/nt/23.mp3",
+        "bt": "audio/slides/triet-hoc/bt/23.mp3"
       }
     },
     {
@@ -405,37 +519,53 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/24.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/24.mp3",
-        "hours": "audio/slides/triet-hoc/hours/24.mp3"
+        "hours": "audio/slides/triet-hoc/hours/24.mp3",
+        "gs": "audio/slides/triet-hoc/gs/24.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/24.mp3",
+        "nt": "audio/slides/triet-hoc/nt/24.mp3",
+        "bt": "audio/slides/triet-hoc/bt/24.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 6. Trung cổ (khoảng thế kỷ V–XV)",
+      "kicker": "Phần 6",
+      "title": "Triết học trung cổ",
       "body": [
-        "Triết học trung cổ chủ yếu nằm trong bối cảnh tôn giáo: Kitô giáo ở châu Âu, Hồi giáo ở thế giới Ả Rập.",
-        "Augustine (354–430): kết hợp Plato với thần học Kitô giáo. Thomas Aquinas (1225–1274): cố dung hòa lý tính (Aristotle) và đức tin, đưa ra năm đường chứng minh sự tồn tại của Thiên Chúa.",
-        "Kinh viện (scholasticism): phương pháp phân tích, lập luận và biện luận chặt chẽ trong các trường đại học châu Âu."
+        "Chủ yếu trong bối cảnh tôn giáo ở châu Âu và thế giới Ả Rập",
+        "Augustine kết hợp Plato với thần học Kitô giáo",
+        "Aquinas dung hòa lý tính (Aristotle) với đức tin"
       ],
-      "audio": "audio/slides/triet-hoc/vais/25.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/25.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/25.mp3",
-        "hours": "audio/slides/triet-hoc/hours/25.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/25.mp3",
+        "gs": "audio/slides/triet-hoc/gs/25.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/25.mp3",
+        "nt": "audio/slides/triet-hoc/nt/25.mp3",
+        "bt": "audio/slides/triet-hoc/bt/25.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/25.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 6. Thế giới Hồi giáo",
+      "kicker": "Phần 6",
+      "title": "Thế giới Hồi giáo",
       "body": [
-        "Avicenna (Ibn Sina) và Averroes (Ibn Rushd) đóng vai trò quan trọng trong việc lưu giữ và phát triển triết học Hy Lạp.",
-        "Điểm đáng nhớ: triết học trung cổ không tách rời tôn giáo, nhưng vẫn dùng lý trí và lập luận chặt chẽ."
+        "Avicenna (Ibn Sina) và Averroes (Ibn Rushd) giữ và phát triển triết học Hy Lạp",
+        "Triết học không tách khỏi tôn giáo, nhưng dùng lập luận chặt chẽ"
       ],
-      "audio": "audio/slides/triet-hoc/vais/26.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/26.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/26.mp3",
-        "hours": "audio/slides/triet-hoc/hours/26.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/26.mp3",
+        "gs": "audio/slides/triet-hoc/gs/26.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/26.mp3",
+        "nt": "audio/slides/triet-hoc/nt/26.mp3",
+        "bt": "audio/slides/triet-hoc/bt/26.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/26.mp3"
     },
     {
       "type": "mcq",
@@ -452,7 +582,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/27.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/27.mp3",
-        "hours": "audio/slides/triet-hoc/hours/27.mp3"
+        "hours": "audio/slides/triet-hoc/hours/27.mp3",
+        "gs": "audio/slides/triet-hoc/gs/27.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/27.mp3",
+        "nt": "audio/slides/triet-hoc/nt/27.mp3",
+        "bt": "audio/slides/triet-hoc/bt/27.mp3"
       }
     },
     {
@@ -474,38 +608,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/28.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/28.mp3",
-        "hours": "audio/slides/triet-hoc/hours/28.mp3"
+        "hours": "audio/slides/triet-hoc/hours/28.mp3",
+        "gs": "audio/slides/triet-hoc/gs/28.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/28.mp3",
+        "nt": "audio/slides/triet-hoc/nt/28.mp3",
+        "bt": "audio/slides/triet-hoc/bt/28.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 7. Phục hưng và cận đại (XV–XVIII): Descartes, Spinoza, Locke, Berkeley",
+      "kicker": "Phần 7",
+      "title": "Phục hưng và cận đại",
       "body": [
-        "Descartes: đặt câu hỏi 'Tôi có thể nghi ngờ điều gì?' và đi đến 'Tôi tư duy, nên tôi tồn tại'. Ông đặt nền cho triết học duy lý.",
-        "Spinoza: chỉ có một bản thể duy nhất (Thượng đế hay Tự nhiên).",
-        "Locke: tâm trí lúc sinh ra như 'tờ giấy trắng', kiến thức đến từ kinh nghiệm. Berkeley: sự tồn tại của sự vật là được tri giác."
+        "Descartes: \"Tôi tư duy nên tôi tồn tại\"",
+        "Spinoza: chỉ có một bản thể duy nhất",
+        "Locke: tâm trí như tờ giấy trắng; Berkeley: tồn tại là được tri giác"
       ],
-      "audio": "audio/slides/triet-hoc/vais/29.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/29.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/29.mp3",
-        "hours": "audio/slides/triet-hoc/hours/29.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/29.mp3",
+        "gs": "audio/slides/triet-hoc/gs/29.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/29.mp3",
+        "nt": "audio/slides/triet-hoc/nt/29.mp3",
+        "bt": "audio/slides/triet-hoc/bt/29.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/29.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 7. Hume và Kant",
+      "kicker": "Phần 7",
+      "title": "Hume và Kant",
       "body": [
-        "Hume: hoài nghi về nhân quả. Ta chỉ thấy các sự kiện nối tiếp nhau, không thấy được 'sự tất yếu' giữa chúng.",
-        "Kant: tổng hợp kinh nghiệm và lý trí. Ta chỉ biết hiện tượng được tổ chức bởi cấu trúc tâm trí, không biết 'vật tự nó'.",
-        "Đạo đức của Kant: 'mệnh lệnh tuyệt đối' - hành động theo nguyên tắc có thể thành luật chung, và đối xử với người khác như mục đích, không chỉ là phương tiện."
+        "Hume: nhân quả là thói quen nhận thức, không thấy được sự tất yếu",
+        "Kant: tri thức do cấu trúc tâm trí tổ chức từ kinh nghiệm",
+        "Đạo đức Kant: đối xử với người khác như mục đích, không chỉ là phương tiện"
       ],
-      "audio": "audio/slides/triet-hoc/vais/30.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/30.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/30.mp3",
-        "hours": "audio/slides/triet-hoc/hours/30.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/30.mp3",
+        "gs": "audio/slides/triet-hoc/gs/30.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/30.mp3",
+        "nt": "audio/slides/triet-hoc/nt/30.mp3",
+        "bt": "audio/slides/triet-hoc/bt/30.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/30.mp3"
     },
     {
       "type": "mcq",
@@ -522,7 +672,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/31.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/31.mp3",
-        "hours": "audio/slides/triet-hoc/hours/31.mp3"
+        "hours": "audio/slides/triet-hoc/hours/31.mp3",
+        "gs": "audio/slides/triet-hoc/gs/31.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/31.mp3",
+        "nt": "audio/slides/triet-hoc/nt/31.mp3",
+        "bt": "audio/slides/triet-hoc/bt/31.mp3"
       }
     },
     {
@@ -544,7 +698,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/32.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/32.mp3",
-        "hours": "audio/slides/triet-hoc/hours/32.mp3"
+        "hours": "audio/slides/triet-hoc/hours/32.mp3",
+        "gs": "audio/slides/triet-hoc/gs/32.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/32.mp3",
+        "nt": "audio/slides/triet-hoc/nt/32.mp3",
+        "bt": "audio/slides/triet-hoc/bt/32.mp3"
       }
     },
     {
@@ -555,38 +713,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/33.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/33.mp3",
-        "hours": "audio/slides/triet-hoc/hours/33.mp3"
+        "hours": "audio/slides/triet-hoc/hours/33.mp3",
+        "gs": "audio/slides/triet-hoc/gs/33.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/33.mp3",
+        "nt": "audio/slides/triet-hoc/nt/33.mp3",
+        "bt": "audio/slides/triet-hoc/bt/33.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 8. Thế kỷ XIX: Hegel, Marx",
+      "kicker": "Phần 8",
+      "title": "Hegel và Marx",
       "body": [
-        "Hegel (1770–1831): phát triển phép biện chứng, lịch sử là quá trình phát triển của tinh thần qua mâu thuẫn và giải quyết mâu thuẫn.",
-        "Marx (1818–1883): từ biện chứng của Hegel phát triển duy vật lịch sử. Điều kiện vật chất và quan hệ sản xuất quyết định sự phát triển xã hội. Đây là nền tảng triết học Mác.",
-        "Ví dụ: cách một xã hội sản xuất lúa gạo và phân chia lợi nhuận ảnh hưởng đến luật lệ và quan niệm của họ."
+        "Hegel: lịch sử là quá trình tinh thần phát triển qua mâu thuẫn",
+        "Marx: từ biện chứng của Hegel, phát triển duy vật lịch sử",
+        "Điều kiện vật chất và quan hệ sản xuất quyết định xã hội"
       ],
-      "audio": "audio/slides/triet-hoc/vais/34.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/34.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/34.mp3",
-        "hours": "audio/slides/triet-hoc/hours/34.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/34.mp3",
+        "gs": "audio/slides/triet-hoc/gs/34.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/34.mp3",
+        "nt": "audio/slides/triet-hoc/nt/34.mp3",
+        "bt": "audio/slides/triet-hoc/bt/34.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/34.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 8. Kierkegaard, Nietzsche, Comte",
+      "kicker": "Phần 8",
+      "title": "Kierkegaard, Nietzsche, Comte",
       "body": [
-        "Kierkegaard (1813–1855): nhấn mạnh trải nghiệm cá nhân và sự lựa chọn trước đức tin, ý nghĩa sống. Thường được coi là người khởi xướng hiện sinh.",
-        "Nietzsche (1844–1900): phê phán đạo đức truyền thống, đề cao ý chí và sáng tạo giá trị. 'Chúa đã chết' được hiểu là chẩn đoán về sự suy yếu của các giá trị cũ.",
-        "Comte (1798–1857): chủ nghĩa thực chứng, tri thức đáng tin cậy là tri thức khoa học có thể kiểm chứng bằng quan sát."
+        "Kierkegaard: trải nghiệm cá nhân và sự lựa chọn, người mở đường hiện sinh",
+        "Nietzsche: phê phán đạo đức truyền thống, đề cao ý chí và sáng tạo giá trị",
+        "Comte: tri thức đáng tin là tri thức khoa học có thể kiểm chứng"
       ],
-      "audio": "audio/slides/triet-hoc/vais/35.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/35.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/35.mp3",
-        "hours": "audio/slides/triet-hoc/hours/35.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/35.mp3",
+        "gs": "audio/slides/triet-hoc/gs/35.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/35.mp3",
+        "nt": "audio/slides/triet-hoc/nt/35.mp3",
+        "bt": "audio/slides/triet-hoc/bt/35.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/35.mp3"
     },
     {
       "type": "mcq",
@@ -603,7 +777,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/36.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/36.mp3",
-        "hours": "audio/slides/triet-hoc/hours/36.mp3"
+        "hours": "audio/slides/triet-hoc/hours/36.mp3",
+        "gs": "audio/slides/triet-hoc/gs/36.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/36.mp3",
+        "nt": "audio/slides/triet-hoc/nt/36.mp3",
+        "bt": "audio/slides/triet-hoc/bt/36.mp3"
       }
     },
     {
@@ -625,37 +803,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/37.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/37.mp3",
-        "hours": "audio/slides/triet-hoc/hours/37.mp3"
+        "hours": "audio/slides/triet-hoc/hours/37.mp3",
+        "gs": "audio/slides/triet-hoc/gs/37.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/37.mp3",
+        "nt": "audio/slides/triet-hoc/nt/37.mp3",
+        "bt": "audio/slides/triet-hoc/bt/37.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 9. Thế kỷ XX và đương đại",
+      "kicker": "Phần 9",
+      "title": "Thế kỷ XX và đương đại",
       "body": [
-        "Hiện tượng học (Husserl): nghiên cứu cách ý thức trải nghiệm thế giới, 'quay về với sự vật'.",
-        "Hiện sinh (Heidegger, Sartre, Camus): tồn tại cụ thể, tự do và trách nhiệm. Triết học phân tích (Frege, Russell, Wittgenstein): làm rõ ngôn ngữ và ý nghĩa.",
-        "Triết học khoa học (Popper): lý thuyết khoa học phải có khả năng bị bác bỏ. Hậu hiện đại (Foucault, Derrida): đặt câu hỏi về quyền lực và cấu trúc ngôn ngữ đằng sau các 'chân lý'."
+        "Hiện tượng học (Husserl): quay về với sự vật như ý thức trải nghiệm",
+        "Hiện sinh (Heidegger, Sartre, Camus): tự do và trách nhiệm",
+        "Popper: lý thuyết khoa học phải có khả năng bị bác bỏ"
       ],
-      "audio": "audio/slides/triet-hoc/vais/38.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/38.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/38.mp3",
-        "hours": "audio/slides/triet-hoc/hours/38.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/38.mp3",
+        "gs": "audio/slides/triet-hoc/gs/38.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/38.mp3",
+        "nt": "audio/slides/triet-hoc/nt/38.mp3",
+        "bt": "audio/slides/triet-hoc/bt/38.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/38.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 9. Ví dụ Sartre và Popper",
+      "kicker": "Phần 9",
+      "title": "Ví dụ: Sartre và Popper",
       "body": [
-        "Sartre: 'tồn tại có trước bản chất'. Một cái bút được làm để viết, nên bản chất có trước. Con người không có bản chất định sẵn, mà tự tạo mình qua lựa chọn.",
-        "Popper: 'Ngày mai trời sẽ mưa ở Hà Nội' có thể kiểm chứng và bác bỏ, nên là khoa học. 'Số phận quyết định mọi thứ' không có cách nào bác bỏ, nên không phải khoa học theo tiêu chí này."
+        "Sartre: tồn tại có trước bản chất; con người tự tạo mình qua lựa chọn",
+        "Popper: \"Mai trời mưa ở Hà Nội\" kiểm chứng được, nên là khoa học",
+        "\"Số phận quyết định mọi thứ\" không bác bỏ được, nên không phải khoa học"
       ],
-      "audio": "audio/slides/triet-hoc/vais/39.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/39.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/39.mp3",
-        "hours": "audio/slides/triet-hoc/hours/39.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/39.mp3",
+        "gs": "audio/slides/triet-hoc/gs/39.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/39.mp3",
+        "nt": "audio/slides/triet-hoc/nt/39.mp3",
+        "bt": "audio/slides/triet-hoc/bt/39.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/39.mp3"
     },
     {
       "type": "mcq",
@@ -672,7 +867,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/40.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/40.mp3",
-        "hours": "audio/slides/triet-hoc/hours/40.mp3"
+        "hours": "audio/slides/triet-hoc/hours/40.mp3",
+        "gs": "audio/slides/triet-hoc/gs/40.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/40.mp3",
+        "nt": "audio/slides/triet-hoc/nt/40.mp3",
+        "bt": "audio/slides/triet-hoc/bt/40.mp3"
       }
     },
     {
@@ -694,7 +893,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/41.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/41.mp3",
-        "hours": "audio/slides/triet-hoc/hours/41.mp3"
+        "hours": "audio/slides/triet-hoc/hours/41.mp3",
+        "gs": "audio/slides/triet-hoc/gs/41.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/41.mp3",
+        "nt": "audio/slides/triet-hoc/nt/41.mp3",
+        "bt": "audio/slides/triet-hoc/bt/41.mp3"
       }
     },
     {
@@ -705,38 +908,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/42.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/42.mp3",
-        "hours": "audio/slides/triet-hoc/hours/42.mp3"
+        "hours": "audio/slides/triet-hoc/hours/42.mp3",
+        "gs": "audio/slides/triet-hoc/gs/42.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/42.mp3",
+        "nt": "audio/slides/triet-hoc/nt/42.mp3",
+        "bt": "audio/slides/triet-hoc/bt/42.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 10. Triết học phương Đông: Ấn Độ",
+      "kicker": "Phần 10",
+      "title": "Triết học Ấn Độ",
       "body": [
-        "Vệ Đà và Upanishad: câu hỏi về bản chất thực tại (Brahman) và bản ngã (Atman).",
-        "Phật giáo: phân tích khổ, nguyên nhân của khổ (tham ái, chấp thủ), và con đường diệt khổ qua tu tập đạo đức, định tâm và trí tuệ.",
-        "Các trường phái Nyaya, Samkhya, Vedanta bàn về logic, nhận thức và thực tại."
+        "Upanishad: bản chất thực tại (Brahman) và bản ngã (Atman)",
+        "Phật giáo: phân tích khổ, nguyên nhân khổ và con đường diệt khổ",
+        "Nyaya, Samkhya, Vedanta: logic, nhận thức và thực tại"
       ],
-      "audio": "audio/slides/triet-hoc/vais/43.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/43.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/43.mp3",
-        "hours": "audio/slides/triet-hoc/hours/43.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/43.mp3",
+        "gs": "audio/slides/triet-hoc/gs/43.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/43.mp3",
+        "nt": "audio/slides/triet-hoc/nt/43.mp3",
+        "bt": "audio/slides/triet-hoc/bt/43.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/43.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 10. Triết học Trung Hoa và Việt Nam",
+      "kicker": "Phần 10",
+      "title": "Triết học Trung Hoa và Việt Nam",
       "body": [
-        "Thời Xuân Thu – Chiến Quốc ('bách gia chư tử'): Khổng Tử đề cao nhân, lễ. Mạnh Tử: con người có mầm thiện. Tuân Tử: cần uốn nắn bằng lễ và giáo dục.",
-        "Mặc Tử: kiêm ái và lợi ích chung. Lão Tử, Trang Tử: đạo tự nhiên, vô vi. Hàn Phi: pháp luật và cách cai trị. Thời Tống–Minh: Chu Hi và Vương Dương Minh.",
-        "Việt Nam chịu ảnh hưởng của Nho, Phật, Đạo. Nguyễn Trãi nổi bật với tư tưởng nhân nghĩa và lấy dân làm gốc."
+        "Khổng Tử: nhân và lễ; Mạnh Tử: con người có mầm thiện; Tuân Tử: uốn nắn bằng lễ",
+        "Lão Tử, Trang Tử: đạo tự nhiên, vô vi",
+        "Việt Nam chịu ảnh hưởng Nho, Phật, Đạo; Nguyễn Trãi đề cao nhân nghĩa, lấy dân làm gốc"
       ],
-      "audio": "audio/slides/triet-hoc/vais/44.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/44.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/44.mp3",
-        "hours": "audio/slides/triet-hoc/hours/44.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/44.mp3",
+        "gs": "audio/slides/triet-hoc/gs/44.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/44.mp3",
+        "nt": "audio/slides/triet-hoc/nt/44.mp3",
+        "bt": "audio/slides/triet-hoc/bt/44.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/44.mp3"
     },
     {
       "type": "mcq",
@@ -753,7 +972,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/45.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/45.mp3",
-        "hours": "audio/slides/triet-hoc/hours/45.mp3"
+        "hours": "audio/slides/triet-hoc/hours/45.mp3",
+        "gs": "audio/slides/triet-hoc/gs/45.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/45.mp3",
+        "nt": "audio/slides/triet-hoc/nt/45.mp3",
+        "bt": "audio/slides/triet-hoc/bt/45.mp3"
       }
     },
     {
@@ -784,7 +1007,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/46.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/46.mp3",
-        "hours": "audio/slides/triet-hoc/hours/46.mp3"
+        "hours": "audio/slides/triet-hoc/hours/46.mp3",
+        "gs": "audio/slides/triet-hoc/gs/46.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/46.mp3",
+        "nt": "audio/slides/triet-hoc/nt/46.mp3",
+        "bt": "audio/slides/triet-hoc/bt/46.mp3"
       }
     },
     {
@@ -795,38 +1022,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/47.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/47.mp3",
-        "hours": "audio/slides/triet-hoc/hours/47.mp3"
+        "hours": "audio/slides/triet-hoc/hours/47.mp3",
+        "gs": "audio/slides/triet-hoc/gs/47.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/47.mp3",
+        "nt": "audio/slides/triet-hoc/nt/47.mp3",
+        "bt": "audio/slides/triet-hoc/bt/47.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 11. Các chủ đề lớn xuyên suốt lịch sử",
+      "kicker": "Phần 11",
+      "title": "Các chủ đề xuyên suốt lịch sử",
       "body": [
-        "Tồn tại: cái gì thực sự có? Biết: tri thức là gì và giới hạn ở đâu? Đúng, sai, tốt, xấu: chuẩn mực đạo đức từ đâu?",
-        "Tự do và ý chí: con người có thực sự lựa chọn không? Tâm trí và thân thể: ý thức có phải một phần của vật chất không?",
-        "Công bằng và xã hội: xã hội tốt tổ chức thế nào? Ý nghĩa cuộc sống: đời người có ý nghĩa gì? Cái đẹp: khách quan hay chủ quan?"
+        "Tồn tại, tri thức, chuẩn mực đạo đức từ đâu?",
+        "Tự do và ý chí: con người có thực sự lựa chọn không?",
+        "Tâm trí và thân thể; công bằng xã hội; ý nghĩa cuộc sống; cái đẹp"
       ],
-      "audio": "audio/slides/triet-hoc/vais/48.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/48.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/48.mp3",
-        "hours": "audio/slides/triet-hoc/hours/48.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/48.mp3",
+        "gs": "audio/slides/triet-hoc/gs/48.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/48.mp3",
+        "nt": "audio/slides/triet-hoc/nt/48.mp3",
+        "bt": "audio/slides/triet-hoc/bt/48.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/48.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 11. Liên hệ với Tam quan",
+      "kicker": "Phần 11",
+      "title": "Liên hệ với Tam quan",
       "body": [
-        "Đây cũng là các câu hỏi của thế giới quan và nhân sinh quan đã học trong bài Tam quan.",
-        "Ví dụ: 'Bạn chọn ăn gì hôm nay: bạn tự quyết hay bị thói quen điều khiển?' là câu hỏi về tự do ý chí.",
-        "Ví dụ: 'Đau ở tay hay ở não?' là câu hỏi về tâm trí và thân thể."
+        "Đây là các câu hỏi về thế giới quan và nhân sinh quan đã học ở Tam quan",
+        "Tự do ý chí: bạn chọn ăn gì hôm nay, hay chỉ theo thói quen?",
+        "Tâm trí và thân thể: đau ở tay hay ở não?"
       ],
-      "audio": "audio/slides/triet-hoc/vais/49.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/49.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/49.mp3",
-        "hours": "audio/slides/triet-hoc/hours/49.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/49.mp3",
+        "gs": "audio/slides/triet-hoc/gs/49.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/49.mp3",
+        "nt": "audio/slides/triet-hoc/nt/49.mp3",
+        "bt": "audio/slides/triet-hoc/bt/49.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/49.mp3"
     },
     {
       "type": "mcq",
@@ -843,7 +1086,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/50.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/50.mp3",
-        "hours": "audio/slides/triet-hoc/hours/50.mp3"
+        "hours": "audio/slides/triet-hoc/hours/50.mp3",
+        "gs": "audio/slides/triet-hoc/gs/50.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/50.mp3",
+        "nt": "audio/slides/triet-hoc/nt/50.mp3",
+        "bt": "audio/slides/triet-hoc/bt/50.mp3"
       }
     },
     {
@@ -865,38 +1112,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/51.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/51.mp3",
-        "hours": "audio/slides/triet-hoc/hours/51.mp3"
+        "hours": "audio/slides/triet-hoc/hours/51.mp3",
+        "gs": "audio/slides/triet-hoc/gs/51.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/51.mp3",
+        "nt": "audio/slides/triet-hoc/nt/51.mp3",
+        "bt": "audio/slides/triet-hoc/bt/51.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 12. Cách đọc và học triết học",
+      "kicker": "Phần 12",
+      "title": "Cách đọc triết học",
       "body": [
-        "Đọc chậm: đọc một đoạn, dừng lại, tự hỏi tác giả đang khẳng định gì. Đọc nhiều lần là bình thường với triết học.",
-        "Tìm luận đề (điều tác giả muốn chứng minh) và luận cứ (các lý do dẫn đến luận đề).",
-        "Viết lại bằng lời của mình: nếu không viết lại được, có thể chưa hiểu. Đặt câu hỏi phản biện: 'Tiền đề này có đúng không? Có trường hợp nào phản lại không?'"
+        "Đọc chậm: đọc một đoạn, dừng lại, hỏi tác giả khẳng định gì",
+        "Tìm luận đề (điều cần chứng minh) và luận cứ (lý do đưa ra)",
+        "Viết lại bằng lời của mình; đặt câu hỏi phản biện"
       ],
-      "audio": "audio/slides/triet-hoc/vais/52.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/52.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/52.mp3",
-        "hours": "audio/slides/triet-hoc/hours/52.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/52.mp3",
+        "gs": "audio/slides/triet-hoc/gs/52.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/52.mp3",
+        "nt": "audio/slides/triet-hoc/nt/52.mp3",
+        "bt": "audio/slides/triet-hoc/bt/52.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/52.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 12. Đọc đối lập và thảo luận",
+      "kicker": "Phần 12",
+      "title": "Đọc đối lập và thảo luận",
       "body": [
-        "Đọc cả hai phía của một tranh luận, để không chỉ thấy phần mình đồng ý.",
-        "Thảo luận: giải thích ý tưởng cho người khác là cách kiểm tra hiểu biết tốt nhất.",
-        "Ví dụ đoạn văn: 'Không ai có quyền quyết định thay người khác điều gì là tốt cho họ.' Luận đề: không nên quyết định thay người khác. Phản biện: người bệnh mất tỉnh táo thì sao?"
+        "Đọc cả hai phía của một tranh luận",
+        "Giải thích ý tưởng cho người khác là cách kiểm tra hiểu biết tốt nhất",
+        "Ví dụ: \"Không ai có quyền quyết định thay người khác điều tốt cho họ.\" Phản biện: người bệnh mất tỉnh táo thì sao?"
       ],
-      "audio": "audio/slides/triet-hoc/vais/53.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/53.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/53.mp3",
-        "hours": "audio/slides/triet-hoc/hours/53.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/53.mp3",
+        "gs": "audio/slides/triet-hoc/gs/53.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/53.mp3",
+        "nt": "audio/slides/triet-hoc/nt/53.mp3",
+        "bt": "audio/slides/triet-hoc/bt/53.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/53.mp3"
     },
     {
       "type": "mcq",
@@ -913,7 +1176,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/54.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/54.mp3",
-        "hours": "audio/slides/triet-hoc/hours/54.mp3"
+        "hours": "audio/slides/triet-hoc/hours/54.mp3",
+        "gs": "audio/slides/triet-hoc/gs/54.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/54.mp3",
+        "nt": "audio/slides/triet-hoc/nt/54.mp3",
+        "bt": "audio/slides/triet-hoc/bt/54.mp3"
       }
     },
     {
@@ -935,38 +1202,54 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/55.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/55.mp3",
-        "hours": "audio/slides/triet-hoc/hours/55.mp3"
+        "hours": "audio/slides/triet-hoc/hours/55.mp3",
+        "gs": "audio/slides/triet-hoc/gs/55.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/55.mp3",
+        "nt": "audio/slides/triet-hoc/nt/55.mp3",
+        "bt": "audio/slides/triet-hoc/bt/55.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 13. Gợi ý sách để học tiếp",
+      "kicker": "Phần 13",
+      "title": "Gợi ý sách để học tiếp",
       "body": [
-        "Thế giới của Sophie (Jostein Gaarder, có bản dịch tiếng Việt): tiểu thuyết giới thiệu lịch sử triết học qua đối thoại, phù hợp người mới.",
-        "Lịch sử triết học phương Tây (Bertrand Russell, có bản dịch tiếng Việt): tổng quan rõ ràng, nên đọc cùng sách khác để có góc nhìn đa chiều.",
-        "Cộng hòa (Plato): công lý và nhà nước qua đối thoại. Đạo đức Nicomachus (Aristotle): nền tảng đạo đức học cổ điển."
+        "Thế giới của Sophie (Jostein Gaarder): lịch sử triết học qua đối thoại, dành cho người mới",
+        "Lịch sử triết học phương Tây (Bertrand Russell): tổng quan rõ ràng",
+        "Cộng hòa (Plato); Đạo đức Nicomachus (Aristotle)"
       ],
-      "audio": "audio/slides/triet-hoc/vais/56.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/56.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/56.mp3",
-        "hours": "audio/slides/triet-hoc/hours/56.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/56.mp3",
+        "gs": "audio/slides/triet-hoc/gs/56.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/56.mp3",
+        "nt": "audio/slides/triet-hoc/nt/56.mp3",
+        "bt": "audio/slides/triet-hoc/bt/56.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/56.mp3"
     },
     {
       "type": "text",
-      "title": "Phần 13. Chọn sách thế nào",
+      "kicker": "Phần 13",
+      "title": "Chọn sách thế nào",
       "body": [
-        "Suy niệm về đệ nhất triết học (René Descartes): nền tảng triết học hiện đại.",
-        "Phê phán lý tính thuần túy (Kant): khó, nên đọc sau khi đã có nền tảng và có giáo trình hướng dẫn.",
-        "Ưu tiên bản dịch có chú thích rõ ràng, và đối chiếu thuật ngữ với giáo trình có uy tín trước khi trích dẫn."
+        "Suy niệm về đệ nhất triết học (Descartes): nền tảng triết học hiện đại",
+        "Phê phán lý tính thuần túy (Kant): khó, nên đọc sau khi có nền tảng",
+        "Ưu tiên bản dịch có chú thích rõ ràng"
       ],
-      "audio": "audio/slides/triet-hoc/vais/57.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/57.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/57.mp3",
-        "hours": "audio/slides/triet-hoc/hours/57.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/57.mp3",
+        "gs": "audio/slides/triet-hoc/gs/57.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/57.mp3",
+        "nt": "audio/slides/triet-hoc/nt/57.mp3",
+        "bt": "audio/slides/triet-hoc/bt/57.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/57.mp3"
     },
     {
       "type": "mcq",
@@ -983,7 +1266,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/58.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/58.mp3",
-        "hours": "audio/slides/triet-hoc/hours/58.mp3"
+        "hours": "audio/slides/triet-hoc/hours/58.mp3",
+        "gs": "audio/slides/triet-hoc/gs/58.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/58.mp3",
+        "nt": "audio/slides/triet-hoc/nt/58.mp3",
+        "bt": "audio/slides/triet-hoc/bt/58.mp3"
       }
     },
     {
@@ -1005,23 +1292,33 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/59.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/59.mp3",
-        "hours": "audio/slides/triet-hoc/hours/59.mp3"
+        "hours": "audio/slides/triet-hoc/hours/59.mp3",
+        "gs": "audio/slides/triet-hoc/gs/59.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/59.mp3",
+        "nt": "audio/slides/triet-hoc/nt/59.mp3",
+        "bt": "audio/slides/triet-hoc/bt/59.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Phần 14. Bài tập tổng hợp",
+      "kicker": "Phần 14",
+      "title": "Bài tập tổng hợp",
       "body": [
-        "1. Chọn một câu hỏi triết học bạn gặp trong đời sống, xác định nó thuộc ngành nào.",
-        "2. Viết một lập luận đơn giản có tiền đề, suy luận và kết luận; kiểm tra lỗi ngụy biện.",
-        "3. So sánh điểm giống và khác của Descartes, Hume và Kant về tri thức. Giải thích duy vật và duy tâm bằng lời của bạn."
+        "Chọn một câu hỏi triết học trong đời sống và xác định ngành",
+        "Viết một lập luận có tiền đề, suy luận, kết luận; kiểm tra ngụy biện",
+        "So sánh Descartes, Hume và Kant về tri thức"
       ],
-      "audio": "audio/slides/triet-hoc/vais/60.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/60.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/60.mp3",
-        "hours": "audio/slides/triet-hoc/hours/60.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/60.mp3",
+        "gs": "audio/slides/triet-hoc/gs/60.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/60.mp3",
+        "nt": "audio/slides/triet-hoc/nt/60.mp3",
+        "bt": "audio/slides/triet-hoc/bt/60.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/60.mp3"
     },
     {
       "type": "essay",
@@ -1031,22 +1328,31 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/61.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/61.mp3",
-        "hours": "audio/slides/triet-hoc/hours/61.mp3"
+        "hours": "audio/slides/triet-hoc/hours/61.mp3",
+        "gs": "audio/slides/triet-hoc/gs/61.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/61.mp3",
+        "nt": "audio/slides/triet-hoc/nt/61.mp3",
+        "bt": "audio/slides/triet-hoc/bt/61.mp3"
       }
     },
     {
       "type": "text",
+      "kicker": "Ôn tập",
       "title": "Ôn tập Triết học",
       "body": [
-        "Phần ôn tập: trả lời các câu dưới đây để kiểm tra mình đã nhớ kiến thức chưa. Đúng/sai là kiểu câu có hai lựa chọn."
+        "Trả lời các câu dưới đây để kiểm tra mình đã nhớ kiến thức chưa"
       ],
-      "extra": true,
-      "audio": "audio/slides/triet-hoc/vais/62.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/62.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/62.mp3",
-        "hours": "audio/slides/triet-hoc/hours/62.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/62.mp3",
+        "gs": "audio/slides/triet-hoc/gs/62.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/62.mp3",
+        "nt": "audio/slides/triet-hoc/nt/62.mp3",
+        "bt": "audio/slides/triet-hoc/bt/62.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/62.mp3"
     },
     {
       "type": "mcq",
@@ -1062,7 +1368,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/63.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/63.mp3",
-        "hours": "audio/slides/triet-hoc/hours/63.mp3"
+        "hours": "audio/slides/triet-hoc/hours/63.mp3",
+        "gs": "audio/slides/triet-hoc/gs/63.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/63.mp3",
+        "nt": "audio/slides/triet-hoc/nt/63.mp3",
+        "bt": "audio/slides/triet-hoc/bt/63.mp3"
       }
     },
     {
@@ -1079,7 +1389,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/64.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/64.mp3",
-        "hours": "audio/slides/triet-hoc/hours/64.mp3"
+        "hours": "audio/slides/triet-hoc/hours/64.mp3",
+        "gs": "audio/slides/triet-hoc/gs/64.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/64.mp3",
+        "nt": "audio/slides/triet-hoc/nt/64.mp3",
+        "bt": "audio/slides/triet-hoc/bt/64.mp3"
       }
     },
     {
@@ -1096,7 +1410,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/65.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/65.mp3",
-        "hours": "audio/slides/triet-hoc/hours/65.mp3"
+        "hours": "audio/slides/triet-hoc/hours/65.mp3",
+        "gs": "audio/slides/triet-hoc/gs/65.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/65.mp3",
+        "nt": "audio/slides/triet-hoc/nt/65.mp3",
+        "bt": "audio/slides/triet-hoc/bt/65.mp3"
       }
     },
     {
@@ -1115,7 +1433,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/66.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/66.mp3",
-        "hours": "audio/slides/triet-hoc/hours/66.mp3"
+        "hours": "audio/slides/triet-hoc/hours/66.mp3",
+        "gs": "audio/slides/triet-hoc/gs/66.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/66.mp3",
+        "nt": "audio/slides/triet-hoc/nt/66.mp3",
+        "bt": "audio/slides/triet-hoc/bt/66.mp3"
       }
     },
     {
@@ -1132,7 +1454,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/67.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/67.mp3",
-        "hours": "audio/slides/triet-hoc/hours/67.mp3"
+        "hours": "audio/slides/triet-hoc/hours/67.mp3",
+        "gs": "audio/slides/triet-hoc/gs/67.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/67.mp3",
+        "nt": "audio/slides/triet-hoc/nt/67.mp3",
+        "bt": "audio/slides/triet-hoc/bt/67.mp3"
       }
     },
     {
@@ -1151,7 +1477,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/68.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/68.mp3",
-        "hours": "audio/slides/triet-hoc/hours/68.mp3"
+        "hours": "audio/slides/triet-hoc/hours/68.mp3",
+        "gs": "audio/slides/triet-hoc/gs/68.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/68.mp3",
+        "nt": "audio/slides/triet-hoc/nt/68.mp3",
+        "bt": "audio/slides/triet-hoc/bt/68.mp3"
       }
     },
     {
@@ -1168,7 +1498,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/69.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/69.mp3",
-        "hours": "audio/slides/triet-hoc/hours/69.mp3"
+        "hours": "audio/slides/triet-hoc/hours/69.mp3",
+        "gs": "audio/slides/triet-hoc/gs/69.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/69.mp3",
+        "nt": "audio/slides/triet-hoc/nt/69.mp3",
+        "bt": "audio/slides/triet-hoc/bt/69.mp3"
       }
     },
     {
@@ -1185,7 +1519,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/70.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/70.mp3",
-        "hours": "audio/slides/triet-hoc/hours/70.mp3"
+        "hours": "audio/slides/triet-hoc/hours/70.mp3",
+        "gs": "audio/slides/triet-hoc/gs/70.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/70.mp3",
+        "nt": "audio/slides/triet-hoc/nt/70.mp3",
+        "bt": "audio/slides/triet-hoc/bt/70.mp3"
       }
     },
     {
@@ -1204,7 +1542,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/71.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/71.mp3",
-        "hours": "audio/slides/triet-hoc/hours/71.mp3"
+        "hours": "audio/slides/triet-hoc/hours/71.mp3",
+        "gs": "audio/slides/triet-hoc/gs/71.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/71.mp3",
+        "nt": "audio/slides/triet-hoc/nt/71.mp3",
+        "bt": "audio/slides/triet-hoc/bt/71.mp3"
       }
     },
     {
@@ -1221,7 +1563,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/72.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/72.mp3",
-        "hours": "audio/slides/triet-hoc/hours/72.mp3"
+        "hours": "audio/slides/triet-hoc/hours/72.mp3",
+        "gs": "audio/slides/triet-hoc/gs/72.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/72.mp3",
+        "nt": "audio/slides/triet-hoc/nt/72.mp3",
+        "bt": "audio/slides/triet-hoc/bt/72.mp3"
       }
     },
     {
@@ -1244,7 +1590,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/73.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/73.mp3",
-        "hours": "audio/slides/triet-hoc/hours/73.mp3"
+        "hours": "audio/slides/triet-hoc/hours/73.mp3",
+        "gs": "audio/slides/triet-hoc/gs/73.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/73.mp3",
+        "nt": "audio/slides/triet-hoc/nt/73.mp3",
+        "bt": "audio/slides/triet-hoc/bt/73.mp3"
       }
     },
     {
@@ -1267,23 +1617,33 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/74.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/74.mp3",
-        "hours": "audio/slides/triet-hoc/hours/74.mp3"
+        "hours": "audio/slides/triet-hoc/hours/74.mp3",
+        "gs": "audio/slides/triet-hoc/gs/74.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/74.mp3",
+        "nt": "audio/slides/triet-hoc/nt/74.mp3",
+        "bt": "audio/slides/triet-hoc/bt/74.mp3"
       }
     },
     {
       "type": "text",
-      "title": "Tổng kết",
+      "kicker": "Tổng kết",
+      "title": "Điều cần nhớ",
       "body": [
-        "Triết học đặt câu hỏi nền tảng về tồn tại, nhận thức và đạo đức. Các trường phái trả lời khác nhau, và không có đáp án nào được mọi người thống nhất.",
-        "Đọc chậm, viết lại bằng lời của mình, đặt câu hỏi phản biện, và thảo luận là cách học hiệu quả nhất.",
-        "Khi cần trích dẫn chính thức, hãy đối chiếu với nguồn gốc và giáo trình chuyên ngành."
+        "Triết học đặt câu hỏi nền tảng về tồn tại, nhận thức và đạo đức",
+        "Các trường phái trả lời khác nhau; không có đáp án chung",
+        "Đọc chậm, viết lại, phản biện và thảo luận là cách học hiệu quả"
       ],
-      "audio": "audio/slides/triet-hoc/vais/75.mp3",
+      "style": "bullets",
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/75.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/75.mp3",
-        "hours": "audio/slides/triet-hoc/hours/75.mp3"
-      }
+        "hours": "audio/slides/triet-hoc/hours/75.mp3",
+        "gs": "audio/slides/triet-hoc/gs/75.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/75.mp3",
+        "nt": "audio/slides/triet-hoc/nt/75.mp3",
+        "bt": "audio/slides/triet-hoc/bt/75.mp3"
+      },
+      "audio": "audio/slides/triet-hoc/vais/75.mp3"
     }
   ]
 }

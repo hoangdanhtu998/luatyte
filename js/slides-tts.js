@@ -78,7 +78,8 @@
     if (i >= 0 && units[i]) {
       units[i].classList.add('tts-on');
       units[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      showLecture(units[i].textContent.replace(/s+/g, ' ').trim());
+      var lead = window.SlidePersona && SlidePersona.lead ? SlidePersona.lead() : '';
+      showLecture((lead ? lead + ' ' : '') + units[i].textContent.replace(/\s+/g, ' ').trim());
     }
   }
 
@@ -102,7 +103,9 @@
   function pickVoice() {
     var voices = synth.getVoices() || [];
     var vi = voices.filter(function (v) { return /^vi/i.test(v.lang); });
-    return vi[0] || null;
+    // Ưu tiên giọng miền Bắc (NamMinh) nếu máy có; không có thì dùng giọng tiếng Việt đầu tiên
+    var north = vi.filter(function (v) { return /NamMinh|Nam Minh/i.test(v.name); });
+    return north[0] || vi[0] || null;
   }
 
   function setIdle() {
@@ -174,10 +177,30 @@
     synth.speak(u);
   }
 
+  // Câu mở đầu riêng của người giảng: đọc một lần khi bắt đầu, rồi mới đọc slide
+  var openerDone = false;
+  function playOpener(next) {
+    var key = window.SlidePersona && SlidePersona.opener ? SlidePersona.opener() : '';
+    if (!key) { next(); return; }
+    audio = new Audio('audio/persona/' + key + '.mp3');
+    audio.playbackRate = currentRate();
+    audio.onended = next;
+    audio.onerror = next;
+    playing = true;
+    btn.textContent = 'Dừng';
+    audio.play().catch(next);
+  }
+
   function speak() {
     var card = stage.querySelector('.slide-card');
     var url = card && audioUrlFor(card);
-    if (url) playFile(url); else speakBrowser();
+    if (!url) { speakBrowser(); return; }
+    if (!openerDone) {
+      openerDone = true;
+      playOpener(function () { playFile(url); });
+    } else {
+      playFile(url);
+    }
   }
 
   btn.addEventListener('click', function () {
