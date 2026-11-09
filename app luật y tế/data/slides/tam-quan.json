@@ -9,7 +9,12 @@
         "Cuối bài có phần tổng ôn bằng tự luận. Tự luận không tính điểm, bạn tự so với đáp án mẫu.",
         "Bài học không nhằm nói bạn nên nghĩ gì, mà giúp hiểu vì sao mỗi người nghĩ khác nhau."
       ],
-      "audio": "audio/slides/tam-quan/01.mp3"
+      "audio": "audio/slides/tam-quan/vais/01.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/01.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/01.mp3",
+        "hours": "audio/slides/tam-quan/hours/01.mp3"
+      }
     },
     {
       "type": "text",
@@ -19,7 +24,12 @@
         "Thế giới quan là cách một người hiểu bản chất của thế giới, con người và xã hội: thế giới vận hành theo quy luật nào, con người biết được gì và không biết được gì.",
         "Ai cũng có thế giới quan, dù không phải lúc nào cũng gọi tên được. Nó hình thành dần qua gia đình, trường học, sách báo và trải nghiệm sống."
       ],
-      "audio": "audio/slides/tam-quan/02.mp3"
+      "audio": "audio/slides/tam-quan/vais/02.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/02.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/02.mp3",
+        "hours": "audio/slides/tam-quan/hours/02.mp3"
+      }
     },
     {
       "type": "text",
@@ -29,7 +39,12 @@
         "Học đường: 'xã hội thay đổi nhờ hiểu biết và hợp tác' hay 'xã hội thay đổi do hoàn cảnh'. Cách bạn trả lời là một phần thế giới quan.",
         "Nghề y: bác sĩ nhìn sức khỏe là kết quả của yếu tố sinh học, môi trường và xã hội, nên quan tâm cả chỗ ở và thu nhập của bệnh nhân."
       ],
-      "audio": "audio/slides/tam-quan/03.mp3"
+      "audio": "audio/slides/tam-quan/vais/03.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/03.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/03.mp3",
+        "hours": "audio/slides/tam-quan/hours/03.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -42,7 +57,12 @@
       ],
       "answer": 1,
       "feedback": "Thế giới quan hỏi về bản chất của thế giới, con người và xã hội (Bài 1).",
-      "audio": "audio/slides/tam-quan/04.mp3"
+      "audio": "audio/slides/tam-quan/vais/04.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/04.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/04.mp3",
+        "hours": "audio/slides/tam-quan/hours/04.mp3"
+      }
     },
     {
       "type": "fill",
@@ -59,7 +79,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/05.mp3"
+      "audio": "audio/slides/tam-quan/vais/05.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/05.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/05.mp3",
+        "hours": "audio/slides/tam-quan/hours/05.mp3"
+      }
     },
     {
       "type": "text",
@@ -69,7 +94,12 @@
         "Giá trị quan là hệ thống giá trị và thứ tự ưu tiên mà một người dùng để quyết định và ứng xử. Nó trả lời câu hỏi 'điều gì quan trọng với tôi?'",
         "Các giá trị thường gặp: trung thực, công bằng, gia đình, tự do, an toàn, thành đạt, lòng nhân ái. Mỗi người sắp xếp chúng theo thứ tự khác nhau."
       ],
-      "audio": "audio/slides/tam-quan/06.mp3"
+      "audio": "audio/slides/tam-quan/vais/06.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/06.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/06.mp3",
+        "hours": "audio/slides/tam-quan/hours/06.mp3"
+      }
     },
     {
       "type": "text",
@@ -79,7 +109,12 @@
         "Học đường: thấy bạn bị trêu, bạn chọn lên tiếng hay im lặng? Lựa chọn cho thấy bạn coi trọng an toàn cá nhân hay công bằng cho người khác.",
         "Nghề y: bệnh nhân từ chối một phương pháp bác sĩ khuyên. Bác sĩ cân nhắc giữa tôn trọng quyền tự quyết và bảo vệ sức khỏe."
       ],
-      "audio": "audio/slides/tam-quan/07.mp3"
+      "audio": "audio/slides/tam-quan/vais/07.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/07.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/07.mp3",
+        "hours": "audio/slides/tam-quan/hours/07.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -92,7 +127,12 @@
       ],
       "answer": 1,
       "feedback": "Giá trị quan lộ ra qua các lựa chọn khi phải đánh đổi (Bài 2).",
-      "audio": "audio/slides/tam-quan/08.mp3"
+      "audio": "audio/slides/tam-quan/vais/08.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/08.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/08.mp3",
+        "hours": "audio/slides/tam-quan/hours/08.mp3"
+      }
     },
     {
       "type": "fill",
@@ -109,7 +149,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/09.mp3"
+      "audio": "audio/slides/tam-quan/vais/09.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/09.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/09.mp3",
+        "hours": "audio/slides/tam-quan/hours/09.mp3"
+      }
     },
     {
       "type": "text",
@@ -119,7 +164,12 @@
         "Thế giới quan hỏi: 'Thế giới là gì, và tôi đứng ở đâu?' Giá trị quan hỏi: 'Tôi nên chọn điều gì và sống thế nào?'",
         "Nói đơn giản: thế giới quan là phần hiểu, còn giá trị quan là phần chọn. Nhân sinh quan nằm giữa hai phần đó."
       ],
-      "audio": "audio/slides/tam-quan/10.mp3"
+      "audio": "audio/slides/tam-quan/vais/10.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/10.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/10.mp3",
+        "hours": "audio/slides/tam-quan/hours/10.mp3"
+      }
     },
     {
       "type": "text",
@@ -129,7 +179,12 @@
         "Học đường: tin kiến thức đổi được cuộc đời (thế giới quan), nên coi trọng học chăm chỉ và kiên trì (giá trị quan).",
         "Nghề y: tin mỗi người có phẩm giá (thế giới quan), nên đề cao sự tôn trọng và bảo mật thông tin bệnh nhân (giá trị quan)."
       ],
-      "audio": "audio/slides/tam-quan/11.mp3"
+      "audio": "audio/slides/tam-quan/vais/11.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/11.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/11.mp3",
+        "hours": "audio/slides/tam-quan/hours/11.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -142,7 +197,12 @@
       ],
       "answer": 0,
       "feedback": "Thế giới quan là phần hiểu, giá trị quan là phần chọn (Bài 3).",
-      "audio": "audio/slides/tam-quan/12.mp3"
+      "audio": "audio/slides/tam-quan/vais/12.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/12.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/12.mp3",
+        "hours": "audio/slides/tam-quan/hours/12.mp3"
+      }
     },
     {
       "type": "fill",
@@ -168,7 +228,12 @@
           "answer": 1
         }
       ],
-      "audio": "audio/slides/tam-quan/13.mp3"
+      "audio": "audio/slides/tam-quan/vais/13.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/13.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/13.mp3",
+        "hours": "audio/slides/tam-quan/hours/13.mp3"
+      }
     },
     {
       "type": "text",
@@ -178,7 +243,12 @@
         "Năm lý do chính: trải nghiệm sống; gia đình và môi trường lớn lên; thông tin khác nhau; hoàn cảnh hiện tại; thứ tự ưu tiên giá trị.",
         "Hình dung: hai người đứng hai phía một ngọn núi, cùng nói đúng theo góc nhìn của mình, nhưng cần đi quanh núi mới thấy đủ toàn cảnh."
       ],
-      "audio": "audio/slides/tam-quan/14.mp3"
+      "audio": "audio/slides/tam-quan/vais/14.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/14.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/14.mp3",
+        "hours": "audio/slides/tam-quan/hours/14.mp3"
+      }
     },
     {
       "type": "text",
@@ -188,7 +258,12 @@
         "Học đường: kiểm tra theo nhóm. Có bạn thấy cơ hội học hỏi; có bạn thấy bất công với người học chậm.",
         "Nghề y: gia đình muốn bệnh nhân lớn tuổi biết đầy đủ chẩn đoán, người thân khác muốn giấu để họ bớt lo. Cả hai đều xuất phát từ mong muốn bảo vệ người bệnh."
       ],
-      "audio": "audio/slides/tam-quan/15.mp3"
+      "audio": "audio/slides/tam-quan/vais/15.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/15.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/15.mp3",
+        "hours": "audio/slides/tam-quan/hours/15.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -201,7 +276,12 @@
       ],
       "answer": 2,
       "feedback": "Thời tiết hôm qua không thuộc các yếu tố trong bài (Bài 4).",
-      "audio": "audio/slides/tam-quan/16.mp3"
+      "audio": "audio/slides/tam-quan/vais/16.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/16.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/16.mp3",
+        "hours": "audio/slides/tam-quan/hours/16.mp3"
+      }
     },
     {
       "type": "fill",
@@ -218,7 +298,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/17.mp3"
+      "audio": "audio/slides/tam-quan/vais/17.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/17.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/17.mp3",
+        "hours": "audio/slides/tam-quan/hours/17.mp3"
+      }
     },
     {
       "type": "text",
@@ -228,7 +313,12 @@
         "Nghề y thường gặp nhiều giá trị cùng lúc: an toàn cho người bệnh, quyền tự quyết, bảo mật thông tin, công bằng, trách nhiệm cộng đồng.",
         "Khi các giá trị va chạm, người làm nghề cần lập luận rõ ràng, minh bạch, dựa trên pháp luật hiện hành và chuẩn mực nghề nghiệp."
       ],
-      "audio": "audio/slides/tam-quan/18.mp3"
+      "audio": "audio/slides/tam-quan/vais/18.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/18.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/18.mp3",
+        "hours": "audio/slides/tam-quan/hours/18.mp3"
+      }
     },
     {
       "type": "text",
@@ -238,7 +328,12 @@
         "Cần đối chiếu với văn bản chính thức trước khi trích dẫn. Quy định có thể thay đổi theo thời gian.",
         "Ví dụ: bệnh viện phải phân bổ nguồn lực giữa cấp cứu và phòng ngừa. Cả hai đều quan trọng; cần cân nhắc cứu người trước mắt và sức khỏe cộng đồng lâu dài."
       ],
-      "audio": "audio/slides/tam-quan/19.mp3"
+      "audio": "audio/slides/tam-quan/vais/19.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/19.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/19.mp3",
+        "hours": "audio/slides/tam-quan/hours/19.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -251,7 +346,12 @@
       ],
       "answer": 1,
       "feedback": "Cần lập luận minh bạch và tuân theo pháp luật, chuẩn mực nghề nghiệp (Bài 5).",
-      "audio": "audio/slides/tam-quan/20.mp3"
+      "audio": "audio/slides/tam-quan/vais/20.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/20.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/20.mp3",
+        "hours": "audio/slides/tam-quan/hours/20.mp3"
+      }
     },
     {
       "type": "fill",
@@ -268,7 +368,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/21.mp3"
+      "audio": "audio/slides/tam-quan/vais/21.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/21.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/21.mp3",
+        "hours": "audio/slides/tam-quan/hours/21.mp3"
+      }
     },
     {
       "type": "text",
@@ -278,7 +383,12 @@
         "Bốn bước: (1) lắng nghe hết ý; (2) hỏi để hiểu 'bạn nghĩ như vậy vì lý do gì?'; (3) nhắc lại ý của họ bằng lời của bạn; (4) nêu quan điểm của mình bằng chữ 'tôi', kèm lý do.",
         "Nhiều văn bản pháp luật và chuẩn mực nghề nghiệp đặt an toàn, quyền con người và không kỳ thị làm chuẩn chung. Đây là chuẩn đã thống nhất, khác với các câu hỏi giá trị còn mở."
       ],
-      "audio": "audio/slides/tam-quan/22.mp3"
+      "audio": "audio/slides/tam-quan/vais/22.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/22.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/22.mp3",
+        "hours": "audio/slides/tam-quan/hours/22.mp3"
+      }
     },
     {
       "type": "text",
@@ -288,7 +398,12 @@
         "Học đường: lớp tranh luận về tự chọn môn học. Cô giáo gợi ý: 'Bạn đồng ý với điểm nào trong ý kiến của bạn kia?'",
         "Nghề y: bác sĩ giải thích lợi ích và rủi ro, lắng nghe lý do của bệnh nhân, và tôn trọng quyết định của họ trong phạm vi an toàn và pháp luật."
       ],
-      "audio": "audio/slides/tam-quan/23.mp3"
+      "audio": "audio/slides/tam-quan/vais/23.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/23.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/23.mp3",
+        "hours": "audio/slides/tam-quan/hours/23.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -301,7 +416,12 @@
       ],
       "answer": 1,
       "feedback": "Lắng nghe hết ý là bước đầu tiên (Bài 6).",
-      "audio": "audio/slides/tam-quan/24.mp3"
+      "audio": "audio/slides/tam-quan/vais/24.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/24.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/24.mp3",
+        "hours": "audio/slides/tam-quan/hours/24.mp3"
+      }
     },
     {
       "type": "fill",
@@ -318,7 +438,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/25.mp3"
+      "audio": "audio/slides/tam-quan/vais/25.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/25.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/25.mp3",
+        "hours": "audio/slides/tam-quan/hours/25.mp3"
+      }
     },
     {
       "type": "text",
@@ -328,7 +453,12 @@
         "Nhân sinh quan là quan niệm về lẽ sống, ý nghĩa sống, hạnh phúc và trách nhiệm. Theo nghĩa rộng, nó là một phần của thế giới quan: thế giới quan trả lời 'thế giới là gì', nhân sinh quan trả lời 'tôi sống thế nào trong thế giới đó'.",
         "Hình dung: nhân sinh quan giống la bàn cho một chuyến đi dài, giúp giữ hướng khi gặp ngã rẽ."
       ],
-      "audio": "audio/slides/tam-quan/26.mp3"
+      "audio": "audio/slides/tam-quan/vais/26.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/26.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/26.mp3",
+        "hours": "audio/slides/tam-quan/hours/26.mp3"
+      }
     },
     {
       "type": "text",
@@ -338,7 +468,12 @@
         "Học đường: học để đỗ và có việc tốt, hay học để hiểu và làm việc có ích cho người khác.",
         "Nghề y: bác sĩ coi việc cứu người là ý nghĩa cốt lõi; người khác coi nghề là mưu sinh. Cả hai đều phải tuân theo chuẩn đạo đức và pháp luật."
       ],
-      "audio": "audio/slides/tam-quan/27.mp3"
+      "audio": "audio/slides/tam-quan/vais/27.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/27.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/27.mp3",
+        "hours": "audio/slides/tam-quan/hours/27.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -351,7 +486,12 @@
       ],
       "answer": 1,
       "feedback": "Nhân sinh quan trả lời về lẽ sống và ý nghĩa sống (Bài 7).",
-      "audio": "audio/slides/tam-quan/28.mp3"
+      "audio": "audio/slides/tam-quan/vais/28.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/28.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/28.mp3",
+        "hours": "audio/slides/tam-quan/hours/28.mp3"
+      }
     },
     {
       "type": "fill",
@@ -368,7 +508,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/29.mp3"
+      "audio": "audio/slides/tam-quan/vais/29.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/29.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/29.mp3",
+        "hours": "audio/slides/tam-quan/hours/29.mp3"
+      }
     },
     {
       "type": "text",
@@ -378,7 +523,12 @@
         "Triết học thường đặt ba nhóm câu hỏi: bản thể luận (có gì tồn tại, vật chất hay tinh thần có trước?), nhận thức luận (biết được gì, biết bằng cách nào?), đạo đức học (nên làm gì, căn cứ vào đâu?).",
         "Không có đáp án nào được mọi người thống nhất. Mỗi hướng đều có điểm mạnh và bị phê phán."
       ],
-      "audio": "audio/slides/tam-quan/30.mp3"
+      "audio": "audio/slides/tam-quan/vais/30.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/30.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/30.mp3",
+        "hours": "audio/slides/tam-quan/hours/30.mp3"
+      }
     },
     {
       "type": "text",
@@ -388,7 +538,12 @@
         "Kinh nghiệm và lý tính: kinh nghiệm cho rằng tri thức đến từ quan sát và trải nghiệm; duy lý nhấn mạnh lý trí và suy luận. Khoa học hiện đại thường kết hợp cả hai.",
         "Phương Đông: Nho giáo nhấn mạnh đạo đức và tu dưỡng; Đạo giáo đề cao hài hòa với tự nhiên; Phật giáo bàn về khổ và con đường giải thoát."
       ],
-      "audio": "audio/slides/tam-quan/31.mp3"
+      "audio": "audio/slides/tam-quan/vais/31.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/31.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/31.mp3",
+        "hours": "audio/slides/tam-quan/hours/31.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -401,7 +556,12 @@
       ],
       "answer": 1,
       "feedback": "Ba nhóm câu hỏi lớn: bản thể, nhận thức và đạo đức (Bài 8).",
-      "audio": "audio/slides/tam-quan/32.mp3"
+      "audio": "audio/slides/tam-quan/vais/32.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/32.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/32.mp3",
+        "hours": "audio/slides/tam-quan/hours/32.mp3"
+      }
     },
     {
       "type": "fill",
@@ -418,7 +578,12 @@
           "answer": 0
         }
       ],
-      "audio": "audio/slides/tam-quan/33.mp3"
+      "audio": "audio/slides/tam-quan/vais/33.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/33.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/33.mp3",
+        "hours": "audio/slides/tam-quan/hours/33.mp3"
+      }
     },
     {
       "type": "text",
@@ -427,7 +592,12 @@
         "Phần ôn tập: trả lời các câu dưới đây để kiểm tra mình đã nhớ kiến thức chưa. Đúng/sai là kiểu câu có hai lựa chọn."
       ],
       "extra": true,
-      "audio": "audio/slides/tam-quan/34.mp3"
+      "audio": "audio/slides/tam-quan/vais/34.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/34.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/34.mp3",
+        "hours": "audio/slides/tam-quan/hours/34.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -439,7 +609,12 @@
       "answer": 0,
       "feedback": "Đúng (Bài 3).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/35.mp3"
+      "audio": "audio/slides/tam-quan/vais/35.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/35.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/35.mp3",
+        "hours": "audio/slides/tam-quan/hours/35.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -451,7 +626,12 @@
       "answer": 1,
       "feedback": "Khác biệt không nhất thiết có nghĩa là ai đó sai (Bài 4).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/36.mp3"
+      "audio": "audio/slides/tam-quan/vais/36.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/36.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/36.mp3",
+        "hours": "audio/slides/tam-quan/hours/36.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -465,7 +645,12 @@
       "answer": 1,
       "feedback": "Lắng nghe hết ý trước khi phản bác (Bài 6).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/37.mp3"
+      "audio": "audio/slides/tam-quan/vais/37.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/37.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/37.mp3",
+        "hours": "audio/slides/tam-quan/hours/37.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -477,7 +662,12 @@
       "answer": 1,
       "feedback": "Tôn trọng không có nghĩa là đồng ý (Bài 6).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/38.mp3"
+      "audio": "audio/slides/tam-quan/vais/38.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/38.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/38.mp3",
+        "hours": "audio/slides/tam-quan/hours/38.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -491,7 +681,12 @@
       "answer": 1,
       "feedback": "Nhân sinh quan về lẽ sống và ý nghĩa sống (Bài 7).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/39.mp3"
+      "audio": "audio/slides/tam-quan/vais/39.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/39.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/39.mp3",
+        "hours": "audio/slides/tam-quan/hours/39.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -505,7 +700,12 @@
       "answer": 1,
       "feedback": "Ba nhóm câu hỏi lớn (Bài 8).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/40.mp3"
+      "audio": "audio/slides/tam-quan/vais/40.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/40.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/40.mp3",
+        "hours": "audio/slides/tam-quan/hours/40.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -517,7 +717,12 @@
       "answer": 1,
       "feedback": "Duy vật cho rằng vật chất có trước (Bài 8).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/41.mp3"
+      "audio": "audio/slides/tam-quan/vais/41.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/41.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/41.mp3",
+        "hours": "audio/slides/tam-quan/hours/41.mp3"
+      }
     },
     {
       "type": "mcq",
@@ -529,7 +734,12 @@
       "answer": 0,
       "feedback": "Đúng (Bài 7).",
       "extra": true,
-      "audio": "audio/slides/tam-quan/42.mp3"
+      "audio": "audio/slides/tam-quan/vais/42.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/42.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/42.mp3",
+        "hours": "audio/slides/tam-quan/hours/42.mp3"
+      }
     },
     {
       "type": "fill",
@@ -547,7 +757,12 @@
         }
       ],
       "extra": true,
-      "audio": "audio/slides/tam-quan/43.mp3"
+      "audio": "audio/slides/tam-quan/vais/43.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/43.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/43.mp3",
+        "hours": "audio/slides/tam-quan/hours/43.mp3"
+      }
     },
     {
       "type": "fill",
@@ -565,7 +780,12 @@
         }
       ],
       "extra": true,
-      "audio": "audio/slides/tam-quan/44.mp3"
+      "audio": "audio/slides/tam-quan/vais/44.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/44.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/44.mp3",
+        "hours": "audio/slides/tam-quan/hours/44.mp3"
+      }
     },
     {
       "type": "text",
@@ -575,25 +795,45 @@
         "Khác biệt quan điểm thường đến từ trải nghiệm, thông tin, hoàn cảnh và thứ tự ưu tiên giá trị.",
         "Khi tranh luận: lắng nghe, hỏi để hiểu, nhắc lại ý người khác, rồi nêu quan điểm của mình kèm lý do."
       ],
-      "audio": "audio/slides/tam-quan/45.mp3"
+      "audio": "audio/slides/tam-quan/vais/45.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/45.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/45.mp3",
+        "hours": "audio/slides/tam-quan/hours/45.mp3"
+      }
     },
     {
       "type": "essay",
       "q": "Giải thích bằng ví dụ của bạn sự khác nhau giữa thế giới quan và giá trị quan.",
       "model": "Thế giới quan trả lời 'thế giới là gì và tôi đứng ở đâu' (phần hiểu). Giá trị quan trả lời 'điều gì quan trọng với tôi và nên chọn gì' (phần chọn). Ví dụ: người tin sức khỏe phụ thuộc thói quen (thế giới quan) nên ưu tiên tập thể dục (giá trị quan).",
-      "audio": "audio/slides/tam-quan/46.mp3"
+      "audio": "audio/slides/tam-quan/vais/46.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/46.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/46.mp3",
+        "hours": "audio/slides/tam-quan/hours/46.mp3"
+      }
     },
     {
       "type": "essay",
       "q": "Một người bạn có quan điểm khác bạn về học nhóm. Bạn sẽ trò chuyện thế nào để vẫn tôn trọng?",
       "model": "Lắng nghe hết ý, hỏi để hiểu lý do của bạn, nhắc lại ý bạn bằng lời mình, rồi nêu quan điểm của mình bằng chữ 'tôi' kèm lý do. Tìm điểm chung trước khi tìm điểm khác biệt.",
-      "audio": "audio/slides/tam-quan/47.mp3"
+      "audio": "audio/slides/tam-quan/vais/47.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/47.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/47.mp3",
+        "hours": "audio/slides/tam-quan/hours/47.mp3"
+      }
     },
     {
       "type": "essay",
       "q": "Vì sao cùng một sự việc có thể được đánh giá khác nhau?",
       "model": "Vì trải nghiệm sống, môi trường lớn lên, thông tin khác nhau, hoàn cảnh hiện tại và thứ tự ưu tiên giá trị khác nhau. Khác biệt không nhất thiết có nghĩa là ai đó sai.",
-      "audio": "audio/slides/tam-quan/48.mp3"
+      "audio": "audio/slides/tam-quan/vais/48.mp3",
+      "audios": {
+        "vais": "audio/slides/tam-quan/vais/48.mp3",
+        "vivos": "audio/slides/tam-quan/vivos/48.mp3",
+        "hours": "audio/slides/tam-quan/hours/48.mp3"
+      }
     }
   ]
 }
