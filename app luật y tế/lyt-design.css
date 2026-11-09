@@ -434,6 +434,7 @@ body:has(nav[aria-label="Chuyển khu học"]){padding-top:72px!important}
 main.triet .toc-toggle,.toc-toggle{top:92px}
 main.triet > nav.toc{top:120px}
 .lesson-chat{top:128px}
+@media (max-width:640px){.lesson-chat{top:auto!important}}
 /* Màn 1600px trở lên: mục lục nằm dưới nút "Ẩn mục lục" để không đè lên tiêu đề */
 @media (min-width:1600px){
   main.triet > nav.toc{top:156px}
