@@ -40,7 +40,17 @@ export const VOICES = [
     description: 'Giọng Việt Nam nhẹ, nhanh hơn — phù hợp test',
     dataset: '25Hours',
     size: '~15MB'
-  }
+  },
+  // Giọng bổ sung (đã tải về voices/, chưa dùng trên site). Giới tính và độ tuổi cần nghe để xác nhận.
+  { id: 'cand-namminh', name: 'Nam (namminh)', language: 'vi_VN', quality: 'medium', description: 'Giọng nam, cộng đồng congchualong', dataset: 'community', size: '~63MB' },
+  { id: 'cand-namtutin', name: 'Nam (namtutin)', language: 'vi_VN', quality: 'medium', description: 'Giọng nam, cộng đồng congchualong', dataset: 'community', size: '~63MB' },
+  { id: 'cand-mailinh250626', name: 'Nữ (mailinh)', language: 'vi_VN', quality: 'medium', description: 'Giọng nữ, cộng đồng congchualong', dataset: 'community', size: '~63MB' },
+  { id: 'cand-maiphuong', name: 'Nữ (maiphuong)', language: 'vi_VN', quality: 'medium', description: 'Giọng nữ, cộng đồng congchualong', dataset: 'community', size: '~63MB' },
+  { id: 'cand-acut-nu', name: 'Nữ phổ thông (ACut)', language: 'vi_VN', quality: 'medium', description: 'Giọng nữ, repo ACut (giấy phép other)', dataset: 'acut', size: '~63MB' },
+  { id: 'cand-acut-tre', name: 'Trẻ tự tin (ACut)', language: 'vi_VN', quality: 'medium', description: 'Giọng trẻ, repo ACut (giấy phép other)', dataset: 'acut', size: '~63MB' },
+  { id: 'vi_VN-tramvang-medium', name: 'Nam trầm (tramvang)', language: 'vi_VN', quality: 'medium', description: 'Giọng nam miền Bắc, vnhellboy', dataset: 'vnhellboy', size: '~63MB' },
+  { id: 'vi_VN-diemdam-medium', name: 'Nam điềm đạm (diemdam)', language: 'vi_VN', quality: 'medium', description: 'Giọng nam miền Bắc, vnhellboy', dataset: 'vnhellboy', size: '~63MB' },
+  { id: 'vi_VN-altotram-medium', name: 'Nữ ấm (altotram)', language: 'vi_VN', quality: 'medium', description: 'Giọng nữ miền Bắc, vnhellboy', dataset: 'vnhellboy', size: '~63MB' }
 ];
 
 /**
