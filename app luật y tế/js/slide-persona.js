@@ -1,6 +1,6 @@
 // Người giảng cho slide: đổi lời dẫn, cách xưng hô và cách góp ý.
-// Mỗi người giảng có giọng AI riêng (voice: khóa giọng trong scripts/make-slide-audio.mjs) và hệ số tốc độ (rate).
-// Có 3 giọng nên hai người giảng có thể dùng chung một giọng; khi đó khác nhau ở tốc độ.
+// Mỗi người giảng có giọng riêng (voice: khóa biến thể trong scripts/make-voice-variants.mjs, lấy từ giọng vais1000 đổi cao độ)
+// và hệ số tốc độ (rate). vais = giáo viên gốc; gs = giáo sư trầm; hsg = học sinh giỏi trẻ; nt = người thân ấm; bt = bạn thân tươi.
 window.SlidePersona = (function () {
   var KEY = 'luatyte-narrator';
   var DEFAULT = 'giao_vien';
@@ -14,7 +14,7 @@ window.SlidePersona = (function () {
       style: 'Rõ ràng, nhẹ nhàng, có gợi ý từng bước.'
     },
     giao_su: {
-      voice: 'vais', rate: 0.95,
+      voice: 'gs', rate: 0.95,
       label: 'Giáo sư',
       intro: 'Ta hãy xem xét vấn đề này một cách có hệ thống.',
       praise: 'Lập luận đúng. Hãy ghi nhớ lý do đằng sau.',
@@ -22,7 +22,7 @@ window.SlidePersona = (function () {
       style: 'Trang trọng, chính xác, nhấn mạnh lập luận và khái niệm.'
     },
     hoc_sinh_gioi: {
-      voice: 'vais', rate: 0.95,
+      voice: 'hsg', rate: 1,
       label: 'Học sinh giỏi',
       intro: 'Mình sẽ đi qua phần này cùng bạn nhé.',
       praise: 'Đúng rồi, bạn làm tốt!',
@@ -30,7 +30,7 @@ window.SlidePersona = (function () {
       style: 'Gần gũi, dễ hiểu, như bạn học cùng lớp đã hiểu bài.'
     },
     nguoi_than: {
-      voice: 'hours', rate: 0.9,
+      voice: 'nt', rate: 0.9,
       label: 'Người thân',
       intro: 'Con nghe này, mình học từ từ thôi nhé.',
       praise: 'Giỏi quá, con đúng rồi!',
@@ -38,7 +38,7 @@ window.SlidePersona = (function () {
       style: 'Ấm áp, quan tâm, nói chậm và kiên nhẫn.'
     },
     ban_than: {
-      voice: 'hours', rate: 1,
+      voice: 'bt', rate: 1,
       label: 'Bạn thân',
       intro: 'Vào học nè, dễ mà.',
       praise: 'Chuẩn luôn!',

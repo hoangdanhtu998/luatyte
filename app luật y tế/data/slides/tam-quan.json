@@ -13,7 +13,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/01.mp3",
         "vivos": "audio/slides/tam-quan/vivos/01.mp3",
-        "hours": "audio/slides/tam-quan/hours/01.mp3"
+        "hours": "audio/slides/tam-quan/hours/01.mp3",
+        "gs": "audio/slides/tam-quan/gs/01.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/01.mp3",
+        "nt": "audio/slides/tam-quan/nt/01.mp3",
+        "bt": "audio/slides/tam-quan/bt/01.mp3"
       }
     },
     {
@@ -28,7 +32,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/02.mp3",
         "vivos": "audio/slides/tam-quan/vivos/02.mp3",
-        "hours": "audio/slides/tam-quan/hours/02.mp3"
+        "hours": "audio/slides/tam-quan/hours/02.mp3",
+        "gs": "audio/slides/tam-quan/gs/02.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/02.mp3",
+        "nt": "audio/slides/tam-quan/nt/02.mp3",
+        "bt": "audio/slides/tam-quan/bt/02.mp3"
       }
     },
     {
@@ -43,7 +51,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/03.mp3",
         "vivos": "audio/slides/tam-quan/vivos/03.mp3",
-        "hours": "audio/slides/tam-quan/hours/03.mp3"
+        "hours": "audio/slides/tam-quan/hours/03.mp3",
+        "gs": "audio/slides/tam-quan/gs/03.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/03.mp3",
+        "nt": "audio/slides/tam-quan/nt/03.mp3",
+        "bt": "audio/slides/tam-quan/bt/03.mp3"
       }
     },
     {
@@ -61,7 +73,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/04.mp3",
         "vivos": "audio/slides/tam-quan/vivos/04.mp3",
-        "hours": "audio/slides/tam-quan/hours/04.mp3"
+        "hours": "audio/slides/tam-quan/hours/04.mp3",
+        "gs": "audio/slides/tam-quan/gs/04.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/04.mp3",
+        "nt": "audio/slides/tam-quan/nt/04.mp3",
+        "bt": "audio/slides/tam-quan/bt/04.mp3"
       }
     },
     {
@@ -83,7 +99,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/05.mp3",
         "vivos": "audio/slides/tam-quan/vivos/05.mp3",
-        "hours": "audio/slides/tam-quan/hours/05.mp3"
+        "hours": "audio/slides/tam-quan/hours/05.mp3",
+        "gs": "audio/slides/tam-quan/gs/05.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/05.mp3",
+        "nt": "audio/slides/tam-quan/nt/05.mp3",
+        "bt": "audio/slides/tam-quan/bt/05.mp3"
       }
     },
     {
@@ -98,7 +118,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/06.mp3",
         "vivos": "audio/slides/tam-quan/vivos/06.mp3",
-        "hours": "audio/slides/tam-quan/hours/06.mp3"
+        "hours": "audio/slides/tam-quan/hours/06.mp3",
+        "gs": "audio/slides/tam-quan/gs/06.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/06.mp3",
+        "nt": "audio/slides/tam-quan/nt/06.mp3",
+        "bt": "audio/slides/tam-quan/bt/06.mp3"
       }
     },
     {
@@ -113,7 +137,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/07.mp3",
         "vivos": "audio/slides/tam-quan/vivos/07.mp3",
-        "hours": "audio/slides/tam-quan/hours/07.mp3"
+        "hours": "audio/slides/tam-quan/hours/07.mp3",
+        "gs": "audio/slides/tam-quan/gs/07.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/07.mp3",
+        "nt": "audio/slides/tam-quan/nt/07.mp3",
+        "bt": "audio/slides/tam-quan/bt/07.mp3"
       }
     },
     {
@@ -131,7 +159,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/08.mp3",
         "vivos": "audio/slides/tam-quan/vivos/08.mp3",
-        "hours": "audio/slides/tam-quan/hours/08.mp3"
+        "hours": "audio/slides/tam-quan/hours/08.mp3",
+        "gs": "audio/slides/tam-quan/gs/08.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/08.mp3",
+        "nt": "audio/slides/tam-quan/nt/08.mp3",
+        "bt": "audio/slides/tam-quan/bt/08.mp3"
       }
     },
     {
@@ -153,7 +185,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/09.mp3",
         "vivos": "audio/slides/tam-quan/vivos/09.mp3",
-        "hours": "audio/slides/tam-quan/hours/09.mp3"
+        "hours": "audio/slides/tam-quan/hours/09.mp3",
+        "gs": "audio/slides/tam-quan/gs/09.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/09.mp3",
+        "nt": "audio/slides/tam-quan/nt/09.mp3",
+        "bt": "audio/slides/tam-quan/bt/09.mp3"
       }
     },
     {
@@ -168,7 +204,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/10.mp3",
         "vivos": "audio/slides/tam-quan/vivos/10.mp3",
-        "hours": "audio/slides/tam-quan/hours/10.mp3"
+        "hours": "audio/slides/tam-quan/hours/10.mp3",
+        "gs": "audio/slides/tam-quan/gs/10.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/10.mp3",
+        "nt": "audio/slides/tam-quan/nt/10.mp3",
+        "bt": "audio/slides/tam-quan/bt/10.mp3"
       }
     },
     {
@@ -183,7 +223,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/11.mp3",
         "vivos": "audio/slides/tam-quan/vivos/11.mp3",
-        "hours": "audio/slides/tam-quan/hours/11.mp3"
+        "hours": "audio/slides/tam-quan/hours/11.mp3",
+        "gs": "audio/slides/tam-quan/gs/11.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/11.mp3",
+        "nt": "audio/slides/tam-quan/nt/11.mp3",
+        "bt": "audio/slides/tam-quan/bt/11.mp3"
       }
     },
     {
@@ -201,7 +245,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/12.mp3",
         "vivos": "audio/slides/tam-quan/vivos/12.mp3",
-        "hours": "audio/slides/tam-quan/hours/12.mp3"
+        "hours": "audio/slides/tam-quan/hours/12.mp3",
+        "gs": "audio/slides/tam-quan/gs/12.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/12.mp3",
+        "nt": "audio/slides/tam-quan/nt/12.mp3",
+        "bt": "audio/slides/tam-quan/bt/12.mp3"
       }
     },
     {
@@ -232,7 +280,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/13.mp3",
         "vivos": "audio/slides/tam-quan/vivos/13.mp3",
-        "hours": "audio/slides/tam-quan/hours/13.mp3"
+        "hours": "audio/slides/tam-quan/hours/13.mp3",
+        "gs": "audio/slides/tam-quan/gs/13.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/13.mp3",
+        "nt": "audio/slides/tam-quan/nt/13.mp3",
+        "bt": "audio/slides/tam-quan/bt/13.mp3"
       }
     },
     {
@@ -247,7 +299,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/14.mp3",
         "vivos": "audio/slides/tam-quan/vivos/14.mp3",
-        "hours": "audio/slides/tam-quan/hours/14.mp3"
+        "hours": "audio/slides/tam-quan/hours/14.mp3",
+        "gs": "audio/slides/tam-quan/gs/14.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/14.mp3",
+        "nt": "audio/slides/tam-quan/nt/14.mp3",
+        "bt": "audio/slides/tam-quan/bt/14.mp3"
       }
     },
     {
@@ -262,7 +318,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/15.mp3",
         "vivos": "audio/slides/tam-quan/vivos/15.mp3",
-        "hours": "audio/slides/tam-quan/hours/15.mp3"
+        "hours": "audio/slides/tam-quan/hours/15.mp3",
+        "gs": "audio/slides/tam-quan/gs/15.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/15.mp3",
+        "nt": "audio/slides/tam-quan/nt/15.mp3",
+        "bt": "audio/slides/tam-quan/bt/15.mp3"
       }
     },
     {
@@ -280,7 +340,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/16.mp3",
         "vivos": "audio/slides/tam-quan/vivos/16.mp3",
-        "hours": "audio/slides/tam-quan/hours/16.mp3"
+        "hours": "audio/slides/tam-quan/hours/16.mp3",
+        "gs": "audio/slides/tam-quan/gs/16.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/16.mp3",
+        "nt": "audio/slides/tam-quan/nt/16.mp3",
+        "bt": "audio/slides/tam-quan/bt/16.mp3"
       }
     },
     {
@@ -302,7 +366,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/17.mp3",
         "vivos": "audio/slides/tam-quan/vivos/17.mp3",
-        "hours": "audio/slides/tam-quan/hours/17.mp3"
+        "hours": "audio/slides/tam-quan/hours/17.mp3",
+        "gs": "audio/slides/tam-quan/gs/17.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/17.mp3",
+        "nt": "audio/slides/tam-quan/nt/17.mp3",
+        "bt": "audio/slides/tam-quan/bt/17.mp3"
       }
     },
     {
@@ -317,7 +385,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/18.mp3",
         "vivos": "audio/slides/tam-quan/vivos/18.mp3",
-        "hours": "audio/slides/tam-quan/hours/18.mp3"
+        "hours": "audio/slides/tam-quan/hours/18.mp3",
+        "gs": "audio/slides/tam-quan/gs/18.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/18.mp3",
+        "nt": "audio/slides/tam-quan/nt/18.mp3",
+        "bt": "audio/slides/tam-quan/bt/18.mp3"
       }
     },
     {
@@ -332,7 +404,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/19.mp3",
         "vivos": "audio/slides/tam-quan/vivos/19.mp3",
-        "hours": "audio/slides/tam-quan/hours/19.mp3"
+        "hours": "audio/slides/tam-quan/hours/19.mp3",
+        "gs": "audio/slides/tam-quan/gs/19.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/19.mp3",
+        "nt": "audio/slides/tam-quan/nt/19.mp3",
+        "bt": "audio/slides/tam-quan/bt/19.mp3"
       }
     },
     {
@@ -350,7 +426,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/20.mp3",
         "vivos": "audio/slides/tam-quan/vivos/20.mp3",
-        "hours": "audio/slides/tam-quan/hours/20.mp3"
+        "hours": "audio/slides/tam-quan/hours/20.mp3",
+        "gs": "audio/slides/tam-quan/gs/20.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/20.mp3",
+        "nt": "audio/slides/tam-quan/nt/20.mp3",
+        "bt": "audio/slides/tam-quan/bt/20.mp3"
       }
     },
     {
@@ -372,7 +452,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/21.mp3",
         "vivos": "audio/slides/tam-quan/vivos/21.mp3",
-        "hours": "audio/slides/tam-quan/hours/21.mp3"
+        "hours": "audio/slides/tam-quan/hours/21.mp3",
+        "gs": "audio/slides/tam-quan/gs/21.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/21.mp3",
+        "nt": "audio/slides/tam-quan/nt/21.mp3",
+        "bt": "audio/slides/tam-quan/bt/21.mp3"
       }
     },
     {
@@ -387,7 +471,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/22.mp3",
         "vivos": "audio/slides/tam-quan/vivos/22.mp3",
-        "hours": "audio/slides/tam-quan/hours/22.mp3"
+        "hours": "audio/slides/tam-quan/hours/22.mp3",
+        "gs": "audio/slides/tam-quan/gs/22.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/22.mp3",
+        "nt": "audio/slides/tam-quan/nt/22.mp3",
+        "bt": "audio/slides/tam-quan/bt/22.mp3"
       }
     },
     {
@@ -402,7 +490,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/23.mp3",
         "vivos": "audio/slides/tam-quan/vivos/23.mp3",
-        "hours": "audio/slides/tam-quan/hours/23.mp3"
+        "hours": "audio/slides/tam-quan/hours/23.mp3",
+        "gs": "audio/slides/tam-quan/gs/23.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/23.mp3",
+        "nt": "audio/slides/tam-quan/nt/23.mp3",
+        "bt": "audio/slides/tam-quan/bt/23.mp3"
       }
     },
     {
@@ -420,7 +512,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/24.mp3",
         "vivos": "audio/slides/tam-quan/vivos/24.mp3",
-        "hours": "audio/slides/tam-quan/hours/24.mp3"
+        "hours": "audio/slides/tam-quan/hours/24.mp3",
+        "gs": "audio/slides/tam-quan/gs/24.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/24.mp3",
+        "nt": "audio/slides/tam-quan/nt/24.mp3",
+        "bt": "audio/slides/tam-quan/bt/24.mp3"
       }
     },
     {
@@ -442,7 +538,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/25.mp3",
         "vivos": "audio/slides/tam-quan/vivos/25.mp3",
-        "hours": "audio/slides/tam-quan/hours/25.mp3"
+        "hours": "audio/slides/tam-quan/hours/25.mp3",
+        "gs": "audio/slides/tam-quan/gs/25.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/25.mp3",
+        "nt": "audio/slides/tam-quan/nt/25.mp3",
+        "bt": "audio/slides/tam-quan/bt/25.mp3"
       }
     },
     {
@@ -457,7 +557,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/26.mp3",
         "vivos": "audio/slides/tam-quan/vivos/26.mp3",
-        "hours": "audio/slides/tam-quan/hours/26.mp3"
+        "hours": "audio/slides/tam-quan/hours/26.mp3",
+        "gs": "audio/slides/tam-quan/gs/26.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/26.mp3",
+        "nt": "audio/slides/tam-quan/nt/26.mp3",
+        "bt": "audio/slides/tam-quan/bt/26.mp3"
       }
     },
     {
@@ -472,7 +576,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/27.mp3",
         "vivos": "audio/slides/tam-quan/vivos/27.mp3",
-        "hours": "audio/slides/tam-quan/hours/27.mp3"
+        "hours": "audio/slides/tam-quan/hours/27.mp3",
+        "gs": "audio/slides/tam-quan/gs/27.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/27.mp3",
+        "nt": "audio/slides/tam-quan/nt/27.mp3",
+        "bt": "audio/slides/tam-quan/bt/27.mp3"
       }
     },
     {
@@ -490,7 +598,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/28.mp3",
         "vivos": "audio/slides/tam-quan/vivos/28.mp3",
-        "hours": "audio/slides/tam-quan/hours/28.mp3"
+        "hours": "audio/slides/tam-quan/hours/28.mp3",
+        "gs": "audio/slides/tam-quan/gs/28.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/28.mp3",
+        "nt": "audio/slides/tam-quan/nt/28.mp3",
+        "bt": "audio/slides/tam-quan/bt/28.mp3"
       }
     },
     {
@@ -512,7 +624,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/29.mp3",
         "vivos": "audio/slides/tam-quan/vivos/29.mp3",
-        "hours": "audio/slides/tam-quan/hours/29.mp3"
+        "hours": "audio/slides/tam-quan/hours/29.mp3",
+        "gs": "audio/slides/tam-quan/gs/29.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/29.mp3",
+        "nt": "audio/slides/tam-quan/nt/29.mp3",
+        "bt": "audio/slides/tam-quan/bt/29.mp3"
       }
     },
     {
@@ -527,7 +643,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/30.mp3",
         "vivos": "audio/slides/tam-quan/vivos/30.mp3",
-        "hours": "audio/slides/tam-quan/hours/30.mp3"
+        "hours": "audio/slides/tam-quan/hours/30.mp3",
+        "gs": "audio/slides/tam-quan/gs/30.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/30.mp3",
+        "nt": "audio/slides/tam-quan/nt/30.mp3",
+        "bt": "audio/slides/tam-quan/bt/30.mp3"
       }
     },
     {
@@ -542,7 +662,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/31.mp3",
         "vivos": "audio/slides/tam-quan/vivos/31.mp3",
-        "hours": "audio/slides/tam-quan/hours/31.mp3"
+        "hours": "audio/slides/tam-quan/hours/31.mp3",
+        "gs": "audio/slides/tam-quan/gs/31.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/31.mp3",
+        "nt": "audio/slides/tam-quan/nt/31.mp3",
+        "bt": "audio/slides/tam-quan/bt/31.mp3"
       }
     },
     {
@@ -560,7 +684,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/32.mp3",
         "vivos": "audio/slides/tam-quan/vivos/32.mp3",
-        "hours": "audio/slides/tam-quan/hours/32.mp3"
+        "hours": "audio/slides/tam-quan/hours/32.mp3",
+        "gs": "audio/slides/tam-quan/gs/32.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/32.mp3",
+        "nt": "audio/slides/tam-quan/nt/32.mp3",
+        "bt": "audio/slides/tam-quan/bt/32.mp3"
       }
     },
     {
@@ -582,7 +710,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/33.mp3",
         "vivos": "audio/slides/tam-quan/vivos/33.mp3",
-        "hours": "audio/slides/tam-quan/hours/33.mp3"
+        "hours": "audio/slides/tam-quan/hours/33.mp3",
+        "gs": "audio/slides/tam-quan/gs/33.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/33.mp3",
+        "nt": "audio/slides/tam-quan/nt/33.mp3",
+        "bt": "audio/slides/tam-quan/bt/33.mp3"
       }
     },
     {
@@ -596,7 +728,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/34.mp3",
         "vivos": "audio/slides/tam-quan/vivos/34.mp3",
-        "hours": "audio/slides/tam-quan/hours/34.mp3"
+        "hours": "audio/slides/tam-quan/hours/34.mp3",
+        "gs": "audio/slides/tam-quan/gs/34.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/34.mp3",
+        "nt": "audio/slides/tam-quan/nt/34.mp3",
+        "bt": "audio/slides/tam-quan/bt/34.mp3"
       }
     },
     {
@@ -613,7 +749,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/35.mp3",
         "vivos": "audio/slides/tam-quan/vivos/35.mp3",
-        "hours": "audio/slides/tam-quan/hours/35.mp3"
+        "hours": "audio/slides/tam-quan/hours/35.mp3",
+        "gs": "audio/slides/tam-quan/gs/35.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/35.mp3",
+        "nt": "audio/slides/tam-quan/nt/35.mp3",
+        "bt": "audio/slides/tam-quan/bt/35.mp3"
       }
     },
     {
@@ -630,7 +770,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/36.mp3",
         "vivos": "audio/slides/tam-quan/vivos/36.mp3",
-        "hours": "audio/slides/tam-quan/hours/36.mp3"
+        "hours": "audio/slides/tam-quan/hours/36.mp3",
+        "gs": "audio/slides/tam-quan/gs/36.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/36.mp3",
+        "nt": "audio/slides/tam-quan/nt/36.mp3",
+        "bt": "audio/slides/tam-quan/bt/36.mp3"
       }
     },
     {
@@ -649,7 +793,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/37.mp3",
         "vivos": "audio/slides/tam-quan/vivos/37.mp3",
-        "hours": "audio/slides/tam-quan/hours/37.mp3"
+        "hours": "audio/slides/tam-quan/hours/37.mp3",
+        "gs": "audio/slides/tam-quan/gs/37.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/37.mp3",
+        "nt": "audio/slides/tam-quan/nt/37.mp3",
+        "bt": "audio/slides/tam-quan/bt/37.mp3"
       }
     },
     {
@@ -666,7 +814,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/38.mp3",
         "vivos": "audio/slides/tam-quan/vivos/38.mp3",
-        "hours": "audio/slides/tam-quan/hours/38.mp3"
+        "hours": "audio/slides/tam-quan/hours/38.mp3",
+        "gs": "audio/slides/tam-quan/gs/38.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/38.mp3",
+        "nt": "audio/slides/tam-quan/nt/38.mp3",
+        "bt": "audio/slides/tam-quan/bt/38.mp3"
       }
     },
     {
@@ -685,7 +837,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/39.mp3",
         "vivos": "audio/slides/tam-quan/vivos/39.mp3",
-        "hours": "audio/slides/tam-quan/hours/39.mp3"
+        "hours": "audio/slides/tam-quan/hours/39.mp3",
+        "gs": "audio/slides/tam-quan/gs/39.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/39.mp3",
+        "nt": "audio/slides/tam-quan/nt/39.mp3",
+        "bt": "audio/slides/tam-quan/bt/39.mp3"
       }
     },
     {
@@ -704,7 +860,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/40.mp3",
         "vivos": "audio/slides/tam-quan/vivos/40.mp3",
-        "hours": "audio/slides/tam-quan/hours/40.mp3"
+        "hours": "audio/slides/tam-quan/hours/40.mp3",
+        "gs": "audio/slides/tam-quan/gs/40.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/40.mp3",
+        "nt": "audio/slides/tam-quan/nt/40.mp3",
+        "bt": "audio/slides/tam-quan/bt/40.mp3"
       }
     },
     {
@@ -721,7 +881,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/41.mp3",
         "vivos": "audio/slides/tam-quan/vivos/41.mp3",
-        "hours": "audio/slides/tam-quan/hours/41.mp3"
+        "hours": "audio/slides/tam-quan/hours/41.mp3",
+        "gs": "audio/slides/tam-quan/gs/41.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/41.mp3",
+        "nt": "audio/slides/tam-quan/nt/41.mp3",
+        "bt": "audio/slides/tam-quan/bt/41.mp3"
       }
     },
     {
@@ -738,7 +902,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/42.mp3",
         "vivos": "audio/slides/tam-quan/vivos/42.mp3",
-        "hours": "audio/slides/tam-quan/hours/42.mp3"
+        "hours": "audio/slides/tam-quan/hours/42.mp3",
+        "gs": "audio/slides/tam-quan/gs/42.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/42.mp3",
+        "nt": "audio/slides/tam-quan/nt/42.mp3",
+        "bt": "audio/slides/tam-quan/bt/42.mp3"
       }
     },
     {
@@ -761,7 +929,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/43.mp3",
         "vivos": "audio/slides/tam-quan/vivos/43.mp3",
-        "hours": "audio/slides/tam-quan/hours/43.mp3"
+        "hours": "audio/slides/tam-quan/hours/43.mp3",
+        "gs": "audio/slides/tam-quan/gs/43.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/43.mp3",
+        "nt": "audio/slides/tam-quan/nt/43.mp3",
+        "bt": "audio/slides/tam-quan/bt/43.mp3"
       }
     },
     {
@@ -784,7 +956,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/44.mp3",
         "vivos": "audio/slides/tam-quan/vivos/44.mp3",
-        "hours": "audio/slides/tam-quan/hours/44.mp3"
+        "hours": "audio/slides/tam-quan/hours/44.mp3",
+        "gs": "audio/slides/tam-quan/gs/44.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/44.mp3",
+        "nt": "audio/slides/tam-quan/nt/44.mp3",
+        "bt": "audio/slides/tam-quan/bt/44.mp3"
       }
     },
     {
@@ -799,7 +975,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/45.mp3",
         "vivos": "audio/slides/tam-quan/vivos/45.mp3",
-        "hours": "audio/slides/tam-quan/hours/45.mp3"
+        "hours": "audio/slides/tam-quan/hours/45.mp3",
+        "gs": "audio/slides/tam-quan/gs/45.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/45.mp3",
+        "nt": "audio/slides/tam-quan/nt/45.mp3",
+        "bt": "audio/slides/tam-quan/bt/45.mp3"
       }
     },
     {
@@ -810,7 +990,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/46.mp3",
         "vivos": "audio/slides/tam-quan/vivos/46.mp3",
-        "hours": "audio/slides/tam-quan/hours/46.mp3"
+        "hours": "audio/slides/tam-quan/hours/46.mp3",
+        "gs": "audio/slides/tam-quan/gs/46.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/46.mp3",
+        "nt": "audio/slides/tam-quan/nt/46.mp3",
+        "bt": "audio/slides/tam-quan/bt/46.mp3"
       }
     },
     {
@@ -821,7 +1005,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/47.mp3",
         "vivos": "audio/slides/tam-quan/vivos/47.mp3",
-        "hours": "audio/slides/tam-quan/hours/47.mp3"
+        "hours": "audio/slides/tam-quan/hours/47.mp3",
+        "gs": "audio/slides/tam-quan/gs/47.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/47.mp3",
+        "nt": "audio/slides/tam-quan/nt/47.mp3",
+        "bt": "audio/slides/tam-quan/bt/47.mp3"
       }
     },
     {
@@ -832,7 +1020,11 @@
       "audios": {
         "vais": "audio/slides/tam-quan/vais/48.mp3",
         "vivos": "audio/slides/tam-quan/vivos/48.mp3",
-        "hours": "audio/slides/tam-quan/hours/48.mp3"
+        "hours": "audio/slides/tam-quan/hours/48.mp3",
+        "gs": "audio/slides/tam-quan/gs/48.mp3",
+        "hsg": "audio/slides/tam-quan/hsg/48.mp3",
+        "nt": "audio/slides/tam-quan/nt/48.mp3",
+        "bt": "audio/slides/tam-quan/bt/48.mp3"
       }
     }
   ]

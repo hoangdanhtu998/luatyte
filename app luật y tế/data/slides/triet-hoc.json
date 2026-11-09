@@ -13,7 +13,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/01.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/01.mp3",
-        "hours": "audio/slides/triet-hoc/hours/01.mp3"
+        "hours": "audio/slides/triet-hoc/hours/01.mp3",
+        "gs": "audio/slides/triet-hoc/gs/01.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/01.mp3",
+        "nt": "audio/slides/triet-hoc/nt/01.mp3",
+        "bt": "audio/slides/triet-hoc/bt/01.mp3"
       }
     },
     {
@@ -28,7 +32,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/02.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/02.mp3",
-        "hours": "audio/slides/triet-hoc/hours/02.mp3"
+        "hours": "audio/slides/triet-hoc/hours/02.mp3",
+        "gs": "audio/slides/triet-hoc/gs/02.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/02.mp3",
+        "nt": "audio/slides/triet-hoc/nt/02.mp3",
+        "bt": "audio/slides/triet-hoc/bt/02.mp3"
       }
     },
     {
@@ -43,7 +51,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/03.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/03.mp3",
-        "hours": "audio/slides/triet-hoc/hours/03.mp3"
+        "hours": "audio/slides/triet-hoc/hours/03.mp3",
+        "gs": "audio/slides/triet-hoc/gs/03.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/03.mp3",
+        "nt": "audio/slides/triet-hoc/nt/03.mp3",
+        "bt": "audio/slides/triet-hoc/bt/03.mp3"
       }
     },
     {
@@ -61,7 +73,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/04.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/04.mp3",
-        "hours": "audio/slides/triet-hoc/hours/04.mp3"
+        "hours": "audio/slides/triet-hoc/hours/04.mp3",
+        "gs": "audio/slides/triet-hoc/gs/04.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/04.mp3",
+        "nt": "audio/slides/triet-hoc/nt/04.mp3",
+        "bt": "audio/slides/triet-hoc/bt/04.mp3"
       }
     },
     {
@@ -83,7 +99,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/05.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/05.mp3",
-        "hours": "audio/slides/triet-hoc/hours/05.mp3"
+        "hours": "audio/slides/triet-hoc/hours/05.mp3",
+        "gs": "audio/slides/triet-hoc/gs/05.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/05.mp3",
+        "nt": "audio/slides/triet-hoc/nt/05.mp3",
+        "bt": "audio/slides/triet-hoc/bt/05.mp3"
       }
     },
     {
@@ -94,7 +114,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/06.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/06.mp3",
-        "hours": "audio/slides/triet-hoc/hours/06.mp3"
+        "hours": "audio/slides/triet-hoc/hours/06.mp3",
+        "gs": "audio/slides/triet-hoc/gs/06.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/06.mp3",
+        "nt": "audio/slides/triet-hoc/nt/06.mp3",
+        "bt": "audio/slides/triet-hoc/bt/06.mp3"
       }
     },
     {
@@ -109,7 +133,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/07.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/07.mp3",
-        "hours": "audio/slides/triet-hoc/hours/07.mp3"
+        "hours": "audio/slides/triet-hoc/hours/07.mp3",
+        "gs": "audio/slides/triet-hoc/gs/07.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/07.mp3",
+        "nt": "audio/slides/triet-hoc/nt/07.mp3",
+        "bt": "audio/slides/triet-hoc/bt/07.mp3"
       }
     },
     {
@@ -124,7 +152,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/08.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/08.mp3",
-        "hours": "audio/slides/triet-hoc/hours/08.mp3"
+        "hours": "audio/slides/triet-hoc/hours/08.mp3",
+        "gs": "audio/slides/triet-hoc/gs/08.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/08.mp3",
+        "nt": "audio/slides/triet-hoc/nt/08.mp3",
+        "bt": "audio/slides/triet-hoc/bt/08.mp3"
       }
     },
     {
@@ -142,7 +174,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/09.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/09.mp3",
-        "hours": "audio/slides/triet-hoc/hours/09.mp3"
+        "hours": "audio/slides/triet-hoc/hours/09.mp3",
+        "gs": "audio/slides/triet-hoc/gs/09.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/09.mp3",
+        "nt": "audio/slides/triet-hoc/nt/09.mp3",
+        "bt": "audio/slides/triet-hoc/bt/09.mp3"
       }
     },
     {
@@ -173,7 +209,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/10.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/10.mp3",
-        "hours": "audio/slides/triet-hoc/hours/10.mp3"
+        "hours": "audio/slides/triet-hoc/hours/10.mp3",
+        "gs": "audio/slides/triet-hoc/gs/10.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/10.mp3",
+        "nt": "audio/slides/triet-hoc/nt/10.mp3",
+        "bt": "audio/slides/triet-hoc/bt/10.mp3"
       }
     },
     {
@@ -188,7 +228,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/11.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/11.mp3",
-        "hours": "audio/slides/triet-hoc/hours/11.mp3"
+        "hours": "audio/slides/triet-hoc/hours/11.mp3",
+        "gs": "audio/slides/triet-hoc/gs/11.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/11.mp3",
+        "nt": "audio/slides/triet-hoc/nt/11.mp3",
+        "bt": "audio/slides/triet-hoc/bt/11.mp3"
       }
     },
     {
@@ -203,7 +247,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/12.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/12.mp3",
-        "hours": "audio/slides/triet-hoc/hours/12.mp3"
+        "hours": "audio/slides/triet-hoc/hours/12.mp3",
+        "gs": "audio/slides/triet-hoc/gs/12.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/12.mp3",
+        "nt": "audio/slides/triet-hoc/nt/12.mp3",
+        "bt": "audio/slides/triet-hoc/bt/12.mp3"
       }
     },
     {
@@ -221,7 +269,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/13.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/13.mp3",
-        "hours": "audio/slides/triet-hoc/hours/13.mp3"
+        "hours": "audio/slides/triet-hoc/hours/13.mp3",
+        "gs": "audio/slides/triet-hoc/gs/13.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/13.mp3",
+        "nt": "audio/slides/triet-hoc/nt/13.mp3",
+        "bt": "audio/slides/triet-hoc/bt/13.mp3"
       }
     },
     {
@@ -243,7 +295,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/14.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/14.mp3",
-        "hours": "audio/slides/triet-hoc/hours/14.mp3"
+        "hours": "audio/slides/triet-hoc/hours/14.mp3",
+        "gs": "audio/slides/triet-hoc/gs/14.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/14.mp3",
+        "nt": "audio/slides/triet-hoc/nt/14.mp3",
+        "bt": "audio/slides/triet-hoc/bt/14.mp3"
       }
     },
     {
@@ -254,7 +310,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/15.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/15.mp3",
-        "hours": "audio/slides/triet-hoc/hours/15.mp3"
+        "hours": "audio/slides/triet-hoc/hours/15.mp3",
+        "gs": "audio/slides/triet-hoc/gs/15.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/15.mp3",
+        "nt": "audio/slides/triet-hoc/nt/15.mp3",
+        "bt": "audio/slides/triet-hoc/bt/15.mp3"
       }
     },
     {
@@ -269,7 +329,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/16.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/16.mp3",
-        "hours": "audio/slides/triet-hoc/hours/16.mp3"
+        "hours": "audio/slides/triet-hoc/hours/16.mp3",
+        "gs": "audio/slides/triet-hoc/gs/16.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/16.mp3",
+        "nt": "audio/slides/triet-hoc/nt/16.mp3",
+        "bt": "audio/slides/triet-hoc/bt/16.mp3"
       }
     },
     {
@@ -284,7 +348,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/17.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/17.mp3",
-        "hours": "audio/slides/triet-hoc/hours/17.mp3"
+        "hours": "audio/slides/triet-hoc/hours/17.mp3",
+        "gs": "audio/slides/triet-hoc/gs/17.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/17.mp3",
+        "nt": "audio/slides/triet-hoc/nt/17.mp3",
+        "bt": "audio/slides/triet-hoc/bt/17.mp3"
       }
     },
     {
@@ -302,7 +370,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/18.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/18.mp3",
-        "hours": "audio/slides/triet-hoc/hours/18.mp3"
+        "hours": "audio/slides/triet-hoc/hours/18.mp3",
+        "gs": "audio/slides/triet-hoc/gs/18.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/18.mp3",
+        "nt": "audio/slides/triet-hoc/nt/18.mp3",
+        "bt": "audio/slides/triet-hoc/bt/18.mp3"
       }
     },
     {
@@ -324,7 +396,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/19.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/19.mp3",
-        "hours": "audio/slides/triet-hoc/hours/19.mp3"
+        "hours": "audio/slides/triet-hoc/hours/19.mp3",
+        "gs": "audio/slides/triet-hoc/gs/19.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/19.mp3",
+        "nt": "audio/slides/triet-hoc/nt/19.mp3",
+        "bt": "audio/slides/triet-hoc/bt/19.mp3"
       }
     },
     {
@@ -339,7 +415,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/20.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/20.mp3",
-        "hours": "audio/slides/triet-hoc/hours/20.mp3"
+        "hours": "audio/slides/triet-hoc/hours/20.mp3",
+        "gs": "audio/slides/triet-hoc/gs/20.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/20.mp3",
+        "nt": "audio/slides/triet-hoc/nt/20.mp3",
+        "bt": "audio/slides/triet-hoc/bt/20.mp3"
       }
     },
     {
@@ -354,7 +434,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/21.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/21.mp3",
-        "hours": "audio/slides/triet-hoc/hours/21.mp3"
+        "hours": "audio/slides/triet-hoc/hours/21.mp3",
+        "gs": "audio/slides/triet-hoc/gs/21.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/21.mp3",
+        "nt": "audio/slides/triet-hoc/nt/21.mp3",
+        "bt": "audio/slides/triet-hoc/bt/21.mp3"
       }
     },
     {
@@ -372,7 +456,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/22.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/22.mp3",
-        "hours": "audio/slides/triet-hoc/hours/22.mp3"
+        "hours": "audio/slides/triet-hoc/hours/22.mp3",
+        "gs": "audio/slides/triet-hoc/gs/22.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/22.mp3",
+        "nt": "audio/slides/triet-hoc/nt/22.mp3",
+        "bt": "audio/slides/triet-hoc/bt/22.mp3"
       }
     },
     {
@@ -394,7 +482,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/23.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/23.mp3",
-        "hours": "audio/slides/triet-hoc/hours/23.mp3"
+        "hours": "audio/slides/triet-hoc/hours/23.mp3",
+        "gs": "audio/slides/triet-hoc/gs/23.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/23.mp3",
+        "nt": "audio/slides/triet-hoc/nt/23.mp3",
+        "bt": "audio/slides/triet-hoc/bt/23.mp3"
       }
     },
     {
@@ -405,7 +497,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/24.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/24.mp3",
-        "hours": "audio/slides/triet-hoc/hours/24.mp3"
+        "hours": "audio/slides/triet-hoc/hours/24.mp3",
+        "gs": "audio/slides/triet-hoc/gs/24.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/24.mp3",
+        "nt": "audio/slides/triet-hoc/nt/24.mp3",
+        "bt": "audio/slides/triet-hoc/bt/24.mp3"
       }
     },
     {
@@ -420,7 +516,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/25.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/25.mp3",
-        "hours": "audio/slides/triet-hoc/hours/25.mp3"
+        "hours": "audio/slides/triet-hoc/hours/25.mp3",
+        "gs": "audio/slides/triet-hoc/gs/25.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/25.mp3",
+        "nt": "audio/slides/triet-hoc/nt/25.mp3",
+        "bt": "audio/slides/triet-hoc/bt/25.mp3"
       }
     },
     {
@@ -434,7 +534,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/26.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/26.mp3",
-        "hours": "audio/slides/triet-hoc/hours/26.mp3"
+        "hours": "audio/slides/triet-hoc/hours/26.mp3",
+        "gs": "audio/slides/triet-hoc/gs/26.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/26.mp3",
+        "nt": "audio/slides/triet-hoc/nt/26.mp3",
+        "bt": "audio/slides/triet-hoc/bt/26.mp3"
       }
     },
     {
@@ -452,7 +556,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/27.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/27.mp3",
-        "hours": "audio/slides/triet-hoc/hours/27.mp3"
+        "hours": "audio/slides/triet-hoc/hours/27.mp3",
+        "gs": "audio/slides/triet-hoc/gs/27.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/27.mp3",
+        "nt": "audio/slides/triet-hoc/nt/27.mp3",
+        "bt": "audio/slides/triet-hoc/bt/27.mp3"
       }
     },
     {
@@ -474,7 +582,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/28.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/28.mp3",
-        "hours": "audio/slides/triet-hoc/hours/28.mp3"
+        "hours": "audio/slides/triet-hoc/hours/28.mp3",
+        "gs": "audio/slides/triet-hoc/gs/28.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/28.mp3",
+        "nt": "audio/slides/triet-hoc/nt/28.mp3",
+        "bt": "audio/slides/triet-hoc/bt/28.mp3"
       }
     },
     {
@@ -489,7 +601,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/29.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/29.mp3",
-        "hours": "audio/slides/triet-hoc/hours/29.mp3"
+        "hours": "audio/slides/triet-hoc/hours/29.mp3",
+        "gs": "audio/slides/triet-hoc/gs/29.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/29.mp3",
+        "nt": "audio/slides/triet-hoc/nt/29.mp3",
+        "bt": "audio/slides/triet-hoc/bt/29.mp3"
       }
     },
     {
@@ -504,7 +620,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/30.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/30.mp3",
-        "hours": "audio/slides/triet-hoc/hours/30.mp3"
+        "hours": "audio/slides/triet-hoc/hours/30.mp3",
+        "gs": "audio/slides/triet-hoc/gs/30.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/30.mp3",
+        "nt": "audio/slides/triet-hoc/nt/30.mp3",
+        "bt": "audio/slides/triet-hoc/bt/30.mp3"
       }
     },
     {
@@ -522,7 +642,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/31.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/31.mp3",
-        "hours": "audio/slides/triet-hoc/hours/31.mp3"
+        "hours": "audio/slides/triet-hoc/hours/31.mp3",
+        "gs": "audio/slides/triet-hoc/gs/31.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/31.mp3",
+        "nt": "audio/slides/triet-hoc/nt/31.mp3",
+        "bt": "audio/slides/triet-hoc/bt/31.mp3"
       }
     },
     {
@@ -544,7 +668,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/32.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/32.mp3",
-        "hours": "audio/slides/triet-hoc/hours/32.mp3"
+        "hours": "audio/slides/triet-hoc/hours/32.mp3",
+        "gs": "audio/slides/triet-hoc/gs/32.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/32.mp3",
+        "nt": "audio/slides/triet-hoc/nt/32.mp3",
+        "bt": "audio/slides/triet-hoc/bt/32.mp3"
       }
     },
     {
@@ -555,7 +683,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/33.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/33.mp3",
-        "hours": "audio/slides/triet-hoc/hours/33.mp3"
+        "hours": "audio/slides/triet-hoc/hours/33.mp3",
+        "gs": "audio/slides/triet-hoc/gs/33.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/33.mp3",
+        "nt": "audio/slides/triet-hoc/nt/33.mp3",
+        "bt": "audio/slides/triet-hoc/bt/33.mp3"
       }
     },
     {
@@ -570,7 +702,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/34.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/34.mp3",
-        "hours": "audio/slides/triet-hoc/hours/34.mp3"
+        "hours": "audio/slides/triet-hoc/hours/34.mp3",
+        "gs": "audio/slides/triet-hoc/gs/34.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/34.mp3",
+        "nt": "audio/slides/triet-hoc/nt/34.mp3",
+        "bt": "audio/slides/triet-hoc/bt/34.mp3"
       }
     },
     {
@@ -585,7 +721,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/35.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/35.mp3",
-        "hours": "audio/slides/triet-hoc/hours/35.mp3"
+        "hours": "audio/slides/triet-hoc/hours/35.mp3",
+        "gs": "audio/slides/triet-hoc/gs/35.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/35.mp3",
+        "nt": "audio/slides/triet-hoc/nt/35.mp3",
+        "bt": "audio/slides/triet-hoc/bt/35.mp3"
       }
     },
     {
@@ -603,7 +743,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/36.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/36.mp3",
-        "hours": "audio/slides/triet-hoc/hours/36.mp3"
+        "hours": "audio/slides/triet-hoc/hours/36.mp3",
+        "gs": "audio/slides/triet-hoc/gs/36.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/36.mp3",
+        "nt": "audio/slides/triet-hoc/nt/36.mp3",
+        "bt": "audio/slides/triet-hoc/bt/36.mp3"
       }
     },
     {
@@ -625,7 +769,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/37.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/37.mp3",
-        "hours": "audio/slides/triet-hoc/hours/37.mp3"
+        "hours": "audio/slides/triet-hoc/hours/37.mp3",
+        "gs": "audio/slides/triet-hoc/gs/37.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/37.mp3",
+        "nt": "audio/slides/triet-hoc/nt/37.mp3",
+        "bt": "audio/slides/triet-hoc/bt/37.mp3"
       }
     },
     {
@@ -640,7 +788,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/38.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/38.mp3",
-        "hours": "audio/slides/triet-hoc/hours/38.mp3"
+        "hours": "audio/slides/triet-hoc/hours/38.mp3",
+        "gs": "audio/slides/triet-hoc/gs/38.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/38.mp3",
+        "nt": "audio/slides/triet-hoc/nt/38.mp3",
+        "bt": "audio/slides/triet-hoc/bt/38.mp3"
       }
     },
     {
@@ -654,7 +806,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/39.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/39.mp3",
-        "hours": "audio/slides/triet-hoc/hours/39.mp3"
+        "hours": "audio/slides/triet-hoc/hours/39.mp3",
+        "gs": "audio/slides/triet-hoc/gs/39.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/39.mp3",
+        "nt": "audio/slides/triet-hoc/nt/39.mp3",
+        "bt": "audio/slides/triet-hoc/bt/39.mp3"
       }
     },
     {
@@ -672,7 +828,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/40.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/40.mp3",
-        "hours": "audio/slides/triet-hoc/hours/40.mp3"
+        "hours": "audio/slides/triet-hoc/hours/40.mp3",
+        "gs": "audio/slides/triet-hoc/gs/40.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/40.mp3",
+        "nt": "audio/slides/triet-hoc/nt/40.mp3",
+        "bt": "audio/slides/triet-hoc/bt/40.mp3"
       }
     },
     {
@@ -694,7 +854,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/41.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/41.mp3",
-        "hours": "audio/slides/triet-hoc/hours/41.mp3"
+        "hours": "audio/slides/triet-hoc/hours/41.mp3",
+        "gs": "audio/slides/triet-hoc/gs/41.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/41.mp3",
+        "nt": "audio/slides/triet-hoc/nt/41.mp3",
+        "bt": "audio/slides/triet-hoc/bt/41.mp3"
       }
     },
     {
@@ -705,7 +869,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/42.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/42.mp3",
-        "hours": "audio/slides/triet-hoc/hours/42.mp3"
+        "hours": "audio/slides/triet-hoc/hours/42.mp3",
+        "gs": "audio/slides/triet-hoc/gs/42.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/42.mp3",
+        "nt": "audio/slides/triet-hoc/nt/42.mp3",
+        "bt": "audio/slides/triet-hoc/bt/42.mp3"
       }
     },
     {
@@ -720,7 +888,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/43.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/43.mp3",
-        "hours": "audio/slides/triet-hoc/hours/43.mp3"
+        "hours": "audio/slides/triet-hoc/hours/43.mp3",
+        "gs": "audio/slides/triet-hoc/gs/43.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/43.mp3",
+        "nt": "audio/slides/triet-hoc/nt/43.mp3",
+        "bt": "audio/slides/triet-hoc/bt/43.mp3"
       }
     },
     {
@@ -735,7 +907,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/44.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/44.mp3",
-        "hours": "audio/slides/triet-hoc/hours/44.mp3"
+        "hours": "audio/slides/triet-hoc/hours/44.mp3",
+        "gs": "audio/slides/triet-hoc/gs/44.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/44.mp3",
+        "nt": "audio/slides/triet-hoc/nt/44.mp3",
+        "bt": "audio/slides/triet-hoc/bt/44.mp3"
       }
     },
     {
@@ -753,7 +929,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/45.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/45.mp3",
-        "hours": "audio/slides/triet-hoc/hours/45.mp3"
+        "hours": "audio/slides/triet-hoc/hours/45.mp3",
+        "gs": "audio/slides/triet-hoc/gs/45.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/45.mp3",
+        "nt": "audio/slides/triet-hoc/nt/45.mp3",
+        "bt": "audio/slides/triet-hoc/bt/45.mp3"
       }
     },
     {
@@ -784,7 +964,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/46.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/46.mp3",
-        "hours": "audio/slides/triet-hoc/hours/46.mp3"
+        "hours": "audio/slides/triet-hoc/hours/46.mp3",
+        "gs": "audio/slides/triet-hoc/gs/46.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/46.mp3",
+        "nt": "audio/slides/triet-hoc/nt/46.mp3",
+        "bt": "audio/slides/triet-hoc/bt/46.mp3"
       }
     },
     {
@@ -795,7 +979,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/47.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/47.mp3",
-        "hours": "audio/slides/triet-hoc/hours/47.mp3"
+        "hours": "audio/slides/triet-hoc/hours/47.mp3",
+        "gs": "audio/slides/triet-hoc/gs/47.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/47.mp3",
+        "nt": "audio/slides/triet-hoc/nt/47.mp3",
+        "bt": "audio/slides/triet-hoc/bt/47.mp3"
       }
     },
     {
@@ -810,7 +998,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/48.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/48.mp3",
-        "hours": "audio/slides/triet-hoc/hours/48.mp3"
+        "hours": "audio/slides/triet-hoc/hours/48.mp3",
+        "gs": "audio/slides/triet-hoc/gs/48.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/48.mp3",
+        "nt": "audio/slides/triet-hoc/nt/48.mp3",
+        "bt": "audio/slides/triet-hoc/bt/48.mp3"
       }
     },
     {
@@ -825,7 +1017,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/49.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/49.mp3",
-        "hours": "audio/slides/triet-hoc/hours/49.mp3"
+        "hours": "audio/slides/triet-hoc/hours/49.mp3",
+        "gs": "audio/slides/triet-hoc/gs/49.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/49.mp3",
+        "nt": "audio/slides/triet-hoc/nt/49.mp3",
+        "bt": "audio/slides/triet-hoc/bt/49.mp3"
       }
     },
     {
@@ -843,7 +1039,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/50.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/50.mp3",
-        "hours": "audio/slides/triet-hoc/hours/50.mp3"
+        "hours": "audio/slides/triet-hoc/hours/50.mp3",
+        "gs": "audio/slides/triet-hoc/gs/50.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/50.mp3",
+        "nt": "audio/slides/triet-hoc/nt/50.mp3",
+        "bt": "audio/slides/triet-hoc/bt/50.mp3"
       }
     },
     {
@@ -865,7 +1065,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/51.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/51.mp3",
-        "hours": "audio/slides/triet-hoc/hours/51.mp3"
+        "hours": "audio/slides/triet-hoc/hours/51.mp3",
+        "gs": "audio/slides/triet-hoc/gs/51.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/51.mp3",
+        "nt": "audio/slides/triet-hoc/nt/51.mp3",
+        "bt": "audio/slides/triet-hoc/bt/51.mp3"
       }
     },
     {
@@ -880,7 +1084,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/52.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/52.mp3",
-        "hours": "audio/slides/triet-hoc/hours/52.mp3"
+        "hours": "audio/slides/triet-hoc/hours/52.mp3",
+        "gs": "audio/slides/triet-hoc/gs/52.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/52.mp3",
+        "nt": "audio/slides/triet-hoc/nt/52.mp3",
+        "bt": "audio/slides/triet-hoc/bt/52.mp3"
       }
     },
     {
@@ -895,7 +1103,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/53.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/53.mp3",
-        "hours": "audio/slides/triet-hoc/hours/53.mp3"
+        "hours": "audio/slides/triet-hoc/hours/53.mp3",
+        "gs": "audio/slides/triet-hoc/gs/53.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/53.mp3",
+        "nt": "audio/slides/triet-hoc/nt/53.mp3",
+        "bt": "audio/slides/triet-hoc/bt/53.mp3"
       }
     },
     {
@@ -913,7 +1125,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/54.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/54.mp3",
-        "hours": "audio/slides/triet-hoc/hours/54.mp3"
+        "hours": "audio/slides/triet-hoc/hours/54.mp3",
+        "gs": "audio/slides/triet-hoc/gs/54.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/54.mp3",
+        "nt": "audio/slides/triet-hoc/nt/54.mp3",
+        "bt": "audio/slides/triet-hoc/bt/54.mp3"
       }
     },
     {
@@ -935,7 +1151,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/55.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/55.mp3",
-        "hours": "audio/slides/triet-hoc/hours/55.mp3"
+        "hours": "audio/slides/triet-hoc/hours/55.mp3",
+        "gs": "audio/slides/triet-hoc/gs/55.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/55.mp3",
+        "nt": "audio/slides/triet-hoc/nt/55.mp3",
+        "bt": "audio/slides/triet-hoc/bt/55.mp3"
       }
     },
     {
@@ -950,7 +1170,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/56.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/56.mp3",
-        "hours": "audio/slides/triet-hoc/hours/56.mp3"
+        "hours": "audio/slides/triet-hoc/hours/56.mp3",
+        "gs": "audio/slides/triet-hoc/gs/56.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/56.mp3",
+        "nt": "audio/slides/triet-hoc/nt/56.mp3",
+        "bt": "audio/slides/triet-hoc/bt/56.mp3"
       }
     },
     {
@@ -965,7 +1189,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/57.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/57.mp3",
-        "hours": "audio/slides/triet-hoc/hours/57.mp3"
+        "hours": "audio/slides/triet-hoc/hours/57.mp3",
+        "gs": "audio/slides/triet-hoc/gs/57.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/57.mp3",
+        "nt": "audio/slides/triet-hoc/nt/57.mp3",
+        "bt": "audio/slides/triet-hoc/bt/57.mp3"
       }
     },
     {
@@ -983,7 +1211,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/58.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/58.mp3",
-        "hours": "audio/slides/triet-hoc/hours/58.mp3"
+        "hours": "audio/slides/triet-hoc/hours/58.mp3",
+        "gs": "audio/slides/triet-hoc/gs/58.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/58.mp3",
+        "nt": "audio/slides/triet-hoc/nt/58.mp3",
+        "bt": "audio/slides/triet-hoc/bt/58.mp3"
       }
     },
     {
@@ -1005,7 +1237,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/59.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/59.mp3",
-        "hours": "audio/slides/triet-hoc/hours/59.mp3"
+        "hours": "audio/slides/triet-hoc/hours/59.mp3",
+        "gs": "audio/slides/triet-hoc/gs/59.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/59.mp3",
+        "nt": "audio/slides/triet-hoc/nt/59.mp3",
+        "bt": "audio/slides/triet-hoc/bt/59.mp3"
       }
     },
     {
@@ -1020,7 +1256,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/60.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/60.mp3",
-        "hours": "audio/slides/triet-hoc/hours/60.mp3"
+        "hours": "audio/slides/triet-hoc/hours/60.mp3",
+        "gs": "audio/slides/triet-hoc/gs/60.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/60.mp3",
+        "nt": "audio/slides/triet-hoc/nt/60.mp3",
+        "bt": "audio/slides/triet-hoc/bt/60.mp3"
       }
     },
     {
@@ -1031,7 +1271,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/61.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/61.mp3",
-        "hours": "audio/slides/triet-hoc/hours/61.mp3"
+        "hours": "audio/slides/triet-hoc/hours/61.mp3",
+        "gs": "audio/slides/triet-hoc/gs/61.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/61.mp3",
+        "nt": "audio/slides/triet-hoc/nt/61.mp3",
+        "bt": "audio/slides/triet-hoc/bt/61.mp3"
       }
     },
     {
@@ -1045,7 +1289,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/62.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/62.mp3",
-        "hours": "audio/slides/triet-hoc/hours/62.mp3"
+        "hours": "audio/slides/triet-hoc/hours/62.mp3",
+        "gs": "audio/slides/triet-hoc/gs/62.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/62.mp3",
+        "nt": "audio/slides/triet-hoc/nt/62.mp3",
+        "bt": "audio/slides/triet-hoc/bt/62.mp3"
       }
     },
     {
@@ -1062,7 +1310,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/63.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/63.mp3",
-        "hours": "audio/slides/triet-hoc/hours/63.mp3"
+        "hours": "audio/slides/triet-hoc/hours/63.mp3",
+        "gs": "audio/slides/triet-hoc/gs/63.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/63.mp3",
+        "nt": "audio/slides/triet-hoc/nt/63.mp3",
+        "bt": "audio/slides/triet-hoc/bt/63.mp3"
       }
     },
     {
@@ -1079,7 +1331,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/64.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/64.mp3",
-        "hours": "audio/slides/triet-hoc/hours/64.mp3"
+        "hours": "audio/slides/triet-hoc/hours/64.mp3",
+        "gs": "audio/slides/triet-hoc/gs/64.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/64.mp3",
+        "nt": "audio/slides/triet-hoc/nt/64.mp3",
+        "bt": "audio/slides/triet-hoc/bt/64.mp3"
       }
     },
     {
@@ -1096,7 +1352,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/65.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/65.mp3",
-        "hours": "audio/slides/triet-hoc/hours/65.mp3"
+        "hours": "audio/slides/triet-hoc/hours/65.mp3",
+        "gs": "audio/slides/triet-hoc/gs/65.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/65.mp3",
+        "nt": "audio/slides/triet-hoc/nt/65.mp3",
+        "bt": "audio/slides/triet-hoc/bt/65.mp3"
       }
     },
     {
@@ -1115,7 +1375,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/66.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/66.mp3",
-        "hours": "audio/slides/triet-hoc/hours/66.mp3"
+        "hours": "audio/slides/triet-hoc/hours/66.mp3",
+        "gs": "audio/slides/triet-hoc/gs/66.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/66.mp3",
+        "nt": "audio/slides/triet-hoc/nt/66.mp3",
+        "bt": "audio/slides/triet-hoc/bt/66.mp3"
       }
     },
     {
@@ -1132,7 +1396,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/67.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/67.mp3",
-        "hours": "audio/slides/triet-hoc/hours/67.mp3"
+        "hours": "audio/slides/triet-hoc/hours/67.mp3",
+        "gs": "audio/slides/triet-hoc/gs/67.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/67.mp3",
+        "nt": "audio/slides/triet-hoc/nt/67.mp3",
+        "bt": "audio/slides/triet-hoc/bt/67.mp3"
       }
     },
     {
@@ -1151,7 +1419,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/68.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/68.mp3",
-        "hours": "audio/slides/triet-hoc/hours/68.mp3"
+        "hours": "audio/slides/triet-hoc/hours/68.mp3",
+        "gs": "audio/slides/triet-hoc/gs/68.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/68.mp3",
+        "nt": "audio/slides/triet-hoc/nt/68.mp3",
+        "bt": "audio/slides/triet-hoc/bt/68.mp3"
       }
     },
     {
@@ -1168,7 +1440,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/69.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/69.mp3",
-        "hours": "audio/slides/triet-hoc/hours/69.mp3"
+        "hours": "audio/slides/triet-hoc/hours/69.mp3",
+        "gs": "audio/slides/triet-hoc/gs/69.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/69.mp3",
+        "nt": "audio/slides/triet-hoc/nt/69.mp3",
+        "bt": "audio/slides/triet-hoc/bt/69.mp3"
       }
     },
     {
@@ -1185,7 +1461,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/70.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/70.mp3",
-        "hours": "audio/slides/triet-hoc/hours/70.mp3"
+        "hours": "audio/slides/triet-hoc/hours/70.mp3",
+        "gs": "audio/slides/triet-hoc/gs/70.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/70.mp3",
+        "nt": "audio/slides/triet-hoc/nt/70.mp3",
+        "bt": "audio/slides/triet-hoc/bt/70.mp3"
       }
     },
     {
@@ -1204,7 +1484,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/71.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/71.mp3",
-        "hours": "audio/slides/triet-hoc/hours/71.mp3"
+        "hours": "audio/slides/triet-hoc/hours/71.mp3",
+        "gs": "audio/slides/triet-hoc/gs/71.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/71.mp3",
+        "nt": "audio/slides/triet-hoc/nt/71.mp3",
+        "bt": "audio/slides/triet-hoc/bt/71.mp3"
       }
     },
     {
@@ -1221,7 +1505,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/72.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/72.mp3",
-        "hours": "audio/slides/triet-hoc/hours/72.mp3"
+        "hours": "audio/slides/triet-hoc/hours/72.mp3",
+        "gs": "audio/slides/triet-hoc/gs/72.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/72.mp3",
+        "nt": "audio/slides/triet-hoc/nt/72.mp3",
+        "bt": "audio/slides/triet-hoc/bt/72.mp3"
       }
     },
     {
@@ -1244,7 +1532,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/73.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/73.mp3",
-        "hours": "audio/slides/triet-hoc/hours/73.mp3"
+        "hours": "audio/slides/triet-hoc/hours/73.mp3",
+        "gs": "audio/slides/triet-hoc/gs/73.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/73.mp3",
+        "nt": "audio/slides/triet-hoc/nt/73.mp3",
+        "bt": "audio/slides/triet-hoc/bt/73.mp3"
       }
     },
     {
@@ -1267,7 +1559,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/74.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/74.mp3",
-        "hours": "audio/slides/triet-hoc/hours/74.mp3"
+        "hours": "audio/slides/triet-hoc/hours/74.mp3",
+        "gs": "audio/slides/triet-hoc/gs/74.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/74.mp3",
+        "nt": "audio/slides/triet-hoc/nt/74.mp3",
+        "bt": "audio/slides/triet-hoc/bt/74.mp3"
       }
     },
     {
@@ -1282,7 +1578,11 @@
       "audios": {
         "vais": "audio/slides/triet-hoc/vais/75.mp3",
         "vivos": "audio/slides/triet-hoc/vivos/75.mp3",
-        "hours": "audio/slides/triet-hoc/hours/75.mp3"
+        "hours": "audio/slides/triet-hoc/hours/75.mp3",
+        "gs": "audio/slides/triet-hoc/gs/75.mp3",
+        "hsg": "audio/slides/triet-hoc/hsg/75.mp3",
+        "nt": "audio/slides/triet-hoc/nt/75.mp3",
+        "bt": "audio/slides/triet-hoc/bt/75.mp3"
       }
     }
   ]
