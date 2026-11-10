@@ -182,7 +182,7 @@
   function playOpener(next) {
     var key = window.SlidePersona && SlidePersona.opener ? SlidePersona.opener() : '';
     if (!key) { next(); return; }
-    audio = new Audio('audio/persona/' + key + '.mp3');
+    audio = new Audio('https://cdn.jsdelivr.net/gh/hoangdanhtu998/luatyte@main/audio/persona/' + key + '.mp3');
     audio.playbackRate = currentRate();
     audio.onended = next;
     audio.onerror = next;
