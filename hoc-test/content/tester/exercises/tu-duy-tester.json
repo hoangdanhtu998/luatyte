@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Tư duy tester: có thử ca lỗi không?",
+    "prompt": "Đọc số ca n, rồi n ký tự, mỗi ký tự là \"p\" (ca đường đi đúng) hoặc \"n\" (ca lỗi hoặc giá trị biên). In \"du\" nếu có ít nhất một ca \"n\", ngược lại in \"thieu\".",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n ký tự, in \"du\" hoặc \"thieu\"\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\np p p\n",
+        "expected": "thieu\n"
+      },
+      {
+        "stdin": "3\np n p\n",
+        "expected": "du\n"
+      },
+      {
+        "stdin": "1\nn\n",
+        "expected": "du\n"
+      }
+    ],
+    "hints": [
+      "Chỉ cần một ca \"n\" là đủ.",
+      "Dùng một biến cờ, khởi đầu bằng 0."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int co_loi = 0;\n    for (int i = 0; i < n; i++) {\n        char c;\n        scanf(\" %c\", &c);\n        if (c == 'n') co_loi = 1;\n    }\n    printf(co_loi ? \"du\\n\" : \"thieu\\n\");\n    return 0;\n}\n"
+  }
+]

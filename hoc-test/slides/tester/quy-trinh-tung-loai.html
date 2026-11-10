@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quy trình từng loại kiểm thử · Slide · Học kiểm thử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">QUY TRÌNH</div><h1>Quy trình từng loại kiểm thử</h1><div class="lead"><p>Mỗi loại kiểm thử đi theo quy trình nào, làm bước nào trước, và đạt khi nào. Từng loại một, có ví dụ và lỗi hay gặp.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/quy-trinh-tung-loai.svg" alt="Sơ đồ bốn bước: Chuẩn bị, Chạy, Ghi nhận, Đánh giá" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TỔNG QUAN</div><h2>Mỗi loại kiểm thử có quy trình riêng</h2><div class="content"><ul class="list"><li>Bài này đi qua từng loại một: làm gì trước, làm gì sau, khi nào xong.</li><li>Mỗi loại có hai slide: quy trình từng bước, và ví dụ kèm tiêu chí đạt.</li><li>Tên tiếng Anh để trong ngoặc, để bạn đọc được tài liệu nước ngoài.</li></ul><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 1/12</div><h2>Kiểm thử đơn vị (Unit testing): quy trình</h2><div class="content"><ol class="list"><li>Chọn đơn vị nhỏ nhất: một hàm hoặc một lớp.</li><li>Viết ca cho đầu vào hợp lệ, giá trị biên, và đầu vào sai.</li><li>Cô lập phụ thuộc bên ngoài bằng bản giả (stub, mock).</li><li>Chạy và đọc kết quả từng ca, ghi lại ca nào sai.</li><li>Khi code đổi, cập nhật ca có lý do, không sửa ca để cho qua.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử đơn vị (Unit testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Hàm kiểm năm nhuận: ca 2000 (nhuận), 1900 (không), 2024 (nhuận), 2023 (không), và năm âm (sai).</p><p><b>Đạt khi:</b> Mọi ca đạt; các nhánh quan trọng đã được phủ; không gọi cơ sở dữ liệu thật.</p><p><b>Lỗi hay gặp:</b> Test gọi cả cơ sở dữ liệu nên chạy chậm và hỏng ngẫu nhiên.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 2/12</div><h2>Kiểm thử tích hợp (Integration testing): quy trình</h2><div class="content"><ol class="list"><li>Chọn hai hoặc nhiều module có giao tiếp với nhau.</li><li>Ghi rõ giao diện: tham số, kiểu dữ liệu, mã lỗi, thời gian chờ.</li><li>Chuẩn bị môi trường gần thật và dữ liệu riêng cho ca.</li><li>Chạy một luồng dữ liệu qua chỗ nối giữa các module.</li><li>Kiểm dữ liệu ở đầu ra và ở đích, không chỉ kiểm "không báo lỗi".</li><li>Dọn dữ liệu sau khi chạy.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử tích hợp (Integration testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Dịch vụ đặt hàng gọi dịch vụ tính thuế: kiểm tổng tiền sau thuế đúng và hóa đơn được lưu.</p><p><b>Đạt khi:</b> Luồng dữ liệu qua mọi chỗ nối đúng; lỗi từ dịch vụ phụ được xử lý.</p><p><b>Lỗi hay gặp:</b> Hai bên đều đúng với tài liệu của mình, nhưng định dạng ngày khác nhau.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 3/12</div><h2>Kiểm thử hệ thống (System testing): quy trình</h2><div class="content"><ol class="list"><li>Đọc yêu cầu và chọn các luồng nghiệp vụ chính.</li><li>Viết kịch bản từ đầu đến cuối cho từng luồng.</li><li>Chuẩn bị môi trường giống môi trường thật nhất có thể.</li><li>Chạy từng kịch bản, ghi bước và kết quả.</li><li>Báo lỗi có bước tái hiện và bằng chứng.</li><li>Tổng hợp: luồng nào đạt, luồng nào còn lỗi, rủi ro còn lại.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử hệ thống (System testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Mua hàng: thêm vào giỏ, thanh toán bằng thẻ thử, nhận mã đơn, đơn hiện trong lịch sử.</p><p><b>Đạt khi:</b> Mọi luồng nghiệp vụ chính đạt; lỗi nghiêm trọng đã đóng hoặc được chấp nhận có lý do.</p><p><b>Lỗi hay gặp:</b> Chỉ kiểm trên môi trường khác hẳn sản phẩm thật, nên lỗi cấu hình bị bỏ sót.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 4/12</div><h2>Kiểm thử giao diện (Interface testing): quy trình</h2><div class="content"><ol class="list"><li>Liệt kê mọi điểm nối: API, tệp trao đổi, hàng đợi tin nhắn.</li><li>Kiểm định dạng và kiểu dữ liệu ở cả hai phía.</li><li>Kiểm mã lỗi và thông báo khi gửi dữ liệu sai.</li><li>Kiểm timeout và hành vi khi thử lại.</li><li>Kiểm phiên bản: thay đổi phía này có làm hỏng phía kia không.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử giao diện (Interface testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> API đăng nhập nhận trường mật khẩu bị thiếu: kiểm mã 400 và thông báo rõ trường nào thiếu.</p><p><b>Đạt khi:</b> Mọi dữ liệu hợp lệ và không hợp lệ đều có phản hồi đúng; không có lỗi 500 với dữ liệu người dùng gửi.</p><p><b>Lỗi hay gặp:</b> Đổi tên một trường ở API làm hỏng ứng dụng di động cũ mà không ai biết.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 5/12</div><h2>Kiểm thử hồi quy (Regression testing): quy trình</h2><div class="content"><ol class="list"><li>Chọn bộ ca cốt lõi, ưu tiên luồng quan trọng nhất.</li><li>Xác định vùng bị ảnh hưởng bởi thay đổi lần này.</li><li>Chạy bộ ca tự động trên toàn bộ phạm vi cốt lõi.</li><li>Chạy thêm ca thủ công ở vùng rủi ro cao.</li><li>So sánh với kết quả lần trước; lỗi mới phải được ghi riêng.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử hồi quy (Regression testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Sửa lỗi đăng nhập: chạy lại đăng nhập, xem bài, luyện tập, và đăng xuất.</p><p><b>Đạt khi:</b> Các luồng cốt lõi vẫn đạt như trước khi sửa; lỗi mới đã có báo cáo.</p><p><b>Lỗi hay gặp:</b> Chỉ chạy ca của chỗ vừa sửa, bỏ qua chỗ khác bị ảnh hưởng gián tiếp.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG 6/12</div><h2>Kiểm thử chấp nhận người dùng (User acceptance testing, UAT): quy trình</h2><div class="content"><ol class="list"><li>Lấy tiêu chí chấp nhận đã thống nhất từ đầu dự án.</li><li>Chọn người dùng đại diện, không phải tester.</li><li>Chuẩn bị kịch bản nghiệp vụ và dữ liệu an toàn, không dùng dữ liệu thật nhạy cảm.</li><li>Để người dùng tự làm, tester chỉ quan sát và ghi.</li><li>Phân loại phản hồi: lỗi, yêu cầu mới, hiểu lầm.</li><li>Quyết định chấp nhận, chấp nhận có điều kiện, hoặc từ chối.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử chấp nhận người dùng (User acceptance testing, UAT): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Kế toán đối soát cuối ngày trên dữ liệu thử: số liệu khớp sổ sách.</p><p><b>Đạt khi:</b> Người dùng xác nhận đạt mọi tiêu chí đã thống nhất, và biên bản ký xác nhận.</p><p><b>Lỗi hay gặp:</b> Người dùng được gợi ý từng bước nên không phát hiện được chỗ khó dùng.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 7/12</div><h2>Kiểm thử tài liệu (Documentation testing): quy trình</h2><div class="content"><ol class="list"><li>Liệt kê mọi tài liệu: hướng dẫn, ghi chú phát hành, thông báo lỗi, trợ giúp trong ứng dụng.</li><li>Làm theo đúng từng bước tài liệu như người mới chưa biết gì.</li><li>So sánh kết quả với điều tài liệu nói.</li><li>Kiểm thuật ngữ, ảnh chụp màn hình, số phiên bản có còn đúng không.</li><li>Báo mỗi chỗ sai lệch kèm trang và bước cụ thể.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử tài liệu (Documentation testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Hướng dẫn cài đặt ghi lệnh cũ; làm theo thì lỗi, đến khi sửa lệnh mới chạy được.</p><p><b>Đạt khi:</b> Mọi bước trong tài liệu chính thức chạy đúng với phiên bản đang phát hành.</p><p><b>Lỗi hay gặp:</b> Tài liệu viết cho người đã biết sản phẩm, nên người mới không đi qua được.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 8/12</div><h2>Kiểm thử cài đặt (Installation testing): quy trình</h2><div class="content"><ol class="list"><li>Chuẩn bị máy sạch: đúng hệ điều hành và phiên bản cần hỗ trợ.</li><li>Cài theo tài liệu, ghi lại mọi cảnh báo.</li><li>Kiểm chương trình chạy được ngay sau cài.</li><li>Nâng cấp từ bản cũ: dữ liệu và cấu hình còn nguyên không.</li><li>Gỡ cài đặt: không để lại tệp và dịch vụ thừa.</li><li>Kiểm quyền: cài đặt không đòi quyền quản trị nếu không cần.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử cài đặt (Installation testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Cài trên Windows 10 máy sạch, nâng cấp từ phiên bản trước, rồi gỡ và kiểm thư mục còn lại.</p><p><b>Đạt khi:</b> Cài mới, nâng cấp, và gỡ đều không mất dữ liệu và không để lại rác.</p><p><b>Lỗi hay gặp:</b> Chỉ thử cài trên máy đã có sẵn thư viện của dev, nên lỗi phụ thuộc bị bỏ qua.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 9/12</div><h2>Kiểm thử hiệu năng (Performance testing): quy trình</h2><div class="content"><ol class="list"><li>Đặt mục tiêu bằng số: thời gian phản hồi, số người dùng đồng thời, tỉ lệ lỗi chấp nhận được.</li><li>Chọn kịch bản nghiệp vụ tiêu biểu và dữ liệu đủ lớn.</li><li>Chuẩn bị môi trường và bật giám sát: CPU, bộ nhớ, cơ sở dữ liệu.</li><li>Chạy tải tăng dần, không nhảy thẳng lên đỉnh.</li><li>Đọc phân vị 95 và tỉ lệ lỗi, không chỉ trung bình.</li><li>Tìm nút thắt, sửa, và chạy lại cùng kịch bản để so sánh.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử hiệu năng (Performance testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Trang đặt hàng: 200 người đồng thời, phân vị 95 dưới 1,5 giây, lỗi dưới 1%.</p><p><b>Đạt khi:</b> Đạt mọi mục tiêu bằng số đã đặt ra trước; kết quả đo lặp lại được.</p><p><b>Lỗi hay gặp:</b> So sánh hai lần đo khác môi trường hoặc khác dữ liệu, rồi kết luận sai.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 10/12</div><h2>Các kiểu tải: tải, quá tải, chịu tải, tăng vọt (Load, Stress, Endurance, Spike): quy trình</h2><div class="content"><ol class="list"><li>Load: chạy ở mức tải dự kiến trong giờ cao điểm để xem hệ thống có đạt mục tiêu.</li><li>Stress: tăng tải dần đến khi hỏng, để biết hỏng ở đâu và hỏng kiểu gì.</li><li>Endurance: chạy tải vừa trong nhiều giờ để tìm rò rỉ bộ nhớ và cạn tài nguyên.</li><li>Spike: tăng vọt tải trong vài giây rồi giảm, để kiểm khả năng co giãn và hồi phục.</li><li>Với mỗi kiểu, ghi mục tiêu và kết quả riêng.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Các kiểu tải: tải, quá tải, chịu tải, tăng vọt (Load, Stress, Endurance, Spike): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Load: 500 người. Stress: đến 2.000 thì bắt đầu lỗi. Endurance: 12 giờ, bộ nhớ không tăng liên tục. Spike: 50 lên 5.000 trong 10 giây rồi về lại.</p><p><b>Đạt khi:</b> Mỗi kiểu có mục tiêu riêng và đạt; điểm gãy khi quá tải được biết trước.</p><p><b>Lỗi hay gặp:</b> Gộp bốn kiểu thành một lần chạy, nên không biết lỗi do tải nào gây ra.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 11/12</div><h2>Kiểm thử độ tin cậy (Reliability testing): quy trình</h2><div class="content"><ol class="list"><li>Xác định mục tiêu thời gian hoạt động, ví dụ 99,9% trong một tháng.</li><li>Chạy liên tục với tải thực tế trong nhiều ngày.</li><li>Tiêm sự cố có kiểm soát: mất mạng, khởi động lại dịch vụ, mất kết nối cơ sở dữ liệu.</li><li>Đo thời gian phục hồi sau mỗi sự cố.</li><li>Kiểm không mất dữ liệu đã xác nhận với người dùng.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử độ tin cậy (Reliability testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Tắt đột ngột dịch vụ thanh toán giữa giao dịch: hệ thống hồi phục dưới 1 phút, giao dịch không bị trừ hai lần.</p><p><b>Đạt khi:</b> Đạt mục tiêu thời gian hoạt động; mọi sự cố đều phục hồi trong thời gian đã định.</p><p><b>Lỗi hay gặp:</b> Chỉ đo khi hệ thống đang khỏe, không bao giờ thử sự cố thật.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG 12/12</div><h2>Kiểm thử bảo mật (Security testing) và kiểm thử dễ dùng (Usability testing): quy trình</h2><div class="content"><ol class="list"><li>Bảo mật: xác định tài sản và bề mặt tấn công (form, API, quyền truy cập).</li><li>Bảo mật: kiểm đầu vào (SQL injection, XSS) và quyền truy cập (IDOR) trên môi trường thử được phép.</li><li>Bảo mật: kiểm dữ liệu nhạy cảm có được mã hóa và không lộ trong log.</li><li>Dễ dùng: viết tác vụ cụ thể, ví dụ "đăng ký và đặt một đơn hàng".</li><li>Dễ dùng: quan sát người dùng thật làm, không gợi ý, ghi chỗ dừng và chỗ nhầm.</li><li>Dễ dùng: đo tỉ lệ hoàn thành và thời gian, rồi xếp ưu tiên sửa.</li></ol><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">PHI CHỨC NĂNG · VÍ DỤ</div><h2>Kiểm thử bảo mật (Security testing) và kiểm thử dễ dùng (Usability testing): ví dụ và tiêu chí</h2><div class="content"><p><b>Ví dụ:</b> Bảo mật: thử gửi yêu cầu sửa học liệu của người khác. Dễ dùng: 5 người dùng mới đăng ký trên điện thoại, 4 người xong trong 3 phút.</p><p><b>Đạt khi:</b> Bảo mật: không có lỗ hổng mức cao còn mở. Dễ dùng: đa số người dùng mục tiêu hoàn thành tác vụ chính không cần hỏi.</p><p><b>Lỗi hay gặp:</b> Bảo mật: thử trên hệ thống thật của người khác. Dễ dùng: hỏi ý kiến người quen thay vì người dùng thật.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">LOGIC</div><h2>Khi nào một loại kiểm thử được coi là đạt</h2><div class="content"><pre class="code"><code>ket_qua_dat = (so_ca_loi == 0) AND (so_loi_nghiem_trong_mo == 0)
+
+neu ket_qua_dat:
+    ghi "chấp nhận"
+nguoc lai:
+    ghi "chưa đạt", kèm danh sách ca lỗi và lỗi đang mở
+
+Quy tắc thứ tự của một lần kiểm thử:
+    chuan_bi  trước  chay  trước  ghi_nhan  trước  danh_gia</code></pre><p>Hai điều kiện nối bằng AND: thiếu một cái là chưa đạt. Không được tính trung bình để che một lỗi nghiêm trọng.</p><p><i>Kiến thức chung, viết lại bằng lời của người soạn bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/quy-trinh-tung-loai-sai.svg" alt="Ba cặp sai và đúng của bài Quy trình từng loại kiểm thử" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Chạy trước khi chuẩn bị → <b>Đúng:</b> Chuẩn bị, chạy, ghi, đánh giá</li><li><b>Sai:</b> Tính trung bình để che lỗi nghiêm trọng → <b>Đúng:</b> Mọi điều kiện AND, không trung bình</li><li><b>Sai:</b> Kết luận không ghi số liệu → <b>Đúng:</b> Ghi đủ số ca và lỗi mở</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Điều kiện AND</b>: Phép nối logic: kết quả đúng chỉ khi mọi điều kiện đều đúng. Thiếu một điều kiện là sai. · <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/1</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Điều kiện AND</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Phép nối logic: kết quả đúng chỉ khi mọi điều kiện đều đúng. Thiếu một điều kiện là sai.</li><li><b>Ví dụ:</b> Đạt khi không có ca lỗi VÀ không có lỗi nghiêm trọng đang mở. Có một lỗi nghiêm trọng là chưa đạt.</li><li><b>Vì sao quan trọng:</b> Ngăn việc lấy trung bình để che một lỗi nghiêm trọng.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Chuẩn bị, chạy, ghi nhận, đánh giá</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</li><li><b>Ví dụ:</b> Chuẩn bị dữ liệu, chạy các ca, ghi kết quả từng ca, rồi đối chiếu với tiêu chí đạt.</li><li><b>Vì sao quan trọng:</b> Làm đúng thứ tự giúp kết quả đáng tin và có thể tái hiện được.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÓM TẮT</div><h2>Điều cần nhớ</h2><div class="content"><ul class="list"><li>Mỗi loại có mục tiêu và tiêu chí đạt riêng, không dùng chung một thước.</li><li>Làm theo thứ tự: chuẩn bị, chạy, ghi nhận, đánh giá theo tiêu chí.</li><li>Lỗi hay gặp thường là làm sai phạm vi, sai môi trường, hoặc đo sai số.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Chuẩn bị, chạy, ghi nhận, đánh giá</b>: Bốn giai đoạn của một lần kiểm thử, làm theo đúng thứ tự.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>
