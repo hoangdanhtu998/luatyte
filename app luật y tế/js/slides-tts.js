@@ -137,7 +137,7 @@
 
   // File giọng nằm trên CDN (jsDelivr, nhánh main) khi chạy trên luatyte.online, để không phải đưa hàng nghìn file vào site Pages.
   // Chạy trên máy (localhost) thì dùng file có sẵn trong thư mục audio/.
-  var AUDIO_CDN = 'https://cdn.jsdelivr.net/gh/hoangdanhtu998/luatyte@main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/';
+  var AUDIO_CDN = 'https://media.githubusercontent.com/media/hoangdanhtu998/luatyte/main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/';
   function audioSrc(path) {
     if (!path || path.indexOf('audio/') !== 0) return path;
     return /(^|\.)luatyte\.online$/.test(location.hostname) ? AUDIO_CDN + path : path;
@@ -190,7 +190,7 @@
   function playOpener(next) {
     var key = window.SlidePersona && SlidePersona.opener ? SlidePersona.opener() : '';
     if (!key) { next(); return; }
-    audio = new Audio('https://cdn.jsdelivr.net/gh/hoangdanhtu998/luatyte@main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/audio/persona/' + key + '.mp3');
+    audio = new Audio('https://media.githubusercontent.com/media/hoangdanhtu998/luatyte/main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/audio/persona/' + key + '.mp3');
     audio.playbackRate = currentRate();
     audio.onended = next;
     audio.onerror = next;
