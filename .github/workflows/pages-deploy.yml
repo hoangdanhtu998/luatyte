@@ -27,7 +27,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'app luật y tế/'
+          # Upload toàn bộ root repo để bao gồm hoc-test/, app luật y tế/, và các thư mục khác
+          path: '.'
 
   deploy:
     environment:
