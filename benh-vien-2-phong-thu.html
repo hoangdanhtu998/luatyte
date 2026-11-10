@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bệnh viện pixel · code-only study</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#152b31;color:#edf0d7;font-family:system-ui,Segoe UI,sans-serif}.shell{max-width:1160px;margin:auto;padding:28px 24px 40px}.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.kicker{color:#9fbeaa;font-size:11px;letter-spacing:.18em;text-transform:uppercase}h1{font-size:clamp(25px,4vw,42px);letter-spacing:-.045em;margin:5px 0}.head p{margin:0;color:#afc4ba;font-size:14px}.label{font-size:11px;color:#f0d289;border:1px solid #6b755f;padding:8px 10px;border-radius:3px;white-space:nowrap}.screen{overflow:auto;border:1px solid #647b70;background:#263b3b;padding:12px;box-shadow:0 18px 54px #07141680}canvas{display:block;width:960px;height:528px;max-width:none;image-rendering:pixelated;image-rendering:crisp-edges}.caption{display:flex;justify-content:space-between;gap:20px;color:#b6c7bd;font-size:12px;padding:12px 2px}.status{border-left:3px solid #c5aa62;padding:8px 12px;background:#20363a;color:#dce3cb;font-size:13px}.note{color:#8fa99c;font-size:12px;margin-top:12px}@media(max-width:650px){.shell{padding:17px 12px 28px}.head{align-items:start;flex-direction:column}.label{white-space:normal}.screen{padding:6px}}
+</style></head><body><main class="shell">
+<header class="head"><div><div class="kicker">Bản dựng bằng code · 02 phòng</div><h1>Khu khám bệnh</h1><p>Hai phòng mở vào hành lang trung tâm — cấu trúc có thể nối dài thành một dãy.</p></div><span class="label">KHÔNG DÙNG ẢNH · TOÀN BỘ CANVAS</span></header>
+<div class="screen"><canvas id="map" width="960" height="528" aria-label="Môi trường pixel bệnh viện hai phòng, minh họa hoàn toàn bằng code"></canvas></div>
+<div class="caption"><span><b>01</b> Tiếp đón <span style="color:#688f8a">/</span> <b>02</b> Khám &amp; cấp cứu</span><span>Gạch sàn · tường chia ô · cửa mở · lối đi thông</span></div>
+<div class="status" id="status">Đang vẽ môi trường pixel bằng các khối hình canvas…</div>
+<p class="note">Bản thử phong cách: mọi vật thể được vẽ bằng code. Kéo ngang để xem trên màn hình nhỏ.</p>
+</main>
+<script>
+(()=>{'use strict';const canvas=document.querySelector('#map'),ctx=canvas.getContext('2d'),T=24,W=40,H=22;ctx.imageSmoothingEnabled=false;
+const C={ink:'#263a3b',deep:'#354747',wall:'#9b9b7a',wallD:'#777e69',wallL:'#b8b596',floor:'#c6c7a6',tile:'#b8bea0',tileL:'#d2d1b3',tileD:'#aab396',edge:'#697b68',blue:'#588b91',blueL:'#92b5a9',mint:'#76a789',red:'#c77d68',wood:'#966d4f',woodL:'#c29a68',metal:'#829b94',white:'#e7e4c9',shadow:'#455853'};
+function fill(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(x*T,y*T,w*T,h*T)}function px(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(x,y,w,h)}
+function tileFloor(x,y,w,h){fill(x,y,w,h,C.floor);for(let r=y;r<y+h;r++)for(let c=x;c<x+w;c++){let ox=c*T,oy=r*T;px(ox+1,oy+1,T-2,T-2,(c+r)%2?C.tile:C.tileL);px(ox,oy+T-2,T,2,C.tileD);px(ox+T-2,oy,2,T,C.tileD);px(ox+2,oy+2,T-4,1,'#ded9b9')}}
+function wallLine(x,y,w){for(let c=x;c<x+w;c++){let ox=c*T,oy=y*T;px(ox,oy,T,T,C.wall);px(ox+1,oy+1,T-2,T-3,c%2?C.wallL:'#a5a487');px(ox+2,oy+3,T-4,2,'#d1cdaa');px(ox+3,oy+8,T-6,1,C.wallD);px(ox+2,oy+T-5,T-4,3,C.wallD);if(c%3!==1){px(ox+5,oy+11,T-10,7,'#719895');px(ox+6,oy+12,T-12,5,'#b5d0b9');px(ox+T/2,oy+11,1,7,'#64847d')}}}
+function room(x,y,w,h,name,tag,accent){fill(x,y,w,h,C.deep);fill(x+1,y+1,w-2,h-2,C.wallD);tileFloor(x+1,y+1,w-2,h-2);wallLine(x+1,y+1,w-2);fill(x,y+h-1,w,1,C.edge);fill(x+1,y+h-1,2,1,C.woodL);fill(x+6,y+h-1,2,1,C.woodL);fill(x+w-3,y+h-1,2,1,C.woodL);
+// plaque: dark inset and bright service stripe
+fill(x+2,y+1,w-4,1,C.ink);fill(x+2,y+1,w-4,1,accent);fill(x+2,y+1,1,1,C.white);fill(x+3,y+1,w-6,1,C.ink);fill(x+3,y+1,1,1,accent);fill(x+w-4,y+1,1,1,C.white);
+ctx.fillStyle=C.white;ctx.font='bold 9px monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(tag.toUpperCase(),(x+w/2)*T,(y+1)*T+12);ctx.font='bold 11px monospace';ctx.fillStyle=accent;ctx.fillText(name,(x+w/2)*T,(y+1)*T+26);
+// window recess on back wall
+fill(x+2,y+2,2,2,'#738a7b');fill(x+2,y+2,2,1,'#9dc1b6');fill(x+3,y+2,1,2,'#718e84');fill(x+2,y+3,2,1,'#a9bb9a')}
+function corridor(){tileFloor(1,9,38,3);fill(1,9,38,1,'#88917a');fill(1,11,38,1,'#8b9278');for(let i=2;i<38;i+=2){px(i*T+1,9*T+2,T-2,1,'#d5cfaa');px(i*T+1,11*T+T-2,T-2,1,'#b1b897')} // wall shadow bands
+// corridor signage board
+fill(15,9,10,1,C.deep);fill(15,9,10,1,C.blue);px(15*T+3,9*T+3,234,2,C.white);ctx.fillStyle=C.white;ctx.font='bold 9px monospace';ctx.textAlign='center';ctx.fillText('KHU KHÁM BỆNH     →',(20*T),9*T+17);
+// perspective-free floor guidance
+for(let x=3;x<38;x+=4){px(x*T+T/2-3,10*T+T/2-2,6,4,'#8a9783');px(x*T+T/2-1,10*T+T/2-1,2,2,'#d9cca0')}
+// doorway thresholds
+[5,17].forEach(d=>{fill(d,8,2,1,C.wood);fill(d,9,2,1,'#bca578');px(d*T+3,9*T+2,42,2,'#d9c796')})}
+function desk(x,y,w){fill(x,y+1,w,1,C.shadow);fill(x,y,w,1,C.wood);fill(x,y,w,1,C.woodL);fill(x,y+1,w,1,C.wood);fill(x+1,y+2,w-2,1,C.wood);fill(x+1,y+3,1,1,C.wood);fill(x+w-2,y+3,1,1,C.wood);fill(x+1,y+1,w-2,1,'#aee1d1');fill(x+2,y+1,2,1,C.white);fill(x+w-3,y+1,1,1,C.blue);fill(x+w/2|0,y+2,1,1,C.woodL)}
+function chair(x,y,color=C.blue){fill(x,y+1,2,1,C.shadow);fill(x,y,2,1,color);fill(x,y+1,1,1,C.blueL);fill(x,y+2,1,1,C.wood);fill(x+1,y+2,1,1,C.wood)}
+function bed(x,y){fill(x,y+1,4,2,C.shadow);fill(x,y,4,2,C.metal);fill(x,y,4,1,C.white);fill(x,y+1,4,1,'#a7c9ba');fill(x,y,1,1,'#ece5c9');fill(x,y+2,1,1,C.wood);fill(x+3,y+2,1,1,C.wood);fill(x,y+3,1,1,C.wood);fill(x+3,y+3,1,1,C.wood);fill(x+3,y,1,1,C.red)}
+function cabinet(x,y,h=3,color=C.metal){fill(x,y+1,2,h-1,C.shadow);fill(x,y,2,h,color);fill(x,y,2,1,C.blue);for(let r=1;r<h;r++){px(x*T+2,(y+r)*T+1,44,1,C.wallL);px(x*T+T-7,(y+r)*T+7,2,2,C.woodL)}fill(x,y+h-1,2,1,C.wood)}
+function monitor(x,y){fill(x,y,2,2,C.deep);fill(x,y,2,1,C.ink);fill(x,y,2,1,C.blue);px(x*T+4,y*T+5,13,2,'#a8d4bd');px(x*T+8,y*T+9,7,1,C.white);fill(x,y+2,2,1,C.metal);px(x*T+T-3,(y+2)*T+1,3,3,C.wood)}
+function plant(x,y){fill(x,y+1,1,1,C.woodL);fill(x,y+2,1,1,C.wood);fill(x,y,1,2,C.mint);px(x*T+2,y*T+4,20,13,'#4e916a');px(x*T+4,y*T+1,15,16,'#79ae75');px(x*T+1,y*T+9,8,9,'#397958');px(x*T+14,y*T+7,8,10,'#397958');px(x*T+9,y*T+5,5,4,'#b4c478')}
+function person(x,y,coat,skin,hair){ // 1-cell top-down pixel person, feet point toward corridor
+px(x*T+9,y*T+3,6,3,hair);px(x*T+7,y*T+6,10,5,skin);px(x*T+6,y*T+11,12,9,coat);px(x*T+8,y*T+13,8,4,'#e9e3c5');px(x*T+7,y*T+20,4,3,'#405052');px(x*T+13,y*T+20,4,3,'#405052');px(x*T+4,y*T+12,3,7,skin);px(x*T+17,y*T+12,3,7,skin);px(x*T+9,y*T+8,1,1,'#293b3c');px(x*T+14,y*T+8,1,1,'#293b3c')}
+function roomDetails(){// reception: organized queue and staffed counter
+plant(2,5);desk(4,4,5);chair(5,7,C.blue);chair(7,7,C.blue);fill(3,7,1,1,C.wood);fill(3,7,1,1,C.woodL);monitor(7,3);cabinet(9,3,3,C.metal);fill(2,6,1,1,'#746e52');
+// examination room: bed along wall, clear working aisle, equipment grouped at head
+bed(15,3);cabinet(20,3,3,C.blue);monitor(20,6);chair(17,6,C.red);plant(21,7);fill(15,7,1,1,'#809384');
+// tiny wall-mounted clinical chart / notice tiles
+fill(4,2,2,1,C.deep);fill(4,2,2,1,C.blue);fill(4,2,1,1,C.white);fill(4,3,2,1,C.woodL);
+fill(18,2,1,1,C.deep);fill(18,2,1,1,C.red);fill(18,3,1,1,C.white)}
+function entrance(){// bottom street edge, steps, accessible route
+fill(0,13,40,1,'#526366');fill(0,14,40,1,'#667676');fill(0,15,40,1,'#415052');for(let i=0;i<40;i+=2){px(i*T,14*T,T,1,'#72817d');px(i*T,15*T,T,1,'#35474a')}fill(18,12,4,1,C.wood);fill(18,13,4,1,'#d4c49b');fill(18,14,4,1,'#84988a');for(let i=0;i<4;i++){px((18+i)*T+10,14*T+7,5,3,'#e0d1a9')}fill(17,13,1,1,C.edge);fill(22,13,1,1,C.edge)}
+function draw(){ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#536b62';ctx.fillRect(0,0,canvas.width,canvas.height); // courtyard perimeter
+for(let i=0;i<W;i++){px(i*T,0,T,5,'#435c51');px(i*T,5,T,2,'#647a62');px(i*T,17*T,T,2,'#435a50')}
+// two room suites
+room(1,1,10,8,'Tiếp đón','01 · DỊCH VỤ','#77b8a1');room(13,1,10,8,'Khám & cấp cứu','02 · LÂM SÀNG','#df8e70');
+// cross-corridor linking future wings
+corridor();roomDetails();entrance();
+// clinician at corridor junction; readable scale, not overlaid on furniture
+person(11,10,'#f0ebcf','#c98f6b','#423d35');
+// small architectural corner markers mark continuation beyond demo
+[[0,1],[23,1],[0,11],[23,11]].forEach(([a,b])=>{fill(a,b,1,1,C.woodL);fill(a,b,1,1,'#78917c')});
+}
+draw();document.querySelector('#status').textContent='Bản này vẽ hoàn toàn bằng code: tường gạch chia mạch, gạch lát có ron, cửa và ngưỡng riêng, đồ nội thất pixel tự vẽ.';
+})();
+</script></body></html>
