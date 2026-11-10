@@ -57,7 +57,7 @@ window.SlidePersona = (function () {
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
       retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
-      style: 'Nam · Bắc · Phong cách tự nhiên (VieNeu).'
+      style: 'Nam · Azure TTS · Phong cách tự nhiên.'
     },
     vn_doan_trang: {
       lead: 'Em chú ý ý này:',
@@ -66,7 +66,7 @@ window.SlidePersona = (function () {
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
       retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
-      style: 'Nữ · Bắc · Phong cách tự nhiên (VieNeu).'
+      style: 'Nữ · Azure TTS · Phong cách tự nhiên.'
     },
     vn_quoc_tuan: {
       lead: 'Em chú ý ý này:',
@@ -75,7 +75,7 @@ window.SlidePersona = (function () {
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
       retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
-      style: 'Nam · Bắc · Phong cách tự nhiên (VieNeu).'
+      style: 'Nam · Azure TTS · Phong cách tự nhiên.'
     },
     vn_thanh_binh: {
       lead: 'Em chú ý ý này:',
@@ -84,7 +84,7 @@ window.SlidePersona = (function () {
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
       retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
-      style: 'Nam · Bắc · Phong cách kể chuyện (VieNeu).'
+      style: 'Nam · Azure TTS · Phong cách kể chuyện.'
     }
   };
   var current = DEFAULT;
