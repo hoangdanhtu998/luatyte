@@ -20,15 +20,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
+      - name: Stage site
+        # Thư mục "app luật y tế" là gốc của site. Ghép thêm hoc-test/, 404.html, CNAME từ gốc repo.
+        # Bỏ mã nguồn, công cụ, dữ liệu nội bộ và thư mục không phục vụ web để artifact nhẹ hơn.
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' --exclude='node_modules' --exclude='.github' \
+            --exclude='scripts' --exclude='test' --exclude='docs' --exclude='deploy' \
+            --exclude='deliverables' --exclude='output' --exclude='src' \
+            --exclude='server.mjs' --exclude='*.log' \
+            "app luật y tế/" _site/
+          cp -r hoc-test _site/hoc-test
+          cp 404.html CNAME _site/
+          echo "Số file: $(find _site -type f | wc -l)  Dung lượng: $(du -sh _site | cut -f1)"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload toàn bộ root repo để bao gồm hoc-test/, app luật y tế/, và các thư mục khác
-          path: '.'
+          path: '_site'
 
   deploy:
     environment:
@@ -41,5 +55,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          # Increase timeout to 60 minutes to handle large site with 768MB and 9415 files
           timeout: 3600000
