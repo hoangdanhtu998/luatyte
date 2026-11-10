@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Khác biệt mặc định giữa class và struct trong C++ là gì?",
+      "options": [
+        {
+          "text": "Thành viên của class mặc định là private, của struct là public",
+          "why": "Đúng. Đây là khác biệt mặc định duy nhất về quyền truy cập."
+        },
+        {
+          "text": "Struct không có hàm",
+          "why": "Struct trong C++ cũng có hàm."
+        },
+        {
+          "text": "Class không dùng được với con trỏ",
+          "why": "Dùng được bình thường."
+        },
+        {
+          "text": "Không có khác biệt",
+          "why": "Có khác biệt mặc định về quyền truy cập."
+        }
+      ],
+      "answer": 0,
+      "explain": "Hai từ khóa chỉ khác nhau ở quyền mặc định, nhưng quy ước thường dùng class cho đối tượng có hành vi."
+    },
+    {
+      "q": "Constructor là gì?",
+      "options": [
+        {
+          "text": "Hàm tự chạy khi tạo đối tượng, để khởi tạo dữ liệu",
+          "why": "Đúng. Nó có tên trùng với tên class."
+        },
+        {
+          "text": "Hàm chạy khi hủy đối tượng",
+          "why": "Đó là destructor."
+        },
+        {
+          "text": "Biến toàn cục",
+          "why": "Không phải biến."
+        },
+        {
+          "text": "Kiểu dữ liệu cơ bản",
+          "why": "Không phải kiểu cơ bản."
+        }
+      ],
+      "answer": 0,
+      "explain": "Constructor đảm bảo đối tượng luôn có trạng thái ban đầu hợp lệ."
+    },
+    {
+      "q": "Destructor có tên như thế nào?",
+      "options": [
+        {
+          "text": "~Ten, với dấu ngã trước tên class",
+          "why": "Đúng. Ví dụ ~SinhVien()."
+        },
+        {
+          "text": "Ten_huy",
+          "why": "Không đặt tên như vậy."
+        },
+        {
+          "text": "delete Ten",
+          "why": "delete là toán tử, không phải tên destructor."
+        },
+        {
+          "text": "free Ten",
+          "why": "free là hàm của C, không phải tên destructor."
+        }
+      ],
+      "answer": 0,
+      "explain": "Destructor được gọi khi đối tượng ra khỏi phạm vi hoặc bị xóa."
+    },
+    {
+      "q": "Đóng gói (encapsulation) trong class nghĩa là gì?",
+      "options": [
+        {
+          "text": "Giấu dữ liệu private và chỉ truy cập qua hàm công khai",
+          "why": "Đúng. Điều này giữ dữ liệu an toàn và dễ thay đổi cách làm."
+        },
+        {
+          "text": "Nén dữ liệu để tiết kiệm bộ nhớ",
+          "why": "Không phải nén."
+        },
+        {
+          "text": "Gói nhiều class vào một file",
+          "why": "Đó không phải định nghĩa đóng gói."
+        },
+        {
+          "text": "Không cho phép tạo đối tượng",
+          "why": "Vẫn tạo được đối tượng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đóng gói giống hộp kín: dùng qua nút bấm, không mở ra sửa trực tiếp."
+    },
+    {
+      "q": "Gọi hàm thành viên của một đối tượng `sv` viết thế nào?",
+      "options": [
+        {
+          "text": "sv.hienThi();",
+          "why": "Đúng. Dùng dấu chấm với đối tượng thật."
+        },
+        {
+          "text": "sv->hienThi();",
+          "why": "Dấu -> dùng khi có con trỏ tới đối tượng."
+        },
+        {
+          "text": "hienThi(sv);",
+          "why": "Cú pháp này không gọi hàm thành viên."
+        },
+        {
+          "text": "class.hienThi(sv);",
+          "why": "Không đúng cú pháp."
+        }
+      ],
+      "answer": 0,
+      "explain": "Dấu . cho đối tượng; dấu -> cho con trỏ tới đối tượng."
+    },
+    {
+      "q": "Constructor có kiểu trả về không?",
+      "options": [
+        {
+          "text": "Không có kiểu trả về, kể cả void",
+          "why": "Đúng. Constructor không khai báo kiểu trả về."
+        },
+        {
+          "text": "Có, luôn là int",
+          "why": "Constructor không trả về giá trị."
+        },
+        {
+          "text": "Có, luôn là void",
+          "why": "Không ghi void cũng không ghi kiểu nào."
+        },
+        {
+          "text": "Có, là tên class",
+          "why": "Tên class là tên constructor, không phải kiểu trả về."
+        }
+      ],
+      "answer": 0,
+      "explain": "Constructor không có kiểu trả về, nên không ghi gì trước tên của nó."
+    }
+  ]
+}

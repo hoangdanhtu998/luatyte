@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Lệnh `C3` trong x86-64 là gì?",
+      "options": [
+        {
+          "text": "ret (trả về)",
+          "why": "Đúng. C3 là lệnh trả về từ hàm."
+        },
+        {
+          "text": "mov",
+          "why": "mov có mã khác."
+        },
+        {
+          "text": "add",
+          "why": "add có mã khác."
+        },
+        {
+          "text": "nop",
+          "why": "nop thường là 90."
+        }
+      ],
+      "answer": 0,
+      "explain": "C3 là ret."
+    },
+    {
+      "q": "Vì sao giá trị 5 được ghi là `05 00 00 00`?",
+      "options": [
+        {
+          "text": "x86 dùng thứ tự little-endian: byte thấp đi trước",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để số âm",
+          "why": "Không liên quan dấu."
+        },
+        {
+          "text": "Ngẫu nhiên",
+          "why": "Có quy tắc rõ."
+        },
+        {
+          "text": "Để gọn",
+          "why": "Không phải lý do."
+        }
+      ],
+      "answer": 0,
+      "explain": "Little-endian: byte thấp ở địa chỉ thấp."
+    },
+    {
+      "q": "Vì sao phải cấp bộ nhớ có quyền thực thi để chạy mã JIT?",
+      "options": [
+        {
+          "text": "CPU chỉ chạy lệnh từ vùng được phép thực thi",
+          "why": "Đúng, đó là cơ chế bảo vệ."
+        },
+        {
+          "text": "Để tăng tốc",
+          "why": "Không phải lý do."
+        },
+        {
+          "text": "Để in ra",
+          "why": "Không liên quan."
+        },
+        {
+          "text": "Không cần",
+          "why": "Cần."
+        }
+      ],
+      "answer": 0,
+      "explain": "Vùng không có quyền thực thi sẽ bị chặn."
+    }
+  ]
+}

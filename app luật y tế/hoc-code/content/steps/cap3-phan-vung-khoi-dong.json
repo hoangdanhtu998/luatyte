@@ -1,0 +1,11 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Sector đầu của ổ đĩa, gọi là MBR, dài 512 byte. Trong đó có bảng các phân vùng, giống bảng hướng dẫn ở cổng tòa nhà.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Mỗi phân vùng có một byte trạng thái đứng đầu. Byte 80 nghĩa là phân vùng này khởi động được.", "boxes": ["phân vùng 1", "phân vùng 2", "phân vùng 3", "phân vùng 4"], "code": "80  00  00  00", "run": { "phân vùng 1": "khởi động được", "phân vùng 2": "không", "phân vùng 3": "không", "phân vùng 4": "không" }, "after": "Chỉ phân vùng 1 có byte 80." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: nếu bốn byte trạng thái là 00 80 00 00, phân vùng nào khởi động được?", "boxes": ["phân vùng 1", "phân vùng 2", "phân vùng 3", "phân vùng 4"], "code": "00  80  00  00", "quiz": [
+        { "text": "Phân vùng 2", "right": true, "hint": "Đúng! Byte 80 nằm ở vị trí thứ hai, tức là phân vùng 2." },
+        { "text": "Phân vùng 1", "right": false, "hint": "Phân vùng 1 có byte 00, không khởi động được." },
+        { "text": "Không có phân vùng nào", "right": false, "hint": "Có byte 80 ở vị trí thứ hai, nên có một phân vùng khởi động được." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: MBR dài 512 byte, có 4 mục phân vùng. Byte 80 đánh dấu phân vùng khởi động.", "boxes": ["phân vùng 1", "phân vùng 2", "phân vùng 3", "phân vùng 4"], "end": true }
+  ]
+}

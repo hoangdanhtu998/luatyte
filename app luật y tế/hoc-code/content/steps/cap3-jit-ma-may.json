@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "JIT là trình sinh mã máy lúc chương trình đang chạy. Bài này chỉ làm phần quan trọng nhất: đổi một hàm đơn giản thành các byte mà CPU hiểu.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Hàm return 5 cần ba việc: đưa số 5 vào thanh ghi eax, rồi trả về. Lệnh mov eax, imm32 có mã byte B8.", "boxes": ["mã lệnh", "số 5"], "code": "B8", "run": { "mã lệnh": "B8 (mov eax)", "số 5": "chưa ghi" }, "after": "B8 là mã của lệnh mov eax, imm32." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Số 5 được ghi bốn byte theo thứ tự ngược: byte thấp đứng trước. Đây gọi là little-endian.", "boxes": ["mã lệnh", "số 5"], "code": "B8 05 00 00 00", "run": { "mã lệnh": "B8", "số 5": "05 00 00 00" }, "after": "Số 5 chiếm 4 byte: 05 00 00 00." },
+    { "img": "m03-meo-vui.png", "say": "Cuối cùng thêm C3, lệnh ret, để hàm trả quyền điều khiển về nơi đã gọi.", "boxes": ["mã lệnh", "số 5"], "code": "B8 05 00 00 00 C3", "run": { "mã lệnh": "B8", "số 5": "05 00 00 00" }, "after": "Đủ 6 byte: hàm return 5." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: để return 7 thì byte đầu sau B8 là gì?", "boxes": ["mã lệnh", "số 5"], "code": "B8 ? ? ? ? C3", "quiz": [
+        { "text": "07 00 00 00", "right": true, "hint": "Đúng! 7 viết dạng 4 byte little-endian là 07 00 00 00." },
+        { "text": "00 00 00 07", "right": false, "hint": "Đó là cách ghi big-endian. Ở x86-64, byte thấp đứng trước." },
+        { "text": "05 00 00 00", "right": false, "hint": "Đó là số 5 của ví dụ, không phải 7." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: JIT ghép byte theo đúng quy tắc của CPU. Muốn chạy được mã này, cần vùng nhớ có quyền thực thi.", "boxes": ["mã lệnh", "số 5"], "end": true }
+  ]
+}

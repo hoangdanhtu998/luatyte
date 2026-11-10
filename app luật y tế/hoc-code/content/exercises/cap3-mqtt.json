@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Khớp bộ lọc chủ đề",
+    "prompt": "Dòng đầu là bộ lọc (có thể có + và #), dòng hai là chủ đề cụ thể. In `yes` nếu chủ đề khớp bộ lọc, `no` nếu không.",
+    "starter": "#include <stdio.h>\n#include <string.h>\n\n// viết hàm khớp ở đây\n\nint main(void) {\n    char f[128], t[128];\n    // đọc và in kết quả ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "sensor/+/temp\nsensor/1/temp\n",
+        "expected": "yes\n"
+      },
+      {
+        "stdin": "sensor/+\nsensor/1/temp\n",
+        "expected": "no\n"
+      },
+      {
+        "stdin": "sensor/#\nsensor/1/temp\n",
+        "expected": "yes\n"
+      }
+    ]
+  }
+]

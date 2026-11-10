@@ -1,0 +1,234 @@
+{
+  "quizzes": [
+    {
+      "q": "Biến x = 42 được lưu ở đâu trong máy?",
+      "options": [
+        {
+          "text": "Trong một cái tên, không có địa chỉ",
+          "why": "Tên chỉ là cách anh gọi. Máy vẫn cần một ô nhớ thật để lưu 42, và ô đó có địa chỉ."
+        },
+        {
+          "text": "Trong một ô nhớ có địa chỉ",
+          "why": "Đúng. Mỗi biến chiếm một ô nhớ, giống một ngôi nhà có số nhà."
+        },
+        {
+          "text": "Trong con trỏ",
+          "why": "Con trỏ chỉ là biến giữ địa chỉ của biến khác. x không nằm trong con trỏ nào cả."
+        },
+        {
+          "text": "Chỉ tồn tại khi máy in ra, không có chỗ cố định",
+          "why": "Biến luôn có chỗ ở trong bộ nhớ từ lúc khai báo, kể cả khi không in gì."
+        }
+      ],
+      "answer": 1,
+      "explain": "Mọi biến đều là một ô nhớ có địa chỉ. Tên chỉ để anh dễ gọi."
+    },
+    {
+      "q": "Sau câu lệnh int *p = &x;, biến p chứa gì?",
+      "options": [
+        {
+          "text": "Giá trị 42 của x",
+          "why": "Đó là giá trị của x. p không giữ giá trị, p giữ địa chỉ. Nhớ hình ảnh: p là lá thư ghi số nhà."
+        },
+        {
+          "text": "Địa chỉ của x",
+          "why": "Đúng. &x là địa chỉ của x, và p được gán địa chỉ đó."
+        },
+        {
+          "text": "Số 0",
+          "why": "Số 0 chỉ xuất hiện khi anh khởi tạo p = NULL. Ở đây p đã được gán &x."
+        },
+        {
+          "text": "Địa chỉ của chính p",
+          "why": "Để có địa chỉ của p, anh phải viết &p. Ở đây &x mới là địa chỉ của x."
+        }
+      ],
+      "answer": 1,
+      "explain": "p là biến con trỏ, nó chứa địa chỉ của x, không chứa giá trị của x."
+    },
+    {
+      "q": "Sau khi chạy *p = 7; thì x bằng bao nhiêu?",
+      "options": [
+        {
+          "text": "Vẫn là 42",
+          "why": "Không đúng. *p nghĩa là 'ô mà p trỏ tới', và p trỏ tới x. Ghi 7 vào đó tức là đổi x."
+        },
+        {
+          "text": "7",
+          "why": "Đúng. *p đi tới ô của x và ghi 7 vào đó, nên x thành 7."
+        },
+        {
+          "text": "Thành địa chỉ của x",
+          "why": "*p không đổi địa chỉ. Nó đổi nội dung của ô mà địa chỉ đó chỉ tới."
+        },
+        {
+          "text": "Không xác định",
+          "why": "Trường hợp này xác định rõ: p trỏ tới x và x thành 7."
+        }
+      ],
+      "answer": 1,
+      "explain": "Dấu * đứng trước p nghĩa là đi theo địa chỉ rồi thao tác trên ô đó."
+    },
+    {
+      "q": "Trong khai báo int *p, dấu * có nghĩa là gì?",
+      "options": [
+        {
+          "text": "Phép nhân",
+          "why": "Đây không phải phép nhân. Phép nhân cần hai số đứng hai bên dấu *."
+        },
+        {
+          "text": "p là con trỏ tới kiểu int",
+          "why": "Đúng. Khi khai báo, * báo cho máy biết p dùng để giữ địa chỉ của một số nguyên int."
+        },
+        {
+          "text": "p là số nguyên có giá trị 2",
+          "why": "Không. Không có số 2 nào ở đây. Dấu * là một phần của kiểu con trỏ."
+        },
+        {
+          "text": "Xóa biến p",
+          "why": "Khai báo không xóa gì cả. Nó chỉ tạo biến p mới."
+        }
+      ],
+      "answer": 1,
+      "explain": "Khi khai báo: 'p là con trỏ tới int'. Khi dùng: '*p là nội dung ô p trỏ tới'."
+    },
+    {
+      "q": "malloc trả về gì khi xin bộ nhớ thành công?",
+      "options": [
+        {
+          "text": "Địa chỉ của vùng nhớ vừa được cấp",
+          "why": "Đúng. malloc đưa cho anh địa chỉ của vùng nhớ mới, và anh lưu địa chỉ đó vào con trỏ."
+        },
+        {
+          "text": "Giá trị đang nằm trong vùng nhớ",
+          "why": "Vùng nhớ mới chưa có giá trị có ý nghĩa. malloc không đọc nội dung cho anh."
+        },
+        {
+          "text": "Số byte đã cấp",
+          "why": "Số byte là do anh tự tính bằng sizeof. malloc trả về địa chỉ."
+        },
+        {
+          "text": "Luôn là NULL",
+          "why": "NULL chỉ xuất hiện khi không xin được bộ nhớ. Khi thành công, malloc trả về địa chỉ thật."
+        }
+      ],
+      "answer": 0,
+      "explain": "malloc xin một vùng nhớ trên heap và trả về địa chỉ của vùng đó."
+    },
+    {
+      "q": "Vì sao phải kiểm tra malloc có trả về NULL không?",
+      "options": [
+        {
+          "text": "Vì có thể đã hết bộ nhớ, và ghi vào NULL sẽ làm chương trình crash",
+          "why": "Đúng. Nếu malloc thất bại, nó trả về NULL. Ghi vào NULL là lỗi nghiêm trọng."
+        },
+        {
+          "text": "Vì NULL làm máy chậm đi",
+          "why": "NULL không ảnh hưởng tốc độ. Lý do là để tránh crash khi hết bộ nhớ."
+        },
+        {
+          "text": "Vì NULL là số phải kiểm tra theo quy định",
+          "why": "Không có quy định như vậy. Đây là cách tự bảo vệ chương trình."
+        },
+        {
+          "text": "Không cần kiểm tra, luôn thành công",
+          "why": "Không đúng. Khi hết bộ nhớ, malloc có thể thất bại, nên phải kiểm tra."
+        }
+      ],
+      "answer": 0,
+      "explain": "Luôn kiểm tra sau malloc. Nếu NULL, dừng lại hoặc báo lỗi, đừng dùng con trỏ đó."
+    },
+    {
+      "q": "Một hàm trả về địa chỉ của một biến nằm trong hàm (biến cục bộ). Điều gì xảy ra?",
+      "options": [
+        {
+          "text": "Luôn an toàn, vì máy tự giữ lại biến",
+          "why": "Không. Biến cục bộ nằm trên stack và bị dọn khi hàm kết thúc."
+        },
+        {
+          "text": "An toàn nếu in ra ngay",
+          "why": "Có thể in ra được một lúc, nhưng đó là may mắn, không phải an toàn. Dùng sau đó là lỗi."
+        },
+        {
+          "text": "Không an toàn, vì biến đã hết hiệu lực sau khi hàm kết thúc",
+          "why": "Đúng. Địa chỉ vẫn còn, nhưng ô nhớ đã bị dọn, dùng nó là lỗi."
+        },
+        {
+          "text": "Luôn trả về NULL",
+          "why": "Máy không tự đổi địa chỉ thành NULL. Con trỏ vẫn chứa địa chỉ cũ."
+        }
+      ],
+      "answer": 2,
+      "explain": "Đừng trả về địa chỉ của biến cục bộ. Nếu cần sống lâu hơn hàm, hãy dùng heap bằng malloc."
+    },
+    {
+      "q": "Sau khi free(p), vì sao nên viết p = NULL?",
+      "options": [
+        {
+          "text": "Để giải phóng thêm bộ nhớ",
+          "why": "free đã trả bộ nhớ rồi. Gán NULL không giải phóng gì thêm."
+        },
+        {
+          "text": "Để lần dùng p sau đó bị crash ngay, nên dễ tìm lỗi",
+          "why": "Đúng. Nếu p là NULL, lỗi xuất hiện ngay tại chỗ. Nếu không, lỗi có thể âm thầm xảy ra."
+        },
+        {
+          "text": "Để tăng tốc chương trình",
+          "why": "Việc gán NULL không làm chương trình nhanh hơn."
+        },
+        {
+          "text": "Không cần, free đã làm mọi thứ",
+          "why": "free không đổi giá trị của p. p vẫn giữ địa chỉ cũ, nên cần gán NULL để tránh dùng nhầm."
+        }
+      ],
+      "answer": 1,
+      "explain": "Sau free, con trỏ vẫn chứa địa chỉ cũ. Gán NULL giúp lỗi lộ ra sớm."
+    },
+    {
+      "q": "Số phần tử của mảng chỉ biết khi chương trình chạy (người dùng nhập). Nên cấp bộ nhớ ở đâu?",
+      "options": [
+        {
+          "text": "Trên stack",
+          "why": "Stack cần biết kích thước trước khi biên dịch. Số phần tử lúc này chưa biết."
+        },
+        {
+          "text": "Trên heap bằng malloc",
+          "why": "Đúng. Heap cấp đúng số lượng cần thiết lúc chạy."
+        },
+        {
+          "text": "Trong thanh ghi của CPU",
+          "why": "Thanh ghi chỉ chứa được vài giá trị nhỏ, không đủ cho một mảng do người dùng quyết định."
+        },
+        {
+          "text": "Trong biến toàn cục có kích thước cố định",
+          "why": "Kích thước cố định không phù hợp khi số phần tử thay đổi theo người dùng."
+        }
+      ],
+      "answer": 1,
+      "explain": "Khi kích thước chỉ biết lúc chạy, hãy xin bộ nhớ trên heap."
+    },
+    {
+      "q": "Anh quên gọi free cho vùng nhớ đã malloc. Chuyện gì xảy ra?",
+      "options": [
+        {
+          "text": "Chương trình luôn crash ngay",
+          "why": "Thường không crash ngay. Lỗi này thường âm thầm."
+        },
+        {
+          "text": "Bộ nhớ bị giữ mãi trong lúc chương trình chạy (rò rỉ). Chương trình chạy lâu sẽ cạn bộ nhớ",
+          "why": "Đúng. Chương trình ngắn thoát thì hệ điều hành thu lại hết. Server chạy lâu thì không."
+        },
+        {
+          "text": "Hàm sẽ tự giải phóng khi kết thúc",
+          "why": "Heap không tự dọn như stack. Anh phải tự free."
+        },
+        {
+          "text": "Biến x đổi giá trị",
+          "why": "Quên free không ảnh hưởng đến giá trị của các biến khác."
+        }
+      ],
+      "answer": 1,
+      "explain": "Mỗi lần malloc phải có đúng một free. Đây là lỗi rò rỉ bộ nhớ."
+    }
+  ]
+}

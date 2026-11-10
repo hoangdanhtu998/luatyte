@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Sửa lỗi biên dịch",
+    "prompt": "Chương trình sau thiếu dấu chấm phẩy nên không biên dịch được. Sửa lại để in đúng dòng `Xin chao`.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Xin chao\\n\")\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "",
+        "expected": "Xin chao\n"
+      }
+    ]
+  }
+]

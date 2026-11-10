@@ -1,0 +1,142 @@
+{
+  "quizzes": [
+    {
+      "q": "Chuỗi `\"Hi\"` chiếm bao nhiêu ô nhớ?",
+      "options": [
+        {
+          "text": "2",
+          "why": "Thiếu ký tự kết thúc '\\0'."
+        },
+        {
+          "text": "3",
+          "why": "Đúng. Có 'H', 'i' và ký tự kết thúc '\\0'."
+        },
+        {
+          "text": "1",
+          "why": "Có ít nhất 2 ký tự chữ cộng với ký tự kết thúc."
+        },
+        {
+          "text": "4",
+          "why": "Không có ô thừa nào khác."
+        }
+      ],
+      "answer": 1,
+      "explain": "Chuỗi luôn có thêm một ô cho ký tự kết thúc '\\0'."
+    },
+    {
+      "q": "`strlen(\"abc\")` cho kết quả bao nhiêu?",
+      "options": [
+        {
+          "text": "4",
+          "why": "4 sẽ tính cả '\\0', nhưng strlen không tính nó."
+        },
+        {
+          "text": "3",
+          "why": "Đúng. strlen đếm số ký tự trước '\\0'."
+        },
+        {
+          "text": "2",
+          "why": "Có ba chữ cái a, b, c."
+        },
+        {
+          "text": "0",
+          "why": "Chuỗi có ba ký tự."
+        }
+      ],
+      "answer": 1,
+      "explain": "strlen không tính ký tự kết thúc."
+    },
+    {
+      "q": "Vì sao không nên dùng `==` để so sánh hai chuỗi?",
+      "options": [
+        {
+          "text": "Vì == so sánh địa chỉ của hai mảng, không so nội dung",
+          "why": "Đúng. Hai mảng khác nhau có địa chỉ khác, nên == luôn sai dù nội dung giống nhau."
+        },
+        {
+          "text": "Vì == không dùng được với số",
+          "why": "== dùng được với số, vấn đề là với chuỗi."
+        },
+        {
+          "text": "Vì == làm chuỗi bị xóa",
+          "why": "== không thay đổi chuỗi."
+        },
+        {
+          "text": "Vì == chỉ dùng được với char",
+          "why": "Không liên quan đến kiểu char."
+        }
+      ],
+      "answer": 0,
+      "explain": "Với chuỗi, dùng strcmp để so sánh nội dung."
+    },
+    {
+      "q": "`strcmp(a, b) == 0` có nghĩa là gì?",
+      "options": [
+        {
+          "text": "Hai chuỗi giống nhau",
+          "why": "Đúng. strcmp trả về 0 khi hai chuỗi bằng nhau."
+        },
+        {
+          "text": "Chuỗi a dài hơn chuỗi b",
+          "why": "Độ dài không được so trong kết quả này."
+        },
+        {
+          "text": "Chuỗi a rỗng",
+          "why": "Không liên quan đến chuỗi rỗng."
+        },
+        {
+          "text": "Lỗi chương trình",
+          "why": "Đây là cách so sánh đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "strcmp trả về 0 khi giống nhau."
+    },
+    {
+      "q": "Vì sao `strcpy` có thể gây lỗi?",
+      "options": [
+        {
+          "text": "Vì nó không kiểm tra độ dài, chuỗi dài hơn có thể tràn bộ nhớ",
+          "why": "Đúng. Nên dùng snprintf hoặc strncpy và kiểm tra kích thước đích."
+        },
+        {
+          "text": "Vì nó chỉ chép được số",
+          "why": "strcpy dùng cho chuỗi."
+        },
+        {
+          "text": "Vì nó xóa chuỗi gốc",
+          "why": "strcpy chỉ chép, không xóa nguồn."
+        },
+        {
+          "text": "Vì nó không có trong C",
+          "why": "strcpy là hàm chuẩn của C."
+        }
+      ],
+      "answer": 0,
+      "explain": "Luôn kiểm tra kích thước đích khi sao chép chuỗi."
+    },
+    {
+      "q": "Chuỗi `\"lap trinh C\"` có bao nhiêu ký tự không tính khoảng trắng?",
+      "options": [
+        {
+          "text": "9",
+          "why": "Đúng. Có 9 chữ cái: lap (3), trinh (5), C (1)."
+        },
+        {
+          "text": "10",
+          "why": "Đếm lại: tổng là 9 chữ cái."
+        },
+        {
+          "text": "11",
+          "why": "Chuỗi có 11 ký tự kể cả khoảng trắng, nhưng đã loại khoảng trắng."
+        },
+        {
+          "text": "12",
+          "why": "Quá nhiều, không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Đếm từng chữ cái, bỏ qua khoảng trắng."
+    }
+  ]
+}

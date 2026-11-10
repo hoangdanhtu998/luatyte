@@ -16,12 +16,12 @@
     ink: "#2A2018", line: "rgba(50,36,20,.28)",
     wood1: "#D9A15C", wood2: "#B97B3C", wood3: "#8A5628", woodHi: "#EBC48C",
     steel: "#B8C2CC", steel2: "#8A97A5", steel3: "#5E6B79", white: "#FFFFFF", cream: "#FBF6EA",
-    screenOff: "#223042", screenOn: "#7FD6E8", green: "#3BC48A", red: "#E5534B", amber: "#F5B72E", blue: "#3B82F6", teal: "#14B8A6", rose: "#F43F5E"
+    screenOff: "#223042", screenOn: "#7FD6E8", green: "#8f8070", red: "#E5534B", amber: "#F5B72E", blue: "#3B82F6", teal: "#72665a", rose: "#F43F5E"
   };
   const THEME = [
     { name: "Tiếp đón", short: "1. Tiếp đón", wall: "#F4EFE4", wain: "#DCCFB4", rail: "#B9A98A", fA: "#F0E8D8", fB: "#E6DCC6", acc: "#F5B72E", staff: "Lê Tân Vân" },
     { name: "Khám và cấp cứu", short: "2. Khám và cấp cứu", wall: "#EEF3F6", wain: "#CFE0EA", rail: "#9DB8C8", fA: "#F3F6F8", fB: "#E6ECF0", acc: "#3B82F6", staff: "BS. Tuấn" },
-    { name: "Xét nghiệm và dược", short: "3. Xét nghiệm và dược", wall: "#EDF4F1", wain: "#CFE3DA", rail: "#9CC0B0", fA: "#F1F6F3", fB: "#E3ECE7", acc: "#14B8A6", staff: "DS. Lan" },
+    { name: "Xét nghiệm và dược", short: "3. Xét nghiệm và dược", wall: "#EDF4F1", wain: "#CFE3DA", rail: "#b8aea4", fA: "#F1F6F3", fB: "#E3ECE7", acc: "#72665a", staff: "DS. Lan" },
     { name: "Điều dưỡng và hồi phục", short: "4. Điều dưỡng và hồi phục", wall: "#F4EEEE", wain: "#E3D3D3", rail: "#C9AFAF", fA: "#F5F1F1", fB: "#EAE3E3", acc: "#F43F5E", staff: "Y tá Mai" }
   ];
   THEME.push(
@@ -154,11 +154,11 @@
   const SKIN_ALL = ["#F5D0B0", "#F1C9A5", "#E7B98F", "#D9A578", "#C68B59", "#8D5524", "#6B4226"];
   const HAIR_COLS = ["#241D14", "#3B2A1E", "#5F3A1E", "#8A5A2A", "#B8651E", "#7A4A1E", "#111827", "#4E4438", "#C9A66B", "#E0B872", "#2A1D16"];
   const GREY_COLS = ["#D6D3CB", "#B9B4AA", "#9A9A9A"];
-  const SHIRT_COLS = ["#6FA8DC", "#9AB0CC", "#4E6E8E", "#D98BA5", "#E86C3A", "#6B8E7B", "#F2C14E", "#8B5CF6", "#C2527A", "#4E8A7E", "#A67C4A", "#E7D9B8", "#5B8DEF", "#9AA7B8", "#2E6E8E", "#81B29A"];
-  const DRESS_COLS = ["#B3689B", "#F2A7C3", "#7B6FA8", "#5B8DEF", "#E07A5F", "#81B29A", "#F4A261", "#CDB4DB"];
+  const SHIRT_COLS = ["#6FA8DC", "#9AB0CC", "#4E6E8E", "#D98BA5", "#E86C3A", "#8b7d6e", "#F2C14E", "#8B5CF6", "#C2527A", "#4E8A7E", "#A67C4A", "#E7D9B8", "#5B8DEF", "#9AA7B8", "#2E6E8E", "#a69a8d"];
+  const DRESS_COLS = ["#B3689B", "#F2A7C3", "#7B6FA8", "#5B8DEF", "#E07A5F", "#a69a8d", "#F4A261", "#CDB4DB"];
   const PANT_COLS = ["#2C3540", "#3A4654", "#4E4438", "#2C3E50", "#4A7FA5", "#3A3226", "#4A3F6B", "#3A3A3A"];
   const SHOE_COLS = ["#241D14", "#3B2A1E", "#F5F5F5", "#5B4636"];
-  const HAT_COLS = ["#F2C230", "#E86C3A", "#5B8DEF", "#FFFFFF", "#81B29A"];
+  const HAT_COLS = ["#F2C230", "#E86C3A", "#5B8DEF", "#FFFFFF", "#a69a8d"];
   /* nhân vật ngẫu nhiên: người lớn, trẻ em, người già; nam hoặc nữ; có thể có kính, mũ, khẩu trang, râu, gậy */
   function randomLook() {
     const k = Math.random();
@@ -191,7 +191,7 @@
     { hair: "#111827", shirt: "#D98BA5", pants: "#4E4438", longHair: true, female: true },
     { hair: "#241D14", dress: "#F2A7C3", longHair: true, kid: true, female: true },
     { hair: "#D6D3CB", dress: "#7B6FA8", longHair: true, bun: true, glasses: true, cane: true, elder: true, female: true },
-    { hair: "#4E4438", shirt: "#6B8E7B", pants: "#3A4654", wheelchair: true, elder: true },
+    { hair: "#4E4438", shirt: "#8b7d6e", pants: "#3A4654", wheelchair: true, elder: true },
     { hair: "#2A1D16", shirt: "#E0A458", pants: "#3A4654", wheelchair: true },
     { hair: "#3B2A1E", shirt: "#4E8A7E", pants: "#2C3540", beard: true },
     { hair: "#8A5A2A", shirt: "#C2527A", pants: "#3A3226", longHair: true, female: true, glasses: true },
@@ -231,10 +231,10 @@
   }
   function windowFrame(x, y, w, h, view) {
     rrect(x - 2, y - 2, w + 4, h + 4, 3, "#F5F1E6"); srect(x - 2, y - 2, w + 4, h + 4, 3, "rgba(0,0,0,.25)", 1);
-    g.fillStyle = lg(0, y, 0, y + h, view === "garden" ? [[0, "#BFE6F6"], [0.62, "#D9F1FA"], [0.62, "#8CCB7B"], [1, "#6DB563"]] : [[0, "#9FD4F0"], [1, "#DDF2FB"]]);
+    g.fillStyle = lg(0, y, 0, y + h, view === "garden" ? [[0, "#BFE6F6"], [0.62, "#D9F1FA"], [0.62, "#aea398"], [1, "#9a8c7e"]] : [[0, "#9FD4F0"], [1, "#DDF2FB"]]);
     g.fillRect(x, y, w, h);
     if (view !== "garden") { circ(x + w * 0.74, y + h * 0.3, 3.2, "rgba(255,255,255,.9)"); elp(x + w * 0.3, y + h * 0.42, 7, 2.6, "rgba(255,255,255,.85)"); }
-    else { circ(x + w * 0.3, y + h * 0.78, 4, "#4FA356"); circ(x + w * 0.66, y + h * 0.74, 5, "#58B05F"); rect(x + w * 0.62, y + h * 0.78, 1.6, 6, "#7A5230"); }
+    else { circ(x + w * 0.3, y + h * 0.78, 4, "#88796a"); circ(x + w * 0.66, y + h * 0.74, 5, "#938475"); rect(x + w * 0.62, y + h * 0.78, 1.6, 6, "#7A5230"); }
     line(x + w / 2, y, x + w / 2, y + h, "#F5F1E6", 1.8); line(x, y + h / 2, x + w, y + h / 2, "#F5F1E6", 1.2);
     rect(x - 4, y + h + 2, w + 8, 2.4, "#E6DFCB");
     g.fillStyle = "rgba(255,255,255,.28)"; g.beginPath(); g.moveTo(x + 2, y + h); g.lineTo(x + w * 0.4, y); g.lineTo(x + w * 0.58, y); g.lineTo(x + 8 + w * 0.12, y + h); g.fill();
@@ -252,7 +252,7 @@
     shade(x, y + 1, 9 * s, 3 * s, 0.25);
     g.fillStyle = lg(x - 5 * s, 0, x + 5 * s, 0, [[0, "#C9663A"], [1, "#A24A25"]]); g.beginPath(); g.moveTo(x - 5 * s, y - 9 * s); g.lineTo(x + 5 * s, y - 9 * s); g.lineTo(x + 3.6 * s, y); g.lineTo(x - 3.6 * s, y); g.fill();
     rect(x - 5.6 * s, y - 10.6 * s, 11.2 * s, 2.4 * s, "#D97A4A");
-    const lv = [[-6, -19, "#3E9B52"], [6, -20, "#4DB063"], [0, -25, "#5CC274"], [-3, -15, "#46A85B"], [4, -14, "#3E9B52"]];
+    const lv = [[-6, -19, "#7a6d5f"], [6, -20, "#8e7f6f"], [0, -25, "#9c8f82"], [-3, -15, "#857769"], [4, -14, "#7a6d5f"]];
     for (const [dx, dy, c] of lv) { g.fillStyle = c; g.beginPath(); g.ellipse(x + dx * s, y + dy * s + 4 * s, 3.2 * s, 7 * s, dx * 0.07, 0, Math.PI * 2); g.fill(); }
   }
   function chair(x, y, c1, c2) {
@@ -301,7 +301,7 @@
   }
   function ecg(x, y, w, h, t, col) {
     rrect(x, y, w, h, 2, "#0E1620"); srect(x, y, w, h, 2, "#5E6B79", 1);
-    g.strokeStyle = col || "#3BE0A0"; g.lineWidth = 1; g.beginPath();
+    g.strokeStyle = col || "#9b8e80"; g.lineWidth = 1; g.beginPath();
     for (let i = 0; i <= w - 4; i += 1) {
       const p = ((i + t * 0.9) % 30) / 30; let v = 0;
       if (p > 0.1 && p < 0.16) v = -(p - 0.1) * 130; else if (p >= 0.16 && p < 0.2) v = (p - 0.16) * 260 - 7; else if (p >= 0.2 && p < 0.25) v = 3 - (p - 0.2) * 60;
@@ -332,19 +332,19 @@
     else if (kind === "pill") { g.rotate(-0.7); rrect(-4, -2, 4.2, 4, 2, "#E5534B"); rrect(0, -2, 4.2, 4, 2, "#F6F2EA"); g.strokeStyle = "rgba(0,0,0,.35)"; g.lineWidth = 0.6; g.beginPath(); g.roundRect(-4, -2, 8.2, 4, 2); g.stroke(); }
     else if (kind === "cross") { rect(-1.3, -4, 2.6, 8, "#3B82F6"); rect(-4, -1.3, 8, 2.6, "#3B82F6"); }
     else if (kind === "clip") { rrect(-3.2, -4, 6.4, 8, 1, "#C9A065"); rect(-2.2, -3, 4.4, 6, "#FFFDF6"); line(-1.4, -1, 1.4, -1, "#8A97A5", 0.7); line(-1.4, 0.8, 1.4, 0.8, "#8A97A5", 0.7); rrect(-1.5, -4.6, 3, 1.8, 0.6, "#6B7682"); }
-    else if (kind === "ok") { g.strokeStyle = "#2E9D57"; g.lineWidth = 1.8; g.beginPath(); g.moveTo(-3.4, 0.2); g.lineTo(-0.8, 2.8); g.lineTo(3.6, -2.6); g.stroke(); }
+    else if (kind === "ok") { g.strokeStyle = "#726659"; g.lineWidth = 1.8; g.beginPath(); g.moveTo(-3.4, 0.2); g.lineTo(-0.8, 2.8); g.lineTo(3.6, -2.6); g.stroke(); }
     else if (kind === "no") { g.fillStyle = "#E5534B"; g.font = "700 9px Epilogue, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("?", 0, 0.6); g.textBaseline = "alphabetic"; }
     g.restore();
   }
 
   function stool(x, y, c) { shade(x, y + 1, 8, 2.6, 0.22); rect(x - 1, y - 8, 2, 8, C.steel3); elp(x, y - 10, 7, 2.8, shade_c(c, -26)); rrect(x - 7, y - 13, 14, 4.6, 2.2, c); rect(x - 6, y - 12.2, 12, 1, "rgba(255,255,255,.4)"); line(x - 5, y - 0.4, x + 5, y - 0.4, C.steel3, 1.4); }
-  function trolley(x, y, w) { w = w || 26; shade(x + w / 2, y + 3, w * 0.6, 3, 0.22); rrect(x, y - 17, w, 15, 2, "#F2F5F8"); srect(x, y - 17, w, 15, 2, "rgba(0,0,0,.22)", 1); rect(x, y - 11, w, 1, "rgba(0,0,0,.18)"); rect(x + w / 2 - 3, y - 15, 6, 1.4, C.steel2); rect(x + w / 2 - 3, y - 8, 6, 1.4, C.steel2); circ(x + 4, y - 0.4, 2, "#3A4450"); circ(x + w - 4, y - 0.4, 2, "#3A4450"); rect(x + 2, y - 20, w - 4, 3, "#DDE4EA"); rect(x + 5, y - 24, 4, 4, "#F28B82"); rect(x + 11, y - 23, 5, 3, "#81C995"); }
+  function trolley(x, y, w) { w = w || 26; shade(x + w / 2, y + 3, w * 0.6, 3, 0.22); rrect(x, y - 17, w, 15, 2, "#F2F5F8"); srect(x, y - 17, w, 15, 2, "rgba(0,0,0,.22)", 1); rect(x, y - 11, w, 1, "rgba(0,0,0,.18)"); rect(x + w / 2 - 3, y - 15, 6, 1.4, C.steel2); rect(x + w / 2 - 3, y - 8, 6, 1.4, C.steel2); circ(x + 4, y - 0.4, 2, "#3A4450"); circ(x + w - 4, y - 0.4, 2, "#3A4450"); rect(x + 2, y - 20, w - 4, 3, "#DDE4EA"); rect(x + 5, y - 24, 4, 4, "#F28B82"); rect(x + 11, y - 23, 5, 3, "#b0a59a"); }
   function bin(x, y) { shade(x, y + 1, 6, 2, 0.2); g.fillStyle = "#6F8CA3"; g.beginPath(); g.moveTo(x - 5, y - 11); g.lineTo(x + 5, y - 11); g.lineTo(x + 4, y); g.lineTo(x - 4, y); g.fill(); rect(x - 6, y - 12.6, 12, 2.2, "#8CA9BF"); circ(x, y - 6, 1.6, "rgba(255,255,255,.7)"); }
-  function toys(x, y) { rrect(x - 12, y - 8, 24, 8, 2, "#CFA66B"); rect(x - 10, y - 14, 5, 6, "#E5534B"); rect(x - 4, y - 12, 5, 4, "#3B82F6"); rect(x + 2, y - 15, 5, 7, "#F5B72E"); circ(x + 9, y - 12, 2.6, "#81C995"); }
+  function toys(x, y) { rrect(x - 12, y - 8, 24, 8, 2, "#CFA66B"); rect(x - 10, y - 14, 5, 6, "#E5534B"); rect(x - 4, y - 12, 5, 4, "#3B82F6"); rect(x + 2, y - 15, 5, 7, "#F5B72E"); circ(x + 9, y - 12, 2.6, "#b0a59a"); }
   function bench(x, y, w, c) { shade(x + w / 2, y + 2, w * 0.6, 3, 0.22); rrect(x, y - 11, w, 6, 2.4, c); rrect(x, y - 19, w, 9, 3, shade_c(c, 14)); rect(x + 3, y - 5, 2, 6, C.steel3); rect(x + w - 5, y - 5, 2, 6, C.steel3); }
 
   /* ---------- 4 phòng: lớp sau, nhân viên, lớp trước ---------- */
-  const BOXES = ["#F28B82", "#FDD663", "#81C995", "#8AB4F8", "#C58AF9", "#FCAD70", "#78D9EC", "#F6AEA9"];
+  const BOXES = ["#F28B82", "#FDD663", "#b0a59a", "#8AB4F8", "#C58AF9", "#FCAD70", "#78D9EC", "#F6AEA9"];
 
   function room0(t, eq) {
     const th = THEME[0];
@@ -392,7 +392,7 @@
     wallAndFloor(th);
     windowFrame(10, 8, 38, 22);
     for (let i = 0; i < 6; i++) rect(10, 10 + i * 3.6, 38, 1.4, "rgba(255,255,255,.6)");
-    cabinetWall(56, 4, 30, 28, ["#F28B82", "#FDD663", "#81C995", "#8AB4F8", "#FFFDF6"]);
+    cabinetWall(56, 4, 30, 28, ["#F28B82", "#FDD663", "#b0a59a", "#8AB4F8", "#FFFDF6"]);
     ecg(96, 8, 34, 20, t);
     rrect(140, 6, 34, 24, 2, "#F8FBFF"); srect(140, 6, 34, 24, 2, "rgba(0,0,0,.35)", 1);
     g.strokeStyle = "rgba(120,140,160,.8)"; g.lineWidth = 1; g.beginPath(); g.arc(157, 18, 6, Math.PI, 0); g.stroke();
@@ -406,7 +406,7 @@
     bed(34, 76, 78, "#9CC3D6", "#FFFFFF", { rail: true });
     /* máy theo dõi cạnh giường */
     shade(124, 106, 8, 3, 0.2); rect(123, 78, 2, 26, C.steel2); rrect(116, 66, 18, 13, 2, "#2B3440"); rrect(117.4, 67.4, 15.2, 10.2, 1, "#0E1620");
-    g.strokeStyle = "#3BE0A0"; g.lineWidth = 0.9; g.beginPath(); for (let i = 0; i < 14; i++) { const p = ((i * 2 + t * 0.8) % 16) / 16; const v = p > 0.4 && p < 0.5 ? -4 : p >= 0.5 && p < 0.58 ? 5 : 0; i ? g.lineTo(118 + i, 72.5 + v) : g.moveTo(118, 72.5 + v); } g.stroke();
+    g.strokeStyle = "#9b8e80"; g.lineWidth = 0.9; g.beginPath(); for (let i = 0; i < 14; i++) { const p = ((i * 2 + t * 0.8) % 16) / 16; const v = p > 0.4 && p < 0.5 ? -4 : p >= 0.5 && p < 0.58 ? 5 : 0; i ? g.lineTo(118 + i, 72.5 + v) : g.moveTo(118, 72.5 + v); } g.stroke();
     rect(119, 104, 12, 2, C.steel3);
     iv(30, 104, 30);
     trolley(52, 136, 28); bin(190, 140); stool(150, 130, "#6AA7D8");
@@ -416,8 +416,8 @@
     g.strokeStyle = "#4C5967"; g.lineWidth = 1; g.beginPath(); g.arc(182, 73, 3.2, 0.2, Math.PI - 0.2); g.stroke(); circ(182, 77, 1.4, "#8A97A5");
     drawStaff(1, t);
     if (eq >= 2) { ecg(168, 38, 24, 14, t + 20, "#FF8A5B"); }
-    if (eq >= 3) { cabinetWall(100, 36, 26, 24, ["#F28B82", "#FDD663", "#81C995", "#8AB4F8", "#FFFDF6"]); }
-    if (eq >= 5) { shade(182, 138, 12, 3, 0.25); rrect(170, 104, 24, 18, 2, "#E5534B"); rect(170, 108, 24, 2, "#FFFFFF"); rect(176, 112, 12, 6, "#2B3440"); rect(178, 114, 8, 2, "#3BE0A0"); circ(174, 123, 2.4, "#34404C"); circ(190, 123, 2.4, "#34404C"); }
+    if (eq >= 3) { cabinetWall(100, 36, 26, 24, ["#F28B82", "#FDD663", "#b0a59a", "#8AB4F8", "#FFFDF6"]); }
+    if (eq >= 5) { shade(182, 138, 12, 3, 0.25); rrect(170, 104, 24, 18, 2, "#E5534B"); rect(170, 108, 24, 2, "#FFFFFF"); rect(176, 112, 12, 6, "#2B3440"); rect(178, 114, 8, 2, "#9b8e80"); circ(174, 123, 2.4, "#34404C"); circ(190, 123, 2.4, "#34404C"); }
     if (eq >= 7) { shade(150, 128, 10, 3, 0.2); rect(148, 100, 4, 24, C.steel2); rrect(140, 88, 20, 14, 2, "#F2F5F8"); rect(142, 90, 16, 8, "#223042"); rect(144, 92, 8, 2, C.screenOn); circ(150, 124, 2.4, "#34404C"); }
   }
   function room2(t, eq) {
@@ -433,15 +433,15 @@
     /* băng xét nghiệm bên trái */
     counter(8, 82, 92, 16, "#EEF3F6", "#A9BCC8", "#8199A8");
     rrect(14, 70, 10, 11, 2, "#E6EDF2"); circ(19, 72, 4, "#C4D2DC"); rect(17.6, 66, 2.8, 5, "#8A97A5");
-    for (let i = 0; i < 5; i++) { rect(48 + i * 3.4, 66, 2.4, 14, ["#F28B82", "#FDD663", "#81C995", "#8AB4F8", "#C58AF9"][i]); rect(48 + i * 3.4, 65, 2.4, 1.6, "#FFFDF6"); }
+    for (let i = 0; i < 5; i++) { rect(48 + i * 3.4, 66, 2.4, 14, ["#F28B82", "#FDD663", "#b0a59a", "#8AB4F8", "#C58AF9"][i]); rect(48 + i * 3.4, 65, 2.4, 1.6, "#FFFDF6"); }
     rect(46, 78, 20, 2.4, "#8A97A5");
     const by = Math.sin(t / 14) * 1.2;
-    g.fillStyle = "rgba(180,225,245,.7)"; g.beginPath(); g.moveTo(74, 66); g.lineTo(80, 66); g.lineTo(84, 80); g.lineTo(70, 80); g.fill(); rect(74, 70 + by, 6, 6, "rgba(90,200,150,.7)"); circ(77, 68 + by * 0.4, 0.9, "rgba(255,255,255,.8)");
+    g.fillStyle = "rgba(180,225,245,.7)"; g.beginPath(); g.moveTo(74, 66); g.lineTo(80, 66); g.lineTo(84, 80); g.lineTo(70, 80); g.fill(); rect(74, 70 + by, 6, 6, "rgba(200,160,110,.7)"); circ(77, 68 + by * 0.4, 0.9, "rgba(255,255,255,.8)");
     rrect(88, 64, 10, 16, 2, "#F2F5F8"); rect(90, 67, 6, 4, "#7FD6E8"); circ(93, 75, 1.4, "#E5534B");
     monitorPC(36, 76, true, t);
     drawStaff(2, t);
-    fancyRug(40, 112, 60, 22, "#2E8F6B", "#EADFC0");
-    stool(34, 118, "#5FBFA8"); trolley(140, 142, 30); bin(14, 140);
+    fancyRug(40, 112, 60, 22, "#6a5f53", "#EADFC0");
+    stool(34, 118, "#9c8f82"); trolley(140, 142, 30); bin(14, 140);
     /* quầy dược */
     counter(104, 86, 58, 14, "#F2E6CE", "#CBA66B", "#A07F45");
     rrect(112, 72, 13, 8, 1.4, "#FFFDF6"); rect(114, 74, 9, 1.2, "#B9B3A3"); rect(114, 76.6, 6, 1.2, "#B9B3A3");
@@ -466,7 +466,7 @@
     bed(14, 66, 74, "#9CC3D6", "#FFFFFF", { rail: true });
     bed(104, 66, 74, "#A9C9BE", "#FFFFFF", { rail: true });
     iv(94, 98, 32); iv(190, 92, 30);
-    rrect(88, 84, 12, 13, 2, "#E2C197"); rect(88, 89, 12, 1.2, "rgba(0,0,0,.18)"); circ(94, 82, 2.6, "#F4B6C6"); rect(93.4, 78, 1.2, 4, "#4FA356");
+    rrect(88, 84, 12, 13, 2, "#E2C197"); rect(88, 89, 12, 1.2, "rgba(0,0,0,.18)"); circ(94, 82, 2.6, "#F4B6C6"); rect(93.4, 78, 1.2, 4, "#88796a");
     /* nhân viên + bàn điều dưỡng */
     drawStaff(3, t);
     counter(124, 112, 70, 14, "#F6E6D8", "#D4A98A", "#B3866A");
@@ -476,17 +476,17 @@
     if (eq >= 2) { shade(150, 40, 0, 0, 0); rrect(130, 36, 24, 14, 2, "#10161C"); rect(132, 38, 20, 10, "#4B5A6A"); rect(136, 40, 8, 6, "#7FD6E8"); }
     if (eq >= 3) { shade(8, 136, 8, 3, 0.22); rrect(3, 100, 9, 34, 3, "#4C8FD8"); rect(5, 96, 5, 5, C.steel2); circ(7.5, 112, 2, "#FFFDF6"); }
     if (eq >= 5) { wheelchair(60, 136); plant(188, 84, 1); }
-    if (eq >= 7) { cabinetWall(162, 40, 26, 22, ["#8FD0B0", "#FFFDF6", "#F7C6D4", "#8AB4F8"]); }
-    if (eq >= 9) { rrect(60, 34, 14, 8, 2, "#BFE6C3"); circ(67, 36, 4, "#6DB563"); }
+    if (eq >= 7) { cabinetWall(162, 40, 26, 22, ["#b9b0a6", "#FFFDF6", "#F7C6D4", "#8AB4F8"]); }
+    if (eq >= 9) { rrect(60, 34, 14, 8, 2, "#d8d3cd"); circ(67, 36, 4, "#9a8c7e"); }
     /* phần mở rộng (x 200–300): khu nhiều giường, góc tiêm chủng, thiết bị, đồ chơi và trang trí */
     fancyRug(214, 116, 66, 16, "#7FB8C9", "#F1E2D2");
     bed(206, 66, 70, "#B6D7E8", "#FFFFFF", { rail: true });
     iv(282, 98, 30);
     rrect(272, 84, 12, 13, 2, "#E2C197"); rect(272, 89, 12, 1.2, "rgba(0,0,0,.18)"); circ(278, 82, 2.6, "#F4B6C6");
     rrect(232, 12, 24, 16, 1.5, "#FFF4D6"); srect(232, 12, 24, 16, 1.5, "rgba(0,0,0,.25)", 1);
-    circ(244, 20, 3.2, "#F28B82"); circ(252, 22, 2.4, "#81C995");
+    circ(244, 20, 3.2, "#F28B82"); circ(252, 22, 2.4, "#b0a59a");
     counter(214, 132, 50, 12, "#F6E6D8", "#D4A98A", "#B3866A");
-    cabinetWall(270, 40, 22, 20, ["#8FD0B0", "#FFFDF6", "#F7C6D4"]);
+    cabinetWall(270, 40, 22, 20, ["#b9b0a6", "#FFFDF6", "#F7C6D4"]);
     bin(224, 146);
     monitorPC(282, 128, true, t + 40);
     toys(288, 146);
@@ -511,7 +511,7 @@
     if (eq >= 2) { rrect(112, 36, 24, 14, 2, "#10161C"); rect(114, 38, 20, 10, "#4B5A6A"); rect(118, 40, 8, 6, "#7FD6E8"); }
     if (eq >= 3) { cabinetWall(146, 36, 24, 24, ["#B9A6F0", "#FFFDF6", "#F3A6C0", "#8AB4F8"]); }
     if (eq >= 5) { shade(186, 112, 8, 3, 0.2); rrect(176, 40, 20, 30, 3, "#F4F7FA"); srect(176, 40, 20, 30, 3, "rgba(0,0,0,.22)", 1); rect(176, 54, 20, 1.2, "rgba(0,0,0,.2)"); rect(191, 46, 1.6, 6, C.steel2); }
-    if (eq >= 7) { for (let i = 0; i < 5; i++) circ(100 + i * 16, 4 + (i % 2) * 5, 3, ["#F28B82", "#FDD663", "#81C995", "#8AB4F8", "#C4A8F5"][i]); }
+    if (eq >= 7) { for (let i = 0; i < 5; i++) circ(100 + i * 16, 4 + (i % 2) * 5, 3, ["#F28B82", "#FDD663", "#b0a59a", "#8AB4F8", "#C4A8F5"][i]); }
     if (eq >= 9) { wheelchair(70, 144); }
   }
   function room5(t, eq) {
@@ -635,7 +635,7 @@
   /* người nằm trên giường: đầu trên gối, vai nhô khỏi chăn; (hx, hy) là tâm đầu */
   function lyingPatient(look, hx, hy) {
     const skin = look.skin || SKIN[0];
-    rrect(hx + 4, hy - 1, 14, 9, 4, look.shirt || "#6B8E7B");
+    rrect(hx + 4, hy - 1, 14, 9, 4, look.shirt || "#8b7d6e");
     circ(hx, hy, 6.2, skin);
     g.fillStyle = look.hair || "#2A1D16"; g.beginPath(); g.arc(hx, hy, 6.4, Math.PI, Math.PI * 2); g.fill();
     line(hx - 3.2, hy + 1.4, hx - 1.2, hy + 1.4, "#3B2A1E", 0.8);
@@ -906,7 +906,7 @@
   }
 
   /* ---------- hiệu ứng nổi ---------- */
-  function fxText(x, y, text, col) { S.fx.push({ x, y, text, col: col || "#2E9D57", life: 70 }); }
+  function fxText(x, y, text, col) { S.fx.push({ x, y, text, col: col || "#726659", life: 70 }); }
 
   /* ---------- máy quay: zoom vào phòng đang có ca ---------- */
   function camTarget(room) {
@@ -1029,7 +1029,7 @@
       const p = S.caseP; if (!p || p.state === "gone" || p.state === "leave") return;
       p.state = "react"; p.wait = 150; p.icon = ok ? "ok" : "no"; p.face = ok ? "s" : "f"; p.hop = ok ? 34 : 0;
       p.shake = ok ? 0 : 80;
-      S.flash = { col: ok ? "#38B26B" : "#E5534B", life: ok ? 36 : 48, max: ok ? 36 : 48 };
+      S.flash = { col: ok ? "#837567" : "#E5534B", life: ok ? 36 : 48, max: ok ? 36 : 48 };
       if (!ok) S.shk = 22;
     },
     fx(text, col, room) { const r = room >= 0 ? room : (S.active >= 0 ? S.active : 0); const sp = STAFF_AT[r]; fxText(sp[0], sp[1] - 38, text, col); },

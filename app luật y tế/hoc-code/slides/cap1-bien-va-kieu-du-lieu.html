@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biến và kiểu dữ liệu · Slide · Học code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">Bài 1 · Biến và kiểu dữ liệu</div><h1>Biến và kiểu dữ liệu</h1><div class="lead"></div></section>
+<section class="slide"><div class="kicker">BIẾN VÀ KIỂU DỮ LIỆU</div><h2>Mục tiêu</h2><div class="content"><ul class="list"><li>Hiểu biến là một ô nhớ có tên, chứa một giá trị</li><li>Biết gán giá trị và đọc giá trị của biến</li><li>Theo dõi được giá trị của biến qua từng dòng lệnh</li></ul></div><div class="foot">Biến và kiểu dữ liệu · 02</div></section>
+<section class="slide"><div class="kicker">TRƯỚC KHI ĐỌC</div><h2>Trước khi đọc: thử đoán</h2><div class="content"><p>Đoạn sau chạy xong thì <code>a</code> và <code>b</code> bằng bao nhiêu?</p>
+<pre class="code"><code>a = 5
+b = a
+a = 7</code></pre>
+<p>Viết đáp án ra giấy trước, rồi đọc tiếp. Đây là cách học chính của bài này: đoán, rồi kiểm tra bằng cách theo dõi từng bước.</p></div><div class="foot">Biến và kiểu dữ liệu · 03</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 1</div><h2>Ý chính 1: biến là một ô nhớ có tên</h2><div class="content"><p>Hình dung một dãy hộp có nhãn. Mỗi hộp có một nhãn (tên biến) và một thứ bên trong (giá trị). Gán <code>a = 5</code> nghĩa là: lấy hộp tên <code>a</code>, bỏ số 5 vào.</p></div><div class="foot">Biến và kiểu dữ liệu · 04</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 2</div><h2>Ý chính 2: gán là sao chép giá trị, không phải nối hai hộp</h2><div class="content"><p>Dòng <code>b = a</code> nghĩa là: lấy giá trị đang có trong <code>a</code> (lúc đó là 5) và chép sang <code>b</code>. Sau đó <code>b</code> có riêng số 5 của nó. Đổi <code>a</code> về sau không làm đổi <code>b</code>.</p></div><div class="foot">Biến và kiểu dữ liệu · 05</div></section>
+<section class="slide"><div class="kicker">BIẾN VÀ KIỂU DỮ LIỆU</div><h2>Bảng theo dõi</h2><div class="content"><p>Đây là cách để nhìn thấy máy tính làm gì ở từng dòng. Mỗi dòng lệnh là một hàng, mỗi cột là một biến.</p>
+<table class="t"><thead><tr><th>Dòng lệnh</th><th><code>a</code></th><th><code>b</code></th></tr></thead><tbody><tr><td><code>a = 5</code></td><td>5</td><td>(chưa có)</td></tr><tr><td><code>b = a</code></td><td>5</td><td>5</td></tr><tr><td><code>a = 7</code></td><td>7</td><td>5</td></tr></tbody></table>
+<p>Đáp án của phần đoán ở trên: <code>a = 7</code>, <code>b = 5</code>.</p></div><div class="foot">Biến và kiểu dữ liệu · 06</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 3</div><h2>Ý chính 3: kiểu dữ liệu là loại hộp</h2><div class="content"><p>Mỗi biến có kiểu, cho máy biết hộp chứa loại gì và chiếm bao nhiêu chỗ:</p>
+<ul class="list"><li><code>int</code>: số nguyên, ví dụ <code>7</code>, <code>-3</code></li><li><code>double</code>: số thực, ví dụ <code>3.5</code></li><li><code>char</code>: một ký tự, ví dụ <code>'A'</code></li></ul>
+<p>Kiểu quyết định phép tính làm như thế nào. Bài sau về toán tử sẽ thấy rõ điều này.</p></div><div class="foot">Biến và kiểu dữ liệu · 07</div></section>
+<section class="slide"><div class="kicker">BIẾN VÀ KIỂU DỮ LIỆU</div><h2>Ví dụ có code</h2><div class="content"><p>Chương trình này làm đúng theo bảng trên:</p>
+<pre class="code"><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int a = 5;
+    int b = a;      <span class="c-com">// chép giá trị của a sang b</span>
+    a = 7;          <span class="c-com">// đổi a, b không đổi</span>
+    printf("a=%d b=%d\n", a, b);
+    return 0;
+}</code></pre>
+<p><strong>Kết quả khi chạy:</strong></p>
+<pre class="code"><code>a=7 b=5</code></pre></div><div class="foot">Biến và kiểu dữ liệu · 08</div></section>
+<section class="slide"><div class="kicker">BIẾN VÀ KIỂU DỮ LIỆU</div><h2>Lỗi hay gặp</h2><div class="content"><ul class="list"><li>Nghĩ rằng <code>b = a</code> làm <code>b</code> và <code>a</code> "dính" với nhau. Thực tế chỉ chép một lần.</li><li>Dùng biến trước khi gán giá trị. Giá trị lúc đó là rác, không đoán được.</li><li>Quên kiểu: <code>int tuoi = 20.5;</code> sẽ mất phần thập phân.</li></ul></div><div class="foot">Biến và kiểu dữ liệu · 09</div></section>
+<section class="slide dark"><div class="kicker">TỰ KIỂM TRA</div><h2>Tự kiểm tra</h2><div class="content"><ol class="list"><li>Sau <code>x = 3</code> rồi <code>y = x</code> rồi <code>x = 9</code>, thì <code>y</code> bằng bao nhiêu? Vì sao?</li><li>Điền bảng theo dõi cho đoạn: <code>p = 2</code>, <code>q = 4</code>, <code>p = q</code>. <code>p</code> và <code>q</code> bằng bao nhiêu?</li><li>Vì sao <code>int</code> không thể lưu <code>3.5</code>?</li></ol></div><div class="foot">Biến và kiểu dữ liệu · 10</div></section>
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../index-hoccode.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["", "", "", "", "", "", "", "", "", ""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+</body>
+</html>

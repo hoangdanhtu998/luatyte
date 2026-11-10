@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Bộ đệm văn bản VGA bắt đầu tại địa chỉ nào?",
+      "options": [
+        {
+          "text": "0xB8000",
+          "why": "Đúng."
+        },
+        {
+          "text": "0x0000",
+          "why": "Không phải."
+        },
+        {
+          "text": "0xFFFF",
+          "why": "Không phải."
+        },
+        {
+          "text": "0x7C00",
+          "why": "Đó là nơi bootloader được nạp."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chế độ văn bản dùng 0xB8000."
+    },
+    {
+      "q": "Mỗi ô trên màn hình văn bản VGA dùng bao nhiêu byte?",
+      "options": [
+        {
+          "text": "2 byte",
+          "why": "Đúng: ký tự và màu."
+        },
+        {
+          "text": "1 byte",
+          "why": "Thiếu byte màu."
+        },
+        {
+          "text": "4 byte",
+          "why": "Không đúng."
+        },
+        {
+          "text": "8 byte",
+          "why": "Không đúng."
+        }
+      ],
+      "answer": 0,
+      "explain": "Một byte ký tự, một byte màu."
+    },
+    {
+      "q": "Vì sao phải nhân cột với 2?",
+      "options": [
+        {
+          "text": "Vì mỗi ô chiếm 2 byte",
+          "why": "Đúng."
+        },
+        {
+          "text": "Để màn hình sáng hơn",
+          "why": "Không."
+        },
+        {
+          "text": "Để đổi hàng",
+          "why": "Không."
+        },
+        {
+          "text": "Không cần",
+          "why": "Cần."
+        }
+      ],
+      "answer": 0,
+      "explain": "Offset tính theo byte, mỗi ô 2 byte."
+    }
+  ]
+}
