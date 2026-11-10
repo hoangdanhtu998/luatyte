@@ -1,0 +1,73 @@
+{
+  "quizzes": [
+    {
+      "q": "Quantum trong lập lịch round-robin là gì?",
+      "options": [
+        {
+          "text": "Lượng thời gian tối đa mỗi tiến trình được chạy trước khi nhường",
+          "why": "Đúng. Hết quantum thì chuyển tiến trình kế tiếp."
+        },
+        {
+          "text": "Số tiến trình",
+          "why": "Số tiến trình là n."
+        },
+        {
+          "text": "Bộ nhớ của tiến trình",
+          "why": "Không phải bộ nhớ."
+        },
+        {
+          "text": "Số lần in ra",
+          "why": "Không liên quan."
+        }
+      ],
+      "answer": 0,
+      "explain": "Quantum là khoảng thời gian chia sẻ CPU."
+    },
+    {
+      "q": "Tiến trình chưa xong sau một lượt sẽ đi đâu?",
+      "options": [
+        {
+          "text": "Quay lại cuối hàng đợi",
+          "why": "Đúng. Đây là bản chất vòng tròn của round-robin."
+        },
+        {
+          "text": "Bị hủy ngay",
+          "why": "Không bị hủy."
+        },
+        {
+          "text": "Chạy lại ngay lập tức",
+          "why": "Phải chờ các tiến trình khác."
+        },
+        {
+          "text": "Lên đầu hàng",
+          "why": "Không lên đầu."
+        }
+      ],
+      "answer": 0,
+      "explain": "Round-robin xoay vòng các tiến trình."
+    },
+    {
+      "q": "Ưu điểm chính của round-robin là gì?",
+      "options": [
+        {
+          "text": "Mỗi tiến trình được chạy sớm, không ai bị đợi quá lâu",
+          "why": "Đúng. Phù hợp hệ thống chia sẻ."
+        },
+        {
+          "text": "Luôn nhanh nhất",
+          "why": "Không luôn nhanh nhất."
+        },
+        {
+          "text": "Không cần quantum",
+          "why": "Cần quantum."
+        },
+        {
+          "text": "Chỉ dùng cho một tiến trình",
+          "why": "Dùng cho nhiều tiến trình."
+        }
+      ],
+      "answer": 0,
+      "explain": "Chia đều thời gian giữa các tiến trình."
+    }
+  ]
+}

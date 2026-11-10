@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Đọc lệnh RESP",
+    "prompt": "Đọc các dòng của một lệnh RESP: dòng đầu là *số_phần_tử, mỗi phần tử gồm dòng $độ_dài và dòng nội dung. In các nội dung cách nhau một dấu cách.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    char dong[256];\n    // viết code ở đây\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "*2\n$3\nGET\n$3\nkey\n",
+        "expected": "GET key\n"
+      }
+    ]
+  }
+]

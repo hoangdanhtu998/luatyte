@@ -1,0 +1,16 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Máy tính không hiểu code như người đọc. Trình biên dịch dịch code thành chương trình chạy được. Nếu code sai, nó báo lỗi kèm số dòng.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Dòng này thiếu dấu chấm phẩy ở cuối. Trình biên dịch sẽ báo lỗi.", "boxes": ["x"], "code": "int x = 5", "after": "Thiếu dấu ; ở cuối dòng." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: lỗi thiếu dấu ; thường được báo ở đâu?", "boxes": [], "code": "int x = 5", "quiz": [
+        { "text": "Ở dòng có lỗi, hoặc dòng ngay sau", "right": true, "hint": "Đúng! Trình biên dịch chỉ số dòng gần chỗ thiếu dấu." },
+        { "text": "Không báo gì cả", "right": false, "hint": "Trình biên dịch sẽ báo lỗi để bạn sửa." },
+        { "text": "Chương trình vẫn chạy bình thường", "right": false, "hint": "Thiếu dấu ; là lỗi cú pháp, chương trình không biên dịch được." } ] },
+    { "img": "m03-meo-vui.png", "say": "Sửa bằng cách thêm dấu ; vào cuối dòng. Bây giờ dòng đúng.", "boxes": ["x"], "code": "int x = 5;", "run": { "x": 5 }, "after": "Dòng đã đúng. x là 5." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: sau khi sửa lỗi, bước tiếp theo là gì?", "boxes": ["x"], "code": "biên dịch lại", "quiz": [
+        { "text": "Biên dịch lại để kiểm tra", "right": true, "hint": "Đúng! Sửa xong thì biên dịch lại, xem còn lỗi nào không." },
+        { "text": "Xóa cả chương trình", "right": false, "hint": "Không cần xóa. Chỉ sửa đúng dòng báo lỗi." },
+        { "text": "Bỏ qua thông báo", "right": false, "hint": "Bỏ qua thì lỗi vẫn còn, chương trình không chạy." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: đọc thông báo lỗi, tìm đúng dòng, sửa, rồi biên dịch lại. Làm từng lỗi một.", "boxes": ["x"], "end": true }
+  ]
+}

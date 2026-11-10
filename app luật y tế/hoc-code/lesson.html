@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài học · Học code</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index-hoccode.html">Trang chủ</a>
+  <nav><a href="setup.html">Chuẩn bị môi trường</a></nav>
+</header>
+
+<main>
+  <div id="error" class="card error-card" hidden></div>
+
+  <div id="page" hidden>
+    <div class="lesson-meta">
+      <span class="pill" id="meta"></span>
+    </div>
+    <h1 class="lesson-title" id="title"></h1>
+
+    <div class="slides-bar">
+      <a class="btn amber" id="slides-link" href="#">Xem slide bài này</a>
+      <button class="btn ghost" id="done" type="button"></button>
+      <a class="btn ghost next-link" id="next-top" href="#" hidden>Bài tiếp theo →</a>
+    </div>
+    <p class="done-note muted" id="done-note" hidden></p>
+
+    <!-- Thanh tab: trên máy tính nằm phía trên; trên điện thoại tự cố định ở dưới màn hình -->
+    <nav class="tabs" role="tablist" aria-label="Phần của bài">
+      <button class="tab-btn" id="tab-read" role="tab" aria-selected="true" aria-controls="panel-read" type="button"><span class="dot"></span>Bài đọc</button>
+      <button class="tab-btn" id="tab-steps" role="tab" aria-selected="false" aria-controls="panel-steps" type="button" hidden><span class="dot"></span>Từng bước (dễ hiểu)</button>
+      <button class="tab-btn" id="tab-demo" role="tab" aria-selected="false" aria-controls="panel-demo" type="button" hidden><span class="dot"></span>Bài tập lựa chọn</button>
+      <button class="tab-btn" id="tab-practice" role="tab" aria-selected="false" aria-controls="panel-practice" type="button"><span class="dot"></span>Viết code (tùy chọn)</button>
+      <a class="tab-btn" id="tab-slide" role="tab" href="#" target="_self"><span class="dot"></span>Slide</a>
+    </nav>
+
+    <section class="panel" id="panel-read" role="tabpanel" aria-labelledby="tab-read">
+      <div class="lesson-wrap">
+        <article class="lesson-body" id="lesson"></article>
+        <aside class="toc" id="toc" aria-label="Mục lục bài"></aside>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-steps" role="tabpanel" aria-labelledby="tab-steps" hidden>
+      <h2>Từng bước</h2>
+      <p class="muted">Bấm từng bước để xem máy tính làm gì. Không cần gõ code ở đây.</p>
+      <div id="steps-root"></div>
+    </section>
+
+    <section class="panel" id="panel-demo" role="tabpanel" aria-labelledby="tab-demo" hidden>
+      <h2>Bài tập lựa chọn</h2>
+      <p class="muted">Chọn một phương án. Chọn sai thì xem vì sao sai, rồi chọn lại cho đến khi đúng.</p>
+      <div id="demo-quizzes"></div>
+      <details class="demo-examples"><summary>Xem ví dụ code và kết quả khi chạy (tham khảo)</summary><div id="demo-examples"></div></details>
+    </section>
+
+    <section class="panel practice" id="panel-practice" role="tabpanel" aria-labelledby="tab-practice" hidden>
+      <h2>Luyện tập</h2>
+      <p class="muted">Chọn bài tập, viết code, rồi bấm Chạy. Bản nháp được lưu trên trình duyệt này.</p>
+
+      <div class="ex-tabs" id="ex-tabs"></div>
+      <div class="ex-prompt" id="ex-prompt"></div>
+
+      <div class="ide">
+        <div class="ide-bar">
+          <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="file-tab">main.c</span>
+          <div class="envbar">
+            <label>Ngôn ngữ
+              <select id="lang">
+                <option value="c">C (gcc)</option>
+                <option value="cpp">C++ (g++)</option>
+              </select>
+            </label>
+            <label>Chuẩn
+              <select id="std"></select>
+            </label>
+            <label><input type="checkbox" id="warn" checked> -Wall -Wextra</label>
+          </div>
+        </div>
+
+        <div class="editor">
+          <pre class="gutter" id="gutter" aria-hidden="true"></pre>
+          <textarea class="code-input" id="code" spellcheck="false" wrap="off" aria-label="Trình soạn code"></textarea>
+        </div>
+
+        <div class="stdin-row">
+          <label for="stdin">Dữ liệu đầu vào (stdin), dùng khi chương trình đọc bằng scanf hay cin</label>
+          <textarea id="stdin" rows="2" spellcheck="false" aria-label="Dữ liệu đầu vào"></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn run" id="run" type="button">▶ Chạy</button>
+          <button class="btn amber" id="grade" type="button">Chấm bài</button>
+          <button class="btn ghost" id="reset" type="button">Khôi phục mã mẫu</button>
+          <span class="saved" id="saved"></span>
+        </div>
+
+        <div class="term-head">Terminal</div>
+        <pre class="term" id="term" aria-live="polite"></pre>
+      </div>
+    </section>
+
+    <nav class="next-bar" aria-label="Chuyển bài">
+      <a class="btn ghost" id="prev-link" href="#" hidden>← Bài trước</a>
+      <a class="btn amber" id="next-link" href="#" hidden>Bài tiếp theo →</a>
+    </nav>
+  </div>
+</main>
+
+<script src="assets/md.js"></script>
+<script src="assets/steps.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/chat.js"></script>
+<script>
+  (async function () {
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const errorBox = document.getElementById('error');
+
+    function fail(msg) {
+      errorBox.hidden = false;
+      errorBox.textContent = msg;
+    }
+
+    async function getText(url) {
+      const r = await fetch(url, { cache: 'no-store' });
+      if (!r.ok) throw new Error(url + ' trả về HTTP ' + r.status);
+      return r.text();
+    }
+
+    // Chuyển tab. Slide là liên kết sang trang slide, nên không nằm trong nhóm chuyển tab.
+    const PANELS = { read: 'panel-read', steps: 'panel-steps', practice: 'panel-practice', demo: 'panel-demo' };
+    function showTab(name) {
+      Object.keys(PANELS).forEach(k => {
+        document.getElementById(PANELS[k]).hidden = k !== name;
+        document.getElementById('tab-' + k).setAttribute('aria-selected', String(k === name));
+      });
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }
+
+    // Ví dụ có code và kết quả chạy thật; trắc nghiệm có đáp án và giải thích.
+    // Hiển thị bằng textContent để không chèn HTML từ file dữ liệu.
+    function el(tag, cls, text) {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text !== undefined) n.textContent = text;
+      return n;
+    }
+    function renderDemo(ex, quizzes, lessonId) {
+      const exBox = document.getElementById('demo-examples');
+      (ex.examples || []).forEach(item => {
+        const card = el('div', 'card demo-card');
+        card.appendChild(el('h4', '', item.title));
+        card.appendChild(el('p', 'muted', 'Code:'));
+        const pre = el('pre');
+        pre.appendChild(el('code', '', item.code));
+        card.appendChild(pre);
+        card.appendChild(el('p', 'muted', 'Kết quả khi chạy:'));
+        const out = el('pre', 'term');
+        out.textContent = item.output;
+        card.appendChild(out);
+        if (item.note) card.appendChild(el('p', 'muted', item.note));
+        exBox.appendChild(card);
+      });
+
+      const qBox = document.getElementById('demo-quizzes');
+      const total = (quizzes.quizzes || []).length;
+      const score = el('p', 'quiz-score', '');
+      qBox.appendChild(score);
+      let solved = 0;
+      function updateScore() {
+        score.textContent = 'Đã đúng ' + solved + '/' + total + ' câu. Chọn từng phương án để xem vì sao đúng hoặc sai.';
+      }
+      updateScore();
+
+      (quizzes.quizzes || []).forEach((q, qi) => {
+        const card = el('div', 'card quiz');
+        card.appendChild(el('h4', '', (qi + 1) + '. ' + q.q));
+        const list = el('div', 'quiz-options');
+        const why = el('div', 'quiz-why', '');
+        const done = el('p', 'quiz-feedback', '');
+        let isSolved = false;
+        const buttons = q.options.map((opt, oi) => {
+          const b = el('button', 'btn ghost quiz-opt', String.fromCharCode(65 + oi) + '. ' + opt.text);
+          b.type = 'button';
+          b.addEventListener('click', () => {
+            if (isSolved) return;
+            const ok = oi === q.answer;
+            b.classList.remove('wrong', 'ok');
+            if (ok) {
+              b.classList.add('ok');
+              setReviewWrong(lessonId, qi, false);
+              isSolved = true;
+              solved++;
+              updateScore();
+              if (solved === total) markLessonDone(lessonId, 'Đã làm đúng hết trắc nghiệm, bài được ghi là hoàn thành.');
+              done.textContent = 'Đúng rồi. ' + q.explain;
+              done.className = 'quiz-feedback good';
+              buttons.forEach(x => x.disabled = true);
+            } else {
+              b.classList.add('wrong');
+              setReviewWrong(lessonId, qi, true);
+              done.textContent = 'Chưa đúng. Đọc lý do bên dưới rồi chọn lại.';
+              done.className = 'quiz-feedback bad';
+            }
+            why.textContent = (ok ? 'Vì sao đúng: ' : 'Vì sao chưa đúng: ') + opt.why;
+            why.className = 'quiz-why ' + (ok ? 'good' : 'bad');
+          });
+          list.appendChild(b);
+          return b;
+        });
+        const again = el('button', 'btn ghost quiz-again', 'Làm lại câu này');
+        again.type = 'button';
+        again.addEventListener('click', () => {
+          if (isSolved) { solved--; updateScore(); }
+          isSolved = false;
+          buttons.forEach(x => { x.disabled = false; x.classList.remove('wrong', 'ok'); });
+          why.textContent = ''; done.textContent = ''; done.className = 'quiz-feedback';
+        });
+        card.appendChild(list);
+        card.appendChild(why);
+        card.appendChild(done);
+        card.appendChild(again);
+        qBox.appendChild(card);
+      });
+    }
+
+    // Mục lục lấy từ các tiêu đề h2 của bài; máy tính rộng hiện bên phải và làm nổi mục đang đọc.
+    function buildToc() {
+      const heads = Array.from(document.querySelectorAll('#lesson h2'));
+      const toc = document.getElementById('toc');
+      if (heads.length === 0) { toc.hidden = true; return; }
+      heads.forEach((h, i) => { h.id = 'sec-' + (i + 1); });
+      toc.innerHTML = '<h4>Trong bài</h4><ol></ol>';
+      const ol = toc.querySelector('ol');
+      heads.forEach(h => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+      if ('IntersectionObserver' in window) {
+        const links = Array.from(toc.querySelectorAll('a'));
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+          });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        heads.forEach(h => io.observe(h));
+      }
+    }
+
+    try {
+      const index = JSON.parse(await getText('content/index.json'));
+      const lesson = index.lessons.find(l => l.id === id);
+      if (!lesson) return fail('Không tìm thấy bài này. Quay lại trang chủ để chọn bài khác.');
+
+      const [md, exText] = await Promise.all([
+        getText('content/lessons/' + lesson.id + '.md'),
+        getText(lesson.exercises),
+      ]);
+      const exercises = JSON.parse(exText);
+      const level = index.levels.find(l => l.id === lesson.level);
+
+      document.title = lesson.title + ' · Học code';
+      document.getElementById('title').textContent = lesson.title;
+      document.getElementById('meta').textContent = (level ? level.name : '') + ' · ' + lesson.minutes + ' phút';
+      // Bài chưa có slide thì ẩn nút xem slide, không để liên kết trỏ lung tung.
+      document.getElementById('slides-link').hidden = !lesson.slides;
+      document.getElementById('slides-link').href = lesson.slides || '#';
+      document.getElementById('tab-slide').hidden = !lesson.slides;
+      document.getElementById('tab-slide').href = lesson.slides || '#';
+      window.currentLessonId = lesson.id;
+      // Chuyển bài theo đúng thứ tự trong index.json.
+      const pos = index.lessons.indexOf(lesson);
+      const prev = index.lessons[pos - 1], next = index.lessons[pos + 1];
+      const setNav = (ids, target) => ids.forEach(sel => {
+        const a = document.querySelector(sel);
+        a.hidden = !target;
+        a.href = target ? 'lesson.html?id=' + target.id : '#';
+        if (target) a.title = target.title;
+      });
+      setNav(['#next-top', '#next-link'], next);
+      setNav(['#prev-link'], prev);
+      document.getElementById('lesson').innerHTML = Md.render(md);
+      // Tiêu đề h1 đã hiện ở trên nên bỏ đi để không lặp.
+      document.querySelectorAll('#lesson > h1').forEach(h => h.remove());
+      buildToc();
+      document.getElementById('page').hidden = false;
+
+      document.getElementById('tab-read').addEventListener('click', () => showTab('read'));
+      document.getElementById('tab-practice').addEventListener('click', () => showTab('practice'));
+      document.getElementById('tab-demo').addEventListener('click', () => showTab('demo'));
+      document.getElementById('tab-steps').addEventListener('click', () => showTab('steps'));
+
+      // Ví dụ và trắc nghiệm là tùy chọn: bài nào chưa có thì ẩn tab này.
+      // Ví dụ và câu hỏi tải riêng: bài nào thiếu file nào thì phần đó bỏ qua, không làm hỏng phần còn lại.
+      const optionalJson = url => getText(url).then(JSON.parse).catch(() => null);
+      const [ex, qz] = await Promise.all([
+        optionalJson('content/examples/' + lesson.id + '.json'),
+        optionalJson('content/quizzes/' + lesson.id + '.json'),
+      ]);
+      if (qz && qz.quizzes && qz.quizzes.length) {
+        renderDemo(ex || { examples: [] }, qz, lesson.id);
+        document.getElementById('tab-demo').hidden = false;
+      } else {
+        document.getElementById('tab-demo').hidden = true;
+      }
+
+      // Phần "Từng bước" là tùy chọn: bài nào có file content/steps/<id>.json thì hiện tab này.
+      const steps = await optionalJson('content/steps/' + lesson.id + '.json');
+      if (steps && steps.screens && steps.screens.length && window.mountSteps) {
+        mountSteps(document.getElementById('steps-root'), { screens: steps.screens, imgBase: 'assets/mascot/' });
+        document.getElementById('tab-steps').hidden = false;
+      }
+
+      initPractice({ lessonId: lesson.id, exercises });
+    } catch (e) {
+      fail('Không tải được bài học (' + e.message + '). Hãy mở trang qua localhost: chạy `node server/server.mjs` trong thư mục dự án rồi vào http://localhost:4500.');
+    }
+  })();
+</script>
+</body>
+</html>

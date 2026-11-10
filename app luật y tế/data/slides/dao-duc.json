@@ -1,0 +1,1095 @@
+{
+  "title": "Đạo đức học và đạo đức nghề y",
+  "slides": [
+    {
+      "type": "text",
+      "title": "Giới thiệu bài Đạo đức học và đạo đức nghề y",
+      "body": [
+        "Tài liệu nhập môn cho người học về đạo đức và cách áp dụng vào nghề y. Mỗi phần có khái niệm, ví dụ, câu tự kiểm tra; các phần cuối có tình huống thực tế và bài tập thực hành. Đây là tổng quan, không thay thế quy tắc đạo đức nghề nghiệp, quy định của cơ sở khám bệnh và văn bản pháp luật hiện hành."
+      ],
+      "audio": "audio/slides/dao-duc/vais/01.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/01.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/01.mp3",
+        "hours": "audio/slides/dao-duc/hours/01.mp3",
+        "gs": "audio/slides/dao-duc/gs/01.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/01.mp3",
+        "nt": "audio/slides/dao-duc/nt/01.mp3",
+        "bt": "audio/slides/dao-duc/bt/01.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/01.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/01.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/01.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/01.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 1. Đạo đức là gì?",
+      "body": [
+        "Khái niệm. Đạo đức là những chuẩn mực mà một cộng đồng dùng để phân biệt điều nên làm với điều không nên làm, và điều đúng với điều sai trong quan hệ giữa người với người.",
+        "Đạo đức khác pháp luật ở đâu? - Pháp luật do nhà nước ban hành và có chế tài cưỡng chế. Đạo đức dựa phần lớn vào lương tâm, dư luận và sự tự nguyện. - Có việc vi phạm đạo đức nhưng không vi phạm pháp luật, ví dụ nói dối để làm tổn thương người khác. Có việc đúng luật nhưng bị cho là thiếu đạo đức, ví dụ tận dụng một kẽ hở để trục lợi. - Pháp luật thường là mức tối thiểu. Đạo đức thường cao hơn mức đó.",
+        "Đạo đức khác phong tục ở đâu? Phong tục là thói quen của một cộng đồng, như cách chào hỏi hay ăn mặc. Đạo đức liên quan đến việc làm đúng hay sai đối với người khác, nên có thể lý giải và phê phán được.",
+        "Ví dụ trong bệnh viện. Một y tá đi làm đúng giờ, thay đồ đúng quy định, nhưng khi bệnh nhân hỏi về thuốc thì trả lời qua loa vì \"bận\". Mọi quy định hành chính đều được tuân thủ, nhưng thái độ đó vẫn là vấn đề đạo đức: người bệnh có quyền được hỏi và được trả lời tử tế."
+      ],
+      "audio": "audio/slides/dao-duc/vais/02.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/02.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/02.mp3",
+        "hours": "audio/slides/dao-duc/hours/02.mp3",
+        "gs": "audio/slides/dao-duc/gs/02.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/02.mp3",
+        "nt": "audio/slides/dao-duc/nt/02.mp3",
+        "bt": "audio/slides/dao-duc/bt/02.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/02.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/02.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/02.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/02.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Đạo đức khác pháp luật ở điểm nào?",
+      "options": [
+        "Đạo đức có chế tài cưỡng chế, pháp luật thì không.",
+        "Pháp luật do nhà nước ban hành có chế tài cưỡng chế; đạo đức dựa nhiều vào lương tâm và dư luận.",
+        "Hai khái niệm này giống hệt nhau.",
+        "Đạo đức chỉ liên quan đến tôn giáo."
+      ],
+      "answer": 1,
+      "feedback": "Pháp luật có chế tài cưỡng chế, còn đạo đức dựa phần lớn vào lương tâm và sự tự nguyện (Phần 1).",
+      "audio": "audio/slides/dao-duc/vais/03.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/03.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/03.mp3",
+        "hours": "audio/slides/dao-duc/hours/03.mp3",
+        "gs": "audio/slides/dao-duc/gs/03.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/03.mp3",
+        "nt": "audio/slides/dao-duc/nt/03.mp3",
+        "bt": "audio/slides/dao-duc/bt/03.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/03.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/03.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/03.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/03.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 2. Ba cách tiếp cận lớn",
+      "body": [
+        "Đạo đức học thường trả lời câu hỏi \"làm sao biết một hành động là đúng\" bằng ba hướng chính.",
+        "Hậu quả (vị lợi). Hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất cho tất cả những người liên quan. Ví dụ: một chính sách tiêm chủng được chọn vì bảo vệ được nhiều người nhất.",
+        "Nghĩa vụ (Kant). Hành động đúng là hành động theo nguyên tắc có thể trở thành luật chung, và đối xử với người khác như mục đích, không chỉ là phương tiện. Ví dụ: không nói dối bệnh nhân về tình trạng bệnh để \"giữ tinh thần\", vì không ai muốn bị lừa như vậy.",
+        "Đức hạnh (Aristotle). Hành động đúng là hành động của người có đức hạnh, như can đảm, trung thực, công bằng. Câu hỏi không chỉ là \"làm gì\", mà còn là \"trở thành người như thế nào\"."
+      ],
+      "audio": "audio/slides/dao-duc/vais/04.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/04.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/04.mp3",
+        "hours": "audio/slides/dao-duc/hours/04.mp3",
+        "gs": "audio/slides/dao-duc/gs/04.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/04.mp3",
+        "nt": "audio/slides/dao-duc/nt/04.mp3",
+        "bt": "audio/slides/dao-duc/bt/04.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/04.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/04.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/04.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/04.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 2. Ba cách tiếp cận lớn (tiếp)",
+      "body": [
+        "Cùng một tình huống, ba cách nhìn. Một bác sĩ có thể cho bệnh nhân ung thư một tin hy vọng hơn thực tế để họ bớt lo. Hướng hậu quả hỏi: bệnh nhân có tốt hơn về tinh thần không, và có mất gì về quyết định điều trị không? Hướng nghĩa vụ hỏi: nếu mọi bác sĩ đều làm vậy, niềm tin vào bác sĩ còn không? Hướng đức hạnh hỏi: một bác sĩ trung thực và tử tế sẽ nói thế nào?",
+        "Ghi nhớ: Ba hướng này không loại trừ nhau. Trong thực tế, người làm nghề thường dùng cả ba để kiểm tra một quyết định."
+      ],
+      "audio": "audio/slides/dao-duc/vais/05.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/05.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/05.mp3",
+        "hours": "audio/slides/dao-duc/hours/05.mp3",
+        "gs": "audio/slides/dao-duc/gs/05.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/05.mp3",
+        "nt": "audio/slides/dao-duc/nt/05.mp3",
+        "bt": "audio/slides/dao-duc/bt/05.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/05.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/05.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/05.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/05.mp3"
+      }
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Ba cách tiếp cận lớn của đạo đức học là hậu quả, {1} và đức hạnh.",
+      "blanks": [
+        {
+          "options": [
+            "nghĩa vụ",
+            "tình cảm",
+            "pháp luật",
+            "phong tục"
+          ],
+          "answer": 0
+        }
+      ],
+      "audio": "audio/slides/dao-duc/vais/06.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/06.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/06.mp3",
+        "hours": "audio/slides/dao-duc/hours/06.mp3",
+        "gs": "audio/slides/dao-duc/gs/06.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/06.mp3",
+        "nt": "audio/slides/dao-duc/nt/06.mp3",
+        "bt": "audio/slides/dao-duc/bt/06.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/06.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/06.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/06.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/06.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Cách tiếp cận nào đánh giá hành động dựa trên hậu quả?",
+      "options": [
+        "Nghĩa vụ",
+        "Đức hạnh",
+        "Vị lợi",
+        "Phong tục"
+      ],
+      "answer": 2,
+      "feedback": "Vị lợi cho rằng hành động đúng là hành động đem lại nhiều lợi ích và ít tổn hại nhất (Phần 2).",
+      "audio": "audio/slides/dao-duc/vais/07.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/07.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/07.mp3",
+        "hours": "audio/slides/dao-duc/hours/07.mp3",
+        "gs": "audio/slides/dao-duc/gs/07.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/07.mp3",
+        "nt": "audio/slides/dao-duc/nt/07.mp3",
+        "bt": "audio/slides/dao-duc/bt/07.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/07.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/07.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/07.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/07.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Theo Kant, vì sao không nên nói dối bệnh nhân về tình trạng bệnh để \"giữ tinh thần\"?",
+      "options": [
+        "Vì pháp luật cấm.",
+        "Vì điều đó không thể trở thành nguyên tắc chung, và coi người khác như phương tiện.",
+        "Vì sẽ mất tiền khám.",
+        "Vì bệnh nhân luôn đoán ra."
+      ],
+      "answer": 1,
+      "feedback": "Nguyên tắc nghĩa vụ đòi hỏi đối xử với người khác như mục đích, không chỉ là phương tiện (Phần 2).",
+      "audio": "audio/slides/dao-duc/vais/08.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/08.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/08.mp3",
+        "hours": "audio/slides/dao-duc/hours/08.mp3",
+        "gs": "audio/slides/dao-duc/gs/08.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/08.mp3",
+        "nt": "audio/slides/dao-duc/nt/08.mp3",
+        "bt": "audio/slides/dao-duc/bt/08.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/08.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/08.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/08.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/08.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 3. Các nguyên tắc nền tảng trong nghề y",
+      "body": [
+        "Các bộ quy tắc đạo đức y khoa trên thế giới và ở Việt Nam thường nêu những nguyên tắc sau:",
+        "Tôn trọng quyền tự quyết của người bệnh. Người bệnh có quyền được biết thông tin và tự quyết định về việc điều trị của mình, trừ trường hợp pháp luật quy định khác.",
+        "Làm lợi và không gây hại. Người hành nghề phải cố gắng mang lại lợi ích cho bệnh nhân và tránh gây tổn hại, kể cả tổn hại do sơ suất.",
+        "Công bằng. Mọi người bệnh được đối xử công bằng, không phân biệt giàu nghèo, tôn giáo, giới tính hay tình trạng bệnh."
+      ],
+      "audio": "audio/slides/dao-duc/vais/09.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/09.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/09.mp3",
+        "hours": "audio/slides/dao-duc/hours/09.mp3",
+        "gs": "audio/slides/dao-duc/gs/09.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/09.mp3",
+        "nt": "audio/slides/dao-duc/nt/09.mp3",
+        "bt": "audio/slides/dao-duc/bt/09.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/09.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/09.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/09.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/09.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 3. Các nguyên tắc nền tảng trong nghề y (tiếp)",
+      "body": [
+        "Trung thực. Thông tin về bệnh, về rủi ro và về chi phí phải rõ ràng, không che giấu.",
+        "Vì sao cần nhiều nguyên tắc? Các nguyên tắc có thể mâu thuẫn trong thực tế. Ví dụ, tôn trọng quyền từ chối điều trị của người bệnh có thể khiến bệnh nhân chịu thêm rủi ro, trong khi nguyên tắc làm lợi thúc đẩy can thiệp. Người làm nghề phải cân nhắc, không áp dụng máy móc một nguyên tắc."
+      ],
+      "audio": "audio/slides/dao-duc/vais/10.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/10.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/10.mp3",
+        "hours": "audio/slides/dao-duc/hours/10.mp3",
+        "gs": "audio/slides/dao-duc/gs/10.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/10.mp3",
+        "nt": "audio/slides/dao-duc/nt/10.mp3",
+        "bt": "audio/slides/dao-duc/bt/10.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/10.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/10.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/10.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/10.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 4. Lịch sử ngắn: vì sao có quy tắc đạo đức nghiên cứu và điều trị",
+      "body": [
+        "Lời thề Hippocrates. Từ thời Hy Lạp cổ đại, người thầy thuốc đã được nhắc nhở về trách nhiệm không gây hại và giữ bí mật người bệnh. Đây là nền tảng đạo đức của nghề y lâu đời nhất.",
+        "Bộ luật Nuremberg (1947). Sau Thế chiến II, tòa án xét xử các bác sĩ đã làm thí nghiệm trên con người không có sự đồng ý. Bộ luật Nuremberg ra đời với nguyên tắc: sự đồng ý tự nguyện của người tham gia là tuyệt đối cần thiết.",
+        "Tuyên bố Helsinki (1964, sau này được sửa đổi nhiều lần). Hiệp hội Y khoa Thế giới đưa ra các nguyên tắc cho nghiên cứu y học trên người: ưu tiên lợi ích người tham gia, có hội đồng đạo đức xem xét, và có sự đồng ý được thông tin đầy đủ.",
+        "Báo cáo Belmont (1979, Hoa Kỳ). Nêu ba nguyên tắc: tôn trọng con người, làm lợi, và công bằng. Ba nguyên tắc này vẫn được dùng rộng rãi trong đạo đức nghiên cứu và điều trị."
+      ],
+      "audio": "audio/slides/dao-duc/vais/11.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/11.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/11.mp3",
+        "hours": "audio/slides/dao-duc/hours/11.mp3",
+        "gs": "audio/slides/dao-duc/gs/11.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/11.mp3",
+        "nt": "audio/slides/dao-duc/nt/11.mp3",
+        "bt": "audio/slides/dao-duc/bt/11.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/11.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/11.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/11.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/11.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 4. Lịch sử ngắn: vì sao có quy tắc đạo đức nghiên cứu và điều trị (tiếp)",
+      "body": [
+        "Bài học cho người học. Quy tắc thường ra đời sau những sai lầm nghiêm trọng. Nếu hiểu lịch sử, người làm nghề sẽ thấy vì sao các thủ tục như đồng ý có thông tin không phải là hình thức."
+      ],
+      "audio": "audio/slides/dao-duc/vais/12.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/12.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/12.mp3",
+        "hours": "audio/slides/dao-duc/hours/12.mp3",
+        "gs": "audio/slides/dao-duc/gs/12.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/12.mp3",
+        "nt": "audio/slides/dao-duc/nt/12.mp3",
+        "bt": "audio/slides/dao-duc/bt/12.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/12.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/12.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/12.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/12.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Bộ quy tắc nào sau Thế chiến II nhấn mạnh sự đồng ý tự nguyện của người tham gia nghiên cứu?",
+      "options": [
+        "Lời thề Hippocrates",
+        "Bộ luật Nuremberg (1947)",
+        "Báo cáo Belmont (1979)",
+        "Luật Khám bệnh, chữa bệnh"
+      ],
+      "answer": 1,
+      "feedback": "Bộ luật Nuremberg ra đời sau các vụ xét xử bác sĩ làm thí nghiệm trên người không có sự đồng ý (Phần 4).",
+      "audio": "audio/slides/dao-duc/vais/13.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/13.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/13.mp3",
+        "hours": "audio/slides/dao-duc/hours/13.mp3",
+        "gs": "audio/slides/dao-duc/gs/13.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/13.mp3",
+        "nt": "audio/slides/dao-duc/nt/13.mp3",
+        "bt": "audio/slides/dao-duc/bt/13.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/13.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/13.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/13.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/13.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 5. Sự đồng ý có thông tin",
+      "body": [
+        "Khái niệm. Sự đồng ý có thông tin là việc người bệnh đồng ý với một can thiệp y tế sau khi được giải thích đầy đủ về mục đích, lợi ích, rủi ro và các lựa chọn khác.",
+        "Bốn điều kiện cần có. 1. Người bệnh được cung cấp đủ thông tin cần thiết. 2. Người bệnh hiểu thông tin đó (bác sĩ phải kiểm tra bằng cách hỏi lại, không chỉ đọc). 3. Người bệnh tự nguyện, không bị ép buộc hay tạo áp lực. 4. Người bệnh có năng lực để quyết định.",
+        "Vì sao quan trọng? Đồng ý có thông tin giúp người bệnh giữ quyền quyết định về cơ thể mình. Nếu người bệnh không hiểu, sự đồng ý đó không đầy đủ về mặt đạo đức.",
+        "Ví dụ đúng. Một bệnh nhân được đề nghị phẫu thuật. Bác sĩ giải thích cách mổ, khả năng thành công, các biến chứng có thể xảy ra, và phương án không mổ. Bác sĩ hỏi lại xem người bệnh hiểu đến đâu. Bệnh nhân hỏi thêm, rồi quyết định. Đây là đồng ý có thông tin."
+      ],
+      "audio": "audio/slides/dao-duc/vais/14.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/14.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/14.mp3",
+        "hours": "audio/slides/dao-duc/hours/14.mp3",
+        "gs": "audio/slides/dao-duc/gs/14.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/14.mp3",
+        "nt": "audio/slides/dao-duc/nt/14.mp3",
+        "bt": "audio/slides/dao-duc/bt/14.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/14.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/14.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/14.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/14.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 5. Sự đồng ý có thông tin (tiếp)",
+      "body": [
+        "Ví dụ sai. Bác sĩ chỉ nói \"phải mổ\", đưa giấy và yêu cầu ký ngay trước giờ phẫu thuật. Đó là thủ tục ký tên, không phải đồng ý có thông tin.",
+        "Ngoại lệ cần cân nhắc. Trường hợp cấp cứu, người bệnh không tỉnh táo, hoặc người bệnh là trẻ em, quy trình đồng ý khác nhau. Khi đó người đại diện hợp pháp hoặc quy định của cơ sở khám bệnh sẽ được áp dụng. Cần đối chiếu văn bản hiện hành khi áp dụng cụ thể."
+      ],
+      "audio": "audio/slides/dao-duc/vais/15.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/15.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/15.mp3",
+        "hours": "audio/slides/dao-duc/hours/15.mp3",
+        "gs": "audio/slides/dao-duc/gs/15.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/15.mp3",
+        "nt": "audio/slides/dao-duc/nt/15.mp3",
+        "bt": "audio/slides/dao-duc/bt/15.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/15.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/15.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/15.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/15.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Điều nào KHÔNG thuộc bốn điều kiện của đồng ý có thông tin?",
+      "options": [
+        "Người bệnh được cung cấp đủ thông tin cần thiết.",
+        "Người bệnh hiểu thông tin đó.",
+        "Người nhà ký thay là đủ, không cần người bệnh hiểu.",
+        "Người bệnh tự nguyện, không bị ép buộc."
+      ],
+      "answer": 2,
+      "feedback": "Đồng ý có thông tin cần người bệnh hiểu và tự nguyện, và người bệnh có năng lực để quyết định (Phần 5).",
+      "audio": "audio/slides/dao-duc/vais/16.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/16.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/16.mp3",
+        "hours": "audio/slides/dao-duc/hours/16.mp3",
+        "gs": "audio/slides/dao-duc/gs/16.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/16.mp3",
+        "nt": "audio/slides/dao-duc/nt/16.mp3",
+        "bt": "audio/slides/dao-duc/bt/16.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/16.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/16.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/16.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/16.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 6. Sự thật và cách báo tin xấu",
+      "body": [
+        "Khó khăn thực tế. Có lúc người bệnh hoặc gia đình muốn giấu bệnh nhân về chẩn đoán nặng. Người làm nghề phải cân nhắc giữa trung thực và ý muốn của người nhà.",
+        "Nguyên tắc. Người bệnh có quyền biết về bệnh của mình, và có quyền không muốn biết chi tiết. Hỏi rõ người bệnh muốn biết đến đâu, và muốn ai được cùng nghe, là bước đầu tiên.",
+        "Các bước báo tin xấu thường được khuyến nghị: 1. Hỏi người bệnh muốn biết đến đâu. 2. Chuẩn bị: nói chuyện ở nơi riêng tư, có đủ thời gian. 3. Nói rõ, từng bước, tránh thuật ngữ khó. 4. Dừng lại, cho người bệnh thời gian phản ứng. 5. Nói về hướng xử trí tiếp theo, đừng chỉ dừng ở tin xấu.",
+        "Ví dụ. Thay vì nói \"Bác bị ung thư giai đoạn cuối, chỉ còn vài tháng\", bác sĩ có thể bắt đầu bằng \"Kết quả xét nghiệm cho thấy bệnh đã lan rộng, tôi muốn trao đổi để bác hiểu rõ và cùng lên kế hoạch chăm sóc.\""
+      ],
+      "audio": "audio/slides/dao-duc/vais/17.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/17.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/17.mp3",
+        "hours": "audio/slides/dao-duc/hours/17.mp3",
+        "gs": "audio/slides/dao-duc/gs/17.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/17.mp3",
+        "nt": "audio/slides/dao-duc/nt/17.mp3",
+        "bt": "audio/slides/dao-duc/bt/17.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/17.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/17.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/17.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/17.mp3"
+      }
+    },
+    {
+      "type": "fill",
+      "title": "Điền vào chỗ trống",
+      "text": "Khi báo tin xấu, nên bắt đầu bằng việc {1} người bệnh muốn biết đến đâu.",
+      "blanks": [
+        {
+          "options": [
+            "hỏi",
+            "bỏ qua",
+            "ép",
+            "giấu"
+          ],
+          "answer": 0
+        }
+      ],
+      "audio": "audio/slides/dao-duc/vais/18.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/18.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/18.mp3",
+        "hours": "audio/slides/dao-duc/hours/18.mp3",
+        "gs": "audio/slides/dao-duc/gs/18.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/18.mp3",
+        "nt": "audio/slides/dao-duc/nt/18.mp3",
+        "bt": "audio/slides/dao-duc/bt/18.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/18.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/18.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/18.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/18.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Khi báo tin xấu, bước nào nên làm đầu tiên?",
+      "options": [
+        "Đưa ngay kết quả và nêu tiên lượng.",
+        "Hỏi người bệnh muốn biết đến đâu và muốn ai cùng nghe.",
+        "Gọi người nhà đến ký giấy.",
+        "Chờ đến khi người bệnh hỏi."
+      ],
+      "answer": 1,
+      "feedback": "Hỏi rõ người bệnh muốn biết đến đâu là bước đầu tiên trong các bước báo tin xấu (Phần 6).",
+      "audio": "audio/slides/dao-duc/vais/19.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/19.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/19.mp3",
+        "hours": "audio/slides/dao-duc/hours/19.mp3",
+        "gs": "audio/slides/dao-duc/gs/19.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/19.mp3",
+        "nt": "audio/slides/dao-duc/nt/19.mp3",
+        "bt": "audio/slides/dao-duc/bt/19.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/19.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/19.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/19.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/19.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 7. Bảo mật thông tin người bệnh",
+      "body": [
+        "Thông tin về sức khỏe là thông tin nhạy cảm. Người làm nghề có nghĩa vụ giữ bí mật, chỉ chia sẻ khi cần thiết cho việc điều trị hoặc khi pháp luật yêu cầu.",
+        "Ví dụ vi phạm. Một điều dưỡng kể cho người thân về bệnh của một người hàng xóm đang nằm viện. Dù không có ý xấu, đây là vi phạm đạo đức về bảo mật.",
+        "Những tình huống dễ vi phạm trong đời thường: - Nói về bệnh nhân ở hành lang, thang máy, quán ăn gần bệnh viện. - Chụp ảnh hồ sơ, phiếu xét nghiệm rồi gửi qua mạng xã hội hoặc nhóm chat. - Để hồ sơ mở trên màn hình khi người không liên quan đi ngang. - Đăng ảnh bệnh nhân, dù không ghi tên, mà vẫn có thể nhận ra.",
+        "Lưu ý. Bảo mật không có nghĩa là giấu thông tin cần thiết cho việc điều trị. Bác sĩ vẫn phải chia sẻ đầy đủ với các đồng nghiệp đang trực tiếp điều trị."
+      ],
+      "audio": "audio/slides/dao-duc/vais/20.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/20.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/20.mp3",
+        "hours": "audio/slides/dao-duc/hours/20.mp3",
+        "gs": "audio/slides/dao-duc/gs/20.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/20.mp3",
+        "nt": "audio/slides/dao-duc/nt/20.mp3",
+        "bt": "audio/slides/dao-duc/bt/20.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/20.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/20.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/20.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/20.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Hành động nào là vi phạm bảo mật thông tin người bệnh?",
+      "options": [
+        "Trao đổi hồ sơ với đồng nghiệp đang trực tiếp điều trị.",
+        "Chụp ảnh phiếu xét nghiệm và gửi vào nhóm chat cá nhân.",
+        "Ghi chép hồ sơ theo quy định của cơ sở.",
+        "Chia sẻ với cơ quan có thẩm quyền khi pháp luật yêu cầu."
+      ],
+      "answer": 1,
+      "feedback": "Thông tin sức khỏe chỉ được chia sẻ khi cần cho điều trị hoặc khi pháp luật yêu cầu; gửi ảnh qua kênh cá nhân là vi phạm (Phần 7).",
+      "audio": "audio/slides/dao-duc/vais/21.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/21.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/21.mp3",
+        "hours": "audio/slides/dao-duc/hours/21.mp3",
+        "gs": "audio/slides/dao-duc/gs/21.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/21.mp3",
+        "nt": "audio/slides/dao-duc/nt/21.mp3",
+        "bt": "audio/slides/dao-duc/bt/21.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/21.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/21.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/21.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/21.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 8. Xung đột lợi ích",
+      "body": [
+        "Xung đột lợi ích xảy ra khi lợi ích cá nhân có thể làm lệch quyết định nghề nghiệp.",
+        "Ví dụ. Một bác sĩ kê đơn một loại thuốc vì được hưởng hoa hồng từ hãng thuốc, trong khi có lựa chọn khác phù hợp hơn cho bệnh nhân. Ngay cả khi thuốc không sai, quyết định này bị coi là thiếu đạo đức.",
+        "Ví dụ khác. Bác sĩ vừa điều trị vừa có cổ phần trong một phòng khám tư, rồi giới thiệu toàn bộ bệnh nhân sang đó dù không cần thiết.",
+        "Cách xử lý thường gặp: - Công khai mối quan hệ với cấp trên hoặc hội đồng. - Từ chối nhận quyền lợi không minh bạch, kể cả quà, suất đi hội thảo có điều kiện. - Tách người ra quyết định khỏi người có lợi ích, khi có thể. - Đặt lợi ích người bệnh lên trước."
+      ],
+      "audio": "audio/slides/dao-duc/vais/22.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/22.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/22.mp3",
+        "hours": "audio/slides/dao-duc/hours/22.mp3",
+        "gs": "audio/slides/dao-duc/gs/22.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/22.mp3",
+        "nt": "audio/slides/dao-duc/nt/22.mp3",
+        "bt": "audio/slides/dao-duc/bt/22.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/22.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/22.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/22.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/22.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 8. Xung đột lợi ích (tiếp)",
+      "body": [
+        "Vì sao chỉ có nguy cơ cũng đáng lo? Người ngoài không thể biết quyết định đó được đưa ra vì ai. Niềm tin của xã hội vào nghề y dựa trên việc mọi người tin rằng quyết định là vì người bệnh."
+      ],
+      "audio": "audio/slides/dao-duc/vais/23.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/23.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/23.mp3",
+        "hours": "audio/slides/dao-duc/hours/23.mp3",
+        "gs": "audio/slides/dao-duc/gs/23.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/23.mp3",
+        "nt": "audio/slides/dao-duc/nt/23.mp3",
+        "bt": "audio/slides/dao-duc/bt/23.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/23.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/23.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/23.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/23.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Vì sao chỉ có xung đột lợi ích tiềm ẩn cũng đáng lo?",
+      "options": [
+        "Vì người ngoài không biết quyết định được đưa ra vì ai, và điều đó làm giảm niềm tin.",
+        "Vì người làm nghề luôn bị phạt.",
+        "Vì quyết định nào cũng sai.",
+        "Vì phải nộp thêm thuế."
+      ],
+      "answer": 0,
+      "feedback": "Niềm tin của xã hội vào nghề y dựa trên việc quyết định vì người bệnh (Phần 8).",
+      "audio": "audio/slides/dao-duc/vais/24.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/24.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/24.mp3",
+        "hours": "audio/slides/dao-duc/hours/24.mp3",
+        "gs": "audio/slides/dao-duc/gs/24.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/24.mp3",
+        "nt": "audio/slides/dao-duc/nt/24.mp3",
+        "bt": "audio/slides/dao-duc/bt/24.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/24.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/24.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/24.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/24.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 9. Công bằng và phân bổ nguồn lực",
+      "body": [
+        "Khái niệm. Nguồn lực y tế như giường bệnh, máy móc, thuốc và thời gian bác sĩ thường có hạn. Công bằng nghĩa là phân bổ theo nhu cầu và cơ hội được điều trị hợp lý, không theo địa vị hay tiền bạc.",
+        "Ví dụ. Trong một đợt dịch, số giường thở máy ít hơn số người cần. Nếu quyết định dựa trên việc ai quen biết lãnh đạo, đó là bất công. Các tiêu chí phân loại ưu tiên phải rõ ràng, nhất quán, và có thể giải thích công khai.",
+        "Ví dụ về chi phí. Một người nghèo cần một phương pháp điều trị đắt tiền. Người làm nghề có thể tìm chính sách hỗ trợ, bảo hiểm, chương trình từ thiện hoặc phương án thay thế, và phải minh bạch về chi phí để người bệnh tự quyết định."
+      ],
+      "audio": "audio/slides/dao-duc/vais/25.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/25.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/25.mp3",
+        "hours": "audio/slides/dao-duc/hours/25.mp3",
+        "gs": "audio/slides/dao-duc/gs/25.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/25.mp3",
+        "nt": "audio/slides/dao-duc/nt/25.mp3",
+        "bt": "audio/slides/dao-duc/bt/25.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/25.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/25.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/25.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/25.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Khi giường thở máy không đủ, tiêu chí phân loại ưu tiên nên thế nào?",
+      "options": [
+        "Ưu tiên người quen biết lãnh đạo.",
+        "Ưu tiên người có tiền.",
+        "Rõ ràng, nhất quán và công khai.",
+        "Bốc thăm ngẫu nhiên, không cần tiêu chí."
+      ],
+      "answer": 2,
+      "feedback": "Công bằng đòi hỏi tiêu chí rõ ràng, nhất quán, có thể giải thích công khai (Phần 9).",
+      "audio": "audio/slides/dao-duc/vais/26.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/26.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/26.mp3",
+        "hours": "audio/slides/dao-duc/hours/26.mp3",
+        "gs": "audio/slides/dao-duc/gs/26.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/26.mp3",
+        "nt": "audio/slides/dao-duc/nt/26.mp3",
+        "bt": "audio/slides/dao-duc/bt/26.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/26.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/26.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/26.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/26.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 10. Lập luận đạo đức",
+      "body": [
+        "Khi gặp một tình huống khó, có thể làm theo các bước:",
+        "Mô tả sự việc. Ai liên quan? Có gì đang xảy ra? Có điều gì chưa biết?",
+        "Xác định giá trị. Những giá trị nào đang xung đột? Ví dụ: tự do và an toàn, trung thực và tránh làm tổn thương.",
+        "Xem xét các lựa chọn. Có những phương án nào? Mỗi phương án ảnh hưởng đến ai?"
+      ],
+      "audio": "audio/slides/dao-duc/vais/27.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/27.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/27.mp3",
+        "hours": "audio/slides/dao-duc/hours/27.mp3",
+        "gs": "audio/slides/dao-duc/gs/27.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/27.mp3",
+        "nt": "audio/slides/dao-duc/nt/27.mp3",
+        "bt": "audio/slides/dao-duc/bt/27.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/27.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/27.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/27.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/27.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 10. Lập luận đạo đức (tiếp)",
+      "body": [
+        "Kiểm tra bằng ba hướng. Hậu quả ra sao? Có vi phạm nghĩa vụ nào không? Hành động này có phù hợp với người có đức hạnh không?",
+        "Kiểm tra bằng quy định. Có quy tắc nghề nghiệp, quy định cơ sở hoặc luật nào liên quan không?",
+        "Quyết định và giải thích. Chọn phương án, nêu rõ lý do, và sẵn sàng nghe phản biện.",
+        "Mẫu phiếu phân tích. Ghi lại theo sáu bước trên cho một tình huống thật hoặc giả định. Phiếu này giúp so sánh quyết định của mình với người khác và rút kinh nghiệm."
+      ],
+      "audio": "audio/slides/dao-duc/vais/28.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/28.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/28.mp3",
+        "hours": "audio/slides/dao-duc/hours/28.mp3",
+        "gs": "audio/slides/dao-duc/gs/28.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/28.mp3",
+        "nt": "audio/slides/dao-duc/nt/28.mp3",
+        "bt": "audio/slides/dao-duc/bt/28.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/28.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/28.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/28.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/28.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Trong quy trình lập luận đạo đức, bước nào đứng sau \"xem xét các lựa chọn\"?",
+      "options": [
+        "Mô tả sự việc",
+        "Quyết định và giải thích",
+        "Xác định giá trị",
+        "Kiểm tra bằng quy định"
+      ],
+      "answer": 1,
+      "feedback": "Sau khi xem xét các lựa chọn và kiểm tra, bước cuối là quyết định và giải thích lý do (Phần 10).",
+      "audio": "audio/slides/dao-duc/vais/29.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/29.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/29.mp3",
+        "hours": "audio/slides/dao-duc/hours/29.mp3",
+        "gs": "audio/slides/dao-duc/gs/29.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/29.mp3",
+        "nt": "audio/slides/dao-duc/nt/29.mp3",
+        "bt": "audio/slides/dao-duc/bt/29.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/29.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/29.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/29.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/29.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống A. Tiên lượng xấu. Bệnh nhân ung thư yêu cầu bác sĩ không nói rõ tiên lượng với gia đình. Bác sĩ nên làm gì? Hãy viết hướng xử lý của bạn.",
+      "model": "Tôn trọng ý nguyện của người bệnh về việc ai được biết thông tin, nhưng cần hỏi rõ người bệnh muốn biết đến đâu và muốn chia sẻ với ai. Nếu người bệnh muốn giữ kín, bác sĩ vẫn cần biết ai sẽ cùng quyết định về chăm sóc khi người bệnh không còn đủ tỉnh táo.",
+      "audio": "audio/slides/dao-duc/vais/30.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/30.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/30.mp3",
+        "hours": "audio/slides/dao-duc/hours/30.mp3",
+        "gs": "audio/slides/dao-duc/gs/30.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/30.mp3",
+        "nt": "audio/slides/dao-duc/nt/30.mp3",
+        "bt": "audio/slides/dao-duc/bt/30.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/30.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/30.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/30.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/30.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống B. Ghi sai hồ sơ. Một điều dưỡng thấy đồng nghiệp ghi sai liều thuốc trong hồ sơ, nhưng chưa gây hậu quả. Điều dưỡng nên làm gì? Hãy viết hướng xử lý của bạn.",
+      "model": "Báo cáo đúng quy trình để sửa sai và phòng tránh về sau, vì im lặng có thể gây hại cho bệnh nhân khác. Báo cáo nên nhằm cải thiện hệ thống, không nhằm trừng phạt một cá nhân khi không cần thiết.",
+      "audio": "audio/slides/dao-duc/vais/31.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/31.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/31.mp3",
+        "hours": "audio/slides/dao-duc/hours/31.mp3",
+        "gs": "audio/slides/dao-duc/gs/31.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/31.mp3",
+        "nt": "audio/slides/dao-duc/nt/31.mp3",
+        "bt": "audio/slides/dao-duc/bt/31.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/31.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/31.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/31.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/31.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống C. Viện phí. Một người bệnh nghèo không đủ tiền đóng viện phí cho một phương pháp điều trị cần thiết. Người làm nghề cần cân nhắc điều gì? Hãy viết hướng xử lý của bạn.",
+      "model": "Công bằng, tìm các chính sách hỗ trợ và phương án thay thế, và minh bạch về chi phí. Không nên tự ý quyết định thay người bệnh rằng họ \"không đáng\" được điều trị.",
+      "audio": "audio/slides/dao-duc/vais/32.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/32.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/32.mp3",
+        "hours": "audio/slides/dao-duc/hours/32.mp3",
+        "gs": "audio/slides/dao-duc/gs/32.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/32.mp3",
+        "nt": "audio/slides/dao-duc/nt/32.mp3",
+        "bt": "audio/slides/dao-duc/bt/32.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/32.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/32.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/32.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/32.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống D. Xin xem hồ sơ. Người bệnh yêu cầu được sao chép toàn bộ hồ sơ bệnh án và ghi âm buổi trao đổi với bác sĩ. Cơ sở yêu cầu làm đơn. Người làm nghề nên làm gì? Hãy viết hướng xử lý của bạn.",
+      "model": "Người bệnh có quyền tiếp cận thông tin về bệnh của mình, theo quy trình của cơ sở. Nên giải thích rõ quy trình, hỗ trợ làm đơn, và không gây khó dễ không cần thiết. Nếu có lý do chính đáng về bảo mật thông tin của người khác trong hồ sơ, cần che bớt phần đó theo quy định.",
+      "audio": "audio/slides/dao-duc/vais/33.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/33.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/33.mp3",
+        "hours": "audio/slides/dao-duc/hours/33.mp3",
+        "gs": "audio/slides/dao-duc/gs/33.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/33.mp3",
+        "nt": "audio/slides/dao-duc/nt/33.mp3",
+        "bt": "audio/slides/dao-duc/bt/33.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/33.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/33.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/33.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/33.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống E. Quà từ hãng thuốc. Đại diện hãng thuốc mời bác sĩ đi nghỉ dưỡng \"để trao đổi chuyên môn\" sau khi bác sĩ kê đơn nhiều hơn một loại thuốc của hãng. Bác sĩ nên xử lý thế nào? Hãy viết hướng xử lý của bạn.",
+      "model": "Từ chối lợi ích không minh bạch. Nếu cần tham gia hội thảo chuyên môn, nên làm theo quy định về minh bạch, công khai nguồn tài trợ, và không để lợi ích ảnh hưởng đến quyết định kê đơn.",
+      "audio": "audio/slides/dao-duc/vais/34.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/34.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/34.mp3",
+        "hours": "audio/slides/dao-duc/hours/34.mp3",
+        "gs": "audio/slides/dao-duc/gs/34.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/34.mp3",
+        "nt": "audio/slides/dao-duc/nt/34.mp3",
+        "bt": "audio/slides/dao-duc/bt/34.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/34.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/34.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/34.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/34.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống F. Đăng ảnh lên mạng. Một y tá chụp ảnh vết thương của bệnh nhân (không lộ mặt) để hỏi ý kiến đồng nghiệp trong nhóm chat riêng. Có nên làm không? Hãy viết hướng xử lý của bạn.",
+      "model": "Dù không lộ mặt, ảnh vẫn là thông tin sức khỏe và có thể nhận ra người bệnh qua hoàn cảnh. Nên dùng kênh chính thức của cơ sở, xin sự đồng ý, và xóa ảnh khỏi thiết bị cá nhân sau khi dùng.",
+      "audio": "audio/slides/dao-duc/vais/35.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/35.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/35.mp3",
+        "hours": "audio/slides/dao-duc/hours/35.mp3",
+        "gs": "audio/slides/dao-duc/gs/35.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/35.mp3",
+        "nt": "audio/slides/dao-duc/nt/35.mp3",
+        "bt": "audio/slides/dao-duc/bt/35.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/35.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/35.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/35.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/35.mp3"
+      }
+    },
+    {
+      "type": "essay",
+      "q": "Tình huống G. Nghiên cứu lâm sàng. Một bệnh nhân được mời tham gia thử nghiệm thuốc mới. Họ lo sợ nếu từ chối thì sẽ bị bác sĩ \"đối xử khác\". Người làm nghề cần làm gì để bảo đảm tự nguyện? Hãy viết hướng xử lý của bạn.",
+      "model": "Nói rõ việc tham gia là hoàn toàn tự nguyện, từ chối không ảnh hưởng đến việc điều trị, và người bệnh có thể rút lui bất cứ lúc nào. Thời gian cân nhắc đủ dài, không ép quyết định ngay.",
+      "audio": "audio/slides/dao-duc/vais/36.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/36.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/36.mp3",
+        "hours": "audio/slides/dao-duc/hours/36.mp3",
+        "gs": "audio/slides/dao-duc/gs/36.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/36.mp3",
+        "nt": "audio/slides/dao-duc/nt/36.mp3",
+        "bt": "audio/slides/dao-duc/bt/36.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/36.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/36.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/36.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/36.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Bác sĩ nhận lời mời nghỉ dưỡng từ hãng thuốc sau khi kê nhiều thuốc của hãng. Cách xử lý nào phù hợp?",
+      "options": [
+        "Nhận, vì không ảnh hưởng đến kê đơn.",
+        "Từ chối lợi ích không minh bạch và không để lợi ích chi phối việc kê đơn.",
+        "Nhận nhưng không nói với ai.",
+        "Nhận rồi trả lại sau."
+      ],
+      "answer": 1,
+      "feedback": "Đây là xung đột lợi ích cần từ chối lợi ích không minh bạch (Tình huống E, Phần 11).",
+      "audio": "audio/slides/dao-duc/vais/37.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/37.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/37.mp3",
+        "hours": "audio/slides/dao-duc/hours/37.mp3",
+        "gs": "audio/slides/dao-duc/gs/37.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/37.mp3",
+        "nt": "audio/slides/dao-duc/nt/37.mp3",
+        "bt": "audio/slides/dao-duc/bt/37.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/37.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/37.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/37.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/37.mp3"
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Người bệnh yêu cầu sao chép toàn bộ hồ sơ bệnh án. Nguyên tắc nào cần ưu tiên?",
+      "options": [
+        "Người bệnh có quyền tiếp cận thông tin về bệnh của mình, theo quy trình của cơ sở.",
+        "Chỉ bác sĩ được xem hồ sơ.",
+        "Từ chối vì hồ sơ thuộc bệnh viện.",
+        "Gửi cho người khác thay người bệnh."
+      ],
+      "answer": 0,
+      "feedback": "Người bệnh có quyền tiếp cận thông tin về bệnh của mình, nhưng cần làm theo quy trình và bảo vệ thông tin của người khác trong hồ sơ (Tình huống D, Phần 11).",
+      "audio": "audio/slides/dao-duc/vais/38.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/38.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/38.mp3",
+        "hours": "audio/slides/dao-duc/hours/38.mp3",
+        "gs": "audio/slides/dao-duc/gs/38.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/38.mp3",
+        "nt": "audio/slides/dao-duc/nt/38.mp3",
+        "bt": "audio/slides/dao-duc/bt/38.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/38.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/38.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/38.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/38.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Mỗi bài có tiêu chí để tự đánh giá. Nếu có nhóm học, nên đọc bài của nhau và so sánh."
+      ],
+      "audio": "audio/slides/dao-duc/vais/39.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/39.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/39.mp3",
+        "hours": "audio/slides/dao-duc/hours/39.mp3",
+        "gs": "audio/slides/dao-duc/gs/39.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/39.mp3",
+        "nt": "audio/slides/dao-duc/nt/39.mp3",
+        "bt": "audio/slides/dao-duc/bt/39.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/39.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/39.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/39.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/39.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Bài 1. Viết lại lời giải thích. Chọn một thủ thuật đơn giản (ví dụ: lấy máu xét nghiệm, nội soi dạ dày). Viết lời giải thích cho người bệnh lớn tuổi bằng ngôn ngữ đời thường, không quá 150 chữ, gồm: mục đích, cách làm, lợi ích, rủi ro thường gặp, và lựa chọn khác. Tiêu chí: Không có thuật ngữ chưa được giải thích; có nêu rủi ro; có nói về lựa chọn khác; người không chuyên đọc hiểu được."
+      ],
+      "audio": "audio/slides/dao-duc/vais/40.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/40.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/40.mp3",
+        "hours": "audio/slides/dao-duc/hours/40.mp3",
+        "gs": "audio/slides/dao-duc/gs/40.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/40.mp3",
+        "nt": "audio/slides/dao-duc/nt/40.mp3",
+        "bt": "audio/slides/dao-duc/bt/40.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/40.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/40.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/40.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/40.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Bài 2. Đóng vai báo tin xấu. Hai người đóng vai bác sĩ và bệnh nhân (hoặc người nhà). Người \"bác sĩ\" phải thực hiện các bước báo tin xấu ở Phần 6. Tiêu chí: Có hỏi người bệnh muốn biết đến đâu; có dừng lại để người bệnh phản ứng; không dùng thuật ngữ khó; kết thúc bằng hướng xử trí tiếp theo."
+      ],
+      "audio": "audio/slides/dao-duc/vais/41.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/41.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/41.mp3",
+        "hours": "audio/slides/dao-duc/hours/41.mp3",
+        "gs": "audio/slides/dao-duc/gs/41.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/41.mp3",
+        "nt": "audio/slides/dao-duc/nt/41.mp3",
+        "bt": "audio/slides/dao-duc/bt/41.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/41.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/41.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/41.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/41.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Bài 3. Checklist đồng ý có thông tin. Chọn một can thiệp giả định (ví dụ: phẫu thuật ruột thừa). Lập bảng kiểm gồm các mục: thông tin cần cung cấp, cách kiểm tra người bệnh đã hiểu, cách xác nhận tự nguyện, trường hợp cần người đại diện. Tiêu chí: Có đủ bốn điều kiện ở Phần 5; có ít nhất một cách kiểm tra \"hiểu\" không chỉ là ký tên."
+      ],
+      "audio": "audio/slides/dao-duc/vais/42.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/42.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/42.mp3",
+        "hours": "audio/slides/dao-duc/hours/42.mp3",
+        "gs": "audio/slides/dao-duc/gs/42.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/42.mp3",
+        "nt": "audio/slides/dao-duc/nt/42.mp3",
+        "bt": "audio/slides/dao-duc/bt/42.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/42.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/42.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/42.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/42.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Bài 4. Phân tích một tin tức. Tìm một tin tức về y tế có tranh cãi đạo đức (ví dụ: quảng cáo thuốc, thử nghiệm trên người, vụ việc lộ thông tin bệnh nhân). Dùng phiếu ở Phần 10 để phân tích. Tiêu chí: Nêu đúng sự việc, không suy diễn; xác định ít nhất hai giá trị xung đột; áp dụng cả ba hướng; ghi nguồn tin."
+      ],
+      "audio": "audio/slides/dao-duc/vais/43.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/43.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/43.mp3",
+        "hours": "audio/slides/dao-duc/hours/43.mp3",
+        "gs": "audio/slides/dao-duc/gs/43.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/43.mp3",
+        "nt": "audio/slides/dao-duc/nt/43.mp3",
+        "bt": "audio/slides/dao-duc/bt/43.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/43.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/43.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/43.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/43.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 12. Bài tập thực hành",
+      "body": [
+        "Bài 5. Suy ngẫm cá nhân. Viết một trang về một lần bạn (hoặc người quen) đã đối xử với người khác theo cách gây tổn thương, dù không có ý xấu. Điều gì đã xảy ra? Nếu làm lại, bạn sẽ làm khác thế nào, theo nguyên tắc nào? Tiêu chí: Trung thực với bản thân; nhận diện được nguyên tắc đã bị vi phạm; có hành động cụ thể cho lần sau."
+      ],
+      "audio": "audio/slides/dao-duc/vais/44.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/44.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/44.mp3",
+        "hours": "audio/slides/dao-duc/hours/44.mp3",
+        "gs": "audio/slides/dao-duc/gs/44.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/44.mp3",
+        "nt": "audio/slides/dao-duc/nt/44.mp3",
+        "bt": "audio/slides/dao-duc/bt/44.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/44.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/44.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/44.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/44.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 13. Ghi nhớ và tổng kết",
+      "body": [
+        "Đạo đức là chuẩn mực về điều đúng và sai trong quan hệ giữa người với người, dựa nhiều vào lương tâm và sự tự nguyện.",
+        "Ba hướng tiếp cận: hậu quả, nghĩa vụ, đức hạnh. Dùng cả ba để kiểm tra quyết định.",
+        "Các nguyên tắc nền tảng: tôn trọng quyền tự quyết, làm lợi và không gây hại, công bằng, trung thực, bảo mật.",
+        "Đồng ý có thông tin là quá trình hiểu và tự nguyện, không chỉ là chữ ký."
+      ],
+      "audio": "audio/slides/dao-duc/vais/45.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/45.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/45.mp3",
+        "hours": "audio/slides/dao-duc/hours/45.mp3",
+        "gs": "audio/slides/dao-duc/gs/45.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/45.mp3",
+        "nt": "audio/slides/dao-duc/nt/45.mp3",
+        "bt": "audio/slides/dao-duc/bt/45.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/45.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/45.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/45.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/45.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Phần 13. Ghi nhớ và tổng kết (tiếp)",
+      "body": [
+        "Xung đột lợi ích, dù chưa gây hại, vẫn cần được công khai và xử lý.",
+        "Lập luận đạo đức là một quy trình: mô tả, xác định giá trị, xem xét lựa chọn, kiểm tra, quyết định và giải thích."
+      ],
+      "audio": "audio/slides/dao-duc/vais/46.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/46.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/46.mp3",
+        "hours": "audio/slides/dao-duc/hours/46.mp3",
+        "gs": "audio/slides/dao-duc/gs/46.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/46.mp3",
+        "nt": "audio/slides/dao-duc/nt/46.mp3",
+        "bt": "audio/slides/dao-duc/bt/46.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/46.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/46.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/46.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/46.mp3"
+      }
+    },
+    {
+      "type": "text",
+      "title": "Lưu ý",
+      "body": [
+        "Tài liệu này là tổng quan nhập môn. Trong thực tế, quyết định nghề nghiệp phải tuân theo quy tắc đạo đức nghề nghiệp, quy định của cơ sở và văn bản pháp luật hiện hành. Khi có nghi ngờ, nên tham khảo hội đồng đạo đức hoặc người có chuyên môn."
+      ],
+      "audio": "audio/slides/dao-duc/vais/47.mp3",
+      "audios": {
+        "vais": "audio/slides/dao-duc/vais/47.mp3",
+        "vivos": "audio/slides/dao-duc/vivos/47.mp3",
+        "hours": "audio/slides/dao-duc/hours/47.mp3",
+        "gs": "audio/slides/dao-duc/gs/47.mp3",
+        "hsg": "audio/slides/dao-duc/hsg/47.mp3",
+        "nt": "audio/slides/dao-duc/nt/47.mp3",
+        "bt": "audio/slides/dao-duc/bt/47.mp3",
+        "xuan_vinh": "audio/slides/dao-duc/xuan_vinh/47.mp3",
+        "doan_trang": "audio/slides/dao-duc/doan_trang/47.mp3",
+        "quoc_tuan": "audio/slides/dao-duc/quoc_tuan/47.mp3",
+        "thanh_binh": "audio/slides/dao-duc/thanh_binh/47.mp3"
+      }
+    }
+  ]
+}

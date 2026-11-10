@@ -13,8 +13,11 @@
       "Cơ sở có 45 ngày để khắc phục và gửi bằng chứng nếu bị yêu cầu; nếu vẫn chưa đạt, hồ sơ chuyển Cục Quản lý Dược để kiểm tra đột xuất.",
       "Sở Y tế có trách nhiệm phổ biến, tham gia kiểm tra, giám sát và xử lý vi phạm (khoản 2 Điều 18)."
     ],
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=362025",
+    "verify_date": "2026-11-06",
+    "verify_source": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/36-byt.pdf",
+    "ghi_chu": "Đã đối chiếu PDF gốc (datafiles.chinhphu.vn/36-byt.pdf): Điều 1 khoản 1 và khoản 2, Điều 2 hiệu lực 11/09/2025. Kiểm chéo: luatvietnam.vn, hue.gov.vn. Chưa ghi điều chuyển tiếp Điều 3 (hồ sơ nộp trước 11/09/2025)."
   },
   {
     "id": "tt25_2026",
@@ -31,7 +34,10 @@
       "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
+    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ. Kiểm 06/11/2026: hiệu lực 15/08/2026 khớp nhiều nguồn; một trang ghi 30/06/2026 (ngày ban hành). Kiểm 2026-11-09 (thứ cấp): nhiều nguồn ghi hiệu lực chung 15/08/2026, Điều 2–3 có hiệu lực 01/07/2026; một nguồn ghi 30/06/2026 (ngày ban hành). Chưa mở văn bản gốc.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt26_2025",
@@ -41,16 +47,19 @@
     "pass": "30/06/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Đã đối chiếu văn bản gốc (Điều 13 khoản 2 Thông tư 26/2025 và các phụ lục liên quan).",
+    "replaces": "Thay thế Thông tư 52/2017/TT-BYT (hết hiệu lực từ 01/07/2025, Điều 13 khoản 2 Thông tư 26/2025).",
     "points": [
       "Chỉ bác sĩ hoặc y sĩ có chứng chỉ hành nghề được kê đơn; người kê đơn chịu trách nhiệm về nội dung đơn.",
       "Đơn phải ghi tên thuốc, nồng độ, hàm lượng, liều dùng, đường dùng và số ngày dùng; trẻ dưới 72 tháng ghi tuổi theo tháng và cân nặng.",
-      "Tối đa 30 ngày cho mỗi thuốc; bệnh mạn tính có thể đến 90 ngày theo Phụ lục VII.",
+      "Tối đa 30 ngày dùng cho mỗi thuốc (Điều 6 khoản 8a); với bệnh thuộc Danh mục Phụ lục VII, người kê đơn quyết định nhưng không quá 90 ngày (khoản 8b).",
       "Đơn điện tử có giá trị như đơn giấy nếu được ký số, lưu trữ và chia sẻ đúng quy định.",
-      "Thuốc gây nghiện, hướng thần có mẫu đơn riêng (Phụ lục II, III) và thời gian cấp hạn chế."
+      "Thuốc gây nghiện (mẫu N, Phụ lục II) và thuốc hướng thần, tiền chất (mẫu H, Phụ lục III) có mẫu đơn riêng; thuốc gây nghiện kê không quá 10 ngày (cấp tính) hoặc 30 ngày (mạn tính) (Điều 7, Điều 9 khoản 2–3)."
     ],
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=262025"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214386",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF gốc TT 26/2025 (datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/26-byt.pdf): Đ2 thẩm quyền; Đ3 mẫu; Đ6 khoản 4, 5, 6, 8a, 8b; Đ9 khoản 2–3; Đ10 đơn điện tử; Đ13 khoản 1–2 (hiệu lực 01/07/2025, bãi bỏ TT 52/2017, 18/2018, 04/2022, 27/2021)",
+    "ghi_chu": "Kiểm sửa đổi ngày 06/11/2026: chưa thấy văn bản sửa đổi TT 26/2025."
   },
   {
     "id": "tt22_2024",
@@ -68,7 +77,9 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222024",
-    "ghi_chu": "Chưa xác nhận được: tìm kiếm không ra thông tư 22/2024/TT-BYT về thanh toán chi phí thuốc. Cần đối chiếu số hiệu trên vbpl.vn."
+    "ghi_chu": "Kiểm 2026-11-06: point 1 ghi Danh mục thuốc hiếm, nhưng Điều 2 khoản 1 là Danh mục thuốc BHYT (TT 26/2019). Cần sửa point. Kiểm 2026-11-09 (thứ cấp): ban hành 18/10/2024, hiệu lực 01/01/2025, một nguồn ghi còn hiệu lực; chưa thấy văn bản sửa đổi. Tên thông tư cần tránh nhầm với 22/2024/TT-BGDĐT và 22/2024/TT-BKHĐT.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt21_2024",
@@ -78,7 +89,7 @@
     "pass": "17/10/2024",
     "eff": "17/10/2024",
     "status": "amend",
-    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Được sửa đổi bởi Thông tư 39/2024/TT-BYT.",
+    "replaces": "Thay thế Thông tư 21/2023/TT-BYT và Thông tư 22/2023/TT-BYT từ 01/01/2025. Chưa xác nhận sửa đổi bởi Thông tư 39/2024/TT-BYT (TT 39/2024 sửa Thông tư 35/2016).",
     "points": [
       "Quy định phương pháp định giá dịch vụ khám bệnh, chữa bệnh.",
       "Từ 01/01/2025, Thông tư 21/2023 và 22/2023 về giá dịch vụ khám bệnh, chữa bệnh hết hiệu lực.",
@@ -86,7 +97,10 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=211506",
     "detailSource": "Thông tư 21/2024/TT-BYT, hiệu lực 17/10/2024; các thông tư giá cũ hết hiệu lực từ 01/01/2025.",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF gốc TT 21/2024 (kiểm Đ2, Đ9 khoản 3, Đ11 khoản 1-2)",
+    "ghi_chu": "Kiểm 2026-11-06: point 2 cần bổ sung TT 13/2023; point 3 nên ghi mức trần do Bộ trưởng Bộ Y tế quy định."
   },
   {
     "id": "tt22_2023",
@@ -103,7 +117,11 @@
       "Cách tính ngày giường, giá ICU và định mức ca cho siêu âm, X-quang, CT, MRI (Điều 6, 7)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222023"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=222023",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hết hiệu lực từ 01/01/2025 theo TT 21/2024/TT-BYT.",
+    "het_hieu_luc": "01/01/2025"
   },
   {
     "id": "tt21_2023",
@@ -121,7 +139,11 @@
       "Từ lượt khám thứ hai trong cùng một lần đến khám, tính 30% giá một lượt khám (Điều 5)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212023",
+    "ghi_chu": "Kiểm 2026-11-06: entry ghi hết hiệu lực nhưng tìm kiếm vbpl.vn ghi là văn bản hiện thời. Cần xác minh lại trạng thái. Kiểm 2026-11-09 (thứ cấp): hết hiệu lực từ 01/01/2025 theo TT 21/2024/TT-BYT.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "het_hieu_luc": "01/01/2025"
   },
   {
     "id": "tt49_2025",
@@ -138,7 +160,10 @@
       "Thông báo bổ sung hồ sơ trong 5 ngày làm việc; tổ thư ký rà soát trong 7 ngày làm việc (khoản 2 Điều 11)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=492025",
+    "ghi_chu": "Kiểm 2026-11-06: đường dẫn nguon (docid 492025) trả chuyển hướng rỗng, chưa tìm được trang thay thế. Văn bản hợp nhất TT 02/2024 đã sửa bởi TT 49/2025: datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/01-vbhn-byt.pdf (VBHN, cần đối chiếu gốc). Kiểm 2026-11-09 (thứ cấp): hiệu lực từ ngày ký 31/12/2025, sửa đổi TT 02/2024/TT-BYT (lương y, bài thuốc gia truyền). Trang tra cứu có ngày hết hiệu lực để trống.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt44_2025",
@@ -156,7 +181,10 @@
       "Các biểu mẫu kèm theo quy định tại Phụ lục I–VIII (Điều 3)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=442025",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hiệu lực từ 22/11/2025, chưa thấy văn bản sửa đổi chính thông tư này."
   },
   {
     "id": "dulieu",
@@ -172,7 +200,10 @@
       "Mọi cơ quan, đơn vị, tổ chức, cá nhân phải kịp thời thông báo cho cơ quan chủ quản cơ sở dữ liệu y tế khi dữ liệu về mình thay đổi, được bổ sung hoặc có sai sót (Điều 24)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=1022025"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=213607",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 13/05/2025, hiệu lực 01/07/2025 theo cổng Chính phủ và Hue. Một trang ghi trạng thái \"Kiểm tra\", cần đối chiếu."
   },
   {
     "id": "kcb",
@@ -193,9 +224,10 @@
     ],
     "guide": "Nghị định 96/2023/NĐ-CP hướng dẫn Luật Khám bệnh, chữa bệnh",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=15202315",
-    "vbhn": "Văn bản hợp nhất 26/VBHN-VPQH ngày 26/02/2026 (Văn phòng Quốc hội)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-26-vbhn-vpqh-469053/63165.htm"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=207396",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): chưa thấy luật sửa đổi Luật 15/2023/QH15 có hiệu lực năm 2026. Có Văn bản hợp nhất 26/VBHN-VPQH (26/02/2026). Một trang nêu dự kiến luật sửa đổi về Hội đồng y khoa quốc gia, chưa xác nhận đã thông qua."
   },
   {
     "id": "nd_96_2023_kcb",
@@ -204,7 +236,7 @@
     "so": "96/2023/NĐ-CP",
     "pass": "30/12/2023",
     "eff": "01/01/2024",
-    "status": "amend",
+    "status": "on",
     "replaces": "Hướng dẫn Luật Khám bệnh, chữa bệnh 15/2023/QH15; gồm 9 chương, 148 điều.",
     "points": [
       "Quy định chi tiết điều kiện, hồ sơ, trình tự cấp giấy phép hành nghề khám bệnh, chữa bệnh; giấy phép hành nghề có thời hạn 5 năm.",
@@ -215,9 +247,9 @@
     "guide": "Thông tư 32/2023/TT-BYT quy định chi tiết hồ sơ bệnh án; các thông tư chuyên ngành của Bộ Y tế.",
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=209491",
     "verify": false,
-    "het_hieu_luc": "Một phần: theo Lawgical, nghị định hết hiệu lực một phần. Các nguồn khác chưa thấy văn bản thay thế năm 2026. Chưa đối chiếu với văn bản chính thức.",
-    "verify_source": "https://vanban.chinhphu.vn/?pageid=27160&docid=209491",
-    "ghi_chu": "Chưa đối chiếu được toàn văn; nguồn còn mâu thuẫn về hiệu lực một phần. Cần Otter đối chiếu."
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hiệu lực 01/01/2024. Có dự thảo sửa đổi (hội thảo 05/2025) nhưng chưa xác nhận đã ban hành."
   },
   {
     "id": "bhyt",
@@ -263,8 +295,9 @@
     "detailSource": "caselaw.vn (Luật 51/2024/QH15), Điều 13 và Điều 22",
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=51202415",
     "verify": false,
-    "vbhn": "Văn bản hợp nhất 40/VBHN-VPQH (Văn phòng Quốc hội, 2026)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-40-vbhn-vpqh-469125.htm"
+    "ghi_chu": "Kiểm 2026-11-06: Điều 22 khoản 1 điểm d: hai điều kiện (5 năm và 6 lần mức tham chiếu) là cộng gộp (và). Điều 22 có hiệu lực từ 01/01/2025. Cần sửa. Kiểm 2026-11-09 (thứ cấp): Công báo ghi ban hành 27/11/2024, hiệu lực 01/07/2025 trừ khoản 2–3. Chưa thấy luật sửa đổi có hiệu lực năm 2026.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "duoc",
@@ -284,9 +317,10 @@
     ],
     "guide": "Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44202415",
-    "vbhn": "Văn bản hợp nhất 76/VBHN-VPQH ngày 25/03/2026 (Văn phòng Quốc hội)",
-    "vbhn_nguon": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-76-vbhn-vpqh-469206.htm"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=212466",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 21/11/2024, hiệu lực 01/07/2025. Có Văn bản hợp nhất 76/VBHN-VPQH (2026) hợp nhất Luật Dược 28/2018 và Luật 44/2024."
   },
   {
     "id": "nd_163_2025_duoc",
@@ -303,7 +337,10 @@
       "Quy định điều kiện kinh doanh dược và trách nhiệm của cơ sở hoạt động dược."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214322",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 29/06/2025, hiệu lực 01/07/2025; thay các quy định quảng cáo thuốc tại NĐ 54/2017 và 155/2018 (theo một nguồn)."
   },
   {
     "id": "tt_31_2025_duoc",
@@ -313,16 +350,17 @@
     "pass": "01/07/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Hướng dẫn chi tiết Luật Dược 44/2024/QH15 và Nghị định 163/2025/NĐ-CP.",
+    "replaces": "Thay thế Thông tư 07/2018/TT-BYT (từ 01/07/2025). Hướng dẫn Luật Dược và Nghị định 163/2025/NĐ-CP.",
     "points": [
       "Hướng dẫn Luật Dược và Nghị định 163/2025/NĐ-CP về hành nghề, kinh doanh dược.",
       "Quy định chi tiết hồ sơ, thủ tục và nội dung chuyên môn thuộc lĩnh vực dược.",
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748",
-    "verify": false,
-    "verify_date": "2026-11-05",
-    "verify_source": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-31-2025-tt-byt-huong-dan-luat-duoc-va-nghi-dinh-163-2025-nd-cp-huong-dan-va-bien-phap-de-to-chuc-thi-hanh-luat-duoc-do-bo-truong-bo-y-te-ban-hanh--179748"
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 31/2025 (kiểm Điều 1, Điều 25)",
+    "ghi_chu": "Kiểm sửa đổi ngày 06/11/2026: chưa thấy văn bản sửa đổi TT 31/2025."
   },
   {
     "id": "tt_29_2025_duoc",
@@ -332,14 +370,16 @@
     "pass": "01/07/2025",
     "eff": "01/07/2025",
     "status": "on",
-    "replaces": "Quy định đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền, dược liệu.",
+    "replaces": "Thay thế các thông tư: 07/2017/TT-BYT, 21/2018/TT-BYT, 39/2021/TT-BYT, 54/2024/TT-BYT (Điều 38 khoản 2).",
     "points": [
       "Quy định việc đăng ký lưu hành thuốc cổ truyền, vị thuốc cổ truyền và dược liệu.",
       "Quy định hồ sơ, thủ tục, tiêu chuẩn và thời hạn cấp giấy đăng ký lưu hành.",
       "Có hiệu lực từ 01/07/2025."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-29-2025-TT-BYT-dang-ky-luu-hanh-thuoc-co-truyen-vi-thuoc-co-truyen-duoc-lieu-663448.aspx",
-    "verify": false
+    "verify": true,
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF TT 29/2025 (kiểm Điều 38 khoản 2 và hồ sơ)"
   },
   {
     "id": "tt_18_2026_duoc",
@@ -356,7 +396,10 @@
       "Có hiệu lực từ 16/07/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-18-2026-TT-BYT-huong-dan-Luat-Duoc-va-Nghi-dinh-163-2025-ND-CP-707903.aspx",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Điều 17 khoản 1: Etomidate và Carisoprodol có hiệu lực từ 01/06/2026 (kiểm 2 nguồn thứ cấp, chưa đọc PDF gốc). Kiểm 2026-11-09 (thứ cấp): ban hành 01/06/2026, hiệu lực 16/07/2026 (Công báo). Khoản 1 Điều 17 có hiệu lực từ 01/06/2026; một nguồn ghi 01/06/2026 cho cả văn bản, cần đối chiếu công báo.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "tt_32_2026_duoc",
@@ -373,7 +416,10 @@
       "Có hiệu lực từ 01/10/2026."
     ],
     "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-32-2026-tt-byt-quy-dinh-viec-dang-ky-luu-hanh-thuoc-nguyen-lieu-lam-thuoc--b3c8a3e0-9945-11f1-9dcb-2dbe29d2ab4a",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 29/7/2026, hiệu lực 01/10/2026; nhiều nguồn thống nhất. Một nguồn cho rằng thay thế TT 12/2025/TT-BYT."
   },
   {
     "id": "tt_50_2025_thu_thuoc",
@@ -390,7 +436,10 @@
       "Ban hành 31/12/2025; có hiệu lực từ 27/02/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216447",
-    "verify": false
+    "verify": false,
+    "ghi_chu": "Kiểm 2026-11-06: ban hành 31/12/2025, hiệu lực 27/02/2026, ký Nguyễn Tri Thức (vanban.chinhphu.vn docid 216447; thuvienphapluat). Một nguồn ghi 01/03/2026 — không dùng. Kiểm 2026-11-09 (thứ cấp): hiệu lực 27/02/2026 (Điều 27, khớp các trang vanban.chinhphu và Hue); một nguồn ghi 01/03/2026 là sai, một nguồn ghi 31/12/2025 là ngày ban hành. Thay thế TT 29/2018/TT-BYT.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "phongbenh",
@@ -409,8 +458,10 @@
       "Cấm che giấu ca bệnh truyền nhiễm, khai báo thông tin giả, kỳ thị người bệnh, và giả mắc rối loạn tâm thần để trục lợi."
     ],
     "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 114/2025/QH15 (kiểm Đ1, Đ3, Đ8, Đ14, Đ22, Đ27, Đ45, Đ46)"
   },
   {
     "id": "danso",
@@ -423,13 +474,15 @@
     "replaces": "Thay thế Pháp lệnh Dân số 06/2003 (hết hiệu lực khi Luật này có hiệu lực). Điều 14 điểm c, d có hiệu lực từ 01/01/2027.",
     "points": [
       "Mục tiêu: duy trì mức sinh thay thế, giảm mất cân bằng giới tính khi sinh, thích ứng già hóa dân số, nâng cao chất lượng dân số.",
-      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai, nếu đủ điều kiện hưởng chế độ thai sản theo pháp luật bảo hiểm xã hội.",
+      "Lao động nữ sinh con thứ hai được nghỉ thai sản 7 tháng; lao động nam được nghỉ 10 ngày làm việc khi vợ sinh con thứ hai.",
       "Hỗ trợ tài chính khi sinh con cho phụ nữ dân tộc rất ít người, phụ nữ ở địa phương có mức sinh thấp và phụ nữ sinh đủ 2 con trước 35 tuổi.",
       "Người có từ 2 con đẻ trở lên được ưu tiên mua, thuê mua, thuê nhà ở xã hội."
     ],
     "guide": "Nghị định hướng dẫn Luật Dân số",
-    "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515"
+    "verify": true,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=113202515",
+    "verify_date": "2026-11-06",
+    "verify_source": "PDF Luật 113/2025/QH15 (kiểm Đ1, Đ14, Đ30)"
   },
   {
     "id": "thuocla",
@@ -439,7 +492,7 @@
     "pass": "18/06/2012",
     "eff": "01/05/2013",
     "status": "amend",
-    "replaces": "Được sửa đổi, bổ sung bởi Luật Phòng bệnh 114/2025/QH15 (hiệu lực 01/07/2026) và Luật Giá 16/2023/QH15; hợp nhất tại 11/VBHN-VPQH 2026. Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025.",
+    "replaces": "Luật Phòng bệnh 114/2025/QH15 (hiệu lực 01/07/2026, khoản 2 Điều 44) bãi bỏ Điều 28–30 của luật này và Luật Giá 16/2023/QH15; hợp nhất tại 11/VBHN-VPQH 2026. Nghị quyết 173/2024/QH15 cấm thuốc lá điện tử, thuốc lá nung nóng từ năm 2025.",
     "points": [
       "Cấm bán thuốc lá cho người dưới 18 tuổi và cấm người dưới 18 tuổi bán thuốc lá.",
       "Cảnh báo sức khỏe bằng chữ và hình ảnh chiếm ít nhất 50% diện tích mỗi mặt chính của bao bì.",
@@ -449,8 +502,9 @@
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216940",
     "verify": false,
-    "du_an": "Dự án Luật Phòng, chống tác hại của thuốc lá (sửa đổi) đã trình Quốc hội khóa XVI Kỳ họp thứ 2. Dự kiến hiệu lực 01/07/2027 (theo dự thảo). Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://luatvietnam.vn/linh-vuc-khac/diem-moi-du-thao-luat-phong-chong-tac-hai-cua-thuoc-la-2026-883-110926-article.html"
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): VBHN 11/VBHN-VPQH (2026) ghi sửa đổi bởi Luật Phòng bệnh 114/2025 (hiệu lực 01/07/2026). Dự thảo luật sửa đổi dự kiến 01/07/2027, chưa thông qua."
   },
   {
     "id": "ruoubia",
@@ -468,7 +522,10 @@
       "Cấm uống rượu, bia trước và trong giờ làm việc, giờ học và giờ nghỉ giữa giờ."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=44201914"
+    "nguon": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=197311",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hiệu lực 01/01/2020, chưa thấy văn bản sửa đổi trực tiếp."
   },
   {
     "id": "attp",
@@ -486,10 +543,9 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=55201012",
-    "vbhn": "Văn bản hợp nhất 61/VBHN-VPQH ngày 15/08/2025 (hợp nhất 55/2010, 28/2018, 84/2025)",
-    "vbhn_nguon": "https://luatvietnam.vn/thuc-pham/van-ban-hop-nhat-61-vbhn-vpqh-nam-2025-do-van-phong-quoc-hoi-ban-hanh-hop-nhat-luat-an-toan-thuc-pham-409962-d5.html",
-    "du_an": "Dự án Luật An toàn thực phẩm (sửa đổi) do Chính phủ trình ngày 24/10/2026 tại Kỳ họp thứ 2, Quốc hội khóa XVI (9 chương, 74 điều). Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://tuoitre.vn/bo-truong-dao-hong-lan-trinh-quoc-hoi-sua-luat-an-toan-thuc-pham-thong-nhat-dau-moi-quan-ly-100261024085600121.htm"
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): chưa xác nhận Luật ATTP sửa đổi đã thông qua. NĐ 46/2026 (ban hành 26/01/2026) bị Nghị quyết 09/2026/NQ-CP tạm dừng đến 15/04/2026; trạng thái sau đó chưa rõ."
   },
   {
     "id": "hiv",
@@ -499,34 +555,17 @@
     "pass": "29/06/2006",
     "eff": "01/01/2007",
     "status": "amend",
-    "replaces": "Sửa đổi bởi Luật 71/2020/QH14 (thông qua 16/11/2020, hiệu lực 01/07/2021). Văn bản hợp nhất 33/VBHN-VPQH ngày 07/12/2020.",
+    "replaces": "Sửa đổi bởi Luật 71/2020/QH14 (hiệu lực 01/07/2021)",
     "points": [
       "Cấm kỳ thị, phân biệt đối xử với người nhiễm HIV.",
       "Thông tin về người nhiễm HIV được bảo mật; chỉ thông báo cho những người được luật cho phép.",
       "Người nhiễm HIV được hưởng BHYT chi trả thuốc kháng HIV (ARV) theo quy định."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=64200611",
-    "vbhn": "Văn bản hợp nhất 33/VBHN-VPQH ngày 07/12/2020",
-    "vbhn_nguon": "https://luatvietnam.vn/y-te/van-ban-hop-nhat-33-vbhn-vpqh-200744-d5.html"
-  },
-  {
-    "id": "bvsk_nhan_dan",
-    "cat": "Chăm sóc sức khỏe",
-    "name": "Luật Bảo vệ sức khỏe nhân dân",
-    "so": "21-LCT/HĐNN8",
-    "pass": "30/06/1989",
-    "eff": "01/01/1990",
-    "status": "amend",
-    "replaces": "Luật khung 1989 đã được sửa đổi; nội dung Luật Dân số 113/2025/QH15 (hiệu lực 01/07/2026) được tích hợp vào văn bản hợp nhất. Một số nội dung đã được các luật chuyên ngành thay thế.",
-    "points": [
-      "Luật khung về quyền và nghĩa vụ bảo vệ, chăm sóc, nâng cao sức khỏe nhân dân.",
-      "Nhiều nội dung cụ thể đã được thay thế bởi Luật Khám bệnh, chữa bệnh, Luật Phòng bệnh, Luật Dược, Luật BHYT."
-    ],
-    "vbhn": "Văn bản hợp nhất 22/VBHN-VPQH ngày 26/02/2026 (Văn phòng Quốc hội)",
-    "vbhn_nguon": "https://vanban.chinhphu.vn/?docid=217079&pageid=27160",
-    "verify": false,
-    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Van-ban-hop-nhat-22-VBHN-VPQH-2026-Luat-Bao-ve-suc-khoe-nhan-dan-696164.aspx"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=202612",
+    "ghi_chu": "Kiểm 2026-11-06: Luật 71/2020/QH14 bãi bỏ Điều 42 và Điều 44 của Luật 64/2006 (khoản 16 Điều 1; VBHN 33/VBHN-VPQH, vanban.chinhphu.vn docid 202612; thuvienphapluat, luatvietnam). Cần bổ sung vào points. Nguồn sửa 2026-11-06: docid 202612 là Luật 71/2020/QH14 (văn bản sửa đổi), nơi có quy định bãi bỏ Điều 42, 44 của Luật 64/2006. Đường dẫn Luật 64/2006 cũ (docid 64200611) trả lỗi 500. Kiểm 2026-11-09 (thứ cấp): đã sửa đổi bởi luật 16/11/2020, hiệu lực 01/07/2021 (VBHN 33/VBHN-VPQH, 07/12/2020). Trạng thái \"còn hiệu lực\".",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   },
   {
     "id": "ghepmo",
@@ -544,8 +583,9 @@
     ],
     "verify": false,
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=75200611",
-    "du_an": "Dự án Luật Hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác (sửa đổi), 7 chương 39 điều, Quốc hội thảo luận ngày 02/11/2026 tại Kỳ họp thứ 2. Chưa có kết quả biểu quyết.",
-    "du_an_nguon": "https://vtv.vn/ngay-2-11-quoc-hoi-thao-luan-ve-du-an-luat-hien-lay-ghep-mo-bo-phan-co-the-nguoi-va-hien-lay-xac-sua-doi-100261101213320778.htm"
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): vẫn có hiệu lực. Dự án Luật sửa đổi đang thảo luận kỳ họp 2, dự kiến 01/01/2028, chưa thông qua."
   },
   {
     "id": "donthuoc",
@@ -564,7 +604,11 @@
     ],
     "guide": "Thông tư sửa đổi: 18/2018/TT-BYT, 04/2022/TT-BYT, 27/2021/TT-BYT (đơn thuốc điện tử)",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=522017"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=522017",
+    "het_hieu_luc": "01/07/2025 (theo TT 26/2025, Điều 13 khoản 2)",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): bị bãi bỏ bởi TT 26/2025/TT-BYT (khoản 2 Điều 13), hiệu lực từ 01/07/2025; cùng với TT 18/2018, 04/2022, 27/2021."
   },
   {
     "id": "tbyt",
@@ -582,7 +626,10 @@
     ],
     "guide": "Thông tư hướng dẫn: 05/2022/TT-BYT (đã được sửa đổi bởi 59/2025/TT-BYT); phân cấp: 44/2025/TT-BYT",
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=982021"
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=204442",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): NĐ 04/2025 sửa đổi; VBHN 12/2026/VBHN-TT-BYT ghi sửa đổi bởi TT 24/2026 (30/06/2026). Chưa rõ mốc áp dụng của TT 24/2026."
   },
   {
     "id": "nd_188_2025_bhyt",
@@ -599,7 +646,10 @@
       "Xác thực điện tử dữ liệu khám bệnh, chữa bệnh BHYT chậm nhất 01/01/2026 (khoản 9 Điều 69)."
     ],
     "nguon": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-188-2025-nd-cp-45593/57770.htm",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 01/07/2025, hiệu lực 15/08/2025; Điều 70 (các điều 69–72) từ 01/07/2025."
   },
   {
     "id": "nd_356_2025_dulieu",
@@ -616,7 +666,10 @@
       "Có hiệu lực từ 01/01/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Nghi-dinh-356-2025-ND-CP-huong-dan-Luat-Bao-ve-du-lieu-ca-nhan-687428.aspx",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 31/12/2025, hiệu lực 01/01/2026, thay NĐ 13/2023/NĐ-CP. Thông tin nội dung lấy từ báo chí, cần đối chiếu điều khoản."
   },
   {
     "id": "luat_91_2025_bvdlcn",
@@ -633,7 +686,10 @@
       "Có hiệu lực từ 01/01/2026."
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=214590&classid=1&typegroupid=3",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): hiệu lực 01/01/2026 theo Bộ Công an. Điều 38 cho doanh nghiệp nhỏ và khởi nghiệp được miễn một số điều trong 5 năm; một nguồn ghi thời hạn 60 ngày cho doanh nghiệp đang xử lý dữ liệu, chưa xác minh."
   },
   {
     "id": "nd_148_2025_phan_quyen",
@@ -651,7 +707,9 @@
     ],
     "nguon": "https://moh.gov.vn/index.jsp?pageId=5803&aid=154918&cid=8328",
     "verify": false,
-    "het_hieu_luc": "Theo bản sao Điều 34 trên trang thứ ba: hết hiệu lực 01/03/2027, trừ các trường hợp được liệt kê. Chưa đối chiếu với văn bản ký trên vanban.chinhphu.vn."
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 11–12/06/2025 (hai nguồn khác nhau), hiệu lực 01/07/2025. Một trang ghi thời hạn đến 01/03/2027, không có nguồn khác xác nhận."
   },
   {
     "id": "tt_32_2023_kcb",
@@ -660,7 +718,7 @@
     "so": "32/2023/TT-BYT",
     "pass": "31/12/2023",
     "eff": "01/01/2024",
-    "status": "amend",
+    "status": "on",
     "replaces": "Hồ sơ bệnh án theo khoản 1 Điều 69 Luật KCB. Mẫu bệnh án tại Phụ lục XXVIII.",
     "points": [
       "Quy định chi tiết một số điều của Luật Khám bệnh, chữa bệnh về phạm vi hành nghề, mẫu giấy phép hành nghề và hồ sơ bệnh án.",
@@ -669,7 +727,9 @@
     ],
     "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-32-2023-TT-BYT-huong-dan-Luat-Kham-benh-chua-benh-593360.aspx",
     "verify": false,
-    "sua_doi": "Được sửa đổi bởi Thông tư 25/2026/TT-BYT (ban hành 30/06/2026; hiệu lực một số điều 01/07/2026, phần còn lại 15/08/2026). Vẫn còn hiệu lực."
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 31/12/2023, hiệu lực 01/01/2024. Chưa xác định đầy đủ văn bản sửa đổi; TT 25/2026 sửa đổi một phần."
   },
   {
     "id": "tt_13_2025_benh_an_dien_tu",
@@ -686,7 +746,10 @@
       "Có hiệu lực từ 21/07/2025; bệnh viện triển khai chậm nhất 30/09/2025."
     ],
     "nguon": "https://xaydungchinhsach.chinhphu.vn/lo-trinh-trien-khai-ho-so-benh-an-dien-tu-tai-cac-benh-vien-119250610163849953.htm",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 06/06/2025, hiệu lực 21/07/2025, còn hiệu lực theo hai trang tra cứu. Mốc triển khai bắt buộc: bệnh viện có giấy phép hoạt động chậm nhất 30/09/2025; cơ sở khác chậm nhất 31/12/2026."
   },
   {
     "id": "tt_15_2026_phong_benh",
@@ -702,8 +765,11 @@
       "Hướng dẫn giám sát bệnh truyền nhiễm, quản lý mẫu bệnh phẩm và nội dung phòng, chống bệnh không lây nhiễm.",
       "Có hiệu lực từ 01/07/2026."
     ],
-    "nguon": "https://vanban.chinhphu.vn/?docid=218141&pageid=27160",
-    "verify": false
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=218141&classid=1",
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 17/05/2026, hiệu lực 01/07/2026. Thay TT 17/2019/TT-BYT (theo một nguồn). Một trang ghi 17/05/2026 là sai."
   },
   {
     "id": "tt_13_2026_tiem_chung",
@@ -720,7 +786,10 @@
       "Quy định quản lý, tiếp nhận, bảo quản, vận chuyển vắc xin, an toàn tiêm chủng và trách nhiệm của cơ sở tiêm chủng."
     ],
     "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te-se-co-hieu-luc-thi-hanh-tu-1-7-2026/",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 16/5/2026, hiệu lực 01/07/2026; một nguồn liệt kê TT 24/2018, 34/2018, 05/2020, 52/2025 hết hiệu lực. Danh mục bệnh tiêm chủng bắt buộc cần đối chiếu văn bản gốc."
   },
   {
     "id": "nd_165_2026_phong_benh",
@@ -737,7 +806,10 @@
       "Ban hành 15/05/2026; có hiệu lực từ 01/07/2026."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=218169&classid=1",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 15/05/2026, hiệu lực 01/07/2026. Điều 49, khoản 3 Điều 60 từ 01/07/2027; Điều 66–68 từ 01/01/2028. Một nguồn ghi khác về danh mục điều khoản hoãn, cần đối chiếu."
   },
   {
     "id": "tt_33_2026_phong_benh",
@@ -755,7 +827,10 @@
       "Có hiệu lực từ 29/08/2026."
     ],
     "nguon": "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tu-332026ttbyt-huong-dan-thi-hanh-nghi-dinh-1652026ndcp-ve-luat-phong-benh-co-noi-dung-gi-288836.html",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành và hiệu lực 29/08/2026 theo nhiều nguồn; một trang tra cứu ghi còn hiệu lực. Công văn địa phương ghi 02/09/2026 là ngày triển khai, không phải ngày hiệu lực thông tư."
   },
   {
     "id": "tt_12_2026_giam_dinh_bhyt",
@@ -772,7 +847,10 @@
       "Kết quả giám định tự động phải được gửi trong 7 ngày làm việc (Điều 10)."
     ],
     "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216997&classid=1&typegroupid=6",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp, Bộ Tài chính): hiệu lực từ ngày ký 10/02/2026; biểu mẫu liên thông từ 01/04/2026. Một trang ghi 10/12/2026 là sai."
   },
   {
     "id": "luat_148_2025_chuyen_doi_so",
@@ -782,13 +860,16 @@
     "pass": "11/12/2025",
     "eff": "01/07/2026",
     "status": "on",
-    "replaces": "Thay thế Luật Công nghệ thông tin 67/2006/QH11. Một nguồn ghi ngày thông qua 10/12/2025.",
+    "replaces": "Thay thế Luật Công nghệ thông tin 67/2006/QH11. Các nguồn kiểm chéo ghi ngày thông qua 11/12/2025.",
     "points": [
       "Quy định nguyên tắc, chính sách, điều phối quốc gia về chuyển đổi số; hạ tầng số, dữ liệu số và dịch vụ số.",
       "Gồm 8 chương, 48 điều; có hiệu lực từ 01/07/2026."
     ],
     "nguon": "https://congbao.chinhphu.vn/van-ban/luat-so-148-2025-qh15-468708.htm",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): thông qua 11/12/2025, hiệu lực 01/07/2026 (Điều 47). Một số trang ghi ngày thông qua 10/12/2025, cần đối chiếu."
   },
   {
     "id": "nd90_2026_xu_phat",
@@ -809,59 +890,192 @@
     ],
     "nguon": "https://chinhphu.vn/?pageid=27160&docid=217386",
     "detailSource": "Toàn văn PDF: https://viendinhduong.vn/storage/app/uploads/public/2026/04/02/nghiinh902026ncp.pdf",
-    "verify": false
+    "verify": false,
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)",
+    "ghi_chu": "Kiểm 2026-11-09 (thứ cấp): ban hành 30/03/2026, hiệu lực 15/05/2026, thay thế NĐ 117/2020/NĐ-CP. Mức phạt cụ thể cần tra điều khoản trong văn bản gốc."
   },
   {
-    "id": "nd_119_2025_bhyt",
-    "cat": "Bảo hiểm y tế",
-    "name": "Nghị định 119/2025/NĐ-CP hướng dẫn Luật BHYT 51/2024",
-    "so": "119/2025/NĐ-CP",
-    "pass": "15/04/2025",
-    "eff": "01/07/2025",
-    "status": "on",
-    "replaces": "Hướng dẫn chi tiết Luật BHYT 51/2024 về đối tượng, mức hưởng và thủ tục khám chữa bệnh.",
-    "points": [
-      "Đối tượng tham gia BHYT mở rộng: người lao động làm việc theo hợp đồng không xác định thời hạn, hợp đồng từ 3 đến dưới 12 tháng — Điều 5.",
-      "Mức hưởng 100% với nội trú tại tuyến tỉnh trở lên, kể cả trái tuyến cấp huyện — Điều 8.",
-      "Thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, dùng qua app VssID — Điều 12."
-    ],
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890",
-    "verify": false
-  },
-  {
-    "id": "tt_06_2026_gia_dv_kcb",
-    "cat": "Bảo hiểm y tế",
-    "name": "Thông tư 06/2026/TT-BYT giá dịch vụ kỹ thuật khám chữa bệnh BHYT",
-    "so": "06/2026/TT-BYT",
-    "pass": "20/02/2026",
-    "eff": "01/04/2026",
-    "status": "on",
-    "replaces": "Thay thế Thông tư 05/2024 về danh mục giá dịch vụ kỹ thuật trong khám chữa bệnh BHYT.",
-    "points": [
-      "Danh mục 850 dịch vụ kỹ thuật được thanh toán theo BHYT, bao gồm xét nghiệm huyết học, chẩn đoán hình ảnh — Phụ lục I.",
-      "Giá thanh toán là giá do HĐND cấp tỉnh quyết định trong khung do Bộ Y tế ban hành — Điều 4.",
-      "Cơ sở khám chữa bệnh ký hợp đồng BHYT phải công khai giá dịch vụ tại nơi khám bệnh — Điều 7."
-    ],
-    "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx",
-    "verify": false
-  },
-  {
-    "id": "tt_14_2026_ma_tuy",
-    "cat": "Phòng chống ma túy",
-    "name": "Thông tư 14/2026/TT-BYT quy định tiêu chuẩn chẩn đoán và quy trình xác định nghiện ma túy",
-    "so": "14/2026/TT-BYT",
-    "pass": "16/05/2026",
+    "id": "tt_10_2026_may_moc",
+    "cat": "Thiết bị y tế",
+    "name": "Thông tư 10/2026/TT-BYT về tiêu chuẩn, định mức sử dụng máy móc, thiết bị chuyên dùng trong y tế",
+    "so": "10/2026/TT-BYT",
+    "pass": "14/05/2026",
     "eff": "01/07/2026",
     "status": "on",
-    "replaces": "Thực hiện khoản 1 Điều 31 Luật Phòng, chống ma túy 2025.",
+    "replaces": "Thay thế Thông tư 08/2019/TT-BYT và Thông tư 46/2025/TT-BYT (hết hiệu lực từ 01/07/2026, Điều 7 khoản 2).",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực (trang nguồn ghi đang cập nhật).",
     "points": [
-      "Người được chẩn đoán nghiện khi có ít nhất 3 trong 6 tiêu chuẩn đồng thời trong thời gian quy định (Điều 2).",
-      "Có phụ lục hướng dẫn xác định các tiêu chuẩn và trạng thái cai đặc trưng theo từng loại chất."
+      "Quy định tiêu chuẩn, định mức sử dụng máy móc, thiết bị chuyên dùng trong lĩnh vực y tế thuộc quản lý nhà nước của Bộ Y tế.",
+      "Có hiệu lực từ 01/07/2026 (Điều 7 khoản 1).",
+      "Thay thế Thông tư 08/2019/TT-BYT và Thông tư 46/2025/TT-BYT."
     ],
-    "nguon": "https://thuvienphapluat.vn/van-ban/Van-hoa-Xa-hoi/Thong-tu-14-2026-TT-BYT-quy-trinh-chuyen-mon-de-xac-dinh-tinh-trang-nghien-ma-tuy-705781.aspx",
     "verify": false,
-    "ghi_chu": "Đã sửa: bản cũ ghi sai là thông tư về đăng ký KCB BHYT. Nội dung chi tiết cần đối chiếu toàn văn.",
-    "verify_date": "2026-11-05",
-    "verify_source": "https://thuvienphapluat.vn/van-ban/Van-hoa-Xa-hoi/Thong-tu-14-2026-TT-BYT-quy-trinh-chuyen-mon-de-xac-dinh-tinh-trang-nghien-ma-tuy-705781.aspx"
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-10-2026-tt-byt-tieu-chuan-va-dinh-muc-su-dung-may-moc-y-te-434705-d1.html",
+    "ghi_chu": "Đã đối chiếu ngày và điều khoản hiệu lực qua trang nguồn; chưa đối chiếu toàn văn PDF. Kiểm sửa đổi 06/11/2026: không thấy văn bản sửa đổi (lưu ý: Thông tư 20/2026 sửa TT 10/2026 của Bộ KH&CN, không phải của Bộ Y tế). Kiểm 2026-11-09 (thứ cấp): ban hành 14/05/2026, hiệu lực 01/07/2026, thay thế TT 08/2019/TT-BYT. Là văn bản quản lý tài sản công, không thay quy định đăng ký lưu hành thiết bị y tế.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_16_2026_thuoc_mien_phi",
+    "cat": "Dược",
+    "name": "Thông tư 16/2026/TT-BYT về chương trình hỗ trợ thuốc miễn phí cho cơ sở khám bệnh, chữa bệnh",
+    "so": "16/2026/TT-BYT",
+    "pass": "25/05/2026",
+    "eff": "10/07/2026",
+    "status": "on",
+    "replaces": "Thay thế Thông tư 31/2018/TT-BYT (theo thuvienphapluat.vn, chưa đối chiếu PDF).",
+    "het_hieu_luc": "Chưa xác định ngày hết hiệu lực.",
+    "points": [
+      "Quy định chương trình hỗ trợ thuốc miễn phí cho cơ sở khám bệnh, chữa bệnh.",
+      "Có hiệu lực từ 10/07/2026 (theo nguồn tìm kiếm).",
+      "Cần mở trang gốc để đối chiếu điều khoản."
+    ],
+    "verify": false,
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-16-2026-TT-BYT-chuong-trinh-ho-tro-thuoc-mien-phi-cho-co-so-kham-benh-chua-benh-706925.aspx",
+    "ghi_chu": "Trang nguồn trả 403 khi truy cập tự động; ngày lấy từ kết quả tìm kiếm, cần mở trang gốc để xác nhận. Kiểm sửa đổi 06/11/2026: không thấy văn bản sửa đổi. Kiểm 2026-11-09 (thứ cấp): ban hành 25/05/2026, hiệu lực 10/07/2026, thay thế TT 31/2018/TT-BYT. Chương trình đã phê duyệt trước đó vẫn được triển khai đến hết thời hạn.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_34_2026_csskhoe",
+    "cat": "Chương trình y tế",
+    "name": "Thông tư 34/2026/TT-BYT hướng dẫn Chương trình chăm sóc sức khỏe 2026–2035",
+    "so": "34/2026/TT-BYT",
+    "pass": "08/09/2026",
+    "eff": "08/09/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nội dung đã đọc.",
+    "het_hieu_luc": "Giai đoạn I đến hết năm 2030 (theo trích yếu). Ngày kết thúc cụ thể chưa có trong văn bản đã đọc.",
+    "points": [
+      "Hướng dẫn thi hành Chương trình chăm sóc sức khỏe 2026–2035; giai đoạn I từ 2026 đến hết 2030.",
+      "Có hiệu lực kể từ ngày ký 08/09/2026 (Điều 4 khoản 1).",
+      "Chưa đối chiếu toàn văn, chỉ đọc được phần đầu trang nguồn."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-34-2026-tt-byt-huong-dan-chuong-trinh-cham-soc-suc-khoe-2026-2035-446910-d1.html",
+    "ghi_chu": "Điều 4 khoản 1: có hiệu lực kể từ ngày ký. Trang đọc được đến ký tự 100.000/344.581; chưa đọc phần còn lại. Kiểm 2026-11-09 (thứ cấp): ban hành và hiệu lực 08/09/2026 theo cổng Chính phủ và nhiều nguồn.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_35_2026_bao_tro_xh",
+    "cat": "Bảo trợ xã hội",
+    "name": "Thông tư 35/2026/TT-BYT quy định phân cấp nhiệm vụ trong lĩnh vực bảo trợ xã hội thuộc thẩm quyền Bộ Y tế",
+    "so": "35/2026/TT-BYT",
+    "pass": "18/09/2026",
+    "eff": "02/11/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực.",
+    "points": [
+      "Quy định phân cấp một số nhiệm vụ trong lĩnh vực bảo trợ xã hội thuộc thẩm quyền Bộ Y tế cho Cục Bảo trợ xã hội.",
+      "Ngày hiệu lực: 02/11/2026 theo một nguồn; nguồn khác ghi 01/11/2026, cần đối chiếu."
+    ],
+    "verify": false,
+    "nguon": "https://luatnguyen.vn/van-ban-phap-luat/thong-tu-35-2026-tt-byt-quy-dinh-viec-phan-cap-thuc-hien-nhiem-vu-trong-linh-vuc-bao-tro-xa-hoi-thuoc-tham-quyen-cua-bo-y-te-3958.html",
+    "ghi_chu": "Nguồn khác ghi hiệu lực 01/11/2026; luatnguyen ghi 02/11/2026. Cần đối chiếu với văn bản gốc. Kiểm 2026-11-09 (thứ cấp): hiệu lực 02/11/2026 theo hai nguồn pháp lý; ngày ban hành các trang tổng hợp không thống nhất (18/09 hoặc 25/08/2026).",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_36_2026_thi_dua",
+    "cat": "Thi đua, khen thưởng",
+    "name": "Thông tư 36/2026/TT-BYT quy định chi tiết một số điều của Luật Thi đua, khen thưởng đối với ngành y tế",
+    "so": "36/2026/TT-BYT",
+    "pass": "30/09/2026",
+    "eff": "01/10/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Quy định chi tiết một số điều của Luật Thi đua, khen thưởng đối với ngành y tế.",
+      "Ngày ban hành và hiệu lực theo Cổng văn bản Chính phủ: 30/09/2026 và 01/10/2026."
+    ],
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=219730",
+    "ghi_chu": "Mâu thuẫn: một trang tổng hợp gán số 36/2026/TT-BYT cho hướng dẫn chương trình chăm sóc sức khỏe ngày 08/09/2026. Cần đối chiếu công báo để xác định số hiệu đúng. Kiểm 2026-11-09 (thứ cấp): ban hành 30/09/2026, hiệu lực 01/10/2026, thay TT 25/2023/TT-BYT; hồ sơ nộp trước đó xử lý theo TT 25/2023.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_37_2026_benh_hiem_ngheo",
+    "cat": "Bảo hiểm và chính sách",
+    "name": "Thông tư 37/2026/TT-BYT ban hành Danh mục bệnh hiểm nghèo cho sĩ quan Quân đội nghỉ hưu",
+    "so": "37/2026/TT-BYT",
+    "pass": "30/09/2026",
+    "eff": "30/09/2026",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành Danh mục bệnh hiểm nghèo làm cơ sở thực hiện chế độ, chính sách đối với sĩ quan Quân đội nghỉ hưu theo Nghị định 343/2025/NĐ-CP.",
+      "Ngày ký 30/09/2026 theo Sở Y tế Đồng Nai và luatvietnam.vn."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-37-2026-tt-byt-danh-muc-benh-hiem-ngheo-cho-si-quan-quan-doi-nghi-huu-449216-d1.html",
+    "ghi_chu": "Cần đối chiếu công báo để xác nhận ngày hiệu lực. Kiểm 2026-11-09 (thứ cấp): hiệu lực 30/09/2026 theo báo chí và Luật Việt Nam. Bản PDF một tỉnh để trống ngày, có thể là dự thảo.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_38_2026_qcvn31_hoa_chat",
+    "cat": "An toàn lao động",
+    "name": "Thông tư 38/2026/TT-BYT ban hành QCVN 31:2026/BYT về giá trị giới hạn tiếp xúc cho phép 80 yếu tố hóa học tại nơi làm việc",
+    "so": "38/2026/TT-BYT",
+    "pass": "09/10/2026",
+    "eff": "09/04/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành QCVN 31:2026/BYT: giá trị giới hạn tiếp xúc cho phép đối với 80 yếu tố hóa học tại nơi làm việc.",
+      "Có hiệu lực từ 09/04/2027 theo nội dung văn bản (tại thời điểm cập nhật chưa có hiệu lực)."
+    ],
+    "verify": false,
+    "nguon": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Thong-tu-38-2026-TT-BYT-Quy-chuan-Gia-tri-gioi-han-tiep-xuc-cho-phep-80-yeu-to-hoa-hoc-tai-noi-lam-viec-728732.aspx",
+    "ghi_chu": "Trường hợp trạng thái: đã ban hành nhưng chưa có hiệu lực. Kiểm 2026-11-09 (thứ cấp): ban hành 09/10/2026 (QCVN 31:2026/BYT), hiệu lực 09/04/2027. Khoản 2 Điều 2 bãi bỏ tiêu chuẩn cũ kèm QĐ 3733/2002/QĐ-BYT từ 09/04/2027.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_39_2026_qcvn32_vi_sinh",
+    "cat": "An toàn lao động",
+    "name": "Thông tư 39/2026/TT-BYT ban hành QCVN 32:2026/BYT về giá trị giới hạn tiếp xúc cho phép một số vi sinh vật tại nơi làm việc",
+    "so": "39/2026/TT-BYT",
+    "pass": "09/10/2026",
+    "eff": "09/04/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Ban hành QCVN 32:2026/BYT: giá trị giới hạn tiếp xúc cho phép đối với một số vi sinh vật tại nơi làm việc.",
+      "Có hiệu lực từ 09/04/2027 theo một nguồn (tại thời điểm cập nhật chưa có hiệu lực)."
+    ],
+    "verify": false,
+    "nguon": "https://luatvietnam.vn/y-te/thong-tu-39-2026-tt-byt-quy-chuan-ky-thuat-quoc-gia-ve-gioi-han-vi-sinh-vat-tai-noi-lam-viec-450644-d1.html",
+    "ghi_chu": "Kiểm 06/11/2026: tin tức luatvietnam.vn xác nhận hiệu lực 09/04/2027; chưa có số và ngày công báo. Trang Cổng Chính phủ để trống ngày hiệu lực. Kiểm 2026-11-09 (thứ cấp): hiệu lực 09/04/2027 theo một nguồn Luật Việt Nam, cùng ngày với TT 38/2026.",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+  },
+  {
+    "id": "tt_41_2026_dien_dan_tre_em",
+    "cat": "Trẻ em",
+    "name": "Thông tư 41/2026/TT-BYT hướng dẫn tổ chức diễn đàn trẻ em",
+    "so": "41/2026/TT-BYT",
+    "pass": "12/10/2026",
+    "eff": "01/01/2027",
+    "status": "on",
+    "replaces": "Chưa thấy văn bản bị thay thế trong nguồn đã đọc.",
+    "het_hieu_luc": "Chưa có ngày hết hiệu lực trong nguồn đã đọc.",
+    "points": [
+      "Hướng dẫn tổ chức diễn đàn trẻ em, gồm mẫu phiếu đồng ý tham gia, phiếu cam kết bảo vệ trẻ em và báo cáo kết quả.",
+      "Ngày ban hành 12/10/2026 và hiệu lực 01/01/2027 theo Cổng văn bản Chính phủ."
+    ],
+    "verify": false,
+    "nguon": "https://vanban.chinhphu.vn/?classid=1&docid=219954&orggroupid=4&pageid=27160",
+    "ghi_chu": "Thư viện Pháp luật ghi hiệu lực là Đã biết; cần đối chiếu công báo. Kiểm 2026-11-09 (thứ cấp): hiệu lực 01/01/2027 theo cổng Chính phủ. Tên chính thức là \"diễn đàn trẻ em\", không phải \"điện đàn\".",
+    "verify_date": "2026-11-09",
+    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
   }
 ]

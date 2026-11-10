@@ -1,0 +1,13 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Ngắt là tín hiệu từ phần cứng, như bàn phím hay bộ hẹn giờ. Kernel cần biết mỗi ngắt đến thì chạy hàm nào.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Bảng vector ngắt là một mảng, mỗi ô là một trình xử lý. Số hiệu ngắt chính là chỉ số trong mảng.", "boxes": ["ngắt 0", "ngắt 1"], "code": "bảng[0] = bộ hẹn giờ\nbảng[1] = bàn phím", "run": { "ngắt 0": "bộ hẹn giờ", "ngắt 1": "bàn phím" }, "after": "Mỗi số hiệu có một trình xử lý." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Khi ngắt 1 đến, CPU tra bảng ở ô 1 và gọi đúng trình xử lý bàn phím.", "boxes": ["ngắt 0", "ngắt 1"], "code": "ngắt 1 đến → bảng[1]()", "run": { "ngắt 0": "bộ hẹn giờ", "ngắt 1": "đang chạy bàn phím" }, "after": "Chỉ trình xử lý bàn phím chạy." },
+    { "img": "m03-meo-vui.png", "say": "Bài này mô phỏng bảng bằng mảng hàm. Trên phần cứng thật, bảng nằm trong bộ nhớ và CPU đọc địa chỉ từ đó.", "boxes": ["ngắt 0", "ngắt 1"], "code": "mảng hàm mô phỏng bảng vector", "after": "Cùng ý tưởng, khác chi tiết." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: ngắt số 0 là bộ hẹn giờ. Nếu ngắt 0 đến, trình xử lý nào chạy?", "boxes": ["ngắt 0", "ngắt 1"], "code": "ngắt 0 → bảng[?]", "quiz": [
+        { "text": "Bộ hẹn giờ", "right": true, "hint": "Đúng! Ô số 0 trong bảng chứa trình xử lý của bộ hẹn giờ." },
+        { "text": "Bàn phím", "right": false, "hint": "Bàn phím là ngắt 1, nằm ở ô số 1." },
+        { "text": "Không có gì chạy", "right": false, "hint": "Mỗi số hiệu có trình xử lý đã đăng ký, nên có thứ để chạy." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: bảng vector ngắt là bản đồ từ số hiệu sang trình xử lý. Số hiệu là chỉ số để CPU tra đúng ô.", "boxes": ["ngắt 0", "ngắt 1"], "end": true }
+  ]
+}

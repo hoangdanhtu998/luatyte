@@ -1,0 +1,15 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 1: Lớp Sinh viên",
+    "prompt": "Viết class `SinhVien` có constructor nhận tên, in `Tao: <ten>`; destructor in `Huy: <ten>`; hàm `hienThi()` in tên. Đọc một tên từ đầu vào, tạo đối tượng và gọi `hienThi()`.",
+    "starter": "#include <iostream>\n#include <string>\n\n// viết class SinhVien ở đây\n\nint main() {\n    std::string ten;\n    std::cin >> ten;\n    // tạo đối tượng và gọi hienThi\n}\n",
+    "tests": [
+      {
+        "stdin": "An\n",
+        "expected": "Tao: An\nAn\nHuy: An\n"
+      }
+    ],
+    "language": "cpp"
+  }
+]

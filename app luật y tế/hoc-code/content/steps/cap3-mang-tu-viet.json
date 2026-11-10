@@ -1,0 +1,12 @@
+{
+  "screens": [
+    { "img": "m01-meo-chao.png", "say": "Thông điệp dài không gửi một lần được. Ta chia thành nhiều gói nhỏ, mỗi gói có số thứ tự để người nhận ghép lại đúng. Bài này chỉ mô phỏng việc chia gói.", "boxes": [] },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thông điệp có 10 byte, mỗi gói tối đa 4 byte. Gói đầu lấy 4 byte.", "boxes": ["gói 1", "gói 2", "gói 3"], "code": "gói 1: byte 1-4", "run": { "gói 1": "4 byte" }, "after": "Gói 1 có 4 byte." },
+    { "img": "m03-meo-vui.png", "say": "Gói 2 lấy thêm 4 byte nữa. Phần còn lại là 2 byte, đưa vào gói 3.", "boxes": ["gói 1", "gói 2", "gói 3"], "code": "gói 2: 4 byte, gói 3: 2 byte", "run": { "gói 2": "4 byte", "gói 3": "2 byte" }, "after": "Có 3 gói: 4, 4 và 2 byte." },
+    { "img": "m02-meo-suy-nghi.png", "say": "Thử đoán: thông điệp 10 byte, mỗi gói tối đa 4 byte, thì cần bao nhiêu gói?", "boxes": ["gói 1", "gói 2", "gói 3"], "code": "làm tròn lên của 10 ÷ 4", "quiz": [
+        { "text": "3", "right": true, "hint": "Đúng! 10 chia 4 được 2 dư 2, nên cần thêm một gói nữa: tổng là 3." },
+        { "text": "2", "right": false, "hint": "2 gói chỉ chứa tối đa 8 byte, không đủ 10 byte." },
+        { "text": "4", "right": false, "hint": "Chỉ cần 3 gói, không cần 4." } ] },
+    { "img": "m03-meo-vui.png", "say": "Tóm lại: chia thông điệp thành gói, đánh số thứ tự, rồi người nhận ghép lại theo số. Thiếu số thứ tự thì không biết gói nào đến trước.", "boxes": ["gói 1", "gói 2", "gói 3"], "end": true }
+  ]
+}

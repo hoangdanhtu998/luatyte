@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cap-phat-mang",
+    "title": "Bài 1: Cấp phát mảng",
+    "prompt": "Viết chương trình đọc một số nguyên n từ đầu vào. Cấp phát một mảng n số nguyên trên heap bằng malloc, điền toàn số 0, rồi in các phần tử cách nhau một dấu cách và xuống dòng ở cuối. Nhớ kiểm tra malloc trả về NULL và giải phóng bộ nhớ trước khi kết thúc.\n\nGợi ý ý tưởng: stack không đủ linh hoạt vì n chỉ biết lúc chạy.",
+    "starter": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n\n    // viết code ở đây\n\n    return 0;\n}\n",
+    "tests": [
+      { "stdin": "3\n", "expected": "0 0 0\n" },
+      { "stdin": "1\n", "expected": "0\n" }
+    ]
+  },
+  {
+    "id": "hoan-doi-con-tro",
+    "title": "Bài 2: Hoán đổi bằng con trỏ",
+    "prompt": "Viết hàm void swap(int *a, int *b) đổi giá trị hai biến mà nó nhận qua địa chỉ. Chương trình đọc hai số nguyên a và b từ đầu vào, gọi swap, rồi in ra b và a (cách nhau một dấu cách).\n\nGợi ý ý tưởng: nếu truyền giá trị thay vì địa chỉ, hàm chỉ đổi bản sao và không ảnh hưởng gì đến biến gốc.",
+    "starter": "#include <stdio.h>\n\nvoid swap(int *a, int *b) {\n    // viết code ở đây\n}\n\nint main(void) {\n    int a, b;\n    if (scanf(\"%d %d\", &a, &b) != 2) return 1;\n\n    swap(&a, &b);\n    printf(\"%d %d\\n\", b, a);\n    return 0;\n}\n",
+    "tests": [
+      { "stdin": "3 7\n", "expected": "7 3\n" },
+      { "stdin": "-1 0\n", "expected": "0 -1\n" }
+    ]
+  },
+  {
+    "id": "danh-sach-lien-ket",
+    "title": "Bài 3: Danh sách liên kết",
+    "prompt": "Đọc số nguyên n, rồi đọc n số nguyên. Xây một danh sách liên kết gồm n nút bằng malloc, theo đúng thứ tự đọc. Duyệt danh sách và in các giá trị, cách nhau một dấu cách, xuống dòng ở cuối. Với n = 0 thì chỉ in một dòng trống. Giải phóng toàn bộ nút trước khi kết thúc.\n\nGợi ý ý tưởng: giữ con trỏ head trỏ tới nút đầu, và con trỏ tail trỏ tới nút cuối để nối thêm nhanh.",
+    "starter": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct Node {\n    int value;\n    struct Node *next;\n} Node;\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n\n    // viết code ở đây\n\n    return 0;\n}\n",
+    "tests": [
+      { "stdin": "3\n1 2 3\n", "expected": "1 2 3\n" },
+      { "stdin": "0\n", "expected": "\n" }
+    ]
+  }
+]
