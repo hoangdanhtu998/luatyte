@@ -7,7 +7,7 @@
   var main = document.querySelector('main.triet') || document.querySelector('main.page') || document.querySelector('main');
   if (!main || !window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
 
-  var CLIP_DIR = 'https://cdn.jsdelivr.net/gh/hoangdanhtu998/luatyte@main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/audio/read/';
+  var CLIP_DIR = 'https://media.githubusercontent.com/media/hoangdanhtu998/luatyte/main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/audio/read/';
   var synth = window.speechSynthesis;
   var blocks = [];
   var idx = -1;
