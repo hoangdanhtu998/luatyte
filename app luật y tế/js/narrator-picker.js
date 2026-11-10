@@ -8,7 +8,7 @@
 
   function build(sel) {
     var recommended = document.createElement('optgroup');
-    recommended.label = 'Đề xuất (giọng Bắc VieNeu)';
+    recommended.label = 'Đề xuất (Xuân Vĩnh Bắc)';
     var others = document.createElement('optgroup');
     others.label = 'Giọng khác';
     RECOMMENDED.forEach(function (id) {
