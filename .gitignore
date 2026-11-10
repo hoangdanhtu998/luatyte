@@ -3,7 +3,6 @@
 ogam/
 **/node_modules/
 **/output/
-**/audio/
 **/voices/
 **/*.log
 **/*.db
