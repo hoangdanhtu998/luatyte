@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages with Extended Timeout
 
 on:
   push:
-    branches: [main, test/publish-candidate]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
