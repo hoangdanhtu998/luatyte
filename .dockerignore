@@ -1,0 +1,11 @@
+node_modules
+output
+voices
+slides-ly-thuyet/node_modules
+slides-ly-thuyet/public/audio
+data/bhyt-cases.draft.json
+data/secrets.env
+*.db
+*.db-wal
+*.db-shm
+.git

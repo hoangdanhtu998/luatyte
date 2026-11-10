@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sơ đồ luồng chính: hai app luật y tế</title>
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; background: #f6faf9; color: #173F4A; }
+  main { max-width: 1040px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 20px; margin: 4px 0; }
+  h2 { font-size: 16px; margin: 26px 0 6px; }
+  .sub { font-size: 13px; opacity: .8; margin-bottom: 8px; }
+  .box { background: #fff; border: 1px solid #cfe3de; border-radius: 12px; padding: 12px; overflow-x: auto; }
+  .note { font-size: 12px; opacity: .75; margin-top: 4px; }
+  @media (prefers-color-scheme: dark) { body { background: #0f1d20; color: #dfeeee; } .box { background: #15282c; border-color: #2c4a4f; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Sơ đồ luồng chính</h1>
+  <p class="sub">Vẽ từ mã nguồn: route trong app quản lý, luồng chế độ ca trực trong clinic.html, các tab trong index.html.</p>
+
+  <h2>1. Tài khoản: vòng đời trạng thái</h2>
+  <div class="box"><pre class="mermaid">
+stateDiagram-v2
+  [*] --> Chua_dang_ky
+  Chua_dang_ky --> Dang_ky: POST /api/auth/register
+  Dang_ky --> Free_active: gói free, status active
+  Free_active --> Cho_thanh_toan: POST /api/payments/create
+  Cho_thanh_toan --> Premium_active: thanh toán paid
+  Premium_active --> Het_han: hết hạn gói (status expired)
+  Het_han --> Free_active: gói về free
+  Free_active --> Khoa: admin khóa (status locked)
+  Premium_active --> Khoa: admin khóa
+  Khoa --> Free_active: admin mở khóa
+  Premium_active --> Free_active: admin revoke subscription
+  Free_active --> Dang_xuat: POST /api/auth/logout
+  Dang_xuat --> [*]
+  </pre>
+  <div class="note">Trạng thái lấy từ app quản lý: active, expired, locked; plan free/premium. Gói thanh toán chuyển pending sang paid khi thanh toán được xác nhận.</div></div>
+
+  <h2>2. App quản lý: nhóm API chính</h2>
+  <div class="box"><pre class="mermaid">
+flowchart LR
+  A[Trình duyệt quản trị] --> B[/api/auth/*/]
+  B --> B1[login, register, logout, totp]
+  A --> C[/api/admin/*/]
+  C --> C1[users, people, subscriptions grant/revoke]
+  C --> C2[plans, discount-codes, payments]
+  C --> C3[ads, content: articles, news, categories]
+  C --> C4[reports: revenue, profit, ai-cost]
+  C --> C5[costs, ai-usage, backups, jobs]
+  C --> C6[audit-logs, login-logs, alerts, ip-stats]
+  C --> C7[email-config, email-queue, tools, totp]
+  A --> D[/api/me, /api/subscriptions/me/]
+  D --> D1[entitlements, data, export, consents]
+  E[Học viên app học tập] --> F[/api/plans, /api/payments/create/]
+  E --> G[/api/scores, /api/scores/top/]
+  E --> H[/api/chat/consume/]
+  E --> I[/api/public/visit, /api/public/ads/]
+  </pre>
+  <div class="note">Danh sách rút từ src/*.mjs của app quản lý. Một số route phụ như jobs/run/* chỉ quản trị viên gọi.</div></div>
+
+  <h2>3. Mini game ca trực (clinic.html): một ca</h2>
+  <div class="box"><pre class="mermaid">
+flowchart TD
+  S([Bắt đầu]) --> M{Chọn chế độ}
+  M -->|Ca trực 10 bệnh nhân| P
+  M -->|Cấp cứu 60 giây| P
+  M -->|Thanh tra BHYT| P
+  M -->|Ca trực hằng ngày| P
+  M -->|Ca bệnh nhánh| P
+  P[Bệnh nhân mới vào phòng] --> Q[Hiện ca bệnh và câu hỏi]
+  Q --> R[Chọn đáp án: answer]
+  R -->|Đúng| U[Cộng điểm, XP, tăng uy tín]
+  R -->|Sai| V[Trừ uy tín, hiện giải thích luật]
+  U --> W{Còn bệnh nhân?}
+  V --> W
+  W -->|Còn| P
+  W -->|Hết| X[endSession: tổng kết ca]
+  X --> Y[Lưu tiến độ, bảng xếp hạng]
+  Y --> Z([Kết thúc])
+  </pre>
+  <div class="note">Các hàm tương ứng trong clinic.html: loadCase, answer, endSession, saveAndShowBoard. Chi tiết từng chế độ có thể khác nhau.</div></div>
+
+  <h2>4. Học viên (index.html): các tab học</h2>
+  <div class="box"><pre class="mermaid">
+flowchart LR
+  L([Mở index.html]) --> LG{Đã đăng nhập?}
+  LG -->|Chưa| DN[dang-nhap.html]
+  DN --> LG2[Đăng nhập hoặc đăng ký]
+  LG2 --> HOME
+  LG -->|Rồi| HOME[Trang chủ: chọn tab]
+  HOME --> T1[Trắc nghiệm]
+  HOME --> T2[Đúng/sai]
+  HOME --> T3[Ghép cặp]
+  HOME --> T4[Thẻ nhớ]
+  HOME --> T5[Thi thử]
+  HOME --> T6[Phân tích]
+  HOME --> T7[Thư viện]
+  HOME --> T8[Trợ lý]
+  T1 --> SC[/api/scores: lưu điểm/]
+  T2 --> SC
+  T5 --> SC
+  SC --> TOP[/api/scores/top: bảng xếp hạng/]
+  </pre>
+  <div class="note">Tab lấy từ data-tab trong index.html. Điểm lưu qua /api/scores và được app quản lý xác thực.</div></div>
+
+  <h2>Ghi chú</h2>
+  <div class="note">Đây là sơ đồ vẽ thủ công bằng Mermaid, không qua bộ kiểm tra của archify. Mở trang cần internet để tải Mermaid từ CDN.</div>
+</main>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default", securityLevel: "loose" });
+</script>
+</body>
+</html>
