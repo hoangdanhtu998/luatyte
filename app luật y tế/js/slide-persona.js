@@ -8,17 +8,17 @@ window.SlidePersona = (function () {
     giao_vien: {
       lead: 'Em chú ý ý này:',
       voice: 'vais', rate: 1,
-      label: 'Giáo viên',
+      label: 'Thầy/Cô giáo',
       intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
       praise: 'Đúng rồi, làm tốt lắm.',
       retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
       style: 'Rõ ràng, nhẹ nhàng, có gợi ý từng bước.'
     },
     giao_su: {
-      lead: 'Ta xét ý này:',
+      lead: 'Chúng ta xét ý này:',
       voice: 'gs', rate: 0.95,
       label: 'Giáo sư',
-      intro: 'Ta hãy xem xét vấn đề này một cách có hệ thống.',
+      intro: 'Chúng ta cùng xem xét vấn đề này một cách có hệ thống.',
       praise: 'Lập luận đúng. Hãy ghi nhớ lý do đằng sau.',
       retry: 'Lập luận chưa chặt chẽ. Hãy kiểm tra lại tiền đề và suy luận.',
       style: 'Trang trọng, chính xác, nhấn mạnh lập luận và khái niệm.'
@@ -26,7 +26,7 @@ window.SlidePersona = (function () {
     hoc_sinh_gioi: {
       lead: 'Ý này mình thấy:',
       voice: 'hsg', rate: 1,
-      label: 'Học sinh giỏi',
+      label: 'Bạn học giỏi',
       intro: 'Mình sẽ đi qua phần này cùng bạn nhé.',
       praise: 'Đúng rồi, bạn làm tốt!',
       retry: 'Gần đúng rồi, thử xem lại chỗ này nhé.',
@@ -42,13 +42,49 @@ window.SlidePersona = (function () {
       style: 'Ấm áp, quan tâm, nói chậm và kiên nhẫn.'
     },
     ban_than: {
-      lead: 'Ờ, ý này nè:',
+      lead: 'Ờ, ý này đây:',
       voice: 'bt', rate: 1,
       label: 'Bạn thân',
-      intro: 'Vào học nè, dễ mà.',
+      intro: 'Vào học thôi, dễ mà.',
       praise: 'Chuẩn luôn!',
-      retry: 'Hụt rồi, coi lại chút nha.',
+      retry: 'Hụt rồi, xem lại chút nhé.',
       style: 'Thân mật, vui vẻ, dùng câu ngắn.'
+    },
+    vn_xuan_vinh: {
+      lead: 'Em chú ý ý này:',
+      voice: 'xuan_vinh', rate: 1,
+      label: 'Xuân Vĩnh (nam)',
+      intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
+      praise: 'Đúng rồi, làm tốt lắm.',
+      retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
+      style: 'Nam · Bắc · Phong cách tự nhiên (VieNeu).'
+    },
+    vn_doan_trang: {
+      lead: 'Em chú ý ý này:',
+      voice: 'doan_trang', rate: 1,
+      label: 'Đoan Trang (nữ)',
+      intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
+      praise: 'Đúng rồi, làm tốt lắm.',
+      retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
+      style: 'Nữ · Bắc · Phong cách tự nhiên (VieNeu).'
+    },
+    vn_quoc_tuan: {
+      lead: 'Em chú ý ý này:',
+      voice: 'quoc_tuan', rate: 1,
+      label: 'Quốc Tuấn (nam)',
+      intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
+      praise: 'Đúng rồi, làm tốt lắm.',
+      retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
+      style: 'Nam · Bắc · Phong cách tự nhiên (VieNeu).'
+    },
+    vn_thanh_binh: {
+      lead: 'Em chú ý ý này:',
+      voice: 'thanh_binh', rate: 1,
+      label: 'Thanh Bình (nam)',
+      intro: 'Hôm nay chúng ta cùng học từng ý một nhé.',
+      praise: 'Đúng rồi, làm tốt lắm.',
+      retry: 'Chưa đúng. Em xem lại phần giải thích bên dưới nhé.',
+      style: 'Nam · Bắc · Phong cách kể chuyện (VieNeu).'
     }
   };
   var current = DEFAULT;

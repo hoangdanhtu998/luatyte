@@ -16,10 +16,10 @@ const SR = 22050;
 // Câu mở đầu và hệ số cao độ theo từng người giảng
 const OPENERS = [
   { id: 'giao_vien', f: 1, text: 'Hôm nay chúng ta cùng học từng ý một nhé.', speed: 0.9 },
-  { id: 'giao_su', f: 0.88, text: 'Ta hãy xem xét vấn đề này một cách có hệ thống.', speed: 0.9 },
+  { id: 'giao_su', f: 0.88, text: 'Chúng ta cùng xem xét vấn đề này một cách có hệ thống.', speed: 0.9 },
   { id: 'hoc_sinh_gioi', f: 1.18, text: 'Mình sẽ đi qua phần này cùng bạn nhé.', speed: 0.9 },
   { id: 'nguoi_than', f: 0.95, text: 'Con nghe này, mình học từ từ thôi nhé.', speed: 0.85 },
-  { id: 'ban_than', f: 1.08, text: 'Vào học nè, dễ mà.', speed: 0.9 },
+  { id: 'ban_than', f: 1.08, text: 'Vào học thôi, dễ mà.', speed: 0.9 },
 ];
 
 const outDir = join(ROOT, 'audio/persona');
