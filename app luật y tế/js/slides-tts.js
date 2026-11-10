@@ -135,8 +135,16 @@
     return (voice && map[voice]) || card.dataset.audio || '';
   }
 
+  // File giọng nằm trên CDN (jsDelivr, nhánh main) khi chạy trên luatyte.online, để không phải đưa hàng nghìn file vào site Pages.
+  // Chạy trên máy (localhost) thì dùng file có sẵn trong thư mục audio/.
+  var AUDIO_CDN = 'https://cdn.jsdelivr.net/gh/hoangdanhtu998/luatyte@main/app%20lu%E1%BA%ADt%20y%20t%E1%BA%BF/';
+  function audioSrc(path) {
+    if (!path || path.indexOf('audio/') !== 0) return path;
+    return /(^|\.)luatyte\.online$/.test(location.hostname) ? AUDIO_CDN + path : path;
+  }
+
   function playFile(url) {
-    audio = new Audio(url);
+    audio = new Audio(audioSrc(url));
     audio.playbackRate = currentRate();
     units = collectUnits();
     computeWeights();
