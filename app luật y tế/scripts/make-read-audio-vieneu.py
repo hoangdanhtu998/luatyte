@@ -8,6 +8,7 @@
 import json
 import os
 import re
+import site
 import subprocess
 import sys
 from pathlib import Path
@@ -64,7 +65,8 @@ def synthesize(jobs):
     import numpy as np
     import soundfile as sf
     os.environ['HF_HUB_OFFLINE'] = '1'
-    sys.path.insert(0, r'C:\Users\SK\AppData\Roaming\Python\Python313\site-packages')
+    # Thư mục site-packages của người dùng hiện tại (không ghi cứng tên máy)
+    sys.path.insert(0, site.getusersitepackages())
     from vieneu import Vieneu
 
     tts = Vieneu(mode='v3turbo', device='cpu')
