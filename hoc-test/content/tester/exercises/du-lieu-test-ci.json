@@ -1,0 +1,27 @@
+[
+  {
+    "id": "du-lieu-ex1",
+    "title": "Mutation score",
+    "prompt": "Đọc số mutant m và số mutant bị diệt k. In mutation score làm tròn xuống theo phần trăm (k * 100 / m).",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int m, k;\n    scanf(\"%d %d\", &m, &k);\n    // TODO: in (k * 100) / m\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "10 8\n",
+        "expected": "80\n"
+      },
+      {
+        "stdin": "3 1\n",
+        "expected": "33\n"
+      },
+      {
+        "stdin": "7 7\n",
+        "expected": "100\n"
+      }
+    ],
+    "hints": [
+      "Nhân k với 100 trước, rồi chia cho m.",
+      "Phép chia số nguyên tự làm tròn xuống."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int m, k;\n    scanf(\"%d %d\", &m, &k);\n    printf(\"%d\\n\", (k * 100) / m);\n    return 0;\n}\n"
+  }
+]

@@ -1,0 +1,362 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "name": "Giới thiệu và tư duy tester",
+      "desc": "Mục 1 và 2 của repo: kiểm thử là gì, các mức kiểm thử, tư duy tester."
+    },
+    {
+      "id": 2,
+      "name": "Thiết kế và thực thi kiểm thử",
+      "desc": "Mục 3 và 4 của repo: thiết kế ca kiểm thử, hộp đen và hộp trắng, công cụ."
+    },
+    {
+      "id": 3,
+      "name": "Kiểm thử khám phá",
+      "desc": "Mục 5 của repo: học và kiểm thử cùng lúc, phiên làm việc có mục tiêu."
+    },
+    {
+      "id": 4,
+      "name": "Tự động hóa và báo cáo",
+      "desc": "Mục 6 và 7 của repo: tự động hóa, Page Object, báo cáo trạng thái."
+    },
+    {
+      "id": 5,
+      "name": "Lỗi và Agile",
+      "desc": "Mục 8 và 9 của repo: vòng đời lỗi, kiểm thử trong Agile."
+    },
+    {
+      "id": 6,
+      "name": "Bảo mật, di động và nghề tester",
+      "desc": "Mục 11, 12 và 13 của repo: bảo mật, di động, phát triển nghề nghiệp."
+    },
+    {
+      "id": 7,
+      "name": "Mở rộng: web, hiệu năng, AI",
+      "desc": "Các bài ngoài repo: kiểm thử web, hiệu năng và hệ thống AI."
+    },
+    {
+      "id": 8,
+      "name": "Thực hành với app thật",
+      "desc": "Học bằng Thư viện Học liệu K12: phân quyền, quy trình duyệt, đăng nhập bằng PIN, kiểm thử API, lập kế hoạch."
+    },
+    {
+      "id": 9,
+      "name": "Nâng cao: thiết kế ca, API, dữ liệu và CI",
+      "desc": "Kỹ thuật thiết kế ca khi có trạng thái và nhiều tổ hợp, kiểm API và contract, dữ liệu test và kiểm thử của test."
+    },
+    {
+      "id": 10,
+      "name": "Quy trình thực hành",
+      "desc": "Quy trình kiểm thử một trang web từ đầu đến cuối: chuẩn bị, các giai đoạn, CI và báo cáo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cap4-kiem-thu-la-gi",
+      "title": "Kiểm thử phần mềm là gì",
+      "level": 1,
+      "desc": "Lỗi, sai sót và sự cố khác nhau thế nào. Kiểm thử để tìm lỗi, không để chứng minh chương trình hết lỗi.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-kiem-thu-la-gi.html",
+      "exercises": "content/tester/exercises/cap4-kiem-thu-la-gi.json"
+    },
+    {
+      "id": "cap4-cac-muc-kiem-thu",
+      "title": "Các mức kiểm thử",
+      "level": 1,
+      "desc": "Kiểm thử đơn vị, tích hợp, hệ thống và chấp nhận. Mỗi mức tìm loại lỗi khác nhau.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-cac-muc-kiem-thu.html",
+      "exercises": "content/tester/exercises/cap4-cac-muc-kiem-thu.json"
+    },
+    {
+      "id": "tu-duy-tester",
+      "title": "Tư duy tester",
+      "level": 1,
+      "desc": "Tester đặt câu hỏi thay vì chỉ xác nhận điều mong đợi. Nhận ra các thiên kiến làm bỏ sót lỗi.",
+      "minutes": 35,
+      "slides": "slides/tester/tu-duy-tester.html",
+      "exercises": "content/tester/exercises/tu-duy-tester.json"
+    },
+    {
+      "id": "cap4-ca-kiem-thu",
+      "title": "Thiết kế ca kiểm thử: phân vùng và giá trị biên",
+      "level": 2,
+      "desc": "Một ca kiểm thử gồm đầu vào, kết quả mong đợi. Chia đầu vào thành vùng, rồi thử các giá trị ở ranh giới.",
+      "minutes": 40,
+      "slides": "slides/tester/cap4-ca-kiem-thu.html",
+      "exercises": "content/tester/exercises/cap4-ca-kiem-thu.json"
+    },
+    {
+      "id": "cap4-hop-den-hop-trang",
+      "title": "Hộp đen và hộp trắng",
+      "level": 2,
+      "desc": "Kiểm thử hộp đen chỉ nhìn đầu vào và đầu ra. Kiểm thử hộp trắng nhìn vào bên trong để phủ các nhánh.",
+      "minutes": 40,
+      "slides": "slides/tester/cap4-hop-den-hop-trang.html",
+      "exercises": "content/tester/exercises/cap4-hop-den-hop-trang.json"
+    },
+    {
+      "id": "cap4-loai-kiem-thu",
+      "title": "Các loại kiểm thử và kiểm thử thủ công",
+      "level": 2,
+      "desc": "Phân biệt kiểm thử chức năng và phi chức năng; khi nào làm thủ công; công cụ hỗ trợ.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-loai-kiem-thu.html",
+      "exercises": "content/tester/exercises/cap4-loai-kiem-thu.json"
+    },
+    {
+      "id": "ban-do-loai-kiem-thu",
+      "title": "Bản đồ các loại kiểm thử",
+      "level": 2,
+      "desc": "Nhìn toàn bộ các loại kiểm thử trên một bản đồ: loại nào kiểm chức năng, loại nào kiểm chất lượng, và khi nào dùng loại nào.",
+      "minutes": 35,
+      "slides": "slides/tester/ban-do-loai-kiem-thu.html",
+      "exercises": "content/tester/exercises/ban-do-loai-kiem-thu.json"
+    },
+    {
+      "id": "quy-trinh-tung-loai",
+      "title": "Quy trình từng loại kiểm thử",
+      "level": 2,
+      "desc": "Mỗi loại kiểm thử đi theo quy trình nào, làm bước nào trước, và đạt khi nào. Từng loại một, có ví dụ và lỗi hay gặp.",
+      "minutes": 60,
+      "slides": "slides/tester/quy-trinh-tung-loai.html",
+      "exercises": "content/tester/exercises/quy-trinh-tung-loai.json"
+    },
+    {
+      "id": "cong-cu-kiem-thu",
+      "title": "Chọn công cụ kiểm thử",
+      "level": 2,
+      "desc": "Công cụ theo mục đích: quản lý ca, theo dõi lỗi, tự động hóa, hiệu năng, bảo mật. Học khái niệm trước khi học công cụ.",
+      "minutes": 35,
+      "slides": "slides/tester/cong-cu-kiem-thu.html",
+      "exercises": "content/tester/exercises/cong-cu-kiem-thu.json"
+    },
+    {
+      "id": "kham-pha-exploratory",
+      "title": "Kiểm thử khám phá",
+      "level": 3,
+      "desc": "Học, thiết kế và chạy kiểm thử cùng lúc. Dùng mục tiêu (charter) và phiên làm việc có thời lượng.",
+      "minutes": 40,
+      "slides": "slides/tester/kham-pha-exploratory.html",
+      "exercises": "content/tester/exercises/kham-pha-exploratory.json"
+    },
+    {
+      "id": "cap4-kiem-thu-tu-dong-tong-quan",
+      "title": "Kiểm thử tự động: tổng quan",
+      "level": 4,
+      "desc": "Khi nào nên tự động hóa, quy trình, tháp kiểm thử và các lỗi thường gặp với test tự động.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-kiem-thu-tu-dong-tong-quan.html",
+      "exercises": "content/tester/exercises/cap4-kiem-thu-tu-dong-tong-quan.json"
+    },
+    {
+      "id": "cap4-test-tu-dong",
+      "title": "Viết test tự động bằng C",
+      "level": 4,
+      "desc": "Viết test có kiểm tra tự động: so kết quả, in ca nào sai, và chạy lại được mỗi khi sửa code.",
+      "minutes": 40,
+      "slides": "slides/tester/cap4-test-tu-dong.html",
+      "exercises": "content/tester/exercises/cap4-test-tu-dong.json"
+    },
+    {
+      "id": "page-object-pattern",
+      "title": "Mẫu Page Object trong tự động hóa",
+      "level": 4,
+      "desc": "Tách thông tin về trang khỏi kịch bản test, để khi giao diện đổi chỉ sửa một chỗ.",
+      "minutes": 35,
+      "slides": "slides/tester/page-object-pattern.html",
+      "exercises": "content/tester/exercises/page-object-pattern.json"
+    },
+    {
+      "id": "bao-cao-kiem-thu",
+      "title": "Báo cáo trạng thái kiểm thử",
+      "level": 4,
+      "desc": "Báo cáo tiến độ kiểm thử: đạt, lỗi, chưa chạy và tỉ lệ hoàn thành. Viết để người đọc ra quyết định.",
+      "minutes": 35,
+      "slides": "slides/tester/bao-cao-kiem-thu.html",
+      "exercises": "content/tester/exercises/bao-cao-kiem-thu.json"
+    },
+    {
+      "id": "cap4-bao-cao-loi",
+      "title": "Báo cáo lỗi và vòng đời lỗi",
+      "level": 5,
+      "desc": "Một báo cáo lỗi tốt có các bước tái hiện, kết quả thực tế và kết quả mong đợi. Lỗi đi qua các trạng thái rõ ràng.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-bao-cao-loi.html",
+      "exercises": "content/tester/exercises/cap4-bao-cao-loi.json"
+    },
+    {
+      "id": "agile-testing",
+      "title": "Kiểm thử trong Agile",
+      "level": 5,
+      "desc": "Bốn góc phần tư kiểm thử Agile: ai làm, hỗ trợ đội hay phản biện sản phẩm, và kỹ thuật hay nghiệp vụ.",
+      "minutes": 40,
+      "slides": "slides/tester/agile-testing.html",
+      "exercises": "content/tester/exercises/agile-testing.json"
+    },
+    {
+      "id": "web-bao-mat-form",
+      "title": "Web: kiểm thử form và bảo mật cơ bản",
+      "level": 6,
+      "desc": "Kiểm dữ liệu đầu vào, thông báo lỗi, phiên đăng nhập và các lỗi bảo mật thường gặp như XSS và SQL injection.",
+      "minutes": 40,
+      "slides": "slides/tester/web-bao-mat-form.html",
+      "exercises": "content/tester/exercises/web-bao-mat-form.json"
+    },
+    {
+      "id": "kiem-thu-di-dong",
+      "title": "Kiểm thử ứng dụng di động",
+      "level": 6,
+      "desc": "Thiết bị và hệ điều hành đa dạng, mạng yếu, ngắt cuộc gọi và xoay màn hình. Công cụ Espresso và XCUITest.",
+      "minutes": 35,
+      "slides": "slides/tester/kiem-thu-di-dong.html",
+      "exercises": "content/tester/exercises/kiem-thu-di-dong.json"
+    },
+    {
+      "id": "phat-trien-tester",
+      "title": "Phát triển nghề nghiệp tester",
+      "level": 6,
+      "desc": "Học đều đặn, xây hồ sơ (portfolio), đọc và viết, tham gia cộng đồng tester.",
+      "minutes": 35,
+      "slides": "slides/tester/phat-trien-tester.html",
+      "exercises": "content/tester/exercises/phat-trien-tester.json"
+    },
+    {
+      "id": "cap4-kiem-thu-ai",
+      "title": "Kiểm thử hệ thống AI",
+      "level": 7,
+      "desc": "Kiểm thử mô hình học máy và chatbot khác phần mềm thường ở đâu: kết quả không cố định, dữ liệu, độ chính xác và thiên lệch.",
+      "minutes": 40,
+      "slides": "slides/tester/cap4-kiem-thu-ai.html",
+      "exercises": "content/tester/exercises/cap4-kiem-thu-ai.json"
+    },
+    {
+      "id": "cap4-kiem-thu-web",
+      "title": "Kiểm thử giao diện web và đa trình duyệt",
+      "level": 7,
+      "desc": "Trang web phải chạy đúng trên nhiều trình duyệt, kích thước màn hình và thiết bị khác nhau.",
+      "minutes": 35,
+      "slides": "slides/tester/cap4-kiem-thu-web.html",
+      "exercises": "content/tester/exercises/cap4-kiem-thu-web.json"
+    },
+    {
+      "id": "cap4-kiem-thu-hieu-nang",
+      "title": "Kiểm thử hiệu năng với JMeter (tổng quan)",
+      "level": 7,
+      "desc": "Đo tốc độ phản hồi, mô phỏng nhiều người dùng, và đọc kết quả để quyết định hệ thống có đủ nhanh không.",
+      "minutes": 40,
+      "slides": "slides/tester/cap4-kiem-thu-hieu-nang.html",
+      "exercises": "content/tester/exercises/cap4-kiem-thu-hieu-nang.json"
+    },
+    {
+      "id": "web-kiem-thu-luong-nguoi-dung",
+      "title": "Web: kiểm thử theo luồng người dùng",
+      "level": 7,
+      "desc": "Kiểm thử trang web từ góc nhìn người dùng: đi qua một luồng hoàn chỉnh trên trình duyệt thật, không chỉ gọi hàm.",
+      "minutes": 40,
+      "slides": "slides/tester/web-kiem-thu-luong-nguoi-dung.html",
+      "exercises": "content/tester/exercises/web-kiem-thu-luong-nguoi-dung.json"
+    },
+    {
+      "id": "web-responsive-va-truy-cap",
+      "title": "Web: kiểm thử responsive và khả năng truy cập",
+      "level": 7,
+      "desc": "Kiểm bố cục trên nhiều kích thước màn hình, dùng bàn phím, đọc được bằng trình đọc màn hình, và tương phản màu đủ cao.",
+      "minutes": 40,
+      "slides": "slides/tester/web-responsive-va-truy-cap.html",
+      "exercises": "content/tester/exercises/web-responsive-va-truy-cap.json"
+    },
+    {
+      "id": "web-hieu-nang-core-web-vitals",
+      "title": "Web: hiệu năng và chỉ số Core Web Vitals",
+      "level": 7,
+      "desc": "Đo tốc độ tải và độ ổn định của trang theo ba chỉ số được Google dùng, và cách đọc kết quả.",
+      "minutes": 40,
+      "slides": "slides/tester/web-hieu-nang-core-web-vitals.html",
+      "exercises": "content/tester/exercises/web-hieu-nang-core-web-vitals.json"
+    },
+    {
+      "id": "k12-phan-quyen",
+      "title": "K12: kiểm thử phân quyền",
+      "level": 8,
+      "desc": "Học sinh, giáo viên, tác giả và quản trị làm được gì? Tìm ca truy cập trái phép trong một app thật.",
+      "minutes": 40,
+      "slides": "slides/tester/k12-phan-quyen.html",
+      "exercises": "content/tester/exercises/k12-phan-quyen.json"
+    },
+    {
+      "id": "k12-trang-thai-duyet",
+      "title": "K12: kiểm thử quy trình duyệt và phiên bản",
+      "level": 8,
+      "desc": "Học liệu đi qua nháp, chờ duyệt, đã duyệt, yêu cầu sửa và bị chặn. Mỗi lần sửa tạo phiên bản mới. Kiểm thử các chuyển trạng thái.",
+      "minutes": 40,
+      "slides": "slides/tester/k12-trang-thai-duyet.html",
+      "exercises": "content/tester/exercises/k12-trang-thai-duyet.json"
+    },
+    {
+      "id": "k12-dang-nhap-pin",
+      "title": "K12: kiểm thử đăng nhập bằng mã lớp và PIN",
+      "level": 8,
+      "desc": "Học sinh đăng nhập bằng thẻ có mã lớp và PIN 4 số, không cần email. Kiểm giới hạn thử sai, khóa, và quyền riêng tư.",
+      "minutes": 40,
+      "slides": "slides/tester/k12-dang-nhap-pin.html",
+      "exercises": "content/tester/exercises/k12-dang-nhap-pin.json"
+    },
+    {
+      "id": "k12-api-pytest",
+      "title": "K12: viết kiểm thử API bằng pytest",
+      "level": 8,
+      "desc": "Đọc một bộ test API thật, học cách đặt tên ca, dùng dữ liệu riêng cho từng ca, và kiểm mã trạng thái HTTP.",
+      "minutes": 40,
+      "slides": "slides/tester/k12-api-pytest.html",
+      "exercises": "content/tester/exercises/k12-api-pytest.json"
+    },
+    {
+      "id": "k12-ke-hoach-kiem-thu",
+      "title": "K12: lập kế hoạch kiểm thử và chấm rủi ro",
+      "level": 8,
+      "desc": "Bài tổng hợp: chọn rủi ro, chấm mức độ, quyết định kiểm gì trước, và viết phần kết luận của kế hoạch.",
+      "minutes": 45,
+      "slides": "slides/tester/k12-ke-hoach-kiem-thu.html",
+      "exercises": "content/tester/exercises/k12-ke-hoach-kiem-thu.json"
+    },
+    {
+      "id": "ky-thuat-thiet-ke-nang-cao",
+      "title": "Kỹ thuật thiết kế ca nâng cao",
+      "level": 9,
+      "desc": "Ba cách thiết kế ca khi hành vi phụ thuộc trạng thái, nhiều điều kiện, hoặc nhiều tổ hợp cấu hình: chuyển trạng thái, bảng quyết định, tổ hợp cặp.",
+      "minutes": 45,
+      "slides": "slides/tester/ky-thuat-thiet-ke-nang-cao.html",
+      "exercises": "content/tester/exercises/ky-thuat-thiet-ke-nang-cao.json"
+    },
+    {
+      "id": "kiem-thu-api-contract",
+      "title": "Kiểm thử API và contract testing",
+      "level": 9,
+      "desc": "Kiểm dịch vụ qua giao diện HTTP, giả lập dịch vụ chưa sẵn sàng bằng mock, và dùng contract testing để hai bên không lệch nhau khi một bên đổi.",
+      "minutes": 45,
+      "slides": "slides/tester/kiem-thu-api-contract.html",
+      "exercises": "content/tester/exercises/kiem-thu-api-contract.json"
+    },
+    {
+      "id": "du-lieu-test-ci",
+      "title": "Dữ liệu test, CI và kiểm thử của test",
+      "level": 9,
+      "desc": "Vì sao test chạy đỏ rồi xanh khi chạy lại; cách cách ly và dọn dữ liệu; và kiểm thử của test bằng mutation testing, cùng ý tưởng chaos engineering.",
+      "minutes": 45,
+      "slides": "slides/tester/du-lieu-test-ci.html",
+      "exercises": "content/tester/exercises/du-lieu-test-ci.json"
+    },
+    {
+      "id": "quy-trinh-test-web",
+      "title": "Quy trình kiểm thử một trang web",
+      "level": 10,
+      "desc": "Từ lúc nhận yêu cầu đến lúc theo dõi sau phát hành: 14 giai đoạn, mỗi giai đoạn có việc cần làm, tiêu chí qua, và bằng chứng cần lưu.",
+      "minutes": 60,
+      "slides": "slides/tester/quy-trinh-test-web.html",
+      "exercises": "content/tester/exercises/quy-trinh-test-web.json"
+    }
+  ]
+}

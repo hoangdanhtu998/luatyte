@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm thử trong Agile · Slide · Học kiểm thử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">Bài mới</div><h1>Kiểm thử trong Agile</h1><div class="lead"><p>Bốn góc phần tư kiểm thử Agile: ai làm, hỗ trợ đội hay phản biện sản phẩm, và kỹ thuật hay nghiệp vụ.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/agile-testing.svg" alt="Sơ đồ bốn bước: Q1 kỹ thuật, Q2 nghiệp vụ, Q3 khám phá, Q4 hiệu năng" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">MỤC TIÊU</div><h2>Sau bài này bạn làm được gì</h2><div class="content"><ul class="list"><li>Nêu được các nguyên tắc Agile liên quan trực tiếp đến kiểm thử.</li><li>Đặt được một việc kiểm thử vào đúng góc phần tư.</li><li>Tránh các kiểu làm việc khiến tester đứng ngoài sprint.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Agile</b>: Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt. · <b>Sprint</b>: Một vòng làm việc ngắn, thường từ một đến bốn tuần, kết thúc bằng phần việc chạy được.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 1</div><h2>Kiểm thử nằm trong sprint, không ở cuối</h2><div class="content"><p>Trong Agile, tester tham gia từ lúc chia nhỏ yêu cầu, làm việc cùng lập trình viên và chủ sản phẩm mỗi ngày. Kiểm thử diễn ra liên tục, không đợi đến giai đoạn cuối.</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Agile</b>: Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">NGUYÊN TẮC</div><h2>Những nguyên tắc Agile liên quan đến tester</h2><div class="content"><table class="t"><thead><tr><th>Nguyên tắc</th><th>Ý nghĩa với tester</th></tr></thead><tbody><tr><td>1. Giao phần mềm có giá trị sớm và liên tục</td><td>Kiểm thử phải nhanh để kịp bản giao</td></tr><tr><td>3. Bàn giao phần mềm chạy được thường xuyên</td><td>Cần tự động hóa hồi quy để không chậm nhịp</td></tr><tr><td>4. Nghiệp vụ và lập trình viên làm việc cùng nhau hằng ngày</td><td>Tester là cầu nối, hỏi được yêu cầu ngay</td></tr><tr><td>6. Trao đổi trực tiếp là hiệu quả nhất</td><td>Bàn bạc sớm, không viết báo cáo dài để giải thích</td></tr><tr><td>7. Phần mềm chạy được là thước đo tiến độ chính</td><td>Tiến độ kiểm thử đo bằng tính năng đã kiểm xong</td></tr><tr><td>9. Kỹ thuật tốt và thiết kế tốt làm tăng khả năng thích ứng</td><td>Testability là một phần của chất lượng</td></tr><tr><td>12. Nhóm định kỳ tự xem lại cách làm việc</td><td>Tester nêu vấn đề quy trình trong buổi retrospective</td></tr></tbody></table><p><i>Nguồn: Agile Manifesto Principles (agilemanifesto.org) [đã đọc, dịch sát nghĩa].</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Agile</b>: Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 2</div><h2>Bốn góc phần tư (Agile Testing Quadrants)</h2><div class="content"><table class="t"><thead><tr><th></th><th>Hỗ trợ đội (hướng dẫn xây)</th><th>Phản biện sản phẩm (kiểm tra xem đã đúng chưa)</th></tr></thead><tbody><tr><td><b>Kỹ thuật</b> (công nghệ)</td><td><b>Q1</b>: kiểm thử đơn vị, kiểm thử thành phần</td><td><b>Q4</b>: hiệu năng, tải, bảo mật</td></tr><tr><td><b>Nghiệp vụ</b></td><td><b>Q2</b>: ví dụ theo yêu cầu, kiểm thử chức năng, nguyên mẫu</td><td><b>Q3</b>: khám phá, kiểm thử chấp nhận của người dùng</td></tr></tbody></table><p><i>Nguồn: Crispin và Gregory, Agile Testing Quadrants [kiến thức chung, chưa đối chiếu PDF gốc].</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Agile</b>: Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt. · <b>Góc phần tư kiểm thử (testing quadrants)</b>: Bốn nhóm kiểm thử xếp theo hai trục: hỗ trợ đội hay phản biện sản phẩm, và kỹ thuật hay nghiệp vụ.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ</div><h2>Một story đăng nhập đặt vào bốn góc</h2><div class="content"><pre class="code"><code>Story: người dùng đăng nhập bằng email
+
+Q1 (kỹ thuật, hỗ trợ): hàm kiểm định dạng email có test đơn vị
+Q2 (nghiệp vụ, hỗ trợ): ví dụ "email đúng định dạng thì vào được trang chủ"
+Q3 (nghiệp vụ, phản biện): người dùng thật thử đăng nhập trên điện thoại cũ
+Q4 (kỹ thuật, phản biện): 1000 lượt đăng nhập cùng lúc vẫn dưới 2 giây</code></pre></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ NGHIỆP VỤ</div><h2>Viết ví dụ trước khi viết code</h2><div class="content"><p>Ví dụ (example) là một tình huống cụ thể mà cả đội đồng ý. Ví dụ "Nhập sai mật khẩu 5 lần thì tài khoản bị khóa 15 phút" trở thành tiêu chí chấp nhận. Viết ví dụ trước giúp lập trình viên và tester hiểu cùng một điều trước khi làm.</p><p><i>Kiến thức chung về phát triển theo ví dụ (example mapping); chưa đối chiếu nguồn gốc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">SAI LẦM</div><h2>Những cách làm khiến tester đứng ngoài</h2><div class="content"><ul class="list"><li><b>Chờ đến cuối sprint</b> rồi mới kiểm: lỗi tìm ra muộn, sửa tốn kém.</li><li><b>Chỉ kiểm thủ công</b> mọi thứ: không kịp nhịp sprint, nên tự động hóa phần hồi quy.</li><li><b>Không hỏi về yêu cầu</b>: kiểm thử chỉ đúng với điều không ai nói rõ.</li><li><b>Chỉ có Q3 và Q4</b>: đội có phản biện nhưng thiếu Q1 và Q2 thì lỗi cơ bản vẫn lọt.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Sprint</b>: Một vòng làm việc ngắn, thường từ một đến bốn tuần, kết thúc bằng phần việc chạy được.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TỰ KIỂM TRA</div><h2>Phân loại hoạt động</h2><div class="content"><p>Hoạt động "đo thời gian phản hồi khi 500 người dùng đăng nhập cùng lúc" thuộc góc phần tư nào? Vì sao? Và hoạt động "tester ngồi cạnh lập trình viên viết ví dụ cho story mới" thuộc góc nào?</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÀI LIỆU HỌC THÊM</div><h2>Đọc thêm: Testing in Agile</h2><div class="content"><ul class="list"><li><b>Agile Manifesto Principles</b>: http://agilemanifesto.org/principles.html</li><li><b>Agile Testing Overview</b> (Elizabeth Hendrickson): https://web.archive.org/web/20110614142541/http://testobsessed.com/wp-content/uploads/2011/04/AgileTestingOverview.pdf</li><li><b>Agile Test Planning with the Agile Testing Quadrants</b> (Lisa Crispin và Janet Gregory): http://lisacrispin.com/downloads/AdpTestPlanning.pdf</li><li><b>Quick Tools for Agile Testing</b>: http://agiletester.ca/wp-content/uploads/sites/26/2015/07/Agile-tips-final.pdf</li></ul><p><i>Nguồn: FreeLearningResourcesForSoftwareTesters, mục "Testing in Agile". Một số liên kết có thể không mở được; kiểm lại trước khi đọc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Agile</b>: Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt. · <b>Góc phần tư kiểm thử (testing quadrants)</b>: Bốn nhóm kiểm thử xếp theo hai trục: hỗ trợ đội hay phản biện sản phẩm, và kỹ thuật hay nghiệp vụ.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/agile-testing-sai.svg" alt="Ba cặp sai và đúng của bài Kiểm thử trong Agile" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Kiểm thử để cuối sprint → <b>Đúng:</b> Kiểm thử ngay từ đầu sprint</li><li><b>Sai:</b> Chỉ kiểm thủ công mọi thứ → <b>Đúng:</b> Tự động hóa phần hồi quy</li><li><b>Sai:</b> Không hỏi về yêu cầu → <b>Đúng:</b> Hỏi và viết ví dụ cùng đội</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Sprint</b>: Một vòng làm việc ngắn, thường từ một đến bốn tuần, kết thúc bằng phần việc chạy được.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Agile</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Cách làm phần mềm theo các vòng ngắn, lấy phản hồi liên tục và thay đổi linh hoạt.</li><li><b>Ví dụ:</b> Đội làm trong 2 tuần, cuối mỗi vòng có bản chạy được để người dùng xem.</li><li><b>Vì sao quan trọng:</b> Kiểm thử phải diễn ra liên tục trong vòng, không đợi đến cuối.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Sprint</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Một vòng làm việc ngắn, thường từ một đến bốn tuần, kết thúc bằng phần việc chạy được.</li><li><b>Ví dụ:</b> Sprint 2 tuần: đội nhận 8 câu chuyện người dùng, cuối sprint demo được 6.</li><li><b>Vì sao quan trọng:</b> Tester cần kịp kiểm cho từng sprint, nên kế hoạch kiểm phải gọn.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 2/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Góc phần tư kiểm thử (testing quadrants)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Bốn nhóm kiểm thử xếp theo hai trục: hỗ trợ đội hay phản biện sản phẩm, và kỹ thuật hay nghiệp vụ.</li><li><b>Ví dụ:</b> Kiểm thử đơn vị: hỗ trợ đội, kỹ thuật. Kiểm thử chấp nhận người dùng: phản biện, nghiệp vụ.</li><li><b>Vì sao quan trọng:</b> Giúp đội không quên một loại kiểm thử nào, và phân chia việc giữa người và máy.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÓM TẮT</div><h2>Điều cần nhớ</h2><div class="content"><ul class="list"><li>Kiểm thử bắt đầu từ đầu sprint và diễn ra liên tục.</li><li>Phần mềm chạy được là thước đo tiến độ.</li><li>Bốn góc phần tư giúp xếp việc kiểm thử theo mục đích, và cả bốn đều cần người.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Sprint</b>: Một vòng làm việc ngắn, thường từ một đến bốn tuần, kết thúc bằng phần việc chạy được.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>

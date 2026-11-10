@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hộp đen và hộp trắng · Slide · Học code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">Bài 4 · Hộp đen và hộp trắng</div><h1>Hộp đen và hộp trắng</h1><div class="lead"><p>Kiểm thử hộp đen chỉ nhìn đầu vào và đầu ra. Kiểm thử hộp trắng nhìn vào bên trong để phủ các nhánh.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/cap4-hop-den-hop-trang.svg" alt="Sơ đồ bốn bước: Hộp đen: đầu vào, Chương trình, Hộp trắng: nhánh, Đầu ra" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 1</div><h2>Hộp đen</h2><div class="content"><p>Viết ca dựa trên yêu cầu: "nhập 3 số, in số lớn nhất". Không cần biết code dùng <code>if</code> hay <code>?:</code>.</p><p>Ưu điểm: kiểm được đúng điều người dùng cần. Nhược điểm: có thể bỏ sót nhánh ẩn trong code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 2</div><h2>Hộp trắng và độ phủ nhánh</h2><div class="content"><p>Mỗi điều kiện <code>if</code> có hai nhánh: đúng và sai. Độ phủ nhánh là tỉ lệ nhánh đã được chạy qua ít nhất một lần.</p><p>Một ca có thể đi qua cả hai nhánh của một <code>if</code>, nhưng vẫn bỏ sót nhánh của <code>if</code> khác.</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Phủ nhánh (branch coverage)</b>: Mức độ phủ mà mỗi nhánh rẽ đã được đi qua. Thường đi cùng hoặc tương đương phủ quyết định.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ</div><h2>Hàm có hai điều kiện</h2><div class="content"><pre class="code"><code>int max3(int a, int b, int c) {
+    int m = a;
+    if (b &gt; m) m = b;
+    if (c &gt; m) m = c;
+    return m;
+}</code></pre><p>Để phủ mọi nhánh cần ca làm cả hai <code>if</code> đúng, và ca làm cả hai sai (<code>a</code> là lớn nhất).</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TỰ KIỂM TRA</div><h2>Chọn ca phủ nhánh</h2><div class="content"><p>Với hàm <code>max3</code> ở trên, hãy chọn 3 ca để phủ hết các nhánh.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">ĐÁP ÁN</div><h2>Gợi ý đáp án</h2><div class="content"><p>Gợi ý: <code>(1, 2, 3)</code> để <code>b</code> và <code>c</code> thắng; <code>(3, 2, 1)</code> để không <code>if</code> nào làm đổi; <code>(2, 3, 1)</code> để chỉ <code>b</code> thắng.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">CHI TIẾT</div><h2>Hộp đen: kiểm theo hành vi</h2><div class="content"><p>Tester không cần biết code viết thế nào. Chỉ cần biết đầu vào, đầu ra và yêu cầu. Cách này phù hợp để kiểm chức năng từ góc nhìn người dùng.</p><ul class="list"><li>Phân vùng tương đương: chia đầu vào thành các nhóm mà hệ thống xử lý giống nhau.</li><li>Giá trị biên: thử ở đúng mép của mỗi nhóm.</li><li>Bảng quyết định: liệt kê tổ hợp điều kiện và kết quả tương ứng.</li></ul><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">CHI TIẾT</div><h2>Ví dụ phân vùng tương đương</h2><div class="content"><pre class="code"><code>Yêu cầu: tuổi từ 18 đến 60 được đăng ký.
+Phân vùng:
+  Không hợp lệ thấp: 17 → từ chối
+  Hợp lệ: 18 đến 60 → chấp nhận (chọn 35)
+  Không hợp lệ cao: 61 → từ chối
+Biên: 17, 18, 60, 61
+Tổng: 4 ca biên + 3 ca phân vùng</code></pre><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">CHI TIẾT</div><h2>Hộp trắng: kiểm theo cấu trúc code</h2><div class="content"><p>Tester đọc code để biết cần đi qua những đường nào. Mục tiêu là phủ các thành phần của code, bắt đầu từ mức đơn giản rồi tăng dần.</p><table class="t"><thead><tr><th>Mức phủ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody><tr><td>Phủ câu lệnh (statement)</td><td>Mỗi dòng code chạy ít nhất một lần</td><td>Một ca cho mỗi nhánh đều chạy qua</td></tr><tr><td>Phủ nhánh (branch/decision)</td><td>Mỗi if có cả hai kết quả đúng và sai</td><td>Ca cho if đúng và ca cho if sai</td></tr><tr><td>Phủ điều kiện (condition)</td><td>Mỗi điều kiện con đúng và sai ít nhất một lần</td><td>a > 0 và b > 0 đều được thử cả hai phía</td></tr></tbody></table><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Phủ câu lệnh (statement coverage)</b>: Mức độ phủ mà mỗi dòng lệnh đã được chạy ít nhất một lần. · <b>Phủ nhánh (branch coverage)</b>: Mức độ phủ mà mỗi nhánh rẽ đã được đi qua. Thường đi cùng hoặc tương đương phủ quyết định.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">CHI TIẾT</div><h2>Phủ nhánh: ví dụ</h2><div class="content"><pre class="code"><code>if (a &gt; 0 &amp;&amp; b &gt; 0) {
+    return 1;
+}
+return 0;
+
+Ca 1: a = 1, b = 1 → nhánh đúng
+Ca 2: a = 0, b = 1 → nhánh sai
+Đã phủ câu lệnh và nhánh với 2 ca.</code></pre><p>Phủ điều kiện cần thêm: a > 0 đúng nhưng b > 0 sai, và ngược lại.</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Phủ câu lệnh (statement coverage)</b>: Mức độ phủ mà mỗi dòng lệnh đã được chạy ít nhất một lần.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">SO SÁNH</div><h2>Chọn hộp đen, hộp trắng hay xám</h2><div class="content"><table class="t"><thead><tr><th>Tiêu chí</th><th>Hộp đen</th><th>Hộp trắng</th></tr></thead><tbody><tr><td>Cần biết code</td><td>Không</td><td>Có</td></tr><tr><td>Tìm được</td><td>Lỗi yêu cầu và giao diện</td><td>Lỗi logic và nhánh chết</td></tr><tr><td>Ai làm thường xuyên</td><td>Tester, QA</td><td>Developer, tester kỹ thuật</td></tr><tr><td>Điểm yếu</td><td>Bỏ sót nhánh không có trong yêu cầu</td><td>Bỏ sót yêu cầu chưa được code</td></tr></tbody></table><p>Thực tế hay kết hợp: hộp đen để kiểm yêu cầu, hộp trắng để kiểm phần code quan trọng.</p><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo3="1"><div class="kicker">TỰ KIỂM TRA</div><h2>Đếm ca tối thiểu</h2><div class="content"><p>Với hàm nhận điểm từ 0 đến 10 và in "đạt" khi điểm từ 5 trở lên, hãy liệt kê ca phân vùng và ca biên. Hộp đen cần bao nhiêu ca tối thiểu?</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/cap4-hop-den-hop-trang-sai.svg" alt="Ba cặp sai và đúng của bài Hộp đen và hộp trắng" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Hộp đen đọc code → <b>Đúng:</b> Hộp đen chỉ thấy đầu vào, đầu ra</li><li><b>Sai:</b> Hộp trắng chỉ 1 ca → <b>Đúng:</b> Mỗi if cả đúng và sai</li><li><b>Sai:</b> Chọn một hộp cho mọi việc → <b>Đúng:</b> Kết hợp theo rủi ro</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Hộp đen (black box)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong.</li><li><b>Ví dụ:</b> Nhập mã giảm giá SALE10, xem giá có giảm 10% không. Không cần biết code tính thế nào.</li><li><b>Vì sao quan trọng:</b> Gần với cách người dùng thật làm việc, và không phụ thuộc vào việc tester có đọc được code hay không.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Hộp trắng (white box)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</li><li><b>Ví dụ:</b> Đọc hàm tính giảm giá có 3 nhánh if, rồi viết ca đi qua từng nhánh.</li><li><b>Vì sao quan trọng:</b> Tìm được nhánh chết (không bao giờ chạy) và lỗi logic mà hộp đen khó thấy.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 2/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Phủ câu lệnh (statement coverage)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Mức độ phủ mà mỗi dòng lệnh đã được chạy ít nhất một lần.</li><li><b>Ví dụ:</b> Hàm có 5 dòng. Một ca đi qua cả 5 dòng là đủ phủ câu lệnh, dù còn nhánh chưa đi.</li><li><b>Vì sao quan trọng:</b> Là mức phủ thấp nhất, dễ đạt nhưng chưa đủ. Chỉ nên xem là điểm xuất phát.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Phủ nhánh (branch coverage)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Mức độ phủ mà mỗi nhánh rẽ đã được đi qua. Thường đi cùng hoặc tương đương phủ quyết định.</li><li><b>Ví dụ:</b> Một if-else: cần ca vào nhánh if và ca vào nhánh else.</li><li><b>Vì sao quan trọng:</b> Mạnh hơn phủ câu lệnh vì bắt được lỗi ở nhánh không bao giờ chạy.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÓM TẮT</div><h2>Điều cần nhớ</h2><div class="content"><ul class="list"><li>Hộp đen kiểm theo yêu cầu, hộp trắng kiểm theo code.</li><li>Dùng cả hai: hộp đen để bắt lỗi nghiệp vụ, hộp trắng để không bỏ sót nhánh.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">CHI TIẾT</div><h2>Hộp đen và hộp trắng dùng cùng nhau</h2><div class="content"><p>Hộp đen trả lời câu hỏi: người dùng có nhận được điều họ cần không. Hộp trắng trả lời: mọi nhánh trong code có được chạy qua không.</p><ul class="list"><li>Hộp đen dễ viết khi có yêu cầu rõ ràng, và phát hiện lỗi nghiệp vụ.</li><li>Hộp trắng phát hiện nhánh bị bỏ sót, nhưng không cho biết yêu cầu có đúng không.</li><li>Thực tế nên dùng hộp đen trước, rồi bổ sung ca hộp trắng cho chỗ phức tạp.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM · CHI TIẾT</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ TỪNG BƯỚC</div><h2>Phủ nhánh của hàm max3</h2><div class="content"><ol class="list"><li>Liệt kê nhánh: <code>b &gt; m</code> đúng hoặc sai; <code>c &gt; m</code> đúng hoặc sai.</li><li>Ca 1: (1, 2, 3). Cả hai điều kiện đúng.</li><li>Ca 2: (3, 2, 1). Cả hai điều kiện sai.</li><li>Ca 3: (2, 3, 1). Điều kiện đầu đúng, điều kiện sau sai.</li><li>Kết quả: đã phủ đủ bốn tổ hợp nhánh. Mong đợi lần lượt 3, 3, 3.</li></ol></div><div class="foot">KIỂM THỬ PHẦN MỀM · CHI TIẾT</div></section>
+<section class="slide" data-lo2b="1"><div class="kicker">HỘP ĐEN, HỘP TRẮNG</div><h2>Ai biết gì về bên trong</h2><div class="content"><ul class="list"><li><b>Hộp đen</b>: tester chỉ thấy đầu vào và đầu ra, không xem code.</li><li><b>Hộp trắng</b>: tester đọc code, kiểm từng nhánh và điều kiện.</li><li><b>Hộp xám</b>: biết một phần cấu trúc, ví dụ API nội bộ.</li></ul><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo2b="1"><div class="kicker">HỘP ĐEN, HỘP TRẮNG</div><h2>Cùng một chức năng, hai cách kiểm</h2><div class="content"><p>Hàm tính giảm giá: hộp đen thử các mức giá và xem tiền được giảm đúng không. Hộp trắng xem từng nhánh if và thử cả hai phía của mỗi điều kiện, kể cả điểm biên.</p><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Hộp đen (black box)</b>: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · <b>Hộp trắng (white box)</b>: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÀI LIỆU HỌC THÊM</div><h2>Đọc thêm: Test Design and Execution</h2><div class="content"><ul class="list"><li><b>Heuristic Test Strategy Model</b> (PDF): cách chọn chiến lược kiểm thử.</li><li><b>The Art and Science of Questioning</b> (bài viết).</li></ul><p class="muted">Nguồn: github.com/PaulWaltersDev/FreeLearningResourcesForSoftwareTesters, mục "Test Design and Execution". Tìm tên tài liệu trong repo để lấy liên kết.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>

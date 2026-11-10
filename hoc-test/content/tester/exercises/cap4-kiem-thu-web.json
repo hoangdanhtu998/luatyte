@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 10: Kiểm tra các trình duyệt",
+    "prompt": "Đọc số trình duyệt n, rồi n kết quả (1 là đạt, 0 là lỗi). In \"tat ca dat\" nếu mọi trình duyệt đều đạt, ngược lại in \"con loi: X\" với X là số trình duyệt lỗi.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n kết quả, đếm số lỗi\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n1 1 1\n",
+        "expected": "tat ca dat\n"
+      },
+      {
+        "stdin": "3\n1 0 1\n",
+        "expected": "con loi: 1\n"
+      },
+      {
+        "stdin": "2\n0 0\n",
+        "expected": "con loi: 2\n"
+      }
+    ],
+    "hints": [
+      "Đếm số lần gặp 0.",
+      "Nếu số lỗi bằng 0 thì in \"tat ca dat\"."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int loi = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (x == 0) loi++;\n    }\n    if (loi == 0) printf(\"tat ca dat\\n\");\n    else printf(\"con loi: %d\\n\", loi);\n    return 0;\n}\n"
+  }
+]

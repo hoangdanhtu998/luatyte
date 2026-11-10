@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web: kiểm thử responsive và khả năng truy cập · Slide · Học kiểm thử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">Web · Bài 2</div><h1>Web: kiểm thử responsive và khả năng truy cập</h1><div class="lead"><p>Kiểm bố cục trên nhiều kích thước màn hình, dùng bàn phím, đọc được bằng trình đọc màn hình, và tương phản màu đủ cao.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/web-responsive-va-truy-cap.svg" alt="Sơ đồ bốn bước: Điện thoại, Máy tính bảng, Máy tính, Bàn phím" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 1</div><h2>Các mốc kích thước cần thử</h2><div class="content"><table class="t"><thead><tr><th>Thiết bị</th><th>Chiều rộng</th></tr></thead><tbody><tr><td>Điện thoại</td><td>360 đến 430 px</td></tr><tr><td>Máy tính bảng</td><td>768 đến 1024 px</td></tr><tr><td>Máy tính</td><td>1280 px trở lên</td></tr></tbody></table></div><div class="foot">KIỂM THỬ WEB</div></section>
+<section class="slide"><div class="kicker">Ý CHÍNH 2</div><h2>Khả năng truy cập</h2><div class="content"><ul class="list"><li>Dùng được hoàn toàn bằng bàn phím, có thấy vị trí con trỏ focus.</li><li>Ảnh có mô tả thay thế (alt).</li><li>Form có nhãn rõ ràng.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Focus (tiêu điểm)</b>: Phần tử đang được chọn khi dùng bàn phím, thường có viền nổi lên.</p></div><div class="foot">KIỂM THỬ WEB</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ</div><h2>Tương phản màu</h2><div class="content"><div style="display:flex;gap:16px"><div style="flex:1;background:#FFFFFF;color:#777777;border-radius:12px;padding:18px 20px;font-size:22px"><b>Chữ #777 trên nền trắng</b><div style="font-size:20px;margin-top:6px">Tỉ lệ 4,48 : 1</div><div style="font-size:20px;margin-top:6px">✗ Chưa đạt 4,5 : 1</div></div><div style="flex:1;background:#FFFFFF;color:#767676;border-radius:12px;padding:18px 20px;font-size:22px"><b>Chữ #767676 trên nền trắng</b><div style="font-size:20px;margin-top:6px">Tỉ lệ 4,54 : 1</div><div style="font-size:20px;margin-top:6px">✓ Đạt 4,5 : 1</div></div></div><p style="margin-top:14px;font-size:20px">Ngưỡng cho chữ thường là 4,5 : 1. Nên chọn màu đậm hơn một chút để an toàn.</p></div><div class="foot">KIỂM THỬ WEB</div></section>
+<section class="slide"><div class="kicker">CÔNG CỤ</div><h2>Kiểm tự động và bằng tay</h2><div class="content"><p>Công cụ kiểm tương phản và kiểm truy cập tự động bắt được nhiều lỗi cơ bản. Lỗi về thứ tự đọc, bẫy bàn phím và cách trình đọc màn hình đọc nội dung vẫn cần kiểm bằng tay.</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Truy cập (accessibility, a11y)</b>: Làm cho người khiếm thị, không dùng chuột, hoặc dùng trình đọc màn hình vẫn dùng được sản phẩm.</p></div><div class="foot">KIỂM THỬ WEB</div></section>
+<section class="slide" data-lo4="1"><div class="kicker">CHI TIẾT</div><h2>Kiểm bàn phím</h2><div class="content"><ol class="list"><li>Bấm Tab từ đầu trang, quan sát thứ tự focus.</li><li>Mỗi phần tử focus có viền nhìn thấy được.</li><li>Mở hộp thoại bằng bàn phím, thoát bằng Esc, focus quay lại nút đã mở.</li></ol><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Focus (tiêu điểm)</b>: Phần tử đang được chọn khi dùng bàn phím, thường có viền nổi lên.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo4="1"><div class="kicker">CHI TIẾT</div><h2>Kiểm nhãn và trình đọc</h2><div class="content"><table class="t"><thead><tr><th>Thành phần</th><th>Cần có</th></tr></thead><tbody><tr><td>Ô nhập</td><td>Nhãn liên kết với ô (label)</td></tr><tr><td>Ảnh chức năng</td><td>Mô tả thay thế (alt) nói chức năng</td></tr><tr><td>Ảnh trang trí</td><td>alt rỗng để trình đọc bỏ qua</td></tr><tr><td>Thông báo lỗi</td><td>Gắn với ô sai, được đọc khi xuất hiện</td></tr></tbody></table><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-lo4="1"><div class="kicker">CHI TIẾT</div><h2>Tương phản màu</h2><div class="content"><p>Với chữ thường, tỉ lệ tương phản tối thiểu thường được nêu là 4,5 : 1. Công cụ kiểm tương phản tự động có thể đo, nhưng tester vẫn cần xem chữ trên nền có dễ đọc không, đặc biệt khi phóng to.</p><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Tỉ lệ tương phản (contrast ratio)</b>: Độ khác biệt giữa màu chữ và màu nền. Càng cao càng dễ đọc.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/web-responsive-va-truy-cap-sai.svg" alt="Ba cặp sai và đúng của bài Web: kiểm thử responsive và khả năng truy cập" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Chỉ kiểm một kích thước → <b>Đúng:</b> Kiểm nhiều mốc màn hình</li><li><b>Sai:</b> Ảnh trang trí không alt → <b>Đúng:</b> Ảnh có mô tả, trang trí để alt rỗng</li><li><b>Sai:</b> Bẫy bàn phím → <b>Đúng:</b> Thoát được bằng Esc</li></ul></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Truy cập (accessibility, a11y)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Làm cho người khiếm thị, không dùng chuột, hoặc dùng trình đọc màn hình vẫn dùng được sản phẩm.</li><li><b>Ví dụ:</b> Đi hết form bằng phím Tab. Mỗi ô có nhãn để trình đọc đọc được.</li><li><b>Vì sao quan trọng:</b> Nhiều người gặp khó khăn về thị giác, vận động, nhận thức. Đây cũng là yêu cầu pháp lý ở nhiều nơi.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Thuộc tính alt</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Mô tả chữ cho ảnh, để trình đọc màn hình đọc được nội dung ảnh.</li><li><b>Ví dụ:</b> Ảnh biểu đồ doanh thu: alt="Doanh thu tăng 20% trong quý 3". Ảnh trang trí: alt rỗng.</li><li><b>Vì sao quan trọng:</b> Người không nhìn được ảnh vẫn hiểu được nội dung trang.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 2/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Tỉ lệ tương phản (contrast ratio)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Độ khác biệt giữa màu chữ và màu nền. Càng cao càng dễ đọc.</li><li><b>Ví dụ:</b> Chữ xám nhạt trên nền trắng có thể không đạt ngưỡng cho chữ thường, dù mắt thường vẫn thấy.</li><li><b>Vì sao quan trọng:</b> Người có thị lực yếu hoặc đọc dưới ánh sáng mạnh cần tương phản đủ cao.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>Focus (tiêu điểm)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Phần tử đang được chọn khi dùng bàn phím, thường có viền nổi lên.</li><li><b>Ví dụ:</b> Bấm Tab, nút "Gửi" có viền xanh đậm: đó là focus.</li><li><b>Vì sao quan trọng:</b> Không thấy focus thì người dùng bàn phím không biết mình đang ở đâu.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÓM TẮT</div><h2>Điều cần nhớ</h2><div class="content"><ul class="list"><li>Thử nhiều kích thước màn hình, không chỉ một.</li><li>Kiểm bàn phím, nhãn form và tương phản màu.</li></ul></div><div class="foot">KIỂM THỬ WEB</div></section>
+<section class="slide"><div class="kicker">CHI TIẾT</div><h2>Kiểm truy cập bằng bàn phím và trình đọc</h2><div class="content"><p>Truy cập không chỉ là màu sắc. Người dùng khiếm thị hoặc không dùng chuột cần đi qua được toàn bộ trang.</p><ul class="list"><li>Bấm Tab: thứ tự focus phải theo thứ tự đọc.</li><li>Mỗi nút và ô nhập có nhãn đọc được.</li><li>Ảnh có mô tả thay thế; ảnh trang trí để alt rỗng.</li><li>Không có bẫy bàn phím: luôn thoát được khỏi hộp thoại bằng Esc.</li></ul><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Truy cập (accessibility, a11y)</b>: Làm cho người khiếm thị, không dùng chuột, hoặc dùng trình đọc màn hình vẫn dùng được sản phẩm. · <b>Focus (tiêu điểm)</b>: Phần tử đang được chọn khi dùng bàn phím, thường có viền nổi lên.</p></div><div class="foot">KIỂM THỬ WEB · CHI TIẾT</div></section>
+<section class="slide"><div class="kicker">VÍ DỤ TỪNG BƯỚC</div><h2>Kiểm form đăng ký bằng bàn phím</h2><div class="content"><ol class="list"><li>Đặt con trỏ ở đầu trang, bấm Tab liên tục.</li><li>Kiểm mỗi ô nhập được focus và có viền nhìn thấy được.</li><li>Kiểm nút "Đăng ký" nhận focus và bấm được bằng Enter.</li><li>Kiểm lỗi hiện ra gần ô sai và được đọc to bởi trình đọc màn hình.</li></ol><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Focus (tiêu điểm)</b>: Phần tử đang được chọn khi dùng bàn phím, thường có viền nổi lên.</p></div><div class="foot">KIỂM THỬ WEB · CHI TIẾT</div></section>
+<section class="slide" data-lo2b="1"><div class="kicker">RESPONSIVE</div><h2>Các mốc màn hình cần thử</h2><div class="content"><ul class="list"><li>Điện thoại hẹp (khoảng 360 đến 430 px).</li><li>Máy tính bảng (khoảng 768 đến 1024 px).</li><li>Máy tính (từ 1280 px).</li></ul><p><i>Kiến thức chung, chưa đối chiếu nguồn gốc. Các mốc chỉ là gợi ý, nên lấy từ số liệu người dùng thật.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÀI LIỆU HỌC THÊM</div><h2>Đọc thêm: Mục mở rộng (liên quan Test Automation)</h2><div class="content"><ul class="list"><li>Repo không có mục riêng về khả năng truy cập. Tham khảo bộ công cụ tự động trong mục Test Automation.</li></ul><p class="muted">Nguồn: github.com/PaulWaltersDev/FreeLearningResourcesForSoftwareTesters, mục "Mục mở rộng (liên quan Test Automation)". Tìm tên tài liệu trong repo để lấy liên kết.</p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>Truy cập (accessibility, a11y)</b>: Làm cho người khiếm thị, không dùng chuột, hoặc dùng trình đọc màn hình vẫn dùng được sản phẩm.</p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>

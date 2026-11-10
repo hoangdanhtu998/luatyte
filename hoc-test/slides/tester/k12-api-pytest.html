@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K12: viết kiểm thử API bằng pytest · Slide · Học kiểm thử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5F2EA; --ink:#1C2027; --muted:#4A4A45; --soft:#6B6A63; --orange:#F08A4B; --brick:#B8521F; --blue:#2F5FB3; --code:#14181F; --card:#FFFFFF; --line:#E2DDD1; }
+  html, body { margin:0; height:100%; background:#20283A; overflow:hidden; font-family:'Be Vietnam Pro', sans-serif; }
+  #stage { position:absolute; left:50%; top:50%; width:1280px; height:720px; }
+  .slide { position:absolute; left:0; top:0; width:1280px; height:720px; display:none; overflow:hidden; background:var(--cream); color:var(--ink); padding:56px 78px 70px 92px; box-sizing:border-box; }
+  .slide.active { display:flex; flex-direction:column; }
+  .slide::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; background:linear-gradient(var(--orange), var(--blue) 60%, var(--ink)); }
+  .slide.dark { background:var(--code); color:#F1EDE4; }
+  .slide.dark h2 { color:#F1EDE4; }
+  .slide.cover { background:var(--code); color:#F1EDE4; justify-content:center; }
+  .slide.cover::before { display:none; }
+  .kicker { font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-bottom:6px; }
+  .slide.dark .kicker, .slide.cover .kicker { color:var(--orange); }
+  h1 { font-size:64px; line-height:1.08; margin:8px 0 18px; color:#F1EDE4; letter-spacing:-.5px; }
+  h2 { font-size:36px; line-height:1.15; margin:0 0 22px; color:var(--ink); letter-spacing:-.3px; }
+  .lead { font-size:22px; color:#C9C4B8; line-height:1.5; }
+  .lead p { margin:6px 0; }
+  .content { flex:1; display:flex; flex-direction:column; gap:14px; min-height:0; overflow:hidden; }
+  .content > p { margin:0; font-size:21px; line-height:1.55; color:var(--muted); }
+  .slide.dark .content > p { color:#D6D1C5; }
+  .list { margin:0; padding-left:26px; display:grid; gap:10px; font-size:21px; line-height:1.5; color:var(--ink); }
+  .list li::marker { color:var(--orange); font-weight:800; }
+  ol.list li::marker { color:var(--blue); }
+  .slide.dark .list { color:#F1EDE4; }
+  strong { color:var(--ink); }
+  .slide.dark strong { color:#F1EDE4; }
+  code { font-family:'JetBrains Mono', monospace; font-size:.86em; background:#EAE5D9; color:#26324A; padding:1px 7px; border-radius:6px; }
+  .slide.dark code { background:#232A35; color:#F0C36B; }
+  pre.code { margin:0; background:var(--code); color:#E8E4DA; border-radius:14px; padding:18px 22px; border-left:6px solid var(--orange); box-shadow:0 8px 22px rgba(20,24,31,.22); font:17px/1.55 'JetBrains Mono', monospace; overflow:hidden; white-space:pre; }
+  pre.code code { background:none; color:#E8E4DA; padding:0; font-size:inherit; }
+  .c-com { color:#8FB3A9; }
+  table.t { border-collapse:separate; border-spacing:0; width:100%; background:var(--card); border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(31,58,95,.08); font-size:19px; }
+  table.t th, table.t td { padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { background:#E6EEF8; color:var(--ink); font-weight:800; }
+  table.t tr:last-child td { border-bottom:0; }
+  .foot { position:absolute; left:92px; bottom:24px; font-size:14px; color:var(--soft); }
+  .slide.dark .foot { color:#8F8A7F; }
+  #bar { position:fixed; left:50%; bottom:10px; transform:translateX(-50%); display:flex; gap:10px; align-items:center; background:rgba(20,24,31,.92); color:#F1EDE4; padding:6px 12px; border-radius:999px; font:600 13px 'Be Vietnam Pro', sans-serif; z-index:10; user-select:none; }
+  #bar button { background:var(--orange); color:var(--code); border:0; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+  #bar a { color:var(--orange); text-decoration:none; }
+  #notes { position:fixed; left:50%; bottom:58px; transform:translateX(-50%); width:min(760px,92vw); max-height:30vh; overflow:auto; background:var(--code); color:#E8E4DA; padding:12px 16px; border-radius:12px; font:15px/1.5 'Be Vietnam Pro', sans-serif; display:none; z-index:11; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+  #notes.on { display:block; }
+  #notes b { color:var(--orange); }
+</style>
+</head>
+<body>
+<div id="stage">
+<section class="slide active cover"><div class="kicker">THỰC HÀNH VỚI APP THẬT</div><h1>K12: viết kiểm thử API bằng pytest</h1><div class="lead"><p>Đọc một bộ test API thật, học cách đặt tên ca, dùng dữ liệu riêng cho từng ca, và kiểm mã trạng thái HTTP.</p></div></section>
+<section class="slide" data-art="1"><div class="kicker">HÌNH MINH HỌA</div><h2>Nhìn bằng hình</h2><div class="content"><img src="img/k12-api-pytest.svg" alt="Sơ đồ bốn bước: Chuẩn bị, Gửi yêu cầu, Kiểm mã, Kiểm dữ liệu" style="flex:0 0 auto;width:100%;max-height:440px;object-fit:contain;display:block;margin:8px 0"><p><i>Hình vẽ gốc, dùng để minh họa thứ tự các bước chính của bài.</i></p></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide"><div class="kicker">TÌNH HUỐNG</div><h2>Một bộ test 49 ca</h2><div class="content"><p>Thư viện K12 có 49 hàm test trong backend/tests. Mỗi hàm kiểm một chức năng. Làm sao đọc nhanh một bộ test như vậy, và viết ca mới theo cùng cách?</p><p><i>Nguồn: Thư viện Học liệu K12 (README và backend/tests của repo), đã đọc. Đếm số hàm test_ trong thư mục backend/tests.</i></p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">CẤU TRÚC</div><h2>Một ca API gồm ba bước</h2><div class="content"><pre class="code"><code>def test_csrf_header_required(client):
+    # 1. Chuẩn bị: tạo dữ liệu, đăng nhập
+    # 2. Hành động: gửi yêu cầu ghi thiếu header
+    r = client.post("/api/...", json={...})
+    # 3. Kiểm tra: mã trạng thái và trạng thái dữ liệu
+    assert r.status_code == 403</code></pre><p><i>Cấu trúc chung. Tên hàm và header là minh họa, không phải nguyên văn test trong repo.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>CSRF (cross-site request forgery)</b>: Kẻ tấn công lừa trình duyệt của người dùng gửi yêu cầu ghi mà người đó không định làm.</p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">TÊN CA</div><h2>Tên nói điều được kiểm</h2><div class="content"><table class="t"><thead><tr><th>Tên tốt</th><th>Tên kém</th></tr></thead><tbody><tr><td>test_login_code_limits_per_ip</td><td>test_login_2</td></tr><tr><td>test_csrf_header_required</td><td>test_security</td></tr><tr><td>test_deck_batch_cut_keeps_complete_slides</td><td>test_deck</td></tr></tbody></table><p><i>Nguồn: Thư viện Học liệu K12 (README và backend/tests của repo), đã đọc. Các tên bên trái là tên thật trong backend/tests/test_api.py.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>CSRF (cross-site request forgery)</b>: Kẻ tấn công lừa trình duyệt của người dùng gửi yêu cầu ghi mà người đó không định làm.</p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">DỮ LIỆU</div><h2>Mỗi ca tự tạo dữ liệu riêng</h2><div class="content"><p>Nếu hai ca cùng dùng một email, ca này tạo tài khoản thì ca kia lỗi "email đã tồn tại". Mỗi ca nên tạo dữ liệu riêng và dọn sau khi xong.</p><p><i>Kiến thức chung.</i></p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">MÃ TRẠNG THÁI</div><h2>Kiểm đúng mã, không chỉ "có lỗi"</h2><div class="content"><table class="t"><thead><tr><th>Tình huống</th><th>Mã nên trả về</th></tr></thead><tbody><tr><td>Gửi yêu cầu ghi thiếu CSRF header</td><td>403 (hoặc mã từ chối tương đương)</td></tr><tr><td>Đăng ký khi đã đóng</td><td>403</td></tr><tr><td>Thiếu điều khoản đồng ý</td><td>400</td></tr><tr><td>Đăng nhập sai quá nhiều</td><td>429</td></tr></tbody></table><p><i>Mã 403 và 429 là chuẩn HTTP chung. Mã cụ thể của app cần kiểm trong code trước khi ghi vào đặc tả.</i></p><p data-gloss="1" style="font-size:14px;line-height:1.5;margin-top:10px;border-top:1px dashed #c9d1de;padding-top:6px"><b>Thuật ngữ trong slide này:</b> <b>CSRF (cross-site request forgery)</b>: Kẻ tấn công lừa trình duyệt của người dùng gửi yêu cầu ghi mà người đó không định làm.</p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">THỬ THÁCH</div><h2>Viết một ca mới</h2><div class="content"><p>Viết ý tưởng cho một ca mới: đăng ký không có tên đăng nhập, hoặc tên có ký tự đặc biệt. Nêu dữ liệu, hành động, và kết quả mong đợi, chưa cần viết code.</p></div><div class="foot">KIỂM THỬ · K12</div></section>
+<section class="slide"><div class="kicker">TỰ KIỂM TRA</div><h2>Đọc ca của người khác</h2><div class="content"><p>Chọn một hàm test trong repo, tóm tắt bằng ba câu: chuẩn bị gì, làm gì, kiểm gì. Nếu không tóm tắt được, hãy ghi lại điều còn chưa rõ.</p></div><div class="foot">KIỂM THỬ · K12</div></section><section class="slide" data-wrong="1"><div class="kicker">CHỖ SAI</div><h2>Sai ở đâu, và sửa thế nào</h2><div class="content"><img src="img/k12-api-pytest-sai.svg" alt="Ba cặp sai và đúng của bài K12: viết kiểm thử API bằng pytest" style="flex:0 0 auto;width:100%;max-height:400px;object-fit:contain;display:block;margin:6px 0"><ul class="list" style="font-size:16px;margin-top:6px"><li><b>Sai:</b> Các ca dùng chung một email → <b>Đúng:</b> Mỗi ca dữ liệu riêng</li><li><b>Sai:</b> Chỉ kiểm "có lỗi" → <b>Đúng:</b> Kiểm đúng mã trạng thái</li><li><b>Sai:</b> Tên ca: test_2 → <b>Đúng:</b> Tên nói điều được kiểm</li></ul></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section><section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 1/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>API</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Giao diện để phần mềm trao đổi dữ liệu với nhau, thường qua yêu cầu HTTP.</li><li><b>Ví dụ:</b> GET /api/san-pham trả về danh sách sản phẩm dạng JSON.</li><li><b>Vì sao quan trọng:</b> Nhiều lỗi nằm ở API, và có thể kiểm mà không cần giao diện.</li></ul></div><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>pytest</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Thư viện Python để viết và chạy ca test, với cú pháp đơn giản.</li><li><b>Ví dụ:</b> Hàm test_tuoi_hop_le() với assert, chạy bằng lệnh pytest.</li><li><b>Vì sao quan trọng:</b> Viết ca nhanh, tự tìm ca và báo kết quả gọn.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+<section class="slide" data-detail="1"><div class="kicker">THUẬT NGỮ · CHI TIẾT 2/2</div><h2>Giải thích chi tiết</h2><div class="content"><div style="margin-bottom:10px"><p style="margin:0 0 4px"><b>CSRF (cross-site request forgery)</b></p><ul class="list" style="font-size:15px;margin:0"><li><b>Là gì:</b> Kẻ tấn công lừa trình duyệt của người dùng gửi yêu cầu ghi mà người đó không định làm.</li><li><b>Ví dụ:</b> Trang lạ chứa form ẩn gửi yêu cầu đổi email tới ngân hàng khi người dùng đã đăng nhập.</li><li><b>Vì sao quan trọng:</b> Chặn bằng token hoặc header bảo vệ. Tester kiểm bằng cách gửi yêu cầu thiếu token.</li></ul></div></div><div class="foot">KIỂM THỬ PHẦN MỀM</div></section>
+
+
+
+</div>
+<div id="notes"></div>
+<div id="bar">
+  <button id="prev" type="button">←</button>
+  <span id="counter"></span>
+  <button id="next" type="button">→</button>
+  <button id="ntoggle" type="button">Đáp án (N)</button>
+  <a href="../../index-tester.html">Trang chủ</a>
+</div>
+<script>
+  const NOTES = ["","","","","","","","","","","","",""];
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const notesEl = document.getElementById('notes');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function fit() {
+    const h = window.innerHeight - 60;
+    const s = Math.min(window.innerWidth / 1280, h / 720);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.top = (h / 2) + 'px';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    notesEl.innerHTML = NOTES[i] ? NOTES[i] : '<b>Đáp án</b> chỉ có ở trang tự kiểm tra.';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('ntoggle').onclick = () => notesEl.classList.toggle('on');
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'n' || e.key === 'N') notesEl.classList.toggle('on');
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  let x0 = null;
+  document.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  window.addEventListener('resize', fit);
+  fit();
+  const start = parseInt((location.hash || '#1').slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+</script>
+<script data-next-lesson="1">
+(function () {
+  var KEY = 'hoc-cpp-progress-v2';
+  var id = decodeURIComponent(location.pathname.split('/').pop()).replace(/\.html$/, '');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('section.slide'));
+  var last = slides[slides.length - 1];
+  if (!last) return;
+
+  function loadP() { try { var p = JSON.parse(localStorage.getItem(KEY)); return { done: (p && p.done) || {}, code: (p && p.code) || {} }; } catch (e) { return { done: {}, code: {} }; } }
+  function markDone() {
+    var p = loadP();
+    if (p.done[id]) return false;
+    p.done[id] = true;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { return false; }
+    return true;
+  }
+
+  var bar = document.createElement('div');
+  bar.id = 'next-lesson-bar';
+  bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:#1f3a5f;color:#fff;padding:10px 14px;border-radius:12px;font:600 15px system-ui,sans-serif;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.18);max-width:94vw;';
+  var msg = document.createElement('span');
+  var link = document.createElement('a');
+  link.style.cssText = 'color:#fff;background:#e0a100;color:#1f1f1f;padding:8px 14px;border-radius:10px;text-decoration:none;white-space:nowrap;';
+  bar.appendChild(msg); bar.appendChild(link);
+  document.body.appendChild(bar);
+
+  fetch('../../content/tester/index.json').then(function (r) { return r.json(); }).then(function (idx) {
+    var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
+    var next = pos >= 0 ? idx.lessons[pos + 1] : null;
+    var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
+    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    else { link.href = '../../index-tester.html'; link.textContent = 'Về trang chủ →'; }
+    link.title = next ? next.title : 'Bạn đã học hết các bài';
+    function show() {
+      var fresh = markDone();
+      msg.textContent = (fresh ? 'Đã đánh dấu đã học: ' : 'Đã học: ') + lastTitle;
+      bar.style.display = 'flex';
+    }
+    if (last.classList.contains('active')) show();
+    new MutationObserver(function () { if (last.classList.contains('active')) show(); else bar.style.display = 'none'; })
+      .observe(last, { attributes: true, attributeFilter: ['class'] });
+  }).catch(function () { bar.style.display = 'none'; });
+})();
+</script>
+</body>
+</html>
