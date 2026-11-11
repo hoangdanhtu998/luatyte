@@ -49,6 +49,11 @@
       "id": 10,
       "name": "Quy trình thực hành",
       "desc": "Quy trình kiểm thử một trang web từ đầu đến cuối: chuẩn bị, các giai đoạn, CI và báo cáo."
+    },
+    {
+      "id": 11,
+      "name": "Dự án thực chiến: Phòng khám Sao Mai",
+      "desc": "Mười bài làm trên một app đặt lịch khám có lỗi cài sẵn. Mỗi bài nộp một sản phẩm như việc thật: câu hỏi làm rõ, kế hoạch, bộ ca, phiên khám phá, báo cáo lỗi, ca API, tự động hóa, hồi quy, báo cáo phát hành."
     }
   ],
   "lessons": [
@@ -357,6 +362,106 @@
       "minutes": 60,
       "slides": "slides/tester/quy-trinh-test-web.html",
       "exercises": "content/tester/exercises/quy-trinh-test-web.json"
+    },
+    {
+      "id": "tc-01-nhan-du-an",
+      "title": "Nhận dự án: đọc yêu cầu và hỏi lại",
+      "level": 11,
+      "desc": "Đọc bản nháp yêu cầu của app đặt lịch khám, tìm chỗ mơ hồ và viết câu hỏi làm rõ trước khi có dòng code nào.",
+      "minutes": 60,
+      "slides": "slides/tester/tc-01-nhan-du-an.html",
+      "exercises": "content/tester/exercises/tc-01-nhan-du-an.json",
+      "lab": "lab/yeu-cau.html"
+    },
+    {
+      "id": "tc-02-rui-ro-chien-luoc",
+      "title": "Phân tích rủi ro và kế hoạch kiểm thử một trang",
+      "level": 11,
+      "desc": "Chấm điểm rủi ro từng khu vực của app, từ đó quyết định kiểm gì trước và viết kế hoạch gói trong một trang.",
+      "minutes": 60,
+      "slides": "slides/tester/tc-02-rui-ro-chien-luoc.html",
+      "exercises": "content/tester/exercises/tc-02-rui-ro-chien-luoc.json",
+      "lab": "lab/index.html"
+    },
+    {
+      "id": "tc-03-thiet-ke-ca",
+      "title": "Thiết kế ca: biên, bảng quyết định, chuyển trạng thái",
+      "level": 11,
+      "desc": "Viết bộ ca có hệ thống cho tuổi, ngày khám, phí và trạng thái lịch, rồi chạy trên app bản 1.0.",
+      "minutes": 90,
+      "slides": "slides/tester/tc-03-thiet-ke-ca.html",
+      "exercises": "content/tester/exercises/tc-03-thiet-ke-ca.json",
+      "lab": "lab/index.html"
+    },
+    {
+      "id": "tc-04-phien-kham-pha",
+      "title": "Phiên kiểm thử khám phá có charter",
+      "level": 11,
+      "desc": "Viết charter, chạy một phiên 45 phút có ghi chép trên app, rồi tổng kết đã phủ gì và chưa phủ gì.",
+      "minutes": 75,
+      "slides": "slides/tester/tc-04-phien-kham-pha.html",
+      "exercises": "content/tester/exercises/tc-04-phien-kham-pha.json",
+      "lab": "lab/index.html"
+    },
+    {
+      "id": "tc-05-bao-cao-loi-triage",
+      "title": "Báo cáo lỗi và buổi phân loại",
+      "level": 11,
+      "desc": "Viết báo cáo lỗi để người khác tái hiện được ngay, tách mức nghiêm trọng khỏi mức ưu tiên, xếp thứ tự sửa.",
+      "minutes": 60,
+      "slides": "slides/tester/tc-05-bao-cao-loi-triage.html",
+      "exercises": "content/tester/exercises/tc-05-bao-cao-loi-triage.json",
+      "lab": "lab/so-tay.html#bugs"
+    },
+    {
+      "id": "tc-06-api",
+      "title": "Kiểm thử API phía sau giao diện",
+      "level": 11,
+      "desc": "Gửi yêu cầu thẳng vào API của app: ca hợp lệ, dữ liệu sai, quyền xem dữ liệu và tài nguyên không tồn tại.",
+      "minutes": 75,
+      "slides": "slides/tester/tc-06-api.html",
+      "exercises": "content/tester/exercises/tc-06-api.json",
+      "lab": "lab/index.html#api"
+    },
+    {
+      "id": "tc-07-tu-dong-hoa",
+      "title": "Tự động hóa những ca đáng tự động",
+      "level": 11,
+      "desc": "Chọn ca đáng tự động hóa và tầng đặt ca. Đọc, chạy và mở rộng một file kiểm thử Playwright mẫu cho app.",
+      "minutes": 90,
+      "slides": "slides/tester/tc-07-tu-dong-hoa.html",
+      "exercises": "content/tester/exercises/tc-07-tu-dong-hoa.json",
+      "lab": "lab/index.html"
+    },
+    {
+      "id": "tc-08-hoi-quy-ban-moi",
+      "title": "Bản 1.1: kiểm lại lỗi đã sửa và hồi quy",
+      "level": 11,
+      "desc": "Nhận bản 1.1 kèm ghi chú phát hành. Kiểm lại từng lỗi được báo đã sửa và tìm lỗi mới do lần sửa gây ra.",
+      "minutes": 90,
+      "slides": "slides/tester/tc-08-hoi-quy-ban-moi.html",
+      "exercises": "content/tester/exercises/tc-08-hoi-quy-ban-moi.json",
+      "lab": "lab/index.html?build=1.1"
+    },
+    {
+      "id": "tc-09-phi-chuc-nang",
+      "title": "Bảo mật cơ bản, khả năng truy cập, màn hình nhỏ",
+      "level": 11,
+      "desc": "Lượt kiểm nhanh về dữ liệu nhập bị hiểu thành mã, khóa đăng nhập, nhãn ô nhập, bàn phím và màn 375px.",
+      "minutes": 60,
+      "slides": "slides/tester/tc-09-phi-chuc-nang.html",
+      "exercises": "content/tester/exercises/tc-09-phi-chuc-nang.json",
+      "lab": "lab/index.html"
+    },
+    {
+      "id": "tc-10-bao-cao-phat-hanh",
+      "title": "Báo cáo kết thúc và khuyến nghị phát hành",
+      "level": 11,
+      "desc": "Viết một trang trả lời câu hỏi \"phát hành được chưa\", kèm căn cứ, phần chưa kiểm và điều kiện để phát hành. Sau đó đối chiếu đáp án.",
+      "minutes": 75,
+      "slides": "slides/tester/tc-10-bao-cao-phat-hanh.html",
+      "exercises": "content/tester/exercises/tc-10-bao-cao-phat-hanh.json",
+      "lab": "lab/so-tay.html#key"
     }
   ]
 }

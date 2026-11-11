@@ -304,7 +304,7 @@
     try {
       const track = new URLSearchParams(location.search).get('track') === 'tester' ? 'tester' : '';
       const base = track ? 'content/tester/' : 'content/';
-      const brand = document.querySelector('a.brand'); if (brand && track) { brand.href = 'index-tester.html'; brand.textContent = 'Học kiểm thử'; }
+      const brand = document.querySelector('a.brand'); if (brand && track) { brand.href = 'index.html'; brand.textContent = 'Học kiểm thử'; }
       const index = JSON.parse(await getText(base + 'index.json'));
       const lesson = index.lessons.find(l => l.id === id);
       if (!lesson) return fail('Không tìm thấy bài này. Quay lại trang chủ để chọn bài khác.');
@@ -374,7 +374,31 @@
         document.getElementById('tab-steps').hidden = false;
       }
 
-      initPractice({ lessonId: lesson.id, exercises });
+      // Bài thực chiến (có trường lab) làm trên app tập và sổ tay, không có bài viết code.
+      if (lesson.lab) {
+        const bar = document.querySelector('.slides-bar');
+        const mk = (text, href, cls) => { const a = el('a', 'btn ' + cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; };
+        bar.insertBefore(mk('Nộp sản phẩm vào sổ tay', 'lab/so-tay.html#bai=' + encodeURIComponent(lesson.id), 'ghost'), bar.children[1]);
+        bar.insertBefore(mk('Mở app tập', lesson.lab, 'amber'), bar.children[1]);
+      }
+      if (exercises.length) {
+        initPractice({ lessonId: lesson.id, exercises });
+      } else {
+        document.getElementById('tab-practice').hidden = true;
+        const doneBtn = document.getElementById('done');
+        const paintDone = () => {
+          const on = !!loadProgress().done[lesson.id];
+          doneBtn.textContent = on ? 'Đã học xong ✓' : 'Đánh dấu đã học';
+          doneBtn.className = 'btn ' + (on ? 'ok' : 'ghost');
+        };
+        doneBtn.addEventListener('click', () => {
+          const p = loadProgress();
+          p.done[lesson.id] = !p.done[lesson.id];
+          localStorage.setItem(PROGRESS_KEY, JSON.stringify(p));
+          paintDone();
+        });
+        paintDone();
+      }
     } catch (e) {
       fail('Không tải được bài học (' + e.message + '). Hãy mở trang qua localhost: chạy `node server/server.mjs` trong thư mục dự án rồi vào http://localhost:4500.');
     }
