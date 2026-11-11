@@ -38,6 +38,7 @@ jobs:
             --exclude='/audio/' \
             "app luật y tế/" _site/
           cp -r hoc-test _site/hoc-test
+          cp -r "app luật y tế/hoc-code" _site/hoc-code
           cp 404.html CNAME _site/
           echo "Số file: $(find _site -type f | wc -l)  Dung lượng: $(du -sh _site | cut -f1)"
 
