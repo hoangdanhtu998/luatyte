@@ -48,6 +48,25 @@
 .prog-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--space-xs)}
 .prog-table th,.prog-table td{text-align:left;padding:var(--space-xs) var(--space-2xs);border-bottom:1px solid var(--rule)}
 .prog-table th{font-weight:600;color:var(--muted)}
+/* Thống kê */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+.stat-card{padding:var(--space-md);border:1px solid var(--color-rule);border-radius:var(--radius-card);background:var(--color-paper-2);text-align:center}
+.stat-value{font-size:clamp(1.5rem,4vw,2rem);font-weight:700;color:var(--color-ink)}
+.stat-label{font-size:.8125rem;color:var(--color-muted);margin-top:4px}
+.chart-container{margin:var(--space-lg) 0;padding:var(--space-md);border:1px solid var(--color-rule);border-radius:var(--radius-card)}
+.chart-container h3{margin:0 0 var(--space-md);font-size:1rem;font-weight:600}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:120px;padding-top:var(--space-sm)}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bar{width:100%;background:var(--color-accent);border-radius:4px 4px 0 0;min-height:4px;transition:height .3s ease}
+.bar-label{font-size:.6875rem;color:var(--color-muted)}
+.top-lessons{margin:var(--space-lg) 0;padding:var(--space-md);border:1px solid var(--color-rule);border-radius:var(--radius-card)}
+.top-lessons h3{margin:0 0 var(--space-md);font-size:1rem;font-weight:600}
+.top-lessons ul{list-style:none;padding:0;margin:0}
+.lesson-item{display:flex;justify-content:space-between;align-items:center;padding:var(--space-xs) 0;border-bottom:1px solid var(--color-rule-2)}
+.lesson-item:last-child{border-bottom:none}
+.lesson-id{font-family:var(--font-fig);font-size:.8125rem;color:var(--color-muted)}
+.lesson-score{font-size:.875rem;font-weight:600}
+.lesson-date{font-size:.75rem;color:var(--color-muted)}
 </style>
 <style>/* Mỗi nhóm luật có màu riêng: thanh bên, số hiệu và nhãn đổi theo nhóm */
 .law{border-left:4px solid var(--c)}
@@ -98,7 +117,15 @@
     <button role="tab" data-tab="tiendo">Tiến độ</button>
     <button role="tab" data-tab="lotrinh">Lộ trình</button>
     <button role="tab" data-tab="phantich">Phân tích</button>
+    <button role="tab" data-tab="thongke">Thống kê</button>
   </nav>
+
+  <!-- THỐNG KÊ -->
+  <section class="panel" id="p-thongke" hidden>
+    <h2>Thống kê học tập</h2>
+    <div id="stats-container"></div>
+    <div id="path-container" style="margin-top:var(--space-lg)"></div>
+  </section>
 
   <!-- THƯ VIỆN -->
   <section class="panel" id="p-thuvien">
@@ -271,7 +298,10 @@
 </div>
 
 <script src="js/search.js"></script>
-<script>
+<script src="js/features/smart-search.js"></script>
+<script src="js/features/stats.js"></script>
+<script src="js/features/learning-path.js"></script>
+<script src="js/features/quiz-enhanced.js"></script>
 async function boot(){
 const [LAWS, QUIZ0, TF, FACTPAIRS] = await Promise.all(
   ["laws", "quiz", "tf", "factpairs"].map(n => fetch("data/" + n + ".json").then(r => { if (!r.ok) throw new Error(n); return r.json(); }))
@@ -627,7 +657,7 @@ await sync.init();
 renderStats(); checkBadges();
 
 /* ================= CHUYỂN TAB ================= */
-const TABS = ["thuvien","tracnghiem","thithu","dungsai","ghepcap","thenho","tiendo","lotrinh","phantich"];
+const TABS = ["thuvien","tracnghiem","thithu","dungsai","ghepcap","thenho","tiendo","lotrinh","phantich","thongke"];
 function placeInd(){
   const b = document.querySelector('nav.tabs button[aria-selected="true"]'); if (!b) return;
   const ind = $("#ind"); ind.style.width = b.offsetWidth + "px"; ind.style.transform = `translateX(${b.offsetLeft}px)`;
@@ -646,6 +676,7 @@ function showTab(t){
   if (t==="tiendo") renderProgress();
   if (t==="lotrinh") { if (ROLES) renderRoleRoadmapInto($("#lotrinh-root")); }
   if (t==="thithu") renderExamHistory();
+  if (t==="thongke") { LYTStats.renderStats(); LYTPath.renderPath("path-container", window.__lessons||[]); }
 }
 document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
 addEventListener("resize", placeInd);

@@ -1,0 +1,730 @@
+[
+ [
+  "xuan_vinh",
+  "ad298eab",
+  "Lưu ý",
+  0.0,
+  " Lùi!"
+ ],
+ [
+  "doan_trang",
+  "ad298eab",
+  "Lưu ý",
+  0.0,
+  " Lùi"
+ ],
+ [
+  "quoc_tuan",
+  "ad298eab",
+  "Lưu ý",
+  0.0,
+  " Lùi"
+ ],
+ [
+  "thanh_binh",
+  "ad298eab",
+  "Lưu ý",
+  0.0,
+  " Đúng không?"
+ ],
+ [
+  "xuan_vinh",
+  "9d3c31ac",
+  "Trắc nghiệm kiểm tra",
+  0.5,
+  " Châm niệm kiểm tra"
+ ],
+ [
+  "doan_trang",
+  "9d3c31ac",
+  "Trắc nghiệm kiểm tra",
+  0.5,
+  " Chắc nhiệm kiểm tra"
+ ],
+ [
+  "thanh_binh",
+  "9d3c31ac",
+  "Trắc nghiệm kiểm tra",
+  0.5,
+  " Tất nhiên kiểm tra"
+ ],
+ [
+  "xuan_vinh",
+  "36fbeb92",
+  "Bài học",
+  0.0,
+  " My help."
+ ],
+ [
+  "doan_trang",
+  "36fbeb92",
+  "Bài học",
+  0.0,
+  " My help"
+ ],
+ [
+  "quoc_tuan",
+  "36fbeb92",
+  "Bài học",
+  0.0,
+  " My help."
+ ],
+ [
+  "thanh_binh",
+  "36fbeb92",
+  "Bài học",
+  0.0,
+  " Tạm biệt!"
+ ],
+ [
+  "xuan_vinh",
+  "e32aa8cd",
+  "Giải thích:",
+  0.0,
+  " Tạm biệt."
+ ],
+ [
+  "quoc_tuan",
+  "e32aa8cd",
+  "Giải thích:",
+  0.0,
+  " Sài Kỳ"
+ ],
+ [
+  "thanh_binh",
+  "e32aa8cd",
+  "Giải thích:",
+  0.0,
+  " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn"
+ ],
+ [
+  "xuan_vinh",
+  "e6a89bbf",
+  "Ví dụ:",
+  0.0,
+  " Nhớ su!"
+ ],
+ [
+  "thanh_binh",
+  "e6a89bbf",
+  "Ví dụ:",
+  0.0,
+  " Vui sự."
+ ],
+ [
+  "xuan_vinh",
+  "aaaed91e",
+  "Tóm tắt:",
+  0.0,
+  " Tạm tạp!"
+ ],
+ [
+  "doan_trang",
+  "aaaed91e",
+  "Tóm tắt:",
+  0.0,
+  " Chào mừng tất cả mọi người!"
+ ],
+ [
+  "thanh_binh",
+  "aaaed91e",
+  "Tóm tắt:",
+  0.0,
+  " Cảm ơn."
+ ],
+ [
+  "xuan_vinh",
+  "862bba2a",
+  "Lưu ý chung",
+  0.33,
+  " Lùi chung"
+ ],
+ [
+  "quoc_tuan",
+  "862bba2a",
+  "Lưu ý chung",
+  0.0,
+  " Liệu y trung"
+ ],
+ [
+  "xuan_vinh",
+  "64f13a31",
+  "Cách đọc",
+  0.0,
+  " Tạm biệt."
+ ],
+ [
+  "doan_trang",
+  "64f13a31",
+  "Cách đọc",
+  0.5,
+  " Kết đọc"
+ ],
+ [
+  "quoc_tuan",
+  "64f13a31",
+  "Cách đọc",
+  0.0,
+  " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn."
+ ],
+ [
+  "thanh_binh",
+  "64f13a31",
+  "Cách đọc",
+  0.0,
+  " Chạy đâu.  Chạy đâu."
+ ],
+ [
+  "xuan_vinh",
+  "7d844607",
+  "Lựa chọn:",
+  0.0,
+  " Lại tạm."
+ ],
+ [
+  "quoc_tuan",
+  "7d844607",
+  "Lựa chọn:",
+  0.5,
+  " lựa tọn"
+ ],
+ [
+  "thanh_binh",
+  "7d844607",
+  "Lựa chọn:",
+  0.0,
+  " Chào tạm biệt."
+ ],
+ [
+  "xuan_vinh",
+  "4c6ed3ef",
+  "B. Tình huống học đường",
+  0.4,
+  " B Thinh Hủ Ngọc Đường."
+ ],
+ [
+  "xuan_vinh",
+  "693c9f20",
+  "Câu hỏi kiểm tra",
+  0.5,
+  " Cố gắng kiểm tra."
+ ],
+ [
+  "xuan_vinh",
+  "2115a3b6",
+  "Chưa kiểm chưa đối chiếu",
+  0.2,
+  " Trước điểm chữa đồ chiếu."
+ ],
+ [
+  "thanh_binh",
+  "2115a3b6",
+  "Chưa kiểm chưa đối chiếu",
+  0.2,
+  " Chúc kiểm chào đại gia đình."
+ ],
+ [
+  "doan_trang",
+  "86adcc3e",
+  "Bệnh án điện tử (EMR)",
+  0.4,
+  " Vịnh áng điện tử kem mờ rồi."
+ ],
+ [
+  "xuan_vinh",
+  "76a46f4e",
+  "TT 13/2025/TT-BYT",
+  0.2,
+  " TT13-2025 trên TTB-IT"
+ ],
+ [
+  "doan_trang",
+  "76a46f4e",
+  "TT 13/2025/TT-BYT",
+  0.0,
+  " TT13-20205-TT3-IT"
+ ],
+ [
+  "xuan_vinh",
+  "78373c61",
+  "Định danh người bệnh",
+  0.5,
+  " Định xanh người bạch"
+ ],
+ [
+  "xuan_vinh",
+  "cf4a1c5b",
+  "Ký, lưu, audit",
+  0.33,
+  " KÝ LÊU ODIT"
+ ],
+ [
+  "doan_trang",
+  "cf4a1c5b",
+  "Ký, lưu, audit",
+  0.33,
+  " Kỳ lưu ordệt"
+ ],
+ [
+  "thanh_binh",
+  "cf4a1c5b",
+  "Ký, lưu, audit",
+  0.33,
+  " Elu Audit"
+ ],
+ [
+  "xuan_vinh",
+  "d5e891fe",
+  "NĐ 137/2024/NĐ-CP",
+  0.4,
+  " Lợi đề 137 trên 2024 trên lợi đề xe phê."
+ ],
+ [
+  "doan_trang",
+  "d5e891fe",
+  "NĐ 137/2024/NĐ-CP",
+  0.2,
+  " ND137 trên 2024 trên NDCF."
+ ],
+ [
+  "quoc_tuan",
+  "d5e891fe",
+  "NĐ 137/2024/NĐ-CP",
+  0.2,
+  " ND137-2024 trên NDC-FAY"
+ ],
+ [
+  "thanh_binh",
+  "d5e891fe",
+  "NĐ 137/2024/NĐ-CP",
+  0.4,
+  " nở đê 137 trên 2024 trên nrdcp."
+ ],
+ [
+  "xuan_vinh",
+  "1a15203d",
+  "Luật BHYT 51/2024/QH15",
+  0.4,
+  " luật bảo hiểm y tế năm 11 trên 2024 trên Quốc hội 15."
+ ],
+ [
+  "thanh_binh",
+  "1a15203d",
+  "Luật BHYT 51/2024/QH15",
+  0.4,
+  " Tuấn bảo hiểm y tế 51 trên 2024 trên Quốc hội 15."
+ ],
+ [
+  "xuan_vinh",
+  "2d742c6b",
+  "NĐ 188/2025/NĐ-CP",
+  0.4,
+  " nở đêu 188 trên 2025 trên nở DC Free."
+ ],
+ [
+  "doan_trang",
+  "2d742c6b",
+  "NĐ 188/2025/NĐ-CP",
+  0.4,
+  " ND 188, trên 2025 trên NDCF."
+ ],
+ [
+  "quoc_tuan",
+  "2d742c6b",
+  "NĐ 188/2025/NĐ-CP",
+  0.4,
+  " ND 188-2025 NDCP"
+ ],
+ [
+  "thanh_binh",
+  "2d742c6b",
+  "NĐ 188/2025/NĐ-CP",
+  0.4,
+  " NLD 188-2025  Trên NLD xếp về"
+ ],
+ [
+  "xuan_vinh",
+  "b7e79ca6",
+  "NĐ 02/2025/NĐ-CP",
+  0.2,
+  " Lỡ đời tháng 2 năm 2025 trên nửa đê si phê."
+ ],
+ [
+  "doan_trang",
+  "b7e79ca6",
+  "NĐ 02/2025/NĐ-CP",
+  0.2,
+  " ND tháng 2 năm 2025 trên NDCFAY"
+ ],
+ [
+  "quoc_tuan",
+  "b7e79ca6",
+  "NĐ 02/2025/NĐ-CP",
+  0.2,
+  " Nỡ đế tháng 2 năm 2025 trên Nỡ DCP"
+ ],
+ [
+  "thanh_binh",
+  "b7e79ca6",
+  "NĐ 02/2025/NĐ-CP",
+  0.2,
+  " Nở đê tháng 2 năm 2025 trên Ơn Đề Xê Phê"
+ ],
+ [
+  "thanh_binh",
+  "17150f55",
+  "Đơn thuốc, kho dược",
+  0.25,
+  " Hợp buộc khá dược."
+ ],
+ [
+  "xuan_vinh",
+  "f5e8e315",
+  "Luật KCB 15/2023",
+  0.5,
+  " lượt các xe bin 15 trên 2023."
+ ],
+ [
+  "doan_trang",
+  "f5e8e315",
+  "Luật KCB 15/2023",
+  0.5,
+  " Luật KC B15-2023"
+ ],
+ [
+  "thanh_binh",
+  "3c7fd1b6",
+  "Phòng bệnh, khám sàng lọc",
+  0.4,
+  " Công bệnh khám săn lòng."
+ ],
+ [
+  "xuan_vinh",
+  "d5efb00c",
+  "NĐ 356/2025/NĐ-CP",
+  0.4,
+  " nở đề 356 trên 2025 trên nở đề xe phê"
+ ],
+ [
+  "doan_trang",
+  "d5efb00c",
+  "NĐ 356/2025/NĐ-CP",
+  0.2,
+  " ND356 x 2025 trên NDCF."
+ ],
+ [
+  "quoc_tuan",
+  "d5efb00c",
+  "NĐ 356/2025/NĐ-CP",
+  0.4,
+  " ND 356 trên 2025 trên NDCV"
+ ],
+ [
+  "thanh_binh",
+  "d5efb00c",
+  "NĐ 356/2025/NĐ-CP",
+  0.2,
+  " ND356 trên 2025 trên NoDCV."
+ ],
+ [
+  "thanh_binh",
+  "2c1056c5",
+  "Phân quyền y tế",
+  0.0,
+  ""
+ ],
+ [
+  "xuan_vinh",
+  "f68a17f7",
+  "NĐ 148/2025/NĐ-CP",
+  0.4,
+  " Lỡ đê 148 trên 2025 trên ổ đế xế phê."
+ ],
+ [
+  "doan_trang",
+  "f68a17f7",
+  "NĐ 148/2025/NĐ-CP",
+  0.4,
+  " ND 148 x 2025 x ND CIFE"
+ ],
+ [
+  "quoc_tuan",
+  "f68a17f7",
+  "NĐ 148/2025/NĐ-CP",
+  0.4,
+  " ND 148 trên 2025 trên NDCF."
+ ],
+ [
+  "thanh_binh",
+  "f68a17f7",
+  "NĐ 148/2025/NĐ-CP",
+  0.4,
+  " Đỡ đê 148 trên 2025 trên Đỡ đê xế phê."
+ ],
+ [
+  "xuan_vinh",
+  "e28c3a9c",
+  "Quy tắc",
+  0.0,
+  " Quý tạp"
+ ],
+ [
+  "doan_trang",
+  "e28c3a9c",
+  "Quy tắc",
+  0.0,
+  " Quý tạc."
+ ],
+ [
+  "quoc_tuan",
+  "e28c3a9c",
+  "Quy tắc",
+  0.5,
+  " Cũi tắc."
+ ],
+ [
+  "thanh_binh",
+  "e28c3a9c",
+  "Quy tắc",
+  0.0,
+  " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn"
+ ],
+ [
+  "xuan_vinh",
+  "f7a3f6d0",
+  "Nguồn đã kiểm",
+  0.0,
+  " muộn ở kiếm."
+ ],
+ [
+  "thanh_binh",
+  "f7a3f6d0",
+  "Nguồn đã kiểm",
+  0.0,
+  " Hãy đăng ký kênh để ủng hộ kênh nhé!"
+ ],
+ [
+  "xuan_vinh",
+  "afd80e3c",
+  "NĐ 188/2025/NĐ-CP · công báo",
+  0.57,
+  " nở đê 188 trên 2025 cho nở đê xây phí nhân công báo."
+ ],
+ [
+  "doan_trang",
+  "afd80e3c",
+  "NĐ 188/2025/NĐ-CP · công báo",
+  0.57,
+  " L D 188 x 2025 trên NDC phe nhân công báo."
+ ],
+ [
+  "quoc_tuan",
+  "afd80e3c",
+  "NĐ 188/2025/NĐ-CP · công báo",
+  0.57,
+  " Nở đê 188 trên 2025 trên nở đê xế phê nhân công báo"
+ ],
+ [
+  "thanh_binh",
+  "afd80e3c",
+  "NĐ 188/2025/NĐ-CP · công báo",
+  0.57,
+  " ND 188 trên 2025 trên NDCP nhận công báo."
+ ],
+ [
+  "xuan_vinh",
+  "2d2f54f8",
+  "NĐ 148/2025/NĐ-CP · công báo",
+  0.57,
+  " Lỡ đề 148 trên 2025 trên LDC với nhân công báo."
+ ],
+ [
+  "doan_trang",
+  "2d2f54f8",
+  "NĐ 148/2025/NĐ-CP · công báo",
+  0.29,
+  " ND148-20205 trên LDC phe nhân công báo."
+ ],
+ [
+  "quoc_tuan",
+  "2d2f54f8",
+  "NĐ 148/2025/NĐ-CP · công báo",
+  0.57,
+  " ND 148 trên 2025 trên NDCV nhân công báo"
+ ],
+ [
+  "thanh_binh",
+  "2d2f54f8",
+  "NĐ 148/2025/NĐ-CP · công báo",
+  0.57,
+  " ND 148-2025 trên NDC phe hình chân công báo."
+ ],
+ [
+  "doan_trang",
+  "b77530c9",
+  "Ký ngày 09/9/2026",
+  0.4,
+  " Ký này 9 tháng 9 năm 202026."
+ ],
+ [
+  "xuan_vinh",
+  "6a8136ea",
+  "Chưa xác minh được",
+  0.5,
+  " Chưa sang ninh được."
+ ],
+ [
+  "thanh_binh",
+  "6a8136ea",
+  "Chưa xác minh được",
+  0.5,
+  " Chưa sang mình được"
+ ],
+ [
+  "xuan_vinh",
+  "6a6461a2",
+  "Ấn Độ",
+  0.5,
+  " Ấn đụng"
+ ],
+ [
+  "doan_trang",
+  "6a6461a2",
+  "Ấn Độ",
+  0.5,
+  " Ấn đô"
+ ],
+ [
+  "quoc_tuan",
+  "6a6461a2",
+  "Ấn Độ",
+  0.5,
+  " Ấn đỡ!"
+ ],
+ [
+  "thanh_binh",
+  "6a6461a2",
+  "Ấn Độ",
+  0.0,
+  " HẾT ĐỒ!"
+ ],
+ [
+  "xuan_vinh",
+  "9f728840",
+  "2. Năm ngành chính",
+  0.25,
+  " Hài năm 2009."
+ ],
+ [
+  "doan_trang",
+  "9f728840",
+  "2. Năm ngành chính",
+  0.25,
+  " hai, năm 2009"
+ ],
+ [
+  "thanh_binh",
+  "9f728840",
+  "2. Năm ngành chính",
+  0.25,
+  " Hai. Năm ngàn chín."
+ ],
+ [
+  "xuan_vinh",
+  "6c1f8b29",
+  "6. Trung cổ",
+  0.0,
+  " Tại sao chung cố?"
+ ],
+ [
+  "doan_trang",
+  "6c1f8b29",
+  "6. Trung cổ",
+  0.0,
+  " Sẵn sàng."
+ ],
+ [
+  "quoc_tuan",
+  "6c1f8b29",
+  "6. Trung cổ",
+  0.0,
+  " Sở hữu chung cầu."
+ ],
+ [
+  "thanh_binh",
+  "6c1f8b29",
+  "6. Trung cổ",
+  0.0,
+  " Sẵn sàng."
+ ],
+ [
+  "quoc_tuan",
+  "2692eedb",
+  "7. Cận đại",
+  0.33,
+  " Bởi cơ đại"
+ ],
+ [
+  "thanh_binh",
+  "2692eedb",
+  "7. Cận đại",
+  0.0,
+  " Bye. Good night."
+ ],
+ [
+  "xuan_vinh",
+  "d5f048bd",
+  "8. Thế kỷ XIX",
+  0.0,
+  " Tạm, thích nghiệm với chín."
+ ],
+ [
+  "doan_trang",
+  "d5f048bd",
+  "8. Thế kỷ XIX",
+  0.5,
+  " 8. Thế kỳ 19"
+ ],
+ [
+  "quoc_tuan",
+  "d5f048bd",
+  "8. Thế kỷ XIX",
+  0.5,
+  " Tám Thế Kỷ Mười Chín"
+ ],
+ [
+  "thanh_binh",
+  "d5f048bd",
+  "8. Thế kỷ XIX",
+  0.25,
+  " Tạm, thế kỳ mới chuyển"
+ ],
+ [
+  "xuan_vinh",
+  "478357d9",
+  "9. Thế kỷ XX",
+  0.25,
+  " Chí tích kỷ hai mười"
+ ],
+ [
+  "doan_trang",
+  "478357d9",
+  "9. Thế kỷ XX",
+  0.5,
+  " 9. Thế kỳ 20"
+ ],
+ [
+  "thanh_binh",
+  "478357d9",
+  "9. Thế kỷ XX",
+  0.25,
+  " Chiến lệ kỷ 20"
+ ],
+ [
+  "xuan_vinh",
+  "466a8b51",
+  "11. Các chủ đề lớn",
+  0.4,
+  " 11. Cá chú đầy lớn"
+ ]
+]
