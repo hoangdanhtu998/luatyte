@@ -298,16 +298,17 @@ function setReviewWrong(lessonId, qi, wrong) {
   
   // Thêm banner cảnh báo nếu cần
   var banner = document.createElement('div');
-  banner.id = 'server-notice';
+  // Banner đã có sẵn trong HTML, chỉ cần hiển thị;
   banner.style.cssText = 'background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;margin:16px;border-radius:8px;font-size:14px;';
-  banner.innerHTML = '<strong>⚠️ Chế độ xem thử</strong><br>' +
+  // Không cần set innerHTML vì đã có trong HTML'<strong>⚠️ Chế độ xem thử</strong><br>' +
     'Tính năng chat và chạy code cần máy chủ local. ' +
     'Để trải nghiệm đầy đủ, chạy:<br>' +
     '<code style="background:#f4f4f4;padding:2px 6px;border-radius:4px;">node server/server.mjs</code><br>' +
     '<small>Mở <a href="http://localhost:4500">http://localhost:4500</a> sau khi khởi động server.</small>';
   
   var main = document.querySelector('main');
-  if (main && isStaticHost) {
-    main.insertBefore(banner, main.firstChild);
+  var notice = document.getElementById('server-notice');
+  if (notice && isStaticHost) {
+    notice.style.display = 'block';
   }
 })();
