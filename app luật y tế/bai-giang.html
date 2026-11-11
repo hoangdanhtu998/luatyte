@@ -91,6 +91,7 @@
       <button class="btn ghost" id="prev" type="button">‹ Trước</button>
       <button class="btn" id="play" type="button">Phát giọng đọc</button>
       <button class="btn ghost" id="next" type="button">Sau ›</button>
+      <button class="btn" id="next-btn-lesson" style="display:none;">Bài tiếp theo →</button>
       <span class="spacer"></span>
       <label><input type="checkbox" id="auto" checked> Tự chuyển slide</label>
       <label>Tốc độ
@@ -141,7 +142,8 @@
     document.getElementById("lesson-no").textContent = "Bài " + cur.no;
     bar.style.width = ((idx + 1) / n * 100) + "%";
     document.getElementById("prev").disabled = idx === 0;
-    document.getElementById("next").disabled = idx >= n - 1;
+    var nextBtn = document.getElementById("next-btn-lesson");
+    if (nextBtn) nextBtn.style.display = idx >= n - 1 ? "inline-flex" : "none";
     Array.prototype.forEach.call(dotsEl.children, function(d, i){ d.setAttribute("aria-current", i === idx ? "true" : "false"); });
     audio.src = s.audio;
     audio.playbackRate = +document.getElementById("speed").value;
@@ -161,17 +163,69 @@
     render();
     if (keepPlaying) audio.play().catch(function(){});
   }
-  function open(lesson){
-    // Đánh dấu bài trước đó là hoàn thành
-    if(cur && window.__lastLessonId){
-      markCompleted(window.__lastLessonId);
-      // Cập nhật badge nếu đang hiển thị danh sách sau này
+  // Hiển thị dialog xác nhận hoàn thành bài học
+  function confirmComplete(nextLesson) {
+    var modal = document.getElementById('confirm-modal');
+    if (!modal) {
+      // Tạo modal nếu chưa có
+      var overlay = document.createElement('div');
+      overlay.id = 'confirm-modal';
+      overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:1000;';
+      overlay.innerHTML = `
+        <div style="background:white;padding:24px;border-radius:12px;max-width:400px;width:90%;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+          <h3 style="margin:0 0 16px;font-size:18px;">Đánh dấu bài học?</h3>
+          <p style="margin:0 0 24px;color:#666;font-size:14px;">Bạn có muốn đánh dấu bài học hiện tại đã hoàn thành không?</p>
+          <div style="display:flex;gap:12px;justify-content:flex-end;">
+            <button id="btn-keep" style="padding:10px 20px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer;">Giữ nguyên</button>
+            <button id="btn-done" style="padding:10px 20px;border:none;background:#4CAF50;color:white;border-radius:6px;cursor:pointer;">Hoàn thành & Tiếp tục</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      
+      document.getElementById('btn-keep').onclick = function() {
+        document.body.removeChild(overlay);
+        // Không đánh dấu, chỉ mở bài mới
+        window.__pendingLesson = nextLesson;
+        openWithoutMark(nextLesson);
+      };
+      
+      document.getElementById('btn-done').onclick = function() {
+        // Đánh dấu bài cũ và mở bài mới
+        if(cur && cur.id) markCompleted(cur.id);
+        document.body.removeChild(overlay);
+        window.__pendingLesson = null;
+        open(nextLesson);
+      };
+      
+      // Đóng khi click ra ngoài
+      overlay.onclick = function(e) {
+        if (e.target === overlay) {
+          document.body.removeChild(overlay);
+        }
+      };
     }
+  }
+
+  function openWithoutMark(lesson) {
     window.__lastLessonId = lesson.id;
     cur = lesson; idx = 0;
     listSec.hidden = true; player.hidden = false;
     buildDots(); render();
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function open(lesson){
+    // Nếu đang ở bài khác, hỏi xác nhận
+    if(cur && cur.id && cur.id !== lesson.id) {
+      confirmComplete(lesson);
+    } else {
+      window.__lastLessonId = lesson.id;
+      cur = lesson; idx = 0;
+      listSec.hidden = true; player.hidden = false;
+      buildDots(); render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 
   audio.addEventListener("play", function(){ playBtn.textContent = "Tạm dừng"; });
@@ -183,6 +237,14 @@
   playBtn.onclick = function(){ if (audio.paused) audio.play().catch(function(){}); else audio.pause(); };
   document.getElementById("prev").onclick = function(){ go(idx - 1, false); };
   document.getElementById("next").onclick = function(){ go(idx + 1, false); };
+  document.getElementById("next-btn-lesson").onclick = function(){
+    // Tìm bài tiếp theo trong danh sách
+    var lessons = window.__lessons || [];
+    var currentIdx = lessons.findIndex(function(l){ return l.id === cur.id; });
+    if (currentIdx >= 0 && currentIdx < lessons.length - 1) {
+      confirmComplete(lessons[currentIdx + 1]);
+    }
+  };
   document.getElementById("speed").onchange = function(e){ audio.playbackRate = +e.target.value; };
   document.getElementById("back").onclick = function(){ 
     audio.pause(); 
