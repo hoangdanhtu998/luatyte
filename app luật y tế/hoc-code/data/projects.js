@@ -27,7 +27,7 @@ const PROJECTS = [
   { id: 'matmul', level: 2, title: 'Nhân ma trận hiệu năng cao', desc: 'Tối ưu phép nhân ma trận: cache, vòng lặp, đo thời gian.', url: 'https://gist.github.com/nadavrot/5b35d44e8ba3dd718e595e40184d03f0' },
   { id: 'meta-crush', level: 2, title: 'Meta Crush Saga (C++17 lúc biên dịch)', desc: 'Trò chơi chạy ở thời điểm biên dịch bằng template C++17.', url: 'https://jguegant.github.io//jguegant.github.io/blogs/tech/meta-crush-saga.html' },
   { id: 'breakout', level: 2, title: 'Breakout bằng C++ và OpenGL', desc: 'Làm game phá gạch 2D: sprite, va chạm, power-up, âm thanh.', url: 'https://learnopengl.com/In-Practice/2D-Game/Breakout' },
-  { id: 'live-reload', level: 2, title: 'Thư viện reload code khi chạy', desc: 'Thư viện C++ nạp lại code trong lúc chương trình đang chạy.', url: 'http://howistart.org/posts/cpp/1/index-hoccode.html' },
+  { id: 'live-reload', level: 2, title: 'Thư viện reload code khi chạy', desc: 'Thư viện C++ nạp lại code trong lúc chương trình đang chạy.', url: 'http://howistart.org/posts/cpp/1/index.html' },
 
   { id: 'interpreter', level: 3, title: 'Build an Interpreter (Crafting Interpreters)', desc: 'Viết interpreter; từ chương 14 trở đi làm bản bằng C.', url: 'http://www.craftinginterpreters.com/' },
   { id: 'fuse', level: 3, title: 'Viết filesystem FUSE', desc: 'Filesystem chạy ở userspace bằng FUSE.', url: 'https://www.cs.nmsu.edu/~pfeiffer/fuse-tutorial/' },
