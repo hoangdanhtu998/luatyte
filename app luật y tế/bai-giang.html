@@ -27,6 +27,7 @@
   .lesson-card b{font-family:var(--font-display);font-size:17px;line-height:1.3}
   .lesson-card small{color:var(--color-muted);font-size:13px;line-height:1.5}
   .lesson-card .meta{margin-top:auto;font-size:12px;color:var(--color-muted)}
+  .completed-badge{display:inline-block;padding:2px 6px;border-radius:4px;background:var(--color-accent-soft);color:var(--color-accent-ink);font-size:11px;margin-left:8px;white-space:nowrap}
 
   /* Khung trình chiếu */
   .stage{position:relative;aspect-ratio:16/9;min-height:320px;border-radius:18px;background:var(--color-paper-2);border:1px solid var(--color-rule);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column}
@@ -111,6 +112,11 @@
   var audio = document.getElementById("audio"), bar = document.getElementById("bar");
   var playBtn = document.getElementById("play"), dotsEl = document.getElementById("dots");
   var cur = null, idx = 0;
+  var PROG_KEY = 'luatyte-baigiang-completed';
+  function getCompleted(){ try { return JSON.parse(localStorage.getItem(PROG_KEY) || '{}'); } catch(e){ return {}; } }
+  function markCompleted(id){ try { var s = getCompleted(); s[id] = true; localStorage.setItem(PROG_KEY, JSON.stringify(s)); } catch(e){} }
+  function isCompleted(id){ return !!getCompleted()[id]; }
+  function renderLessons(){ /* re-render list with completion badges */ }
 
   function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
@@ -156,6 +162,12 @@
     if (keepPlaying) audio.play().catch(function(){});
   }
   function open(lesson){
+    // Đánh dấu bài trước đó là hoàn thành
+    if(cur && window.__lastLessonId){
+      markCompleted(window.__lastLessonId);
+      // Cập nhật badge nếu đang hiển thị danh sách sau này
+    }
+    window.__lastLessonId = lesson.id;
     cur = lesson; idx = 0;
     listSec.hidden = true; player.hidden = false;
     buildDots(); render();
@@ -172,7 +184,26 @@
   document.getElementById("prev").onclick = function(){ go(idx - 1, false); };
   document.getElementById("next").onclick = function(){ go(idx + 1, false); };
   document.getElementById("speed").onchange = function(e){ audio.playbackRate = +e.target.value; };
-  document.getElementById("back").onclick = function(){ audio.pause(); player.hidden = true; listSec.hidden = false; };
+  document.getElementById("back").onclick = function(){ 
+    audio.pause(); 
+    // Đánh dấu bài hiện tại là hoàn thành khi quay lại danh sách
+    if(cur && cur.id) markCompleted(cur.id);
+    player.hidden = true; listSec.hidden = false;
+    // Cập nhật badge cho danh sách
+    document.querySelectorAll('.lesson-card').forEach(function(card, i){
+      var noEl = card.querySelector('.no');
+      if(noEl){
+        var num = parseInt(noEl.textContent.replace('Bài ', ''));
+        var lesson = window.__lessons && window.__lessons[num-1];
+        if(lesson && isCompleted(lesson.id)){
+          var titleEl = card.querySelector('b');
+          if(titleEl && !card.querySelector('.completed-badge')){
+            titleEl.insertAdjacentHTML('beforeend', '<span class="completed-badge">Hoàn thành</span>');
+          }
+        }
+      }
+    });
+  };
 
   document.addEventListener("keydown", function(e){
     if (player.hidden || e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
@@ -189,6 +220,7 @@
         var c = el("button", "lesson-card", null); c.type = "button";
         c.appendChild(el("span", "no", "Bài " + (i + 1)));
         c.appendChild(el("b", null, l.title));
+        if(isCompleted(l.id)){ c.querySelector('b').insertAdjacentHTML('beforeend', '<span class="completed-badge">Hoàn thành</span>'); }
         var first = l.slides[1] ? l.slides[1].text : "";
         c.appendChild(el("small", null, first.length > 110 ? first.slice(0, 110) + "…" : first));
         c.appendChild(el("span", "meta", (l.slides.length - 1) + " ý chính · có giọng đọc"));
