@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Demo · Chia nhóm giá trị với ô Tuổi · Học kiểm thử</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    .demo-wrap { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 860px) { .demo-wrap { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); } }
+    .demo-head h1 { margin: 6px 0 4px; font-size: 26px; }
+    .demo-head p { margin: 0; color: var(--muted); }
+    .panel-title { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+
+    /* Sân khấu: form + trục số */
+    .stage { display: grid; gap: 14px; }
+    .form-mock { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fbfcfe; transition: box-shadow .3s; }
+    .form-mock.hl { box-shadow: 0 0 0 3px rgba(240,138,75,.7); }
+    .form-mock label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .form-mock input { width: 100%; max-width: 220px; font-size: 18px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; }
+    .result { margin-top: 10px; font-weight: 700; min-height: 1.4em; }
+    .result.ok { color: #2e8b57; }
+    .result.err { color: var(--brick); }
+    .axis-box { border-radius: 12px; border: 1px solid var(--line); padding: 10px; }
+    .axis-box svg { width: 100%; height: auto; display: block; }
+    .axis-box.hidden { display: none; }
+    .band-label { font-size: 13px; fill: var(--ink); }
+    .tick-label { font-size: 13px; fill: var(--muted); }
+    .marker-dot { fill: var(--navy); transition: transform .5s ease; }
+    .marker-text { font-size: 14px; font-weight: 800; fill: var(--navy); }
+
+    /* Chat trợ giảng */
+    .chat { display: flex; flex-direction: column; min-height: 340px; }
+    .chat-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; max-height: 430px; padding-right: 4px; }
+    .msg { max-width: 92%; padding: 10px 14px; border-radius: 14px; line-height: 1.5; animation: rise .35s ease both; }
+    .msg.bot { background: #eef3fb; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg.me { background: var(--amber); color: var(--navy); align-self: flex-end; border-bottom-right-radius: 4px; }
+    .msg .who { display: block; font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
+    .typing { color: var(--muted); font-style: normal; padding: 4px 2px; }
+    .choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .choices[hidden] { display: none; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; align-items: center; }
+    .controls .step-count { margin-left: auto; color: var(--muted); font-size: 14px; }
+    .controls .btn[disabled] { opacity: .45; cursor: not-allowed; }
+    .summary { margin-top: 10px; }
+    .summary li { margin-bottom: 6px; }
+    @media (prefers-reduced-motion: reduce) { .msg { animation: none; } .marker-dot { transition: none; } .form-mock { transition: none; } }
+  </style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html">Học kiểm thử</a>
+  <nav>
+    <a href="../index.html">Trang chủ</a>
+    <a href="../lesson.html?track=tester&id=tu-duy-tester">Bài Tư duy tester</a>
+  </nav>
+</header>
+
+<main>
+  <section class="demo-head">
+    <span class="eyebrow">Xem từng bước · Demo</span>
+    <h1>Chia nhóm giá trị với ô Tuổi</h1>
+    <p>Trợ giảng sẽ dẫn bạn đi từng bước. Bấm <b>Tiếp</b> để sang bước sau, hoặc để tự chạy.</p>
+  </section>
+
+  <div class="demo-wrap" style="margin-top:18px">
+    <section class="card stage" aria-label="Sân khấu">
+      <p class="panel-title">Màn hình đang test</p>
+
+      <div class="form-mock" id="form-box">
+        <label for="age">Tuổi</label>
+        <input id="age" type="text" inputmode="numeric" readonly aria-describedby="res">
+        <div class="result" id="res" aria-live="polite">Chưa nhập gì.</div>
+      </div>
+
+      <div class="axis-box hidden" id="axis-box">
+        <svg viewBox="0 0 600 150" role="img" aria-labelledby="axis-title">
+          <title id="axis-title">Trục số chia ba vùng: dưới 0 báo lỗi, từ 0 đến 120 chấp nhận, trên 120 báo lỗi</title>
+          <rect x="30" y="40" width="112.5" height="38" rx="6" fill="#f6d5d0"/>
+          <rect x="142.5" y="40" width="326.25" height="38" rx="6" fill="#cfe9dc"/>
+          <rect x="468.75" y="40" width="101.25" height="38" rx="6" fill="#f6d5d0"/>
+          <text class="band-label" x="86" y="30" text-anchor="middle">dưới 0: báo lỗi</text>
+          <text class="band-label" x="305" y="30" text-anchor="middle">0 đến 120: chấp nhận</text>
+          <text class="band-label" x="519" y="30" text-anchor="middle">trên 120: báo lỗi</text>
+          <line x1="30" y1="100" x2="570" y2="100" stroke="#5b6475" stroke-width="2"/>
+          <text class="tick-label" x="142.5" y="122" text-anchor="middle">0</text>
+          <text class="tick-label" x="468.75" y="122" text-anchor="middle">120</text>
+          <g id="marker" style="transition: transform .5s ease">
+            <line x1="0" y1="20" x2="0" y2="100" stroke="#14181f" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle class="marker-dot" cx="0" cy="59" r="8"/>
+            <text class="marker-text" x="0" y="144" text-anchor="middle" id="marker-text"></text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="card chat" aria-label="Trợ giảng">
+      <p class="panel-title">Trợ giảng</p>
+      <div class="chat-log" id="log" aria-live="polite"></div>
+      <div class="choices" id="choices" hidden></div>
+      <div class="controls">
+        <button class="btn ghost" id="prev" type="button">← Quay lại</button>
+        <button class="btn amber" id="next" type="button">Tiếp →</button>
+        <button class="btn ghost" id="play" type="button">Tạm dừng</button>
+        <button class="btn ghost" id="fast" type="button">Tua nhanh</button>
+        <span class="step-count" id="count"></span>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+(function () {
+  // ----- Trạng thái hiển thị của sân khấu -----
+  var MIN = -20, MAX = 140, X0 = 30, X1 = 570;
+  var form = document.getElementById('form-box');
+  var input = document.getElementById('age');
+  var res = document.getElementById('res');
+  var axisBox = document.getElementById('axis-box');
+  var marker = document.getElementById('marker');
+  var markerText = document.getElementById('marker-text');
+
+  function xOf(v) { return X0 + (v - MIN) / (MAX - MIN) * (X1 - X0); }
+
+  // Luật của bài demo (giả định): tuổi là số nguyên từ 0 đến 120.
+  function judge(raw) {
+    if (raw === '' || raw === null) return { text: 'Chưa nhập gì.', cls: '' };
+    var n = Number(raw);
+    if (!Number.isInteger(n)) return { text: 'Báo lỗi: tuổi phải là số nguyên.', cls: 'err' };
+    if (n < 0 || n > 120) return { text: 'Báo lỗi: tuổi phải từ 0 đến 120.', cls: 'err' };
+    return { text: 'Chấp nhận: lịch hợp lệ.', cls: 'ok' };
+  }
+
+  function setValue(raw) {
+    input.value = raw === null ? '' : String(raw);
+    var r = judge(raw === null ? '' : raw);
+    res.textContent = r.text;
+    res.className = 'result ' + r.cls;
+    if (raw !== null && raw !== '' && Number.isFinite(Number(raw))) {
+      var v = Math.max(MIN, Math.min(MAX, Number(raw)));
+      marker.setAttribute('transform', 'translate(' + xOf(v).toFixed(1) + ',0)');
+      markerText.textContent = String(raw);
+      markerText.setAttribute('x', '0');
+    }
+  }
+
+  function setHighlight(name) {
+    form.classList.toggle('hl', name === 'form');
+  }
+  function showAxis(on) { axisBox.classList.toggle('hidden', !on); }
+  function resetStage() {
+    setValue(null);
+    setHighlight(null);
+    showAxis(false);
+    marker.setAttribute('transform', 'translate(' + xOf(0) + ',0)');
+    markerText.textContent = '';
+  }
+
+  // ----- Kịch bản: mỗi bước có các lời trợ giảng; "do" chạy trước lời đó -----
+  var STEPS = [
+    {
+      title: 'Đề bài',
+      msgs: [
+        { s: 'Chào bạn! Mình là trợ giảng. Hôm nay ta test một ô duy nhất: ô Tuổi.' },
+        { s: 'Giả định của bài demo: tuổi là số nguyên từ 0 đến 120 thì hợp lệ. (Đây là giả định cho bài học, không phải yêu cầu thật.)' },
+        { s: 'Câu hỏi đầu tiên: có nên thử lần lượt từ -1000 đến 1000 không?' },
+        { s: 'Không nên. Thử hết là mất cả đời, nên ta chia nhóm giá trị trước.' }
+      ]
+    },
+    {
+      title: 'Chỉ vào ô nhập',
+      do: function () { resetStage(); setHighlight('form'); },
+      msgs: [
+        { s: 'Đây là ô Tuổi (viền cam). Mọi giá trị bạn thử đều đi qua đây.' },
+        { s: 'Ô này nhận số. Ta cần biết số nào được nhận, số nào bị từ chối.' }
+      ]
+    },
+    {
+      title: 'Chia thành vùng',
+      do: function () { setHighlight(null); showAxis(true); setValue(null); },
+      msgs: [
+        { s: 'Trục số này chia làm ba vùng. Vùng giữa, từ 0 đến 120, là hợp lệ. Hai vùng ngoài là không hợp lệ.' },
+        { s: 'Mọi số trong cùng một vùng được xử lý giống nhau. Vậy mỗi vùng chỉ cần một đại diện để kiểm.' },
+        { s: 'Tên gọi của cách chia này là phân vùng tương đương. Bạn sẽ hay gặp nó trong các bài tiếp theo.' }
+      ]
+    },
+    {
+      title: 'Chọn đại diện',
+      do: function () { setValue(null); },
+      msgs: [
+        { s: 'Thử đại diện của vùng giữa: 60.', do: function () { setValue(60); } },
+        { s: 'Đúng như kỳ vọng: 60 được chấp nhận.' },
+        { s: 'Thử đại diện của vùng dưới: -5.', do: function () { setValue(-5); } },
+        { s: 'Báo lỗi. Đúng là số âm không hợp lệ.' },
+        { s: 'Thử đại diện của vùng trên: 150.', do: function () { setValue(150); } },
+        { s: 'Báo lỗi. Ba đại diện, ba vùng, mỗi vùng một lần kiểm.' }
+      ]
+    },
+    {
+      title: 'Kiểm ở biên',
+      do: function () { setValue(null); },
+      msgs: [
+        { s: 'Lỗi hay nằm sát ranh giới, vì người viết code dễ gõ nhầm < thành <=.', do: function () { setValue(null); } },
+        { s: 'Biên dưới: thử -1.', do: function () { setValue(-1); } },
+        { s: '-1 bị báo lỗi. Giờ thử 0.', do: function () { setValue(0); } },
+        { s: '0 được chấp nhận. Vậy ranh giới dưới nằm đúng chỗ.' },
+        { s: 'Biên trên: thử 120.', do: function () { setValue(120); } },
+        { s: '120 được chấp nhận. Giờ thử 121.', do: function () { setValue(121); } },
+        { s: '121 bị báo lỗi. Gom lại, bốn giá trị cần kiểm là -1, 0, 120, 121.' }
+      ]
+    },
+    {
+      title: 'Đoán trước',
+      quiz: true,
+      do: function () { setValue(null); },
+      msgs: [
+        { s: 'Trước khi xem tiếp, bạn đoán thử: nhập 121 thì ô này sẽ làm gì?' }
+      ],
+      choices: [
+        { label: 'Chấp nhận', right: false, why: 'Chưa đúng. 121 nằm ngoài vùng 0 đến 120.' },
+        { label: 'Báo lỗi', right: true, why: 'Đúng! 121 vượt biên trên, nên bị báo lỗi.' },
+        { label: 'Không chắc', right: false, why: 'Không sao. Nhìn lại trục số: 121 nằm ở đâu?' }
+      ]
+    },
+    {
+      title: 'Điều cần nhớ',
+      do: function () { setValue(null); showAxis(true); },
+      msgs: [
+        { s: 'Tóm lại, ba điều cần nhớ:' },
+        { s: '1. Chia giá trị thành vùng. Mỗi vùng chọn một đại diện.' },
+        { s: '2. Kiểm thêm ở biên, vì lỗi hay nằm sát ranh giới.' },
+        { s: '3. Cách làm này không cần thử hết mọi số. Đó là lý do nó đáng học.' },
+        { s: 'Xong rồi! Bạn có thể quay lại bài Tư duy tester để đọc kỹ hơn.' }
+      ],
+      final: true
+    }
+  ];
+
+  // ----- Điều khiển -----
+  var log = document.getElementById('log');
+  var choicesBox = document.getElementById('choices');
+  var btnNext = document.getElementById('next');
+  var btnPrev = document.getElementById('prev');
+  var btnPlay = document.getElementById('play');
+  var btnFast = document.getElementById('fast');
+  var count = document.getElementById('count');
+
+  var cur = 0;        // bước đang chạy
+  var msgIdx = 0;     // lời thứ mấy trong bước
+  var playing = true; // tự chạy hay đang tạm dừng
+  var fast = false;   // tua nhanh
+  var timer = null;
+  var answered = false;
+
+  function delay(ms) { return fast ? Math.round(ms / 5) : ms; }
+  function clearTimer() { if (timer) { clearTimeout(timer); timer = null; } }
+
+  function addMsg(text, who, cls) {
+    var div = document.createElement('div');
+    div.className = 'msg ' + cls;
+    var w = document.createElement('span');
+    w.className = 'who';
+    w.textContent = who;
+    var t = document.createElement('span');
+    t.textContent = text;
+    div.append(w, t);
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  }
+  function addBot(text) { addMsg(text, 'Trợ giảng', 'bot'); }
+
+  function addTyping() {
+    var d = document.createElement('div');
+    d.className = 'typing';
+    d.id = 'typing';
+    d.textContent = 'Trợ giảng đang gõ…';
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+  }
+  function removeTyping() { var d = document.getElementById('typing'); if (d) d.remove(); }
+
+  function showChoices(step) {
+    choicesBox.innerHTML = '';
+    if (!step.quiz) { choicesBox.hidden = true; return; }
+    choicesBox.hidden = false;
+    step.choices.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'btn ghost';
+      b.textContent = c.label;
+      b.addEventListener('click', function () {
+        if (answered) return;
+        addMsg(c.label, 'Bạn', 'me');
+        addBot(c.why);
+        if (c.right) {
+          answered = true;
+          choicesBox.hidden = true;
+          btnNext.disabled = false;
+          // Chỉ đi tiếp khi lời hỏi đã hiện xong; nếu chưa, bộ hẹn giờ sẽ tự đi tiếp.
+          if (playing && msgIdx >= STEPS[cur].msgs.length) scheduleNextMsg();
+        }
+      });
+      choicesBox.appendChild(b);
+    });
+  }
+
+  function refreshControls() {
+    var step = STEPS[cur];
+    count.textContent = 'Bước ' + (cur + 1) + '/' + STEPS.length + ': ' + step.title;
+    btnPrev.disabled = cur === 0;
+    btnNext.disabled = !!(step.quiz && !answered);
+    btnNext.textContent = step.final ? 'Kết thúc' : 'Tiếp →';
+    btnPlay.textContent = playing ? 'Tạm dừng' : 'Chạy tiếp';
+    btnFast.textContent = fast ? 'Tốc độ thường' : 'Tua nhanh';
+    btnFast.setAttribute('aria-pressed', fast ? 'true' : 'false');
+  }
+
+  // Dựng lại toàn bộ bước trước để khi quay lại thì sân khấu đúng trạng thái.
+  function replayUpTo(n) {
+    log.innerHTML = '';
+    resetStage();
+    for (var i = 0; i < n; i++) {
+      var s = STEPS[i];
+      if (s.do) s.do();
+      s.msgs.forEach(function (m) { if (m.do) m.do(); addBot(m.s); });
+      if (s.quiz) {
+        var c = s.choices.filter(function (x) { return x.right; })[0];
+        addMsg(c.label, 'Bạn', 'me');
+        addBot(c.why);
+      }
+    }
+  }
+
+  function enterStep(n) {
+    clearTimer();
+    replayUpTo(n);
+    cur = n;
+    msgIdx = 0;
+    answered = !STEPS[n].quiz;
+    var step = STEPS[n];
+    if (step.do) step.do();
+    showChoices(step);
+    refreshControls();
+    if (playing) scheduleNextMsg();
+  }
+
+  // Đưa lời kế tiếp lên; hết lời thì sang bước sau (trừ khi đang chờ đáp án).
+  function scheduleNextMsg() {
+    clearTimer();
+    var step = STEPS[cur];
+    if (msgIdx < step.msgs.length) {
+      addTyping();
+      timer = setTimeout(function () {
+        removeTyping();
+        var m = step.msgs[msgIdx++];
+        if (m.do) m.do();
+        addBot(m.s);
+        scheduleNextMsg();
+      }, delay(900));
+      return;
+    }
+    if (step.quiz && !answered) { return; }
+    if (cur >= STEPS.length - 1) { refreshControls(); return; }
+    timer = setTimeout(function () { enterStep(cur + 1); }, delay(1400));
+  }
+
+  // Tiếp: hiện hết lời của bước hiện tại rồi sang bước sau ngay.
+  function finishStep() {
+    clearTimer();
+    removeTyping();
+    var step = STEPS[cur];
+    while (msgIdx < step.msgs.length) {
+      var m = step.msgs[msgIdx++];
+      if (m.do) m.do();
+      addBot(m.s);
+    }
+    if (cur < STEPS.length - 1) enterStep(cur + 1);
+    else refreshControls();
+  }
+
+  btnNext.addEventListener('click', function () {
+    if (cur === STEPS.length - 1) { window.location.href = '../lesson.html?track=tester&id=tu-duy-tester'; return; }
+    finishStep();
+  });
+  btnPrev.addEventListener('click', function () {
+    if (cur > 0) { playing = playing; enterStep(cur - 1); }
+  });
+  btnPlay.addEventListener('click', function () {
+    playing = !playing;
+    if (playing) scheduleNextMsg(); else clearTimer();
+    refreshControls();
+  });
+  btnFast.addEventListener('click', function () {
+    fast = !fast;
+    refreshControls();
+    if (playing) scheduleNextMsg();
+  });
+
+  enterStep(0);
+})();
+</script>
+</body>
+</html>

@@ -165,6 +165,10 @@ Lỗi rẻ nhất để sửa là lỗi được phát hiện ở mức nhỏ. K
 
 **Thuật ngữ trong slide này:** **Kiểm thử đơn vị (unit testing)**: Kiểm một phần nhỏ nhất của code, như một hàm, một lớp, tách khỏi phần còn lại. Thường do lập trình viên viết.
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=cac-muc-kiem-thu). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Introduction to Testing
 
 - **Four Hour Tester** (website): tổng quan các loại kiểm thử cho người mới.

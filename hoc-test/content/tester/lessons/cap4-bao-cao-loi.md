@@ -177,6 +177,10 @@ Diễn giả James Bach nói tester phải kể câu chuyện về việc kiểm
 
 **Thuật ngữ trong slide này:** **Tái hiện (reproduce)**: Làm lại đúng các bước để lỗi xuất hiện lần nữa.
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=bao-cao-loi). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Defect Lifecycle Management
 
 - **Bug Advocacy** (Cem Kaner, PDF).

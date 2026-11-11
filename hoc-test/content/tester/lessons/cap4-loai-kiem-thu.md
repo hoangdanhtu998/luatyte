@@ -84,6 +84,10 @@ James Bach nói: tester không chỉ kiểm yêu cầu đã viết, mà còn ki�
 
 *Kiến thức chung, chưa đối chiếu nguồn gốc.*
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=loai-kiem-thu). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Test Design and Execution
 
 - **Software Testing Best Practices** (PDF).

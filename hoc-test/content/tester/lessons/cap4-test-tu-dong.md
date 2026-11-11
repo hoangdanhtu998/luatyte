@@ -129,6 +129,10 @@ Test tốt có tên mô tả đúng điều nó kiểm, ví dụ `nam_chia_het_c
 
 *Nguồn: Selenium WebDriver documentation (selenium.dev), mục WebDriver [đã đọc].*
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=test-tu-dong). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Test Automation
 
 - **Elemental Selenium Tips** (bài viết).

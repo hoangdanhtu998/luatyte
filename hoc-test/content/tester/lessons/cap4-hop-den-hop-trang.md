@@ -178,6 +178,10 @@ Hàm tính giảm giá: hộp đen thử các mức giá và xem tiền được
 
 **Thuật ngữ trong slide này:** **Hộp đen (black box)**: Kiểm thử chỉ dựa trên đầu vào và đầu ra, không xem code bên trong. · **Hộp trắng (white box)**: Kiểm thử dựa trên cấu trúc code: các nhánh, câu lệnh, điều kiện. Cần đọc code.
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=hop-den-hop-trang). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Test Design and Execution
 
 - **Heuristic Test Strategy Model** (PDF): cách chọn chiến lược kiểm thử.

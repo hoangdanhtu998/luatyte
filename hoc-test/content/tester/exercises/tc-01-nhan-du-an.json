@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "ex1",
+    "title": "Nhận dự án: Tìm điều mơ hồ",
+    "scenario": "App đặt lịch khám Phòng khám Sao Mai - bản nháp yêu cầu",
+    "prompt": "Đọc bản nháp yêu cầu của phòng khám Sao Mai và tìm ít nhất 5 điều mơ hồ cần hỏi lại. Ví dụ: \"Trẻ em cần có người giám hộ\", \"Tên không được quá ngắn hoặc quá dài\", \"Phòng khám nghỉ cuối tuần\".",
+    "answer": "Danh sách 5+ câu hỏi làm rõ: (1) Tuổi bao nhiêu được coi là trẻ em? (2) Độ dài tên tối thiểu/tối đa là bao nhiêu ký tự? (3) \"Cuối tuần\" có bao gồm thứ Bảy không? (4) Ai được xác nhận lịch? (5) Mỗi khung giờ nhận tối đa bao nhiêu người?",
+    "explanation": "Yêu cầu kiểm thử được là yêu cầu bạn viết ra được dữ liệu vào và kết quả mong đợi mà không phải đoán. Tìm các từ mơ hồ như 'ngắn', 'dài', 'trẻ em', 'cuối tuần', 'hợp lệ'. Ghi câu hỏi vào sổ tay trước khi có code."
+  },
+  {
+    "id": "ex2",
+    "title": "Nhận dự án: Tính khả thi của yêu cầu",
+    "scenario": "Tính năng đặt lịch online cho phòng khám",
+    "prompt": "Yêu cầu: \"Hệ thống phải hoạt động 24/7 với 0% downtime\". Tính khả thi của yêu cầu này trong bối cảnh phòng khám nhỏ?",
+    "answer": "Không khả thi: (1) Phòng khám chỉ mở giờ hành chính, không cần 24/7. (2) 0% downtime là không thể với mọi hệ thống - cần bảo trì, cập nhật. (3) Yêu cầu không rõ: downtime là gì? Bao lâu? Có kế hoạch bảo trì không?",
+    "explanation": "Yêu cầu phi thực tế cần được làm rõ: (1) Có thực sự cần 24/7 không? (2) 99.9% uptime có chấp nhận được không? (3) Có chấp nhận downtime có kế hoạch không? Ghi lại câu hỏi làm rõ."
+  }
+]

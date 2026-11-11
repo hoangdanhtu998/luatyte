@@ -128,3 +128,7 @@ Có 12 ca test cùng dùng selector của nút "Thanh toán". Khi nút đổi se
 
 **Thuật ngữ trong slide này:** **Page Object**: Lớp bọc một trang giao diện, chứa các hàm nghiệp vụ như đăng nhập, để kịch bản không phụ thuộc HTML. · **Selector**: Chuỗi dùng để tìm một phần tử trên trang, như theo id, class hoặc đường dẫn.
 
+
+## Thực hành: tổ chức Page Object
+
+Mở [trang thực hành](thuc-hanh.html?id=page-object-pattern) để làm bài mô phỏng ngay trên trình duyệt.

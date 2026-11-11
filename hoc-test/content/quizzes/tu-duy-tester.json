@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Lập trình viên hỏi \"code có chạy không?\". Tester nên hỏi câu nào?",
+      "answer": 1,
+      "explain": "Tester hỏi cách làm nó sai và ai bị ảnh hưởng. Hai câu hỏi này dẫn tới bộ ca rất khác.",
+      "options": [
+        { "text": "Code đã đẹp chưa?", "why": "Đó là câu hỏi về chất lượng code, không phải tư duy tìm lỗi." },
+        { "text": "Có cách nào làm nó sai không, và ai sẽ bị ảnh hưởng?", "why": "Đúng. Đây là câu hỏi đặt ra rủi ro và người bị ảnh hưởng." },
+        { "text": "Lập trình viên đã kiểm chưa?", "why": "Câu này không giúp tìm cách làm hệ thống sai." },
+        { "text": "Tính năng có đúng deadline không?", "why": "Đó là câu hỏi về tiến độ, không phải về lỗi." }
+      ]
+    },
+    {
+      "q": "Checking khác testing ở điểm nào?",
+      "answer": 2,
+      "explain": "Checking là máy kiểm điều đã biết theo kịch bản. Testing có con người vừa kiểm vừa để ý điều bất thường.",
+      "options": [
+        { "text": "Checking do con người làm, testing do máy làm.", "why": "Ngược lại. Máy làm checking, con người làm testing." },
+        { "text": "Checking và testing giống hệt nhau.", "why": "Sai. Bài tách hai khái niệm này để tránh nhầm lẫn." },
+        { "text": "Checking là máy kiểm điều đã biết theo kịch bản, không phán đoán.", "why": "Đúng. Phần máy làm là checking." },
+        { "text": "Testing là chạy thử ngẫu nhiên không có mục đích.", "why": "Sai. Testing có mục đích, tester phải có lý do rõ ràng khi thử." }
+      ]
+    },
+    {
+      "q": "Thiên kiến nhận thức là gì?",
+      "answer": 0,
+      "explain": "Thiên kiến nhận thức là lối suy nghĩ lệch có hệ thống, người mắc thường không tự biết.",
+      "options": [
+        { "text": "Lối suy nghĩ lệch có hệ thống mà người mắc thường không tự biết.", "why": "Đúng. Tester cũng có thể mắc phải." },
+        { "text": "Lỗi chính tả trong tài liệu kiểm thử.", "why": "Sai. Đó không phải là thiên kiến nhận thức." },
+        { "text": "Một công cụ tự động hóa kiểm thử.", "why": "Sai. Thiên kiến nằm ở cách người nghĩ, không phải ở công cụ." },
+        { "text": "Chỉ xảy ra với người mới học.", "why": "Sai. Bài nói tester không miễn nhiễm, kể cả người có kinh nghiệm." }
+      ]
+    },
+    {
+      "q": "Thiên kiến làm tester có thể làm gì?",
+      "answer": 3,
+      "explain": "Thiên kiến khiến ta chọn ca dễ, bỏ ca khó và tin kết quả đẹp hơn mức thật.",
+      "options": [
+        { "text": "Luôn tìm được mọi lỗi ngay từ đầu.", "why": "Sai. Thiên kiến làm ngược lại, khiến ta bỏ sót lỗi." },
+        { "text": "Viết ca kiểm thử nhanh hơn người khác.", "why": "Sai. Đó không phải tác động của thiên kiến." },
+        { "text": "Tự động hóa toàn bộ việc kiểm thử.", "why": "Sai. Đây không phải hệ quả của thiên kiến." },
+        { "text": "Chọn ca dễ, bỏ qua ca khó và tin kết quả đẹp hơn mức thật.", "why": "Đúng. Đây là những hệ quả bài nêu ra." }
+      ]
+    }
+  ]
+}

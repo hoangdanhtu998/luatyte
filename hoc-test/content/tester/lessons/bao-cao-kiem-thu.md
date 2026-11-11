@@ -85,6 +85,10 @@ Rủi ro 2: Môi trường thử bị gián đoạn 2 ngày.
 
 Báo cáo: "Đã kiểm 95% chức năng, không có lỗi". Trong đó 95% là số ca đã viết, và 30% trong số đó chưa được chạy. Hãy viết lại báo cáo này để người đọc không hiểu sai.
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=bao-cao-kiem-thu). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: báo cáo kiểm thử
 
 - **Test Execution Reports** (SoftwareTestingHelp): http://www.softwaretestinghelp.com/test-execution-report/

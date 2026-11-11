@@ -208,6 +208,10 @@ Ví dụ này cho thấy heuristic là một chuỗi bước có thể làm lạ
 
 **Thuật ngữ trong slide này:** **Phủ quyết định (decision coverage)**: Mức độ phủ mà mỗi điều kiện rẽ nhánh (if, else) đã đi qua cả kết quả đúng và sai ít nhất một lần. · **Giá trị biên (boundary value)**: Các giá trị nằm ở mép của một khoảng hoặc điều kiện, nơi lỗi hay xảy ra vì lập trình viên dễ nhầm < với <=. · **Sự trừu tượng (abstraction)**: Cách biểu diễn một thứ phức tạp bằng một hình đơn giản, ẩn chi tiết bên trong. Một hộp trong sơ đồ là một sự trừu tượng. · **Heuristic**: Cách làm hoặc quy tắc kinh nghiệm để tìm việc cần làm nhanh, không đảm bảo đúng. Xem slide chi tiết trong bài. · **Yêu cầu chưa viết ra (unwritten requirement)**: Điều người dùng hiển nhiên mong đợi nhưng không ai ghi vào tài liệu, ví dụ không gây nguy hiểm, không mất dữ liệu.
 
+## Thực hành: chia vùng với ô Tuổi
+
+Đọc xong phần lý thuyết, mở [trang thực hành](thuc-hanh.html?id=phan-vung-tuoi). Bên trái là app test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu trước, rồi tự làm 5 bài.
+
 ## Đọc thêm: The Testing Mindset
 
 - **List of Cognitive Biases** (Wikipedia): https://en.wikipedia.org/wiki/List_of_cognitive_biases

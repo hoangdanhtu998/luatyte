@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "ex1",
+    "title": "Phi chức năng: Kiểm XSS",
+    "scenario": "Ô nhập họ tên, dữ liệu nhập vào hiển thị ở nhiều nơi",
+    "prompt": "Bạn nhập `<h1>Hoa</h1>` vào ô họ tên. Bạn thấy chữ 'Hoa' to lên. Đây là lỗi gì?",
+    "answer": "Lỗi XSS (cross-site scripting): dữ liệu người dùng nhập bị hiểu thành mã HTML, chạy trên máy người khác.",
+    "explanation": "XSS là lỗi bảo mật phổ biến. Dữ liệu nhập phải được mã hóa thành chữ thuần trước khi hiển thị. Thử nhập thẻ định dạng vô hại như <b>, <h1> để phát hiện."
+  },
+  {
+    "id": "ex2",
+    "title": "Phi chức năng: Kiểm màn hình nhỏ",
+    "scenario": "App đặt lịch khám trên điện thoại",
+    "prompt": "Bạn muốn kiểm giao diện trên màn hình 375px. Bạn làm gì?",
+    "answer": "Mở DevTools, bật chế độ thiết bị (Ctrl+Shift+M), đặt chiều rộng 375px, mở từng màn, kiểm: nội dung bị cắt, nút không bấm được, cuộn ngang, bảng rộng.",
+    "explanation": "Chế độ thiết bị chỉ mô phỏng kích thước, không thay được điện thoại thật. Kiểm tất cả màn hình, đặc biệt là màn Quản trị (thường bị bỏ quên)."
+  }
+]
