@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "ex1",
+    "title": "Báo cáo lỗi: Tiêu đề đúng",
+    "scenario": "Lỗi phí khi nhập tuổi 60",
+    "prompt": "Viết tiêu đề lỗi cho trường hợp: Người đúng 60 tuổi, khám thường, BHYT. Phí bị tính sai.",
+    "answer": "[Đặt lịch] Người đúng 60 tuổi không được giảm 20% phí khám",
+    "explanation": "Tiêu đề cần: [Hành động] + Vấn đề + Sai như thế nào. Ví dụ: [Đặt lịch] Người đúng 60 tuổi không được giảm 20% phí khám."
+  },
+  {
+    "id": "ex2",
+    "title": "Báo cáo lỗi: Rút gọn trước khi báo",
+    "scenario": "Lỗi tính phí tuổi 60",
+    "prompt": "Bạn thấy lỗi: nhập tuổi 60, khám thường, BHYT → phí sai. Đầu tiên nên làm gì trước khi báo?",
+    "answer": "Thử thêm vài phút: tuổi 59? tuổi 61? → xác định lỗi ở chính tuổi 60 không? Khám chuyên khoa? → xác định phụ thuộc vào loại khám?",
+    "explanation": "Thu hẹp lỗi về điều kiện nhỏ nhất: tuổi 60 lỗi nhưng 59, 61 đúng → lỗi chỉ ở ranh giới 60. Câu trả lời chi tiết giúp lập trình viên sửa nhanh hơn."
+  }
+]

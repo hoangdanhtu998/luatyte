@@ -104,6 +104,10 @@ Nếu hàm nhận chữ thay vì số, có thể đi vào một đường đi th
 
 *Nguồn: James Bach, Open Lecture on Software Testing (YouTube ILkT_HV9DVU), phụ đề tự động. Quan điểm của diễn giả, không phải chuẩn chung.*
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=ca-kiem-thu). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Test Design and Execution
 
 - **Test Design Techniques** (video).

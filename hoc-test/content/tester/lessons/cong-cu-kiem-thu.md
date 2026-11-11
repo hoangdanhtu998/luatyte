@@ -96,3 +96,7 @@ Không cần: công cụ tải, vì chưa có vấn đề hiệu năng
 - Công cụ tư duy quan trọng hơn công cụ phần mềm.
 - Công cụ không thay được việc hiểu điều đang kiểm.
 
+
+## Thực hành: chọn công cụ theo vấn đề
+
+Mở [trang thực hành](thuc-hanh.html?id=cong-cu-kiem-thu) để làm bài mô phỏng ngay trên trình duyệt.

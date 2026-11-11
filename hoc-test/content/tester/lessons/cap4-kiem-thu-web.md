@@ -67,6 +67,10 @@ WebDriver điều khiển trình duyệt gốc theo cách người dùng thao t�
 
 *Nguồn: Selenium WebDriver documentation (selenium.dev), mục WebDriver [đã đọc].*
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=kiem-thu-web). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Mục mở rộng (không có mục riêng trong repo)
 
 - Trình bày ma trận trình duyệt: tham khảo **Selenium** và **WebdriverIO** trong mục Test Automation.

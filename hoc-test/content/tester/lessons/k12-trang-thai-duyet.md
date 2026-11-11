@@ -95,3 +95,7 @@ Kiểm: học sinh thấy v4, lịch sử còn v3
 
 **Thuật ngữ trong slide này:** **Phiên bản (version)**: Bản ghi nội dung tại một thời điểm, để có thể quay lại hoặc so sánh.
 
+
+## Thực hành: chuyển trạng thái duyệt
+
+Mở [trang thực hành](thuc-hanh.html?id=k12-trang-thai-duyet) để làm bài mô phỏng ngay trên trình duyệt.

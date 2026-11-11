@@ -86,3 +86,6 @@ Trong bảng ma trận, có bao nhiêu ca mà học sinh được làm việc kh
 
 **Vai trò (role)**
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=phan-quyen). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.

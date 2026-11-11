@@ -1,0 +1,106 @@
+{
+  "id": "k12-trang-thai-duyet",
+  "title": "Thực hành: chuyển trạng thái duyệt",
+  "lesson": "k12-trang-thai-duyet",
+  "app": { "type": "choice", "name": "Quy trình duyệt nội dung (mẫu)" },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Mỗi nội dung có một trạng thái. Chỉ một số chuyển trạng thái là hợp lệ, và kiểm thử nằm ở việc chặn chuyển sai.",
+        "Đọc tình huống bên trái và chọn hợp lệ hay không hợp lệ."
+      ],
+      "scenario": "Tác giả muốn chuyển nội dung từ Nháp thẳng sang Đã duyệt, bỏ qua bước gửi duyệt.",
+      "demo": [
+        { "type": "say", "text": "Không hợp lệ: không được bỏ qua bước duyệt. Đây là ca chặn, không phải ca đạt." }
+      ],
+      "detail": "Một quy trình tốt kiểm cả chuyển được phép lẫn chuyển bị cấm."
+    },
+    {
+      "id": "ca-1",
+      "title": "Tình huống 1",
+      "theory": [],
+      "scenario": "Chuyển từ Chờ duyệt sang Đã duyệt khi quản trị nội dung bấm duyệt.",
+      "task": {
+        "prompt": "Chuyển này có hợp lệ không?",
+        "choices": [
+          { "id": "hop-le", "label": "Hợp lệ" },
+          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+        ],
+        "check": { "answer": "hop-le" },
+        "hints": [
+          "Hỏi: người có quyền duyệt có đang bấm duyệt không?",
+          "Chờ duyệt sang Đã duyệt là bước duyệt bình thường."
+        ],
+        "pass": "Đúng! Quản trị nội dung duyệt thì chuyển này hợp lệ."
+      }
+    },
+    {
+      "id": "ca-2",
+      "title": "Tình huống 2",
+      "theory": [],
+      "scenario": "Đã duyệt sang Nháp khi tác giả sửa nội dung. Bản đang hiển thị vẫn là bản đã duyệt cho đến khi bản mới được duyệt.",
+      "task": {
+        "prompt": "Chuyển này có hợp lệ không?",
+        "choices": [
+          { "id": "hop-le", "label": "Hợp lệ" },
+          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+        ],
+        "check": { "answer": "hop-le" },
+        "hints": [
+          "Sửa nội dung đã duyệt tạo ra một bản mới, không xóa bản đang hiển thị.",
+          "Đã duyệt sang Nháp là hợp lệ khi tác giả sửa."
+        ],
+        "pass": "Đúng! Sửa tạo bản mới, bản đã duyệt vẫn hiển thị."
+      }
+    },
+    {
+      "id": "ca-3",
+      "title": "Tình huống 3",
+      "theory": [],
+      "scenario": "Học sinh bấm để đổi một nội dung từ Chờ duyệt sang Đã duyệt.",
+      "task": {
+        "prompt": "Chuyển này có hợp lệ không?",
+        "choices": [
+          { "id": "hop-le", "label": "Hợp lệ" },
+          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+        ],
+        "check": { "answer": "khong-hop-le" },
+        "hints": [
+          "Ai được phép đổi trạng thái duyệt?",
+          "Học sinh không đổi trạng thái, nên đây là chuyển bị chặn."
+        ],
+        "pass": "Đúng! Học sinh không được đổi trạng thái."
+      }
+    },
+    {
+      "id": "ca-4",
+      "title": "Tình huống 4",
+      "theory": [],
+      "scenario": "Tác giả gửi lại nội dung từ Yêu cầu sửa sang Chờ duyệt sau khi đã sửa.",
+      "task": {
+        "prompt": "Chuyển này có hợp lệ không?",
+        "choices": [
+          { "id": "hop-le", "label": "Hợp lệ" },
+          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+        ],
+        "check": { "answer": "hop-le" },
+        "hints": [
+          "Đây là vòng sửa và gửi lại bình thường.",
+          "Yêu cầu sửa sang Chờ duyệt là bước tác giả gửi lại."
+        ],
+        "pass": "Đúng! Tác giả gửi lại sau khi sửa là hợp lệ."
+      }
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Vẽ sơ đồ trạng thái, liệt kê chuyển hợp lệ và chuyển bị cấm, rồi kiểm cả hai.",
+        "Kiểm ai được phép chuyển: tác giả, quản trị nội dung, hay học sinh."
+      ],
+      "detail": "Chuyển bị cấm như bỏ qua duyệt hay học sinh đổi trạng thái là chỗ dễ lọt lỗi nhất."
+    }
+  ]
+}

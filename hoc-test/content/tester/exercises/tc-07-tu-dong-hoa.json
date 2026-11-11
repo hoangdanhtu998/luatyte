@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "ex1",
+    "title": "Tự động hóa: Chọn ca đáng tự động hóa",
+    "scenario": "Bộ ca kiểm thử cho app đặt lịch",
+    "prompt": "Bạn có bảng quyết định phí 12 tổ hợp, các ca biên ngày khám, các ca API. Bạn nên tự động hóa ca nào?",
+    "answer": "Ca phí: kiểm 12 tổ hợp qua API thay vì qua giao diện. Ca ngày khám: kiểm biên ngày qua API. Ca dữ liệu sai qua API.",
+    "explanation": "Ca đáng tự động hóa khi có: kết quả mong đợi xác định, rủi ro cao, chạy nhiều lần. Ca phí, ca ngày khám, ca API là tự động hóa được. Ca khám phá không nên tự động hóa."
+  }
+]

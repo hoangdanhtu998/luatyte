@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thực hành · Học kiểm thử</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .th-head { margin: 4px 0 14px; }
+    .th-head h1 { margin: 6px 0 4px; font-size: 24px; }
+    .th-count { margin: 0; color: var(--muted); font-size: 14px; }
+    .th-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 900px) { .th-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); align-items: start; } }
+    .th-app, .th-chat { display: grid; gap: 12px; align-content: start; min-width: 0; }
+    .panel-title { font-size: 13px; color: var(--muted); margin: 0; }
+
+    .form-mock { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fbfcfe; }
+    .form-mock label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .form-mock input { width: 100%; max-width: 240px; font-size: 18px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; }
+    .form-mock input:disabled { background: #eef1f6; }
+    .form-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .result { margin-top: 10px; font-weight: 700; min-height: 1.4em; }
+    .result.ok { color: #2e8b57; }
+    .result.err { color: var(--brick); }
+    .rule-text { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+
+    .axis-box { border-radius: 12px; border: 1px solid var(--line); padding: 10px; }
+    .axis-box svg { width: 100%; height: auto; display: block; }
+    .band-label { font-size: 13px; fill: var(--ink); }
+    .tick-label { font-size: 13px; fill: var(--muted); }
+    .marker-text { font-size: 14px; font-weight: 800; fill: var(--navy); }
+
+    .log-title { font-size: 15px; margin: 4px 0 0; }
+    .log-list { margin: 0; padding-left: 20px; font-size: 14px; max-height: 180px; overflow-y: auto; }
+    .log-list li { margin-bottom: 4px; }
+
+    .chat-log { display: flex; flex-direction: column; gap: 10px; max-height: 520px; overflow-y: auto; padding-right: 4px; }
+    .msg { padding: 10px 14px; border-radius: 14px; line-height: 1.5; background: #eef3fb; align-self: stretch; }
+    .msg .who { display: block; font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; }
+    .controls .btn[disabled], .form-row .btn[disabled] { opacity: .45; cursor: not-allowed; }
+    .controls .btn[hidden] { display: none; }
+    .th-appbody { display: grid; gap: 12px; }
+    .field { display: grid; gap: 6px; }
+    .field > label { font-weight: 700; }
+    .field input, .field select, .field textarea { width: 100%; max-width: 420px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; background: var(--paper); }
+    .field textarea { max-width: none; }
+    .form-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .form-row .field { min-width: 120px; }
+    .code-box { background: var(--code-bg); color: var(--code-ink); border-radius: 12px; padding: 12px 14px; font-family: Consolas, monospace; font-size: 14px; white-space: pre; overflow-x: auto; }
+    .code-line { padding: 2px 6px; border-radius: 4px; }
+    .code-line.hit { background: rgba(240,138,75,.35); }
+    .coverage { font-size: 14px; color: var(--muted); }
+    .scenario { font-size: 16px; line-height: 1.5; padding: 12px 14px; border-radius: 12px; background: #fbfcfe; border: 1px solid var(--line); min-height: 3em; }
+    .choice-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .choice-btns .btn[disabled] { opacity: .45; cursor: not-allowed; }
+    .report-form { display: grid; gap: 10px; }
+    .matrix-list { display: grid; gap: 8px; }
+    .matrix-item { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+    .matrix-item input { width: 18px; height: 18px; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html">Học kiểm thử</a>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="lesson.html?track=tester&id=tu-duy-tester">Bài Tư duy tester</a>
+  </nav>
+</header>
+
+<main>
+  <div id="th-root"><p>Đang tải bài thực hành…</p></div>
+</main>
+
+<script src="assets/thuc-hanh.js"></script>
+</body>
+</html>

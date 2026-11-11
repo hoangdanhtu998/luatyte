@@ -146,3 +146,7 @@ Viết charter cho việc khám phá chức năng tìm kiếm sản phẩm trong
 
 **Thuật ngữ trong slide này:** **Charter (điều lệ phiên)**: Một câu mô tả mục tiêu và phạm vi của một phiên khám phá. Không ghi trước lỗi cần tìm.
 
+
+## Thực hành: khám phá hay theo kịch bản
+
+Mở [trang thực hành](thuc-hanh.html?id=kham-pha-exploratory) để làm bài mô phỏng ngay trên trình duyệt.

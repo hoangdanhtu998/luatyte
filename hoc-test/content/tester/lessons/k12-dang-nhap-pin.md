@@ -76,3 +76,7 @@ Nếu không có giới hạn, và mỗi lần thử mất 0,2 giây, dò hết 
 
 **Khóa tạm (lockout)**
 
+
+## Thực hành: giới hạn thử PIN
+
+Mở [trang thực hành](thuc-hanh.html?id=k12-dang-nhap-pin) để làm bài mô phỏng ngay trên trình duyệt.

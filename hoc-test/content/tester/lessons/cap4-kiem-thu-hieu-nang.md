@@ -78,6 +78,10 @@ Một kịch bản tải gồm số người dùng ảo, cách tăng dần và t
 
 **Thuật ngữ trong slide này:** **Phân vị 95 (p95)**: Ngưỡng mà 95% yêu cầu nhanh hơn. Phản ánh trải nghiệm của người chậm nhất tốt hơn trung bình.
 
+## Thực hành: làm ngay trên app mô phỏng
+
+Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=hieu-nang). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
 ## Đọc thêm: Mục mở rộng (không có mục riêng trong repo)
 
 - Repo không có mục hiệu năng riêng. Tham khảo tài liệu công cụ tải trong mục Test Automation.

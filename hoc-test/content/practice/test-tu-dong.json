@@ -1,0 +1,102 @@
+{
+  "id": "test-tu-dong",
+  "title": "Thực hành: ca nào nên tự động hóa",
+  "lesson": "cap4-test-tu-dong",
+  "app": { "type": "choice", "name": "Danh sách ca của hệ thống đặt lịch (mẫu)" },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Một test tự động gồm ba phần: chuẩn bị dữ liệu, thực hiện hành động, rồi so kết quả với kết quả mong đợi.",
+        "Không phải ca nào cũng nên tự động hóa. Hãy chọn ca chạy lặp lại được và kết quả so được bằng máy."
+      ],
+      "detail": "Tiêu chí: chạy lại nhiều lần, kết quả xác định, rủi ro cao nếu hỏng, và phần được kiểm ít thay đổi."
+    },
+    {
+      "id": "ca-1",
+      "title": "Tình huống 1",
+      "theory": [],
+      "scenario": "Hàm kiểm năm nhuận cần chạy trên mỗi bản dựng, và kết quả đúng hay sai so được bằng máy.",
+      "task": {
+        "prompt": "Ca này nên tự động hóa không?",
+        "choices": [
+          { "id": "nen", "label": "Nên tự động hóa" },
+          { "id": "khong", "label": "Không nên" }
+        ],
+        "check": { "answer": "nen" },
+        "hints": [
+          "Hỏi: ca có phải chạy lại nhiều lần không? Kết quả có so được bằng máy không?",
+          "Chạy lặp lại được và kết quả xác định, nên tự động hóa."
+        ],
+        "pass": "Đúng! Ca lặp lại nhiều lần và kết quả xác định là ứng viên tốt."
+      }
+    },
+    {
+      "id": "ca-2",
+      "title": "Tình huống 2",
+      "theory": [],
+      "scenario": "Người kiểm đang khám phá một giao diện mới trong 30 phút, đổi hướng theo điều vừa thấy.",
+      "task": {
+        "prompt": "Ca này nên tự động hóa không?",
+        "choices": [
+          { "id": "nen", "label": "Nên tự động hóa" },
+          { "id": "khong", "label": "Không nên" }
+        ],
+        "check": { "answer": "khong" },
+        "hints": [
+          "Giá trị của phiên khám phá nằm ở việc người kiểm đổi hướng theo điều mới thấy.",
+          "Phiên khám phá không có kết quả mong đợi cố định, nên không nên tự động hóa."
+        ],
+        "pass": "Đúng! Khám phá cần người suy nghĩ, không phải kịch bản cố định."
+      }
+    },
+    {
+      "id": "ca-3",
+      "title": "Tình huống 3",
+      "theory": [],
+      "scenario": "Kiểm đăng nhập đúng ba bước, chạy lại sau mỗi lần sửa code.",
+      "task": {
+        "prompt": "Ca này nên tự động hóa không?",
+        "choices": [
+          { "id": "nen", "label": "Nên tự động hóa" },
+          { "id": "khong", "label": "Không nên" }
+        ],
+        "check": { "answer": "nen" },
+        "hints": [
+          "Ca này chạy lại liên tục và có kết quả đúng sai rõ ràng.",
+          "Đăng nhập là luồng ổn định và rủi ro cao, nên tự động hóa."
+        ],
+        "pass": "Đúng! Ca chạy lại thường xuyên là nên tự động."
+      }
+    },
+    {
+      "id": "ca-4",
+      "title": "Tình huống 4",
+      "theory": [],
+      "scenario": "Đánh giá bố cục xem chữ có dễ đọc không, trong khi trang đang được thiết kế lại mỗi tuần.",
+      "task": {
+        "prompt": "Ca này nên tự động hóa không?",
+        "choices": [
+          { "id": "nen", "label": "Nên tự động hóa" },
+          { "id": "khong", "label": "Không nên" }
+        ],
+        "check": { "answer": "khong" },
+        "hints": [
+          "Đánh giá bằng mắt và giao diện đang đổi liên tục.",
+          "Kịch bản sẽ vỡ mỗi tuần, nên giữ việc này cho người kiểm."
+        ],
+        "pass": "Đúng! Đánh giá bằng mắt và giao diện đổi liên tục không hợp tự động."
+      }
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Tự động hóa là chọn ca đáng tự động trước, rồi mới viết chúng thế nào.",
+        "Ca đỏ vì sản phẩm sai nghĩa là có lỗi thật. Đừng sửa ca cho xanh."
+      ],
+      "detail": "Test tự động không thay thế kiểm thử. Nó chỉ kiểm lại điều bạn đã nghĩ ra."
+    }
+  ]
+}
