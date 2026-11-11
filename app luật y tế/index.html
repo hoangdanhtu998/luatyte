@@ -77,7 +77,9 @@
 <body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
 <div class="wrap">
   <header class="hero">
-    <div class="theme-row"><label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
+    <div class="theme-row">
+      <button id="dark-toggle" class="btn ghost" style="padding:6px 12px;font-size:13px" title="Đổi chế độ sáng/tối">🌙 Tối</button>
+      <label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
   <div class="hero-top">
       <div class="brand">
         <img class="logo" src="icon.svg" alt="" width="48" height="48">
@@ -722,6 +724,7 @@ function renderLaws(){
           <a class="linkbtn" href="${TS(l.so)}" target="_blank" rel="noopener">Mở toàn văn ↗</a>
           <button class="linkbtn" type="button" data-askabout="${l.id}">Hỏi trợ lý về luật này</button>
           <button class="linkbtn" type="button" data-quizabout="${l.id}">Luyện câu hỏi</button>
+          <button class="linkbtn" type="button" onclick="window.shareLesson('${l.id}', '${esc(l.name).replace(/'/g, "\\'")}')">Chia sẻ ↗</button>
         </div>
       </div>
     </details>`).join("") : `<p class="intro">Không tìm thấy luật phù hợp. Thử từ khóa khác như "thuốc" hoặc "BHYT".</p>`;
@@ -2102,3 +2105,69 @@ fetch("/api/me",{cache:"no-store"}).then(r=>{ if(r.status===404||r.status===405|
 <script src="js/theme.js"></script>
 </body>
 </html>
+<script>
+/* Dark mode toggle */
+(function(){
+  var btn = document.getElementById('dark-toggle');
+  var KEY = 'luatyte-dark-mode';
+  function apply(dark) {
+    if (dark) {
+      document.documentElement.setAttribute('data-theme', 'ink');
+      btn.textContent = '☀️ Sáng';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      btn.textContent = '🌙 Tối';
+    }
+  }
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved === 'true') apply(true);
+  } catch(e) {}
+  btn.addEventListener('click', function() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'ink';
+    apply(!isDark);
+    try { localStorage.setItem(KEY, !isDark); } catch(e) {}
+  });
+})();
+</script>
+<script>
+/* Bookmark/Favorite lessons */
+var BOOKMARKS_KEY = 'luatyte-bookmarks';
+window.addBookmark = function(id, title) {
+  try {
+    var b = JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]');
+    if (!b.find(function(x){ return x.id === id; })) {
+      b.push({id: id, title: title, date: new Date().toISOString()});
+      localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(b));
+      alert('Đã thêm vào yêu thích!');
+    } else {
+      alert('Đã có trong danh sách yêu thích!');
+    }
+  } catch(e) {}
+};
+window.getBookmarks = function() {
+  try { return JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]'); } catch(e) { return []; }
+};
+window.removeBookmark = function(id) {
+  try {
+    var b = JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]');
+    b = b.filter(function(x){ return x.id !== id; });
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(b));
+  } catch(e) {}
+};
+</script>
+<script>
+/* Share lesson link */
+window.shareLesson = function(id, title) {
+  var url = window.location.origin + '/bai-giang.html?lesson=' + id;
+  if (navigator.share) {
+    navigator.share({title: title, url: url}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(url).then(function() {
+      alert('Đã copy link: ' + url);
+    }).catch(function() {
+      prompt('Copy link này:', url);
+    });
+  }
+};
+</script>
