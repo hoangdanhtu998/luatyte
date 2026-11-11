@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard · Luật Y tế</title>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="lyt-design.css">
+<style>
+.admin-wrap{max-width:1040px;margin:0 auto;padding:var(--space-lg) var(--space-md)}
+.admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-lg);padding-bottom:var(--space-md);border-bottom:1px solid var(--color-rule)}
+.admin-header h1{font-size:1.5rem;margin:0}
+.admin-section{margin-bottom:var(--space-xl);padding:var(--space-md);border:1px solid var(--color-rule);border-radius:var(--radius-card)}
+.admin-section h2{font-size:1.1rem;margin:0 0 var(--space-md);color:var(--color-muted)}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md)}
+.admin-stat{padding:var(--space-md);background:var(--color-paper-2);border:1px solid var(--color-rule);border-radius:var(--radius-card)}
+.admin-stat .value{font-size:2rem;font-weight:700;color:var(--color-ink)}
+.admin-stat .label{font-size:.875rem;color:var(--color-muted);margin-top:4px}
+.admin-table{width:100%;border-collapse:collapse;font-size:.875rem}
+.admin-table th,.admin-table td{padding:var(--space-xs) var(--space-sm);text-align:left;border-bottom:1px solid var(--color-rule)}
+.admin-table th{font-weight:600;color:var(--color-muted);background:var(--color-paper-2)}
+.admin-table tr:hover{background:var(--color-paper-2)}
+.btn-admin{padding:var(--space-xs) var(--space-md);border-radius:var(--radius-card);border:1px solid var(--color-rule);background:var(--color-paper);cursor:pointer;font-size:.875rem}
+.btn-admin:hover{background:var(--color-paper-2)}
+.btn-admin.primary{background:var(--color-ink);color:var(--color-paper);border-color:var(--color-ink)}
+.btn-admin.primary:hover{background:var(--color-ink-2)}
+.sync-status{display:inline-flex;align-items:center;gap:8px;padding:var(--space-xs) var(--space-md);border-radius:var(--radius-pill);font-size:.875rem}
+.sync-status.ok{background:var(--color-accent-soft);color:var(--color-accent-ink)}
+.sync-status.error{background:var(--color-error-soft);color:var(--color-error-ink)}
+.export-area{width:100%;min-height:200px;padding:var(--space-sm);border:1px solid var(--color-rule);border-radius:var(--radius-card);font-family:monospace;font-size:.8125rem}
+</style>
+</head>
+<body>
+<nav aria-label="Chuyển khu học"><a href="index.html">← Về trang chính</a></nav>
+<main class="admin-wrap">
+  <div class="admin-header">
+    <h1>🛠️ Admin Dashboard</h1>
+    <span id="sync-badge" class="sync-status ok">● Đã sync lần cuối: ---</span>
+  </div>
+
+  <!-- THỐNG KÊ TỔNG QUAN -->
+  <section class="admin-section">
+    <h2>📊 Thống kê tổng quan</h2>
+    <div class="admin-stats">
+      <div class="admin-stat"><div class="value" id="stat-laws">--</div><div class="label">Văn bản luật</div></div>
+      <div class="admin-stat"><div class="value" id="stat-lessons">--</div><div class="label">Bài học</div></div>
+      <div class="admin-stat"><div class="value" id="stat-quizzes">--</div><div class="label">Câu hỏi</div></div>
+      <div class="admin-stat"><div class="value" id="stat-users">--</div><div class="label">Người dùng (đơn vị)</div></div>
+    </div>
+  </section>
+
+  <!-- QUẢN LÝ LUẬT -->
+  <section class="admin-section">
+    <h2>📚 Quản lý văn bản luật</h2>
+    <table class="admin-table" id="laws-table">
+      <thead><tr><th>ID</th><th>Tiêu đề</th><th>Danh mục</th><th>Trạng thái</th><th>Ngày kiểm</th><th>Hành động</th></tr></thead>
+      <tbody id="laws-tbody"></tbody>
+    </table>
+  </section>
+
+  <!-- AUTO SYNC -->
+  <section class="admin-section">
+    <h2>🔄 Auto Sync luật mới</h2>
+    <p style="color:var(--color-muted);font-size:.875rem;margin-bottom:var(--space-md)">
+      Kiểm tra và cập nhật laws.json từ nguồn GitHub. Tự động phát hiện luật mới hoặc thay đổi.
+    </p>
+    <button class="btn-admin primary" onclick="window.adminSync()">Kiểm tra sync ngay</button>
+    <div id="sync-log" style="margin-top:var(--space-md);font-size:.8125rem;color:var(--color-muted)"></div>
+  </section>
+
+  <!-- EXPORT/IMPORT PROGRESS -->
+  <section class="admin-section">
+    <h2>💾 Backup & Restore tiến độ</h2>
+    <div style="display:flex;gap:var(--space-sm);margin-bottom:var(--space-md)">
+      <button class="btn-admin primary" onclick="window.exportProgress()">Xuất progress</button>
+      <button class="btn-admin" onclick="document.getElementById('import-file').click()">Nhập progress</button>
+      <input type="file" id="import-file" accept=".json" style="display:none" onchange="window.importProgress(this)">
+    </div>
+    <textarea class="export-area" id="progress-export" placeholder="Nhấn nút Xuất để xem dữ liệu..."></textarea>
+  </section>
+
+  <!-- NGÔN NGỮ -->
+  <section class="admin-section">
+    <h2>🌐 Đổi ngôn ngữ</h2>
+    <select id="lang-select" onchange="window.switchLang(this.value)" style="padding:var(--space-xs);border-radius:var(--radius-card);border:1px solid var(--color-rule)">
+      <option value="vi">Tiếng Việt</option>
+      <option value="en">English</option>
+    </select>
+    <p style="color:var(--color-muted);font-size:.875rem;margin-top:var(--space-sm)">Đang trong giai đoạn phát triển</p>
+  </section>
+</main>
+<script src="js/theme.js"></script>
+<script>
+// Admin functions
+var ADMIN_DATA = {
+  laws: [],
+  quizzes: [],
+  lessons: 0,
+  lastSync: null
+};
+
+async function loadAdminData() {
+  try {
+    const [lawsRes, quizRes] = await Promise.all([
+      fetch('data/laws.json'),
+      fetch('data/quiz.json')
+    ]);
+    ADMIN_DATA.laws = await lawsRes.json();
+    ADMIN_DATA.quizzes = await quizRes.json();
+    ADMIN_DATA.lessons = ADMIN_DATA.laws.length * 4; // ước tính
+    renderStats();
+    renderLawsTable();
+  } catch(e) {
+    console.error('Load admin data failed:', e);
+  }
+}
+
+function renderStats() {
+  document.getElementById('stat-laws').textContent = ADMIN_DATA.laws.length;
+  document.getElementById('stat-lessons').textContent = ADMIN_DATA.lessons;
+  document.getElementById('stat-quizzes').textContent = ADMIN_DATA.quizzes.length;
+  document.getElementById('stat-users').textContent = '1'; // local only
+  
+  if (ADMIN_DATA.lastSync) {
+    document.getElementById('sync-badge').textContent = 
+      '● Đã sync: ' + new Date(ADMIN_DATA.lastSync).toLocaleString('vi-VN');
+  }
+}
+
+function renderLawsTable() {
+  const tbody = document.getElementById('laws-tbody');
+  tbody.innerHTML = ADMIN_DATA.laws.slice(0, 20).map(l => `
+    <tr>
+      <td>${l.id}</td>
+      <td>${l.name ? l.name.substring(0, 50) + '...' : ''}</td>
+      <td>${l.cat || '-'}</td>
+      <td><span class="${l.status === 'on' ? 'ok' : 'no'}">${l.status === 'on' ? 'Hiệu lực' : 'Hết hiệu lực'}</span></td>
+      <td>${l.verify_date || '-'}</td>
+      <td><button class="btn-admin" onclick="window.viewLaw('${l.id}')">Xem</button></td>
+    </tr>
+  `).join('');
+}
+
+async function adminSync() {
+  const log = document.getElementById('sync-log');
+  log.textContent = 'Đang kiểm tra sync...';
+  
+  try {
+    // Try to fetch from GitHub raw content
+    const res = await fetch('https://raw.githubusercontent.com/hoangdanhtu998/luatyte/main/app%20lu%E1%BA%A5t%20y%20t%E1%BB%91/data/laws.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    
+    const remoteData = await res.json();
+    const localLen = ADMIN_DATA.laws.length;
+    const remoteLen = remoteData.length;
+    
+    if (remoteLen > localLen) {
+      log.innerHTML = '<span style="color:var(--color-accent)">✓ Phát hiện ' + (remoteLen - localLen) + ' văn bản mới!</span>';
+      ADMIN_DATA.lastSync = new Date().toISOString();
+      renderStats();
+    } else {
+      log.textContent = '✓ Dữ liệu đã đồng bộ.';
+    }
+  } catch(e) {
+    log.innerHTML = '<span style="color:var(--color-error)">⚠ Không kết nối được: ' + e.message + '</span>';
+  }
+}
+
+function exportProgress() {
+  const keys = ['luatyte-slides-progress', 'luatyte-baigiang-completed', 'luatyte-stats'];
+  const data = {};
+  keys.forEach(k => {
+    try { data[k] = localStorage.getItem(k)
