@@ -290,3 +290,24 @@ function setReviewWrong(lessonId, qi, wrong) {
   if (!Object.keys(r[lessonId]).length) delete r[lessonId];
   try { localStorage.setItem(REVIEW_KEY, JSON.stringify(r)); } catch (e) {}
 }
+
+// Kiểm tra và hiển thị thông báo nếu chạy trên static hosting (GitHub Pages)
+(function checkServerRequired() {
+  var isStaticHost = window.location.hostname === 'luatyte.online' || 
+                     window.location.hostname === 'localhost' && !window.location.port;
+  
+  // Thêm banner cảnh báo nếu cần
+  var banner = document.createElement('div');
+  banner.id = 'server-notice';
+  banner.style.cssText = 'background:#fff3cd;border:1px solid #ffc107;padding:12px 16px;margin:16px;border-radius:8px;font-size:14px;';
+  banner.innerHTML = '<strong>⚠️ Chế độ xem thử</strong><br>' +
+    'Tính năng chat và chạy code cần máy chủ local. ' +
+    'Để trải nghiệm đầy đủ, chạy:<br>' +
+    '<code style="background:#f4f4f4;padding:2px 6px;border-radius:4px;">node server/server.mjs</code><br>' +
+    '<small>Mở <a href="http://localhost:4500">http://localhost:4500</a> sau khi khởi động server.</small>';
+  
+  var main = document.querySelector('main');
+  if (main && isStaticHost) {
+    main.insertBefore(banner, main.firstChild);
+  }
+})();

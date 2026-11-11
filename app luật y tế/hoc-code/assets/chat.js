@@ -26,7 +26,7 @@
   function add(cls, text) {
     const d = document.createElement('div');
     d.className = 'msg ' + cls;
-    d.textContent = text;
+    d.innerHTML = text; // Cho phép HTML cho error messages
     log.appendChild(d);
     log.scrollTop = log.scrollHeight;
     return d;
@@ -79,7 +79,11 @@
       (data.passages || []).forEach(addPassage);
     } catch (err) {
       pending.remove();
-      add('bot error', 'Không kết nối được máy chủ. Kiểm tra server đang chạy (node server/server.mjs) và mở trang qua http://localhost:4500.');
+      add('bot error', `<strong>Cần máy chủ để chat AI</strong><br>
+        Chạy lệnh sau trong terminal để khởi động server:<br>
+        <code style="background:#f0f0f0;padding:2px 6px;border-radius:4px;">cd "app luật y tế" && node server/server.mjs</code><br><br>
+        Sau đó mở <a href="http://localhost:4400">http://localhost:4400</a>.<br>
+        <small>Hoặc xem nội dung cơ bản tại <a href="https://luatyte.online">luatyte.online</a> (không có chat AI).</small>`);
     }
   });
 })();
