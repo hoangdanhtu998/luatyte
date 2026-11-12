@@ -151,18 +151,14 @@ function testCaseRows(items, requirementsById) {
         }
       },
     }, optionsOf(STATUS_LABEL, item.status));
-    const resultSelect = el('select', {
-      'aria-label': `Kết quả ${item.id}`,
-      onchange: async (event) => {
-        const next = event.target.value;
-        try {
-          await api(`/api/testcases/${item.id}`, { method: 'PATCH', body: { result: next } });
-          announce(`${item.id} kết quả: ${RESULT_LABEL[next]}`);
-        } catch (err) {
-          announce(`Lỗi: ${err.message}`);
-        }
-      },
-    }, optionsOf(RESULT_LABEL, item.result ?? 'not_run'));
+    // Kết quả chỉ do kiểm thử tự động ghi. Không có ô sửa tay.
+    const resultText = item.automationKey
+      ? `${RESULT_LABEL[item.result ?? 'not_run']}${item.autoResultAt ? ' (tự động)' : ' (chưa chạy)'}`
+      : 'Chưa có kiểm thử tự động';
+    const resultSelect = el('span', {
+      class: 'auto-result',
+      title: 'Kết quả do kiểm thử tự động ghi, không sửa tay',
+    }, resultText);
     const reqTitle = (item.requirementIds ?? []).map((id) => requirementsById.get(id) ?? id).join(', ') || '—';
     return el('tr', null,
       el('td', null, item.id),
@@ -709,6 +705,7 @@ async function renderProjects() {
   const typeSelect = el('select', null, optionsOf(SOURCE_TYPE_LABEL, 'manual'));
   const refInput = el('input', { type: 'text', autocomplete: 'off', placeholder: 'https://github.com/owner/repo' });
   const ownership = el('input', { type: 'checkbox', name: 'ownershipConfirmed', id: 'pj-ownershipConfirmed', 'aria-describedby': 'pj-ownershipConfirmed-error' });
+  const autoTests = el('input', { type: 'checkbox', name: 'autoTests', id: 'pj-autoTests' });
   const submit = el('button', { type: 'submit' }, 'Thêm dự án');
   const form = el('form', { class: 'card', id: 'pj-form', novalidate: true, 'aria-labelledby': 'pj-form-title' },
     el('h2', { id: 'pj-form-title', class: 'section-title' }, 'Thêm dự án'),
@@ -720,9 +717,12 @@ async function renderProjects() {
       el('div', { class: 'field' },
         el('label', { for: 'pj-ownershipConfirmed' }, ownership, ' Tôi có quyền kiểm thử domain này (bắt buộc với domain)'),
         el('p', { class: 'field-error', id: 'pj-ownershipConfirmed-error' })),
+      el('div', { class: 'field' },
+        el('label', { for: 'pj-autoTests' }, autoTests,
+          ' Cho bot cài và chạy test của dự án zip/GitHub sau khi quét virus sạch (mã lạ có thể nguy hiểm, chỉ bật khi tin nguồn)')),
     ),
     el('div', { class: 'form-actions' }, submit),
-    el('p', { class: 'muted' }, 'Dự án GitHub hoặc domain: mình chỉ đọc và kiểm tra. Cài đặt hoặc chạy test cần bạn tích xác nhận ở trang dự án.'),
+    el('p', { class: 'muted' }, 'Mã nguồn được quét virus trước khi đọc. Chạy test chỉ khi bạn bật tùy chọn trên.'),
   );
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -733,6 +733,7 @@ async function renderProjects() {
         sourceType: typeSelect.value,
         sourceRef: refInput.value,
         ownershipConfirmed: ownership.checked,
+        autoTests: autoTests.checked,
       } });
       showFormErrors(form, 'pj', summary, {});
       announce(`Đã thêm ${created.id}`);
@@ -1118,6 +1119,8 @@ function renderAiSettings(settings) {
   const modelInput = el('input', { id: 'ai-model', type: 'text', maxlength: 100, value: settings.model, list: 'ai-model-list' });
   const keyInput = el('input', { id: 'ai-key', type: 'password', autocomplete: 'off', placeholder: 'Dán key mới; để trống để giữ key cũ' });
   const keyStatus = el('p', { class: 'muted', id: 'ai-key-status' }, keyStatusText(settings, settings.provider));
+  const consent = el('input', { type: 'checkbox', id: 'ai-consent' });
+  consent.checked = settings.allowCodeToAi === true;
   const message = el('p', { class: 'muted', role: 'status', id: 'ai-settings-status' });
 
   providerPick.addEventListener('change', () => {
@@ -1147,12 +1150,14 @@ function renderAiSettings(settings) {
     el('div', { class: 'field' }, el('label', { for: 'ai-base-url' }, 'Đường dẫn API'), baseUrlInput),
     el('div', { class: 'field' }, el('label', { for: 'ai-model' }, 'Model'), modelInput, modelList),
     el('div', { class: 'field' }, el('label', { for: 'ai-key' }, 'API key'), keyInput, keyStatus),
+    el('div', { class: 'field' },
+      el('label', { for: 'ai-consent' }, consent, ' Cho AI đọc mã dự án để tự tích checklist (trích đoạn mã được gửi tới provider đã chọn)')),
     el('div', { class: 'form-actions' },
       el('button', { type: 'submit' }, 'Lưu cấu hình'),
       el('button', {
         type: 'button',
         onclick: () => send({
-          provider: providerPick.value, baseUrl: baseUrlInput.value, model: modelInput.value, clearKey: true,
+          provider: providerPick.value, baseUrl: baseUrlInput.value, model: modelInput.value, clearKey: true, allowCodeToAi: consent.checked,
         }),
       }, 'Xóa key provider này')),
     message);
@@ -1164,6 +1169,7 @@ function renderAiSettings(settings) {
       baseUrl: baseUrlInput.value,
       model: modelInput.value,
       apiKey: keyInput.value,
+      allowCodeToAi: consent.checked,
     });
   });
   return form;
@@ -1232,9 +1238,257 @@ async function renderAssistant(projectId = 'PRJ-001') {
   );
 }
 
+// ---------- Tổng: một trang cho toàn bộ tiến độ (dữ liệu thật) ----------
+
+const TONG_STAGE_LABEL = { pass: 'Đạt', partial: 'Đang làm', not_run: 'Chưa làm' };
+const STAGE_CLASS = { pass: 'tong-pass', partial: 'tong-partial', not_run: 'tong-todo' };
+const WORKFLOW_LABEL = { source: 'Nguồn', clone: 'Lấy mã', install: 'Cài đặt', smoke: 'Kiểm tra nhanh', tests: 'Chạy test', report: 'Báo cáo' };
+
+function tongSection(title, id, ...children) {
+  return el('section', { class: 'tong-section', 'aria-labelledby': id },
+    el('h2', { id, class: 'section-title' }, title), ...children);
+}
+
+// ---------- Pipeline CI: từng bước, trạng thái thật, nút chạy và tự cập nhật ----------
+
+const CI_ICON = { pending: '○', running: '◐', ok: '✓', fail: '✗' };
+const CI_TEXT = { pending: 'Chờ', running: 'Đang chạy', ok: 'Đạt', fail: 'Lỗi' };
+const CI_POLL_MS = 3000;
+
+async function loadCi() {
+  const [progress, latest] = await Promise.all([
+    api('/api/ci/progress').catch(() => null),
+    api('/api/ci/latest').catch(() => null),
+  ]);
+  return { progress, latest };
+}
+
+const CI_STEP_LABELS = [
+  ['install', 'Cài đặt'],
+  ['syntax', 'Kiểm cú pháp'],
+  ['e2e', 'E2E, API, UI, bảo mật'],
+  ['sync', 'Đồng bộ kết quả vào test case'],
+  ['a11y', 'Accessibility (axe-core)'],
+  ['lhci', 'Hiệu năng (Lighthouse CI)'],
+  ['report', 'Báo cáo và xuất HTML'],
+];
+
+// Ưu tiên tiến độ đang chạy, rồi kết quả lần chạy gần nhất, cuối cùng là khung 7 bước chờ.
+function ciSteps(progress, latest) {
+  if (progress?.steps) return progress.steps;
+  if (latest?.stages) return latest.stages.map((s) => ({ key: s.key, label: s.label, status: s.ok ? 'ok' : 'fail', detail: s.detail }));
+  return CI_STEP_LABELS.map(([key, label]) => ({ key, label, status: 'pending', detail: '' }));
+}
+
+function ciSection(progress, latest) {
+  const steps = ciSteps(progress, latest);
+  const running = progress?.running === true;
+  const verdict = running
+    ? 'Đang chạy… các bước cập nhật tự động'
+    : latest ? `Lần chạy gần nhất: ${latest.ok ? 'ĐẠT' : 'KHÔNG ĐẠT'} (${latest.runAt ?? ''})` : 'Chưa có lần chạy CI';
+  const status = el('p', { id: 'ci-status', class: 'meta', role: 'status' }, verdict);
+  const button = el('button', { class: 'btn', type: 'button', disabled: running }, 'Chạy CI');
+  const summary = latest?.summary && !running
+    ? el('pre', { class: 'ci-summary' }, latest.summary)
+    : null;
+  const section = tongSection('Pipeline CI', 'tong-ci-title',
+    el('div', { class: 'tong-runner-row' }, button),
+    status,
+    ...steps.map((s) => el('div', { class: 'tong-item' },
+      el('span', { class: 'tong-badge' }, `${CI_ICON[s.status] ?? '○'} ${CI_TEXT[s.status] ?? s.status}`),
+      el('span', { class: 'tong-name' }, s.label),
+      el('span', { class: 'tong-note' }, s.detail ?? ''))),
+    ...(summary ? [summary] : []));
+  button.onclick = () => startCi(section, status, button);
+  return section;
+}
+
+// Gửi lệnh chạy, rồi hỏi tiến độ mỗi vài giây cho tới khi xong.
+async function startCi(section, status, button) {
+  button.disabled = true;
+  status.textContent = 'Đang gửi lệnh chạy…';
+  try {
+    await api('/api/ci/run', { method: 'POST' });
+  } catch (err) {
+    status.textContent = `Lỗi: ${err.message}`;
+    button.disabled = false;
+    return;
+  }
+  let current = section;
+  const tick = async () => {
+    if (!current.isConnected) return;
+    const { progress, latest } = await loadCi();
+    if (progress?.running) {
+      const next = ciSection(progress, latest);
+      current.replaceWith(next);
+      current = next;
+      setTimeout(tick, CI_POLL_MS);
+    } else {
+      await route();
+    }
+  };
+  setTimeout(tick, 1000);
+}
+
+function tongBar(percent, label) {
+  const bar = el('div', { class: 'progress-bar', role: 'progressbar', 'aria-label': label, 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(percent) },
+    el('div', { class: 'progress-fill' }));
+  bar.firstChild.style.width = `${percent}%`;
+  return bar;
+}
+
+function tongCurrent(progress) {
+  if (progress.kind === 'tests' && progress.state === 'running') {
+    return el('p', { class: 'tong-current' },
+      `Đang test QA Hub: ${progress.percent}% · ${progress.done}/${progress.total || '?'} test · đang chạy: ${progress.current ?? '…'}`);
+  }
+  const steps = progress.steps ?? [];
+  const running = steps.find((s) => s.status === 'running');
+  if (progress.state === 'running' && running) {
+    return el('p', { class: 'tong-current' }, `Đang làm: ${running.label} (${progress.percent}% xong)`);
+  }
+  if (progress.state === 'done') return el('p', { class: 'tong-current' }, 'Lượt gần nhất đã xong.');
+  if (progress.state === 'error') return el('p', { class: 'alert', role: 'alert' }, 'Lượt gần nhất có lỗi, xem chi tiết ở từng dự án.');
+  return el('p', { class: 'muted' }, 'Chưa có việc nào đang chạy. Thêm dự án ở mục Dự án để bot bắt đầu.');
+}
+
+function tongStages(stages) {
+  const passed = stages.filter((s) => s.status === 'pass').length;
+  return tongSection('Giai đoạn kiểm thử', 'tong-stages-title',
+    el('p', null, el('strong', null, `${passed}/${stages.length} giai đoạn đạt`), ` · ${Math.round((passed / stages.length) * 100)}%`),
+    tongBar(Math.round((passed / stages.length) * 100), 'Tiến độ giai đoạn'),
+    el('ol', { class: 'tong-list' }, ...stages.map((stage) => el('li', { class: `tong-item ${STAGE_CLASS[stage.status] ?? ''}` },
+      el('span', { class: 'tong-badge' }, TONG_STAGE_LABEL[stage.status] ?? stage.status),
+      el('span', { class: 'tong-name' }, `${stage.id}. ${stage.name}`),
+      el('span', { class: 'muted tong-note' }, stage.note)))));
+}
+
+function tongAutorun(autorun) {
+  const live = autorun.live ?? {};
+  const last = autorun.lastRun;
+  const lastText = last
+    ? `Lần gần nhất: ${last.passed} đạt, ${last.failed} lỗi (${new Date(last.finishedAt).toLocaleString('vi-VN')})`
+    : 'Chưa có lần chạy nào';
+  return tongSection('Bộ test QA Hub (tự chạy)', 'tong-autorun-title',
+    el('p', null, autorun.enabled ? `Tự chạy mỗi ${autorun.intervalMinutes} phút` : 'Đang tắt tự chạy'),
+    el('p', null, lastText),
+    autorun.running
+      ? el('div', null, el('p', { class: 'tong-current' }, `Đang chạy: ${live.percent}% (${live.done}/${live.total || '?'}) · ${live.current ?? '…'}`), tongBar(live.percent ?? 0, 'Tiến độ bộ test'))
+      : null);
+}
+
+function tongProject(project, steps, checklist) {
+  const done = steps.filter((s) => project.workflow?.[s.key]).length;
+  return el('article', { class: 'tong-project card' },
+    el('h3', null, el('a', { href: `#/projects/${project.id}` }, project.name), ` · ${project.id}`),
+    el('p', null, `Quy trình ${done}/${steps.length} · Checklist ${checklist.done}/${checklist.total}`),
+    el('ol', { class: 'tong-steps' }, ...steps.map((step) => {
+      const ok = Boolean(project.workflow?.[step.key]);
+      return el('li', { class: ok ? 'tong-pass' : 'tong-todo' }, `${ok ? '✔' : '○'} ${WORKFLOW_LABEL[step.key] ?? step.label}`);
+    })),
+    project.scan ? el('p', { class: 'muted' }, `Quét domain: ${project.scan.checks?.filter((c) => c.ok).length ?? 0}/${project.scan.checks?.length ?? 0} kiểm tra đạt`) : null);
+}
+
+async function tongProjects(projects, steps) {
+  if (projects.length === 0) {
+    return tongSection('Dự án', 'tong-projects-title', el('p', null, 'Chưa có dự án. Thêm dự án ở mục Dự án.'));
+  }
+  const checklists = await Promise.all(projects.map((p) => api(`/api/projects/${p.id}/checklist`)));
+  return tongSection('Dự án', 'tong-projects-title',
+    el('div', { class: 'tong-projects' }, ...projects.map((p, i) => tongProject(p, steps, checklists[i]))));
+}
+
+function tongChecklist(checklist) {
+  const unfinished = checklist.items.filter((i) => !i.done).slice(0, 5);
+  return tongSection('Checklist QA Hub', 'tong-checklist-title',
+    el('p', null, el('strong', null, `${checklist.done}/${checklist.total} mục đã tích`), ` · ${Math.round((checklist.done / checklist.total) * 100)}%`),
+    tongBar(Math.round((checklist.done / checklist.total) * 100), 'Tiến độ checklist'),
+    unfinished.length
+      ? el('ul', null, ...unfinished.map((i) => el('li', null, `${i.id} · ${i.text}`)))
+      : el('p', { class: 'muted' }, 'Đã tích hết checklist.'),
+    el('p', null, el('a', { href: '#/checklist' }, 'Mở checklist')));
+}
+
+function tongNumbers(stats) {
+  return tongSection('Test case và lỗi', 'tong-numbers-title',
+    el('div', { class: 'kpis' },
+      el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Test case'), el('div', { class: 'kpi-value' }, String(stats.testcases.total)), el('div', { class: 'muted' }, `${stats.testcases.byStatus.ready ?? 0} sẵn sàng`)),
+      el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Lỗi đang mở'), el('div', { class: 'kpi-value' }, String(stats.bugs.open)), el('div', { class: 'muted' }, `Tổng ${stats.bugs.total}`)),
+      el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Test QA Hub đạt'), el('div', { class: 'kpi-value' }, stats.e2e ? `${stats.e2e.passed}/${stats.e2e.total}` : '—'), el('div', { class: 'muted' }, stats.e2e ? 'lần chạy gần nhất' : 'Chưa có kết quả'))));
+}
+
+function tongHero(stages, autorun, progress) {
+  const passed = stages.filter((s) => s.status === 'pass').length;
+  const percent = Math.round((passed / stages.length) * 100);
+  const liveLabel = progress.kind === 'tests' && progress.state === 'running'
+    ? `Đang test ${progress.percent}%`
+    : progress.state === 'running' ? 'Đang chạy' : 'Đang nghỉ';
+  return el('div', { class: 'tong-hero' },
+    el('div', null,
+      el('p', { class: 'tong-hero-eyebrow' }, 'Tiến độ tổng hợp (dữ liệu thật)'),
+      el('p', { class: 'tong-hero-number' }, `${percent}%`),
+      el('p', { class: 'tong-hero-sub' }, `${passed}/${stages.length} giai đoạn đạt`)),
+    el('div', { class: 'tong-hero-chips' },
+      el('span', { class: 'tong-chip' }, liveLabel),
+      el('span', { class: 'tong-chip' }, autorun.enabled ? `Tự chạy mỗi ${autorun.intervalMinutes} phút` : 'Tự chạy đang tắt'),
+      el('span', { class: 'tong-chip' }, autorun.lastRun ? `Test gần nhất: ${autorun.lastRun.passed} đạt / ${autorun.lastRun.failed} lỗi` : 'Chưa có lần test')));
+}
+// Mở trang Tổng lần đầu là tự chạy toàn bộ (không cần bấm). Các lần làm mới sau không gọi lại.
+// Chọn dự án rồi chạy toàn bộ luồng: domain, quét virus, đọc mã, chạy test (nếu có mã), báo cáo.
+function tongRunner(projects) {
+  const select = el('select', { id: 'tong-run-project', 'aria-label': 'Chọn dự án để chạy' },
+    ...projects.map((p) => el('option', { value: p.id }, `${p.id} — ${p.name}`)));
+  const status = el('p', { id: 'tong-run-status', class: 'meta', role: 'status' });
+  const button = el('button', { class: 'btn', type: 'button' }, 'Chạy từ A đến Z');
+  button.onclick = async () => {
+    if (!select.value) return;
+    button.disabled = true;
+    status.textContent = 'Đang chạy: quét domain, quét virus, đọc mã, chạy test (nếu có mã)…';
+    try {
+      await api(`/api/projects/${select.value}/auto`, { method: 'POST', body: { runTests: true } });
+      status.textContent = 'Đã chạy xong. Xem kết quả ở các mục bên dưới.';
+      await route();
+    } catch (err) {
+      status.textContent = `Lỗi: ${err.message}`;
+    } finally {
+      button.disabled = false;
+    }
+  };
+  return el('section', { class: 'tong-runner', 'aria-labelledby': 'tong-run-title' },
+    el('h2', { id: 'tong-run-title', class: 'section-title' }, 'Chạy dự án từ A đến Z'),
+    el('div', { class: 'tong-runner-row' }, select, button),
+    status);
+}
+
+let tongKickedOff = false;
+
+async function renderTong() {
+  if (!tongKickedOff) {
+    tongKickedOff = true;
+    api('/api/run-all', { method: 'POST' }).catch((err) => console.error('Chạy toàn bộ lỗi:', err.message));
+  }
+  const [progress, stages, autorun, stats, { items: projects, steps }] = await Promise.all([
+    api('/api/progress'), api('/api/stages'), api('/api/autorun'), api('/api/stats'), api('/api/projects'),
+  ]);
+  const ci = await loadCi();
+  return el('section', { 'aria-labelledby': 'tong-title' },
+    el('h1', { id: 'tong-title', tabindex: '-1' }, 'Tổng'),
+    el('p', { class: 'lead' }, 'Bot tự làm các bước và ghi kết quả thật. Bạn chỉ cần thêm dự án hoặc xem kết quả.'),
+    tongHero(stages.stages, autorun, progress),
+    tongRunner(projects),
+    ciSection(ci.progress, ci.latest),
+    tongCurrent(progress),
+    tongStages(stages.stages),
+    tongAutorun(autorun),
+    await tongProjects(projects, steps),
+    tongChecklist(await api('/api/checklist')),
+    tongNumbers(stats));
+}
 // ---------- Router ----------
 
 const VIEWS = {
+  tong: renderTong,
+  start: renderTong,
   projects: renderProjects,
   assistant: renderAssistant,
   overview: renderOverview,
@@ -1252,12 +1506,12 @@ function pickView(parts) {
   if (name === 'projects' && id) {
     return sub === 'report' ? () => renderPrintReport(id) : () => renderProject(id);
   }
-  return VIEWS[name] ?? VIEWS.overview;
+  return VIEWS[name] ?? VIEWS.tong;
 }
 
 async function route() {
   const parts = location.hash.replace(/^#\/?/, '').split('/');
-  const name = parts[0] || 'overview';
+  const name = parts[0] || 'tong';
   const view = pickView(parts);
   const token = ++activeRoute;
 
@@ -1279,14 +1533,76 @@ async function route() {
 }
 
 // Tự làm mới các trang chỉ đọc. Bỏ qua khi người dùng đang thao tác trong khung nội dung.
-const AUTO_REFRESH_VIEWS = new Set(['overview', 'summary', 'checklist', 'projects']);
+const AUTO_REFRESH_VIEWS = new Set(['tong', 'start', 'overview', 'summary', 'checklist', 'projects']);
 const REFRESH_MS = 20000;
 
 setInterval(() => {
   if (document.hidden || app.contains(document.activeElement)) return;
-  const name = location.hash.replace(/^#\/?/, '').split('/')[0] || 'overview';
+  const name = location.hash.replace(/^#\/?/, '').split('/')[0] || 'tong';
   if (AUTO_REFRESH_VIEWS.has(name)) route();
 }, REFRESH_MS);
 
 window.addEventListener('hashchange', route);
 route();
+
+// ---------- Bảng tiến độ tự động (bên phải, mọi trang) ----------
+const STEP_STATUS_LABEL = {
+  pending: 'Chờ', running: 'Đang chạy', done: 'Xong', skipped: 'Bỏ qua', error: 'Lỗi',
+};
+const PROGRESS_REFRESH_MS = 2000;
+
+function renderTestProgress(panel, progress) {
+  const bar = el('div', { class: 'progress-bar', role: 'progressbar', 'aria-label': 'Tiến độ test', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(progress.percent) },
+    el('div', { class: 'progress-fill' }));
+  bar.firstChild.style.width = `${progress.percent}%`;
+  panel.replaceChildren(
+    el('h2', { class: 'progress-title' }, 'Đang test QA Hub'),
+    el('p', null,
+      el('strong', null, `${progress.percent}%`),
+      ` · ${progress.done}/${progress.total || '?'} test`),
+    bar,
+    el('p', { class: 'progress-current' }, `Đang chạy: ${progress.current ?? '…'}`),
+    el('p', { class: 'muted' }, `Đạt ${progress.passed} · Lỗi ${progress.failed}`),
+  );
+}
+
+function renderProgressPanel(progress) {
+  const panel = document.getElementById('progress-panel');
+  if (!panel) return;
+  if (progress.kind === 'tests') {
+    renderTestProgress(panel, progress);
+    return;
+  }
+  const idle = progress.state === 'idle';
+  const stepItems = progress.steps.map((step) => el('li', { class: `progress-step progress-${step.status}` },
+    el('span', { class: 'progress-step-label' }, step.label),
+    el('span', { class: 'progress-step-status' }, STEP_STATUS_LABEL[step.status] ?? step.status),
+    step.detail ? el('span', { class: 'progress-step-detail muted' }, step.detail) : null));
+  const bar = el('div', { class: 'progress-bar', role: 'progressbar', 'aria-label': 'Tiến độ tự động', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(progress.percent) },
+    el('div', { class: 'progress-fill' }));
+  bar.firstChild.style.width = `${progress.percent}%`;
+  panel.replaceChildren(
+    el('h2', { class: 'progress-title' }, 'Tiến độ tự động'),
+    idle
+      ? el('p', { class: 'muted' }, 'Chưa có lượt nào. Thêm dự án hoặc upload zip để bot bắt đầu.')
+      : el('p', null,
+        el('strong', null, `${progress.percent}%`),
+        ` · ${progress.state === 'done' ? 'đã xong' : progress.state === 'error' ? 'có lỗi' : 'đang chạy'}`),
+    bar,
+    idle ? null : el('ol', { class: 'progress-steps' }, ...stepItems),
+  );
+}
+
+async function refreshProgress() {
+  try {
+    renderProgressPanel(await api('/api/progress'));
+  } catch {
+    // Mất kết nối tạm thời: giữ nguyên bảng cũ, lần sau thử lại.
+  }
+}
+
+if (document.body && !document.getElementById('progress-panel')) {
+  document.body.appendChild(el('aside', { id: 'progress-panel', class: 'progress-panel', 'aria-label': 'Tiến độ tự động' }));
+  refreshProgress();
+  setInterval(refreshProgress, PROGRESS_REFRESH_MS);
+}

@@ -2,6 +2,7 @@
 // Key chỉ được lưu phía server và không bao giờ trả về dạng thô.
 
 const MODEL_MAX = 100;
+const DEFAULT_SYSTEM = 'Bạn là trợ lý QA. Trả lời bằng tiếng Việt, ngắn gọn, dựa trên dữ liệu được cung cấp.';
 const MASK_PREFIX = '••••';
 const LOCAL_HOSTS = ['localhost', '127.0.0.1', '[::1]'];
 
@@ -86,6 +87,7 @@ export const DEFAULT_SETTINGS = {
   baseUrl: '',
   model: 'claude-sonnet-5-5',
   keys: {},
+  allowCodeToAi: false,
 };
 
 // Áp dụng thay đổi từ form: ô key trống giữ key cũ, clearKey xóa key.
@@ -99,7 +101,7 @@ export function applySettingsUpdate(current, body) {
   } else if (typeof body.apiKey === 'string' && body.apiKey.trim() !== '') {
     keys[provider] = body.apiKey.trim();
   }
-  return { ok: true, value: { provider, baseUrl, model, keys } };
+  return { ok: true, value: { provider, baseUrl, model, keys, allowCodeToAi: body.allowCodeToAi === true } };
 }
 
 // Chọn cấu hình đang dùng. Trả null khi chưa đủ điều kiện để gọi AI.
@@ -126,11 +128,11 @@ export function publicView(settings) {
     baseUrl: settings.baseUrl,
     model: settings.model,
     keys,
+    allowCodeToAi: settings.allowCodeToAi === true,
   };
 }
 
-export function buildChatRequest({ provider, baseUrl, model, apiKey, message, context }) {
-  const system = 'Bạn là trợ lý QA. Trả lời bằng tiếng Việt, ngắn gọn, dựa trên dữ liệu được cung cấp.';
+export function buildChatRequest({ provider, baseUrl, model, apiKey, message, context, system }) {
   const user = `Dữ liệu QA Hub (JSON):\n${context}\n\nCâu hỏi:\n${message}`;
   return {
     url: `${baseUrl}/chat/completions`,
@@ -142,7 +144,7 @@ export function buildChatRequest({ provider, baseUrl, model, apiKey, message, co
       model,
       max_tokens: 800,
       messages: [
-        { role: 'system', content: system },
+        { role: 'system', content: system ?? DEFAULT_SYSTEM },
         { role: 'user', content: user },
       ],
     }),

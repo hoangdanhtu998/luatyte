@@ -42,9 +42,9 @@ test.describe('BUG-006: giai đoạn 2 STLC phụ thuộc kế hoạch thật', 
   });
 });
 
-// BUG-004: PATCH gửi cả status và result phải cập nhật cả hai.
-test.describe('BUG-004: PATCH test case gửi cả status và result', () => {
-  test('cập nhật đồng thời status và result', async ({ request }) => {
+// BUG-004: PATCH có result phải bị từ chối (kết quả chỉ do kiểm thử tự động ghi), không ghi gì cả.
+test.describe('BUG-004: PATCH test case có result', () => {
+  test('PATCH có result bị 403 và không ghi status lẫn result', async ({ request }) => {
     const created = await (await request.post('/api/testcases', {
       data: { title: 'PATCH status và result', module: 'Chung' },
     })).json();
@@ -52,20 +52,21 @@ test.describe('BUG-004: PATCH test case gửi cả status và result', () => {
     const response = await request.patch(`/api/testcases/${created.id}`, {
       data: { result: 'pass', status: 'passed', evidence: 'ảnh chụp' },
     });
-    expect(response.status()).toBe(200);
-    const updated = await response.json();
-    expect(updated.result).toBe('pass');
-    expect(updated.status).toBe('passed');
+    expect(response.status()).toBe(403);
+    const list = await (await request.get(`/api/testcases?q=${created.id}`)).json();
+    const after = list.items.find((i) => i.id === created.id);
+    expect(after.result).toBe('not_run');
+    expect(after.status).toBe('draft');
   });
 
-  test('status không hợp lệ kèm result bị từ chối', async ({ request }) => {
+  test('PATCH chỉ đổi status vẫn được chấp nhận', async ({ request }) => {
     const created = await (await request.post('/api/testcases', {
       data: { title: 'PATCH status sai', module: 'Chung' },
     })).json();
 
-    const response = await request.patch(`/api/testcases/${created.id}`, {
-      data: { result: 'pass', status: 'sai' },
-    });
-    expect(response.status()).toBe(400);
+    const ok = await request.patch(`/api/testcases/${created.id}`, { data: { status: 'ready' } });
+    expect(ok.status()).toBe(200);
+    const bad = await request.patch(`/api/testcases/${created.id}`, { data: { status: 'sai' } });
+    expect(bad.status()).toBe(400);
   });
 });

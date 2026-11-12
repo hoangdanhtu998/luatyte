@@ -21,6 +21,15 @@ const FINDINGS_MAX = 2000;
 const GITHUB_RE = /^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+(\.git)?$/;
 const DOMAIN_RE = /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)+(\/[^\s]*)?$/i;
 
+// Người dùng có thể nhập "luatyte.online", "http://luatyte.online" hoặc "https://luatyte.online".
+// Luôn đưa về https:// (không gọi domain bằng http thường).
+export function normalizeDomainRef(raw) {
+  const text = raw.trim();
+  if (text === '') return '';
+  const withoutScheme = text.replace(/^https?:\/\//i, '');
+  return `https://${withoutScheme}`;
+}
+
 const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
 const notObject = () => ({ ok: false, errors: { body: 'Dữ liệu phải là một object JSON' } });
 
@@ -39,14 +48,15 @@ export function validateProject(body) {
     errors.sourceType = `Nguồn phải là một trong: ${SOURCE_TYPES.join(', ')}`;
   }
 
-  const rawRef = typeof body.sourceRef === 'string' ? body.sourceRef.trim() : '';
+  const typedRef = typeof body.sourceRef === 'string' ? body.sourceRef.trim() : '';
+  const rawRef = body.sourceType === 'domain' ? normalizeDomainRef(typedRef) : typedRef;
   if (body.sourceType === 'github') {
     if (!GITHUB_RE.test(rawRef)) {
       errors.sourceRef = 'Link GitHub phải có dạng https://github.com/chủ-sở-hữu/tên-repo';
     }
   } else if (body.sourceType === 'domain') {
     if (!DOMAIN_RE.test(rawRef)) {
-      errors.sourceRef = 'Domain phải bắt đầu bằng https:// và có tên miền hợp lệ';
+      errors.sourceRef = 'Tên miền không hợp lệ, ví dụ luatyte.online';
     }
     if (body.ownershipConfirmed !== true) {
       errors.ownershipConfirmed = 'Chỉ kiểm thử domain mà bạn sở hữu hoặc được phép kiểm thử';
@@ -62,6 +72,8 @@ export function validateProject(body) {
       sourceType: body.sourceType,
       sourceRef: rawRef || null,
       ownershipConfirmed: body.sourceType === 'domain',
+      // Chỉ zip/GitHub mới có thể bật chạy test; mặc định tắt vì mã lạ có thể độc hại.
+      autoTests: body.autoTests === true && (body.sourceType === 'zip' || body.sourceType === 'github'),
     },
   };
 }
