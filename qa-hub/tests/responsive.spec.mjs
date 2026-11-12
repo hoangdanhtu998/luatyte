@@ -23,6 +23,6 @@ for (const viewport of VIEWPORTS) {
 test('menu điều hướng vẫn bấm được ở 375px', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/');
-  await page.getByRole('link', { name: 'Bug' }).click();
+  await page.getByRole('link', { name: 'Lỗi tìm thấy' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Bug' })).toBeVisible();
 });

@@ -2,7 +2,8 @@
 // Chỉ nhận gợi ý "đã làm" khi file dẫn chứng thật sự có trong dự án.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { AI_MODEL } from './assistant.js';
+import { AI_MODEL, askProvider } from './assistant.js';
+import { isSourcePath } from './test-design.js';
 
 const SKIP_DIRS = new Set(['node_modules', '.git', 'dist', 'build', 'coverage', '.next', 'target', '__pycache__']);
 const SECRET_FILE_RE = /(^|[\\/])(\.env[^\\/]*|[^\\/]*\.(pem|key|p12|pfx)|id_rsa[^\\/]*|[^\\/]*(credential|secret)[^\\/]*)$/i;
@@ -52,6 +53,23 @@ export function collectProjectFiles(root) {
     excerpts.push({ path: rel, text });
   }
   return { tree, excerpts };
+}
+
+// Mã nguồn đầy đủ (không chỉ file tài liệu) để sinh ý tưởng test. Đã che bí mật, có giới hạn kích thước.
+const MAX_SOURCE_TOTAL = 300 * 1024;
+export function collectSourceFiles(root, tree) {
+  const sources = [];
+  let total = 0;
+  for (const rel of tree) {
+    if (!isSourcePath(rel)) continue;
+    const full = path.join(root, rel);
+    if (statSync(full).size > MAX_TEXT_FILE) continue;
+    const text = redact(readFileSync(full, 'utf8'));
+    if (total + text.length > MAX_SOURCE_TOTAL) break;
+    total += text.length;
+    sources.push({ path: rel, text });
+  }
+  return sources;
 }
 
 // Luật dự phòng khi không có API key: chỉ dựa vào sự có mặt của file.
@@ -131,5 +149,20 @@ export async function claudeSuggestions({ apiKey, items, tree, excerpts, fetchIm
   if (!res.ok) throw new Error(`upstream status ${res.status}`);
   const data = await res.json();
   const text = (data.content ?? []).filter((b) => b.type === 'text').map((b) => b.text).join('\n');
+  return validateSuggestions(parseJsonArray(text), items, tree);
+}
+
+// Đọc mã bằng provider AI đã cấu hình (OpenAI-compatible hoặc Claude). Kết quả vẫn qua validateSuggestions.
+// Mã gửi đi được che bí mật bằng redact() trước khi rời máy.
+export async function aiSuggestions({ active, items, tree, excerpts, askImpl = askProvider }) {
+  const itemList = items.map((i) => `${i.id} (${i.group}): ${i.text}`).join('\n');
+  const fileList = tree.slice(0, MAX_FILES).join('\n');
+  const excerptText = excerpts.map((e) => `--- ${e.path} ---\n${redact(e.text)}`).join('\n');
+  const text = await askImpl({
+    active,
+    system: REVIEW_SYSTEM_PROMPT,
+    message: `Checklist cần xét:\n${itemList}\n\nDanh sách file:\n${fileList}\n\nTrích đoạn file:\n${excerptText}`,
+    context: '',
+  });
   return validateSuggestions(parseJsonArray(text), items, tree);
 }

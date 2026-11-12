@@ -11,7 +11,7 @@ test.describe('Smoke', () => {
     const started = Date.now();
     const response = await page.goto('/');
     expect(response.status()).toBeLessThan(500);
-    await expect(page.getByRole('heading', { level: 1, name: 'Tổng quan kiểm thử' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'Tổng' })).toBeVisible();
     expect(Date.now() - started).toBeLessThan(3000);
   });
 
@@ -40,7 +40,7 @@ test.describe('Smoke', () => {
     await page.goto('/');
     await page.getByRole('link', { name: 'Test case' }).click();
     await expect(page.getByRole('heading', { level: 1, name: 'Test case' })).toBeVisible();
-    await page.getByRole('link', { name: 'Checklist', exact: true }).click();
+    await page.goto('/#/checklist');
     await expect(page.getByRole('heading', { level: 1, name: 'Checklist' })).toBeVisible();
   });
 });

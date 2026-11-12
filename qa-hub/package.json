@@ -14,6 +14,10 @@
     "setup": "node scripts/setup.mjs",
     "start:auto": "node scripts/start-auto.mjs",
     "lhci": "lhci autorun --config=lighthouserc.json",
+    "a11y": "node scripts/accessibility-check.mjs",
+    "export-html": "node scripts/export-html.mjs",
+    "sync-results": "node scripts/sync-results.mjs",
+    "ci": "node scripts/ci.mjs",
     "k6": "k6 run perf/load.js"
   },
   "devDependencies": {

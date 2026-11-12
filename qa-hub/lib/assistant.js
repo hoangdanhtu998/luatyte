@@ -81,11 +81,11 @@ export function buildContextText(report, extra) {
 }
 
 // Gọi đúng provider đang chọn: Anthropic dùng Messages API, còn lại dùng chat/completions.
-export async function askProvider({ active, message, context, fetchImpl = fetch }) {
+export async function askProvider({ active, message, context, system, fetchImpl = fetch }) {
   if (active.kind === 'anthropic') {
-    return askClaude({ apiKey: active.apiKey, model: active.model, message, context, fetchImpl });
+    return askClaude({ apiKey: active.apiKey, model: active.model, message, context, system, fetchImpl });
   }
-  const req = buildChatRequest({ ...active, message, context });
+  const req = buildChatRequest({ ...active, message, context, system });
   const res = await fetchImpl(req.url, {
     method: 'POST',
     headers: req.headers,
@@ -100,7 +100,7 @@ export async function askProvider({ active, message, context, fetchImpl = fetch 
   return (data.choices?.[0]?.message?.content ?? '').trim();
 }
 
-export async function askClaude({ apiKey, message, context, fetchImpl = fetch, model = AI_MODEL }) {
+export async function askClaude({ apiKey, message, context, system = SYSTEM_PROMPT, fetchImpl = fetch, model = AI_MODEL }) {
   const res = await fetchImpl(ANTHROPIC_URL, {
     method: 'POST',
     headers: {
@@ -111,7 +111,7 @@ export async function askClaude({ apiKey, message, context, fetchImpl = fetch, m
     body: JSON.stringify({
       model,
       max_tokens: 800,
-      system: SYSTEM_PROMPT,
+      system,
       messages: [{
         role: 'user',
         content: `Dữ liệu QA Hub (JSON):\n${context}\n\nThông tin/câu hỏi từ người dùng:\n${message}`,
