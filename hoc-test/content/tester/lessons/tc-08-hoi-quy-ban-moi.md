@@ -92,3 +92,7 @@ Lỗi hồi quy thường được ưu tiên cao: người dùng đang dùng tí
 ## Thuật ngữ
 
 **Kiểm thử xác nhận (confirmation testing, retest)**: chạy lại để xác nhận một lỗi đã được sửa. · **Kiểm thử hồi quy (regression testing)**: kiểm để phát hiện phần không được chủ ý thay đổi bị ảnh hưởng. · **Lỗi hồi quy (regression)**: chức năng từng chạy đúng bị hỏng ở bản mới. · **Ghi chú phát hành (release notes)**: danh sách thay đổi của một bản dựng.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

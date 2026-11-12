@@ -79,3 +79,7 @@ Các bộ chuẩn tài liệu kiểm thử (ví dụ bộ ISO/IEC/IEEE 29119) m�
 ## Thuật ngữ
 
 **Kiểm thử dựa trên rủi ro (risk-based testing)**: cách tiếp cận dùng mức rủi ro để quyết định kiểm gì, theo thứ tự nào, sâu đến đâu. · **Điều kiện dừng (exit criteria)**: các điều kiện đã thỏa thuận để coi một giai đoạn kiểm thử là xong. · **Phạm vi (scope)**: ranh giới giữa phần được kiểm và phần không được kiểm.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

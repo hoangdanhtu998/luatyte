@@ -17,7 +17,15 @@
         }
       ],
       "khu": "Đặt lịch · bố cục form",
-      "chu": "Giao diện"
+      "chu": "Giao diện",
+      "theory": {
+        "why": "Trước khi test, phải biết màn hình có những gì và mỗi thứ phải làm gì. Nếu không, bạn bỏ sót ô hoặc nút.",
+        "how": "Liệt kê từng ô, nút và quy tắc. Ghi lại chuyện gì xảy ra khi bấm gửi."
+      },
+      "chuong": 11,
+      "en": "Exploratory review (đọc giao diện)",
+      "check": "form_inventory",
+      "en_def": "Đọc giao diện có chủ đích để liệt kê những gì có thể test trước khi viết ca."
     },
     {
       "id": "bo-trong",
@@ -53,7 +61,15 @@
         }
       ],
       "khu": "Đặt lịch · kiểm tra bắt buộc",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Người dùng hay bấm gửi khi chưa điền. Form phải chặn và báo đúng ô còn thiếu, không tạo bản ghi rác.",
+        "how": "Test ca rỗng trước. Đây là ca nền: nếu nó hỏng, các ca còn lại cũng không đáng tin."
+      },
+      "chuong": 2,
+      "en": "Required-field validation",
+      "check": "required_check",
+      "en_def": "Kiểm tra ô bắt buộc: để trống thì phải chặn và báo lỗi, không được tạo bản ghi."
     },
     {
       "id": "ten",
@@ -89,7 +105,15 @@
         }
       ],
       "khu": "Đặt lịch · độ dài họ tên",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Họ tên có giới hạn độ dài. Lỗi lệch biên hay gặp nhất khi quy tắc là 'từ 2 đến 50 ký tự': chỉ cần một đơn vị lệch là sai.",
+        "how": "Phân tích giá trị biên: thử 1 ký tự (dưới biên), 2 ký tự (đúng biên), 51 ký tự (trên biên). Mỗi giá trị kỳ vọng một kết quả rõ."
+      },
+      "chuong": 2,
+      "en": "Boundary value analysis (BVA)",
+      "check": "length_min_max_check",
+      "en_def": "Phân tích giá trị biên: thử ngay dưới biên, đúng biên và ngay trên biên, vì lỗi hay nằm ở đó."
     },
     {
       "id": "sdt",
@@ -124,7 +148,15 @@
         }
       ],
       "khu": "Đặt lịch · định dạng SĐT",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "SĐT là dữ liệu có định dạng. Chấp nhận sai SĐT thì không gọi lại được cho bệnh nhân.",
+        "how": "Chia lớp tương đương: đúng (10 số, bắt đầu bằng 0), thiếu số, có chữ, sai đầu số. Mỗi lớp chọn một đại diện."
+      },
+      "chuong": 2,
+      "en": "Equivalence partitioning (EP)",
+      "check": "format_regex_check",
+      "en_def": "Chia đầu vào thành các lớp tương đương (đúng, sai kiểu, sai định dạng), mỗi lớp chọn một đại diện."
     },
     {
       "id": "giam-ho",
@@ -159,7 +191,15 @@
         }
       ],
       "khu": "Đặt lịch · người giám hộ",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Có quy tắc phụ thuộc: tuổi ảnh hưởng đến việc có bắt buộc giám hộ hay không. Phải test cả hai ô cùng lúc.",
+        "how": "Đổi một ô và xem ô khác có đổi theo đúng không. Thử tuổi 15 không có giám hộ, rồi sửa và thử lại."
+      },
+      "chuong": 2,
+      "en": "Dependency / conditional rule",
+      "check": "conditional_required_check",
+      "en_def": "Quy tắc phụ thuộc: giá trị ô này làm thay đổi yêu cầu của ô khác."
     },
     {
       "id": "tuoi-bien",
@@ -194,7 +234,15 @@
         }
       ],
       "khu": "Đặt lịch · biên tuổi",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Tuổi là khoảng có biên dưới và biên trên. Lỗi kiểu nhỏ hơn hoặc nhỏ hơn bằng thường nằm đúng ở biên.",
+        "how": "Thử -1, 0, 120, 121 và chữ abc. Biên đúng phải được chấp nhận, vượt biên phải báo lỗi."
+      },
+      "chuong": 2,
+      "en": "Boundary value analysis (BVA)",
+      "check": "range_check",
+      "en_def": "Phân tích giá trị biên: thử ngay dưới biên, đúng biên và ngay trên biên, vì lỗi hay nằm ở đó."
     },
     {
       "id": "ngay",
@@ -229,7 +277,15 @@
         }
       ],
       "khu": "Đặt lịch · ngày khám và ngày nghỉ",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Ngày khám có luật: phải từ ngày mai, trong 30 ngày, và phòng khám nghỉ một ngày trong tuần. Lỗi tính ngày là lỗi thật hay gặp.",
+        "how": "Biên thời gian: hôm nay (ngoài biên dưới), ngày mai (biên dưới), 30 ngày (biên trên), 31 ngày (ngoài biên trên). Thử thêm ngày nghỉ."
+      },
+      "chuong": 2,
+      "en": "BVA trên thời gian + quy tắc lịch",
+      "check": "date_window_check",
+      "en_def": "Biên thời gian kết hợp luật lịch (ngày nghỉ, khoảng ngày được đặt)."
     },
     {
       "id": "gio-day",
@@ -321,7 +377,15 @@
         }
       ],
       "khu": "Đặt lịch · giới hạn khung giờ",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Khung giờ có giới hạn số lịch. Đây là chỗ hay có lỗi đếm: lệch 1 là nhận thừa hoặc chặn sớm.",
+        "how": "Test giới hạn: đặt đúng 3 lịch được nhận, lịch thứ 4 bị từ chối. Đổi tên và SĐT để không trùng."
+      },
+      "chuong": 9,
+      "en": "Capacity / limit test",
+      "check": "capacity_limit_check",
+      "en_def": "Kiểm giới hạn sức chứa: đúng đến giới hạn thì được nhận, vượt 1 thì bị từ chối."
     },
     {
       "id": "phi",
@@ -359,7 +423,15 @@
         }
       ],
       "khu": "Đặt lịch · tính phí",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Phí là phép tính có nhiều điều kiện cộng dồn: tuổi, loại khám, BHYT. Sai một phép là sai tiền của bệnh nhân.",
+        "how": "Tính tay trước, rồi so với app. Kiểm một ca hợp nhất các điều kiện (tuổi 65, khám thường, có BHYT)."
+      },
+      "chuong": 2,
+      "en": "Decision table testing",
+      "check": "decision_table_check",
+      "en_def": "Bảng quyết định: liệt kê các tổ hợp điều kiện và kết quả mong đợi của từng tổ hợp."
     },
     {
       "id": "dat-thanh-cong",
@@ -402,7 +474,15 @@
         }
       ],
       "khu": "Đặt lịch · tạo lịch",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Luồng chính (happy path) phải chạy đúng trước khi test các luồng lỗi. Mã lịch là khóa để tra cứu sau này.",
+        "how": "Nhập đủ, hợp lệ, gửi. Kiểm mã có dạng SM-xxxxxx, phí đúng, và lịch xuất hiện trong quản trị."
+      },
+      "chuong": 11,
+      "en": "Happy path (luồng chính)",
+      "check": "smoke_check",
+      "en_def": "Luồng chính khi mọi thứ hợp lệ. Phải chạy đúng trước khi test các luồng lỗi."
     },
     {
       "id": "tra-cuu-dung",
@@ -434,7 +514,15 @@
         }
       ],
       "khu": "Tra cứu · khớp mã và SĐT",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Tra cứu cần cả mã và SĐT. Dữ liệu biết trước (SM-100002) cho kết quả cố định để so sánh.",
+        "how": "Dùng cặp đúng để kiểm kết quả đúng. Dùng dữ liệu mẫu có sẵn để không phụ thuộc thứ tự test."
+      },
+      "chuong": 2,
+      "en": "Positive testing",
+      "check": "lookup_match_check",
+      "en_def": "Kiểm dương: dùng dữ liệu hợp lệ để chắc chức năng làm đúng việc."
     },
     {
       "id": "tra-cuu-sai",
@@ -466,7 +554,15 @@
         }
       ],
       "khu": "Tra cứu · thông báo không lộ thông tin",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Bảo mật: sai một trong hai thông tin thì không được xem lịch của người khác, và thông báo không được lộ thông tin.",
+        "how": "Giữ một giá trị đúng, đổi giá trị kia. Thử thêm mã không tồn tại. Kết quả phải giống nhau về nội dung."
+      },
+      "chuong": 6,
+      "en": "Negative testing + information disclosure",
+      "check": "no_leak_check",
+      "en_def": "Kiểm âm kết hợp kiểm lộ thông tin: đầu vào sai phải bị chặn và thông báo không tiết lộ dữ liệu."
     },
     {
       "id": "dang-nhap-trong",
@@ -501,7 +597,15 @@
         }
       ],
       "khu": "Đăng nhập · ô trống",
-      "chu": "Giao diện"
+      "chu": "Giao diện",
+      "theory": {
+        "why": "Đăng nhập là cửa vào tài khoản. Ca rỗng là ca nền: nếu cho qua thì mọi kiểm tra sau đều vô nghĩa.",
+        "how": "Gửi form trống, kiểm từng ô có báo lỗi riêng không."
+      },
+      "chuong": 6,
+      "en": "Negative testing (đầu vào rỗng)",
+      "check": "required_check",
+      "en_def": "Kiểm âm với đầu vào rỗng: hệ thống phải báo lỗi rõ, không cho qua."
     },
     {
       "id": "dang-nhap-sai",
@@ -533,7 +637,15 @@
         }
       ],
       "khu": "Đăng nhập · thông báo sai mật khẩu",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Thông báo lỗi đăng nhập không được tiết lộ SĐT có tồn tại hay không. Nếu báo 'SĐT không có' là kẻ xấu biết được danh sách người dùng.",
+        "how": "Thử sai mật khẩu với SĐT đúng, và kiểm thông báo phải chung chung."
+      },
+      "chuong": 6,
+      "en": "Error message uniformity (chống liệt kê tài khoản)",
+      "check": "generic_error_check",
+      "en_def": "Thông báo lỗi phải giống nhau cho mọi trường hợp sai, để kẻ xấu không đoán được tài khoản tồn tại."
     },
     {
       "id": "dang-nhap-khoa",
@@ -612,7 +724,15 @@
         }
       ],
       "khu": "Đăng nhập · khóa chống dò",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Chống dò mật khẩu: nếu không giới hạn số lần thử thì máy có thể thử hết trong thời gian ngắn.",
+        "how": "Sai đúng 5 lần cho cùng SĐT, lần thứ 5 phải báo khóa ngay. Kiểm thời gian chờ và đợi hết rồi đăng nhập lại."
+      },
+      "chuong": 6,
+      "en": "Rate limiting / lockout",
+      "check": "lockout_threshold_check",
+      "en_def": "Giới hạn số lần thử: vượt ngưỡng thì khóa tạm, chống dò mật khẩu."
     },
     {
       "id": "dang-nhap-dung",
@@ -654,7 +774,15 @@
         }
       ],
       "khu": "Đăng nhập · phiên và quyền xem lịch",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Sau khi đăng nhập, người dùng chỉ được xem lịch của mình. Đây là kiểm tra quyền truy cập.",
+        "how": "Đăng nhập đúng, kiểm tên và danh sách lịch. Nếu thấy lịch của người khác là lỗi nghiêm trọng."
+      },
+      "chuong": 6,
+      "en": "Authorization (chỉ xem dữ liệu của mình)",
+      "check": "authz_check",
+      "en_def": "Phân quyền: người dùng chỉ xem được dữ liệu thuộc về mình."
     },
     {
       "id": "admin-sai-pin",
@@ -728,7 +856,15 @@
         }
       ],
       "khu": "Quản trị · khóa PIN",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Quản trị có quyền sửa dữ liệu, nên PIN cần giới hạn số lần thử giống đăng nhập bệnh nhân.",
+        "how": "Sai 5 lần liên tiếp, lần thứ 5 phải báo khóa. Đếm đúng là kiểm tra chính."
+      },
+      "chuong": 6,
+      "en": "Rate limiting (PIN)",
+      "check": "lockout_threshold_check",
+      "en_def": "Giới hạn số lần nhập PIN, vì PIN chỉ có ít khả năng và dễ bị dò."
     },
     {
       "id": "admin-dung-pin",
@@ -762,7 +898,15 @@
         }
       ],
       "khu": "Quản trị · đăng nhập PIN",
-      "chu": "Bảo mật"
+      "chu": "Bảo mật",
+      "theory": {
+        "why": "Sau khi có lỗi, luồng đúng vẫn phải hoạt động. Test luồng đúng sau luồng sai để bắt trạng thái bị kẹt.",
+        "how": "Đợi hết khóa (hoặc reset dữ liệu) rồi nhập đúng PIN. Kiểm bảng quản trị hiện ra."
+      },
+      "chuong": 8,
+      "en": "Recovery test (phục hồi sau khóa)",
+      "check": "state_recovery_check",
+      "en_def": "Kiểm phục hồi: sau khi hết khóa, hệ thống phải hoạt động lại bình thường."
     },
     {
       "id": "admin-trang-thai",
@@ -805,7 +949,15 @@
         }
       ],
       "khu": "Quản trị · chuyển trạng thái",
-      "chu": "Nghiệp vụ"
+      "chu": "Nghiệp vụ",
+      "theory": {
+        "why": "Trạng thái phải chuyển theo đúng thứ tự: chờ, xác nhận, khám. Chuyển bỏ qua bước là lỗi nghiệp vụ.",
+        "how": "Test đường hợp lệ trước, rồi thử đường bị cấm (ví dụ hủy lịch đã khám)."
+      },
+      "chuong": 9,
+      "en": "State transition testing",
+      "check": "state_transition_check",
+      "en_def": "Kiểm chuyển trạng thái: chỉ các chuyển đổi hợp lệ được phép, chuyển bị cấm phải bị chặn."
     },
     {
       "id": "api-slots",
@@ -847,7 +999,15 @@
         }
       ],
       "khu": "API · GET /slots",
-      "chu": "API"
+      "chu": "API",
+      "theory": {
+        "why": "API là hợp đồng giữa các phần của hệ thống. Giao diện không che được lỗi của API.",
+        "how": "Gửi yêu cầu đúng tham số, kiểm mã trạng thái 200 và nội dung trả về."
+      },
+      "chuong": 9,
+      "en": "API contract testing",
+      "check": "http_status_check",
+      "en_def": "Kiểm hợp đồng API: mã trạng thái và cấu trúc dữ liệu trả về đúng như đã thỏa thuận."
     },
     {
       "id": "api-sai",
@@ -896,7 +1056,15 @@
         }
       ],
       "khu": "API · kiểm dữ liệu vào",
-      "chu": "API"
+      "chu": "API",
+      "theory": {
+        "why": "API phải từ chối dữ liệu sai. Nếu nhận dữ liệu thiếu trường thì lịch rác sẽ được tạo ra.",
+        "how": "Gửi thân yêu cầu thiếu trường, kiểm mã 400, và kiểm không có lịch mới được tạo."
+      },
+      "chuong": 9,
+      "en": "API negative testing (kiểm dữ liệu vào)",
+      "check": "schema_validation_check",
+      "en_def": "Kiểm âm cho API: dữ liệu thiếu hoặc sai kiểu phải bị từ chối với mã lỗi đúng."
     },
     {
       "id": "api-huy",
@@ -955,7 +1123,15 @@
         }
       ],
       "khu": "API · hủy và trùng lặp",
-      "chu": "API"
+      "chu": "API",
+      "theory": {
+        "why": "Thao tác lặp lại (idempotent) phải cho kết quả hợp lý. Hủy lần hai không được coi như thành công mới.",
+        "how": "Gửi cùng yêu cầu hai lần. Lần đầu 200, lần hai 409."
+      },
+      "chuong": 9,
+      "en": "Idempotency testing",
+      "check": "idempotency_check",
+      "en_def": "Kiểm lũy đẳng: lặp lại cùng một yêu cầu cho kết quả hợp lý, không tạo tác dụng phụ mới."
     },
     {
       "id": "admin-tim",
@@ -995,7 +1171,15 @@
           "expect": "#admin-table",
           "text": "Trần Thị Bình"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Tìm kiếm là bộ lọc: nếu lọc sai, người quản trị sẽ không thấy đúng lịch cần xử lý.",
+        "how": "Thử một giá trị khớp, một giá trị không khớp, rồi xóa để xem lại toàn bộ."
+      },
+      "chuong": 4,
+      "en": "Search / filter testing",
+      "check": "search_match_check",
+      "en_def": "Kiểm tìm kiếm và lọc: kết quả chỉ chứa những dòng khớp điều kiện."
     },
     {
       "id": "admin-loc",
@@ -1034,7 +1218,15 @@
           "expect": "#admin-table",
           "text": "Đã hủy"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Lọc theo trạng thái phải chỉ hiện đúng trạng thái đã chọn. Lịch khác không được lọt vào.",
+        "how": "Chọn từng trạng thái và kiểm mọi dòng hiện ra đều có trạng thái đó."
+      },
+      "chuong": 4,
+      "en": "Filter testing",
+      "check": "filter_check",
+      "en_def": "Kiểm bộ lọc: mỗi giá trị lọc chỉ cho ra dòng có giá trị đó."
     },
     {
       "id": "admin-lich-su",
@@ -1085,7 +1277,15 @@
           "expect": "#admin-table",
           "text": "Đã xác nhận"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Lịch sử là dấu vết để truy vết khi có tranh cãi: ai đổi gì, lúc nào.",
+        "how": "Làm một chuỗi thao tác rồi kiểm lịch sử ghi đúng thứ tự và đúng trạng thái."
+      },
+      "chuong": 5,
+      "en": "Audit trail testing",
+      "check": "audit_trail_check",
+      "en_def": "Kiểm dấu vết: mọi thay đổi quan trọng đều được ghi lại đúng thứ tự, đúng người và đúng lúc."
     },
     {
       "id": "admin-phan-trang",
@@ -1120,7 +1320,15 @@
           "expect": "#admin-page",
           "text": "Trang 1/"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Bảng có nhiều dòng phải chia trang. Lỗi thường ở trang đầu, trang cuối và số dòng đúng bằng bội số của trang.",
+        "how": "Kiểm trang đầu (nút Trước khóa), trang cuối (nút Sau khóa), và số trang đúng."
+      },
+      "chuong": 4,
+      "en": "Pagination boundary testing",
+      "check": "page_boundary_check",
+      "en_def": "Kiểm biên phân trang: trang đầu, trang cuối, và số dòng đúng bằng bội số kích thước trang."
     },
     {
       "id": "admin-csv",
@@ -1158,7 +1366,15 @@
         {
           "say": "Kiểm tra file: dòng đầu là tiêu đề Mã lịch, Họ tên, SĐT..."
         }
-      ]
+      ],
+      "theory": {
+        "why": "File xuất ra dùng để báo cáo. Sai dấu ngoặc kép hay thiếu dòng là dữ liệu sai khi mở bằng Excel.",
+        "how": "Xuất, mở file, đếm dòng, kiểm tiêu đề và một ô có dấu ngoặc kép."
+      },
+      "chuong": 4,
+      "en": "Data export integrity (RFC 4180)",
+      "check": "csv_format_check",
+      "en_def": "Toàn vẹn dữ liệu khi xuất: đúng số dòng, đúng cách bọc ô (RFC 4180), mở ra đúng nội dung."
     },
     {
       "id": "doi-mat-khau",
@@ -1206,7 +1422,15 @@
           "expect": "#pw-form",
           "text": "Mật khẩu mới phải có ít nhất 8 ký tự"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Đổi mật khẩu phải kiểm độ dài và không cho đặt lại mật khẩu cũ. Đây là biên độ dài thường có lỗi.",
+        "how": "Thử 7 ký tự (phải báo lỗi), 8 ký tự (được nhận), và mật khẩu trùng cũ."
+      },
+      "chuong": 6,
+      "en": "Password policy + BVA độ dài",
+      "check": "password_policy_check",
+      "en_def": "Chính sách mật khẩu: kiểm biên độ dài tối thiểu và quy tắc không trùng mật khẩu cũ."
     },
     {
       "id": "quen-mat-khau",
@@ -1258,7 +1482,15 @@
           "expect": "#fg-notice",
           "text": "Đã đặt mật khẩu mới"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Quên mật khẩu là đường vào tài khoản người khác nếu mã dễ đoán hoặc không hết hạn.",
+        "how": "Kiểm mã đúng, mã sai, mã hết hạn (10 phút), và sai 3 lần thì mã bị hủy."
+      },
+      "chuong": 6,
+      "en": "Account recovery + token expiry",
+      "check": "expiry_and_retry_check",
+      "en_def": "Phục hồi tài khoản: mã xác nhận phải có hạn và có giới hạn số lần thử."
     },
     {
       "id": "nhac-lich",
@@ -1298,7 +1530,15 @@
           "expect": "#reminder",
           "text": "SM-100002"
         }
-      ]
+      ],
+      "theory": {
+        "why": "Nhắc lịch phụ thuộc thời gian. Lỗi biên ngày (hôm nay, 2 ngày, 3 ngày) làm nhắc sai hoặc thiếu.",
+        "how": "Đăng nhập với tài khoản có lịch trong 2 ngày tới, kiểm có nhắc. Lịch xa hơn thì không nhắc."
+      },
+      "chuong": 4,
+      "en": "Time-window rule testing",
+      "check": "reminder_window_check",
+      "en_def": "Kiểm quy tắc theo khoảng thời gian: lịch nằm trong cửa sổ được nhắc, lịch ngoài cửa sổ thì không."
     },
     {
       "id": "ket-thuc",
@@ -1315,7 +1555,28 @@
         }
       ],
       "khu": "Bản dựng · so sánh",
-      "chu": "Giao diện"
+      "chu": "Giao diện",
+      "theory": {
+        "why": "Cùng một ca test, khác bản dựng có thể cho kết quả khác. So sánh là cách tìm lỗi hồi quy.",
+        "how": "Đổi bản, chạy lại đúng bước đã làm, và ghi chênh lệch."
+      },
+      "chuong": 11,
+      "en": "Regression testing (hồi quy)",
+      "check": "regression_diff_check",
+      "en_def": "Kiểm hồi quy: chạy lại các ca cũ sau thay đổi để chắc không làm hỏng chức năng đã chạy."
     }
-  ]
+  ],
+  "chapters": {
+    "1": "Kiểm thử là gì",
+    "2": "Thiết kế ca kiểm thử",
+    "3": "Kiểm thử khám phá",
+    "4": "Tự động hóa, Page Object và báo cáo",
+    "5": "Vòng đời lỗi và Agile",
+    "6": "Bảo mật và di động",
+    "7": "Web, hiệu năng và AI",
+    "8": "Thư viện K12: phân quyền, duyệt, PIN",
+    "9": "Kỹ thuật thiết kế nâng cao và API",
+    "10": "Quy trình kiểm thử web",
+    "11": "Thực chiến: app Sao Mai"
+  }
 }

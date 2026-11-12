@@ -98,3 +98,7 @@ Kết quả mong đợi kém: "Hệ thống xử lý đúng." Kết quả mong �
 ## Thuật ngữ
 
 **Phân vùng tương đương (equivalence partitioning)**: chia dữ liệu thành các nhóm mà hệ thống được kỳ vọng xử lý giống nhau, rồi thử đại diện mỗi nhóm. · **Phân tích giá trị biên (boundary value analysis)**: thử các giá trị nằm ở mép của mỗi vùng. · **Bảng quyết định (decision table)**: bảng liệt kê tổ hợp điều kiện và kết quả tương ứng. · **Kiểm thử chuyển trạng thái (state transition testing)**: thiết kế ca từ các trạng thái và các chuyển đổi giữa chúng, gồm cả chuyển đổi không hợp lệ.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

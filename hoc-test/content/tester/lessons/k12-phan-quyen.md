@@ -89,3 +89,7 @@ Trong bảng ma trận, có bao nhiêu ca mà học sinh được làm việc kh
 ## Thực hành: làm ngay trên app mô phỏng
 
 Đọc xong lý thuyết, mở [trang thực hành](thuc-hanh.html?id=phan-quyen). Bên trái là app đang test, bên phải là trợ giảng. Bấm **Chạy demo** để xem mẫu, rồi tự làm các bài.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

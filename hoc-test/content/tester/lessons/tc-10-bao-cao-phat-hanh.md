@@ -114,3 +114,7 @@ Nói thẳng: một khóa học không biến ai thành tester cấp cao. Bạn 
 ## Thuật ngữ
 
 **Báo cáo kết thúc kiểm thử (test completion report, test summary report)**: tài liệu tóm tắt việc kiểm thử đã làm và kết quả, dùng cho quyết định phát hành. · **Lỗi chặn phát hành (release blocker)**: lỗi mà nhóm thống nhất phải xử lý trước khi phát hành. · **Rủi ro còn lại (residual risk)**: rủi ro vẫn tồn tại sau khi đã kiểm thử và sửa lỗi.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

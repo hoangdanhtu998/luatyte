@@ -34,6 +34,13 @@
     .hd-picker summary::-webkit-details-marker { display: none; }
     .hd-picker summary:hover { border-color: var(--ink, #17181C); }
     .hd-steps { position: absolute; right: 0; top: calc(100% + 6px); width: min(360px, 80vw); max-height: 60vh; overflow-y: auto; list-style: none; margin: 0; padding: 6px; background: #fff; border: 1px solid #B5B6B2; border-radius: 2px; box-shadow: 0 8px 24px rgba(23, 24, 28, .14); z-index: 30; }
+    .hd-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; margin: 2px 0 8px; }
+    .hd-chap { font-size: 13px; font-weight: 800; color: #fff; background: #1A2F94; padding: 3px 9px; border-radius: 2px; }
+    .hd-term { font-size: 13px; font-weight: 700; color: #1A2F94; background: #E8EDFB; padding: 3px 9px; border-radius: 2px; }
+    .hd-check { font-size: 12px; font-family: Consolas, monospace; color: #17181C; background: #EEEEEB; padding: 3px 7px; border-radius: 2px; }
+    .hd-steps li.chap { display: block; cursor: default; font-size: 12px; font-weight: 800; color: #1A2F94; text-transform: none; padding: 10px 10px 4px; background: none; }
+    .hd-steps li.chap:hover { background: none; }
+    .hd-def { flex-basis: 100%; margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink, #17181C); }
     .hd-steps li { padding: 8px 10px; font-size: 14px; cursor: pointer; border-radius: 2px; display: flex; gap: 8px; }
     .hd-steps li:hover { background: #F2F2F0; }
     .hd-steps li.cur { background: var(--ink, #17181C); color: #fff; }
@@ -54,10 +61,17 @@
     .hd-block::before { counter-increment: blk; content: counter(blk); position: absolute; left: 12px; top: 12px; width: 26px; height: 26px; display: grid; place-items: center; background: var(--ink, #17181C); color: #fff; font-weight: 700; font-size: 13px; border-radius: 2px; }
     .hd-block h3 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
     .hd-block p { margin: 0; font-size: 15px; line-height: 1.6; }
-    .hd-hint { border: 1px solid #E6D7A8; background: #FBF6E4; padding: 12px 14px; border-radius: 2px; }
-    .hd-hint h3 { margin: 0 0 6px; font-size: 14px; font-weight: 700; color: #6B4E12; }
-    .hd-hint ol { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; }
-
+    /* Lý thuyết: vì sao và làm thế nào */
+    .hd-theory { border: 1px solid #C9D3F2; background: #F3F6FD; border-radius: 2px; padding: 14px 16px; display: grid; gap: 8px; }
+    .hd-theory h3 { margin: 0; font-size: 15px; font-weight: 700; color: #1A2F94; text-transform: none; }
+    .hd-labeled { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink, #17181C); }
+    .hd-labeled strong { color: #1A2F94; }
+    /* Hướng giải: khối nổi bật, các bước đánh số rõ */
+    .hd-hint { border: 2px solid #E0A100; border-left-width: 8px; background: #FFF6DB; padding: 14px 16px; border-radius: 2px; }
+    .hd-hint h3 { margin: 0 0 8px; font-size: 16px; font-weight: 800; color: #6B4E12; }
+    .hd-hint ol { margin: 0; padding-left: 0; list-style: none; counter-reset: hg; display: grid; gap: 8px; }
+    .hd-hint li { counter-increment: hg; position: relative; padding-left: 36px; font-size: 16px; line-height: 1.55; font-weight: 600; color: var(--ink, #17181C); }
+    .hd-hint li::before { content: counter(hg); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: #E0A100; color: #17181C; font-size: 13px; font-weight: 800; }
     .hd-log { display: flex; flex-direction: column; gap: 8px; }
     .msg { padding: 10px 12px; border-radius: 2px; line-height: 1.55; background: #F6F7F9; border-left: 3px solid #B5B6B2; font-size: 15px; }
     .msg .who { display: block; font-size: 12px; font-weight: 700; color: #2442C8; margin-bottom: 2px; }
@@ -233,6 +247,6 @@
     <svg viewBox="0 0 26 26" width="26" height="26"><path d="M3 2 L3 21 L8 16.5 L11.5 24 L14.5 22.6 L11.2 15.4 L18 15.4 Z" fill="#17181C" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/></svg>
     <span class="hd-cursor-tag">Trợ giảng</span>
   </div>
-  <script src="assets/huong-dan-test.js?v=13"></script>
+  <script src="assets/huong-dan-test.js?v=18"></script>
 </body>
 </html>

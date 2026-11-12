@@ -27,6 +27,7 @@
   var ctrls = [btnBack, btnAgain, btnHint, btnDemo, btnPass, btnFail, btnSkip];
 
   var steps = [];
+  var chapterNames = {};
   var idx = 0;
   var results = {};
   var currentTarget = null;
@@ -98,6 +99,13 @@
     return L.toStr(d);
   }
 
+  // Cuộn trong iframe cũng cuộn trang cha; đưa trang cha về đầu để thanh trên không bị đẩy đi.
+  function keepPageTop() {
+    window.scrollTo(0, 0);
+    document.querySelector('.hd-page').scrollTop = 0;
+    document.querySelector('.hd-grid').scrollTop = 0;
+  }
+
   // App được thu còn APP_SCALE (CSS transform). Toạ độ trong app phải nhân tỉ lệ khi đưa ra khung trang.
   var APP_SCALE = 0.75;
   function inPage(node) {
@@ -138,6 +146,7 @@
     currentTarget = findVisible(step.target);
     if (currentTarget) {
       try { currentTarget.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (e) { /* bỏ qua */ }
+      keepPageTop();
       await sleep(350);
     }
     drawRing();
@@ -156,6 +165,7 @@
   async function moveTo(node) {
     if (!node) throw new Error('không thấy phần tử cần thao tác');
     try { node.scrollIntoView({ block: 'center' }); } catch (e) { /* bỏ qua */ }
+    keepPageTop();
     await sleep(120);
     cursorTo(node);
     owlTo(node);
@@ -273,7 +283,23 @@
     if (!card) return;
     card.replaceChildren();
     card.appendChild(el('h2', '', 'Câu ' + (i + 1) + ': ' + step.title));
+    if (step.chuong) {
+      var meta = el('div', 'hd-meta');
+      meta.appendChild(el('span', 'hd-chap', 'Chương ' + step.chuong + ' · ' + (chapterNames[step.chuong] || '')));
+      if (step.en) meta.appendChild(el('span', 'hd-term', 'Thuật ngữ: ' + step.en));
+      if (step.en_def) meta.appendChild(el('p', 'hd-def', 'Nghĩa: ' + step.en_def));
+      if (step.check) meta.appendChild(el('code', 'hd-check', step.check));
+      card.appendChild(meta);
+    }
     card.appendChild(el('p', '', step.say));
+
+    if (step.theory) {
+      var th = el('div', 'hd-theory');
+      th.appendChild(el('h3', '', 'Lý thuyết'));
+      th.appendChild(labeled('Vì sao phải test', step.theory.why));
+      th.appendChild(labeled('Làm thế nào', step.theory.how));
+      card.appendChild(th);
+    }
 
     var blocks = el('div', 'hd-blocks');
     blocks.appendChild(block('Khoanh chỗ cần xem', step.target ? 'Vòng vàng trong app là chỗ làm việc của bước này.' : 'Mở đúng tab rồi làm theo bước.'));
@@ -290,6 +316,12 @@
       hint.appendChild(ol);
       card.appendChild(hint);
     }
+  }
+  function labeled(label, text) {
+    var p = el('p', 'hd-labeled');
+    p.appendChild(el('strong', '', label + ': '));
+    p.appendChild(document.createTextNode(text || ''));
+    return p;
   }
   function block(title, text) {
     var b = el('div', 'hd-block');
@@ -312,7 +344,7 @@
       var li = el('li', (st ? st : '') + (i === idx ? ' cur' : ''));
       li.setAttribute('role', 'button');
       li.tabIndex = 0;
-      li.append(el('span', 'n', String(i + 1) + '.'), el('span', 't', s.title), el('span', 's', st ? STATUS_MARK[st] : ''));
+      li.append(el('span', 'n', String(i + 1) + '.'), el('span', 'ch', 'C' + (s.chuong || '-')), el('span', 't', s.title), el('span', 's', st ? STATUS_MARK[st] : ''));
       li.addEventListener('click', function () { pickStep(i); });
       li.addEventListener('keydown', function (e) { if (e.key === 'Enter') pickStep(i); });
       list.appendChild(li);
@@ -541,6 +573,7 @@
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (data) {
       steps = data.steps || [];
+      chapterNames = data.chapters || {};
       var start = 0;
       while (start < steps.length && results[steps[start].id]) start++;
       idx = start < steps.length ? start : 0;

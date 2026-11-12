@@ -105,3 +105,6 @@ Kiểm đầu vào ở trình duyệt chỉ để trải nghiệm tốt hơn. B�
 
 Nguồn: github.com/PaulWaltersDev/FreeLearningResourcesForSoftwareTesters, mục "Security and Penetration Testing". Tìm tên tài liệu trong repo để lấy liên kết.
 
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

@@ -152,6 +152,9 @@ tbody tr:hover td { background: #FAFAF9; }
 }
 
 /* Chế độ nhúng trong trang hướng dẫn: dùng hết chiều rộng khung */
+.embed body { min-height: 100vh; display: flex; flex-direction: column; }
+.embed main { flex: 1 0 auto; }
+.embed .foot { margin-top: auto; }
 .embed main, .embed .foot { max-width: none; }
 .embed main { padding-left: 24px; padding-right: 24px; }
 

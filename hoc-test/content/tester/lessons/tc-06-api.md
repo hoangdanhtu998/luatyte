@@ -97,3 +97,7 @@ Dữ liệu mẫu có sẵn 5 lịch với mã từ `SM-100001` đến `SM-10000
 ## Thuật ngữ
 
 **API**: giao diện để chương trình này gọi chương trình khác. · **Mã trạng thái (status code)**: số ba chữ số cho biết kết quả xử lý một yêu cầu HTTP. · **Thân yêu cầu (request body)**: dữ liệu gửi kèm yêu cầu, ở đây là JSON. · **Kiểm thử phủ định (negative testing)**: kiểm cách hệ thống xử lý dữ liệu và thao tác không hợp lệ.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

@@ -89,3 +89,7 @@ Lượt kiểm nhanh này bắt được lỗi phổ biến. Nó không chứng 
 ## Thuật ngữ
 
 **XSS (cross-site scripting)**: lỗi cho phép mã do người dùng nhập được chạy trong trình duyệt của người khác. · **Khả năng truy cập (accessibility)**: mức độ người khuyết tật dùng được sản phẩm. · **WCAG**: bộ hướng dẫn về khả năng truy cập nội dung web của W3C. · **Yêu cầu phi chức năng (non-functional requirement)**: yêu cầu về cách hệ thống hoạt động (an toàn, dễ dùng, nhanh), khác với việc nó làm gì.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

@@ -190,3 +190,6 @@ Nguồn: github.com/PaulWaltersDev/FreeLearningResourcesForSoftwareTesters, mụ
 
 **Thuật ngữ trong slide này:** **Trạng thái lỗi (defect life cycle)**: Chuỗi trạng thái của một lỗi từ lúc mở đến lúc đóng.
 
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

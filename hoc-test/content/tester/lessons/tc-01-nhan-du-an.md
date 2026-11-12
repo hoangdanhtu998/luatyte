@@ -80,3 +80,7 @@ Trong dự án này, kết quả buổi làm rõ đã được ghi thành [tài 
 ## Thuật ngữ
 
 **Yêu cầu kiểm thử được (testable requirement)**: yêu cầu đủ rõ để viết được ca kiểm thử có kết quả mong đợi xác định. · **Kiểm thử tĩnh (static testing)**: tìm lỗi bằng cách xem xét tài liệu hoặc mã nguồn mà không chạy phần mềm. Rà soát yêu cầu là một dạng kiểm thử tĩnh. · **BA (business analyst)**: người phụ trách phân tích nghiệp vụ, thường là người trả lời câu hỏi về yêu cầu.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

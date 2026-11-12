@@ -86,3 +86,7 @@ Thêm tỷ lệ thời gian ước lượng: bao nhiêu phần cho việc kiểm
 ## Thuật ngữ
 
 **Kiểm thử khám phá (exploratory testing)**: cách kiểm thử trong đó việc học về sản phẩm, thiết kế phép thử và thực hiện phép thử diễn ra cùng lúc. · **Charter**: mục tiêu ngắn gọn của một phiên khám phá. · **Phiên (session)**: khoảng thời gian cố định, không gián đoạn, dành cho một charter.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

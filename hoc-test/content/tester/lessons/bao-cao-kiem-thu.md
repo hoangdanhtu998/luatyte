@@ -118,3 +118,6 @@ Báo cáo: "Đã kiểm 95% chức năng, không có lỗi". Trong đó 95% là 
 
 **Thuật ngữ trong slide này:** **Mẫu số (denominator)**: Tổng số dùng để tính một tỉ lệ. Báo tỉ lệ mà không nói mẫu số thì người đọc dễ hiểu sai. · **Rủi ro (risk)**: Khả năng một sự cố xảy ra, nhân với mức thiệt hại nếu nó xảy ra.
 
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

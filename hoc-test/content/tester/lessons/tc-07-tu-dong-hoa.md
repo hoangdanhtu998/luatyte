@@ -99,3 +99,7 @@ Bạn vừa gọi API bằng mã. Mọi kịch bản tự động, về bản ch
 ## Thuật ngữ
 
 **Kiểm thử hồi quy (regression testing)**: chạy lại ca cũ để phát hiện phần đang chạy đúng bị hỏng sau thay đổi. · **Ca khói (smoke test)**: vài ca chạy nhanh để biết bản dựng có đáng kiểm tiếp không. · **Ca chập chờn (flaky test)**: ca cho kết quả lúc đạt lúc không dù sản phẩm không đổi. · **Playwright**: công cụ mã nguồn mở để điều khiển trình duyệt bằng mã.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

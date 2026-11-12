@@ -103,3 +103,6 @@ Bảng quyết định có 5 điều kiện nhị phân. Tối đa bao nhiêu lu
 
 **Tổ hợp cặp (pairwise)**
 
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.

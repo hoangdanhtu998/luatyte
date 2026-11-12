@@ -101,3 +101,7 @@ Nói về sản phẩm, đừng nói về người. "Phí tính sai ở tuổi 6
 ## Thuật ngữ
 
 **Mức nghiêm trọng (severity)**: mức độ tác động của lỗi lên hệ thống hoặc người dùng. · **Mức ưu tiên (priority)**: mức độ cần sửa sớm, xét theo nghiệp vụ. · **Phân loại lỗi (triage)**: buổi xem xét lỗi mới để quyết định xử lý. · **Tái hiện (reproduce)**: làm cho lỗi xảy ra lại bằng các bước đã ghi.
+
+## Test toàn bộ app: trang hướng dẫn từng bước
+
+Mở [trang hướng dẫn test](huong-dan-test.html). Trợ giảng khoanh từng chỗ trong app, giải thích lý thuyết, kỹ thuật và thuật ngữ tiếng Anh của từng bước, rồi làm mẫu để bạn xem.
