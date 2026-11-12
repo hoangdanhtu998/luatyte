@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
 /* Lớp giao diện cho trang chủ: chỉnh bố cục, không đổi markup hay JS.
    Nạp sau site.css trên index.html. */
 
@@ -540,3 +541,55 @@ input,select,textarea{border-radius:10px}
 @media (prefers-reduced-motion:reduce){
   .card,.hub-card,.today,.panel,.stat,.btn,nav.tabs button{transition:none!important;transform:none!important}
 }
+
+
+/* ===== Đợt thiết kế mạnh tay: bảng màu sổ tay, tiêu đề serif, nhịp chữ rõ ===== */
+:root{
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Be Vietnam Pro", system-ui, sans-serif;
+  --color-paper:#F5F3EE; --color-paper-2:#FFFFFF; --color-paper-3:#ECE8DF;
+  --color-ink:#16181D; --color-ink-2:#3A3F4A; --color-muted:#6B6F7A;
+  --color-rule:#D9D4C7; --color-rule-2:#E9E5DB;
+  --color-accent:#1D5B4F; --color-accent-ink:#FFFFFF; --color-accent-soft:#DCEAE5; --color-accent-soft-ink:#14443B;
+  --color-action:#16181D; --color-action-ink:#F5F3EE; --color-focus:#1D5B4F;
+  --radius-card:16px; --container:1200px;
+  --shadow-card:0 1px 0 rgba(22,24,29,.04), 0 12px 32px -18px rgba(22,24,29,.28);
+}
+body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;color:var(--color-ink);line-height:1.12}
+h1{font-size:clamp(34px,4.6vw,56px);font-variation-settings:"opsz" 144}
+h2{font-size:clamp(24px,2.6vw,32px)}
+h3{font-size:clamp(18px,1.6vw,21px);letter-spacing:-.01em}
+.sub,.lead,.hero .lead{color:var(--color-ink-2);font-size:17px;max-width:62ch}
+.card,.hub-card,.today,.panel,.stat,.remind,.reader{background:var(--color-paper-2);border:1px solid var(--color-rule);border-radius:16px;box-shadow:var(--shadow-card)}
+.stat strong,.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;color:var(--color-ink)}
+.stat span,.stat small,.stat label{font-size:13px;color:var(--color-muted);letter-spacing:0}
+nav.tabs{border-bottom:1px solid var(--color-rule)}
+nav.tabs button{font-weight:600;color:var(--color-muted);padding:10px 14px}
+nav.tabs button[aria-selected="true"]{color:var(--color-ink);box-shadow:inset 0 -2px 0 var(--color-accent)}
+.btn{font-weight:600;letter-spacing:0;padding:10px 18px}
+.btn:not(.ghost):not(:disabled){background:var(--color-action);border-color:var(--color-action);color:var(--color-action-ink)}
+.btn:not(.ghost):not(:disabled):hover{background:var(--color-accent);border-color:var(--color-accent);color:#fff}
+.btn.ghost{background:transparent;border-color:var(--color-rule);color:var(--color-ink)}
+.btn.ghost:hover{border-color:var(--color-ink)}
+.chip{font-weight:600;background:var(--color-accent-soft);color:var(--color-accent-soft-ink);border:0}
+a{color:var(--color-accent)}
+header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
+::selection{background:var(--color-accent-soft);color:var(--color-accent-soft-ink)}
+
+/* Hero: khối tối đậm làm điểm nhấn đầu trang */
+.hero{background:var(--color-ink);color:var(--color-paper);border-radius:24px;padding:clamp(22px,3vw,40px);box-shadow:0 24px 48px -28px rgba(22,24,29,.6)}
+.hero h1,.hero h2,.hero strong,.hero b{color:var(--color-paper)}
+.hero .sub,.hero .lead,.hero p,.hero small{color:#C9C6BD}
+.hero .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);box-shadow:none}
+.hero .stat strong,.hero .stat b{color:var(--color-paper)}
+.hero .stat span,.hero .stat small,.hero .stat label{color:#AEB0B7}
+.hero .card,.hero .today,.hero .remind{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);box-shadow:none;color:var(--color-paper)}
+.hero .btn.ghost{color:var(--color-paper);border-color:rgba(255,255,255,.3)}
+.hero .btn:not(.ghost){background:var(--color-paper);color:var(--color-ink);border-color:var(--color-paper)}
+.hero .btn:not(.ghost):hover{background:#fff;color:var(--color-ink);border-color:#fff}
+.hero select,.hero input{background:rgba(255,255,255,.08);color:var(--color-paper);border-color:rgba(255,255,255,.2)}
+.hero .chip{background:rgba(255,255,255,.1);color:var(--color-paper)}
+.hero .stats{background:transparent;border:0;box-shadow:none;gap:12px}
+.hero .stats > *{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px}
+.hero .remind{background:rgba(255,255,255,.04)}

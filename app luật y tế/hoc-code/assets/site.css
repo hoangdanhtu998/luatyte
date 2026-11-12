@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
 
 /* Học code. Bảng màu: kem #F5F2EA, navy #1C2027, teal #2F5FB3, vàng #F08A4B, nền code #14181F, đỏ nâu #B8521F.
@@ -482,3 +483,12 @@ p, li { text-wrap: pretty; }
 a { text-underline-offset: 3px; }
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid rgba(47, 95, 179, .45); outline-offset: 2px; border-radius: 8px; }
 input, select, textarea { border-radius: 10px; }
+
+/* ===== Đồng bộ với trang luật và học test: bảng màu sổ tay, tiêu đề serif ===== */
+:root{ --cream:#F5F3EE; --paper:#FFFFFF; --navy:#16181D; --teal:#1D5B4F; --amber:#C0703A; --ink:#16181D; --muted:#6B6F7A; --line:#D9D4C7; }
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:700;letter-spacing:-.02em;line-height:1.12;color:var(--ink)}
+.btn{font-weight:600}
+.btn:not(.ghost):not(:disabled){background:var(--navy);border-color:var(--navy);color:#F5F3EE}
+.btn:not(.ghost):not(:disabled):hover{background:var(--teal);border-color:var(--teal);color:#fff}
+a{color:var(--teal)}
