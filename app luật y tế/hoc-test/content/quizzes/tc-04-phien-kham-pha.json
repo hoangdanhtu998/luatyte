@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Charter nào dùng được cho một phiên 45 phút?",
+      "answer": 2,
+      "explain": "Charter tốt nêu khu vực, cách làm và loại rủi ro, đủ hẹp để làm trong một phiên.",
+      "options": [
+        {
+          "text": "Kiểm thử toàn bộ app Sao Mai.",
+          "why": "Quá rộng, không biết bắt đầu từ đâu và khi nào xong."
+        },
+        {
+          "text": "Kiểm ô số điện thoại nhận đúng 10 chữ số.",
+          "why": "Đây là một ca kiểm thử có sẵn đáp án, không cần khám phá."
+        },
+        {
+          "text": "Khám phá luồng hủy lịch từ cả màn Tra cứu và màn Quản trị, với lịch ở từng trạng thái, để tìm chỗ hai màn xử lý khác nhau.",
+          "why": "Đúng. Đủ ba phần và vừa một phiên."
+        },
+        {
+          "text": "Tìm thật nhiều lỗi.",
+          "why": "Không nói khu vực nào, bằng cách nào."
+        }
+      ]
+    },
+    {
+      "q": "Giữa phiên, bạn thấy phí ở màn Tra cứu hiển thị hơi khác màn Đặt lịch, chưa chắc là lỗi. Nên làm gì?",
+      "answer": 0,
+      "explain": "Ghi lại để không quên, giữ nhịp phiên, xử lý sau.",
+      "options": [
+        {
+          "text": "Ghi một dòng vào ghi chép, đánh dấu cần hỏi, rồi tiếp tục phiên.",
+          "why": "Đúng. Điều tra kỹ hoặc hỏi lại sau khi phiên kết thúc."
+        },
+        {
+          "text": "Dừng phiên ngay để nhắn hỏi BA.",
+          "why": "Ngắt phiên làm mất mạch và mất thời gian của charter."
+        },
+        {
+          "text": "Bỏ qua vì chưa chắc là lỗi.",
+          "why": "Không ghi lại thì gần như chắc chắn sẽ quên."
+        },
+        {
+          "text": "Báo ngay lỗi mức Nghiêm trọng.",
+          "why": "Chưa xác định là lỗi, và mức đó không tương xứng."
+        }
+      ]
+    },
+    {
+      "q": "Phần tổng kết phiên của bạn có mục \"Chưa phủ: hai tab cùng đặt một khung, dùng trên điện thoại\". Trưởng nhóm nên hiểu thế nào?",
+      "answer": 1,
+      "explain": "Mục \"chưa phủ\" là thông tin để lên kế hoạch phiên sau và để biết rủi ro còn mở.",
+      "options": [
+        {
+          "text": "Bạn làm việc chưa tốt vì chưa kiểm hết.",
+          "why": "Không phiên nào phủ hết. Ghi thật mới là làm tốt."
+        },
+        {
+          "text": "Hai điểm đó chưa được kiểm, cần quyết định có dành phiên khác cho chúng không.",
+          "why": "Đúng. Đây chính là mục đích của mục này."
+        },
+        {
+          "text": "Hai điểm đó không quan trọng.",
+          "why": "Chưa phủ không có nghĩa là không quan trọng."
+        },
+        {
+          "text": "Hai điểm đó đã được kiểm sơ qua.",
+          "why": "Chưa phủ nghĩa là chưa kiểm."
+        }
+      ]
+    },
+    {
+      "q": "Sau phiên, bạn ước lượng 70% thời gian dành cho chuẩn bị dữ liệu, chỉ 20% cho kiểm thử. Thông tin này nói gì?",
+      "answer": 3,
+      "explain": "Tỷ lệ thời gian cho biết việc kiểm thử có đang bị cản trở hay không.",
+      "options": [
+        {
+          "text": "Bạn chuẩn bị rất cẩn thận, đáng khen.",
+          "why": "Chuẩn bị chiếm phần lớn phiên là dấu hiệu có vấn đề."
+        },
+        {
+          "text": "Phiên này nên được tính là thành công.",
+          "why": "Thời gian thực sự kiểm thử quá ít."
+        },
+        {
+          "text": "Không nói gì, tỷ lệ thời gian không quan trọng.",
+          "why": "Đây là số liệu trưởng nhóm cần để gỡ vướng."
+        },
+        {
+          "text": "Môi trường thử hoặc dữ liệu thử đang gây cản trở, cần báo để cải thiện.",
+          "why": "Đúng. Ví dụ đề nghị có nút đặt lại dữ liệu mẫu, có đồng hồ giả lập."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ex1",
+    "title": "Phân tích rủi ro: Chấm điểm khu vực",
+    "scenario": "App đặt lịch khám Phòng khám Sao Mai",
+    "prompt": "Chấm điểm rủi ro cho khu vực 'Tính tiền' của phòng khám: khả năng xảy ra (1-3) và mức ảnh hưởng (1-3). Tính điểm rủi ro.",
+    "options": ["1", "4", "6", "9"],
+    "answer": "9",
+    "explanation": "Khả năng xảy ra = 3 (logic tính tiền phức tạp, nhiều điều kiện: tuổi, BHYT, loại khám). Mức ảnh hưởng = 3 (sai tiền ảnh hưởng trực tiếp đến người bệnh và phòng khám). Điểm = 3×3 = 9."
+  },
+  {
+    "id": "ex2",
+    "title": "Phân tích rủi ro: Ưu tiên kiểm thử",
+    "scenario": "Bảng rủi ro có 3 khu vực: Tính tiền (9đ), Hiển thị lịch (4đ), Giao diện đẹp (1đ)",
+    "prompt": "Bạn chỉ có 1 ngày để kiểm thử. Kiểm khu vực nào trước?",
+    "options": ["Giao diện đẹp", "Hiển thị lịch", "Tính tiền"],
+    "answer": "Tính tiền",
+    "explanation": "Điểm rủi ro 6-9 phải kiểm trước tiên. Sai tiền ảnh hưởng trực tiếp đến người bệnh và phòng khám. Giao diện đẹp (1đ) có thể bỏ qua hoặc kiểm sau cùng."
+  },
+  {
+    "id": "ex3",
+    "title": "Phân tích rủi ro: Điều kiện dừng",
+    "scenario": "Kế hoạch kiểm thử có điều kiện dừng: 'Đã chạy hết ca của các khu vực từ 6 điểm trở lên'",
+    "prompt": "Điều kiện dừng nào sau đây là tốt?",
+    "options": ["Khi không còn lỗi", "Khi hết thời gian", "Khi đã chạy hết ca của khu vực từ 6 điểm, không còn lỗi Nghiêm trọng/Cao mở"],
+    "answer": "Khi đã chạy hết ca của khu vực từ 6 điểm, không còn lỗi Nghiêm trọng/Cao mở",
+    "explanation": "'Khi không còn lỗi' không đo được. 'Khi hết thời gian' không liên quan đến chất lượng. Điều kiện dừng tốt phải đo được và liên quan đến rủi ro."
+  }
+]
