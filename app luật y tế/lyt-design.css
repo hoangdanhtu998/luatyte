@@ -593,3 +593,7 @@ header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
 .hero .stats{background:transparent;border:0;box-shadow:none;gap:12px}
 .hero .stats > *{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px}
 .hero .remind{background:rgba(255,255,255,.04)}
+/* Nhãn trong hero tối: đủ tương phản */
+.hero label, .hero .theme-row label, .hero .remind, .hero .remind label, .hero .remind span, .hero .remind p{color:#D6D3CB}
+.hero .remind input, .hero .remind select{color:#16181D;background:#F5F3EE;border-color:#D9D4C7}
+.hero .theme-row select{background:#2A2A2E;color:var(--color-paper);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:6px 10px}
