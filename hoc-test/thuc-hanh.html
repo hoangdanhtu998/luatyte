@@ -40,7 +40,28 @@
     .controls { display: flex; flex-wrap: wrap; gap: 8px; }
     .controls .btn[disabled], .form-row .btn[disabled] { opacity: .45; cursor: not-allowed; }
     .controls .btn[hidden] { display: none; }
-    .th-appbody { display: grid; gap: 12px; }
+    .th-appbody { display: grid; gap: 12px; position: relative; }
+    .th-demobar { display: none; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy); background: #fff4d6; border: 1px solid #f0d58a; border-radius: 10px; padding: 6px 10px; }
+    .th-demobar.on { display: flex; }
+    .th-demobar .dot { width: 8px; height: 8px; border-radius: 50%; background: #e0a100; flex: none; animation: th-pulse 1s ease-in-out infinite; }
+    .th-cursor { position: absolute; left: 0; top: 0; width: 26px; height: 26px; pointer-events: none; z-index: 5; opacity: 0; transition: transform .55s cubic-bezier(.3, .7, .3, 1), opacity .2s; }
+    .th-cursor.on { opacity: 1; }
+    .th-cursor svg { width: 26px; height: 26px; display: block; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .25)); transform-origin: 3px 2px; transition: transform .12s; }
+    .th-cursor.press svg { transform: scale(.82); }
+    .th-ripple { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 2px solid #e0a100; pointer-events: none; z-index: 4; animation: th-ripple .6s ease-out forwards; }
+    .th-spot { outline: 3px solid #e0a100; outline-offset: 3px; border-radius: 8px; }
+    .th-typing { display: inline-flex; gap: 4px; align-items: center; padding: 4px 0; }
+    .th-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: th-blink 1s ease-in-out infinite; }
+    .th-typing i:nth-child(2) { animation-delay: .15s; }
+    .th-typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes th-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+    @keyframes th-blink { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+    @keyframes th-ripple { from { transform: scale(.3); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .th-cursor, .th-cursor svg { transition: none; }
+      .th-demobar .dot, .th-typing i, .th-ripple { animation: none; }
+      .th-ripple { display: none; }
+    }
     .field { display: grid; gap: 6px; }
     .field > label { font-weight: 700; }
     .field input, .field select, .field textarea { width: 100%; max-width: 420px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; background: var(--paper); }

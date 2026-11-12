@@ -2,7 +2,10 @@
   "id": "cac-muc-kiem-thu",
   "title": "Thực hành: chọn mức kiểm thử cho từng lỗi",
   "lesson": "cap4-cac-muc-kiem-thu",
-  "app": { "type": "choice", "name": "Tình huống lỗi trên hệ thống đặt lịch (mẫu)" },
+  "app": {
+    "type": "choice",
+    "name": "Tình huống lỗi trên hệ thống đặt lịch (mẫu)"
+  },
   "steps": [
     {
       "id": "lam-quen",
@@ -21,17 +24,38 @@
       "task": {
         "prompt": "Lỗi này nên bắt ở mức nào?",
         "choices": [
-          { "id": "don-vi", "label": "Đơn vị" },
-          { "id": "tich-hop", "label": "Tích hợp" },
-          { "id": "he-thong", "label": "Hệ thống" }
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
         ],
-        "check": { "answer": "don-vi" },
+        "check": {
+          "answer": "don-vi"
+        },
         "hints": [
           "Lỗi nằm trong một hàm, không cần ghép hai phần.",
           "Hàm tính phí là một đơn vị riêng. Kiểm đơn vị là mức bắt sớm và rẻ nhất."
         ],
         "pass": "Đúng! Lỗi trong một hàm được bắt ở mức đơn vị."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "don-vi"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Lỗi trong một hàm được bắt ở mức đơn vị."
+        }
+      ]
     },
     {
       "id": "ca-2",
@@ -41,17 +65,38 @@
       "task": {
         "prompt": "Lỗi này nên bắt ở mức nào?",
         "choices": [
-          { "id": "don-vi", "label": "Đơn vị" },
-          { "id": "tich-hop", "label": "Tích hợp" },
-          { "id": "he-thong", "label": "Hệ thống" }
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
         ],
-        "check": { "answer": "tich-hop" },
+        "check": {
+          "answer": "tich-hop"
+        },
         "hints": [
           "Lỗi nằm ở chỗ giao diện và API nói chuyện với nhau.",
           "Đây là lỗi giao tiếp giữa hai phần, nên là tích hợp."
         ],
         "pass": "Đúng! Lỗi ở chỗ hai phần ghép lại được bắt ở mức tích hợp."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "tich-hop"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Lỗi ở chỗ hai phần ghép lại được bắt ở mức tích hợp."
+        }
+      ]
     },
     {
       "id": "ca-3",
@@ -61,17 +106,38 @@
       "task": {
         "prompt": "Lỗi này nên bắt ở mức nào?",
         "choices": [
-          { "id": "don-vi", "label": "Đơn vị" },
-          { "id": "tich-hop", "label": "Tích hợp" },
-          { "id": "he-thong", "label": "Hệ thống" }
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
         ],
-        "check": { "answer": "he-thong" },
+        "check": {
+          "answer": "he-thong"
+        },
         "hints": [
           "Hãy nghĩ đến cả quy trình, từ đầu đến cuối.",
           "Đây là luồng người dùng đầy đủ, nên là kiểm thử hệ thống."
         ],
         "pass": "Đúng! Luồng đầy đủ của người dùng được kiểm ở mức hệ thống."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "he-thong"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Luồng đầy đủ của người dùng được kiểm ở mức hệ thống."
+        }
+      ]
     },
     {
       "id": "ca-4",
@@ -81,17 +147,38 @@
       "task": {
         "prompt": "Lỗi này nên bắt ở mức nào?",
         "choices": [
-          { "id": "don-vi", "label": "Đơn vị" },
-          { "id": "tich-hop", "label": "Tích hợp" },
-          { "id": "he-thong", "label": "Hệ thống" }
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
         ],
-        "check": { "answer": "don-vi" },
+        "check": {
+          "answer": "don-vi"
+        },
         "hints": [
           "Chỉ một hàm kiểm ngày, không liên quan đến phần khác.",
           "Hàm kiểm ngày là một đơn vị, nên kiểm đơn vị là đủ."
         ],
         "pass": "Đúng! Một hàm kiểm ngày sai thì bắt ở mức đơn vị."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "don-vi"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Một hàm kiểm ngày sai thì bắt ở mức đơn vị."
+        }
+      ]
     },
     {
       "id": "tong-ket",

@@ -2,7 +2,10 @@
   "id": "test-tu-dong",
   "title": "Thực hành: ca nào nên tự động hóa",
   "lesson": "cap4-test-tu-dong",
-  "app": { "type": "choice", "name": "Danh sách ca của hệ thống đặt lịch (mẫu)" },
+  "app": {
+    "type": "choice",
+    "name": "Danh sách ca của hệ thống đặt lịch (mẫu)"
+  },
   "steps": [
     {
       "id": "lam-quen",
@@ -21,16 +24,34 @@
       "task": {
         "prompt": "Ca này nên tự động hóa không?",
         "choices": [
-          { "id": "nen", "label": "Nên tự động hóa" },
-          { "id": "khong", "label": "Không nên" }
+          {
+            "id": "nen",
+            "label": "Nên tự động hóa"
+          },
+          {
+            "id": "khong",
+            "label": "Không nên"
+          }
         ],
-        "check": { "answer": "nen" },
+        "check": {
+          "answer": "nen"
+        },
         "hints": [
           "Hỏi: ca có phải chạy lại nhiều lần không? Kết quả có so được bằng máy không?",
           "Chạy lặp lại được và kết quả xác định, nên tự động hóa."
         ],
         "pass": "Đúng! Ca lặp lại nhiều lần và kết quả xác định là ứng viên tốt."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "nen"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Ca lặp lại nhiều lần và kết quả xác định là ứng viên tốt."
+        }
+      ]
     },
     {
       "id": "ca-2",
@@ -40,16 +61,34 @@
       "task": {
         "prompt": "Ca này nên tự động hóa không?",
         "choices": [
-          { "id": "nen", "label": "Nên tự động hóa" },
-          { "id": "khong", "label": "Không nên" }
+          {
+            "id": "nen",
+            "label": "Nên tự động hóa"
+          },
+          {
+            "id": "khong",
+            "label": "Không nên"
+          }
         ],
-        "check": { "answer": "khong" },
+        "check": {
+          "answer": "khong"
+        },
         "hints": [
           "Giá trị của phiên khám phá nằm ở việc người kiểm đổi hướng theo điều mới thấy.",
           "Phiên khám phá không có kết quả mong đợi cố định, nên không nên tự động hóa."
         ],
         "pass": "Đúng! Khám phá cần người suy nghĩ, không phải kịch bản cố định."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "khong"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Khám phá cần người suy nghĩ, không phải kịch bản cố định."
+        }
+      ]
     },
     {
       "id": "ca-3",
@@ -59,16 +98,34 @@
       "task": {
         "prompt": "Ca này nên tự động hóa không?",
         "choices": [
-          { "id": "nen", "label": "Nên tự động hóa" },
-          { "id": "khong", "label": "Không nên" }
+          {
+            "id": "nen",
+            "label": "Nên tự động hóa"
+          },
+          {
+            "id": "khong",
+            "label": "Không nên"
+          }
         ],
-        "check": { "answer": "nen" },
+        "check": {
+          "answer": "nen"
+        },
         "hints": [
           "Ca này chạy lại liên tục và có kết quả đúng sai rõ ràng.",
           "Đăng nhập là luồng ổn định và rủi ro cao, nên tự động hóa."
         ],
         "pass": "Đúng! Ca chạy lại thường xuyên là nên tự động."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "nen"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Ca chạy lại thường xuyên là nên tự động."
+        }
+      ]
     },
     {
       "id": "ca-4",
@@ -78,16 +135,34 @@
       "task": {
         "prompt": "Ca này nên tự động hóa không?",
         "choices": [
-          { "id": "nen", "label": "Nên tự động hóa" },
-          { "id": "khong", "label": "Không nên" }
+          {
+            "id": "nen",
+            "label": "Nên tự động hóa"
+          },
+          {
+            "id": "khong",
+            "label": "Không nên"
+          }
         ],
-        "check": { "answer": "khong" },
+        "check": {
+          "answer": "khong"
+        },
         "hints": [
           "Đánh giá bằng mắt và giao diện đang đổi liên tục.",
           "Kịch bản sẽ vỡ mỗi tuần, nên giữ việc này cho người kiểm."
         ],
         "pass": "Đúng! Đánh giá bằng mắt và giao diện đổi liên tục không hợp tự động."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "khong"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Đánh giá bằng mắt và giao diện đổi liên tục không hợp tự động."
+        }
+      ]
     },
     {
       "id": "tong-ket",
