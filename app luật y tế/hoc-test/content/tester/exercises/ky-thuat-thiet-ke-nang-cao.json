@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ky-thuat-ex1",
+    "title": "Số luật tối đa của bảng quyết định",
+    "prompt": "Đọc số điều kiện nhị phân k (0 đến 10). In số luật tối đa, tức 2 mũ k.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int k;\n    scanf(\"%d\", &k);\n    // TODO: in 2 mũ k\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "0\n",
+        "expected": "1\n"
+      },
+      {
+        "stdin": "3\n",
+        "expected": "8\n"
+      },
+      {
+        "stdin": "5\n",
+        "expected": "32\n"
+      }
+    ],
+    "hints": [
+      "Mỗi điều kiện nhân đôi số luật.",
+      "Dùng vòng lặp nhân 2, bắt đầu từ 1."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int k;\n    scanf(\"%d\", &k);\n    int luat = 1;\n    for (int i = 0; i < k; i++) luat *= 2;\n    printf(\"%d\\n\", luat);\n    return 0;\n}\n"
+  }
+]

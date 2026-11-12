@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Câu mở đầu nào tốt nhất cho báo cáo kết thúc?",
+      "answer": 2,
+      "explain": "Kết luận rõ ràng ngay dòng đầu, kèm lý do mạnh nhất.",
+      "options": [
+        {
+          "text": "Trong hai tuần qua nhóm kiểm thử đã thực hiện nhiều hoạt động như sau…",
+          "why": "Người đọc phải đọc hết mới biết kết luận."
+        },
+        {
+          "text": "Nhìn chung bản 1.1 khá ổn nhưng vẫn còn một số vấn đề cần lưu ý.",
+          "why": "Nước đôi, không giúp quyết định."
+        },
+        {
+          "text": "Khuyến nghị: chưa phát hành bản 1.1. Lý do chính: trẻ dưới 6 tuổi bị thu phí đầy đủ và API nhận dữ liệu không hợp lệ.",
+          "why": "Đúng. Rõ kết luận và căn cứ."
+        },
+        {
+          "text": "Đã chạy 60 ca, đạt 52, tỷ lệ 87%.",
+          "why": "Con số này không cho biết 8 ca không đạt nặng đến đâu."
+        }
+      ]
+    },
+    {
+      "q": "Bạn chưa kiểm được trường hợp nhiều người đặt cùng một khung giờ cùng lúc. Nên xử lý thế nào trong báo cáo?",
+      "answer": 0,
+      "explain": "Phần chưa kiểm là thông tin người quyết định cần biết.",
+      "options": [
+        {
+          "text": "Ghi vào mục \"Chưa kiểm gì\": chưa kiểm cái gì, vì sao, hậu quả có thể có.",
+          "why": "Đúng."
+        },
+        {
+          "text": "Không nhắc tới để báo cáo gọn.",
+          "why": "Người đọc sẽ mặc định là đã kiểm."
+        },
+        {
+          "text": "Ghi là đã kiểm vì từng người đặt riêng lẻ đều đúng.",
+          "why": "Không đúng sự thật. Đặt đồng thời là rủi ro khác."
+        },
+        {
+          "text": "Hoãn nộp báo cáo đến khi kiểm được.",
+          "why": "Người quyết định cần thông tin đúng hạn, kể cả thông tin về giới hạn."
+        }
+      ]
+    },
+    {
+      "q": "\"Đạt 95% số ca kiểm thử.\" Vì sao con số này có thể gây hiểu sai?",
+      "answer": 3,
+      "explain": "Tỷ lệ gộp che mất việc phần không đạt nằm ở đâu và nặng thế nào.",
+      "options": [
+        {
+          "text": "Vì 95% là quá thấp.",
+          "why": "Vấn đề không nằm ở cao hay thấp."
+        },
+        {
+          "text": "Vì phải đạt 100% mới được phát hành.",
+          "why": "Không có ngưỡng chung như vậy."
+        },
+        {
+          "text": "Vì số ca nên nhiều hơn.",
+          "why": "Số ca không quyết định ý nghĩa của tỷ lệ."
+        },
+        {
+          "text": "Vì 5% không đạt có thể chính là phần tính tiền hoặc lộ thông tin.",
+          "why": "Đúng. Phải nói rõ ca không đạt thuộc khu vực rủi ro nào."
+        }
+      ]
+    },
+    {
+      "q": "Người phụ trách sản phẩm đọc báo cáo, hiểu rõ các lỗi chặn, rồi vẫn quyết định phát hành vì hợp đồng. Nhận định nào đúng?",
+      "answer": 1,
+      "explain": "Tester làm xong việc khi quyết định được đưa ra với đầy đủ thông tin.",
+      "options": [
+        {
+          "text": "Bạn đã thất bại vì khuyến nghị không được nghe theo.",
+          "why": "Quyết định thuộc về người chịu trách nhiệm sản phẩm."
+        },
+        {
+          "text": "Bạn đã làm đúng việc: quyết định được đưa ra khi đã biết rõ rủi ro. Ghi lại quyết định và các lỗi được chấp nhận.",
+          "why": "Đúng."
+        },
+        {
+          "text": "Bạn nên từ chối ký vào báo cáo.",
+          "why": "Báo cáo của bạn mô tả sự thật, không phụ thuộc quyết định."
+        },
+        {
+          "text": "Lần sau nên chấm mức nghiêm trọng cao hơn để ép hoãn.",
+          "why": "Thổi phồng mức độ làm mất uy tín của mọi báo cáo sau này."
+        }
+      ]
+    }
+  ]
+}

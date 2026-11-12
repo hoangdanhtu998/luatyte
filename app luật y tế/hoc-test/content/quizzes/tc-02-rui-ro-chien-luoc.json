@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Bạn có một ngày để kiểm bản đầu tiên. Nên bắt đầu từ đâu?",
+      "answer": 1,
+      "explain": "Phần tính phí vừa có nhiều điều kiện (khả năng lỗi cao) vừa liên quan tiền (ảnh hưởng cao).",
+      "options": [
+        {
+          "text": "Màn Đặt lịch, vì đó là màn đầu tiên người dùng thấy.",
+          "why": "Thứ tự màn hình không phản ánh mức rủi ro."
+        },
+        {
+          "text": "Phần tính phí và API, vì điểm rủi ro cao nhất.",
+          "why": "Đúng. Kiểm theo điểm rủi ro từ cao xuống thấp."
+        },
+        {
+          "text": "Phần giao diện, vì dễ kiểm và nhanh có kết quả.",
+          "why": "Chọn theo độ dễ là cách để hết giờ trước khi chạm tới phần nguy hiểm."
+        },
+        {
+          "text": "Kiểm mỗi phần một ít cho đều.",
+          "why": "Chia đều nghĩa là phần rủi ro cao bị kiểm nông như phần rủi ro thấp."
+        }
+      ]
+    },
+    {
+      "q": "Khu vực nào sau đây đáng điểm ảnh hưởng cao nhất?",
+      "answer": 2,
+      "explain": "Lộ thông tin cá nhân về sức khỏe của người bệnh là hậu quả nặng và khó khắc phục.",
+      "options": [
+        {
+          "text": "Phí ở một màn hiển thị thiếu dấu chấm hàng nghìn.",
+          "why": "Lỗi trình bày, không làm sai nghiệp vụ."
+        },
+        {
+          "text": "Ô chọn giờ hiện thêm khung 11:30.",
+          "why": "Có sai nghiệp vụ nhưng phòng khám có thể gọi lại để đổi giờ."
+        },
+        {
+          "text": "Người lạ xem được lịch khám của người khác khi tra cứu.",
+          "why": "Đúng. Lộ thông tin cá nhân."
+        },
+        {
+          "text": "Tên 1 ký tự vẫn được nhận.",
+          "why": "Ảnh hưởng nhỏ, có thể sửa bằng tay."
+        }
+      ]
+    },
+    {
+      "q": "Trong kế hoạch, bạn ghi \"Ngoài phạm vi: nhiều người đặt cùng lúc, vì môi trường thử chỉ có một người dùng\". Nhận định nào đúng?",
+      "answer": 0,
+      "explain": "Ghi rõ phần không kiểm giúp người quyết định biết rủi ro nào chưa được che.",
+      "options": [
+        {
+          "text": "Đây là cách làm đúng: người đọc biết rõ điều chưa được kiểm và vì sao.",
+          "why": "Đúng. Điều không chấp nhận được là bỏ sót mà không nói."
+        },
+        {
+          "text": "Không nên ghi vì làm lộ điểm yếu của việc kiểm thử.",
+          "why": "Giấu phần chưa kiểm mới là điều làm mất uy tín khi lỗi xuất hiện ở đó."
+        },
+        {
+          "text": "Phải tìm mọi cách kiểm cho bằng được rồi mới viết kế hoạch.",
+          "why": "Kế hoạch được viết trước, và luôn có giới hạn về môi trường."
+        },
+        {
+          "text": "Ngoài phạm vi chỉ dành cho tính năng chưa làm.",
+          "why": "Ngoài phạm vi còn gồm những gì có nhưng bạn chủ động không kiểm."
+        }
+      ]
+    },
+    {
+      "q": "Điều kiện dừng nào dùng được?",
+      "answer": 3,
+      "explain": "Điều kiện dừng phải đo được và gắn với rủi ro.",
+      "options": [
+        {
+          "text": "Dừng khi không còn lỗi nào.",
+          "why": "Không ai biết khi nào hết lỗi."
+        },
+        {
+          "text": "Dừng khi đạt 100% số ca.",
+          "why": "Ca không đạt là kết quả bình thường. Sản phẩm có lỗi thì con số này không bao giờ tới."
+        },
+        {
+          "text": "Dừng khi tester thấy yên tâm.",
+          "why": "Cảm giác không đo được và không ai kiểm chứng được."
+        },
+        {
+          "text": "Dừng khi đã chạy hết ca của khu vực từ 6 điểm trở lên và mọi lỗi Nghiêm trọng, Cao đang mở đã có quyết định.",
+          "why": "Đúng. Đo được và gắn với rủi ro."
+        }
+      ]
+    }
+  ]
+}
