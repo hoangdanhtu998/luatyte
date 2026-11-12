@@ -330,13 +330,16 @@
 
     function selected() { return cfg.items.filter(function (it) { return boxes[it.id].checked; }).map(function (it) { return it.id; }); }
     function clearAll() { Object.keys(boxes).forEach(function (k) { boxes[k].checked = false; }); out.textContent = 'Chưa chạy.'; out.className = 'result'; }
-    run.addEventListener('click', function () {
-      if (ctrl.busy) return;
+    function runMatrix() {
       var sel = selected();
       var labels = cfg.items.filter(function (it) { return sel.indexOf(it.id) >= 0; }).map(function (it) { return it.label; });
       out.textContent = sel.length ? 'Đã chạy ' + sel.length + ' cấu hình.' : 'Bạn chưa chọn cấu hình nào.';
       out.className = 'result ' + (sel.length ? 'ok' : 'err');
       ctrl.submit({ kind: 'matrix', selected: sel, logText: sel.length ? 'Chạy: ' + labels.join(', ') : 'Chưa chọn cấu hình nào' });
+    }
+    run.addEventListener('click', function () {
+      if (ctrl.busy) return;
+      runMatrix();
     });
 
     return {
@@ -345,7 +348,7 @@
       setDisabled: function (v) { Object.keys(boxes).forEach(function (k) { boxes[k].disabled = v; }); run.disabled = v; },
       demo: async function (a) {
         if (a.type === 'tick') { await sleep(300); boxes[a.id].checked = true; return; }
-        if (a.type === 'submit') { await sleep(300); run.click(); }
+        if (a.type === 'submit') { await sleep(300); runMatrix(); }
       },
       meets: function (c, res) {
         if (c.include && !c.include.every(function (k) { return res.selected.indexOf(k) >= 0; })) return false;
