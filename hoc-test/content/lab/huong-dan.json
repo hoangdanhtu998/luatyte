@@ -958,6 +958,349 @@
       "chu": "API"
     },
     {
+      "id": "admin-tim",
+      "view": "admin",
+      "target": "#admin-q",
+      "title": "Quản trị: tìm lịch",
+      "khu": "Quản trị · tìm kiếm",
+      "chu": "Nghiệp vụ",
+      "say": "Ô tìm kiếm lọc theo mã, họ tên hoặc SĐT. Nhập đúng một SĐT thì chỉ còn một dòng.",
+      "technique": "Test bộ lọc: thử một giá trị khớp, một giá trị không khớp, rồi xóa để xem lại toàn bộ.",
+      "do": "Nhập SĐT 0901000002 vào ô tìm.",
+      "expect": "Chỉ còn lịch của Trần Thị Bình.",
+      "hint": "Thử thêm: nhập một phần họ tên, rồi nhập chữ không có trong danh sách.",
+      "auto": [
+        {
+          "say": "Mình đăng nhập quản trị rồi tìm theo SĐT 0901000002."
+        },
+        {
+          "click": "#admin-logout",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "fill": "#admin-q",
+          "value": "0901000002"
+        },
+        {
+          "expect": "#admin-table",
+          "text": "Trần Thị Bình"
+        }
+      ]
+    },
+    {
+      "id": "admin-loc",
+      "view": "admin",
+      "target": "#admin-status",
+      "title": "Quản trị: lọc theo trạng thái",
+      "khu": "Quản trị · lọc trạng thái",
+      "chu": "Nghiệp vụ",
+      "say": "Chọn một trạng thái trong danh sách. Bảng chỉ hiện lịch có trạng thái đó.",
+      "technique": "Test bộ lọc theo từng giá trị, và kiểm lịch không thuộc giá trị đó không còn hiện.",
+      "do": "Chọn Đã hủy.",
+      "expect": "Chỉ còn lịch đã hủy, như SM-100005.",
+      "auto": [
+        {
+          "say": "Mình chọn lọc Đã hủy."
+        },
+        {
+          "click": "#admin-logout",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "select": "#admin-status",
+          "value": "huy"
+        },
+        {
+          "expect": "#admin-table",
+          "text": "Đã hủy"
+        }
+      ]
+    },
+    {
+      "id": "admin-lich-su",
+      "view": "admin",
+      "target": "#admin-table",
+      "title": "Quản trị: lịch sử trạng thái",
+      "khu": "Quản trị · lịch sử",
+      "chu": "Nghiệp vụ",
+      "say": "Mỗi lịch ghi lại từng lần đổi trạng thái. Bấm Lịch sử để xem.",
+      "technique": "Test dấu vết: làm một chuỗi thao tác rồi kiểm lịch sử ghi đúng thứ tự.",
+      "do": "Bấm Xác nhận rồi bấm Lịch sử ở lịch SM-100001.",
+      "expect": "Lịch sử có dòng Đã xác nhận.",
+      "auto": [
+        {
+          "say": "Mình xác nhận lịch SM-100001, rồi mở lịch sử."
+        },
+        {
+          "click": "#admin-logout",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "clickIn": "#admin-table tbody",
+          "text": "SM-100001",
+          "button": "Xác nhận",
+          "wait": 400
+        },
+        {
+          "clickIn": "#admin-table tbody",
+          "text": "SM-100001",
+          "button": "Lịch sử",
+          "wait": 300
+        },
+        {
+          "expect": "#admin-table",
+          "text": "Lịch sử trạng thái của SM-100001"
+        },
+        {
+          "expect": "#admin-table",
+          "text": "Đã xác nhận"
+        }
+      ]
+    },
+    {
+      "id": "admin-phan-trang",
+      "view": "admin",
+      "target": "#admin-prev",
+      "title": "Quản trị: phân trang",
+      "khu": "Quản trị · phân trang",
+      "chu": "Nghiệp vụ",
+      "say": "Bảng chia trang, mỗi trang 5 lịch. Nút Trước và Sau bị khóa khi không còn trang để đi.",
+      "technique": "Test biên phân trang: trang đầu, trang cuối, và số lịch đúng bằng bội số của 5.",
+      "do": "Xem dòng Trang 1/... Thử Trước khi đang ở trang 1.",
+      "expect": "Nút Trước bị khóa ở trang 1.",
+      "auto": [
+        {
+          "say": "Mình kiểm dòng trang và nút Trước ở trang đầu."
+        },
+        {
+          "click": "#admin-logout",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "expect": "#admin-page",
+          "text": "Trang 1/"
+        }
+      ]
+    },
+    {
+      "id": "admin-csv",
+      "view": "admin",
+      "target": "#admin-csv",
+      "title": "Quản trị: xuất CSV",
+      "khu": "Quản trị · xuất CSV",
+      "chu": "Nghiệp vụ",
+      "say": "Nút Xuất CSV tải danh sách đang lọc ra file. File có BOM để mở đúng tiếng Việt trong Excel.",
+      "technique": "Test đầu ra: kiểm số dòng, tiêu đề cột, và ô có dấu ngoặc kép được bọc đúng.",
+      "do": "Bấm Xuất CSV. Mở file, đếm dòng và kiểm tiêu đề.",
+      "expect": "File có một dòng tiêu đề và một dòng cho mỗi lịch.",
+      "auto": [
+        {
+          "say": "Mình bấm Xuất CSV. Trình duyệt sẽ tải file xuống máy."
+        },
+        {
+          "click": "#admin-logout",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "click": "#admin-csv",
+          "wait": 600
+        },
+        {
+          "say": "Kiểm tra file: dòng đầu là tiêu đề Mã lịch, Họ tên, SĐT..."
+        }
+      ]
+    },
+    {
+      "id": "doi-mat-khau",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Đổi mật khẩu",
+      "khu": "Đăng nhập · đổi mật khẩu",
+      "chu": "Bảo mật",
+      "say": "Bệnh nhân đổi được mật khẩu khi đã đăng nhập. Mật khẩu mới phải có ít nhất 8 ký tự và khác mật khẩu cũ.",
+      "technique": "Test biên độ dài (7 và 8 ký tự), và test mật khẩu mới trùng mật khẩu cũ.",
+      "do": "Đăng nhập, mở Đổi mật khẩu, nhập mật khẩu cũ và mật khẩu mới 7 ký tự.",
+      "expect": "7 ký tự báo lỗi. 8 ký tự trở lên được lưu.",
+      "auto": [
+        {
+          "say": "Mình đăng nhập rồi thử mật khẩu mới 7 ký tự."
+        },
+        {
+          "click": "#logout-btn",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "Sao@2026"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "click": ".pw-box summary",
+          "wait": 300
+        },
+        {
+          "fillForm": {
+            "#pw-old": "Sao@2026",
+            "#pw-new": "short77"
+          },
+          "click": "#pw-form button",
+          "wait": 300
+        },
+        {
+          "expect": "#pw-form",
+          "text": "Mật khẩu mới phải có ít nhất 8 ký tự"
+        }
+      ]
+    },
+    {
+      "id": "quen-mat-khau",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Quên mật khẩu",
+      "khu": "Đăng nhập · quên mật khẩu",
+      "chu": "Bảo mật",
+      "say": "Nhập SĐT để nhận mã xác nhận. Mã hết hạn sau 10 phút, sai 3 lần thì mã bị hủy.",
+      "technique": "Test luồng quên mật khẩu: mã đúng, mã sai, và mã sai đủ 3 lần.",
+      "do": "Bấm Quên mật khẩu, nhập SĐT 0901000002, gửi mã, rồi nhập mã và mật khẩu mới.",
+      "expect": "Đặt được mật khẩu mới, rồi đăng nhập bằng mật khẩu đó.",
+      "hint": "Mã xác nhận được hiện ngay trong app tập, dưới ô SĐT.",
+      "auto": [
+        {
+          "say": "Mình bấm Quên mật khẩu và gửi mã cho SĐT 0901000002."
+        },
+        {
+          "click": "#logout-btn",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "click": "#forgot-open",
+          "wait": 300
+        },
+        {
+          "fillForm": {
+            "#fg-phone": "0901000002"
+          },
+          "click": "#fg-send",
+          "wait": 300
+        },
+        {
+          "expect": "#fg-notice",
+          "text": "246810"
+        },
+        {
+          "fillForm": {
+            "#fg-code": "246810",
+            "#fg-new": "NewPass123"
+          },
+          "click": "#fg-reset",
+          "wait": 300
+        },
+        {
+          "expect": "#fg-notice",
+          "text": "Đã đặt mật khẩu mới"
+        }
+      ]
+    },
+    {
+      "id": "nhac-lich",
+      "view": "login",
+      "target": "#reminder",
+      "title": "Nhắc lịch sắp đến",
+      "khu": "Đăng nhập · nhắc lịch",
+      "chu": "Giao diện",
+      "say": "Khi đăng nhập, app hiện nhắc các lịch trong 2 ngày tới để bệnh nhân khỏi quên.",
+      "technique": "Test điều kiện biên thời gian: lịch hôm nay, lịch 2 ngày tới, lịch 3 ngày tới (không nhắc).",
+      "do": "Đăng nhập bằng 0901000002. Xem khung nhắc lịch.",
+      "expect": "Hiện nhắc lịch SM-100002.",
+      "auto": [
+        {
+          "say": "Mình đăng nhập và xem khung nhắc lịch."
+        },
+        {
+          "click": "#logout-btn",
+          "wait": 200
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000002",
+            "#login-pass": "Sao@2026"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "expect": "#reminder",
+          "text": "Sắp đến lịch khám"
+        },
+        {
+          "expect": "#reminder",
+          "text": "SM-100002"
+        }
+      ]
+    },
+    {
       "id": "ket-thuc",
       "view": "book",
       "target": "#build-switch",

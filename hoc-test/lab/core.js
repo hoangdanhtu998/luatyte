@@ -172,6 +172,7 @@
       doctor: input.doctor, service: input.service, bhyt: !!input.bhyt,
       date: input.date, time: input.time, status: 'cho',
       fee: fee(age, input.service, !!input.bhyt),
+      history: [{ at: toStr(today()), status: 'cho' }],
     };
     s.items.push(appt);
     save(s);
@@ -199,6 +200,7 @@
     if (next === 'huy') { if (!canCancel(a)) return { ok: false, reason: 'state' }; }
     else if (!allowed || allowed.indexOf(a.status) < 0) return { ok: false, reason: 'state' };
     a.status = next;
+    a.history = historyOf(a).concat([{ at: toStr(today()), status: next }]);
     save(s);
     return { ok: true, appointment: a };
   }
@@ -209,7 +211,13 @@
     if (!has('q20') && s.lockedUntil > now) return { ok: false, locked: true, wait: Math.ceil((s.lockedUntil - now) / 1000) };
     if (String(pin) === ADMIN_PIN) { s.fails = 0; s.lockedUntil = 0; save(s); return { ok: true }; }
     s.fails = (s.fails || 0) + 1;
-    if (s.fails >= LOCK_AFTER) { s.lockedUntil = now + LOCK_MS; s.fails = 0; }
+    if (s.fails >= LOCK_AFTER) {
+      // Sai đúng ngưỡng thì khóa ngay và báo khóa luôn, không chờ lần thử sau.
+      s.lockedUntil = now + LOCK_MS;
+      s.fails = 0;
+      save(s);
+      return { ok: false, locked: true, wait: Math.ceil(LOCK_MS / 1000) };
+    }
     save(s);
     return { ok: false, locked: false };
   }
@@ -278,7 +286,7 @@
     var rec = s.loginFails[p] || { n: 0, until: 0 };
     if (rec.until > now) return { ok: false, locked: true, wait: Math.ceil((rec.until - now) / 1000) };
 
-    var acc = ACCOUNTS.find(function (a) { return a.phone === p && a.password === pw; });
+    var acc = ACCOUNTS.find(function (a) { return a.phone === p && passwordOf(a, s) === pw; });
     if (acc) {
       delete s.loginFails[p];
       save(s);
@@ -299,7 +307,116 @@
     return load().items.filter(function (a) { return a.phone === phone; });
   }
 
+  // ----- Lịch sử trạng thái -----
+  function historyOf(a) { return Array.isArray(a.history) ? a.history : []; }
+
+  // ----- Tìm và lọc trong bảng quản trị -----
+  // q: tìm trong mã, họ tên, SĐT (không phân biệt hoa thường). status: '' là tất cả.
+  function filterItems(items, q, status) {
+    var needle = String(q || '').trim().toLowerCase();
+    return items.filter(function (a) {
+      if (status && a.status !== status) return false;
+      if (!needle) return true;
+      return [a.code, a.name, a.phone].some(function (v) { return String(v).toLowerCase().indexOf(needle) >= 0; });
+    });
+  }
+
+  // ----- Phân trang -----
+  var PAGE_SIZE = 5;
+  function pageOf(items, page) {
+    var pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+    var p = Math.min(Math.max(1, page || 1), pages);
+    return { page: p, pages: pages, items: items.slice((p - 1) * PAGE_SIZE, p * PAGE_SIZE) };
+  }
+
+  // ----- Xuất CSV (RFC 4180: bọc ô trong ngoặc kép, nhân đôi ngoặc kép bên trong) -----
+  function csvCell(v) {
+    var s = String(v == null ? '' : v);
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  function toCsv(items) {
+    var head = ['Mã lịch', 'Họ tên', 'SĐT', 'Tuổi', 'Bác sĩ', 'Ngày', 'Giờ', 'Phí', 'Trạng thái'];
+    var rows = items.map(function (a) {
+      var doc = (DOCTORS.find(function (d) { return d.id === a.doctor; }) || { name: a.doctor }).name;
+      return [a.code, a.name, a.phone, a.age, doc, a.date, a.time, a.fee, STATUS[a.status] || a.status].map(csvCell).join(',');
+    });
+    return [head.map(csvCell).join(',')].concat(rows).join('\r\n');
+  }
+
+  // ----- Mật khẩu: có thể đã đổi, nếu không thì dùng mật khẩu mẫu -----
+  function passwordOf(acc, s) {
+    var custom = s && s.passwords && s.passwords[acc.phone];
+    return custom || acc.password;
+  }
+  function changePassword(phone, oldPw, newPw) {
+    var s = load();
+    var acc = ACCOUNTS.find(function (a) { return a.phone === String(phone || '').trim(); });
+    if (!acc) return { ok: false, error: 'Không tìm thấy tài khoản.' };
+    if (String(oldPw || '') !== passwordOf(acc, s)) return { ok: false, errors: { old: 'Mật khẩu hiện tại không đúng.' } };
+    var errors = {};
+    var np = String(newPw || '');
+    if (np.length < 8) errors.new = 'Mật khẩu mới phải có ít nhất 8 ký tự.';
+    else if (np === String(oldPw || '')) errors.new = 'Mật khẩu mới phải khác mật khẩu cũ.';
+    if (Object.keys(errors).length) return { ok: false, errors: errors };
+    s.passwords = s.passwords || {};
+    s.passwords[acc.phone] = np;
+    save(s);
+    return { ok: true };
+  }
+
+  // ----- Quên mật khẩu: mã xác nhận giả, hiển thị ngay trong app. Mã hết hạn sau 10 phút, sai 3 lần thì hủy. -----
+  var RESET_CODE = '246810';
+  var RESET_MS = 10 * 60000;
+  var RESET_TRIES = 3;
+  function requestReset(phone) {
+    var p = String(phone || '').trim();
+    if (!/^0\d{9}$/.test(p)) return { ok: false, errors: { phone: 'Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0.' } };
+    var acc = ACCOUNTS.find(function (a) { return a.phone === p; });
+    if (!acc) return { ok: false, error: 'Không tìm thấy tài khoản với số này.' };
+    var s = load();
+    s.resets = s.resets || {};
+    s.resets[p] = { code: RESET_CODE, until: Date.now() + RESET_MS, tries: 0 };
+    save(s);
+    return { ok: true, code: RESET_CODE, minutes: RESET_MS / 60000 };
+  }
+  function resetPassword(phone, code, newPw) {
+    var p = String(phone || '').trim();
+    var s = load();
+    var rec = s.resets && s.resets[p];
+    if (!rec) return { ok: false, error: 'Chưa yêu cầu mã, hoặc mã đã bị hủy.' };
+    if (rec.until < Date.now()) { delete s.resets[p]; save(s); return { ok: false, error: 'Mã đã hết hạn. Hãy yêu cầu mã mới.' }; }
+    if (String(code || '').trim() !== rec.code) {
+      rec.tries += 1;
+      if (rec.tries >= RESET_TRIES) { delete s.resets[p]; save(s); return { ok: false, error: 'Nhập sai quá nhiều lần. Mã đã bị hủy.' }; }
+      save(s);
+      return { ok: false, errors: { code: 'Mã xác nhận không đúng.' } };
+    }
+    var np = String(newPw || '');
+    if (np.length < 8) return { ok: false, errors: { new: 'Mật khẩu mới phải có ít nhất 8 ký tự.' } };
+    s.passwords = s.passwords || {};
+    s.passwords[p] = np;
+    delete s.resets[p];
+    save(s);
+    return { ok: true };
+  }
+
+  // ----- Nhắc lịch: lịch còn hiệu lực trong 2 ngày tới -----
+  function upcomingFor(phone) {
+    var t = today().getTime();
+    return load().items.filter(function (a) {
+      if (a.phone !== phone) return false;
+      if (a.status !== 'cho' && a.status !== 'xacnhan') return false;
+      var d = parse(a.date);
+      if (!d) return false;
+      var diff = Math.round((d.getTime() - t) / DAY_MS);
+      return diff >= 0 && diff <= 2;
+    });
+  }
+
   root.Lab = {
+    historyOf: historyOf, filterItems: filterItems, pageOf: pageOf, PAGE_SIZE: PAGE_SIZE, toCsv: toCsv,
+    passwordOf: passwordOf, changePassword: changePassword, requestReset: requestReset, resetPassword: resetPassword,
+    upcomingFor: upcomingFor,
     session: session, login: login, logout: logout, myAppointments: myAppointments,
     build: build, has: has, DOCTORS: DOCTORS, SERVICES: SERVICES, STATUS: STATUS, MAX_PER_SLOT: MAX_PER_SLOT,
     today: today, toStr: toStr, plus: plus, setClock: setClock,

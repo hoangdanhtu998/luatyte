@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Phòng khám Sao Mai · Đặt lịch khám (app tập kiểm thử)</title>
-  <link rel="stylesheet" href="lab.css?v=3">
+  <script>if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add("embed");</script>
+  <link rel="stylesheet" href="lab.css?v=5">
 </head>
 <body>
 <div class="lab-note">App tập kiểm thử của khóa <a href="../index.html">Học kiểm thử</a>. Dữ liệu là giả và chỉ lưu trên trình duyệt này. App có lỗi cài sẵn để bạn tìm.</div>
@@ -107,14 +108,37 @@
         <input id="login-pass" type="password" autocomplete="current-password">
         <p class="err" id="login-err-pass"></p>
       </div>
-      <div class="actions"><button class="primary" id="login-submit" type="submit">Đăng nhập</button></div>
+      <div class="actions"><button class="primary" id="login-submit" type="submit">Đăng nhập</button><button type="button" class="link-btn" id="forgot-open">Quên mật khẩu?</button></div>
       <p class="err" id="login-msg" role="alert"></p>
     </form>
+    <section class="panel" id="forgot" hidden>
+      <h2>Đặt lại mật khẩu</h2>
+      <p class="sub" style="margin:0 0 14px">Nhập số điện thoại để nhận mã xác nhận. Trong app tập, mã được hiện ngay bên dưới.</p>
+      <div class="field"><label for="fg-phone">Số điện thoại</label><input id="fg-phone" type="text" inputmode="numeric"><p class="err" id="fg-err-phone"></p></div>
+      <div class="actions"><button type="button" id="fg-send">Gửi mã</button></div>
+      <p class="notice" id="fg-notice" hidden></p>
+      <div id="fg-step2" hidden>
+        <div class="field"><label for="fg-code">Mã xác nhận</label><input id="fg-code" type="text" inputmode="numeric"><p class="err" id="fg-err-code"></p></div>
+        <div class="field"><label for="fg-new">Mật khẩu mới (ít nhất 8 ký tự)</label><input id="fg-new" type="password" autocomplete="new-password"><p class="err" id="fg-err-new"></p></div>
+        <div class="actions"><button class="primary" type="button" id="fg-reset">Đặt mật khẩu mới</button></div>
+        <p class="err" id="fg-msg" role="alert"></p>
+      </div>
+    </section>
     <div class="panel" id="login-panel" hidden>
       <p class="sub" style="margin:0 0 6px">Đang đăng nhập</p>
       <h2 id="login-name"></h2>
+      <div class="reminder" id="reminder" hidden></div>
       <h2>Lịch của tôi</h2>
       <div id="my-list"></div>
+      <details class="pw-box">
+        <summary>Đổi mật khẩu</summary>
+        <form id="pw-form" novalidate>
+          <div class="field"><label for="pw-old">Mật khẩu hiện tại</label><input id="pw-old" type="password" autocomplete="current-password"><p class="err" id="pw-err-old"></p></div>
+          <div class="field"><label for="pw-new">Mật khẩu mới (ít nhất 8 ký tự)</label><input id="pw-new" type="password" autocomplete="new-password"><p class="err" id="pw-err-new"></p></div>
+          <div class="actions"><button class="primary" type="submit">Lưu mật khẩu</button></div>
+          <p class="notice" id="pw-msg" role="status"></p>
+        </form>
+      </details>
       <div class="actions"><button type="button" class="danger" id="logout-btn">Đăng xuất</button></div>
     </div>
   </section>
@@ -131,11 +155,30 @@
     </div>
     <div id="admin-panel" hidden>
       <div class="admin-bar"><span id="admin-count"></span><button type="button" id="admin-logout">Đăng xuất</button></div>
+      <div class="admin-tools">
+        <div class="field grow"><label for="admin-q">Tìm theo mã, họ tên, SĐT</label><input id="admin-q" type="text" autocomplete="off"></div>
+        <div class="field"><label for="admin-status">Trạng thái</label>
+          <select id="admin-status">
+            <option value="">Tất cả</option>
+            <option value="cho">Chờ xác nhận</option>
+            <option value="xacnhan">Đã xác nhận</option>
+            <option value="dakham">Đã khám</option>
+            <option value="huy">Đã hủy</option>
+          </select>
+        </div>
+        <button type="button" id="admin-csv">Xuất CSV</button>
+      </div>
+      <p class="sub" id="admin-empty" hidden>Không có lịch nào khớp bộ lọc.</p>
       <div id="admin-table-box">
         <table id="admin-table">
           <thead><tr><th>Mã lịch</th><th>Họ tên</th><th>SĐT</th><th>Tuổi</th><th>Bác sĩ</th><th>Ngày giờ</th><th>Phí</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
           <tbody></tbody>
         </table>
+      </div>
+      <div class="pager">
+        <button type="button" id="admin-prev">← Trước</button>
+        <span id="admin-page"></span>
+        <button type="button" id="admin-next">Sau →</button>
       </div>
     </div>
   </section>
@@ -168,8 +211,8 @@
   <button type="button" id="reset-data">Đặt lại dữ liệu mẫu</button>
 </footer>
 
-<script src="core.js?v=3"></script>
-<script src="ui.js?v=3"></script>
-<script src="login.js?v=3"></script>
+<script src="core.js?v=5"></script>
+<script src="ui.js?v=4"></script>
+<script src="login.js?v=4"></script>
 </body>
 </html>

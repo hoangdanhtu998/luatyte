@@ -186,6 +186,52 @@
     });
     return t.content;
   }
+  // ----- Quản trị: tìm, lọc, phân trang, lịch sử, xuất CSV -----
+  var adminState = { page: 1, q: '', status: '', open: {} };
+  function adminRow(a) {
+    var tr = el('tr');
+    tr.appendChild(el('td', '', a.code));
+    var nameCell = el('td');
+    if (L.has('q16')) nameCell.appendChild(inertHtml(a.name)); else nameCell.textContent = a.name;
+    tr.appendChild(nameCell);
+    tr.appendChild(el('td', '', a.phone));
+    tr.appendChild(el('td', '', String(a.age)));
+    tr.appendChild(el('td', '', doctorName(a.doctor)));
+    tr.appendChild(el('td', '', viDate(a.date) + ' ' + a.time));
+    tr.appendChild(el('td', '', L.money(a.fee)));
+    tr.appendChild(el('td', 'st st-' + a.status, L.STATUS[a.status] || a.status));
+    var ops = el('td', 'ops');
+    [['xacnhan', 'Xác nhận', a.status === 'cho'], ['dakham', 'Đã khám', a.status === 'xacnhan'], ['huy', 'Hủy', L.canCancel(a)]]
+      .forEach(function (op) {
+        if (!op[2]) return;
+        var b = el('button', op[0] === 'huy' ? 'danger small' : 'small', op[1]);
+        b.type = 'button';
+        b.addEventListener('click', function () { L.setStatus(a.code, op[0]); renderAdmin(); fillTimes(); });
+        ops.appendChild(b);
+      });
+    var hb = el('button', 'small', adminState.open[a.code] ? 'Ẩn lịch sử' : 'Lịch sử');
+    hb.type = 'button';
+    hb.addEventListener('click', function () { adminState.open[a.code] = !adminState.open[a.code]; renderAdmin(); });
+    ops.appendChild(hb);
+    tr.appendChild(ops);
+    return tr;
+  }
+  function historyRow(a) {
+    var tr = el('tr', 'hist');
+    var td = el('td');
+    td.colSpan = 9;
+    td.appendChild(el('strong', '', 'Lịch sử trạng thái của ' + a.code));
+    var ul = el('ul', 'hist-list');
+    var items = L.historyOf(a);
+    items.forEach(function (h) { ul.appendChild(el('li', '', h.at + ': ' + (L.STATUS[h.status] || h.status))); });
+    if (!items.length) ul.appendChild(el('li', '', 'Chưa có ghi nhận.'));
+    td.appendChild(ul);
+    tr.appendChild(td);
+    return tr;
+  }
+  function matchedAdmin(s) {
+    return L.filterItems(s.items.slice().reverse(), adminState.q, adminState.status);
+  }
   function renderAdmin() {
     var logged = isAdmin();
     $('admin-login').hidden = logged;
@@ -193,33 +239,39 @@
     if (!logged) return;
     var s = L.load();
     $('admin-count').textContent = 'Tổng số lịch: ' + s.items.length;
+    var matched = matchedAdmin(s);
+    $('admin-empty').hidden = matched.length > 0;
+    var pg = L.pageOf(matched, adminState.page);
+    adminState.page = pg.page;
+    $('admin-page').textContent = 'Trang ' + pg.page + '/' + pg.pages + ' · ' + matched.length + ' lịch';
+    $('admin-prev').disabled = pg.page <= 1;
+    $('admin-next').disabled = pg.page >= pg.pages;
     var body = document.querySelector('#admin-table tbody');
     body.innerHTML = '';
-    s.items.slice().reverse().forEach(function (a) {
-      var tr = el('tr');
-      tr.appendChild(el('td', '', a.code));
-      var nameCell = el('td');
-      if (L.has('q16')) nameCell.appendChild(inertHtml(a.name)); else nameCell.textContent = a.name;
-      tr.appendChild(nameCell);
-      tr.appendChild(el('td', '', a.phone));
-      tr.appendChild(el('td', '', String(a.age)));
-      tr.appendChild(el('td', '', doctorName(a.doctor)));
-      tr.appendChild(el('td', '', viDate(a.date) + ' ' + a.time));
-      tr.appendChild(el('td', '', L.money(a.fee)));
-      tr.appendChild(el('td', 'st st-' + a.status, L.STATUS[a.status] || a.status));
-      var ops = el('td', 'ops');
-      [['xacnhan', 'Xác nhận', a.status === 'cho'], ['dakham', 'Đã khám', a.status === 'xacnhan'], ['huy', 'Hủy', L.canCancel(a)]]
-        .forEach(function (op) {
-          if (!op[2]) return;
-          var b = el('button', op[0] === 'huy' ? 'danger small' : 'small', op[1]);
-          b.type = 'button';
-          b.addEventListener('click', function () { L.setStatus(a.code, op[0]); renderAdmin(); fillTimes(); });
-          ops.appendChild(b);
-        });
-      tr.appendChild(ops);
-      body.appendChild(tr);
+    pg.items.forEach(function (a) {
+      body.appendChild(adminRow(a));
+      if (adminState.open[a.code]) body.appendChild(historyRow(a));
     });
   }
+  function downloadCsv() {
+    var blob = new Blob(['\uFEFF' + L.toCsv(matchedAdmin(L.load()))], { type: 'text/csv;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = el('a');
+    a.href = url;
+    a.download = 'lich-kham.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+  function setupAdminTools() {
+    $('admin-q').addEventListener('input', function () { adminState.q = $('admin-q').value; adminState.page = 1; renderAdmin(); });
+    $('admin-status').addEventListener('change', function () { adminState.status = $('admin-status').value; adminState.page = 1; renderAdmin(); });
+    $('admin-prev').addEventListener('click', function () { adminState.page -= 1; renderAdmin(); });
+    $('admin-next').addEventListener('click', function () { adminState.page += 1; renderAdmin(); });
+    $('admin-csv').addEventListener('click', downloadCsv);
+  }
+
   function setupAdmin() {
     if (L.has('q19')) $('admin-table-box').classList.add('no-scroll');
     $('admin-form').addEventListener('submit', function (ev) {
@@ -261,6 +313,7 @@
   setupBooking();
   setupLookup();
   setupAdmin();
+  setupAdminTools();
   setupApi();
   var start = location.hash.replace('#', '');
   show(views.indexOf(start) >= 0 ? start : 'book');

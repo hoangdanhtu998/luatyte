@@ -150,3 +150,31 @@ tbody tr:hover td { background: #FAFAF9; }
   .ticket { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .ticket dd { margin-bottom: 8px; }
 }
+
+/* Chế độ nhúng trong trang hướng dẫn: dùng hết chiều rộng khung */
+.embed main, .embed .foot { max-width: none; }
+.embed main { padding-left: 24px; padding-right: 24px; }
+
+/* Quản trị: thanh tìm và lọc, phân trang, lịch sử */
+.admin-tools { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; margin-bottom: 14px; }
+.admin-tools .field { min-width: 180px; }
+.admin-tools .field.grow { flex: 1 1 260px; }
+.admin-tools button { padding: 9px 14px; background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius); font-weight: 600; }
+.admin-tools button:hover { border-color: var(--ink); }
+.pager { display: flex; gap: 12px; align-items: center; justify-content: flex-end; margin-top: 12px; font-size: 14px; }
+.pager button { background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 6px 12px; }
+.pager button[disabled] { opacity: .45; cursor: not-allowed; }
+tr.hist td { background: #FAFAF9; font-size: 14px; }
+.hist-list { margin: 6px 0 0; padding-left: 18px; }
+
+/* Bệnh nhân: nhắc lịch, đổi mật khẩu, quên mật khẩu */
+.reminder { background: #FFF7E8; border: 1px solid #E6D7A8; border-left: 4px solid var(--alert); border-radius: var(--radius); padding: 12px 16px; margin: 12px 0; }
+.reminder strong { display: block; margin-bottom: 4px; color: #6B4E12; }
+.reminder p { margin: 2px 0; font-size: 15px; }
+.link-btn { background: none; border: 0; color: var(--accent); font-weight: 600; padding: 6px 0; text-decoration: underline; text-underline-offset: 3px; }
+.notice { background: var(--accent-soft); color: var(--accent-deep); border-radius: var(--radius); padding: 10px 12px; margin: 12px 0 0; font-size: 15px; }
+.notice[hidden] { display: none; }
+.pw-box { margin: 18px 0 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; background: #fff; }
+.pw-box summary { cursor: pointer; font-weight: 600; }
+.pw-box form { margin-top: 14px; display: grid; gap: 12px; }
+#forgot .field { margin-bottom: 12px; }

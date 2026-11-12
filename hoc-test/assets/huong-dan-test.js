@@ -98,15 +98,29 @@
     return L.toStr(d);
   }
 
+  // App được thu còn APP_SCALE (CSS transform). Toạ độ trong app phải nhân tỉ lệ khi đưa ra khung trang.
+  var APP_SCALE = 0.75;
+  function inPage(node) {
+    var fr = frame.getBoundingClientRect();
+    var r = node.getBoundingClientRect();
+    return {
+      left: fr.left + r.left * APP_SCALE,
+      top: fr.top + r.top * APP_SCALE,
+      right: fr.left + r.right * APP_SCALE,
+      bottom: fr.top + r.bottom * APP_SCALE,
+      width: r.width * APP_SCALE,
+      height: r.height * APP_SCALE
+    };
+  }
+
   // ----- Vòng khoanh (đứng yên) -----
   function drawRing() {
     if (!currentTarget || currentTarget.offsetParent === null) { ring.hidden = true; return; }
-    var fr = frame.getBoundingClientRect();
-    var r = currentTarget.getBoundingClientRect();
+    var r = inPage(currentTarget);
     var pad = 6;
     ring.hidden = false;
-    ring.style.left = (fr.left + r.left - pad) + 'px';
-    ring.style.top = (fr.top + r.top - pad) + 'px';
+    ring.style.left = (r.left - pad) + 'px';
+    ring.style.top = (r.top - pad) + 'px';
     ring.style.width = (r.width + pad * 2) + 'px';
     ring.style.height = (r.height + pad * 2) + 'px';
     if (r.bottom < 0 || r.top > window.innerHeight) ring.hidden = true;
@@ -133,10 +147,9 @@
   // ----- Con trỏ của trợ giảng -----
   function cursorTo(node) {
     if (!node) return;
-    var fr = frame.getBoundingClientRect();
-    var r = node.getBoundingClientRect();
-    var x = fr.left + r.left + Math.min(r.width / 2, 60);
-    var y = fr.top + r.top + r.height / 2;
+    var r = inPage(node);
+    var x = r.left + Math.min(r.width / 2, 60);
+    var y = r.top + r.height / 2;
     cursor.hidden = false;
     cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)';
   }
@@ -311,7 +324,6 @@
   }
   // ----- Cú trợ giảng bay tới từng ô, và phụ đề gõ dần dưới khung app -----
   var owl = document.getElementById('hd-owl');
-  var caption = document.getElementById('hd-caption');
   if (owl && tutor) {
     var svgSrc = tutor.querySelector('svg');
     if (svgSrc) owl.appendChild(svgSrc.cloneNode(true));
@@ -319,9 +331,9 @@
   function owlTo(node) {
     if (!owl || !node) return;
     var fr = frame.getBoundingClientRect();
-    var r = node.getBoundingClientRect();
-    var x = Math.min(fr.left + r.right + 10, fr.right - 124);
-    var y = Math.max(fr.top + r.top - 34, fr.top + 6);
+    var r = inPage(node);
+    var x = Math.min(r.right + 10, fr.right - 124);
+    var y = Math.max(r.top - 34, fr.top + 6);
     owl.hidden = false;
     owl.style.transform = 'translate(' + x + 'px,' + y + 'px)';
   }
@@ -332,31 +344,27 @@
     if (owl) owl.hidden = true;
   }
   // Phụ đề dưới khung app: mỗi dòng gõ dần, các dòng trước vẫn giữ và cuộn.
+  // Lời trợ giảng gõ dần ngay trong khung trợ giảng bên phải. Dòng mới luôn cuộn vào tầm mắt.
+  var scroller = document.getElementById('hd-scroll');
+  function scrollToNew() {
+    if (scroller) scroller.scrollTop = scroller.scrollHeight;
+  }
   async function typeCaption(text, cls) {
-    if (!caption) return;
-    if (caption.hidden) {
-      caption.hidden = false;
-      window.dispatchEvent(new Event('resize')); // app co lại: vẽ lại vòng khoanh
-    }
-    var line = el('div', 'hd-cap-line' + (cls ? ' ' + cls : ''));
-    caption.appendChild(line);
+    var m = el('div', 'msg bot' + (cls ? ' ' + cls : ''));
+    var who = el('span', 'who', 'Trợ giảng');
+    var body = el('span', 'txt', '');
+    m.append(who, body);
+    chat.appendChild(m);
+    scrollToNew();
     for (var i = 0; i < text.length; i++) {
-      line.textContent += text[i];
-      if (i % 4 === 0) caption.scrollTop = caption.scrollHeight;
+      body.textContent += text[i];
+      if (i % 4 === 0) scrollToNew();
       await sleep(16);
     }
-    caption.scrollTop = caption.scrollHeight;
+    scrollToNew();
   }
-  function resetCaption() {
-    if (caption) {
-      caption.replaceChildren();
-      caption.hidden = true;
-      window.dispatchEvent(new Event('resize'));
-    }
-  }
-  function clearCaptionLater(ms) {
-    setTimeout(function () { if (caption && !running) resetCaption(); }, ms);
-  }
+  function resetCaption() { /* phụ đề nằm trong khung trợ giảng, không cần dọn riêng */ }
+  function clearCaptionLater() { /* giữ nguyên lời trợ giảng để đọc lại */ }
 
   // Tư thế của trợ giảng: idle, point, think, happy, oops. Tự về idle sau ms nếu có.
   var tutor = document.getElementById('hd-tutor');
@@ -406,7 +414,7 @@
       if (currentTarget) owlTo(currentTarget);
       for (var k = 0; k < step.auto.length; k++) {
         var a = step.auto[k];
-        if (a.say) { botSay(a.say); await typeCaption(a.say); continue; }
+        if (a.say) { await typeCaption(a.say); continue; }
         if (a.reset) { await actReset(); showView(step.view); await sleep(300); continue; }
         if (a.fillForm) {
           for (var sel in a.fillForm) {
@@ -433,7 +441,6 @@
               '. Không thấy "' + a.text + '" trong ' + a.expect + '.';
             setOwlPose('oops');
           }
-          botSay(line);
           await typeCaption(line, ok ? 'good' : 'bad');
           await sleep(500);
           setOwlPose('point');
@@ -509,7 +516,7 @@
   function setBuild(v) {
     var build = v === '1.1' ? '1.1' : '1.0';
     openLink.href = 'lab/index.html?build=' + build;
-    frame.src = 'lab/index.html?build=' + build;
+    frame.src = 'lab/index.html?build=' + build + '&embed=1';
   }
   frame.addEventListener('load', function () {
     watchAppScroll();
