@@ -577,23 +577,17 @@ a{color:var(--color-accent)}
 header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
 ::selection{background:var(--color-accent-soft);color:var(--color-accent-soft-ink)}
 
-/* Hero: khối tối đậm làm điểm nhấn đầu trang */
-.hero{background:var(--color-ink);color:var(--color-paper);border-radius:24px;padding:clamp(22px,3vw,40px);box-shadow:0 24px 48px -28px rgba(22,24,29,.6)}
-.hero h1,.hero h2,.hero strong,.hero b{color:var(--color-paper)}
-.hero .sub,.hero .lead,.hero p,.hero small{color:#C9C6BD}
-.hero .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);box-shadow:none}
-.hero .stat strong,.hero .stat b{color:var(--color-paper)}
-.hero .stat span,.hero .stat small,.hero .stat label{color:#AEB0B7}
-.hero .card,.hero .today,.hero .remind{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);box-shadow:none;color:var(--color-paper)}
-.hero .btn.ghost{color:var(--color-paper);border-color:rgba(255,255,255,.3)}
-.hero .btn:not(.ghost){background:var(--color-paper);color:var(--color-ink);border-color:var(--color-paper)}
-.hero .btn:not(.ghost):hover{background:#fff;color:var(--color-ink);border-color:#fff}
-.hero select,.hero input{background:rgba(255,255,255,.08);color:var(--color-paper);border-color:rgba(255,255,255,.2)}
-.hero .chip{background:rgba(255,255,255,.1);color:var(--color-paper)}
+/* Hero: nền sáng, chữ đen rõ, dùng tiêu đề serif làm điểm nhấn */
+.hero{background:var(--color-paper-2);color:var(--color-ink);border:1px solid var(--color-rule);border-radius:20px;padding:clamp(22px,3vw,36px);box-shadow:0 1px 0 rgba(22,24,29,.04),0 18px 40px -26px rgba(22,24,29,.35)}
+.hero h1,.hero h2{color:var(--color-ink)}
+.hero .sub,.hero .lead,.hero p,.hero small{color:var(--color-ink-2)}
 .hero .stats{background:transparent;border:0;box-shadow:none;gap:12px}
-.hero .stats > *{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px}
-.hero .remind{background:rgba(255,255,255,.04)}
-/* Nhãn trong hero tối: đủ tương phản */
-.hero label, .hero .theme-row label, .hero .remind, .hero .remind label, .hero .remind span, .hero .remind p{color:#D6D3CB}
-.hero .remind input, .hero .remind select{color:#16181D;background:#F5F3EE;border-color:#D9D4C7}
-.hero .theme-row select{background:#2A2A2E;color:var(--color-paper);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:6px 10px}
+.hero .stats > *{background:var(--color-paper);border:1px solid var(--color-rule);border-radius:14px;box-shadow:none}
+.hero .stat strong,.hero .stat b{color:var(--color-ink)}
+.hero .stat span,.hero .stat small,.hero .stat label{color:var(--color-muted)}
+.hero .btn:not(.ghost):not(:disabled){background:var(--color-action);color:var(--color-action-ink)}
+.hero .btn.ghost{color:var(--color-ink);border-color:var(--color-rule)}
+.hero select,.hero input{background:var(--color-paper);color:var(--color-ink);border:1px solid var(--color-rule)}
+.hero .theme-row select{background:var(--color-paper);color:var(--color-ink)}
+.hero .remind,.hero .card,.hero .today{background:var(--color-paper);border-color:var(--color-rule);box-shadow:none}
+.hero .chip{background:var(--color-accent-soft);color:var(--color-accent-soft-ink)}
