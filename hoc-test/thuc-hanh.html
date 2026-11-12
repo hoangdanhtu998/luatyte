@@ -19,7 +19,7 @@
 
     .form-mock { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fbfcfe; }
     .form-mock label { display: block; font-weight: 700; margin-bottom: 6px; }
-    .form-mock input { width: 100%; max-width: 240px; font-size: 18px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; }
+    .form-mock input { width: 100%; max-width: 240px; font-size: 18px; padding: 8px 10px; border: 1px solid #D9CFC2; border-radius: 8px; }
     .form-mock input:disabled { background: #eef1f6; }
     .form-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
     .result { margin-top: 10px; font-weight: 700; min-height: 1.4em; }
@@ -38,10 +38,10 @@
     .log-list li { margin-bottom: 4px; }
 
     .chat-log { display: flex; flex-direction: column; gap: 14px; max-height: 620px; overflow-y: auto; padding: 4px 6px 4px 2px; }
-    .msg { position: relative; margin: 0; padding: 14px 18px 16px 66px; border-radius: 16px; border: 1px solid #d9e3f4; background: #fff; box-shadow: 0 3px 10px rgba(20, 40, 80, .07); color: #1b2230; font-size: 18px; font-weight: 500; line-height: 1.7; align-self: stretch; overflow-wrap: anywhere; }
-    .msg::before { content: "TG"; position: absolute; left: 16px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #4f86e8, #1f4fae); color: #fff; font-size: 13px; font-weight: 800; line-height: 36px; text-align: center; box-shadow: 0 2px 6px rgba(31, 79, 174, .35); }
-    .msg .who { display: block; font-size: 14px; font-weight: 800; color: #1f4fae; margin: 0 0 6px; letter-spacing: 0; }
-    .msg:focus-within { outline: 2px solid #4f86e8; outline-offset: 2px; }
+    .msg { position: relative; margin: 0; padding: 14px 18px 16px 66px; border-radius: 16px; border: 1px solid #E6DCD0; background: #fff; box-shadow: 0 3px 10px rgba(20, 40, 80, .07); color: #221F1B; font-size: 18px; font-weight: 500; line-height: 1.7; align-self: stretch; overflow-wrap: anywhere; }
+    .msg::before { content: "TG"; position: absolute; left: 16px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #B5483A, #7A2318); color: #fff; font-size: 13px; font-weight: 800; line-height: 36px; text-align: center; box-shadow: 0 2px 6px rgba(31, 79, 174, .35); }
+    .msg .who { display: block; font-size: 14px; font-weight: 800; color: #7A2318; margin: 0 0 6px; letter-spacing: 0; }
+    .msg:focus-within { outline: 2px solid #B5483A; outline-offset: 2px; }
     @media (max-width: 600px) { .msg { font-size: 17px; padding: 12px 14px 14px 58px; } .msg::before { width: 32px; height: 32px; line-height: 32px; left: 12px; top: 12px; font-size: 12px; } .msg .who { font-size: 13px; } .chat-log { gap: 12px; } }
     .controls { display: flex; flex-wrap: wrap; gap: 8px; }
     .controls .btn[disabled], .form-row .btn[disabled] { opacity: .45; cursor: not-allowed; }
@@ -70,7 +70,7 @@
     }
     .field { display: grid; gap: 6px; }
     .field > label { font-weight: 700; }
-    .field input, .field select, .field textarea { width: 100%; max-width: 420px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; background: var(--paper); }
+    .field input, .field select, .field textarea { width: 100%; max-width: 420px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1px solid #D9CFC2; border-radius: 8px; background: var(--paper); }
     .field textarea { max-width: none; }
     .form-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .form-row .field { min-width: 120px; }

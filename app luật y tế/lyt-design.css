@@ -469,17 +469,17 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 
 /* ---- Trắng & be: nền trắng, các ô tính năng và nút bấm màu tím nhạt ---- */
 :root[data-theme="trang-be"]{
-  --color-accent:#6b4fbb; --color-accent-soft:#f1edfb; --color-accent-soft-ink:#4c3797;
-  --color-action:#ece6fa; --color-action-ink:#2e1f63; --color-focus:#6b4fbb;
+  --color-accent:#9B2D20; --color-accent-soft:#f1edfb; --color-accent-soft-ink:#7A2318;
+  --color-action:#ece6fa; --color-action-ink:#3A1510; --color-focus:#9B2D20;
 }
-:root[data-theme="trang-be"] .btn:not(.ghost){background:#ece6fa;border-color:#c9b9ee;color:#2e1f63}
-:root[data-theme="trang-be"] .btn:not(.ghost):hover:not(:disabled){background:#e0d5f7;border-color:#b29fe3}
-:root[data-theme="trang-be"] .btn.ghost{background:#ffffff;border-color:#d9cdf3;color:#2e1f63}
-:root[data-theme="trang-be"] .tile,:root[data-theme="trang-be"] .hub-card{border-color:#d9cdf3}
-:root[data-theme="trang-be"] .tile:hover:not(.done),:root[data-theme="trang-be"] .hub-card:hover{border-color:#6b4fbb}
-:root[data-theme="trang-be"] .chip{background:#f1edfb;border-color:#d9cdf3;color:#4c3797}
-:root[data-theme="trang-be"] nav.tabs .ind{background:#6b4fbb}
-:root[data-theme="trang-be"] nav.tabs button[aria-selected="true"]{color:#4c3797}
+:root[data-theme="trang-be"] .btn:not(.ghost){background:#ece6fa;border-color:#E8C9C2;color:#3A1510}
+:root[data-theme="trang-be"] .btn:not(.ghost):hover:not(:disabled){background:#F6E4E0;border-color:#D9A59B}
+:root[data-theme="trang-be"] .btn.ghost{background:#ffffff;border-color:#F0D8D2;color:#3A1510}
+:root[data-theme="trang-be"] .tile,:root[data-theme="trang-be"] .hub-card{border-color:#F0D8D2}
+:root[data-theme="trang-be"] .tile:hover:not(.done),:root[data-theme="trang-be"] .hub-card:hover{border-color:#9B2D20}
+:root[data-theme="trang-be"] .chip{background:#f1edfb;border-color:#F0D8D2;color:#7A2318}
+:root[data-theme="trang-be"] nav.tabs .ind{background:#9B2D20}
+:root[data-theme="trang-be"] nav.tabs button[aria-selected="true"]{color:#7A2318}
 
 /* Thanh tab trên máy tính: một hàng cân đều, không để sót một tab ở hàng dưới */
 @media (min-width:900px){
@@ -489,20 +489,20 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 
 /* Minh họa slide trong giao diện Trắng & be: chủ yếu trắng và tím; giữ vàng gốc ở các điểm cần nhấn */
 :root[data-theme="trang-be"] .slide-art{background:#f4f1fc;border:1px solid #e4dcf6}
-:root[data-theme="trang-be"] .slide-art .a-accent{fill:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-accent{fill:#9B2D20}
 :root[data-theme="trang-be"] .slide-art .a-glow{fill:#c9a227}
 :root[data-theme="trang-be"] .slide-art .a-soft{fill:#ffffff}
-:root[data-theme="trang-be"] .slide-art .a-line{fill:#b9a6e6;stroke:#6b4fbb}
-:root[data-theme="trang-be"] .slide-art .a-ink{fill:#2e1f63;stroke:#2e1f63}
-:root[data-theme="trang-be"] .slide-art svg [fill="none"]{stroke:#6b4fbb}
+:root[data-theme="trang-be"] .slide-art .a-line{fill:#E2B9AF;stroke:#9B2D20}
+:root[data-theme="trang-be"] .slide-art .a-ink{fill:#3A1510;stroke:#3A1510}
+:root[data-theme="trang-be"] .slide-art svg [fill="none"]{stroke:#9B2D20}
 
 /* Nghe cả bài: thanh điều khiển và đoạn đang đọc */
-.reader{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:14px 0 18px;padding:12px 14px;border:1px solid #d9cdf3;border-radius:14px;background:#faf8ff}
+.reader{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:14px 0 18px;padding:12px 14px;border:1px solid #F0D8D2;border-radius:14px;background:#faf8ff}
 .reader .btn{min-height:40px}
 .reader label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--color-ink-2,#44403c)}
 .reader select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--color-field,#c9c5bf);background:#fff}
 .reader-note{font-size:13px;color:var(--color-muted,#78716c)}
-.read-on{background:rgba(107,79,187,.12);border-radius:6px;box-shadow:-4px 0 0 #6b4fbb;transition:background .25s ease}
+.read-on{background:rgba(155,45,32,.12);border-radius:6px;box-shadow:-4px 0 0 #9B2D20;transition:background .25s ease}
 
 /* Bớt bo góc toàn giao diện: thẻ và khung tối đa 8px, nút, ô nhập và nhãn tối đa 6px.
    Khối này ghi đè các giá trị cũ; xóa khối này nếu muốn trả lại bo góc gốc. */
@@ -550,8 +550,8 @@ input,select,textarea{border-radius:10px}
   --color-paper:#F5F3EE; --color-paper-2:#FFFFFF; --color-paper-3:#ECE8DF;
   --color-ink:#16181D; --color-ink-2:#3A3F4A; --color-muted:#6B6F7A;
   --color-rule:#D9D4C7; --color-rule-2:#E9E5DB;
-  --color-accent:#1D5B4F; --color-accent-ink:#FFFFFF; --color-accent-soft:#DCEAE5; --color-accent-soft-ink:#14443B;
-  --color-action:#16181D; --color-action-ink:#F5F3EE; --color-focus:#1D5B4F;
+  --color-accent:#9B2D20; --color-accent-ink:#FFFFFF; --color-accent-soft:#F6E4E0; --color-accent-soft-ink:#6E1F15;
+  --color-action:#16181D; --color-action-ink:#F5F3EE; --color-focus:#9B2D20;
   --radius-card:16px; --container:1200px;
   --shadow-card:0 1px 0 rgba(22,24,29,.04), 0 12px 32px -18px rgba(22,24,29,.28);
 }
