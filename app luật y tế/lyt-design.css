@@ -599,3 +599,5 @@ header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
 }
 /* Màn 1920 trở lên: nội dung rộng hơn, bớt khoảng trống hai bên */
 @media (min-width:1600px){ .wrap{max-width:1680px} }
+/* Khung nội dung các tab: góc vuông theo yêu cầu */
+.panel, .panel .card, .panel .law, .panel .hub-card{border-radius:0}
