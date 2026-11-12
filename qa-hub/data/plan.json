@@ -1,0 +1,90 @@
+{
+  "title": "Kế hoạch kiểm thử QA Hub",
+  "scope": [
+    "Quản lý test case: tạo, lọc, tìm kiếm, đổi trạng thái và kết quả",
+    "Quản lý bug: báo bug đầy đủ trường, vòng đời chuyển trạng thái",
+    "Requirement và RTM: liên kết test case với yêu cầu",
+    "Tổng kết và kiểm soát chất lượng theo exit criteria",
+    "Review tài liệu (kiểm thử tĩnh)",
+    "Smoke, chức năng, responsive, a11y, hiệu năng, bảo mật cơ bản"
+  ],
+  "outOfScope": [
+    "Đăng nhập và phân quyền người dùng (ứng dụng không có tính năng này)",
+    "Tích hợp với hệ thống bên ngoài (Jira, TestRail)",
+    "Kiểm thử trên production và theo dõi sau phát hành",
+    "Firefox và WebKit (chưa cấu hình)"
+  ],
+  "entryCriteria": [
+    "Môi trường QA đã chạy được, /api/health trả 200",
+    "Dữ liệu test được reset từ seed trước mỗi lần chạy",
+    "Requirement và test case đã được review"
+  ],
+  "exitCriteria": [
+    "Tỉ lệ pass ≥ 90% trên test case đã thực thi",
+    "Không còn test case Blocked và không còn test case Not run",
+    "Mọi test case Priority cao đều Pass",
+    "Không còn bug Critical đang mở",
+    "Requirement coverage 100%"
+  ],
+  "testLevels": [
+    { "name": "Unit / Component", "who": "Developer", "example": "Hàm validate tiêu đề" },
+    { "name": "Component Integration", "who": "Developer / QA", "example": "Store ghi dữ liệu và API đọc lại đúng" },
+    { "name": "System", "who": "QA", "example": "Luồng tạo test case → chạy → báo bug → đóng bug" },
+    { "name": "System Integration", "who": "QA", "example": "Kết nối với công cụ bên ngoài (chưa có trong phạm vi)" },
+    { "name": "Acceptance", "who": "Người dùng nghiệp vụ", "example": "Tester nghiệm thu quy trình làm việc hằng ngày" }
+  ],
+  "testTypes": [
+    { "name": "Functional", "purpose": "Kiểm tra chức năng" },
+    { "name": "UI", "purpose": "Kiểm tra giao diện và trải nghiệm" },
+    { "name": "Integration", "purpose": "Kiểm tra kết nối giữa các phần" },
+    { "name": "System", "purpose": "Kiểm tra toàn hệ thống" },
+    { "name": "Regression", "purpose": "Kiểm tra lại chức năng cũ sau thay đổi" },
+    { "name": "Smoke", "purpose": "Kiểm tra nhanh chức năng cốt lõi" },
+    { "name": "Sanity", "purpose": "Kiểm tra tập trung sau thay đổi nhỏ" },
+    { "name": "Performance", "purpose": "Kiểm tra hiệu năng" },
+    { "name": "Security", "purpose": "Kiểm tra bảo mật" },
+    { "name": "Compatibility", "purpose": "Kiểm tra tương thích" }
+  ],
+  "techniques": [
+    "Equivalence Partitioning (phân vùng tương đương)",
+    "Boundary Value Analysis (giá trị biên)",
+    "Decision Table (bảng quyết định)",
+    "State Transition (chuyển đổi trạng thái)",
+    "Use Case (theo luồng nghiệp vụ)",
+    "Pairwise (tổ hợp theo cặp)",
+    "Exploratory (khám phá)"
+  ],
+  "environments": [
+    { "name": "DEV", "purpose": "Developer phát triển và kiểm tra ban đầu" },
+    { "name": "SIT", "purpose": "Kiểm thử tích hợp hệ thống" },
+    { "name": "QA", "purpose": "Tester kiểm thử (môi trường mặc định của app)" },
+    { "name": "UAT", "purpose": "Người dùng nghiệp vụ nghiệm thu" },
+    { "name": "STAGING", "purpose": "Môi trường mô phỏng gần production" },
+    { "name": "PROD", "purpose": "Môi trường vận hành thực tế" }
+  ],
+  "tools": [
+    { "category": "Quản lý test case", "tools": "TestRail, Zephyr, Xray (app này thay bằng trang Test case)" },
+    { "category": "Quản lý bug", "tools": "Jira, YouTrack, Bugzilla (app này thay bằng trang Bug)" },
+    { "category": "API testing", "tools": "Postman, Insomnia (app này dùng Playwright request)" },
+    { "category": "UI automation", "tools": "Playwright (đang dùng), Selenium, Cypress" },
+    { "category": "Performance", "tools": "JMeter, k6" },
+    { "category": "Security", "tools": "OWASP ZAP" },
+    { "category": "CI/CD", "tools": "GitHub Actions (đang dùng), Jenkins" },
+    { "category": "Code quality", "tools": "SonarQube" }
+  ],
+  "openQuestions": [
+    "Trạng thái bug 'Mở' cũ (open) có cần giữ lại để tương thích dữ liệu không?",
+    "Có cần đăng nhập và phân quyền để kiểm thử theo vai trò không?",
+    "Ngưỡng tỉ lệ pass 90% có được product owner đồng ý không?"
+  ],
+  "lessonsLearned": [
+    "Ghi lại kết quả ngay khi chạy để không phải nhớ lại (giảm thiên kiến ký ức)",
+    "Reset dữ liệu từ seed trước mỗi lần chạy để kết quả lặp lại được",
+    "Mỗi lỗi lọt sang production cần bổ sung test case vào hồi quy"
+  ],
+  "risks": [
+    { "id": "RISK-01", "description": "Dữ liệu test bị thay đổi giữa các lần chạy", "likelihood": 3, "impact": 4, "mitigation": "Reset dữ liệu từ seed trước mỗi lần chạy test" },
+    { "id": "RISK-02", "description": "Phụ thuộc Chromium, lỗi trên trình duyệt khác không được phát hiện", "likelihood": 3, "impact": 3, "mitigation": "Bổ sung project Firefox và WebKit trong playwright.config.mjs" },
+    { "id": "RISK-03", "description": "Không có xác thực người dùng nên không kiểm thử được phân quyền", "likelihood": 4, "impact": 2, "mitigation": "Ghi rõ ngoài phạm vi; thêm test khi có tính năng đăng nhập" }
+  ]
+}
