@@ -508,3 +508,35 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 .slide-card,.lecture,.lesson-chat,.lesson-frame,main.triet .lesson-frame,.law,.hub-card,.slide-art,.reader,.qz-item,.tile,.lc-msg,.check,.model-answer,.toc-toggle,nav.tabs,.lc-head{border-radius:8px !important}
 .btn,.btn.ghost,.chip,.badge,.pill,.plan-badge,.lc-fab,.lc-send,.lc-input,.lc-form input,.opt,.bm,.achv,.reader select,.reader .btn,.slides .opt,main.triet .opt,nav.tabs button{border-radius:6px !important}
 .slide-card .feedback,.feedback{border-radius:6px !important}
+
+/* ===== Đợt làm đẹp giao diện (polish): chỉ chỉnh bề mặt, không đổi bố cục ===== */
+:root{
+  --polish-radius:14px;
+  --polish-shadow:0 1px 2px rgba(43,33,24,.06),0 8px 24px -12px rgba(43,33,24,.18);
+  --polish-shadow-hover:0 2px 4px rgba(43,33,24,.08),0 16px 32px -14px rgba(43,33,24,.28);
+  --polish-focus:0 0 0 3px color-mix(in srgb, var(--color-focus, #3F6B4E) 35%, transparent);
+}
+body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+main p, .sub, .lead{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+.card, .hub-card, .today, .panel, .stat, .remind, .reader{
+  border-radius:var(--polish-radius);
+  box-shadow:var(--polish-shadow);
+}
+.hub-card:hover, .card.is-link:hover{transform:translateY(-2px);box-shadow:var(--polish-shadow-hover)}
+.stat{padding:14px 16px}
+.stat strong, .stat b{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+nav.tabs{gap:4px;border-bottom:1px solid var(--color-rule-2, #EFE8DC);padding-bottom:0}
+nav.tabs button{border-radius:10px 10px 0 0}
+nav.tabs button:hover{background:var(--color-paper-3, #F3EDE2)}
+nav.tabs button[aria-selected="true"]{font-weight:700}
+.btn{border-radius:999px}
+.btn:not(:disabled):active{transform:translateY(1px) scale(.99)}
+.btn:not(:disabled):hover{box-shadow:0 4px 12px -6px rgba(43,33,24,.4)}
+.chip{border-radius:999px;font-size:.92em}
+a{text-underline-offset:3px;text-decoration-thickness:1px}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:none;box-shadow:var(--polish-focus);border-radius:8px}
+input,select,textarea{border-radius:10px}
+@media (prefers-reduced-motion:reduce){
+  .card,.hub-card,.today,.panel,.stat,.btn,nav.tabs button{transition:none!important;transform:none!important}
+}

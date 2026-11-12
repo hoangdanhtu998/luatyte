@@ -490,3 +490,18 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
 .lvl-text { font-size: 13px; color: var(--mute, #5b6472); margin-bottom: 6px; }
 .lvl-bar { height: 8px; border-radius: 999px; background: #e3e8f0; overflow: hidden; }
 .lvl-bar i { display: block; height: 100%; background: var(--amber, #F08A4B); border-radius: 999px; transition: width .4s; }
+
+/* ===== Đợt làm đẹp (polish): bề mặt thẻ, nút, tiêu điểm; không đổi bố cục ===== */
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.01em; }
+p, li { text-wrap: pretty; }
+.card, .lesson-card, .demo-card, .lesson-body { border: 1px solid #e6eaf2; box-shadow: 0 1px 2px rgba(20, 24, 31, .05), 0 10px 26px -16px rgba(20, 24, 31, .22); }
+.lesson-card:hover { box-shadow: 0 2px 4px rgba(20, 24, 31, .06), 0 16px 32px -16px rgba(20, 24, 31, .3); }
+.lesson-card { border-radius: 16px; }
+.btn { border-radius: 999px; }
+.btn:not(:disabled):hover { box-shadow: 0 6px 16px -8px rgba(20, 24, 31, .45); }
+.tab-btn, .ex-tab { border-radius: 999px; }
+a { text-underline-offset: 3px; }
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid rgba(47, 95, 179, .45); outline-offset: 2px; border-radius: 8px; }
+input, select, textarea { border-radius: 10px; }
+@media (prefers-reduced-motion: reduce) { .lesson-card, .btn { transition: none !important; } }
