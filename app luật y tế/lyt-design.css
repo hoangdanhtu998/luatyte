@@ -5,21 +5,21 @@
 /* Đầu trang: logo + tiêu đề + tài khoản xếp gọn, không bị ép */
 .hero{padding:var(--space-md,16px) var(--space-md,16px) var(--space-lg,24px);max-width:960px;margin:0 auto}
 .theme-row{display:flex;justify-content:flex-end;margin:0 0 var(--space-sm,12px)}
-.theme-row label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-muted,#7A6D5E);white-space:nowrap}
+.theme-row label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-muted,#5E5346);white-space:nowrap}
 .theme-row select{font-size:14px;padding:6px 10px;border-radius:8px;min-width:0}
 
 .hero-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;margin-bottom:var(--space-md,16px)}
 .brand{display:flex;align-items:center;gap:14px;min-width:0;flex:1 1 260px}
 .brand .logo{flex:0 0 auto;width:52px;height:52px;border-radius:12px}
 .brand h1{font-size:clamp(1.6rem,5.5vw,2.3rem);line-height:1.1;margin:0;letter-spacing:-.01em}
-.brand .sub{margin:4px 0 0;color:var(--color-muted,#7A6D5E);font-size:15px;line-height:1.45}
+.brand .sub{margin:4px 0 0;color:var(--color-muted,#5E5346);font-size:15px;line-height:1.45}
 .acct{flex:0 0 auto}
 
 /* Ba chỉ số: ba ô đều nhau, số không bị cắt */
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 var(--space-md,16px);border-top:1px solid var(--color-rule,#D9CFBE);border-bottom:1px solid var(--color-rule,#D9CFBE)}
 .stat{padding:12px 14px;min-width:0;display:flex;flex-direction:column;gap:4px}
 .stat + .stat{border-left:1px solid var(--color-rule,#D9CFBE)}
-.stat span{font-size:13px;line-height:1.3;color:var(--color-muted,#7A6D5E);overflow-wrap:anywhere}
+.stat span{font-size:13px;line-height:1.3;color:var(--color-muted,#5E5346);overflow-wrap:anywhere}
 .stat b{font-size:clamp(1.35rem,4.5vw,1.9rem);line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
 
 /* Thẻ "Hôm nay nên ôn" */
@@ -102,7 +102,7 @@ nav.tabs button[aria-selected="true"]{font-weight:700}
 .law summary{padding:16px 4px}
 .law:hover summary h3{text-decoration:none}
 .law h3{font-family:var(--font-display);font-size:1.22rem;font-weight:600}
-.law .meta{font-size:13px;color:var(--color-muted,#7A6D5E)}
+.law .meta{font-size:13px;color:var(--color-muted,#5E5346)}
 .law .body{padding:0 4px 18px 4px}
 
 /* Thẻ nội dung: phẳng, không đổ bóng */
@@ -119,8 +119,8 @@ body{color:var(--color-ink-2,#4A3F33)}
 h1,h2,h3,h4{color:var(--color-ink,#2B2118)}
 strong,b{color:var(--color-ink,#2B2118)}
 p,li{color:var(--color-ink-2,#4A3F33)}
-small,.meta,.note,figcaption,.hint{color:var(--color-muted,#7A6D5E)}
-a{color:var(--color-ink,#2B2118);text-decoration-color:var(--color-muted,#7A6D5E);text-underline-offset:.18em}
+small,.meta,.note,figcaption,.hint{color:var(--color-muted,#5E5346)}
+a{color:var(--color-ink,#2B2118);text-decoration-color:var(--color-muted,#5E5346);text-underline-offset:.18em}
 a:hover{text-decoration-color:var(--color-ink,#2B2118)}
 .check,.intro{color:var(--color-ink-2,#4A3F33)}
 
@@ -149,7 +149,7 @@ p a,li p a,.note a,.intro a{text-decoration:underline}
 
 /* Khối "Hôm nay nên ôn" là điểm bắt đầu: nổi bật hơn */
 .today{background:var(--color-paper-2,#fff);border-color:var(--color-ink,#2B2118);border-width:1px}
-.today .label,.today small{color:var(--color-muted,#7A6D5E)}
+.today .label,.today small{color:var(--color-muted,#5E5346)}
 
 /* Thanh tab: dính đầu khi cuộn để chuyển mục nhanh */
 nav.tabs{position:sticky;top:0;z-index:20;background:var(--color-paper,#FBF7F0)}
@@ -200,7 +200,7 @@ nav.tabs{position:sticky;top:0;z-index:20;background:var(--color-paper,#FBF7F0)}
 .slide-art .a-accent{fill:var(--color-accent,#3F6B4E)}
 .slide-art .a-glow{fill:var(--color-accent,#3F6B4E)}
 .slide-art .a-soft{fill:var(--color-paper-2,#fff)}
-.slide-art .a-line{fill:var(--color-rule,#D9CFBE);stroke:var(--color-muted,#7A6D5E)}
+.slide-art .a-line{fill:var(--color-rule,#D9CFBE);stroke:var(--color-muted,#5E5346)}
 .slide-art .a-ink{fill:var(--color-ink,#2B2118);stroke:var(--color-ink,#2B2118)}
 .slide-art svg [fill="none"]{fill:none !important;stroke:var(--color-accent,#3F6B4E)}
 .slide-art text{font-family:"Lato",system-ui,sans-serif}
@@ -508,3 +508,6 @@ main.triet .lesson-frame > h2 .lx-ico{margin-left:0;margin-right:10px}
 .slide-card,.lecture,.lesson-chat,.lesson-frame,main.triet .lesson-frame,.law,.hub-card,.slide-art,.reader,.qz-item,.tile,.lc-msg,.check,.model-answer,.toc-toggle,nav.tabs,.lc-head{border-radius:8px !important}
 .btn,.btn.ghost,.chip,.badge,.pill,.plan-badge,.lc-fab,.lc-send,.lc-input,.lc-form input,.opt,.bm,.achv,.reader select,.reader .btn,.slides .opt,main.triet .opt,nav.tabs button{border-radius:6px !important}
 .slide-card .feedback,.feedback{border-radius:6px !important}
+
+/* Nút QA Hub: không bị mờ theo menu, giữ tương phản */
+nav[aria-label="Chuyển khu học"] a.qa-hub-link{opacity:1!important;background:#a8361b!important;color:#fff!important;border-bottom:1px solid #7d2612!important;border-radius:999px;padding:3px 12px;font-weight:700}
