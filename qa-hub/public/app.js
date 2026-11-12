@@ -1414,7 +1414,7 @@ function tongNumbers(stats) {
     el('div', { class: 'kpis' },
       el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Test case'), el('div', { class: 'kpi-value' }, String(stats.testcases.total)), el('div', { class: 'muted' }, `${stats.testcases.byStatus.ready ?? 0} sẵn sàng`)),
       el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Lỗi đang mở'), el('div', { class: 'kpi-value' }, String(stats.bugs.open)), el('div', { class: 'muted' }, `Tổng ${stats.bugs.total}`)),
-      el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Test QA Hub đạt'), el('div', { class: 'kpi-value' }, `${stats.e2e.passed}/${stats.e2e.total}`), el('div', { class: 'muted' }, 'lần chạy gần nhất'))));
+      el('div', { class: 'card' }, el('div', { class: 'kpi-label' }, 'Test QA Hub đạt'), el('div', { class: 'kpi-value' }, stats.e2e ? `${stats.e2e.passed}/${stats.e2e.total}` : '—'), el('div', { class: 'muted' }, stats.e2e ? 'lần chạy gần nhất' : 'Chưa có kết quả'))));
 }
 
 function tongHero(stages, autorun, progress) {

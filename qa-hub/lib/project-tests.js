@@ -11,8 +11,13 @@ const OUTPUT_TAIL_CHARS = 600;
 const SAFE_ENV_KEYS = ['PATH', 'Path', 'SystemRoot', 'TEMP', 'TMP', 'USERPROFILE', 'HOME', 'APPDATA', 'LOCALAPPDATA'];
 
 // npm đi kèm Node: chạy qua node để không cần shell (npm.cmd trên Windows cần shell).
-export function npmCliPath(execPath = process.execPath) {
-  return path.join(path.dirname(execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js');
+// Windows: npm nằm cạnh node.exe. Linux/macOS: npm nằm ở ../lib/node_modules.
+export function npmCliPath(execPath = process.execPath, exists = existsSync) {
+  const candidates = [
+    path.join(path.dirname(execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js'),
+    path.join(path.dirname(execPath), '..', 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js'),
+  ];
+  return candidates.find((c) => exists(c)) ?? candidates[0];
 }
 
 export function safeEnv(source = process.env) {
