@@ -1,0 +1,52 @@
+# Pipeline CI của QA Hub (qa-hub/) chạy trên GitHub Actions.
+# Chạy khi đẩy lên nhánh ci/qa-hub-github-actions hoặc bấm "Run workflow" bằng tay.
+name: QA Hub CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ci/qa-hub-github-actions]
+
+concurrency:
+  group: qa-hub-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: qa-hub
+    steps:
+      - name: Lấy mã
+        uses: actions/checkout@v4
+
+      - name: Cài Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: qa-hub/package-lock.json
+
+      - name: Cài dependency (theo package-lock)
+        run: npm ci
+
+      - name: Cài trình duyệt Chromium cho Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Chạy pipeline CI QA Hub
+        # LIVE_URL không đặt: CI không gửi tick về máy nào; kết quả vẫn lưu trong artifact.
+        run: npm run ci
+
+      - name: Lưu báo cáo và log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-hub-ci-${{ github.run_number }}
+          path: |
+            qa-hub/results/
+            qa-hub/.lighthouseci/
+            qa-hub/playwright-report/
+          if-no-files-found: warn
+          retention-days: 14

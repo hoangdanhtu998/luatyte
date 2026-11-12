@@ -12,19 +12,17 @@ const validBug = (overrides = {}) => ({
 });
 
 test.describe('API: kết quả test case và tham chiếu', () => {
-  test('cập nhật kết quả Pass và lọc được theo kết quả', async ({ request }) => {
+  test('ghi kết quả tay bị từ chối 403, kết quả không đổi', async ({ request }) => {
+    const findTc15 = async () => (await (await request.get('/api/testcases?q=TC-015')).json()).items.find((i) => i.id === 'TC-015');
+    const before = await findTc15();
     const res = await request.patch('/api/testcases/TC-015', { data: { result: 'pass', evidence: 'Đã xem danh sách review' } });
-    expect(res.status()).toBe(200);
-    expect((await res.json()).result).toBe('pass');
-
-    const filtered = await (await request.get('/api/testcases?result=pass')).json();
-    expect(filtered.items.map((item) => item.id)).toContain('TC-015');
+    expect(res.status()).toBe(403);
+    expect((await findTc15()).result).toBe(before.result);
   });
 
-  test('kết quả không hợp lệ bị từ chối', async ({ request }) => {
+  test('kết quả giả do người gửi cũng bị từ chối 403', async ({ request }) => {
     const res = await request.patch('/api/testcases/TC-015', { data: { result: 'maybe' } });
-    expect(res.status()).toBe(400);
-    expect((await res.json()).details.result).toBeTruthy();
+    expect(res.status()).toBe(403);
   });
 
   test('gắn requirement không tồn tại bị từ chối', async ({ request }) => {
@@ -133,9 +131,9 @@ test.describe('API: review, checklist, tổng kết, STLC, kế hoạch', () => 
     expect(list.items.some((item) => item.targetRef === 'SRS v1')).toBe(true);
   });
 
-  test('checklist có đúng 36 mục và cập nhật được trạng thái', async ({ request }) => {
+  test('checklist có đủ 36 mục STLC + 56 mục web và cập nhật được trạng thái', async ({ request }) => {
     const list = await (await request.get('/api/checklist')).json();
-    expect(list.total).toBe(36);
+    expect(list.total).toBe(92);
 
     const res = await request.patch('/api/checklist/CL-01', { data: { done: true } });
     expect(res.status()).toBe(200);

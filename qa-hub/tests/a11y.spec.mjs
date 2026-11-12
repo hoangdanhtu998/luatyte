@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const PAGES = ['/#/overview', '/#/testcases', '/#/bugs', '/#/plan', '/#/summary', '/#/assistant', '/#/checklist'];
+const PAGES = ['/#/start', '/#/overview', '/#/testcases', '/#/bugs', '/#/plan', '/#/summary', '/#/assistant', '/#/checklist'];
 
 for (const url of PAGES) {
   test(`axe-core không có lỗi nghiêm trọng ở ${url}`, async ({ page }) => {

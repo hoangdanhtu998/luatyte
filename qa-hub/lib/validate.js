@@ -4,6 +4,7 @@ export const TC_RESULTS = ['not_run', 'pass', 'fail', 'blocked', 'not_applicable
 export const TEST_TYPES = [
   'positive', 'negative', 'boundary', 'equivalence', 'decision_table', 'state_transition',
   'use_case', 'pairwise', 'exploratory', 'regression', 'smoke', 'compatibility', 'performance', 'security',
+  'white_box', 'black_box',
 ];
 export const BUG_SEVERITIES = ['critical', 'major', 'minor', 'trivial'];
 export const BUG_PRIORITIES = ['low', 'medium', 'high', 'urgent'];
