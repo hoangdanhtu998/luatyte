@@ -1,6 +1,6 @@
 // Minh họa SVG cho slide. Màu lấy từ biến giao diện (CSS lớp .a-*), nên đổi giao diện vẫn khớp.
 window.SlideArt = (function () {
-  var W = 'viewBox="0 0 240 120" role="img"';
+  var W = 'viewBox="0 0 240 120" role="img" aria-label="Minh họa bài học"';
   var art = {
     // Sách mở và ngọn đèn: nghiên cứu, suy nghĩ
     lamp: '<svg ' + W + '><rect class="a-soft" x="30" y="70" width="180" height="10" rx="3"/><path class="a-line" d="M52 70 Q120 52 120 62 Q120 52 188 70 L188 84 Q120 68 120 78 Q120 68 52 84Z"/><path class="a-line" d="M120 62 L120 78" stroke-width="1.5"/><circle class="a-accent" cx="176" cy="34" r="12"/><path class="a-accent" d="M170 46 L182 46 L180 60 L172 60Z"/><circle class="a-glow" cx="176" cy="34" r="22" opacity=".25"/><text class="a-ink" x="120" y="110" text-anchor="middle" font-size="11">Đặt câu hỏi, lập luận</text></svg>',

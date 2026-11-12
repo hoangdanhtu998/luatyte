@@ -70,8 +70,10 @@
 </style>
 <style>/* Mỗi nhóm luật có màu riêng: thanh bên, số hiệu và nhãn đổi theo nhóm */
 .law{border-left:4px solid var(--c)}
-.law .badge{color:var(--c);border-color:color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 12%,var(--color-paper-2));font-weight:700}
-.law .meta .mono{color:var(--c)}
+.law .badge{color:color-mix(in srgb,var(--c) 75%,#000);border-color:color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 12%,var(--color-paper-2));font-weight:700}
+.law .meta .mono{color:color-mix(in srgb,var(--c) 75%,#000)}
+.law-wrap{position:relative}
+.law-wrap .bm{position:absolute;top:12px;right:52px;z-index:1}
 </style>
 </head>
 <body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index-hoccode.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a><a class="qa-hub-link" href="/qa-hub/" target="_blank" rel="noopener" aria-label="QA Hub, mở ở tab mới" title="QA Hub: dự án riêng để quản lý kiểm thử" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:999px;background:#a8361b;color:#fff;font-weight:700;text-decoration:none;border:1px solid #7d2612;box-shadow:0 1px 0 rgba(0,0,0,.15)">QA Hub <span aria-hidden="true">↗</span></a></nav>
@@ -707,6 +709,7 @@ function renderLaws(){
   bmBtn.setAttribute("aria-pressed", String(bmOnly));
   bmBtn.onclick = () => { bmOnly = !bmOnly; renderLaws(); };
   $("#laws").innerHTML = list.length ? list.map((l,i) => `
+    <div class="law-wrap">
     <details class="law" style="--c:${STATCOLOR[l.status]||"var(--muted)"}" ${i<1 && !q ? "open":""}>
       <summary>
         <span class="badge">${esc(l.so.split("/")[0])}<br>${esc(l.so.split("/")[1]||"")}</span>
@@ -714,7 +717,6 @@ function renderLaws(){
           <h3>${esc(l.name)}</h3>
           <div class="meta"><span class="mono">${esc(l.so)}</span><span class="eff">Hiệu lực ${esc(l.eff)}</span><span class="pill ${STATUS[l.status][0]}">${STATUS[l.status][1]}</span></div>${masteryLine(l)}
         </div>
-        <button class="bm ${bmHas(l.id) ? "on" : ""}" data-bm="${esc(l.id)}" title="Đánh dấu luật này" aria-label="Đánh dấu luật này" aria-pressed="${bmHas(l.id)}">${bmHas(l.id) ? "★" : "☆"}</button>
         <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </summary>
       <div class="body">
@@ -728,7 +730,9 @@ function renderLaws(){
           <button class="linkbtn" type="button" onclick="window.shareLesson('${l.id}', '${esc(l.name).replace(/'/g, "\\'")}')">Chia sẻ ↗</button>
         </div>
       </div>
-    </details>`).join("") : `<p class="intro">Không tìm thấy luật phù hợp. Thử từ khóa khác như "thuốc" hoặc "BHYT".</p>`;
+    </details>
+    <button class="bm ${bmHas(l.id) ? "on" : ""}" data-bm="${esc(l.id)}" title="Đánh dấu luật này" aria-label="Đánh dấu luật này" aria-pressed="${bmHas(l.id)}">${bmHas(l.id) ? "★" : "☆"}</button>
+    </div>`).join("") : `<p class="intro">Không tìm thấy luật phù hợp. Thử từ khóa khác như "thuốc" hoặc "BHYT".</p>`;
 }
 $("#laws").onclick = e => {
   const b = e.target.closest("button[data-askabout],button[data-quizabout]"); if(!b) return;
