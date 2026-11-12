@@ -334,7 +334,10 @@
   // Phụ đề dưới khung app: mỗi dòng gõ dần, các dòng trước vẫn giữ và cuộn.
   async function typeCaption(text, cls) {
     if (!caption) return;
-    caption.hidden = false;
+    if (caption.hidden) {
+      caption.hidden = false;
+      window.dispatchEvent(new Event('resize')); // app co lại: vẽ lại vòng khoanh
+    }
     var line = el('div', 'hd-cap-line' + (cls ? ' ' + cls : ''));
     caption.appendChild(line);
     for (var i = 0; i < text.length; i++) {
@@ -345,7 +348,11 @@
     caption.scrollTop = caption.scrollHeight;
   }
   function resetCaption() {
-    if (caption) { caption.replaceChildren(); caption.hidden = true; }
+    if (caption) {
+      caption.replaceChildren();
+      caption.hidden = true;
+      window.dispatchEvent(new Event('resize'));
+    }
   }
   function clearCaptionLater(ms) {
     setTimeout(function () { if (caption && !running) resetCaption(); }, ms);
