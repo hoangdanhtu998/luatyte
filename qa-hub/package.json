@@ -1,0 +1,24 @@
+{
+  "name": "qa-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QA Hub: dashboard quản lý test case, bug và checklist kiểm thử web",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "playwright test",
+    "test:report": "playwright show-report",
+    "setup": "node scripts/setup.mjs",
+    "start:auto": "node scripts/start-auto.mjs",
+    "lhci": "lhci autorun --config=lighthouserc.json",
+    "k6": "k6 run perf/load.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@lhci/cli": "^0.16.0",
+    "@playwright/test": "^1.65.0"
+  }
+}
