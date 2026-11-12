@@ -604,7 +604,10 @@
       addBot(hints[Math.min(hintsShown, hints.length - 1)]);
       hintsShown = Math.min(hintsShown + 1, hints.length);
     });
-    detailBtn.addEventListener('click', function () { addBot(steps[idx].detail); });
+    detailBtn.addEventListener('click', function () {
+      var d = steps[idx].detail;
+      (Array.isArray(d) ? d : [d]).forEach(function (t) { if (t) addBot(t); });
+    });
     nextBtn.addEventListener('click', function () {
       if (idx < steps.length - 1) { enterStep(idx + 1); return; }
       location.href = 'lesson.html?track=tester&id=' + encodeURIComponent(data.lesson || 'tu-duy-tester');

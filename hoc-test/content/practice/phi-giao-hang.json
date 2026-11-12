@@ -34,28 +34,28 @@
       ]
     },
     "lineNotes": {
-      "0": "def là từ khóa để định nghĩa một hàm. phi_ship là tên hàm. Trong ngoặc là ba đầu vào: km, tong, thanh_vien.",
-      "1": "if là câu điều kiện: nếu km lớn hơn 10 thì chạy các dòng thụt lề bên dưới. Không đúng thì bỏ qua.",
-      "2": "return là trả kết quả và dừng hàm ngay. -1 nghĩa là không giao hàng.",
-      "3": "Nếu tổng đơn lớn hơn hoặc bằng 300.000 (>= là lớn hơn hoặc bằng) thì chạy dòng dưới.",
-      "4": "return 0: miễn phí ship, rồi hàm dừng.",
-      "5": "and nghĩa là 'và': cả hai điều kiện phải đúng. thanh_vien == 1 nghĩa là thanh_vien bằng 1, tức là thành viên.",
-      "6": "return 0: thành viên có đơn từ 150.000 được miễn ship.",
-      "7": "Nếu km nhỏ hơn hoặc bằng 3 thì phí cố định là 15.000.",
-      "8": "return 15000: trả 15.000 rồi dừng.",
-      "9": "Nếu không có điều kiện nào ở trên khớp thì chạy dòng này. (km - 3) * 5000: lấy số km vượt quá 3, nhân với 5.000."
+      "0": "def là 'định nghĩa hàm' (một công thức có tên để dùng lại). phi_ship là tên hàm. Ba chữ trong ngoặc là ba đầu vào: km, tong, thanh_vien. Mỗi lần chạy, bạn điền ba giá trị đó vào.",
+      "1": "if nghĩa là 'nếu'. Máy kiểm tra km có lớn hơn 10 không. Ví dụ km = 12: đúng, vào các dòng thụt lề bên dưới. km = 5: sai, bỏ qua và đi tiếp xuống dưới.",
+      "2": "return nghĩa là 'trả lại kết quả và dừng hàm ngay'. -1 là mã báo 'không giao'. Ví dụ km = 12 thì hàm trả -1 và không chạy các dòng sau nữa.",
+      "3": "Kiểm tiếp: tong có từ 300.000 trở lên không? >= là 'lớn hơn hoặc bằng'. Ví dụ tong = 300.000 cũng đúng, vì có chữ 'bằng'. tong = 299.999 là sai.",
+      "4": "return 0 nghĩa là phí ship = 0, tức miễn phí. Vì đây là 'return', hàm dừng ngay tại đây.",
+      "5": "and nghĩa là 'và': cả hai điều kiện đều phải đúng. thanh_vien == 1: '==' là so sánh bằng (khác dấu '=' là gán giá trị). Ví dụ thanh_vien = 1 và tong = 200.000 thì đúng cả hai, vào dòng dưới. thanh_vien = 0 thì sai ngay.",
+      "6": "return 0: thành viên có đơn từ 150.000 trở lên được miễn ship. Đây là nhánh b3.",
+      "7": "Nếu km nhỏ hơn hoặc bằng 3 (<= là 'nhỏ hơn hoặc bằng') thì phí cố định. Ví dụ km = 2 hoặc km = 3 đều vào đây.",
+      "8": "return 15000 nghĩa là trả về 15.000 đồng và dừng hàm.",
+      "9": "Dòng này chạy khi km trên 3 và không rơi vào nhánh miễn ship. (km - 3) là số km vượt quá 3. * 5000 nghĩa là nhân với 5.000. Ví dụ km = 6: (6 - 3) × 5.000 = 15.000, cộng 15.000 = 30.000đ."
     }
   },
   "steps": [
     {
       "id": "doc-code",
-      "title": "Đọc hiểu code trong 1 phút",
+      "title": "Đọc hiểu code từ đầu, không cần biết lập trình",
       "theory": [
-        "Bạn không cần biết lập trình. Code chỉ là các dòng lệnh, máy chạy từ trên xuống dưới.",
-        "if là câu điều kiện. Dòng thụt lề phía dưới if chỉ chạy khi điều kiện đúng.",
-        "return là trả kết quả và dừng hàm ngay, các dòng dưới không chạy nữa.",
-        "== là so sánh bằng, >= là lớn hơn hoặc bằng, and là 'và'.",
-        "Bạn chỉ cần đọc và chọn giá trị đầu vào để đi qua từng nhánh. Dòng nào được tô là dòng ca đó đã chạy."
+        "Code là một công thức được máy làm theo. Máy đọc từ trên xuống dưới, từng dòng một.",
+        "if = 'nếu'. Dòng thụt lề phía dưới if chỉ chạy khi điều kiện đúng. Điều kiện sai thì máy nhảy qua.",
+        "return = 'trả kết quả và dừng'. Gặp return là hàm kết thúc, các dòng dưới không chạy nữa.",
+        "== là so sánh bằng. >= là lớn hơn hoặc bằng. <= là nhỏ hơn hoặc bằng. and là 'và' (cả hai đúng mới đúng).",
+        "Thụt lề (lùi đầu dòng) rất quan trọng: nó cho biết dòng nào thuộc if nào."
       ],
       "demo": [
         {
@@ -63,7 +63,12 @@
           "text": "Khi chạy hàm, trợ giảng sẽ giải thích từng dòng của nhánh vừa đi qua ở khung bên phải."
         }
       ],
-      "detail": "Mẹo đọc code: đi từ trên xuống, gặp if thì hỏi 'điều kiện này đúng không?', đúng thì đi vào trong, sai thì bỏ qua."
+      "detail": [
+        "Cách đọc một ca: bắt đầu từ dòng đầu, gặp if thì hỏi 'điều kiện này đúng không?'.",
+        "Đúng thì đi vào các dòng thụt lề. Gặp return thì dừng và lấy kết quả.",
+        "Sai thì nhảy xuống if tiếp theo, làm tương tự cho đến khi gặp một return.",
+        "Ví dụ km = 12: if km > 10 đúng, return -1. Hàm dừng ngay, kết quả là -1."
+      ]
     },
     {
       "id": "lam-quen",
@@ -97,7 +102,11 @@
           "text": "Ca này: 2 km, đơn 100.000đ, không phải thành viên. Đi qua nhánh b4 và trả về 15.000đ."
         }
       ],
-      "detail": "Ở app này, ca kiểm không chỉ là một đầu vào. Mỗi đơn có nhiều ngưỡng, và ngưỡng nào đúng quyết định nhánh."
+      "detail": [
+        "Ca này: km = 2 (không lớn hơn 10), tong = 100.000 (không đủ 300.000), thanh_vien = 0 (không phải thành viên).",
+        "Đi lần lượt: km > 10 sai, tong >= 300.000 sai, thanh_vien == 1 sai, km <= 3 đúng. Vậy trả về 15.000 (nhánh b4).",
+        "Bạn sẽ thấy dòng 'if km <= 3' và 'return 15000' được tô sáng. Đó là hai dòng ca này đã chạy qua."
+      ]
     },
     {
       "id": "nhanh-b1",
@@ -116,7 +125,10 @@
         ],
         "pass": "Đúng! Ca này đi qua nhánh b1 và trả về -1 (không giao)."
       },
-      "detail": "Ca như vậy không cần đơn lớn. Chỉ cần vượt khoảng cách là đủ. Đừng quên kiểm ca này khi đổi quy tắc khoảng cách."
+      "detail": [
+        "Nhánh b1 chỉ có một điều kiện: km > 10. Ví dụ km = 12 thì đúng ngay, không cần xét tiếp.",
+        "Vì return -1 dừng hàm, tong và thanh_vien không ảnh hưởng gì. Đây là điểm dễ bỏ sót khi test."
+      ]
     },
     {
       "id": "nhanh-b2",
@@ -135,7 +147,11 @@
         ],
         "pass": "Đúng! Đơn 300.000đ không phải thành viên vẫn đi qua nhánh b2."
       },
-      "detail": "Ngưỡng 300.000 được kiểm bằng dấu lớn hơn hoặc bằng. Đúng 300.000 đã là đủ điều kiện."
+      "detail": [
+        "km phải từ 10 trở xuống, nên đi qua được dòng 'if km > 10' (sai, bỏ qua).",
+        "tong = 300.000 làm 'tong >= 300000' đúng. Đúng 300.000 vẫn là đủ điều kiện vì có chữ 'bằng'.",
+        "thanh_vien không cần quan tâm ở nhánh này, nên đặt 0 cũng được."
+      ]
     },
     {
       "id": "nhanh-b3",
@@ -154,7 +170,11 @@
         ],
         "pass": "Đúng! Thành viên với đơn 200.000đ đi qua nhánh b3."
       },
-      "detail": "Cùng một đơn 200.000đ, khách không phải thành viên sẽ đi qua nhánh khác và phải trả phí. Đây là lý do cần ca riêng cho thành viên."
+      "detail": [
+        "Để vào b3, phải qua hai điều kiện trước là sai: km <= 10 và tong < 300.000.",
+        "Sau đó 'thanh_vien == 1' đúng và 'tong >= 150.000' đúng. Dấu 'and' bắt cả hai cùng đúng.",
+        "Thử đổi thanh_vien = 0 với cùng tong = 200.000: 'and' sai, ca đi vào nhánh khác và phải trả phí."
+      ]
     },
     {
       "id": "nhanh-b4",
@@ -173,7 +193,10 @@
         ],
         "pass": "Đúng! Ca này trả 15.000đ và đi qua nhánh b4."
       },
-      "detail": "Ca km = 3 đứng ở biên trên của b4. Đứng ở biên thường là chỗ lỗi hay xuất hiện."
+      "detail": [
+        "Để vào b4: km <= 3, và không đi qua nhánh miễn ship (tong < 150.000 hoặc không phải thành viên).",
+        "km = 3 vẫn vào b4 vì '<=' có chữ 'bằng'. km = 4 sẽ không vào b4 mà sang b5."
+      ]
     },
     {
       "id": "nhanh-b5",
@@ -192,7 +215,11 @@
         ],
         "pass": "Đúng! Ca 6 km đi qua nhánh b5. Kết quả 15.000 + 3 × 5.000 = 30.000."
       },
-      "detail": "Nhánh b5 có một dòng code, nên nhìn độ phủ nhánh không đủ. Hãy đối chiếu kết quả với công thức."
+      "detail": [
+        "Để vào b5: km từ 4 đến 10, không miễn ship. Ví dụ km = 6.",
+        "Tính: (6 - 3) = 3 km vượt quá. 3 × 5.000 = 15.000. Cộng 15.000 cố định = 30.000đ.",
+        "Thử km = 4 và km = 8 để thấy phí tăng 5.000 mỗi km."
+      ]
     },
     {
       "id": "bien-10km",
@@ -212,7 +239,10 @@
         ],
         "pass": "Đúng! km = 10 không bị từ chối. Ca này đi qua nhánh b5 với phí 50.000."
       },
-      "detail": "Thử thêm km = 11 để thấy nhánh b1. Hai ca gần nhau nhưng khác nhánh, đó là điểm cần kiểm."
+      "detail": [
+        "km = 10: 'km > 10' là sai (10 không lớn hơn 10), nên không bị từ chối.",
+        "km = 11: 'km > 10' đúng, return -1. Hai ca chỉ cách nhau 1 km nhưng khác nhánh. Đó là lý do phải kiểm biên."
+      ]
     },
     {
       "id": "tong-ket",
@@ -232,7 +262,11 @@
         ],
         "pass": "Đúng! Đơn đúng 150.000 của thành viên được miễn ship, đi qua nhánh b3."
       },
-      "detail": "Kết hợp hai điều kiện (thành viên và tổng tiền) cần bảng quyết định: liệt kê các tổ hợp thay vì thử ngẫu nhiên."
+      "detail": [
+        "km = 5: qua dòng 'km > 10' (sai). Tổng 150.000 không đủ 300.000 nên sai dòng đó.",
+        "thanh_vien = 1 và tong = 150.000: cả hai điều kiện đúng, vào nhánh b3 và trả 0.",
+        "Thử tong = 149.999 với thanh_vien = 1: sai, sang các dòng sau. Đó là cách kiểm biên 150.000."
+      ]
     }
   ]
 }
