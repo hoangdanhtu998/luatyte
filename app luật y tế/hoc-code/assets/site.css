@@ -498,3 +498,6 @@ main { max-width: min(1600px, 96vw); }
 @media (min-width: 900px) { main { padding-inline: clamp(20px, 2.4vw, 40px); } }
 @media (min-width: 1200px) { .lesson-body { max-width: 1040px; margin-inline: auto; } }
 @media (max-width: 899px) { main { padding-inline: 16px; } }
+
+/* Màn 1600 trở lên: khung rộng hơn */
+@media (min-width: 1600px) { main { max-width: min(1800px, 94vw); } }
