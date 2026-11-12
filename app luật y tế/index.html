@@ -304,6 +304,7 @@
 <script src="js/features/stats.js"></script>
 <script src="js/features/learning-path.js"></script>
 <script src="js/features/quiz-enhanced.js"></script>
+<script>
 async function boot(){
 const [LAWS, QUIZ0, TF, FACTPAIRS] = await Promise.all(
   ["laws", "quiz", "tf", "factpairs"].map(n => fetch("data/" + n + ".json").then(r => { if (!r.ok) throw new Error(n); return r.json(); }))
