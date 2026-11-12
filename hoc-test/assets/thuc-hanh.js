@@ -187,6 +187,13 @@
       lineEls.forEach(function (d) { d.classList.remove('hit'); });
       ((cfg.branches || {})[hit] || []).forEach(function (i) { if (lineEls[i]) lineEls[i].classList.add('hit'); });
     }
+    // Trợ giảng giải thích từng dòng của nhánh vừa chạy, bằng lời dễ hiểu.
+    function explainLines(hit) {
+      var notes = cfg.lineNotes || {};
+      ((cfg.branches || {})[hit] || []).forEach(function (i) {
+        if (notes[i]) ctrl.note('Dòng ' + (i + 1) + ': ' + notes[i]);
+      });
+    }
     function paintCover() {
       var all = Object.keys(cfg.branches || {});
       cov.textContent = 'Nhánh đã phủ: ' + (ctrl.covered.length ? ctrl.covered.join(', ') : 'chưa có') + ' (' + ctrl.covered.length + '/' + all.length + ')';
@@ -202,6 +209,7 @@
       out.textContent = 'Kết quả: ' + r.v;
       out.className = 'result ok';
       paintLines(r.hit);
+      explainLines(r.hit);
       var parts = cfg.inputs.map(function (n) { return n + '=' + vals[n]; }).join(', ');
       var res = { kind: 'code', hit: r.hit, logText: parts + ' → ' + r.v + ' (nhánh ' + r.hit + ')' };
       ctrl.submit(res);
@@ -399,7 +407,7 @@
     if (!FACTORY[type]) { root.textContent = 'Loại app chưa hỗ trợ: ' + type; return; }
     var steps = data.steps;
     var idx = 0, busy = false, attempts = 0, hintsShown = 0, passed = false, app = null;
-    var ctrl = { busy: false, demoMode: false, covered: [], submit: submit };
+    var ctrl = { busy: false, demoMode: false, covered: [], submit: submit, note: addBot };
 
     // ----- Khung giao diện -----
     var head = el('div', 'th-head');

@@ -6,17 +6,65 @@
     "type": "code",
     "name": "Hàm tính phí giao hàng, app đặt đồ ăn (mẫu)",
     "func": "phiShip",
-    "inputs": ["km", "tong", "thanh_vien"],
+    "inputs": [
+      "km",
+      "tong",
+      "thanh_vien"
+    ],
     "code": "def phi_ship(km, tong, thanh_vien):\n    if km > 10:\n        return -1\n    if tong >= 300000:\n        return 0\n    if thanh_vien == 1 and tong >= 150000:\n        return 0\n    if km <= 3:\n        return 15000\n    return 15000 + (km - 3) * 5000",
     "branches": {
-      "b1": [1, 2],
-      "b2": [3, 4],
-      "b3": [5, 6],
-      "b4": [7, 8],
-      "b5": [9]
+      "b1": [
+        1,
+        2
+      ],
+      "b2": [
+        3,
+        4
+      ],
+      "b3": [
+        5,
+        6
+      ],
+      "b4": [
+        7,
+        8
+      ],
+      "b5": [
+        9
+      ]
+    },
+    "lineNotes": {
+      "0": "def là từ khóa để định nghĩa một hàm. phi_ship là tên hàm. Trong ngoặc là ba đầu vào: km, tong, thanh_vien.",
+      "1": "if là câu điều kiện: nếu km lớn hơn 10 thì chạy các dòng thụt lề bên dưới. Không đúng thì bỏ qua.",
+      "2": "return là trả kết quả và dừng hàm ngay. -1 nghĩa là không giao hàng.",
+      "3": "Nếu tổng đơn lớn hơn hoặc bằng 300.000 (>= là lớn hơn hoặc bằng) thì chạy dòng dưới.",
+      "4": "return 0: miễn phí ship, rồi hàm dừng.",
+      "5": "and nghĩa là 'và': cả hai điều kiện phải đúng. thanh_vien == 1 nghĩa là thanh_vien bằng 1, tức là thành viên.",
+      "6": "return 0: thành viên có đơn từ 150.000 được miễn ship.",
+      "7": "Nếu km nhỏ hơn hoặc bằng 3 thì phí cố định là 15.000.",
+      "8": "return 15000: trả 15.000 rồi dừng.",
+      "9": "Nếu không có điều kiện nào ở trên khớp thì chạy dòng này. (km - 3) * 5000: lấy số km vượt quá 3, nhân với 5.000."
     }
   },
   "steps": [
+    {
+      "id": "doc-code",
+      "title": "Đọc hiểu code trong 1 phút",
+      "theory": [
+        "Bạn không cần biết lập trình. Code chỉ là các dòng lệnh, máy chạy từ trên xuống dưới.",
+        "if là câu điều kiện. Dòng thụt lề phía dưới if chỉ chạy khi điều kiện đúng.",
+        "return là trả kết quả và dừng hàm ngay, các dòng dưới không chạy nữa.",
+        "== là so sánh bằng, >= là lớn hơn hoặc bằng, and là 'và'.",
+        "Bạn chỉ cần đọc và chọn giá trị đầu vào để đi qua từng nhánh. Dòng nào được tô là dòng ca đó đã chạy."
+      ],
+      "demo": [
+        {
+          "type": "say",
+          "text": "Khi chạy hàm, trợ giảng sẽ giải thích từng dòng của nhánh vừa đi qua ở khung bên phải."
+        }
+      ],
+      "detail": "Mẹo đọc code: đi từ trên xuống, gặp if thì hỏi 'điều kiện này đúng không?', đúng thì đi vào trong, sai thì bỏ qua."
+    },
     {
       "id": "lam-quen",
       "title": "Làm quen với hàm phí ship",
@@ -26,11 +74,28 @@
         "Bấm Chạy demo để xem một ca đi qua nhánh nào."
       ],
       "demo": [
-        { "type": "set", "field": "km", "value": "2" },
-        { "type": "set", "field": "tong", "value": "100000" },
-        { "type": "set", "field": "thanh_vien", "value": "0" },
-        { "type": "run" },
-        { "type": "say", "text": "Ca này: 2 km, đơn 100.000đ, không phải thành viên. Đi qua nhánh b4 và trả về 15.000đ." }
+        {
+          "type": "set",
+          "field": "km",
+          "value": "2"
+        },
+        {
+          "type": "set",
+          "field": "tong",
+          "value": "100000"
+        },
+        {
+          "type": "set",
+          "field": "thanh_vien",
+          "value": "0"
+        },
+        {
+          "type": "run"
+        },
+        {
+          "type": "say",
+          "text": "Ca này: 2 km, đơn 100.000đ, không phải thành viên. Đi qua nhánh b4 và trả về 15.000đ."
+        }
       ],
       "detail": "Ở app này, ca kiểm không chỉ là một đầu vào. Mỗi đơn có nhiều ngưỡng, và ngưỡng nào đúng quyết định nhánh."
     },
@@ -42,7 +107,9 @@
       ],
       "task": {
         "prompt": "Nhập ba giá trị để chạy qua nhánh b1 rồi bấm Chạy hàm.",
-        "check": { "hit": "b1" },
+        "check": {
+          "hit": "b1"
+        },
         "hints": [
           "Nhánh b1 chạy khi km lớn hơn 10. Thử km = 12.",
           "Đặt km = 12, tong = 50000, thanh_vien = 0."
@@ -59,7 +126,9 @@
       ],
       "task": {
         "prompt": "Nhập ba giá trị để chạy qua nhánh b2 rồi bấm Chạy hàm. Dùng khoảng cách trong 10 km.",
-        "check": { "hit": "b2" },
+        "check": {
+          "hit": "b2"
+        },
         "hints": [
           "Khoảng cách phải từ 10 km trở xuống, và tổng tiền từ 300.000 trở lên.",
           "Thử km = 5, tong = 300000, thanh_vien = 0."
@@ -76,7 +145,9 @@
       ],
       "task": {
         "prompt": "Nhập ba giá trị để chạy qua nhánh b3 rồi bấm Chạy hàm.",
-        "check": { "hit": "b3" },
+        "check": {
+          "hit": "b3"
+        },
         "hints": [
           "Phải là thành viên (thanh_vien = 1) và đơn dưới 300.000.",
           "Thử km = 5, tong = 200000, thanh_vien = 1."
@@ -93,7 +164,9 @@
       ],
       "task": {
         "prompt": "Nhập ba giá trị để chạy qua nhánh b4 rồi bấm Chạy hàm.",
-        "check": { "hit": "b4" },
+        "check": {
+          "hit": "b4"
+        },
         "hints": [
           "Khoảng cách từ 3 km trở xuống, đơn dưới 150.000 và không phải thành viên.",
           "Thử km = 3, tong = 100000, thanh_vien = 0."
@@ -110,7 +183,9 @@
       ],
       "task": {
         "prompt": "Nhập ba giá trị để chạy qua nhánh b5 rồi bấm Chạy hàm, với khoảng cách 6 km.",
-        "check": { "hit": "b5" },
+        "check": {
+          "hit": "b5"
+        },
         "hints": [
           "Khoảng cách phải lớn hơn 3 nhưng không quá 10.",
           "Thử km = 6, tong = 100000, thanh_vien = 0. Kết quả đúng là 30.000."
@@ -128,7 +203,9 @@
       ],
       "task": {
         "prompt": "Nhập km = 10, tong = 50000, thanh_vien = 0, rồi chạy. Ca này đi qua nhánh nào?",
-        "check": { "hit": "b5" },
+        "check": {
+          "hit": "b5"
+        },
         "hints": [
           "Biên trên của km là 10. Đúng 10 không lớn hơn 10.",
           "Thử km = 10, tong = 50000, thanh_vien = 0."
@@ -146,7 +223,9 @@
       ],
       "task": {
         "prompt": "Nhập km = 5, tong = 150000, thanh_vien = 1 rồi chạy. Ca này phải đi qua nhánh b3.",
-        "check": { "hit": "b3" },
+        "check": {
+          "hit": "b3"
+        },
         "hints": [
           "Đơn đúng 150.000 và là thành viên.",
           "Thử km = 5, tong = 150000, thanh_vien = 1."
