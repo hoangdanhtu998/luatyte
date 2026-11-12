@@ -2,7 +2,10 @@
   "id": "kham-pha-exploratory",
   "title": "Thực hành: khám phá hay theo kịch bản",
   "lesson": "kham-pha-exploratory",
-  "app": { "type": "choice", "name": "Tình huống chọn cách kiểm thử (mẫu)" },
+  "app": {
+    "type": "choice",
+    "name": "Tình huống chọn cách kiểm thử (mẫu)"
+  },
   "steps": [
     {
       "id": "lam-quen",
@@ -13,7 +16,10 @@
       ],
       "scenario": "Bạn lần đầu gặp một luồng đặt lịch mới, chưa có tài liệu, và có 60 phút.",
       "demo": [
-        { "type": "say", "text": "Chưa biết rủi ro nằm ở đâu thì khám phá là đúng cách. Kịch bản sẽ bỏ sót thứ chưa ai nghĩ tới." }
+        {
+          "type": "say",
+          "text": "Chưa biết rủi ro nằm ở đâu thì khám phá là đúng cách. Kịch bản sẽ bỏ sót thứ chưa ai nghĩ tới."
+        }
       ],
       "detail": "Mẹo: hỏi bạn đã biết gì về sản phẩm này. Biết ít thì khám phá, biết rõ kết quả mong đợi thì kịch bản."
     },
@@ -25,16 +31,34 @@
       "task": {
         "prompt": "Nên chọn cách nào?",
         "choices": [
-          { "id": "kham-pha", "label": "Khám phá" },
-          { "id": "kich-ban", "label": "Theo kịch bản" }
+          {
+            "id": "kham-pha",
+            "label": "Khám phá"
+          },
+          {
+            "id": "kich-ban",
+            "label": "Theo kịch bản"
+          }
         ],
-        "check": { "answer": "kham-pha" },
+        "check": {
+          "answer": "kham-pha"
+        },
         "hints": [
           "Chưa biết rủi ro nằm ở đâu thì nên làm gì?",
           "Khi chưa có kết quả mong đợi cố định, khám phá giúp tìm ra điều mới."
         ],
         "pass": "Đúng! Chưa biết sản phẩm thì khám phá là lựa chọn tốt."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "kham-pha"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Chưa biết sản phẩm thì khám phá là lựa chọn tốt."
+        }
+      ]
     },
     {
       "id": "ca-2",
@@ -44,16 +68,34 @@
       "task": {
         "prompt": "Nên chọn cách nào?",
         "choices": [
-          { "id": "kham-pha", "label": "Khám phá" },
-          { "id": "kich-ban", "label": "Theo kịch bản" }
+          {
+            "id": "kham-pha",
+            "label": "Khám phá"
+          },
+          {
+            "id": "kich-ban",
+            "label": "Theo kịch bản"
+          }
         ],
-        "check": { "answer": "kich-ban" },
+        "check": {
+          "answer": "kich-ban"
+        },
         "hints": [
           "Ca đã thống nhất trước và so kết quả chuẩn là việc của kịch bản.",
           "Hồi quy cần lặp lại đúng y hệt, nên chọn theo kịch bản."
         ],
         "pass": "Đúng! Hồi quy lặp lại đúng kịch bản đã thống nhất."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "kich-ban"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Hồi quy lặp lại đúng kịch bản đã thống nhất."
+        }
+      ]
     },
     {
       "id": "ca-3",
@@ -63,16 +105,34 @@
       "task": {
         "prompt": "Nên chọn cách nào?",
         "choices": [
-          { "id": "kham-pha", "label": "Khám phá" },
-          { "id": "kich-ban", "label": "Theo kịch bản" }
+          {
+            "id": "kham-pha",
+            "label": "Khám phá"
+          },
+          {
+            "id": "kich-ban",
+            "label": "Theo kịch bản"
+          }
         ],
-        "check": { "answer": "kham-pha" },
+        "check": {
+          "answer": "kham-pha"
+        },
         "hints": [
           "Giá trị nằm ở việc đổi hướng theo điều mới thấy.",
           "Phiên khám phá có charter và thời gian, đó là cách làm có kiểm soát."
         ],
         "pass": "Đúng! Đổi hướng theo điều mới thấy là bản chất của khám phá."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "kham-pha"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Đổi hướng theo điều mới thấy là bản chất của khám phá."
+        }
+      ]
     },
     {
       "id": "ca-4",
@@ -82,16 +142,34 @@
       "task": {
         "prompt": "Nên chọn cách nào?",
         "choices": [
-          { "id": "kham-pha", "label": "Khám phá" },
-          { "id": "kich-ban", "label": "Theo kịch bản" }
+          {
+            "id": "kham-pha",
+            "label": "Khám phá"
+          },
+          {
+            "id": "kich-ban",
+            "label": "Theo kịch bản"
+          }
         ],
-        "check": { "answer": "kich-ban" },
+        "check": {
+          "answer": "kich-ban"
+        },
         "hints": [
           "Có danh sách đầu vào và kết quả mong đợi cố định.",
           "Khi kết quả đã định sẵn cho từng ca, chọn theo kịch bản."
         ],
         "pass": "Đúng! Danh sách cố định với kết quả đã biết là việc của kịch bản."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "kich-ban"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Danh sách cố định với kết quả đã biết là việc của kịch bản."
+        }
+      ]
     },
     {
       "id": "tong-ket",

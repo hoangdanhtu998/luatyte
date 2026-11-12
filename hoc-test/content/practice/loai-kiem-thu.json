@@ -25,16 +25,34 @@
       "task": {
         "prompt": "Đây là kiểm thử chức năng hay phi chức năng?",
         "choices": [
-          { "id": "chuc-nang", "label": "Chức năng" },
-          { "id": "phi-chuc-nang", "label": "Phi chức năng" }
+          {
+            "id": "chuc-nang",
+            "label": "Chức năng"
+          },
+          {
+            "id": "phi-chuc-nang",
+            "label": "Phi chức năng"
+          }
         ],
-        "check": { "answer": "chuc-nang" },
+        "check": {
+          "answer": "chuc-nang"
+        },
         "hints": [
           "Hỏi: thanh toán có làm đúng việc không? Trừ tiền hai lần thì không đúng nghiệp vụ.",
           "Đây là lỗi nghiệp vụ, nên là chức năng."
         ],
         "pass": "Đúng! Trừ tiền sai là lỗi chức năng."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "chuc-nang"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Trừ tiền sai là lỗi chức năng."
+        }
+      ]
     },
     {
       "id": "phan-loai-2",
@@ -44,16 +62,34 @@
       "task": {
         "prompt": "Đây là kiểm thử chức năng hay phi chức năng?",
         "choices": [
-          { "id": "chuc-nang", "label": "Chức năng" },
-          { "id": "phi-chuc-nang", "label": "Phi chức năng" }
+          {
+            "id": "chuc-nang",
+            "label": "Chức năng"
+          },
+          {
+            "id": "phi-chuc-nang",
+            "label": "Phi chức năng"
+          }
         ],
-        "check": { "answer": "phi-chuc-nang" },
+        "check": {
+          "answer": "phi-chuc-nang"
+        },
         "hints": [
           "Trang vẫn đăng ký đúng, chỉ là chậm.",
           "Chậm dưới tải là hiệu năng, nên là phi chức năng."
         ],
         "pass": "Đúng! Tốc độ dưới tải là phi chức năng."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "phi-chuc-nang"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Tốc độ dưới tải là phi chức năng."
+        }
+      ]
     },
     {
       "id": "phan-loai-3",
@@ -63,16 +99,34 @@
       "task": {
         "prompt": "Đây là kiểm thử chức năng hay phi chức năng?",
         "choices": [
-          { "id": "chuc-nang", "label": "Chức năng" },
-          { "id": "phi-chuc-nang", "label": "Phi chức năng" }
+          {
+            "id": "chuc-nang",
+            "label": "Chức năng"
+          },
+          {
+            "id": "phi-chuc-nang",
+            "label": "Phi chức năng"
+          }
         ],
-        "check": { "answer": "phi-chuc-nang" },
+        "check": {
+          "answer": "phi-chuc-nang"
+        },
         "hints": [
           "Hỏi: việc hiển thị mật khẩu có liên quan đến an toàn không?",
           "Bảo mật là phi chức năng."
         ],
         "pass": "Đúng! Lộ mật khẩu trên màn hình là vấn đề bảo mật."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "phi-chuc-nang"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Lộ mật khẩu trên màn hình là vấn đề bảo mật."
+        }
+      ]
     },
     {
       "id": "phan-loai-4",
@@ -82,16 +136,34 @@
       "task": {
         "prompt": "Đây là kiểm thử chức năng hay phi chức năng?",
         "choices": [
-          { "id": "chuc-nang", "label": "Chức năng" },
-          { "id": "phi-chuc-nang", "label": "Phi chức năng" }
+          {
+            "id": "chuc-nang",
+            "label": "Chức năng"
+          },
+          {
+            "id": "phi-chuc-nang",
+            "label": "Phi chức năng"
+          }
         ],
-        "check": { "answer": "chuc-nang" },
+        "check": {
+          "answer": "chuc-nang"
+        },
         "hints": [
           "Hỏi: nút có thực hiện đúng việc được giao khi thiếu thông tin không?",
           "Nút không phản hồi đúng là lỗi chức năng."
         ],
         "pass": "Đúng! Hành vi của nút là chức năng."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "chuc-nang"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Hành vi của nút là chức năng."
+        }
+      ]
     },
     {
       "id": "tong-ket",

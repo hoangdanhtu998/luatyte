@@ -136,8 +136,13 @@
       onEnter: function () {},
       setDisabled: function (v) { input.disabled = v; send.disabled = v; reset.disabled = v; },
       demo: async function (a) {
-        if (a.type === 'type') { await typeText(show, a.value); show(a.value); return; }
-        if (a.type === 'submit') { await sleep(300); ctrl.submit(formRes(input.value)); }
+        if (a.type === 'type') {
+          await ctrl.glide(input, true);
+          await typeText(show, a.value);
+          show(a.value);
+          return;
+        }
+        if (a.type === 'submit') { await ctrl.glide(send, true); ctrl.submit(formRes(input.value)); }
       },
       meets: function (c, res) {
         if (c.result !== res.judged) return false;
@@ -208,8 +213,14 @@
       onEnter: function () { paintCover(); },
       setDisabled: function (v) { runBtn.disabled = v; cfg.inputs.forEach(function (n) { inputs[n].disabled = v; }); },
       demo: async function (a) {
-        if (a.type === 'set') { await typeText(function (v) { inputs[a.field].value = v; }, a.value); inputs[a.field].value = a.value; return; }
-        if (a.type === 'run') { await sleep(300); run(); }
+        if (a.type === 'set') {
+          var target = inputs[a.field];
+          await ctrl.glide(target, true);
+          await typeText(function (v) { target.value = v; }, a.value);
+          target.value = a.value;
+          return;
+        }
+        if (a.type === 'run') { await ctrl.glide(runBtn, true); run(); }
       },
       meets: function () { return true; }
     };
@@ -221,12 +232,14 @@
     var btns = el('div', 'choice-btns');
     host.append(scen, btns);
     var list = [];
+    var byId = {};
     return {
       reset: function () {},
       onEnter: function (step) {
         scen.textContent = step.scenario || '';
         btns.innerHTML = '';
         list = [];
+        byId = {};
         var choices = step.task && step.task.choices;
         if (!choices) return;
         choices.forEach(function (c) {
@@ -236,11 +249,16 @@
             ctrl.submit({ kind: 'choice', choice: c.id, logText: 'Chọn: ' + c.label });
           });
           list.push(b);
+          byId[c.id] = { node: b, label: c.label };
           btns.appendChild(b);
         });
       },
       setDisabled: function (v) { list.forEach(function (b) { b.disabled = v; }); },
-      demo: async function () {},
+      demo: async function (a) {
+        if (a.type !== 'pick' || !byId[a.id]) return;
+        await ctrl.glide(byId[a.id].node, true);
+        ctrl.submit({ kind: 'choice', choice: a.id, logText: 'Chọn: ' + byId[a.id].label });
+      },
       meets: function (c, res) { return res.choice === c.answer; }
     };
   }
@@ -291,12 +309,13 @@
       demo: async function (a) {
         if (a.type === 'fill') {
           var ctl = controls[a.field];
+          await ctrl.glide(ctl, true);
           if (ctl.tagName === 'SELECT') { ctl.value = a.value; return; }
           await typeText(function (v) { ctl.value = v; }, a.value);
           ctl.value = a.value;
           return;
         }
-        if (a.type === 'submit') { await sleep(300); sendNow(); }
+        if (a.type === 'submit') { await ctrl.glide(send, true); sendNow(); }
       },
       meets: function (c, res) {
         var d = res.data;
@@ -317,10 +336,12 @@
   function buildMatrix(cfg, host, ctrl) {
     var list = el('div', 'matrix-list');
     var boxes = {};
+    var rows = {};
     cfg.items.forEach(function (it) {
       var lab = el('label', 'matrix-item');
       var cb = el('input'); cb.type = 'checkbox'; cb.id = uid('th-mx');
       boxes[it.id] = cb;
+      rows[it.id] = lab;
       lab.append(cb, el('span', '', it.label));
       list.appendChild(lab);
     });
@@ -347,8 +368,12 @@
       onEnter: function () {},
       setDisabled: function (v) { Object.keys(boxes).forEach(function (k) { boxes[k].disabled = v; }); run.disabled = v; },
       demo: async function (a) {
-        if (a.type === 'tick') { await sleep(300); boxes[a.id].checked = true; return; }
-        if (a.type === 'submit') { await sleep(300); runMatrix(); }
+        if (a.type === 'tick') {
+          await ctrl.glide(rows[a.id], true);
+          boxes[a.id].checked = true;
+          return;
+        }
+        if (a.type === 'submit') { await ctrl.glide(run, true); runMatrix(); }
       },
       meets: function (c, res) {
         if (c.include && !c.include.every(function (k) { return res.selected.indexOf(k) >= 0; })) return false;
@@ -403,6 +428,68 @@
     root.append(head, grid);
 
     app = FACTORY[type](data.app, appBody, ctrl);
+
+    // ----- Demo trực quan: con trỏ, vòng bấm, thanh trạng thái -----
+    var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var cursor = el('div', 'th-cursor');
+    cursor.setAttribute('aria-hidden', 'true');
+    var cursorSvg = svgEl('svg', { viewBox: '0 0 26 26' });
+    cursorSvg.appendChild(svgEl('path', { d: 'M3 2 L3 21 L8 16.5 L11.5 24 L14.5 22.6 L11.2 15.4 L18 15.4 Z', fill: '#1C2027', stroke: '#ffffff', 'stroke-width': 1.6, 'stroke-linejoin': 'round' }));
+    cursor.appendChild(cursorSvg);
+    appBody.appendChild(cursor);
+    var demoBar = el('div', 'th-demobar');
+    demoBar.setAttribute('role', 'status');
+    demoBar.append(el('span', 'dot'), el('span', 'th-demobar-text', ''));
+    appSec.insertBefore(demoBar, appBody);
+
+    function setDemoBar(text) {
+      demoBar.querySelector('.th-demobar-text').textContent = text;
+      demoBar.classList.toggle('on', !!text);
+    }
+    function ripple(x, y) {
+      var rp = el('div', 'th-ripple');
+      rp.style.left = x + 'px';
+      rp.style.top = y + 'px';
+      appBody.appendChild(rp);
+      setTimeout(function () { rp.remove(); }, 650);
+    }
+    // Con trỏ bay tới giữa phần tử, làm phần tử sáng viền, rồi bấm nếu click = true.
+    async function glide(target, click) {
+      if (!target || !target.getBoundingClientRect) return;
+      var base = appBody.getBoundingClientRect();
+      var r = target.getBoundingClientRect();
+      var x = r.left - base.left + Math.min(r.width / 2, 40);
+      var y = r.top - base.top + r.height / 2;
+      cursor.classList.add('on');
+      cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      target.classList.add('th-spot');
+      await sleep(reduceMotion ? 40 : 600);
+      if (click) {
+        cursor.classList.add('press');
+        ripple(x, y);
+        await sleep(reduceMotion ? 40 : 180);
+        cursor.classList.remove('press');
+      }
+      target.classList.remove('th-spot');
+    }
+    ctrl.glide = glide;
+    function clearDemoVisuals() {
+      cursor.classList.remove('on', 'press');
+      appBody.querySelectorAll('.th-spot').forEach(function (n) { n.classList.remove('th-spot'); });
+    }
+    // Trợ giảng "đang gõ" rồi mới hiện câu trả lời, giống chat thật.
+    async function botSay(text) {
+      var m = el('div', 'msg bot');
+      var dots = el('span', 'th-typing');
+      dots.setAttribute('aria-label', 'Trợ giảng đang gõ');
+      dots.append(el('i'), el('i'), el('i'));
+      m.append(el('span', 'who', 'Trợ giảng'), dots);
+      chatLog.appendChild(m);
+      chatLog.scrollTop = chatLog.scrollHeight;
+      await sleep(reduceMotion ? 80 : Math.min(1300, 450 + text.length * 14));
+      dots.remove();
+      m.appendChild(el('span', '', text));
+    }
 
     // ----- Trợ giảng và nhật ký -----
     function addBot(text) {
@@ -481,12 +568,15 @@
       try {
         for (var k = 0; k < step.demo.length; k++) {
           var a = step.demo[k];
-          if (a.type === 'say') { await sleep(500); addBot(a.text); }
+          setDemoBar('Đang chạy demo · thao tác ' + (k + 1) + '/' + step.demo.length);
+          if (a.type === 'say') { await botSay(a.text); }
           else { await app.demo(a); }
-          await sleep(300);
+          await sleep(reduceMotion ? 60 : 300);
         }
       } finally {
         ctrl.demoMode = false;
+        clearDemoVisuals();
+        setDemoBar('');
         setBusy(false);
       }
     }

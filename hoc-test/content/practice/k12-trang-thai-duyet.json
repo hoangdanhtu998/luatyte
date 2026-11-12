@@ -2,7 +2,10 @@
   "id": "k12-trang-thai-duyet",
   "title": "Thực hành: chuyển trạng thái duyệt",
   "lesson": "k12-trang-thai-duyet",
-  "app": { "type": "choice", "name": "Quy trình duyệt nội dung (mẫu)" },
+  "app": {
+    "type": "choice",
+    "name": "Quy trình duyệt nội dung (mẫu)"
+  },
   "steps": [
     {
       "id": "lam-quen",
@@ -13,7 +16,10 @@
       ],
       "scenario": "Tác giả muốn chuyển nội dung từ Nháp thẳng sang Đã duyệt, bỏ qua bước gửi duyệt.",
       "demo": [
-        { "type": "say", "text": "Không hợp lệ: không được bỏ qua bước duyệt. Đây là ca chặn, không phải ca đạt." }
+        {
+          "type": "say",
+          "text": "Không hợp lệ: không được bỏ qua bước duyệt. Đây là ca chặn, không phải ca đạt."
+        }
       ],
       "detail": "Một quy trình tốt kiểm cả chuyển được phép lẫn chuyển bị cấm."
     },
@@ -25,16 +31,34 @@
       "task": {
         "prompt": "Chuyển này có hợp lệ không?",
         "choices": [
-          { "id": "hop-le", "label": "Hợp lệ" },
-          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+          {
+            "id": "hop-le",
+            "label": "Hợp lệ"
+          },
+          {
+            "id": "khong-hop-le",
+            "label": "Không hợp lệ"
+          }
         ],
-        "check": { "answer": "hop-le" },
+        "check": {
+          "answer": "hop-le"
+        },
         "hints": [
           "Hỏi: người có quyền duyệt có đang bấm duyệt không?",
           "Chờ duyệt sang Đã duyệt là bước duyệt bình thường."
         ],
         "pass": "Đúng! Quản trị nội dung duyệt thì chuyển này hợp lệ."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "hop-le"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Quản trị nội dung duyệt thì chuyển này hợp lệ."
+        }
+      ]
     },
     {
       "id": "ca-2",
@@ -44,16 +68,34 @@
       "task": {
         "prompt": "Chuyển này có hợp lệ không?",
         "choices": [
-          { "id": "hop-le", "label": "Hợp lệ" },
-          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+          {
+            "id": "hop-le",
+            "label": "Hợp lệ"
+          },
+          {
+            "id": "khong-hop-le",
+            "label": "Không hợp lệ"
+          }
         ],
-        "check": { "answer": "hop-le" },
+        "check": {
+          "answer": "hop-le"
+        },
         "hints": [
           "Sửa nội dung đã duyệt tạo ra một bản mới, không xóa bản đang hiển thị.",
           "Đã duyệt sang Nháp là hợp lệ khi tác giả sửa."
         ],
         "pass": "Đúng! Sửa tạo bản mới, bản đã duyệt vẫn hiển thị."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "hop-le"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Sửa tạo bản mới, bản đã duyệt vẫn hiển thị."
+        }
+      ]
     },
     {
       "id": "ca-3",
@@ -63,16 +105,34 @@
       "task": {
         "prompt": "Chuyển này có hợp lệ không?",
         "choices": [
-          { "id": "hop-le", "label": "Hợp lệ" },
-          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+          {
+            "id": "hop-le",
+            "label": "Hợp lệ"
+          },
+          {
+            "id": "khong-hop-le",
+            "label": "Không hợp lệ"
+          }
         ],
-        "check": { "answer": "khong-hop-le" },
+        "check": {
+          "answer": "khong-hop-le"
+        },
         "hints": [
           "Ai được phép đổi trạng thái duyệt?",
           "Học sinh không đổi trạng thái, nên đây là chuyển bị chặn."
         ],
         "pass": "Đúng! Học sinh không được đổi trạng thái."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "khong-hop-le"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Học sinh không được đổi trạng thái."
+        }
+      ]
     },
     {
       "id": "ca-4",
@@ -82,16 +142,34 @@
       "task": {
         "prompt": "Chuyển này có hợp lệ không?",
         "choices": [
-          { "id": "hop-le", "label": "Hợp lệ" },
-          { "id": "khong-hop-le", "label": "Không hợp lệ" }
+          {
+            "id": "hop-le",
+            "label": "Hợp lệ"
+          },
+          {
+            "id": "khong-hop-le",
+            "label": "Không hợp lệ"
+          }
         ],
-        "check": { "answer": "hop-le" },
+        "check": {
+          "answer": "hop-le"
+        },
         "hints": [
           "Đây là vòng sửa và gửi lại bình thường.",
           "Yêu cầu sửa sang Chờ duyệt là bước tác giả gửi lại."
         ],
         "pass": "Đúng! Tác giả gửi lại sau khi sửa là hợp lệ."
-      }
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "hop-le"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Tác giả gửi lại sau khi sửa là hợp lệ."
+        }
+      ]
     },
     {
       "id": "tong-ket",
