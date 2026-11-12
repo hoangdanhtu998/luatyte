@@ -11,6 +11,13 @@
       if (a >= b && a >= c) return { v: a, hit: 'b1' };
       if (b >= c) return { v: b, hit: 'b2' };
       return { v: c, hit: 'b3' };
+    },
+    phiShip: function (km, tong, thanhVien) {
+      if (km > 10) return { v: -1, hit: 'b1' };
+      if (tong >= 300000) return { v: 0, hit: 'b2' };
+      if (thanhVien === 1 && tong >= 150000) return { v: 0, hit: 'b3' };
+      if (km <= 3) return { v: 15000, hit: 'b4' };
+      return { v: 15000 + (km - 3) * 5000, hit: 'b5' };
     }
   };
 

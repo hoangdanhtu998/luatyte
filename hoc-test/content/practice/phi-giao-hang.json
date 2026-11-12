@@ -1,0 +1,159 @@
+{
+  "id": "phi-giao-hang",
+  "title": "Thực hành: phí giao đồ ăn",
+  "lesson": "ky-thuat-thiet-ke-nang-cao",
+  "app": {
+    "type": "code",
+    "name": "Hàm tính phí giao hàng, app đặt đồ ăn (mẫu)",
+    "func": "phiShip",
+    "inputs": ["km", "tong", "thanh_vien"],
+    "code": "def phi_ship(km, tong, thanh_vien):\n    if km > 10:\n        return -1\n    if tong >= 300000:\n        return 0\n    if thanh_vien == 1 and tong >= 150000:\n        return 0\n    if km <= 3:\n        return 15000\n    return 15000 + (km - 3) * 5000",
+    "branches": {
+      "b1": [1, 2],
+      "b2": [3, 4],
+      "b3": [5, 6],
+      "b4": [7, 8],
+      "b5": [9]
+    }
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen với hàm phí ship",
+      "theory": [
+        "Đây là app đặt đồ ăn, không phải phòng khám. Hàm tính phí ship nhận ba đầu vào: km (khoảng cách), tong (tổng tiền đơn, đồng), thanh_vien (1 là thành viên, 0 là không).",
+        "Quy tắc: quá 10 km thì không giao (trả -1). Đơn từ 300.000đ trở lên miễn phí ship. Thành viên đơn từ 150.000đ trở lên cũng miễn phí. Dưới 3 km là 15.000đ. Trên 3 km thì cộng 5.000đ mỗi km thêm.",
+        "Bấm Chạy demo để xem một ca đi qua nhánh nào."
+      ],
+      "demo": [
+        { "type": "set", "field": "km", "value": "2" },
+        { "type": "set", "field": "tong", "value": "100000" },
+        { "type": "set", "field": "thanh_vien", "value": "0" },
+        { "type": "run" },
+        { "type": "say", "text": "Ca này: 2 km, đơn 100.000đ, không phải thành viên. Đi qua nhánh b4 và trả về 15.000đ." }
+      ],
+      "detail": "Ở app này, ca kiểm không chỉ là một đầu vào. Mỗi đơn có nhiều ngưỡng, và ngưỡng nào đúng quyết định nhánh."
+    },
+    {
+      "id": "nhanh-b1",
+      "title": "Ngoài vùng giao",
+      "theory": [
+        "Nhánh b1 là lỗi nghiệp vụ: quá 10 km thì app từ chối giao. Đây là một đường rẽ riêng, nên cần một ca riêng để đi qua nó."
+      ],
+      "task": {
+        "prompt": "Nhập ba giá trị để chạy qua nhánh b1 rồi bấm Chạy hàm.",
+        "check": { "hit": "b1" },
+        "hints": [
+          "Nhánh b1 chạy khi km lớn hơn 10. Thử km = 12.",
+          "Đặt km = 12, tong = 50000, thanh_vien = 0."
+        ],
+        "pass": "Đúng! Ca này đi qua nhánh b1 và trả về -1 (không giao)."
+      },
+      "detail": "Ca như vậy không cần đơn lớn. Chỉ cần vượt khoảng cách là đủ. Đừng quên kiểm ca này khi đổi quy tắc khoảng cách."
+    },
+    {
+      "id": "nhanh-b2",
+      "title": "Đơn lớn ai cũng được miễn ship",
+      "theory": [
+        "Nhánh b2: đơn từ 300.000đ miễn ship cho mọi người, kể cả không phải thành viên. Điều kiện này được kiểm trước điều kiện thành viên, nên thành viên vẫn rơi vào b2 khi đơn đủ lớn."
+      ],
+      "task": {
+        "prompt": "Nhập ba giá trị để chạy qua nhánh b2 rồi bấm Chạy hàm. Dùng khoảng cách trong 10 km.",
+        "check": { "hit": "b2" },
+        "hints": [
+          "Khoảng cách phải từ 10 km trở xuống, và tổng tiền từ 300.000 trở lên.",
+          "Thử km = 5, tong = 300000, thanh_vien = 0."
+        ],
+        "pass": "Đúng! Đơn 300.000đ không phải thành viên vẫn đi qua nhánh b2."
+      },
+      "detail": "Ngưỡng 300.000 được kiểm bằng dấu lớn hơn hoặc bằng. Đúng 300.000 đã là đủ điều kiện."
+    },
+    {
+      "id": "nhanh-b3",
+      "title": "Thành viên được miễn ship",
+      "theory": [
+        "Nhánh b3: thành viên có đơn từ 150.000đ trở lên được miễn ship. Ngưỡng này thấp hơn ngưỡng 300.000 của nhánh b2, nên chỉ thành viên mới vào được b3."
+      ],
+      "task": {
+        "prompt": "Nhập ba giá trị để chạy qua nhánh b3 rồi bấm Chạy hàm.",
+        "check": { "hit": "b3" },
+        "hints": [
+          "Phải là thành viên (thanh_vien = 1) và đơn dưới 300.000.",
+          "Thử km = 5, tong = 200000, thanh_vien = 1."
+        ],
+        "pass": "Đúng! Thành viên với đơn 200.000đ đi qua nhánh b3."
+      },
+      "detail": "Cùng một đơn 200.000đ, khách không phải thành viên sẽ đi qua nhánh khác và phải trả phí. Đây là lý do cần ca riêng cho thành viên."
+    },
+    {
+      "id": "nhanh-b4",
+      "title": "Quãng ngắn trả phí cố định",
+      "theory": [
+        "Nhánh b4: khoảng cách từ 3 km trở xuống, không đủ điều kiện miễn ship thì phí cố định 15.000đ."
+      ],
+      "task": {
+        "prompt": "Nhập ba giá trị để chạy qua nhánh b4 rồi bấm Chạy hàm.",
+        "check": { "hit": "b4" },
+        "hints": [
+          "Khoảng cách từ 3 km trở xuống, đơn dưới 150.000 và không phải thành viên.",
+          "Thử km = 3, tong = 100000, thanh_vien = 0."
+        ],
+        "pass": "Đúng! Ca này trả 15.000đ và đi qua nhánh b4."
+      },
+      "detail": "Ca km = 3 đứng ở biên trên của b4. Đứng ở biên thường là chỗ lỗi hay xuất hiện."
+    },
+    {
+      "id": "nhanh-b5",
+      "title": "Quãng xa tính theo km",
+      "theory": [
+        "Nhánh b5: trên 3 km và không miễn ship thì phí = 15.000 + (km - 3) × 5.000. Đây là công thức tính, nên kết quả đổi theo từng km."
+      ],
+      "task": {
+        "prompt": "Nhập ba giá trị để chạy qua nhánh b5 rồi bấm Chạy hàm, với khoảng cách 6 km.",
+        "check": { "hit": "b5" },
+        "hints": [
+          "Khoảng cách phải lớn hơn 3 nhưng không quá 10.",
+          "Thử km = 6, tong = 100000, thanh_vien = 0. Kết quả đúng là 30.000."
+        ],
+        "pass": "Đúng! Ca 6 km đi qua nhánh b5. Kết quả 15.000 + 3 × 5.000 = 30.000."
+      },
+      "detail": "Nhánh b5 có một dòng code, nên nhìn độ phủ nhánh không đủ. Hãy đối chiếu kết quả với công thức."
+    },
+    {
+      "id": "bien-10km",
+      "title": "Biên 10 km",
+      "theory": [
+        "Ngưỡng 10 km được kiểm bằng dấu lớn hơn: đúng 10 km vẫn được giao. Chỉ từ 10,1 km trở lên mới vào nhánh b1.",
+        "Ứng dụng này chỉ nhận số nguyên, nên ca biên tiếp theo là 10 km và 11 km."
+      ],
+      "task": {
+        "prompt": "Nhập km = 10, tong = 50000, thanh_vien = 0, rồi chạy. Ca này đi qua nhánh nào?",
+        "check": { "hit": "b5" },
+        "hints": [
+          "Biên trên của km là 10. Đúng 10 không lớn hơn 10.",
+          "Thử km = 10, tong = 50000, thanh_vien = 0."
+        ],
+        "pass": "Đúng! km = 10 không bị từ chối. Ca này đi qua nhánh b5 với phí 50.000."
+      },
+      "detail": "Thử thêm km = 11 để thấy nhánh b1. Hai ca gần nhau nhưng khác nhánh, đó là điểm cần kiểm."
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết: biên thành viên 150.000",
+      "theory": [
+        "Đây là ca cuối. Ngưỡng 150.000 của thành viên được kiểm bằng dấu lớn hơn hoặc bằng, nên đúng 150.000 vẫn được miễn ship.",
+        "Kiểm đủ ba kiểu: dưới ngưỡng, đúng ngưỡng, trên ngưỡng. Ca đúng ngưỡng hay bị bỏ qua nhất."
+      ],
+      "task": {
+        "prompt": "Nhập km = 5, tong = 150000, thanh_vien = 1 rồi chạy. Ca này phải đi qua nhánh b3.",
+        "check": { "hit": "b3" },
+        "hints": [
+          "Đơn đúng 150.000 và là thành viên.",
+          "Thử km = 5, tong = 150000, thanh_vien = 1."
+        ],
+        "pass": "Đúng! Đơn đúng 150.000 của thành viên được miễn ship, đi qua nhánh b3."
+      },
+      "detail": "Kết hợp hai điều kiện (thành viên và tổng tiền) cần bảng quyết định: liệt kê các tổ hợp thay vì thử ngẫu nhiên."
+    }
+  ]
+}
