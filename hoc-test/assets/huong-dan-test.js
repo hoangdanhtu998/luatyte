@@ -1,14 +1,16 @@
 // Trang hướng dẫn test app Sao Mai: bên trái là app (iframe cùng gốc), bên phải là trợ giảng.
+// Trợ giảng khoanh chỗ cần test, di con trỏ, tự điền mẫu, tự bấm, rồi tự kiểm kết quả.
 // Kịch bản đọc từ content/lab/huong-dan.json. Chữ hiển thị bằng textContent, không chèn HTML.
 (function () {
   'use strict';
   var DATA_URL = 'content/lab/huong-dan.json';
   var STORE_KEY = 'huong-dan-test-v1';
   var STATUS_MARK = { pass: '✓', fail: '✗', skip: '–' };
-  var STATUS_LABEL = { pass: 'Đạt', fail: 'Lỗi', skip: 'Bỏ qua' };
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   var frame = document.getElementById('app-frame');
   var ring = document.getElementById('hd-ring');
+  var cursor = document.getElementById('hd-cursor');
   var chat = document.getElementById('hd-chat');
   var list = document.getElementById('hd-steps');
   var note = document.getElementById('hd-note');
@@ -18,15 +20,18 @@
   var btnBack = document.getElementById('hd-back');
   var btnAgain = document.getElementById('hd-again');
   var btnHint = document.getElementById('hd-hint');
+  var btnDemo = document.getElementById('hd-demo');
   var btnPass = document.getElementById('hd-pass');
   var btnFail = document.getElementById('hd-fail');
   var btnSkip = document.getElementById('hd-skip');
+  var ctrls = [btnBack, btnAgain, btnHint, btnDemo, btnPass, btnFail, btnSkip];
 
   var steps = [];
   var idx = 0;
   var results = {};
   var currentTarget = null;
   var watchedWin = null;
+  var running = false;
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -34,7 +39,8 @@
     if (text !== undefined) n.textContent = text;
     return n;
   }
-  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, reduceMotion ? Math.min(ms, 40) : ms); }); }
+  function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
 
   // ----- Lưu kết quả: chỉ để tiện xem lại trên máy này -----
   function loadResults() {
@@ -47,9 +53,12 @@
     try { localStorage.setItem(STORE_KEY, JSON.stringify(results)); } catch (e) { /* bộ nhớ đầy hoặc bị chặn */ }
   }
 
-  // ----- Điều khiển app trong iframe -----
+  // ----- Truy cập app trong iframe -----
   function appDoc() {
     try { return frame.contentDocument; } catch (e) { return null; }
+  }
+  function appLab() {
+    try { return frame.contentWindow.Lab; } catch (e) { return null; }
   }
   function showView(view) {
     var d = appDoc();
@@ -57,7 +66,6 @@
     var b = d.querySelector('.views button[data-view="' + view + '"]');
     if (b && b.getAttribute('aria-current') !== 'page') b.click();
   }
-  // Lấy phần tử đầu tiên đang hiển thị trong danh sách chọn (ví dụ "#a, #b").
   function findVisible(selector) {
     var d = appDoc();
     if (!d || !selector) return null;
@@ -68,8 +76,29 @@
     }
     return null;
   }
+  function findAny(selector) {
+    var d = appDoc();
+    if (!d) return null;
+    try { return d.querySelector(selector); } catch (e) { return null; }
+  }
+  // Đổi token trong giá trị mẫu: {today}, {plus:N} theo đồng hồ của app.
+  function resolve(value) {
+    var L = appLab();
+    if (!L || typeof value !== 'string') return value;
+    return value
+      .replace(/\{today\}/g, L.toStr(L.today()))
+      .replace(/\{ngay:(-?\d+)\}/g, function (m, n) { return nextOpenDay(L, Number(n)); })
+      .replace(/\{plus:(-?\d+)\}/g, function (m, n) { return L.plus(Number(n)); });
+  }
+  // Ngày an toàn từ N ngày tới: tránh Chủ nhật (bản 1.1) và Thứ Bảy (bản 1.0 đóng cửa Thứ Bảy).
+  function nextOpenDay(L, n) {
+    var d = L.today();
+    d.setDate(d.getDate() + n);
+    while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+    return L.toStr(d);
+  }
 
-  // Vẽ vòng khoanh quanh phần tử trong iframe (toạ độ theo khung trang).
+  // ----- Vòng khoanh (đứng yên) -----
   function drawRing() {
     if (!currentTarget || currentTarget.offsetParent === null) { ring.hidden = true; return; }
     var fr = frame.getBoundingClientRect();
@@ -89,8 +118,6 @@
     watchedWin = win;
     try { win.addEventListener('scroll', drawRing); win.addEventListener('resize', drawRing); } catch (e) { /* bỏ qua */ }
   }
-
-  // Khoanh một bước: mở đúng tab, cuộn tới phần tử, rồi vẽ vòng.
   async function spotlight(step) {
     showView(step.view);
     await sleep(250);
@@ -103,54 +130,228 @@
     return currentTarget;
   }
 
-  // ----- Trợ giảng và danh sách bước -----
+  // ----- Con trỏ của trợ giảng -----
+  function cursorTo(node) {
+    if (!node) return;
+    var fr = frame.getBoundingClientRect();
+    var r = node.getBoundingClientRect();
+    var x = fr.left + r.left + Math.min(r.width / 2, 60);
+    var y = fr.top + r.top + r.height / 2;
+    cursor.hidden = false;
+    cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+  }
+  async function moveTo(node) {
+    if (!node) throw new Error('không thấy phần tử cần thao tác');
+    try { node.scrollIntoView({ block: 'center' }); } catch (e) { /* bỏ qua */ }
+    await sleep(120);
+    cursorTo(node);
+    await sleep(reduceMotion ? 40 : 650);
+  }
+  function fireEvents(node, names) {
+    var win = node.ownerDocument.defaultView;
+    names.forEach(function (n) { node.dispatchEvent(new win.Event(n, { bubbles: true })); });
+  }
+  async function pressFx() {
+    cursor.classList.add('press');
+    await sleep(160);
+    cursor.classList.remove('press');
+  }
+  function needNode(sel) {
+    var node = findAny(sel);
+    if (!node) throw new Error('không thấy ' + sel);
+    return node;
+  }
+
+  // ----- Thao tác mẫu -----
+  async function actFill(sel, value) {
+    var node = needNode(sel);
+    await moveTo(node);
+    node.focus();
+    if (node.tagName === 'SELECT' || node.type === 'date') {
+      node.value = value;
+    } else {
+      node.value = '';
+      var acc = '';
+      for (var i = 0; i < String(value).length; i++) {
+        acc += String(value)[i];
+        node.value = acc;
+        await sleep(45);
+      }
+    }
+    fireEvents(node, ['input', 'change']);
+  }
+  async function actSelect(sel, value) {
+    var node = needNode(sel);
+    await moveTo(node);
+    node.value = value;
+    fireEvents(node, ['change']);
+  }
+  async function actCheck(sel, on) {
+    var node = needNode(sel);
+    await moveTo(node);
+    node.checked = !!on;
+    fireEvents(node, ['change']);
+  }
+  async function actClick(sel, wait) {
+    var node = needNode(sel);
+    await moveTo(node);
+    await pressFx();
+    node.click();
+    await sleep(wait === undefined ? 300 : wait);
+  }
+  async function actClickIn(scopeSel, text, buttonText, wait) {
+    var scope = needNode(scopeSel);
+    var row = Array.prototype.find.call(scope.querySelectorAll('tr'), function (tr) {
+      return tr.textContent.indexOf(text) >= 0;
+    });
+    if (!row) throw new Error('không thấy dòng ' + text);
+    var btn = Array.prototype.find.call(row.querySelectorAll('button'), function (b) {
+      return norm(b.textContent) === norm(buttonText);
+    });
+    if (!btn) throw new Error('không thấy nút "' + buttonText + '" ở dòng ' + text);
+    await moveTo(btn);
+    await pressFx();
+    btn.click();
+    await sleep(wait === undefined ? 300 : wait);
+  }
+  async function actReset() {
+    var L = appLab();
+    if (!L) throw new Error('chưa mở được app');
+    L.reset();
+    var win = frame.contentWindow;
+    var loaded = new Promise(function (res) { frame.addEventListener('load', res, { once: true }); });
+    win.location.reload();
+    await loaded;
+    await sleep(300);
+  }
+
+  // Kiểm kết quả: vùng chứa sel phải có chữ text.
+  function checkText(sel, text) {
+    var node = findAny(sel);
+    return !!node && norm(node.textContent).indexOf(norm(resolve(text))) >= 0;
+  }
+
+  // ----- Trợ giảng -----
   function botSay(text, cls) {
     var m = el('div', 'msg bot' + (cls ? ' ' + cls : ''));
-    m.append(el('span', 'who', 'Trợ giảng'), el('span', '', text));
+    m.append(el('span', 'who', 'Trợ giảng'), el('span', 'txt', text));
     chat.appendChild(m);
     chat.scrollTop = chat.scrollHeight;
+    return m;
   }
+  // Trợ giảng "đang gõ" rồi mới hiện câu, giống chat thật.
+  async function botSayTyping(text) {
+    var m = el('div', 'msg bot');
+    var dots = el('span', 'th-typing');
+    dots.append(el('i'), el('i'), el('i'));
+    m.append(el('span', 'who', 'Trợ giảng'), dots);
+    chat.appendChild(m);
+    chat.scrollTop = chat.scrollHeight;
+    await sleep(Math.min(1100, 400 + text.length * 12));
+    dots.remove();
+    m.appendChild(el('span', 'txt', text));
+    chat.scrollTop = chat.scrollHeight;
+  }
+
   function renderList() {
     list.replaceChildren();
     steps.forEach(function (s, i) {
       var r = results[s.id];
       var st = r ? r.status : '';
-      var li = el('li', (st ? st : '') + (i === idx ? ' cur' : ''));
+      var li = el('li', (st ? st : '') + (i === idx ? ' cur' : ''), st ? STATUS_MARK[st] : String(i + 1));
+      li.title = (i + 1) + '. ' + s.title;
       li.setAttribute('role', 'button');
       li.tabIndex = 0;
-      li.append(el('span', 'mark', st ? STATUS_MARK[st] : String(i + 1)), el('span', '', (i + 1) + '. ' + s.title));
       li.addEventListener('click', function () { goTo(i); });
       li.addEventListener('keydown', function (e) { if (e.key === 'Enter') goTo(i); });
       list.appendChild(li);
     });
     var done = Object.keys(results).filter(function (k) { return results[k] && results[k].status; }).length;
-    count.textContent = 'Đã làm ' + done + '/' + steps.length + ' bước · bước hiện tại: ' + (idx + 1);
+    count.textContent = 'Đã làm ' + done + '/' + steps.length + ' bước';
+    var now = document.getElementById('hd-now');
+    if (now && steps[idx]) now.textContent = 'Bước ' + (idx + 1) + ': ' + steps[idx].title;
+  }
+  function setBusy(v) {
+    running = v;
+    ctrls.forEach(function (b) { b.disabled = v; });
   }
 
   async function enterStep(i) {
     idx = i;
     var step = steps[i];
     note.value = (results[step.id] && results[step.id].note) || '';
+    cursor.hidden = true;
     renderList();
-    if (i === 0 && !chat.childElementCount) botSay('Mình sẽ khoanh chỗ cần test trong app bên trái. Làm theo từng bước, rồi bấm Đạt hoặc Lỗi.');
     botSay('Bước ' + (i + 1) + '/' + steps.length + ': ' + step.title, 'step');
-    botSay('Khoanh: ' + step.say);
+    botSay(step.say);
+    if (step.technique) botSay('Kỹ thuật: ' + step.technique);
     botSay('Làm: ' + step.do);
     botSay('Kỳ vọng: ' + step.expect);
-    var target = await spotlight(step);
-    if (!target) botSay('Chưa thấy phần này trong app. Hãy mở đúng tab hoặc làm bước trước rồi bấm Khoanh lại.');
     btnBack.disabled = i === 0;
+    var target = await spotlight(step);
+    if (!target && !step.auto) botSay('Chưa thấy phần này trong app. Hãy mở đúng tab hoặc làm bước trước rồi bấm Khoanh lại.');
   }
   function goTo(i) {
-    if (i < 0 || i >= steps.length) return;
+    if (running || i < 0 || i >= steps.length) return;
     enterStep(i);
   }
 
+  // Chạy mẫu: trợ giảng tự thao tác, rồi kiểm kết quả từng bước.
+  async function runDemo() {
+    if (running) return;
+    var step = steps[idx];
+    if (!step.auto) return;
+    setBusy(true);
+    var pass = 0, fail = 0;
+    try {
+      botSay('Mình làm mẫu bước này. Xem con trỏ.');
+      await spotlight(step);
+      for (var k = 0; k < step.auto.length; k++) {
+        var a = step.auto[k];
+        if (a.say) { await botSayTyping(a.say); continue; }
+        if (a.reset) { await actReset(); showView(step.view); await sleep(300); continue; }
+        if (a.fillForm) {
+          for (var sel in a.fillForm) {
+            if (Object.prototype.hasOwnProperty.call(a.fillForm, sel)) await actFill(sel, resolve(a.fillForm[sel]));
+          }
+          if (a.click) await actClick(a.click, a.wait);
+          continue;
+        }
+        if (a.fill) { await actFill(a.fill, resolve(a.value)); continue; }
+        if (a.select) { await actSelect(a.select, resolve(a.value)); continue; }
+        if (a.check) { await actCheck(a.check, a.on); continue; }
+        if (a.clickIn) { await actClickIn(a.clickIn, a.text, a.button, a.wait); continue; }
+        if (a.click) { await actClick(a.click, a.wait); continue; }
+        if (a.wait) { await sleep(a.wait); continue; }
+        if (a.expect) {
+          var ok = checkText(a.expect, a.text);
+          if (ok) pass++; else fail++;
+          botSay((ok ? '✓ Đúng kỳ vọng: ' : '✗ Chưa khớp kỳ vọng: ') + '"' + a.text + '"');
+          await sleep(200);
+        }
+      }
+      botSay('Mẫu xong: ' + pass + ' kiểm tra đúng, ' + fail + ' chưa khớp.' +
+        (fail
+          ? ' Khác kỳ vọng nghĩa là có thể là lỗi của app. Hãy làm tay lại, bấm Lỗi ✗ và ghi rõ thấy gì.'
+          : ' Giờ bạn tự làm lại, rồi bấm Đạt.'));
+    } catch (err) {
+      botSay('Mẫu dừng lại: ' + err.message + '. Bạn làm tay phần còn lại nhé.');
+    } finally {
+      cursor.classList.remove('press');
+      setBusy(false);
+      drawRing();
+    }
+  }
+
   function record(status) {
+    if (running) return;
     var step = steps[idx];
     results[step.id] = { status: status, note: note.value.trim(), at: new Date().toISOString() };
     saveResults();
-    if (status === 'fail') botSay('Đã ghi lỗi. Ghi rõ thấy gì và mong đợi gì trong ô ghi chú, để người khác tái hiện được.');
+    if (status === 'fail') {
+      botSay('Ghi lỗi: ' + (step.khu || step.title) + '. Người xử lý: ' + (step.chu || 'chưa phân công') + '.' +
+        (results[step.id].note ? ' Mô tả: ' + results[step.id].note : ' Chưa có mô tả, bạn nên ghi thấy gì và mong đợi gì.'));
+    }
     if (idx < steps.length - 1) { enterStep(idx + 1); return; }
     finish();
   }
@@ -158,29 +359,35 @@
   function finish() {
     currentTarget = null;
     ring.hidden = true;
+    cursor.hidden = true;
     renderList();
-    var summary = el('div', 'msg bot');
-    summary.append(el('span', 'who', 'Trợ giảng'));
     var all = steps.map(function (s) { return results[s.id]; });
     var pass = all.filter(function (r) { return r && r.status === 'pass'; }).length;
-    var fail = all.filter(function (r) { return r && r.status === 'fail'; });
+    var failed = steps.filter(function (s) { return results[s.id] && results[s.id].status === 'fail'; });
     var skip = all.filter(function (r) { return r && r.status === 'skip'; }).length;
-    summary.append(el('span', '', 'Xong ' + steps.length + ' bước: ' + pass + ' đạt, ' + fail.length + ' lỗi, ' + skip + ' bỏ qua.'));
-    if (fail.length) {
-      var ul = el('ul', 'hd-summary');
-      steps.forEach(function (s) {
-        var r = results[s.id];
-        if (r && r.status === 'fail') ul.appendChild(el('li', '', s.title + (r.note ? ': ' + r.note : '')));
+    var summary = botSay('Xong ' + steps.length + ' bước: ' + pass + ' đạt, ' + failed.length + ' lỗi, ' + skip + ' bỏ qua.');
+    if (failed.length) {
+      // Gom lỗi theo người xử lý để biết ai nhận phần nào.
+      var owners = {};
+      failed.forEach(function (s) {
+        var key = s.chu || 'chưa phân công';
+        (owners[key] = owners[key] || []).push(s);
       });
-      summary.appendChild(ul);
+      Object.keys(owners).forEach(function (owner) {
+        summary.appendChild(el('p', 'hd-owner', owner + ' (' + owners[owner].length + ' lỗi)'));
+        var ul = el('ul', 'hd-summary');
+        owners[owner].forEach(function (s) {
+          var r = results[s.id];
+          ul.appendChild(el('li', '', (s.khu || s.title) + (r.note ? ': ' + r.note : '')));
+        });
+        summary.appendChild(ul);
+      });
     }
-    chat.appendChild(summary);
-    chat.scrollTop = chat.scrollHeight;
   }
 
   function hint() {
     var step = steps[idx];
-    botSay(step.hint || 'Bước này không có gợi ý thêm. Hãy đọc lại phần Làm và Kỳ vọng.');
+    botSay(step.hint || 'Bước này không có gợi ý thêm. Đọc lại phần Làm và Kỳ vọng.');
   }
 
   // ----- Đổi bản dựng -----
@@ -189,20 +396,20 @@
     openLink.href = 'lab/index.html?build=' + build;
     frame.src = 'lab/index.html?build=' + build;
   }
-  // Khi iframe tải lại (đổi bản dựng), khoanh lại bước hiện tại mà không lặp tin nhắn.
   frame.addEventListener('load', function () {
     watchAppScroll();
-    if (steps.length) spotlight(steps[idx]);
+    if (steps.length && !running) spotlight(steps[idx]);
   });
   window.addEventListener('resize', drawRing);
   window.addEventListener('scroll', drawRing, { passive: true });
 
   // ----- Sự kiện -----
+  btnDemo.addEventListener('click', runDemo);
   btnPass.addEventListener('click', function () { record('pass'); });
   btnFail.addEventListener('click', function () { record('fail'); });
   btnSkip.addEventListener('click', function () { record('skip'); });
   btnBack.addEventListener('click', function () { goTo(idx - 1); });
-  btnAgain.addEventListener('click', function () { enterStep(idx); });
+  btnAgain.addEventListener('click', function () { if (!running) spotlight(steps[idx]); });
   btnHint.addEventListener('click', hint);
   buildSel.addEventListener('change', function () { setBuild(buildSel.value); });
 
@@ -212,7 +419,6 @@
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (data) {
       steps = data.steps || [];
-      document.getElementById('hd-title').textContent = 'Test app Phòng khám Sao Mai';
       var start = 0;
       while (start < steps.length && results[steps[start].id]) start++;
       idx = start < steps.length ? start : 0;

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Phòng khám Sao Mai · Đặt lịch khám (app tập kiểm thử)</title>
-  <link rel="stylesheet" href="lab.css">
+  <link rel="stylesheet" href="lab.css?v=3">
 </head>
 <body>
 <div class="lab-note">App tập kiểm thử của khóa <a href="../index.html">Học kiểm thử</a>. Dữ liệu là giả và chỉ lưu trên trình duyệt này. App có lỗi cài sẵn để bạn tìm.</div>
@@ -15,6 +15,7 @@
   <nav class="views" aria-label="Chức năng">
     <button type="button" data-view="book" aria-current="page">Đặt lịch</button>
     <button type="button" data-view="lookup">Tra cứu lịch</button>
+    <button type="button" data-view="login">Đăng nhập</button>
     <button type="button" data-view="admin">Quản trị</button>
     <button type="button" data-view="api">API</button>
     <a href="yeu-cau.html" target="_blank" rel="noopener">Tài liệu yêu cầu</a>
@@ -92,6 +93,32 @@
   </section>
 
   <!-- Quản trị -->
+  <section id="view-login" class="view" hidden>
+    <h1>Đăng nhập bệnh nhân</h1>
+    <p class="sub">Đăng nhập để xem lịch của mình. Tài khoản mẫu nằm trong phần hướng dẫn test.</p>
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="login-phone">Số điện thoại</label>
+        <input id="login-phone" type="text" inputmode="numeric" autocomplete="username">
+        <p class="err" id="login-err-phone"></p>
+      </div>
+      <div class="field">
+        <label for="login-pass">Mật khẩu</label>
+        <input id="login-pass" type="password" autocomplete="current-password">
+        <p class="err" id="login-err-pass"></p>
+      </div>
+      <div class="actions"><button class="primary" id="login-submit" type="submit">Đăng nhập</button></div>
+      <p class="err" id="login-msg" role="alert"></p>
+    </form>
+    <div class="panel" id="login-panel" hidden>
+      <p class="sub" style="margin:0 0 6px">Đang đăng nhập</p>
+      <h2 id="login-name"></h2>
+      <h2>Lịch của tôi</h2>
+      <div id="my-list"></div>
+      <div class="actions"><button type="button" class="danger" id="logout-btn">Đăng xuất</button></div>
+    </div>
+  </section>
+
   <section id="view-admin" class="view" hidden>
     <h1>Quản trị lịch khám</h1>
     <div id="admin-login">
@@ -141,7 +168,8 @@
   <button type="button" id="reset-data">Đặt lại dữ liệu mẫu</button>
 </footer>
 
-<script src="core.js"></script>
-<script src="ui.js"></script>
+<script src="core.js?v=3"></script>
+<script src="ui.js?v=3"></script>
+<script src="login.js?v=3"></script>
 </body>
 </html>

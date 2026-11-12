@@ -250,7 +250,57 @@
     return { status: 404, body: { error: 'Không có đường dẫn này.' } };
   }
 
+  // ----- Đăng nhập bệnh nhân (tài khoản mẫu, chỉ để tập) -----
+  var SESSION_KEY = 'lab-saomai-session';
+  var PATIENT_LOCK_AFTER = 5;
+  var PATIENT_LOCK_MS = 60000;
+  var ACCOUNTS = [
+    { phone: '0901000001', name: 'Nguyễn Văn An', password: 'Sao@2026' },
+    { phone: '0901000002', name: 'Trần Thị Bình', password: 'Sao@2026' },
+  ];
+  function session() {
+    var p = null;
+    try { p = root.localStorage.getItem(SESSION_KEY); } catch (e) { return null; }
+    return ACCOUNTS.find(function (a) { return a.phone === p; }) || null;
+  }
+  function logout() { try { root.localStorage.removeItem(SESSION_KEY); } catch (e) { /* bỏ qua */ } }
+  function login(phone, password) {
+    var p = String(phone == null ? '' : phone).trim();
+    var pw = String(password == null ? '' : password);
+    var errors = {};
+    if (!/^0\d{9}$/.test(p)) errors.phone = 'Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0.';
+    if (!pw) errors.password = 'Hãy nhập mật khẩu.';
+    if (Object.keys(errors).length) return { ok: false, errors: errors };
+
+    var s = load();
+    s.loginFails = s.loginFails || {};
+    var now = Date.now();
+    var rec = s.loginFails[p] || { n: 0, until: 0 };
+    if (rec.until > now) return { ok: false, locked: true, wait: Math.ceil((rec.until - now) / 1000) };
+
+    var acc = ACCOUNTS.find(function (a) { return a.phone === p && a.password === pw; });
+    if (acc) {
+      delete s.loginFails[p];
+      save(s);
+      try { root.localStorage.setItem(SESSION_KEY, p); } catch (e) { /* bỏ qua */ }
+      return { ok: true, account: acc };
+    }
+    rec.n += 1;
+    if (rec.n >= PATIENT_LOCK_AFTER) {
+      s.loginFails[p] = { n: 0, until: now + PATIENT_LOCK_MS };
+      save(s);
+      return { ok: false, locked: true, wait: Math.ceil(PATIENT_LOCK_MS / 1000) };
+    }
+    s.loginFails[p] = rec;
+    save(s);
+    return { ok: false, error: 'Số điện thoại hoặc mật khẩu không đúng.' };
+  }
+  function myAppointments(phone) {
+    return load().items.filter(function (a) { return a.phone === phone; });
+  }
+
   root.Lab = {
+    session: session, login: login, logout: logout, myAppointments: myAppointments,
     build: build, has: has, DOCTORS: DOCTORS, SERVICES: SERVICES, STATUS: STATUS, MAX_PER_SLOT: MAX_PER_SLOT,
     today: today, toStr: toStr, plus: plus, setClock: setClock,
     load: load, reset: reset, slotTimes: slotTimes, booked: booked, slotFull: slotFull,

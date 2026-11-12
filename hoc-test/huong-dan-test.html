@@ -6,90 +6,122 @@
   <title>Test app Sao Mai · Hướng dẫn từng bước</title>
   <link rel="stylesheet" href="assets/site.css">
   <style>
-    .hd-head { margin: 4px 0 14px; display: grid; gap: 8px; }
-    .hd-head h1 { margin: 4px 0 0; font-size: 24px; }
-    .hd-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-    .hd-bar label { font-size: 14px; color: var(--muted); }
-    .hd-bar select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid #c5cfdd; background: var(--paper); }
-    .hd-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
-    @media (min-width: 900px) { .hd-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); align-items: start; } }
-    .hd-app, .hd-chat { display: grid; gap: 12px; align-content: start; min-width: 0; }
-    .panel-title { font-size: 13px; color: var(--muted); margin: 0; }
+    html, body { height: 100%; margin: 0; }
+    body { overflow: hidden; background: var(--paper, #F2F2F0); }
+    .hd-page { height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+    .hd-top { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--line, #DCDCD8); background: #fff; }
+    .hd-top h1 { margin: 0; font-size: 18px; font-weight: 700; flex: 1 1 auto; min-width: 0; }
+    .hd-top .eyebrow { display: none; }
+    .hd-top label { font-size: 14px; color: var(--muted, #5C5F66); }
+    .hd-top select { font: inherit; padding: 5px 8px; border-radius: 2px; border: 1px solid #B5B6B2; background: #fff; }
+    .hd-top .btn { border-radius: 2px; }
 
-    .hd-frame-wrap { position: relative; }
-    .hd-frame { width: 100%; height: 720px; min-height: 560px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
-    .hd-ring { position: fixed; border: 3px solid #e0a100; border-radius: 10px; box-shadow: 0 0 0 4px rgba(224, 161, 0, .25); pointer-events: none; z-index: 50; animation: hd-pulse 1.4s ease-in-out infinite; }
-    .hd-ring[hidden] { display: none; }
-    @keyframes hd-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(224, 161, 0, .25); } 50% { box-shadow: 0 0 0 10px rgba(224, 161, 0, .05); } }
+    .hd-grid { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); }
+    .hd-app { min-width: 0; min-height: 0; background: #E9E9E6; }
+    .hd-frame { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+    .hd-guide { min-width: 0; min-height: 0; display: flex; flex-direction: column; background: #fff; border-left: 1px solid var(--line, #DCDCD8); }
 
-    .hd-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 240px; overflow-y: auto; font-size: 14px; }
-    .hd-steps li { padding: 6px 8px; border-radius: 8px; display: flex; gap: 8px; align-items: baseline; cursor: pointer; }
-    .hd-steps li:hover { background: #f1f5fb; }
-    .hd-steps li.cur { background: #fff4d6; font-weight: 700; }
-    .hd-steps .mark { width: 1.2em; flex: none; text-align: center; }
-    .hd-steps .pass .mark { color: #2e8b57; }
-    .hd-steps .fail .mark { color: var(--brick); }
-    .hd-steps .skip .mark { color: var(--muted); }
+    .hd-now { padding: 14px 16px 6px; }
+    .hd-now .k { font-size: 13px; color: var(--muted, #5C5F66); margin: 0; }
+    .hd-now .t { font-size: 17px; font-weight: 700; margin: 2px 0 0; color: var(--ink, #17181C); }
+    .hd-steps { list-style: none; margin: 0; padding: 8px 16px 10px; display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line, #DCDCD8); }
+    .hd-steps li { width: 30px; height: 30px; border-radius: 2px; display: grid; place-items: center; font-size: 13px; font-weight: 600; color: var(--muted, #5C5F66); background: #F2F2F0; cursor: pointer; border: 1px solid transparent; }
+    .hd-steps li:hover { border-color: #B5B6B2; }
+    .hd-steps li.cur { background: var(--ink, #17181C); color: #fff; }
+    .hd-steps li.pass { background: #E4F3EC; color: #1E6B47; }
+    .hd-steps li.fail { background: #FBEAE4; color: #9E3416; }
+    .hd-steps li.skip { color: #8D9097; }
+    .hd-steps li .mark { display: none; }
+    .hd-count { margin: 0; padding: 6px 16px 0; font-size: 12px; color: var(--muted, #5C5F66); }
 
-    .hd-chat-log { display: flex; flex-direction: column; gap: 8px; max-height: 360px; overflow-y: auto; }
-    .msg { padding: 10px 14px; border-radius: 14px; line-height: 1.5; background: #eef3fb; }
-    .msg .who { display: block; font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
-    .msg.step { background: #fff4d6; }
-    .hd-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hd-log { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px; }
+    .msg { padding: 10px 12px; border-radius: 2px; line-height: 1.55; background: #F6F7F9; border-left: 3px solid #B5B6B2; font-size: 15px; }
+    .msg .who { display: block; font-size: 12px; font-weight: 700; color: #2442C8; margin-bottom: 2px; }
+    .msg.step { background: #fff; border: 1px solid var(--line, #DCDCD8); border-left: 3px solid var(--ink, #17181C); font-weight: 700; }
+    .msg.step .who { display: none; }
+    .msg.fact { background: #fff; }
+    .hd-summary { margin: 4px 0 0; padding-left: 18px; }
+    .hd-owner { font-weight: 700; margin: 8px 0 0; }
+
+    .hd-dock { border-top: 1px solid var(--line, #DCDCD8); padding: 10px 16px 12px; display: grid; gap: 8px; background: #fff; }
+    .hd-note { width: 100%; font: inherit; font-size: 14px; padding: 7px 10px; border: 1px solid #B5B6B2; border-radius: 2px; box-sizing: border-box; resize: none; height: 44px; }
+    .hd-controls { display: flex; flex-wrap: wrap; gap: 6px; }
+    .hd-controls .btn { padding: 7px 12px; font-size: 14px; border-radius: 2px; }
     .hd-controls .btn[disabled] { opacity: .45; cursor: not-allowed; }
-    .hd-note { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; background: var(--paper); box-sizing: border-box; }
-    .hd-summary { font-size: 14px; }
-    .hd-summary ul { margin: 6px 0 0; padding-left: 18px; }
-    .hd-ok { color: #2e8b57; font-weight: 700; }
-    .hd-bad { color: var(--brick); font-weight: 700; }
-    @media (prefers-reduced-motion: reduce) { .hd-ring { animation: none; } }
+
+    .hd-ring { position: fixed; border: 2px solid #2442C8; border-radius: 2px; box-shadow: 0 0 0 4px rgba(36, 66, 200, .12); pointer-events: none; z-index: 50; }
+    .hd-ring[hidden] { display: none; }
+    .hd-cursor { position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none; transition: transform .6s cubic-bezier(.3, .7, .3, 1); }
+    .hd-cursor svg { display: block; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .25)); transform-origin: 3px 2px; transition: transform .14s; }
+    .hd-cursor.press svg { transform: scale(.82); }
+    .hd-cursor-tag { position: absolute; left: 22px; top: 22px; white-space: nowrap; font-size: 12px; font-weight: 700; color: #fff; background: #2442C8; border-radius: 2px; padding: 2px 6px; }
+    .hd-cursor[hidden] { display: none; }
+    .th-typing { display: inline-flex; gap: 4px; align-items: center; padding: 4px 0; }
+    .th-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted, #5C5F66); animation: hd-blink 1s ease-in-out infinite; }
+    .th-typing i:nth-child(2) { animation-delay: .15s; }
+    .th-typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes hd-blink { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+
+    /* Điện thoại: xếp dọc, khung app cao 60vh, trợ giảng nằm dưới */
+    @media (max-width: 899px) {
+      body { overflow: auto; }
+      .hd-page { height: auto; }
+      .hd-grid { grid-template-columns: minmax(0, 1fr); }
+      .hd-app { height: 60vh; min-height: 420px; }
+      .hd-guide { border-left: 0; border-top: 1px solid var(--line, #DCDCD8); }
+      .hd-log { max-height: 420px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .th-typing i { animation: none; } .hd-cursor, .hd-cursor svg { transition: none; } }
   </style>
 </head>
 <body>
-  <main>
-    <header class="hd-head">
-      <span class="eyebrow">Thực hành · test app đủ tính năng</span>
-      <h1 id="hd-title">Test app Phòng khám Sao Mai</h1>
-      <div class="hd-bar">
-        <label for="hd-build">Bản dựng</label>
-        <select id="hd-build">
-          <option value="1.0">1.0</option>
-          <option value="1.1">1.1</option>
-        </select>
-        <a class="btn ghost" id="hd-open" href="lab/index.html?build=1.0" target="_blank" rel="noopener">Mở app trong tab mới ↗</a>
-        <a class="btn ghost" href="thuc-hanh.html">Về trang thực hành</a>
-      </div>
-      <p class="th-count" id="hd-count" style="margin:0;color:var(--muted);font-size:14px"></p>
+  <div class="hd-page">
+    <header class="hd-top">
+      <h1>Test app Phòng khám Sao Mai</h1>
+      <label for="hd-build">Bản dựng</label>
+      <select id="hd-build">
+        <option value="1.0">1.0</option>
+        <option value="1.1">1.1</option>
+      </select>
+      <a class="btn ghost" id="hd-open" href="lab/index.html?build=1.0" target="_blank" rel="noopener">Mở app trong tab mới ↗</a>
+      <a class="btn ghost" href="thuc-hanh.html">Về trang thực hành</a>
     </header>
 
     <div class="hd-grid">
-      <section class="card hd-app" aria-label="App đang test">
-        <p class="panel-title">App đang test: Phòng khám Sao Mai (app tập, dữ liệu giả)</p>
-        <div class="hd-frame-wrap">
-          <iframe class="hd-frame" id="app-frame" title="Phòng khám Sao Mai" src="lab/index.html?build=1.0"></iframe>
-        </div>
+      <section class="hd-app" aria-label="App đang test">
+        <iframe class="hd-frame" id="app-frame" title="Phòng khám Sao Mai" src="lab/index.html?build=1.0"></iframe>
       </section>
 
-      <section class="card hd-chat" aria-label="Trợ giảng hướng dẫn">
-        <p class="panel-title">Trợ giảng · hướng dẫn từng bước</p>
+      <aside class="hd-guide" aria-label="Trợ giảng hướng dẫn">
+        <div class="hd-now">
+          <p class="k" id="hd-count"></p>
+          <p class="t" id="hd-now"></p>
+        </div>
         <ol class="hd-steps" id="hd-steps" aria-label="Danh sách bước"></ol>
-        <div class="hd-chat-log" id="hd-chat" aria-live="polite"></div>
-        <textarea class="hd-note" id="hd-note" rows="2" placeholder="Ghi chú kết quả (ví dụ: thấy gì, mong đợi gì)"></textarea>
-        <div class="hd-controls">
-          <button class="btn ghost" id="hd-back" type="button">← Quay lại</button>
-          <button class="btn ghost" id="hd-again" type="button">Khoanh lại</button>
-          <button class="btn ghost" id="hd-hint" type="button">Gợi ý</button>
+        <div class="hd-log" id="hd-chat" aria-live="polite"></div>
+        <div class="hd-dock">
+          <textarea class="hd-note" id="hd-note" placeholder="Ghi chú: thấy gì, mong đợi gì"></textarea>
+          <div class="hd-controls">
+            <button class="btn amber" id="hd-demo" type="button">Làm mẫu ▶</button>
+            <button class="btn ghost" id="hd-hint" type="button">Gợi ý</button>
+            <button class="btn ghost" id="hd-again" type="button">Khoanh lại</button>
+            <button class="btn ghost" id="hd-back" type="button">← Quay lại</button>
+          </div>
+          <div class="hd-controls">
+            <button class="btn amber" id="hd-pass" type="button">Đạt ✓</button>
+            <button class="btn ghost" id="hd-fail" type="button">Lỗi ✗</button>
+            <button class="btn ghost" id="hd-skip" type="button">Bỏ qua</button>
+          </div>
         </div>
-        <div class="hd-controls">
-          <button class="btn amber" id="hd-pass" type="button">Đạt ✓</button>
-          <button class="btn ghost" id="hd-fail" type="button">Lỗi ✗</button>
-          <button class="btn ghost" id="hd-skip" type="button">Bỏ qua</button>
-        </div>
-      </section>
+      </aside>
     </div>
-  </main>
+  </div>
 
   <div class="hd-ring" id="hd-ring" hidden></div>
-  <script src="assets/huong-dan-test.js"></script>
+  <div class="hd-cursor" id="hd-cursor" hidden aria-hidden="true">
+    <svg viewBox="0 0 26 26" width="26" height="26"><path d="M3 2 L3 21 L8 16.5 L11.5 24 L14.5 22.6 L11.2 15.4 L18 15.4 Z" fill="#17181C" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span class="hd-cursor-tag">Trợ giảng</span>
+  </div>
+  <script src="assets/huong-dan-test.js?v=5"></script>
 </body>
 </html>

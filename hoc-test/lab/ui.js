@@ -16,13 +16,14 @@
   function viDate(s) { var p = String(s).split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : s; }
 
   // ----- Chuyển màn hình -----
-  var views = ['book', 'lookup', 'admin', 'api'];
+  var views = ['book', 'lookup', 'login', 'admin', 'api'];
   function show(name) {
     views.forEach(function (v) { $('view-' + v).hidden = v !== name; });
     document.querySelectorAll('.views button').forEach(function (b) {
       if (b.dataset.view === name) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
     });
     if (name === 'admin') renderAdmin();
+    if (name === 'login' && window.LabLogin) window.LabLogin.render();
     try { history.replaceState(null, '', location.pathname + location.search + '#' + name); } catch (e) { /* bỏ qua */ }
   }
   document.querySelectorAll('.views button').forEach(function (b) {

@@ -7,174 +7,780 @@
       "view": "book",
       "target": "#book-form",
       "title": "Làm quen form đặt lịch",
-      "say": "Đây là form đặt lịch. Bạn sẽ test cả 4 tab: Đặt lịch, Tra cứu, Quản trị, API.",
-      "do": "Xem các ô trong form. Chưa cần nhập gì.",
-      "expect": "Thấy đủ ô: họ tên, SĐT, tuổi, người giám hộ, bác sĩ, loại khám, ngày, giờ, BHYT."
+      "say": "Đây là form đặt lịch khám. Có 9 ô nhập liệu và 1 nút gửi. Mỗi ô có quy tắc riêng, và bạn sẽ test từng quy tắc một.",
+      "technique": "Đọc giao diện trước khi test: liệt kê ô, quy tắc, và thứ gì xảy ra khi gửi.",
+      "do": "Xem các ô. Bấm Làm mẫu để xem trợ giảng thao tác.",
+      "expect": "Thấy đủ ô: họ tên, SĐT, tuổi, giám hộ, bác sĩ, loại khám, ngày, giờ, BHYT.",
+      "auto": [
+        {
+          "say": "Mình sẽ đi qua từng ô. Mỗi bước mình chỉ làm một việc, rồi kiểm kết quả."
+        }
+      ],
+      "khu": "Đặt lịch · bố cục form",
+      "chu": "Giao diện"
     },
     {
       "id": "bo-trong",
       "view": "book",
       "target": "#book-submit",
       "title": "Gửi form rỗng",
-      "say": "Khoanh đỏ là nút Đặt lịch. Để trống hết rồi bấm.",
+      "say": "Nút Đặt lịch khi form rỗng. Mọi ô bắt buộc phải báo lỗi, và không được tạo lịch.",
+      "technique": "Kiểm tra trường hợp đầu vào rỗng trước. Đây là ca nền để biết form có kiểm tra bắt buộc không.",
       "do": "Không nhập gì, bấm Đặt lịch.",
-      "expect": "Mỗi ô bắt buộc hiện một dòng báo lỗi. Không tạo lịch nào.",
-      "hint": "Nếu không thấy báo lỗi, kiểm xem có ô nào được điền sẵn không."
+      "expect": "Ô họ tên và SĐT hiện lỗi. Không tạo lịch mới.",
+      "hint": "Nếu không thấy báo lỗi, kiểm xem có ô nào đã được điền sẵn không.",
+      "auto": [
+        {
+          "say": "Mình bấm Đặt lịch khi form còn trống."
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Họ tên phải từ 2 đến 50 ký tự"
+        },
+        {
+          "expect": "#book-form",
+          "text": "Số điện thoại phải gồm 10 chữ số"
+        }
+      ],
+      "khu": "Đặt lịch · kiểm tra bắt buộc",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "ten",
       "view": "book",
       "target": "#f-name",
-      "title": "Biên tên: 1 ký tự và 50 ký tự",
-      "say": "Khoanh ô Họ tên. Test biên: 1 ký tự rồi 2 ký tự.",
-      "do": "Nhập 1 chữ cái, bấm Đặt lịch. Sau đó nhập 2 chữ cái, bấm Đặt lịch.",
-      "expect": "1 ký tự: báo lỗi. 2 ký tự: không báo lỗi tên. Tên dài 51 ký tự: báo lỗi.",
-      "hint": "Biên thường là chỗ lỗi hay nằm. Đừng chỉ thử 1 giá trị giữa."
+      "title": "Biên độ dài họ tên",
+      "say": "Họ tên phải từ 2 đến 50 ký tự. Đây là quy tắc có biên.",
+      "technique": "Kiểm biên: thử đúng ngay dưới biên (1 ký tự), đúng biên (2 ký tự), và ngay trên biên (51 ký tự).",
+      "do": "Nhập 1 chữ cái rồi gửi. Sau đó thử 2 chữ cái.",
+      "expect": "1 ký tự báo lỗi. 2 ký tự không báo lỗi tên.",
+      "hint": "Lỗi hay nằm đúng ở biên. Đừng chỉ thử một giá trị giữa.",
+      "auto": [
+        {
+          "say": "Thử 1 ký tự: phải báo lỗi."
+        },
+        {
+          "fill": "#f-name",
+          "value": "A"
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Họ tên phải từ 2 đến 50 ký tự"
+        }
+      ],
+      "khu": "Đặt lịch · độ dài họ tên",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "sdt",
       "view": "book",
       "target": "#f-phone",
       "title": "Số điện thoại đúng 10 số",
-      "say": "Khoanh ô SĐT. Quy định: đúng 10 chữ số, bắt đầu bằng 0.",
-      "do": "Thử: 9 số, 10 số không bắt đầu bằng 0, 10 số có chữ, và 0901234567 (đúng).",
-      "expect": "Chỉ số đúng quy định không báo lỗi SĐT."
+      "say": "SĐT phải gồm đúng 10 chữ số và bắt đầu bằng 0.",
+      "technique": "Phân lớp tương đương: một đại diện đúng, và các lớp sai như ít số, có chữ, sai đầu số.",
+      "do": "Thử 9 số, rồi 10 số có chữ.",
+      "expect": "Số sai báo lỗi. Số đúng quy định thì không báo lỗi SĐT.",
+      "auto": [
+        {
+          "say": "Thử 6 chữ số: không đủ 10 số, phải báo lỗi."
+        },
+        {
+          "fill": "#f-phone",
+          "value": "090123"
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Số điện thoại phải gồm 10 chữ số"
+        }
+      ],
+      "khu": "Đặt lịch · định dạng SĐT",
+      "chu": "Nghiệp vụ"
     },
     {
-      "id": "tuoi-giam-ho",
+      "id": "giam-ho",
       "view": "book",
       "target": "#f-age",
-      "title": "Tuổi và người giám hộ",
-      "say": "Khoanh ô Tuổi. Quy định: người dưới 16 tuổi cần tên người giám hộ.",
-      "do": "Nhập tuổi 15 và để trống giám hộ, bấm Đặt lịch. Thử tuổi 16 cũng để trống giám hộ.",
-      "expect": "Tuổi 15 bắt buộc có giám hộ. Tuổi 16 theo đúng quy định của app. Ghi lại nếu hai ca cho kết quả khác quy định."
+      "title": "Người giám hộ dưới 16 tuổi",
+      "say": "Người dưới 16 tuổi phải có tên người giám hộ. Đây là quy tắc phụ thuộc giữa hai ô.",
+      "technique": "Test quy tắc phụ thuộc: đổi một ô và xem ô khác có đòi hỏi thêm không.",
+      "do": "Nhập tuổi 15, để trống giám hộ, gửi.",
+      "expect": "Báo cần người giám hộ.",
+      "auto": [
+        {
+          "say": "Tuổi 15 và không có giám hộ: phải báo lỗi."
+        },
+        {
+          "fill": "#f-age",
+          "value": "15"
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Người dưới 16 tuổi cần có tên người giám hộ"
+        }
+      ],
+      "khu": "Đặt lịch · người giám hộ",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "tuoi-bien",
       "view": "book",
       "target": "#f-age",
-      "title": "Tuổi biên 0 và 120",
-      "say": "Vẫn ô Tuổi. Quy định: từ 0 đến 120.",
-      "do": "Thử: -1, 0, 120, 121, chữ abc.",
-      "expect": "-1, 121, abc: báo lỗi. 0 và 120: chấp nhận."
+      "title": "Tuổi: biên 0 đến 120",
+      "say": "Tuổi là số nguyên từ 0 đến 120. Đây là một khoảng có biên dưới và biên trên.",
+      "technique": "Phân tích giá trị biên: thử -1, 0, 120, 121 và giá trị không phải số.",
+      "do": "Thử 121, rồi chữ abc.",
+      "expect": "121 và abc báo lỗi. 0 và 120 được chấp nhận.",
+      "auto": [
+        {
+          "say": "Thử 121: vượt biên trên, phải báo lỗi."
+        },
+        {
+          "fill": "#f-age",
+          "value": "121"
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Tuổi phải là số nguyên từ 0 đến 120"
+        }
+      ],
+      "khu": "Đặt lịch · biên tuổi",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "ngay",
       "view": "book",
       "target": "#f-date",
       "title": "Ngày khám",
-      "say": "Khoanh ô Ngày khám. Quy định: từ ngày mai đến 30 ngày tới, phòng khám nghỉ Chủ nhật.",
-      "do": "Thử: hôm nay, ngày mai, ngày cách 30 ngày, ngày cách 31 ngày, một Chủ nhật.",
-      "expect": "Hôm nay không chọn được. Chủ nhật báo nghỉ. Ngày cách 31 ngày báo lỗi."
+      "say": "Ngày khám phải từ ngày mai đến 30 ngày tới. Phòng khám nghỉ Chủ nhật.",
+      "technique": "Biên thời gian: hôm nay (ngoài biên dưới), ngày mai (biên dưới), 30 ngày (biên trên), 31 ngày (ngoài biên trên).",
+      "do": "Chọn hôm nay rồi gửi. Sau đó chọn một Chủ nhật.",
+      "expect": "Hôm nay báo lỗi. Chủ nhật báo nghỉ.",
+      "auto": [
+        {
+          "say": "Thử ngày hôm nay: phải báo lỗi, vì khám phải từ ngày mai."
+        },
+        {
+          "fill": "#f-date",
+          "value": "{today}"
+        },
+        {
+          "click": "#book-submit",
+          "wait": 900
+        },
+        {
+          "expect": "#book-form",
+          "text": "Ngày khám phải từ ngày mai"
+        }
+      ],
+      "khu": "Đặt lịch · ngày khám và ngày nghỉ",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "gio-day",
       "view": "book",
       "target": "#f-time",
-      "title": "Khung giờ đủ 3 lịch",
-      "say": "Khoanh ô Giờ. Mỗi khung giờ của một bác sĩ chỉ nhận 3 lịch.",
-      "do": "Đặt 3 lịch cùng bác sĩ, cùng ngày, cùng giờ. Sau đó đặt lịch thứ 4.",
-      "expect": "Lịch thứ 4 báo khung giờ đã đủ 3 lịch, và không tạo lịch mới.",
-      "hint": "Đổi tên và SĐT mỗi lần đặt, để không bị trùng."
+      "title": "Khung giờ tối đa 3 lịch",
+      "say": "Mỗi khung giờ của một bác sĩ chỉ nhận tối đa 3 lịch. Lịch thứ 4 phải bị từ chối.",
+      "technique": "Test giới hạn: đặt đúng đến giới hạn, rồi vượt 1. Đây là ca hay có lỗi đếm.",
+      "do": "Đặt 3 lịch cùng bác sĩ, cùng ngày, cùng giờ. Đặt lịch thứ 4.",
+      "expect": "Lịch thứ 4 báo khung giờ đã đủ 3 lịch.",
+      "hint": "Đổi tên và SĐT mỗi lần đặt để không trùng.",
+      "auto": [
+        {
+          "say": "Mình reset dữ liệu mẫu để kết quả lặp lại được, rồi đặt 3 lịch vào cùng khung giờ."
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#f-name": "Khách mẫu một",
+            "#f-phone": "0912000001",
+            "#f-age": "30",
+            "#f-doctor": "lan",
+            "#f-service": "thuong",
+            "#f-date": "{ngay:2}",
+            "#f-time": "08:00"
+          },
+          "click": "#book-submit",
+          "wait": 1000
+        },
+        {
+          "fillForm": {
+            "#f-name": "Khách mẫu hai",
+            "#f-phone": "0912000002",
+            "#f-age": "30",
+            "#f-doctor": "lan",
+            "#f-service": "thuong",
+            "#f-date": "{ngay:2}",
+            "#f-time": "08:00"
+          },
+          "click": "#book-submit",
+          "wait": 1000
+        },
+        {
+          "fillForm": {
+            "#f-name": "Khách mẫu ba",
+            "#f-phone": "0912000003",
+            "#f-age": "30",
+            "#f-doctor": "lan",
+            "#f-service": "thuong",
+            "#f-date": "{ngay:2}",
+            "#f-time": "08:00"
+          },
+          "click": "#book-submit",
+          "wait": 1000
+        },
+        {
+          "say": "Lịch thứ 4 cùng khung giờ: phải bị từ chối."
+        },
+        {
+          "fillForm": {
+            "#f-name": "Khách mẫu bốn",
+            "#f-phone": "0912000004",
+            "#f-age": "30",
+            "#f-doctor": "lan",
+            "#f-service": "thuong",
+            "#f-date": "{ngay:2}",
+            "#f-time": "08:00"
+          },
+          "click": "#book-submit",
+          "wait": 1000
+        },
+        {
+          "expect": "#book-form",
+          "text": "Khung giờ này đã đủ 3 lịch"
+        }
+      ],
+      "khu": "Đặt lịch · giới hạn khung giờ",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "phi",
       "view": "book",
       "target": "#fee-preview",
-      "title": "Xem phí trước khi đặt",
-      "say": "Khoanh dòng phí. Phí thay đổi theo tuổi, loại khám và BHYT.",
-      "do": "Đổi loại khám, tick BHYT, đổi tuổi (dưới 6, từ 60, người thường) và xem dòng phí.",
-      "expect": "Dưới 6 tuổi phí 0. Từ 60 giảm 20%. BHYT trừ 50.000đ. Phí hiện đúng trước khi bấm đặt."
+      "title": "Phí dự kiến",
+      "say": "Phí thay đổi theo tuổi, loại khám và BHYT. Người từ 60 tuổi được giảm 20%. BHYT trừ 50.000đ.",
+      "technique": "Test bảng quyết định: kết hợp các điều kiện (tuổi, dịch vụ, BHYT) và so với phí tính tay.",
+      "do": "Đổi tuổi 65, tick BHYT, xem phí.",
+      "expect": "Tuổi 65 khám thường có BHYT: 150.000 × 0,8 − 50.000 = 70.000đ.",
+      "auto": [
+        {
+          "say": "Tính tay: 150.000 × 0,8 = 120.000, rồi trừ BHYT 50.000 còn 70.000đ. Mình sẽ kiểm xem app có khớp không."
+        },
+        {
+          "fill": "#f-age",
+          "value": "65"
+        },
+        {
+          "check": "#f-bhyt",
+          "on": true
+        },
+        {
+          "wait": 300
+        },
+        {
+          "expect": "#fee-preview",
+          "text": "70.000"
+        }
+      ],
+      "khu": "Đặt lịch · tính phí",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "dat-thanh-cong",
       "view": "book",
       "target": "#book-result",
       "title": "Đặt lịch thành công",
-      "say": "Khoanh vùng kết quả. Nhập đủ thông tin hợp lệ rồi đặt.",
-      "do": "Nhập đủ, hợp lệ, bấm Đặt lịch. Ghi lại mã lịch.",
-      "expect": "Hiện mã dạng SM-xxxxxx và phí đúng. Lịch có trong bảng quản trị sau này."
+      "say": "Khi mọi ô hợp lệ, app tạo lịch và trả mã lịch dạng SM-xxxxxx.",
+      "technique": "Test luồng chính (happy path) trước khi test luồng lỗi sâu hơn. Ghi lại mã lịch để dùng ở bước tra cứu.",
+      "do": "Nhập đủ thông tin hợp lệ rồi gửi.",
+      "expect": "Hiện mã SM-xxxxxx và phí đúng.",
+      "auto": [
+        {
+          "say": "Mình điền một lịch hợp lệ đầy đủ, rồi gửi."
+        },
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#f-name": "Lê Thị Mai",
+            "#f-phone": "0933444555",
+            "#f-age": "28",
+            "#f-doctor": "mai",
+            "#f-service": "thuong",
+            "#f-date": "{ngay:3}",
+            "#f-time": "10:00"
+          },
+          "click": "#book-submit",
+          "wait": 1000
+        },
+        {
+          "expect": "#book-result",
+          "text": "SM-"
+        }
+      ],
+      "khu": "Đặt lịch · tạo lịch",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "tra-cuu-dung",
       "view": "lookup",
       "target": "#lookup-form",
       "title": "Tra cứu đúng mã và SĐT",
-      "say": "Khoanh form Tra cứu. Cần cả mã lịch và SĐT đã đặt.",
-      "do": "Nhập mã và SĐT vừa đặt, bấm Tra cứu.",
-      "expect": "Hiện đúng tên, ngày giờ, bác sĩ và trạng thái của lịch."
+      "say": "Tra cứu cần cả mã lịch và SĐT đã đặt. Mã và SĐT khớp thì hiện đúng lịch.",
+      "technique": "Test luồng tra cứu với dữ liệu biết trước. Dùng lịch mẫu SM-100002 để kết quả cố định.",
+      "do": "Nhập mã SM-100002 và SĐT 0901000002, rồi bấm Tra cứu.",
+      "expect": "Hiện đúng tên Trần Thị Bình.",
+      "auto": [
+        {
+          "fillForm": {
+            "#l-code": "SM-100002",
+            "#l-phone": "0901000002"
+          },
+          "click": "#lookup-form button",
+          "wait": 500
+        },
+        {
+          "expect": "#lookup-result",
+          "text": "Trần Thị Bình"
+        }
+      ],
+      "khu": "Tra cứu · khớp mã và SĐT",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "tra-cuu-sai",
       "view": "lookup",
       "target": "#lookup-result",
       "title": "Tra cứu sai",
-      "say": "Khoanh vùng kết quả. Thử mã đúng nhưng SĐT sai, rồi mã không có thật.",
+      "say": "Mã đúng nhưng SĐT sai thì không được hiện lịch. Tra cứu không lộ thông tin của người khác.",
+      "technique": "Test cặp mã và SĐT: giữ một giá trị đúng, đổi giá trị kia. Kiểm cả trường hợp mã không tồn tại.",
       "do": "Mã đúng, SĐT khác. Sau đó mã SM-999999.",
-      "expect": "Cả hai trường hợp đều không hiện lịch của người khác. Thông báo không lộ thông tin."
+      "expect": "Cả hai đều báo không tìm thấy.",
+      "auto": [
+        {
+          "fillForm": {
+            "#l-code": "SM-100002",
+            "#l-phone": "0900000000"
+          },
+          "click": "#lookup-form button",
+          "wait": 500
+        },
+        {
+          "expect": "#lookup-result",
+          "text": "Không tìm thấy lịch"
+        }
+      ],
+      "khu": "Tra cứu · thông báo không lộ thông tin",
+      "chu": "Bảo mật"
+    },
+    {
+      "id": "dang-nhap-trong",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Đăng nhập: để trống",
+      "say": "Đăng nhập cần số điện thoại và mật khẩu. Để trống thì không được vào.",
+      "technique": "Test ca rỗng và ca thiếu trường cho chức năng đăng nhập.",
+      "do": "Không nhập gì, bấm Đăng nhập.",
+      "expect": "Báo lỗi cho SĐT và mật khẩu.",
+      "auto": [
+        {
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "expect": "#login-form",
+          "text": "Số điện thoại phải gồm 10 chữ số"
+        },
+        {
+          "expect": "#login-form",
+          "text": "Hãy nhập mật khẩu"
+        }
+      ],
+      "khu": "Đăng nhập · ô trống",
+      "chu": "Giao diện"
+    },
+    {
+      "id": "dang-nhap-sai",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Đăng nhập: sai mật khẩu",
+      "say": "Sai mật khẩu thì báo chung chung. App không nói rõ SĐT có tồn tại hay không.",
+      "technique": "Kiểm thông báo lỗi không lộ thông tin: thông báo phải giống nhau cho sai SĐT và sai mật khẩu.",
+      "do": "Nhập SĐT 0901000001, mật khẩu sai, rồi bấm Đăng nhập.",
+      "expect": "Báo 'Số điện thoại hoặc mật khẩu không đúng'.",
+      "auto": [
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-mat-khau"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "expect": "#login-msg",
+          "text": "Số điện thoại hoặc mật khẩu không đúng"
+        }
+      ],
+      "khu": "Đăng nhập · thông báo sai mật khẩu",
+      "chu": "Bảo mật"
+    },
+    {
+      "id": "dang-nhap-khoa",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Đăng nhập: khóa sau nhiều lần sai",
+      "say": "Sai 5 lần liên tiếp với cùng SĐT thì khóa tạm 60 giây. Đây là chống dò mật khẩu.",
+      "technique": "Test giới hạn số lần thử: đến đúng ngưỡng thì khóa, và kiểm đếm không bị lệch.",
+      "do": "Nhập sai mật khẩu 5 lần cho cùng SĐT.",
+      "expect": "Lần thứ 5 báo tạm khóa có thời gian chờ.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-1"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-2"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-3"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-4"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "sai-5"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "expect": "#login-msg",
+          "text": "Tạm khóa đăng nhập"
+        }
+      ],
+      "khu": "Đăng nhập · khóa chống dò",
+      "chu": "Bảo mật"
+    },
+    {
+      "id": "dang-nhap-dung",
+      "view": "login",
+      "target": "#login-form",
+      "title": "Đăng nhập đúng và xem lịch",
+      "say": "Đăng nhập đúng thì vào được màn hình lịch của mình. Chỉ thấy lịch có SĐT của tài khoản.",
+      "technique": "Test luồng chính, rồi kiểm quyền: người đăng nhập chỉ thấy dữ liệu của mình.",
+      "do": "Nhập SĐT 0901000001 và mật khẩu Sao@2026, rồi đăng nhập.",
+      "expect": "Hiện tên Nguyễn Văn An và lịch SM-100001.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#login-phone": "0901000001",
+            "#login-pass": "Sao@2026"
+          },
+          "click": "#login-submit",
+          "wait": 400
+        },
+        {
+          "expect": "#login-name",
+          "text": "Nguyễn Văn An"
+        },
+        {
+          "expect": "#my-list",
+          "text": "SM-100001"
+        }
+      ],
+      "khu": "Đăng nhập · phiên và quyền xem lịch",
+      "chu": "Bảo mật"
     },
     {
       "id": "admin-sai-pin",
       "view": "admin",
       "target": "#admin-login",
-      "title": "Sai PIN nhiều lần",
-      "say": "Khoanh form đăng nhập quản trị. Nhập sai PIN 5 lần liên tiếp.",
-      "do": "Nhập PIN sai (ví dụ 0000) 5 lần, mỗi lần bấm đăng nhập.",
-      "expect": "Đến lần sai thứ 5 thì bị khóa tạm. Thông báo có thời gian chờ."
+      "title": "Quản trị: sai PIN nhiều lần",
+      "say": "Trang quản trị dùng PIN. Sai 5 lần liên tiếp thì khóa tạm, giống chức năng đăng nhập bệnh nhân.",
+      "technique": "Cùng kỹ thuật với bước trước: đếm ngưỡng, rồi kiểm thời gian khóa.",
+      "do": "Nhập PIN sai 5 lần liên tiếp.",
+      "expect": "Đến lần thứ 5 thì bị khóa tạm.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "0000"
+          },
+          "click": "#admin-form button",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#a-pin": "0001"
+          },
+          "click": "#admin-form button",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#a-pin": "0002"
+          },
+          "click": "#admin-form button",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#a-pin": "0003"
+          },
+          "click": "#admin-form button",
+          "wait": 400
+        },
+        {
+          "fillForm": {
+            "#a-pin": "0004"
+          },
+          "click": "#admin-form button",
+          "wait": 400
+        },
+        {
+          "expect": "#admin-err",
+          "text": "bị khóa"
+        }
+      ],
+      "khu": "Quản trị · khóa PIN",
+      "chu": "Bảo mật"
     },
     {
       "id": "admin-dung-pin",
       "view": "admin",
       "target": "#admin-form, #admin-panel",
-      "title": "Đăng nhập đúng PIN",
-      "say": "Đợi hết thời gian khóa, rồi nhập PIN đúng. PIN của app tập là 2468.",
-      "do": "Đợi, nhập 2468, bấm đăng nhập.",
-      "expect": "Vào được bảng quản trị. Số đếm lịch đúng."
+      "title": "Quản trị: đăng nhập đúng PIN",
+      "say": "PIN đúng là 2468. Vào được bảng quản trị và thấy tổng số lịch.",
+      "technique": "Test luồng đúng sau khi đã test luồng sai. Kiểm trạng thái không bị kẹt sau khi khóa hết hạn.",
+      "do": "Đợi hết thời gian khóa rồi nhập 2468. Trong app tập, reset để không phải đợi.",
+      "expect": "Hiện bảng quản trị và dòng 'Tổng số lịch'.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "expect": "#admin-panel",
+          "text": "Tổng số lịch"
+        }
+      ],
+      "khu": "Quản trị · đăng nhập PIN",
+      "chu": "Bảo mật"
     },
     {
       "id": "admin-trang-thai",
       "view": "admin",
       "target": "#admin-table",
-      "title": "Đổi trạng thái lịch",
-      "say": "Khoanh bảng lịch. Luồng hợp lệ: Chờ xác nhận, Đã xác nhận, Đã khám. Hủy chỉ khi lịch chưa tới ngày khám.",
-      "do": "Bấm Xác nhận, rồi Đã khám ở một lịch. Thử Hủy ở một lịch đã khám.",
-      "expect": "Chuyển đúng thứ tự. Lịch đã khám không hủy được. Bảng cập nhật ngay."
+      "title": "Quản trị: đổi trạng thái lịch",
+      "say": "Luồng hợp lệ: Chờ xác nhận, Đã xác nhận, Đã khám. Lịch đã hủy không đổi tiếp được.",
+      "technique": "Test chuyển trạng thái: thử đường hợp lệ trước, rồi thử đường bị cấm (bỏ qua bước).",
+      "do": "Bấm Xác nhận ở lịch SM-100001.",
+      "expect": "Trạng thái đổi thành Đã xác nhận.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "fillForm": {
+            "#a-pin": "2468"
+          },
+          "click": "#admin-form button",
+          "wait": 500
+        },
+        {
+          "clickIn": "#admin-table tbody",
+          "text": "SM-100001",
+          "button": "Xác nhận",
+          "wait": 500
+        },
+        {
+          "expect": "#admin-table",
+          "text": "Đã xác nhận"
+        }
+      ],
+      "khu": "Quản trị · chuyển trạng thái",
+      "chu": "Nghiệp vụ"
     },
     {
       "id": "api-slots",
       "view": "api",
       "target": "#api-form",
       "title": "API: lấy khung giờ",
-      "say": "Khoanh bảng gọi API. Đây là API của app, không có giao diện riêng.",
-      "do": "Chọn GET, đường dẫn /slots?doctor=lan&date=ngày khám, bấm gửi.",
-      "expect": "Trả về 200 và danh sách giờ, có số lịch đã đặt và cờ đầy."
+      "say": "App có API mô phỏng. Đây không có giao diện riêng, nên phải test bằng cách gửi yêu cầu.",
+      "technique": "Test API: kiểm mã trạng thái (200) và nội dung trả về, với tham số đúng.",
+      "do": "Chọn GET, đường dẫn /slots?doctor=lan&date=ngày khám, rồi gửi.",
+      "expect": "Trạng thái 200 và danh sách giờ.",
+      "auto": [
+        {
+          "select": "#api-method",
+          "value": "GET"
+        },
+        {
+          "fill": "#api-path",
+          "value": "/slots?doctor=lan&date={plus:2}"
+        },
+        {
+          "click": "#api-form button",
+          "wait": 400
+        },
+        {
+          "expect": "#api-status",
+          "text": "→ 200"
+        }
+      ],
+      "khu": "API · GET /slots",
+      "chu": "API"
     },
     {
       "id": "api-sai",
       "view": "api",
       "target": "#api-body",
-      "title": "API: dữ liệu sai",
-      "say": "Khoanh ô thân yêu cầu. Thử gửi dữ liệu thiếu trường hoặc sai kiểu.",
-      "do": "POST /appointments với thân thiếu tên, rồi với tuổi là chữ.",
-      "expect": "Trả về 400 kèm lỗi từng trường. Không tạo lịch."
+      "title": "API: dữ liệu thiếu trường",
+      "say": "Gửi thân yêu cầu thiếu trường bắt buộc. API phải trả 400 và chỉ ra lỗi, không được tạo lịch.",
+      "technique": "Test dữ liệu sai cho API: thiếu trường, sai kiểu. Kiểm mã lỗi và nội dung lỗi.",
+      "do": "POST /appointments với thân chỉ có tên.",
+      "expect": "Trạng thái 400 và danh sách lỗi.",
+      "auto": [
+        {
+          "select": "#api-method",
+          "value": "POST"
+        },
+        {
+          "fill": "#api-path",
+          "value": "/appointments"
+        },
+        {
+          "fill": "#api-body",
+          "value": "{\"name\": \"Thiếu trường\"}"
+        },
+        {
+          "click": "#api-form button",
+          "wait": 400
+        },
+        {
+          "expect": "#api-status",
+          "text": "→ 400"
+        }
+      ],
+      "khu": "API · kiểm dữ liệu vào",
+      "chu": "API"
     },
     {
       "id": "api-huy",
       "view": "api",
       "target": "#api-response",
-      "title": "API: hủy và tra mã lạ",
-      "say": "Khoanh vùng phản hồi. Thử hủy một lịch đã có, rồi hủy lại chính lịch đó.",
-      "do": "DELETE /appointments/mã. Gửi lại đúng yêu cầu đó lần hai. Thử GET mã không có.",
-      "expect": "Lần đầu 200, lần hai 409. Mã không có trả 404."
+      "title": "API: hủy hai lần",
+      "say": "Hủy một lịch lần đầu thành công. Hủy lại lần hai phải bị từ chối, vì lịch đã hủy.",
+      "technique": "Test tính idempotent: làm lặp lại cùng một thao tác, kiểm kết quả lần hai.",
+      "do": "DELETE /appointments/SM-100001 hai lần liên tiếp.",
+      "expect": "Lần đầu 200. Lần hai 409.",
+      "auto": [
+        {
+          "reset": true
+        },
+        {
+          "select": "#api-method",
+          "value": "DELETE"
+        },
+        {
+          "fill": "#api-path",
+          "value": "/appointments/SM-100001"
+        },
+        {
+          "click": "#api-form button",
+          "wait": 400
+        },
+        {
+          "expect": "#api-status",
+          "text": "→ 200"
+        },
+        {
+          "click": "#api-form button",
+          "wait": 400
+        },
+        {
+          "expect": "#api-status",
+          "text": "→ 409"
+        }
+      ],
+      "khu": "API · hủy và trùng lặp",
+      "chu": "API"
     },
     {
       "id": "ket-thuc",
       "view": "book",
       "target": "#build-switch",
-      "title": "Đổi bản dựng và reset",
-      "say": "Khoanh nút đổi bản dựng 1.0/1.1. Cùng ca test, đổi bản để so kết quả.",
-      "do": "Đổi sang bản 1.1, chạy lại 2 bước đã thấy lỗi. Bấm Reset dữ liệu nếu cần làm lại.",
-      "expect": "Kết quả khác nhau ở các ca đã đánh dấu lỗi là dấu hiệu bản 1.1 khác 1.0."
+      "title": "Đổi bản dựng để so kết quả",
+      "say": "Nút Chuyển sang bản 1.1 ở chân trang. Cùng một ca test, đổi bản để xem kết quả có khác không.",
+      "technique": "Test hồi quy: chạy lại cùng ca trên bản mới và so với bản cũ.",
+      "do": "Đổi sang bản 1.1, chạy lại một bước đã làm, rồi so.",
+      "expect": "Kết quả khác nhau ở một số ca là dấu hiệu bản dựng khác nhau.",
+      "auto": [
+        {
+          "say": "Bản 1.1 khác bản 1.0 ở một số quy tắc. Muốn so, đổi bản ở góc trên và chạy lại đúng bước đó."
+        }
+      ],
+      "khu": "Bản dựng · so sánh",
+      "chu": "Giao diện"
     }
   ]
 }
