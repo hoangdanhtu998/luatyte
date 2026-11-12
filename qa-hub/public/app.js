@@ -709,6 +709,7 @@ async function renderProjects() {
   const typeSelect = el('select', null, optionsOf(SOURCE_TYPE_LABEL, 'manual'));
   const refInput = el('input', { type: 'text', autocomplete: 'off', placeholder: 'https://github.com/owner/repo' });
   const ownership = el('input', { type: 'checkbox', name: 'ownershipConfirmed', id: 'pj-ownershipConfirmed', 'aria-describedby': 'pj-ownershipConfirmed-error' });
+  const autoTests = el('input', { type: 'checkbox', name: 'autoTests', id: 'pj-autoTests' });
   const submit = el('button', { type: 'submit' }, 'Thêm dự án');
   const form = el('form', { class: 'card', id: 'pj-form', novalidate: true, 'aria-labelledby': 'pj-form-title' },
     el('h2', { id: 'pj-form-title', class: 'section-title' }, 'Thêm dự án'),
@@ -720,9 +721,12 @@ async function renderProjects() {
       el('div', { class: 'field' },
         el('label', { for: 'pj-ownershipConfirmed' }, ownership, ' Tôi có quyền kiểm thử domain này (bắt buộc với domain)'),
         el('p', { class: 'field-error', id: 'pj-ownershipConfirmed-error' })),
+      el('div', { class: 'field' },
+        el('label', { for: 'pj-autoTests' }, autoTests,
+          ' Cho bot cài và chạy test của dự án zip/GitHub sau khi quét virus sạch (mã lạ có thể nguy hiểm, chỉ bật khi tin nguồn)')),
     ),
     el('div', { class: 'form-actions' }, submit),
-    el('p', { class: 'muted' }, 'Dự án GitHub hoặc domain: mình chỉ đọc và kiểm tra. Cài đặt hoặc chạy test cần bạn tích xác nhận ở trang dự án.'),
+    el('p', { class: 'muted' }, 'Mã nguồn được quét virus trước khi đọc. Chạy test chỉ khi bạn bật tùy chọn trên.'),
   );
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -733,6 +737,7 @@ async function renderProjects() {
         sourceType: typeSelect.value,
         sourceRef: refInput.value,
         ownershipConfirmed: ownership.checked,
+        autoTests: autoTests.checked,
       } });
       showFormErrors(form, 'pj', summary, {});
       announce(`Đã thêm ${created.id}`);
@@ -1290,3 +1295,65 @@ setInterval(() => {
 
 window.addEventListener('hashchange', route);
 route();
+
+// ---------- Bảng tiến độ tự động (bên phải, mọi trang) ----------
+const STEP_STATUS_LABEL = {
+  pending: 'Chờ', running: 'Đang chạy', done: 'Xong', skipped: 'Bỏ qua', error: 'Lỗi',
+};
+const PROGRESS_REFRESH_MS = 2000;
+
+function renderTestProgress(panel, progress) {
+  const bar = el('div', { class: 'progress-bar', role: 'progressbar', 'aria-label': 'Tiến độ test', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(progress.percent) },
+    el('div', { class: 'progress-fill' }));
+  bar.firstChild.style.width = `${progress.percent}%`;
+  panel.replaceChildren(
+    el('h2', { class: 'progress-title' }, 'Đang test QA Hub'),
+    el('p', null,
+      el('strong', null, `${progress.percent}%`),
+      ` · ${progress.done}/${progress.total || '?'} test`),
+    bar,
+    el('p', { class: 'progress-current' }, `Đang chạy: ${progress.current ?? '…'}`),
+    el('p', { class: 'muted' }, `Đạt ${progress.passed} · Lỗi ${progress.failed}`),
+  );
+}
+
+function renderProgressPanel(progress) {
+  const panel = document.getElementById('progress-panel');
+  if (!panel) return;
+  if (progress.kind === 'tests') {
+    renderTestProgress(panel, progress);
+    return;
+  }
+  const idle = progress.state === 'idle';
+  const stepItems = progress.steps.map((step) => el('li', { class: `progress-step progress-${step.status}` },
+    el('span', { class: 'progress-step-label' }, step.label),
+    el('span', { class: 'progress-step-status' }, STEP_STATUS_LABEL[step.status] ?? step.status),
+    step.detail ? el('span', { class: 'progress-step-detail muted' }, step.detail) : null));
+  const bar = el('div', { class: 'progress-bar', role: 'progressbar', 'aria-label': 'Tiến độ tự động', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(progress.percent) },
+    el('div', { class: 'progress-fill' }));
+  bar.firstChild.style.width = `${progress.percent}%`;
+  panel.replaceChildren(
+    el('h2', { class: 'progress-title' }, 'Tiến độ tự động'),
+    idle
+      ? el('p', { class: 'muted' }, 'Chưa có lượt nào. Thêm dự án hoặc upload zip để bot bắt đầu.')
+      : el('p', null,
+        el('strong', null, `${progress.percent}%`),
+        ` · ${progress.state === 'done' ? 'đã xong' : progress.state === 'error' ? 'có lỗi' : 'đang chạy'}`),
+    bar,
+    idle ? null : el('ol', { class: 'progress-steps' }, ...stepItems),
+  );
+}
+
+async function refreshProgress() {
+  try {
+    renderProgressPanel(await api('/api/progress'));
+  } catch {
+    // Mất kết nối tạm thời: giữ nguyên bảng cũ, lần sau thử lại.
+  }
+}
+
+if (document.body && !document.getElementById('progress-panel')) {
+  document.body.appendChild(el('aside', { id: 'progress-panel', class: 'progress-panel', 'aria-label': 'Tiến độ tự động' }));
+  refreshProgress();
+  setInterval(refreshProgress, PROGRESS_REFRESH_MS);
+}

@@ -2,13 +2,17 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { existsSync, mkdirSync, rmSync, renameSync } from 'node:fs';
+import { existsSync, mkdirSync, rmSync, renameSync, readdirSync } from 'node:fs';
+import { findDefenderCli, scanForThreats } from './lib/virus-scan.js';
+import { runProjectTests } from './lib/project-tests.js';
 import { extractZip, ZipError, ZIP_LIMITS } from './lib/zip.js';
 import { scanDomain } from './lib/domain-scan.js';
 import { collectProjectFiles, ruleSuggestions, claudeSuggestions } from './lib/code-review.js';
 import { createAutoRunner } from './lib/autorun.js';
+import { runProjectPipeline, PIPELINE_STEPS } from './lib/pipeline.js';
+import { newJob, setStep, summarize } from './lib/progress.js';
 import os from 'node:os';
-import { execFile } from 'node:child_process';
+import { execFile, spawn } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 
@@ -378,7 +382,9 @@ async function createProject(req, res) {
   const result = validateProject(await readJsonBody(req));
   if (!result.ok) throw new HttpError(400, 'Dữ liệu không hợp lệ', result.errors);
   const workflow = { ...emptyWorkflow(), source: true };
-  sendJson(res, 201, store.insert('projects', { ...result.value, workflow, extraFindings: '', checklistState: {} }));
+  const created = store.insert('projects', { ...result.value, workflow, extraFindings: '', checklistState: {} });
+  scheduleAutoPipeline(created.id);
+  sendJson(res, 201, created);
 }
 
 async function getProject(req, res, url, match) {
@@ -431,7 +437,9 @@ async function cloneProject(req, res, url, match) {
     throw new HttpError(502, 'Không clone được repo', { sourceRef: String(err.stderr || err.message).split('\n')[0].slice(0, 200) });
   }
   const workflow = { ...project.workflow, clone: true };
-  sendJson(res, 200, store.update('projects', project.id, { workflow, localPath: dir }));
+  const updated = store.update('projects', project.id, { workflow, localPath: dir });
+  scheduleAutoPipeline(project.id);
+  sendJson(res, 200, updated);
 }
 
 async function recordRun(req, res, url, match) {
@@ -523,11 +531,13 @@ async function uploadZip(req, res, url, match) {
     rawName = 'upload.zip';
   }
   const fileName = path.basename(rawName).replace(/[^\w.-]/g, '_').slice(0, 120);
-  sendJson(res, 200, store.update('projects', project.id, {
+  const updated = store.update('projects', project.id, {
     workflow: { ...project.workflow, clone: true },
     localPath: dir,
     sourceRef: fileName,
-  }));
+  });
+  scheduleAutoPipeline(project.id);
+  sendJson(res, 200, updated);
 }
 
 const SCAN_COOLDOWN_MS = 60000;
@@ -717,6 +727,8 @@ const ROUTES = [
   { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/clone$/, handler: cloneProject },
   { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/upload$/, handler: uploadZip },
   { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/scan$/, handler: scanProject },
+  { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/auto$/, handler: runPipelineNow },
+  { method: 'GET', pattern: /^\/api\/progress$/, handler: getProgress },
   { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/ai-review$/, handler: aiReview },
   { method: 'POST', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/ai-review\/apply$/, handler: applyAiReview },
   { method: 'GET', pattern: /^\/api\/projects\/(PRJ-\d{3,})\/checklist$/, handler: getProjectChecklist },
@@ -830,9 +842,137 @@ function recordAutoRun(record) {
   });
 }
 
-const autoMinutes = Number(process.env.AUTO_TEST_MINUTES ?? 0);
-const autorunner = createAutoRunner({ root, resultsFile: RESULTS_FILE, onFinish: recordAutoRun });
+// Sau mỗi lần chạy bộ test, tự cập nhật kết quả test case bằng cách chạy script thực thi.
+const AUTO_EXECUTE_ON = process.env.AUTO_EXECUTE !== 'off';
+function runExecutorAfterTests() {
+  if (!AUTO_EXECUTE_ON) return;
+  const child = spawn(process.execPath, [path.join(root, 'scripts', 'execute-test-cases.mjs')], {
+    cwd: root,
+    env: { ...process.env, BASE_URL: `http://${HOST}:${PORT}` },
+    stdio: 'ignore',
+  });
+  child.on('error', (err) => console.error('Không chạy được script thực thi:', err.message));
+}
+
+const autorunFinish = (record) => {
+  recordAutoRun(record);
+  runExecutorAfterTests();
+};
+
+// Mặc định 60 phút một lần; đặt AUTO_TEST_MINUTES=0 để tắt.
+const autoMinutes = Number(process.env.AUTO_TEST_MINUTES ?? 60);
+const autorunner = createAutoRunner({ root, resultsFile: RESULTS_FILE, onFinish: autorunFinish });
 const autoInterval = autoMinutes > 0 ? autorunner.start(autoMinutes) : null;
+
+// ---------- Luồng tự động theo dự án ----------
+const AUTO_PIPELINE_ON = process.env.AUTO_PIPELINE !== 'off';
+const PIPELINE_MINUTES = Number(process.env.PIPELINE_MINUTES ?? 60);
+
+const DEFENDER_CLI = findDefenderCli(existsSync, (dir) => readdirSync(dir));
+
+function pipelineDeps() {
+  return {
+    scanDomain,
+    scanVirus: (dir) => scanForThreats(dir, { cli: DEFENDER_CLI }),
+    runTests: (dir) => runProjectTests(dir),
+    recordTests: (id, status) => {
+      store.update('projects', id, { testedAt: new Date().toISOString(), testStatus: status });
+    },
+    saveScan: (id, scan, homeOk) => {
+      const project = store.find('projects', id);
+      store.update('projects', id, { scan, workflow: { ...project.workflow, smoke: homeOk } });
+    },
+    exists: existsSync,
+    collectFiles: collectProjectFiles,
+    suggest: async ({ tree }) => ruleSuggestions(tree, store.list('checklist')),
+    applyChecklist: (id, suggestions, doneIds) => {
+      const project = store.find('projects', id);
+      const state = { ...(project.checklistState ?? {}) };
+      for (const itemId of doneIds) state[itemId] = true;
+      if (id === DEFAULT_PROJECT_ID) {
+        for (const itemId of doneIds) store.update('checklist', itemId, { done: true });
+      }
+      store.update('projects', id, {
+        checklistState: state,
+        checklistAi: { reviewedAt: new Date().toISOString(), mode: 'rules', note: 'Tự động sau khi có mã', fileCount: null, suggestions },
+      });
+    },
+    recordReport: (id) => {
+      const project = store.find('projects', id);
+      store.update('projects', id, { workflow: { ...project.workflow, report: true } });
+    },
+  };
+}
+
+function logPipelineError(projectId, err) {
+  console.error(`Luồng tự động lỗi cho ${projectId}:`, err.message);
+}
+
+// Lượt tự động gần nhất, để bảng tiến độ bên phải hiển thị. Chỉ một lượt chạy tại một thời điểm.
+let latestJob = null;
+let jobCount = 0;
+
+function startTrackedPipeline(project) {
+  if (latestJob?.state === 'running') return null;
+  jobCount += 1;
+  const jobId = `JOB-${String(jobCount).padStart(3, '0')}`;
+  latestJob = newJob({ id: jobId, projectId: project.id, stepDefs: PIPELINE_STEPS, now: new Date().toISOString() });
+  const onStep = (key, status, detail) => {
+    if (latestJob?.id === jobId) latestJob = setStep(latestJob, key, status, detail);
+  };
+  return runProjectPipeline(project, { ...pipelineDeps(), onStep })
+    .then((outcome) => {
+      latestJob = { ...latestJob, state: 'done', finishedAt: new Date().toISOString() };
+      return outcome;
+    })
+    .catch((err) => {
+      latestJob = { ...latestJob, state: 'error', finishedAt: new Date().toISOString() };
+      logPipelineError(project.id, err);
+      throw err;
+    });
+}
+
+function scheduleAutoPipeline(projectId) {
+  if (!AUTO_PIPELINE_ON) return;
+  setImmediate(() => {
+    const project = store.find('projects', projectId);
+    const run = project && startTrackedPipeline(project);
+    if (run) run.catch(() => {}); // Lỗi đã được ghi trong startTrackedPipeline.
+  });
+}
+
+async function runAllPipelines() {
+  for (const project of store.list('projects')) {
+    const run = startTrackedPipeline(project);
+    if (!run) return;
+    await run.catch(() => {});
+  }
+}
+
+async function runPipelineNow(req, res, url, match) {
+  const project = projectOrThrow(match[1]);
+  const run = startTrackedPipeline(project);
+  if (!run) throw new HttpError(409, 'Đang có lượt tự động chạy, đợi lượt đó xong');
+  sendJson(res, 200, await run);
+}
+
+// Ưu tiên bộ test đang chạy (hiện test nào đang chạy và đã xong bao nhiêu), không thì lượt dự án gần nhất.
+async function getProgress(req, res) {
+  const live = autorunner.status().live;
+  if (live.running) {
+    sendJson(res, 200, {
+      kind: 'tests', state: 'running', percent: live.percent, current: live.current,
+      done: live.done, total: live.total, passed: live.passed, failed: live.failed, steps: [],
+    });
+    return;
+  }
+  sendJson(res, 200, { kind: 'pipeline', ...summarize(latestJob) });
+}
+
+if (AUTO_PIPELINE_ON && PIPELINE_MINUTES > 0) {
+  // unref để timer không giữ tiến trình sống khi server tắt.
+  setInterval(runAllPipelines, PIPELINE_MINUTES * 60000).unref();
+}
 
 async function getAutorun(req, res) {
   sendJson(res, 200, autorunner.status(autoInterval));

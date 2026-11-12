@@ -62,6 +62,8 @@ export function validateProject(body) {
       sourceType: body.sourceType,
       sourceRef: rawRef || null,
       ownershipConfirmed: body.sourceType === 'domain',
+      // Chỉ zip/GitHub mới có thể bật chạy test; mặc định tắt vì mã lạ có thể độc hại.
+      autoTests: body.autoTests === true && (body.sourceType === 'zip' || body.sourceType === 'github'),
     },
   };
 }
