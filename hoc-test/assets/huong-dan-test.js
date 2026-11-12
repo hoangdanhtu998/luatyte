@@ -145,6 +145,7 @@
     try { node.scrollIntoView({ block: 'center' }); } catch (e) { /* bỏ qua */ }
     await sleep(120);
     cursorTo(node);
+    owlTo(node);
     await sleep(reduceMotion ? 40 : 650);
   }
   function fireEvents(node, names) {
@@ -253,17 +254,54 @@
     chat.scrollTop = chat.scrollHeight;
   }
 
+  // Khối đề bài: tiêu đề, lời giảng, các bước 1-2-3, và hộp hướng giải.
+  function renderCard(step, i) {
+    var card = document.getElementById('hd-card');
+    if (!card) return;
+    card.replaceChildren();
+    card.appendChild(el('h2', '', 'Câu ' + (i + 1) + ': ' + step.title));
+    card.appendChild(el('p', '', step.say));
+
+    var blocks = el('div', 'hd-blocks');
+    blocks.appendChild(block('Khoanh chỗ cần xem', step.target ? 'Vòng vàng trong app là chỗ làm việc của bước này.' : 'Mở đúng tab rồi làm theo bước.'));
+    blocks.appendChild(block('Làm gì', step.do));
+    blocks.appendChild(block('Kỳ vọng', step.expect));
+    card.appendChild(blocks);
+
+    if (step.technique || step.hint) {
+      var hint = el('div', 'hd-hint');
+      hint.appendChild(el('h3', '', 'Hướng giải'));
+      var ol = el('ol');
+      if (step.technique) ol.appendChild(el('li', '', step.technique));
+      if (step.hint) ol.appendChild(el('li', '', step.hint));
+      hint.appendChild(ol);
+      card.appendChild(hint);
+    }
+  }
+  function block(title, text) {
+    var b = el('div', 'hd-block');
+    b.appendChild(el('h3', '', title));
+    b.appendChild(el('p', '', text || ''));
+    return b;
+  }
+  // Chọn bước từ menu: nhảy tới câu đó và đóng menu.
+  function pickStep(i) {
+    var picker = document.querySelector('.hd-picker');
+    if (picker) picker.open = false;
+    goTo(i);
+  }
+
   function renderList() {
     list.replaceChildren();
     steps.forEach(function (s, i) {
       var r = results[s.id];
       var st = r ? r.status : '';
-      var li = el('li', (st ? st : '') + (i === idx ? ' cur' : ''), st ? STATUS_MARK[st] : String(i + 1));
-      li.title = (i + 1) + '. ' + s.title;
+      var li = el('li', (st ? st : '') + (i === idx ? ' cur' : ''));
       li.setAttribute('role', 'button');
       li.tabIndex = 0;
-      li.addEventListener('click', function () { goTo(i); });
-      li.addEventListener('keydown', function (e) { if (e.key === 'Enter') goTo(i); });
+      li.append(el('span', 'n', String(i + 1) + '.'), el('span', 't', s.title), el('span', 's', st ? STATUS_MARK[st] : ''));
+      li.addEventListener('click', function () { pickStep(i); });
+      li.addEventListener('keydown', function (e) { if (e.key === 'Enter') pickStep(i); });
       list.appendChild(li);
     });
     var done = Object.keys(results).filter(function (k) { return results[k] && results[k].status; }).length;
@@ -271,6 +309,58 @@
     var now = document.getElementById('hd-now');
     if (now && steps[idx]) now.textContent = 'Bước ' + (idx + 1) + ': ' + steps[idx].title;
   }
+  // ----- Cú trợ giảng bay tới từng ô, và phụ đề gõ dần dưới khung app -----
+  var owl = document.getElementById('hd-owl');
+  var caption = document.getElementById('hd-caption');
+  if (owl && tutor) {
+    var svgSrc = tutor.querySelector('svg');
+    if (svgSrc) owl.appendChild(svgSrc.cloneNode(true));
+  }
+  function owlTo(node) {
+    if (!owl || !node) return;
+    var fr = frame.getBoundingClientRect();
+    var r = node.getBoundingClientRect();
+    var x = Math.min(fr.left + r.right + 10, fr.right - 124);
+    var y = Math.max(fr.top + r.top - 34, fr.top + 6);
+    owl.hidden = false;
+    owl.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+  }
+  function setOwlPose(pose) {
+    if (owl) owl.className = 'hd-owl tutor ' + pose;
+  }
+  function hideOwl() {
+    if (owl) owl.hidden = true;
+  }
+  // Phụ đề dưới khung app: mỗi dòng gõ dần, các dòng trước vẫn giữ và cuộn.
+  async function typeCaption(text, cls) {
+    if (!caption) return;
+    caption.hidden = false;
+    var line = el('div', 'hd-cap-line' + (cls ? ' ' + cls : ''));
+    caption.appendChild(line);
+    for (var i = 0; i < text.length; i++) {
+      line.textContent += text[i];
+      if (i % 4 === 0) caption.scrollTop = caption.scrollHeight;
+      await sleep(16);
+    }
+    caption.scrollTop = caption.scrollHeight;
+  }
+  function resetCaption() {
+    if (caption) { caption.replaceChildren(); caption.hidden = true; }
+  }
+  function clearCaptionLater(ms) {
+    setTimeout(function () { if (caption && !running) resetCaption(); }, ms);
+  }
+
+  // Tư thế của trợ giảng: idle, point, think, happy, oops. Tự về idle sau ms nếu có.
+  var tutor = document.getElementById('hd-tutor');
+  var poseTimer = null;
+  function setPose(pose, ms) {
+    if (!tutor) return;
+    tutor.className = 'tutor ' + pose;
+    clearTimeout(poseTimer);
+    if (ms) poseTimer = setTimeout(function () { tutor.className = 'tutor idle'; }, ms);
+  }
+
   function setBusy(v) {
     running = v;
     ctrls.forEach(function (b) { b.disabled = v; });
@@ -281,12 +371,9 @@
     var step = steps[i];
     note.value = (results[step.id] && results[step.id].note) || '';
     cursor.hidden = true;
+    setPose('idle');
     renderList();
-    botSay('Bước ' + (i + 1) + '/' + steps.length + ': ' + step.title, 'step');
-    botSay(step.say);
-    if (step.technique) botSay('Kỹ thuật: ' + step.technique);
-    botSay('Làm: ' + step.do);
-    botSay('Kỳ vọng: ' + step.expect);
+    renderCard(step, i);
     btnBack.disabled = i === 0;
     var target = await spotlight(step);
     if (!target && !step.auto) botSay('Chưa thấy phần này trong app. Hãy mở đúng tab hoặc làm bước trước rồi bấm Khoanh lại.');
@@ -302,13 +389,17 @@
     var step = steps[idx];
     if (!step.auto) return;
     setBusy(true);
+    setPose('point');
+    setOwlPose('point');
+    resetCaption();
     var pass = 0, fail = 0;
     try {
-      botSay('Mình làm mẫu bước này. Xem con trỏ.');
+      botSay('Mình làm mẫu bước này. Xem con trỏ và cú.');
       await spotlight(step);
+      if (currentTarget) owlTo(currentTarget);
       for (var k = 0; k < step.auto.length; k++) {
         var a = step.auto[k];
-        if (a.say) { await botSayTyping(a.say); continue; }
+        if (a.say) { botSay(a.say); await typeCaption(a.say); continue; }
         if (a.reset) { await actReset(); showView(step.view); await sleep(300); continue; }
         if (a.fillForm) {
           for (var sel in a.fillForm) {
@@ -326,8 +417,19 @@
         if (a.expect) {
           var ok = checkText(a.expect, a.text);
           if (ok) pass++; else fail++;
-          botSay((ok ? '✓ Đúng kỳ vọng: ' : '✗ Chưa khớp kỳ vọng: ') + '"' + a.text + '"');
-          await sleep(200);
+          var line;
+          if (ok) {
+            line = '✓ Đúng kỳ vọng: "' + a.text + '"';
+            setOwlPose('happy');
+          } else {
+            line = '✗ Ghi lỗi: ' + (step.khu || step.title) + '. Người xử lý: ' + (step.chu || 'chưa phân công') +
+              '. Không thấy "' + a.text + '" trong ' + a.expect + '.';
+            setOwlPose('oops');
+          }
+          botSay(line);
+          await typeCaption(line, ok ? 'good' : 'bad');
+          await sleep(500);
+          setOwlPose('point');
         }
       }
       botSay('Mẫu xong: ' + pass + ' kiểm tra đúng, ' + fail + ' chưa khớp.' +
@@ -339,6 +441,10 @@
     } finally {
       cursor.classList.remove('press');
       setBusy(false);
+      setPose('idle');
+      setOwlPose('idle');
+      setTimeout(hideOwl, 1500);
+      clearCaptionLater(12000);
       drawRing();
     }
   }
@@ -348,6 +454,7 @@
     var step = steps[idx];
     results[step.id] = { status: status, note: note.value.trim(), at: new Date().toISOString() };
     saveResults();
+    setPose(status === 'pass' ? 'happy' : status === 'fail' ? 'oops' : 'idle', 1800);
     if (status === 'fail') {
       botSay('Ghi lỗi: ' + (step.khu || step.title) + '. Người xử lý: ' + (step.chu || 'chưa phân công') + '.' +
         (results[step.id].note ? ' Mô tả: ' + results[step.id].note : ' Chưa có mô tả, bạn nên ghi thấy gì và mong đợi gì.'));
@@ -387,6 +494,7 @@
 
   function hint() {
     var step = steps[idx];
+    setPose('think', 2500);
     botSay(step.hint || 'Bước này không có gợi ý thêm. Đọc lại phần Làm và Kỳ vọng.');
   }
 

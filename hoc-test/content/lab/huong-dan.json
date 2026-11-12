@@ -38,8 +38,14 @@
           "wait": 900
         },
         {
+          "say": "Kiểm kết quả: phải thấy \"Họ tên phải từ 2 đến 50 ký tự\"."
+        },
+        {
           "expect": "#book-form",
           "text": "Họ tên phải từ 2 đến 50 ký tự"
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Số điện thoại phải gồm 10 chữ số\"."
         },
         {
           "expect": "#book-form",
@@ -68,8 +74,14 @@
           "value": "A"
         },
         {
+          "say": "Bấm nút Đặt lịch."
+        },
+        {
           "click": "#book-submit",
           "wait": 900
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Họ tên phải từ 2 đến 50 ký tự\"."
         },
         {
           "expect": "#book-form",
@@ -97,8 +109,14 @@
           "value": "090123"
         },
         {
+          "say": "Bấm nút Đặt lịch."
+        },
+        {
           "click": "#book-submit",
           "wait": 900
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Số điện thoại phải gồm 10 chữ số\"."
         },
         {
           "expect": "#book-form",
@@ -126,8 +144,14 @@
           "value": "15"
         },
         {
+          "say": "Bấm nút Đặt lịch."
+        },
+        {
           "click": "#book-submit",
           "wait": 900
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Người dưới 16 tuổi cần có tên người giám hộ\"."
         },
         {
           "expect": "#book-form",
@@ -155,8 +179,14 @@
           "value": "121"
         },
         {
+          "say": "Bấm nút Đặt lịch."
+        },
+        {
           "click": "#book-submit",
           "wait": 900
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Tuổi phải là số nguyên từ 0 đến 120\"."
         },
         {
           "expect": "#book-form",
@@ -184,8 +214,14 @@
           "value": "{today}"
         },
         {
+          "say": "Bấm nút Đặt lịch."
+        },
+        {
           "click": "#book-submit",
           "wait": 900
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Ngày khám phải từ ngày mai\"."
         },
         {
           "expect": "#book-form",
@@ -213,6 +249,9 @@
           "reset": true
         },
         {
+          "say": "Mình điền: Họ tên = Khách mẫu một; SĐT = 0912000001; Tuổi = 30; Bác sĩ = lan; Loại khám = thuong; Ngày khám = {ngay:2}; Giờ khám = 08:00."
+        },
+        {
           "fillForm": {
             "#f-name": "Khách mẫu một",
             "#f-phone": "0912000001",
@@ -226,6 +265,9 @@
           "wait": 1000
         },
         {
+          "say": "Mình điền: Họ tên = Khách mẫu hai; SĐT = 0912000002; Tuổi = 30; Bác sĩ = lan; Loại khám = thuong; Ngày khám = {ngay:2}; Giờ khám = 08:00."
+        },
+        {
           "fillForm": {
             "#f-name": "Khách mẫu hai",
             "#f-phone": "0912000002",
@@ -237,6 +279,9 @@
           },
           "click": "#book-submit",
           "wait": 1000
+        },
+        {
+          "say": "Mình điền: Họ tên = Khách mẫu ba; SĐT = 0912000003; Tuổi = 30; Bác sĩ = lan; Loại khám = thuong; Ngày khám = {ngay:2}; Giờ khám = 08:00."
         },
         {
           "fillForm": {
@@ -268,6 +313,9 @@
           "wait": 1000
         },
         {
+          "say": "Kiểm kết quả: phải thấy \"Khung giờ này đã đủ 3 lịch\"."
+        },
+        {
           "expect": "#book-form",
           "text": "Khung giờ này đã đủ 3 lịch"
         }
@@ -293,11 +341,17 @@
           "value": "65"
         },
         {
+          "say": "Tick BHYT."
+        },
+        {
           "check": "#f-bhyt",
           "on": true
         },
         {
           "wait": 300
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"70.000\"."
         },
         {
           "expect": "#fee-preview",
@@ -324,6 +378,9 @@
           "reset": true
         },
         {
+          "say": "Mình điền: Họ tên = Lê Thị Mai; SĐT = 0933444555; Tuổi = 28; Bác sĩ = mai; Loại khám = thuong; Ngày khám = {ngay:3}; Giờ khám = 10:00."
+        },
+        {
           "fillForm": {
             "#f-name": "Lê Thị Mai",
             "#f-phone": "0933444555",
@@ -335,6 +392,9 @@
           },
           "click": "#book-submit",
           "wait": 1000
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"SM-\"."
         },
         {
           "expect": "#book-result",
@@ -355,12 +415,18 @@
       "expect": "Hiện đúng tên Trần Thị Bình.",
       "auto": [
         {
+          "say": "Mình điền: Mã lịch = SM-100002; SĐT tra cứu = 0901000002."
+        },
+        {
           "fillForm": {
             "#l-code": "SM-100002",
             "#l-phone": "0901000002"
           },
           "click": "#lookup-form button",
           "wait": 500
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Trần Thị Bình\"."
         },
         {
           "expect": "#lookup-result",
@@ -381,12 +447,18 @@
       "expect": "Cả hai đều báo không tìm thấy.",
       "auto": [
         {
+          "say": "Mình điền: Mã lịch = SM-100002; SĐT tra cứu = 0900000000."
+        },
+        {
           "fillForm": {
             "#l-code": "SM-100002",
             "#l-phone": "0900000000"
           },
           "click": "#lookup-form button",
           "wait": 500
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Không tìm thấy lịch\"."
         },
         {
           "expect": "#lookup-result",
@@ -407,12 +479,21 @@
       "expect": "Báo lỗi cho SĐT và mật khẩu.",
       "auto": [
         {
+          "say": "Bấm nút Đăng nhập."
+        },
+        {
           "click": "#login-submit",
           "wait": 400
         },
         {
+          "say": "Kiểm kết quả: phải thấy \"Số điện thoại phải gồm 10 chữ số\"."
+        },
+        {
           "expect": "#login-form",
           "text": "Số điện thoại phải gồm 10 chữ số"
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Hãy nhập mật khẩu\"."
         },
         {
           "expect": "#login-form",
@@ -433,12 +514,18 @@
       "expect": "Báo 'Số điện thoại hoặc mật khẩu không đúng'.",
       "auto": [
         {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-mat-khau."
+        },
+        {
           "fillForm": {
             "#login-phone": "0901000001",
             "#login-pass": "sai-mat-khau"
           },
           "click": "#login-submit",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Số điện thoại hoặc mật khẩu không đúng\"."
         },
         {
           "expect": "#login-msg",
@@ -462,12 +549,18 @@
           "reset": true
         },
         {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-1."
+        },
+        {
           "fillForm": {
             "#login-phone": "0901000001",
             "#login-pass": "sai-1"
           },
           "click": "#login-submit",
           "wait": 400
+        },
+        {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-2."
         },
         {
           "fillForm": {
@@ -478,12 +571,18 @@
           "wait": 400
         },
         {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-3."
+        },
+        {
           "fillForm": {
             "#login-phone": "0901000001",
             "#login-pass": "sai-3"
           },
           "click": "#login-submit",
           "wait": 400
+        },
+        {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-4."
         },
         {
           "fillForm": {
@@ -494,12 +593,18 @@
           "wait": 400
         },
         {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = sai-5."
+        },
+        {
           "fillForm": {
             "#login-phone": "0901000001",
             "#login-pass": "sai-5"
           },
           "click": "#login-submit",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Tạm khóa đăng nhập\"."
         },
         {
           "expect": "#login-msg",
@@ -523,6 +628,9 @@
           "reset": true
         },
         {
+          "say": "Mình điền: SĐT đăng nhập = 0901000001; Mật khẩu = Sao@2026."
+        },
+        {
           "fillForm": {
             "#login-phone": "0901000001",
             "#login-pass": "Sao@2026"
@@ -531,8 +639,14 @@
           "wait": 400
         },
         {
+          "say": "Kiểm kết quả: phải thấy \"Nguyễn Văn An\"."
+        },
+        {
           "expect": "#login-name",
           "text": "Nguyễn Văn An"
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"SM-100001\"."
         },
         {
           "expect": "#my-list",
@@ -556,11 +670,17 @@
           "reset": true
         },
         {
+          "say": "Mình điền: PIN = 0000."
+        },
+        {
           "fillForm": {
             "#a-pin": "0000"
           },
           "click": "#admin-form button",
           "wait": 400
+        },
+        {
+          "say": "Mình điền: PIN = 0001."
         },
         {
           "fillForm": {
@@ -570,11 +690,17 @@
           "wait": 400
         },
         {
+          "say": "Mình điền: PIN = 0002."
+        },
+        {
           "fillForm": {
             "#a-pin": "0002"
           },
           "click": "#admin-form button",
           "wait": 400
+        },
+        {
+          "say": "Mình điền: PIN = 0003."
         },
         {
           "fillForm": {
@@ -584,11 +710,17 @@
           "wait": 400
         },
         {
+          "say": "Mình điền: PIN = 0004."
+        },
+        {
           "fillForm": {
             "#a-pin": "0004"
           },
           "click": "#admin-form button",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"bị khóa\"."
         },
         {
           "expect": "#admin-err",
@@ -612,11 +744,17 @@
           "reset": true
         },
         {
+          "say": "Mình điền: PIN = 2468."
+        },
+        {
           "fillForm": {
             "#a-pin": "2468"
           },
           "click": "#admin-form button",
           "wait": 500
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Tổng số lịch\"."
         },
         {
           "expect": "#admin-panel",
@@ -640,6 +778,9 @@
           "reset": true
         },
         {
+          "say": "Mình điền: PIN = 2468."
+        },
+        {
           "fillForm": {
             "#a-pin": "2468"
           },
@@ -647,10 +788,16 @@
           "wait": 500
         },
         {
+          "say": "Tìm dòng SM-100001 và bấm Xác nhận."
+        },
+        {
           "clickIn": "#admin-table tbody",
           "text": "SM-100001",
           "button": "Xác nhận",
           "wait": 500
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"Đã xác nhận\"."
         },
         {
           "expect": "#admin-table",
@@ -671,16 +818,28 @@
       "expect": "Trạng thái 200 và danh sách giờ.",
       "auto": [
         {
+          "say": "Chọn GET ở phương thức."
+        },
+        {
           "select": "#api-method",
           "value": "GET"
+        },
+        {
+          "say": "Nhập \"/slots?doctor=lan&date={plus:2}\" vào đường dẫn."
         },
         {
           "fill": "#api-path",
           "value": "/slots?doctor=lan&date={plus:2}"
         },
         {
+          "say": "Bấm nút Gửi yêu cầu."
+        },
+        {
           "click": "#api-form button",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"→ 200\"."
         },
         {
           "expect": "#api-status",
@@ -701,20 +860,35 @@
       "expect": "Trạng thái 400 và danh sách lỗi.",
       "auto": [
         {
+          "say": "Chọn POST ở phương thức."
+        },
+        {
           "select": "#api-method",
           "value": "POST"
+        },
+        {
+          "say": "Nhập \"/appointments\" vào đường dẫn."
         },
         {
           "fill": "#api-path",
           "value": "/appointments"
         },
         {
+          "say": "Nhập \"{\"name\": \"Thiếu trường\"}\" vào thân yêu cầu."
+        },
+        {
           "fill": "#api-body",
           "value": "{\"name\": \"Thiếu trường\"}"
         },
         {
+          "say": "Bấm nút Gửi yêu cầu."
+        },
+        {
           "click": "#api-form button",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"→ 400\"."
         },
         {
           "expect": "#api-status",
@@ -738,24 +912,42 @@
           "reset": true
         },
         {
+          "say": "Chọn DELETE ở phương thức."
+        },
+        {
           "select": "#api-method",
           "value": "DELETE"
+        },
+        {
+          "say": "Nhập \"/appointments/SM-100001\" vào đường dẫn."
         },
         {
           "fill": "#api-path",
           "value": "/appointments/SM-100001"
         },
         {
+          "say": "Bấm nút Gửi yêu cầu."
+        },
+        {
           "click": "#api-form button",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"→ 200\"."
         },
         {
           "expect": "#api-status",
           "text": "→ 200"
         },
         {
+          "say": "Bấm nút Gửi yêu cầu."
+        },
+        {
           "click": "#api-form button",
           "wait": 400
+        },
+        {
+          "say": "Kiểm kết quả: phải thấy \"→ 409\"."
         },
         {
           "expect": "#api-status",
