@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Nghề tester: tổng số phút và giờ học",
+    "prompt": "Đọc số ngày n và số phút học mỗi ngày m. In tổng số phút học và số giờ học đầy đủ (làm tròn xuống), cách nhau một khoảng trắng.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n    // TODO: in \"tong_phut gio\"\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "30 20\n",
+        "expected": "600 10\n"
+      },
+      {
+        "stdin": "5 45\n",
+        "expected": "225 3\n"
+      },
+      {
+        "stdin": "1 59\n",
+        "expected": "59 0\n"
+      }
+    ],
+    "hints": [
+      "Tổng phút = n * m.",
+      "Số giờ = tổng phút chia 60, phép chia nguyên."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n, m;\n    scanf(\"%d %d\", &n, &m);\n    int tong = n * m;\n    printf(\"%d %d\\n\", tong, tong / 60);\n    return 0;\n}\n"
+  }
+]

@@ -492,3 +492,9 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:700;letter-spacing:-.0
 .btn:not(.ghost):not(:disabled){background:var(--navy);border-color:var(--navy);color:#F5F3EE}
 .btn:not(.ghost):not(:disabled):hover{background:var(--teal);border-color:var(--teal);color:#fff}
 a{color:var(--teal)}
+
+/* Responsive: rộng theo màn hình, không để khoảng trống hai bên lớn trên máy tính */
+main { max-width: min(1600px, 96vw); }
+@media (min-width: 900px) { main { padding-inline: clamp(20px, 2.4vw, 40px); } }
+@media (min-width: 1200px) { .lesson-body { max-width: 1040px; margin-inline: auto; } }
+@media (max-width: 899px) { main { padding-inline: 16px; } }

@@ -1,0 +1,91 @@
+{
+  "id": "phan-quyen",
+  "title": "Thực hành: ca kiểm thử phân quyền",
+  "lesson": "k12-phan-quyen",
+  "app": {
+    "type": "matrix",
+    "name": "Danh sách ca cho vai trò học sinh (mẫu)",
+    "items": [
+      { "id": "xem-bai-minh", "label": "Xem bài của chính mình" },
+      { "id": "nop-bai", "label": "Nộp bài của mình" },
+      { "id": "xem-bai-gv", "label": "Mở bài của giáo viên bằng địa chỉ trực tiếp" },
+      { "id": "sua-diem", "label": "Sửa điểm của bạn khác" },
+      { "id": "xem-lop-khac", "label": "Xem danh sách lớp khác" }
+    ]
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Phân quyền có hai phần: kiểm việc được phép và kiểm việc bị cấm.",
+        "Bấm Chạy demo để xem một ca được phép."
+      ],
+      "demo": [
+        { "type": "tick", "id": "xem-bai-minh" },
+        { "type": "submit" },
+        { "type": "say", "text": "Ca này kiểm việc được phép. Phân quyền còn phải kiểm việc bị cấm, và đó là phần hay bị bỏ sót." }
+      ],
+      "detail": "Học sinh có thể chỉ thấy nút ẩn, nhưng vẫn gửi yêu cầu trực tiếp. Kiểm việc bị cấm phải làm ở máy chủ."
+    },
+    {
+      "id": "cam-truc-tiep",
+      "title": "Thử truy cập trực tiếp",
+      "theory": [
+        "Nút đã bị ẩn không có nghĩa là truy cập bị chặn. Học sinh có thể gõ địa chỉ của bài giáo viên."
+      ],
+      "task": {
+        "prompt": "Chọn ca mở bài giáo viên bằng địa chỉ trực tiếp, rồi chạy.",
+        "check": { "include": ["xem-bai-gv"] },
+        "hints": [
+          "Tìm dòng nói về mở bài của giáo viên bằng địa chỉ.",
+          "Tick ca mở bài giáo viên bằng địa chỉ trực tiếp."
+        ],
+        "pass": "Đúng! Đây là ca kiểm việc bị cấm mà hay bị bỏ."
+      },
+      "detail": "Hỏi: học sinh có thể làm gì nếu biết địa chỉ? Đó là ca cần kiểm."
+    },
+    {
+      "id": "sua-du-lieu",
+      "title": "Sửa dữ liệu của người khác",
+      "theory": [
+        "Học sinh không được sửa điểm của bạn khác. Đây là việc bị cấm và cần ca kiểm riêng."
+      ],
+      "task": {
+        "prompt": "Chọn ca sửa điểm của bạn khác, rồi chạy.",
+        "check": { "include": ["sua-diem"] },
+        "hints": [
+          "Tìm ca nói về sửa điểm.",
+          "Tick ca sửa điểm của bạn khác."
+        ],
+        "pass": "Đúng! Sửa dữ liệu người khác là ca cấm cần kiểm."
+      },
+      "detail": "Ca này kiểm cả nút lẫn yêu cầu trực tiếp, không chỉ việc ẩn giao diện."
+    },
+    {
+      "id": "bo-sot",
+      "title": "Tìm ca còn thiếu",
+      "theory": [
+        "Một bộ ca tốt có đủ cả việc được phép và việc bị cấm. Đếm xem đã có bao nhiêu ca cấm."
+      ],
+      "task": {
+        "prompt": "Chọn ít nhất 3 ca, phải có ca mở bài giáo viên và ca xem lớp khác, rồi chạy.",
+        "check": { "min": 3, "include": ["xem-bai-gv", "xem-lop-khac"] },
+        "hints": [
+          "Cần đủ ba ca, trong đó có hai ca cấm: mở bài giáo viên và xem lớp khác.",
+          "Tick mở bài giáo viên, xem lớp khác và thêm một ca nữa."
+        ],
+        "pass": "Đủ! Bộ ca này kiểm cả việc cấm lẫn việc được phép."
+      },
+      "detail": "Đếm số ca cấm và số ca được phép. Nếu chỉ có ca được phép, bạn không biết phân quyền có chặn được gì không."
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Phân quyền: kiểm việc được phép và việc bị cấm, kiểm ở máy chủ, và thử truy cập trực tiếp."
+      ],
+      "detail": "Nút ẩn không phải biện pháp bảo mật. Hãy kiểm việc bị cấm ở tầng máy chủ."
+    }
+  ]
+}

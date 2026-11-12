@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 4: Số lớn nhất của ba số",
+    "prompt": "Đọc ba số nguyên a, b, c. In ra số lớn nhất. Viết hàm max3 và kiểm các nhánh: nhánh b thắng, nhánh c thắng, và trường hợp bằng nhau.",
+    "starter": "#include <stdio.h>\n\n// TODO: viết hàm max3(int a, int b, int c) trả về số lớn nhất\n\nint main(void) {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n    printf(\"%d\\n\", max3(a, b, c));\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1 2 3\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "3 2 1\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "2 3 1\n",
+        "expected": "3\n"
+      },
+      {
+        "stdin": "5 5 5\n",
+        "expected": "5\n"
+      },
+      {
+        "stdin": "-1 -2 -3\n",
+        "expected": "-1\n"
+      }
+    ],
+    "hints": [
+      "Bắt đầu với m = a, rồi so với b và c.",
+      "Mỗi lần so sánh chỉ cần một if."
+    ],
+    "solution": "#include <stdio.h>\n\nint max3(int a, int b, int c) {\n    int m = a;\n    if (b > m) m = b;\n    if (c > m) m = c;\n    return m;\n}\n\nint main(void) {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n    printf(\"%d\\n\", max3(a, b, c));\n    return 0;\n}\n"
+  }
+]

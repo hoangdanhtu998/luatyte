@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Di động: đếm thiết bị theo hệ điều hành",
+    "prompt": "Đọc số thiết bị n, rồi n mã hệ điều hành (1 Android, 2 iOS). In hai số cách nhau một khoảng trắng: số thiết bị Android và số thiết bị iOS.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n mã, in \"android ios\"\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n1 1 2\n",
+        "expected": "2 1\n"
+      },
+      {
+        "stdin": "2\n1 1\n",
+        "expected": "2 0\n"
+      },
+      {
+        "stdin": "1\n2\n",
+        "expected": "0 1\n"
+      }
+    ],
+    "hints": [
+      "Đếm riêng mã 1 và mã 2.",
+      "Hai bộ đếm, mỗi bộ một biến."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int android = 0, ios = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (x == 1) android++;\n        else ios++;\n    }\n    printf(\"%d %d\\n\", android, ios);\n    return 0;\n}\n"
+  }
+]
