@@ -208,7 +208,11 @@
       "desc": "Kiểm dữ liệu đầu vào, thông báo lỗi, phiên đăng nhập và các lỗi bảo mật thường gặp như XSS và SQL injection.",
       "minutes": 40,
       "slides": "slides/tester/web-bao-mat-form.html",
-      "exercises": "content/tester/exercises/web-bao-mat-form.json"
+      "exercises": "content/tester/exercises/web-bao-mat-form.json",
+      "hoc_them": {
+        "chuong": "c7",
+        "ten": "Dữ liệu y tế và bảo mật"
+      }
     },
     {
       "id": "kiem-thu-di-dong",
@@ -307,7 +311,11 @@
       "desc": "Học sinh đăng nhập bằng thẻ có mã lớp và PIN 4 số, không cần email. Kiểm giới hạn thử sai, khóa, và quyền riêng tư.",
       "minutes": 40,
       "slides": "slides/tester/k12-dang-nhap-pin.html",
-      "exercises": "content/tester/exercises/k12-dang-nhap-pin.json"
+      "exercises": "content/tester/exercises/k12-dang-nhap-pin.json",
+      "hoc_them": {
+        "chuong": "c7",
+        "ten": "Dữ liệu y tế và bảo mật"
+      }
     },
     {
       "id": "k12-api-pytest",
@@ -387,7 +395,11 @@
       "minutes": 60,
       "slides": "slides/tester/tc-01-nhan-du-an.html",
       "exercises": "content/tester/exercises/tc-01-nhan-du-an.json",
-      "lab": "lab/yeu-cau.html"
+      "lab": "lab/yeu-cau.html",
+      "hoc_them": {
+        "chuong": "c2",
+        "ten": "Người, cơ sở và giấy phép khám chữa bệnh"
+      }
     },
     {
       "id": "tc-02-rui-ro-chien-luoc",
@@ -467,7 +479,11 @@
       "minutes": 60,
       "slides": "slides/tester/tc-09-phi-chuc-nang.html",
       "exercises": "content/tester/exercises/tc-09-phi-chuc-nang.json",
-      "lab": "lab/index.html"
+      "lab": "lab/index.html",
+      "hoc_them": {
+        "chuong": "c7",
+        "ten": "Dữ liệu y tế và bảo mật"
+      }
     },
     {
       "id": "tc-10-bao-cao-phat-hanh",

@@ -24,6 +24,7 @@
     <div class="slides-bar">
       <a class="btn amber" id="slides-link" href="#">Xem slide bài này</a>
       <a class="btn ghost" id="bo-nho-link" href="#" hidden>Xem bộ nhớ</a>
+      <a class="btn ghost" id="hoc-them-link" href="#" hidden>Học thêm luật</a>
       <button class="btn ghost" id="done" type="button"></button>
       <a class="btn ghost next-link" id="next-top" href="#" hidden>Bài tiếp theo →</a>
     </div>
@@ -326,6 +327,9 @@
       const VI_DU_BO_NHO = { 'con-tro-va-bo-nho': 'con-tro-co-ban', 'cap1-mang': 'mang-tran', 'cap1-chuoi-ky-tu': 'chuoi-kieu-c', 'cap2-danh-sach-lien-ket': 'danh-sach-lien-ket' };
       const boNho = VI_DU_BO_NHO[lesson.id];
       document.getElementById('bo-nho-link').hidden = !boNho;
+      const hocThem = lesson.hoc_them;
+      document.getElementById('hoc-them-link').hidden = !hocThem;
+      if (hocThem) { const link = document.getElementById('hoc-them-link'); link.href = '/ly_thuyet.html?c=' + encodeURIComponent(hocThem.chuong); link.title = hocThem.ten; }
       if (boNho) document.getElementById('bo-nho-link').href = 'bo-nho.html?vd=' + boNho;
       document.getElementById('tab-slide').hidden = !lesson.slides;
       document.getElementById('tab-slide').href = lesson.slides || '#';

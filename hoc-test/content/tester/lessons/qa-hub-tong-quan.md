@@ -120,16 +120,96 @@ Ngoài ra có từ chối, trùng, hoãn, và mở lại. Chuyển trạng thái
 
 Biên bản chỉ nên đưa ra khi tiêu chí ra đã đạt. Nếu còn mục chưa đạt, biên bản phải nói rõ là chưa đủ điều kiện bàn giao.
 
-## Nhóm tính năng "Auto"
+## Nhóm tính năng "Auto": đi sâu từng phần
 
-Auto là phần máy tự kiểm, gồm bốn việc:
+Auto làm lại những việc một tester vẫn làm bằng tay, nhưng lặp lại đều và không quên. Hiểu từng phần để biết máy kiểm cái gì, không kiểm cái gì, và kết quả "pass" có đáng tin không.
 
-1. **Tự chạy bộ test theo lịch (autorun).** Chạy đúng bộ test của chính QA Hub. Mục đích: phát hiện lỗi hồi quy sau mỗi thay đổi. Lịch tối thiểu 5 phút, tắt mặc định.
-2. **Tự kiểm link, domain, file (auto-check).** Với domain: trang có mở được, có HTTPS, có header bảo mật, có trả 404 đúng cho trang không tồn tại không. Với file: có lộ mật khẩu hoặc khóa bí mật không, JSON và CSV có đúng định dạng không.
-3. **Tự ghi kết quả vào test case (auto-results).** Test pass hay fail được ghi vào đúng test case kèm tên file bằng chứng. Ghi tay bị từ chối.
-4. **Kiểm từng model AI (model-check).** Mỗi model được hỏi cùng một câu. Mục đích: biết model nào còn chạy và phản hồi nhanh hay chậm.
+### Vài khái niệm nền
 
-Giới hạn quan trọng: model-check chỉ kiểm được là model "còn sống và trả lời được", chưa đo chất lượng phân tích bảo mật. Và tự động không có nghĩa là hết lỗi: test chỉ bắt được điều nó được viết để kiểm.
+- **Hồi quy (regression):** sửa chỗ này làm hỏng chỗ khác vốn chạy tốt. Ví dụ: sửa form đăng ký xong, nút đăng nhập bỗng không bấm được.
+- **Test chập chờn (flaky):** cùng một test lúc pass lúc fail mà code không đổi. Thường do thời gian chờ, mạng hoặc dữ liệu cũ. Flaky làm người ta mất niềm tin vào cả bộ test.
+- **Mã trạng thái HTTP:** 200 là trang tải được; 3xx là chuyển hướng; 404 là không tìm thấy; 5xx là lỗi phía máy chủ.
+- **"404 giả":** trang không tồn tại nhưng máy chủ vẫn trả 200 và hiện một trang "không tìm thấy". Người dùng thấy như bình thường, nhưng máy tìm kiếm và công cụ kiểm tra đều bị đánh lừa.
+
+### 1. Autorun: chạy test theo lịch
+
+**Làm gì:** đến giờ đã đặt, máy mở bộ test Playwright. Playwright điều khiển một trình duyệt thật, bấm và nhập liệu như người dùng.
+
+**Vì sao cần:** bạn sửa code lúc 9 giờ. Đến 9 giờ 30, máy đã chạy lại và báo "trang đăng nhập hỏng" trước khi khách gặp. Không có autorun thì phải nhớ chạy tay, và rất dễ quên.
+
+**Đọc kết quả thế nào:**
+- Đạt và lỗi: tổng quan. Lỗi mới xuất hiện sau một thay đổi là dấu hiệu hồi quy.
+- Chập chờn: không phải lỗi thật, nhưng phải điều tra vì nó làm nhiễu kết quả.
+- Thời gian chạy: nếu tăng dần qua các lần, app có thể đang chậm đi.
+
+**Giới hạn:** lịch ngắn nhất là 5 phút, và tắt mặc định. Autorun chỉ kiểm được những gì đã được viết thành test. Chức năng mới chưa có test thì nó không báo gì cả.
+
+### 2. Auto-check: kiểm link, domain và file
+
+Trước khi chạy, hệ thống liệt kê kế hoạch kiểm để bạn biết trước sẽ kiểm gì. Đây là bước xem trước, chưa chạy thật.
+
+**Với domain**, mỗi kiểm có một lý do:
+
+- **Trả 2xx hoặc chuyển hướng sang HTTPS.** Trang phải mở được và truyền dữ liệu qua kênh mã hóa. HTTP thường không mã hóa, mật khẩu gửi đi có thể bị nghe lén.
+- **Security headers.** Đây là các dòng cấu hình máy chủ gửi kèm trang để trình duyệt tự bảo vệ:
+  - *CSP*: chỉ cho chạy script từ nguồn được phép, giảm nguy cơ XSS (mã độc được chèn vào trang).
+  - *HSTS*: ép trình duyệt lần sau luôn dùng HTTPS.
+  - *X-Content-Type-Options*: không để trình duyệt tự đoán sai kiểu file.
+  - *X-Frame-Options*: ngăn trang bị nhúng vào trang khác. Nếu thiếu, kẻ xấu có thể nhúng trang của bạn vào khung ẩn rồi đặt một nút giả lên trên để lừa người dùng bấm (clickjacking).
+  - *Referrer-Policy*: giới hạn thông tin về trang trước đó mà trình duyệt gửi đi.
+- **Thời gian phản hồi dưới ngưỡng.** Trang chậm làm khách bỏ đi, dù không có lỗi nào.
+- **Đường dẫn không tồn tại phải trả 404.** Máy thử một địa chỉ bịa, ví dụ `/khong-ton-tai-abc`. Nếu nhận 200 thì đó là 404 giả.
+- **Trang nội bộ không có 4xx/5xx.** Máy đi qua tối đa 30 trang, cách trang chủ tối đa 2 bước link. Đây là cách bắt link gãy trước khi khách bấm phải.
+- **Mỗi trang có tiêu đề và mô tả meta.** Thiếu hai thứ này, trang khó hiện đúng khi tìm kiếm hoặc khi chia sẻ.
+- **Không còn lorem ipsum.** Chữ giữ chỗ lọt ra ngoài là dấu hiệu trang chưa làm xong.
+
+**Với file**, các kiểm thường gặp:
+
+- **Đọc được và mã hóa UTF-8.** Sai mã hóa thì tiếng Việt hiện thành chuỗi ký tự lạ.
+- **Không lộ khóa hay mật khẩu.** Máy tìm chuỗi trông như khóa riêng, khóa AWS, token hoặc mật khẩu viết thẳng trong file. Nếu thứ này đã lên repo, phải đổi khóa ngay. Xóa khỏi file thôi là chưa đủ.
+- **Đếm dòng báo lỗi.** Tìm các từ như error, exception, fatal, traceback, panic. Log có lỗi mà không ai đọc thì lỗi bị giấu.
+- **JSON đúng cú pháp.** Thiếu một dấu phẩy là chương trình không đọc được file.
+- **CSV có số cột nhất quán.** Đây là kiểm dễ bỏ sót nhất.
+
+> Ví dụ CSV: file có 5 cột, nhưng dòng thứ 12 có 6 cột vì một tên có dấu phẩy mà không đặt trong ngoặc kép. Từ dòng 12 trở đi, mọi số đều lệch cột. Không có auto-check thì số liệu sai nhưng không ai báo.
+
+### 3. Auto-results: ghi kết quả vào test case
+
+**Vì sao cần:** nếu người nhập tay "pass", báo cáo có thể đẹp nhưng không đúng. Kết quả do máy ghi thì có bằng chứng: tên file spec đã chạy.
+
+**Cơ chế:**
+- Mỗi test case có trường `automationKey`, là tiêu đề của test tương ứng trong bộ Playwright. Hai bên phải khớp đúng từng chữ.
+- Khi chạy xong, pass hoặc fail được ghi vào đúng test case, kèm tên file spec.
+- Ghi tay bị từ chối với mã 403, nên không ai sửa được kết quả.
+
+> Lưu ý thực tế: đổi tên một test trong Playwright mà không đổi `automationKey` thì kết quả không có chỗ để ghi. Test case vẫn hiện "chưa chạy", dù test đã chạy tốt. Đây là lỗi hay gặp khi đổi tên test.
+
+### 4. Model-check: kiểm từng model AI
+
+**Làm gì:** hỏi mỗi model cùng một câu, rồi ghi lại xem có trả lời không, mất bao lâu, và 200 ký tự đầu của câu trả lời.
+
+**Tiêu chí đạt rất thấp:** chỉ cần ít nhất 10 ký tự nội dung. Một câu trả lời vô nghĩa dài 10 ký tự vẫn được tính là đạt. Đây là kiểm "còn sống", không phải kiểm "đúng".
+
+**Đọc kết quả thế nào:**
+- **Lỗi do hết 120 giây chờ:** không có nghĩa là model hỏng. Có thể model lớn đang chạy chậm vì một phần phải dùng CPU, hoặc chưa tải xong. Muốn biết chắc thì thử lại, hoặc tăng thời gian chờ.
+- **Không trả lời sau nhiều phút:** model có thể đã treo. Nên kiểm lại model hoặc máy trước khi giao việc.
+
+**Về 7 vai trò (Red Team, Bug Bounty, Code Review...):** tên vai gợi ý model được chọn để làm việc gì, nhưng model-check không kiểm vai đó. Ví dụ: một model gắn vai "Code Review" vẫn có thể qua model-check mà bỏ sót lỗi trong code. Muốn kiểm đúng vai, cần bộ câu hỏi riêng. Ví dụ đưa một đoạn code đã biết trước có lỗi, rồi xem model có chỉ ra không.
+
+### Ghi nhớ
+
+- Tự động là việc lặp lại đã biết cách làm. Nó không thay được việc nghĩ ra cái cần kiểm.
+- Một kết quả "pass" chỉ đáng tin khi bạn biết test kiểm gì và không kiểm gì.
+- Mỗi khi thấy "pass", hỏi: test này có thể pass dù app vẫn sai không? Ví dụ: trang 404 giả trả 200, hoặc model trả lời vô nghĩa vẫn đạt.
+
+### Tự kiểm
+
+1. Vì sao trang không tồn tại phải trả 404, không được trả 200?
+2. Flaky khác hồi quy ở điểm nào?
+3. Đổi tên một test có thể làm mất kết quả tự động ra sao?
+4. Model đạt model-check có chứng minh nó phân tích bảo mật tốt không? Vì sao?
+
+*Gợi ý đáp án:* (1) 200 cho trang không có thật làm máy và người dùng hiểu sai, nên lỗi bị giấu. (2) Hồi quy là sửa làm hỏng chỗ khác, còn flaky là cùng một test mà kết quả lúc đổi lúc không dù code không đổi. (3) Kết quả được ghi theo tiêu đề khớp đúng, đổi tên thì không test case nào nhận được kết quả. (4) Không. Model-check chỉ kiểm model còn trả lời được, không đo chất lượng phân tích.
 
 ## Đọc tình trạng dự án
 

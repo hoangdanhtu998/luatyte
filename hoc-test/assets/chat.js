@@ -60,6 +60,48 @@
   box.querySelector('#chat-close').addEventListener('click', close);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) close(); });
 
+  // Bỏ dấu và chữ hoa để tìm được cả khi gõ không dấu.
+  const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'd').toLowerCase();
+
+  async function searchLessons(question) {
+    try {
+      const r = await fetch(new URL('content/tester/index.json', location.href), { cache: 'no-store' });
+      if (!r.ok) return [];
+      const data = await r.json();
+      const words = norm(question).split(/\s+/).filter(w => w.length > 2);
+      return data.lessons
+        .map(l => ({ l, score: words.filter(w => norm(l.title + ' ' + l.desc).includes(w)).length }))
+        .filter(x => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+        .map(x => x.l);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  // Khi không có máy chủ AI: gợi ý các bài khớp từ khóa trong câu hỏi.
+  async function answerLocally(question) {
+    const hits = await searchLessons(question);
+    if (!hits.length) {
+      add('bot', 'Chưa tìm thấy bài nào khớp câu hỏi. Thử từ khóa khác, ví dụ "bug", "bảo mật", "API".');
+      return;
+    }
+    add('bot', 'Máy chủ AI chưa bật ở bản này, nên mình tìm trong danh sách bài. Gợi ý:');
+    hits.forEach(addLessonLink);
+  }
+
+  function addLessonLink(lesson) {
+    const d = document.createElement('div');
+    d.className = 'msg passage';
+    const a = document.createElement('a');
+    a.href = 'lesson.html?track=tester&id=' + encodeURIComponent(lesson.id);
+    a.textContent = lesson.title;
+    d.appendChild(a);
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+  }
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const q = input.value.trim();
@@ -75,12 +117,12 @@
       });
       const data = await r.json();
       pending.remove();
-      if (!data.ok) { add('bot error', data.error ? data.error.message : 'Trợ lý chưa trả lời được.'); return; }
+      if (!data.ok) { await answerLocally(q); return; }
       add('bot', data.answer);
       (data.passages || []).forEach(addPassage);
     } catch (err) {
       pending.remove();
-      add('bot error', 'Trợ lý cần máy chủ Học code nên chưa dùng được trên bản web này. Trên máy bạn, chạy node server/server.mjs rồi mở http://localhost:4500 (xem setup.html).');
+      await answerLocally(q);
     }
   });
 })();

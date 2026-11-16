@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Học kiểm thử · Nhập môn kiểm thử phần mềm</title>
   <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .search-box { margin: 18px 0 4px; display: grid; gap: 6px; }
+    .search-box label { font-weight: 700; }
+    .search-box input { font: 16px 'Nunito', sans-serif; padding: 11px 14px; border: 1px solid #D9CFC2; border-radius: 12px; max-width: 560px; background: #fff; }
+    .search-box input:focus-visible { outline: 3px solid #2b7a78; outline-offset: 2px; }
+  </style>
 </head>
 <body>
 <header class="top">
@@ -35,6 +41,12 @@
   </section>
 
   <section id="review-box" class="card" hidden style="margin:14px 0"></section>
+  <section class="search-box" aria-label="Tìm bài học">
+    <label for="lesson-search">Tìm bài theo từ khóa</label>
+    <input id="lesson-search" type="search" placeholder="Ví dụ: bảo mật, bug, API, phí giao hàng" autocomplete="off">
+    <p class="muted" id="search-count" aria-live="polite"></p>
+  </section>
+  <p class="card" id="search-empty" hidden>Không có bài nào khớp từ khóa này. Thử từ khác, ví dụ "kiểm thử" hoặc "bug".</p>
   <div id="levels"></div>
 </main>
 
@@ -84,6 +96,8 @@
         startBtn.textContent = 'Đã học hết các bài ✓';
       }
 
+      const entries = [];
+      const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'd').toLowerCase();
       for (const lv of data.levels) {
         const items = data.lessons.filter(l => l.level === lv.id);
         const sec = document.createElement('section');
@@ -116,9 +130,29 @@
           tags[1].textContent = isDone ? 'Đã học' : 'Chưa học';
           if (isDone) tags[1].classList.add('ok');
           grid.appendChild(a);
+          entries.push({ el: a, sec, text: norm(l.title + ' ' + l.desc + ' ' + lv.name) });
         }
         root.appendChild(sec);
       }
+
+      // Lọc bài theo từ khóa: không phân biệt hoa thường và dấu tiếng Việt.
+      const input = document.getElementById('lesson-search');
+      const countEl = document.getElementById('search-count');
+      const emptyEl = document.getElementById('search-empty');
+      const applySearch = () => {
+        const words = norm(input.value.trim()).split(/\s+/).filter(Boolean);
+        let shown = 0;
+        const levelHasShown = new Map();
+        for (const e of entries) {
+          const match = words.every((w) => e.text.includes(w));
+          e.el.hidden = !match;
+          if (match) { shown++; levelHasShown.set(e.sec, true); }
+        }
+        for (const sec of root.querySelectorAll('.level')) sec.hidden = words.length > 0 && !levelHasShown.has(sec);
+        countEl.textContent = words.length ? 'Tìm thấy ' + shown + ' bài' : '';
+        emptyEl.hidden = !(words.length && shown === 0);
+      };
+      input.addEventListener('input', applySearch);
     } catch (e) {
       status.textContent = '';
       root.innerHTML = '<div class="card error-card">Không tải được danh sách bài (' + e.message + ').<br>Hãy mở trang qua localhost: chạy <code>node server/server.mjs</code> trong thư mục dự án rồi vào <code>http://localhost:4500</code>.</div>';
