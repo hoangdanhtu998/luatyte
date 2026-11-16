@@ -364,6 +364,14 @@
       "exercises": "content/tester/exercises/quy-trinh-test-web.json"
     },
     {
+      "id": "qa-hub-tong-quan",
+      "title": "QA Hub: quản lý kiểm thử từ A đến Z",
+      "level": 10,
+      "desc": "Gom cách dùng QA Hub: test case, yêu cầu, bug, tiêu chí ra, biên bản và nhóm tính năng Auto. Đọc số liệu dự án để biết đã đủ điều kiện bàn giao chưa.",
+      "minutes": 40,
+      "exercises": "content/tester/exercises/qa-hub-tong-quan.json"
+    },
+    {
       "id": "tc-01-nhan-du-an",
       "title": "Nhận dự án: đọc yêu cầu và hỏi lại",
       "level": 11,
