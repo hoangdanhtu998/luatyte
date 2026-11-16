@@ -372,6 +372,14 @@
       "exercises": "content/tester/exercises/qa-hub-tong-quan.json"
     },
     {
+      "id": "doc-hieu-ham-phi-giao-hang",
+      "title": "Đọc hiểu hàm tính phí giao đồ ăn",
+      "level": 10,
+      "desc": "Đọc từng dòng một hàm có if và return. Hiểu vì sao thứ tự điều kiện quan trọng, tìm các nhánh và chọn giá trị biên để kiểm.",
+      "minutes": 30,
+      "exercises": "content/tester/exercises/doc-hieu-ham-phi-giao-hang.json"
+    },
+    {
       "id": "tc-01-nhan-du-an",
       "title": "Nhận dự án: đọc yêu cầu và hỏi lại",
       "level": 11,
