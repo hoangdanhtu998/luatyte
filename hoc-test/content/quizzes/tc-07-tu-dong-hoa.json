@@ -6,19 +6,19 @@
       "explain": "Quy tắc tính toán kiểm ở tầng thấp thì nhanh và bền. Không cần điền form 12 lần.",
       "options": [
         {
-          "text": "Tầng API hoặc quy tắc: gửi 12 yêu cầu và so số tiền.",
+          "text": "Tầng API hoặc quy tắc: gửi 12 yêu cầu và so số tiền với bảng quyết định",
           "why": "Đúng. Nhanh, bền, đúng trọng tâm."
         },
         {
-          "text": "Tầng giao diện: kịch bản điền form 12 lần.",
+          "text": "Tầng giao diện: viết kịch bản điền form 12 lần, mỗi lần một tổ hợp khác nhau",
           "why": "Chạy được nhưng chậm và vỡ mỗi khi form đổi."
         },
         {
-          "text": "Không tự động hóa, chạy tay mỗi bản.",
+          "text": "Không tự động hóa, mà chạy tay mỗi bản để chắc chắn là kết quả đúng",
           "why": "Ca lặp lại, kết quả là con số: đúng loại nên tự động hóa."
         },
         {
-          "text": "Chỉ tự động hóa 1 tổ hợp đại diện.",
+          "text": "Chỉ tự động hóa một tổ hợp đại diện, vì các tổ hợp còn lại gần giống nhau",
           "why": "Các lỗi phí nằm ở tổ hợp cụ thể, một đại diện không bắt được."
         }
       ]
@@ -29,19 +29,19 @@
       "explain": "Ca phụ thuộc ngày thật: có hôm ngày + 30 rơi vào Chủ nhật và bị từ chối vì lý do khác.",
       "options": [
         {
-          "text": "Playwright bị lỗi.",
+          "text": "Playwright bị lỗi nên ca đỏ, và cần cài lại công cụ để chạy ổn định trở lại",
           "why": "Khả năng thấp hơn nhiều so với nguyên nhân trong chính ca."
         },
         {
-          "text": "Máy chạy chậm.",
+          "text": "Máy chạy chậm vào hôm đó nên ca bị timeout và báo đỏ, không phải lỗi thật",
           "why": "Ca này không phụ thuộc thời gian chạy."
         },
         {
-          "text": "Ca dùng ngày thật, và hôm đó ngày + 30 là Chủ nhật.",
+          "text": "Ca dùng ngày thật, và hôm đó ngày + 30 là Chủ nhật, nên bị từ chối",
           "why": "Đúng. Cần cố định ngày hệ thống trong bước chuẩn bị."
         },
         {
-          "text": "Sản phẩm tự thay đổi.",
+          "text": "Sản phẩm tự thay đổi hành vi theo thời gian mà không ai cập nhật code",
           "why": "Không ai đổi code thì sản phẩm không đổi."
         }
       ]
@@ -52,20 +52,20 @@
       "explain": "Ca đúng với yêu cầu, sản phẩm sai. Việc cần làm là báo lỗi.",
       "options": [
         {
-          "text": "Sửa giá trị mong đợi thành 150.000 để ca xanh.",
+          "text": "Sửa giá trị mong đợi thành 150.000 để ca xanh, vì app đã tính như vậy",
           "why": "Bạn vừa chép lỗi của sản phẩm vào ca."
         },
         {
-          "text": "Tạm tắt ca để bộ ca xanh.",
+          "text": "Tạm tắt ca đó để bộ ca xanh trở lại, và sẽ xử lý sau khi có thời gian",
           "why": "Lỗi vẫn ở đó, chỉ là không ai thấy nữa."
         },
         {
-          "text": "Chạy lại vài lần xem có xanh không.",
+          "text": "Chạy lại ca vài lần xem có xanh không, vì có thể chỉ là lỗi chập chờn",
           "why": "Đây không phải ca chập chờn. Kết quả sẽ giống hệt."
         },
         {
-          "text": "Giữ nguyên ca, báo lỗi sản phẩm kèm kết quả của ca.",
-          "why": "Đúng."
+          "text": "Giữ nguyên ca vì ca đúng yêu cầu, rồi báo lỗi sản phẩm kèm kết quả",
+          "why": "Đúng. Ca đúng với yêu cầu, sản phẩm sai."
         }
       ]
     },
@@ -75,19 +75,19 @@
       "explain": "Giá trị của khám phá nằm ở việc người kiểm đổi hướng theo điều vừa quan sát được.",
       "options": [
         {
-          "text": "Tra cứu sai số điện thoại trả 404.",
+          "text": "Tra cứu sai số điện thoại trả 404, vì kết quả rõ và cần kiểm ở mọi bản",
           "why": "Rủi ro cao, kết quả rõ, cần kiểm ở mọi bản."
         },
         {
-          "text": "Phiên khám phá 45 phút về luồng hủy lịch.",
+          "text": "Phiên khám phá 45 phút về luồng hủy lịch, nơi người kiểm đổi hướng",
           "why": "Đúng. Kịch bản không biết tò mò."
         },
         {
-          "text": "Lịch thứ 4 vào cùng khung giờ trả 409.",
+          "text": "Lịch thứ 4 vào cùng khung giờ phải trả 409, một quy tắc lõi có kết quả rõ ràng",
           "why": "Quy tắc lõi, kết quả rõ."
         },
         {
-          "text": "Biên tuổi 120 và 121.",
+          "text": "Biên tuổi 120 và 121, vì lỗi biên hay quay lại và đáng để tự động hóa",
           "why": "Lỗi biên hay quay lại, rất đáng tự động hóa."
         }
       ]

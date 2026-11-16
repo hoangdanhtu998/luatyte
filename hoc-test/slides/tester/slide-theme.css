@@ -1,0 +1,148 @@
+/* Lớp giao diện dùng chung cho slide học kiểm thử.
+   Nạp sau phần <style> riêng của từng slide, nên các quy tắc ở đây đè lên bản gốc.
+   Chỉ đổi màu, khoảng cách, bóng và cách nhấn mạnh; không đổi nội dung hay cấu trúc. */
+
+:root {
+  --blue: #B5483A;          /* xanh cũ -> đỏ con dấu, dùng cho code và nhấn */
+  --brick: #B8521F;
+  --ink: #1C2027;
+  --cream: #F7F3EA;
+  --line: #E8DFD2;
+}
+
+/* Thanh màu cạnh trái: cam -> đỏ con dấu -> than */
+.slide::before {
+  background: linear-gradient(var(--orange), var(--brick) 60%, var(--ink));
+}
+
+/* Khoảng đầu slide hẹp hơn để chỗ cho nội dung (kể cả hình và chú thích) */
+.slide {
+  padding: 44px 78px 70px 92px;
+}
+
+/* Nhãn đầu slide thành chip để tách khỏi tiêu đề */
+.kicker {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #F4E1D0;
+  color: #8F3A17;
+  font-size: 14px;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+.slide.dark .kicker,
+.slide.cover .kicker {
+  background: rgba(240, 138, 75, .16);
+  color: #FFB98A;
+}
+
+/* Tiêu đề: có vạch nhấn ngắn bên dưới để phân cấp */
+h2 {
+  font-size: 40px;
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--brick));
+}
+.slide.cover h1 {
+  font-size: 72px;
+}
+
+/* Đoạn mở đầu của slide chữ: nổi hơn phần thân để đọc lướt được */
+.content > p:first-child {
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.slide.dark .content > p:first-child {
+  color: #F6EFE6;
+}
+
+/* Danh sách: khoảng thở đều hơn, dấu đầu dòng màu nâu đỏ */
+.list {
+  gap: 14px;
+}
+.list li::marker {
+  color: var(--brick);
+}
+
+/* Code và chữ đánh dấu */
+code {
+  background: #F3E9DC;
+  color: #7A2F12;
+}
+.slide.dark code {
+  background: #2A2420;
+  color: #FFC37F;
+}
+
+/* Bảng: nền kem, dòng xen kẽ, bóng ấm */
+table.t {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(60, 35, 20, .10);
+  border: 1px solid var(--line);
+}
+table.t th {
+  background: #F4E4D4;
+  color: #3A2A20;
+  font-size: 17px;
+}
+table.t td {
+  color: var(--ink);
+}
+table.t tbody tr:nth-child(even) td {
+  background: #FBF6EE;
+}
+
+/* Đoạn "Thuật ngữ" và các chú thích: viền nâu nhạt thay cho viền xám xanh */
+[data-gloss] {
+  border-top-color: #E2CDB6 !important;
+}
+
+/* Chân slide */
+.foot {
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #8A7F72;
+}
+.slide.dark .foot {
+  color: #A59C8E;
+}
+
+/* Thanh điều khiển và thanh "bài tiếp theo": bỏ xanh đậm */
+#next-lesson-bar {
+  background: #2A211C !important;
+  color: #F6EFE6 !important;
+  border: 1px solid #4A3A30;
+}
+#bar button:focus-visible,
+#next-lesson-bar a:focus-visible {
+  outline: 3px solid #FFD27A;
+  outline-offset: 2px;
+}
+
+/* Điện thoại dọc: khung slide thu nhỏ quá, nhắc xoay ngang */
+@media (max-width: 640px) and (orientation: portrait) {
+  body::after {
+    content: 'Xoay ngang điện thoại để đọc slide rõ hơn';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    background: #F08A4B;
+    color: #1C2027;
+    font: 700 13px 'Be Vietnam Pro', sans-serif;
+    text-align: center;
+    z-index: 20;
+  }
+}

@@ -6,19 +6,19 @@
       "explain": "Mọi bên gọi khác đều không đi qua form. Kiểm tra dữ liệu phải có ở máy chủ.",
       "options": [
         {
-          "text": "Không cần, vì người dùng không thể nhập tuổi âm trên form.",
+          "text": "Không cần gửi tuổi âm vì người dùng không thể nhập tuổi âm trên form đã có",
           "why": "Form không phải cách duy nhất gửi dữ liệu tới hệ thống."
         },
         {
-          "text": "Vì API có thể được gọi mà không qua giao diện, nên máy chủ phải tự kiểm dữ liệu.",
-          "why": "Đúng."
+          "text": "Vì API có thể được gọi không qua giao diện, máy chủ phải tự kiểm dữ liệu",
+          "why": "Đúng. Mọi bên gọi khác đều không đi qua form."
         },
         {
-          "text": "Để kiểm tốc độ của API.",
+          "text": "Để kiểm tra tốc độ phản hồi của API khi nhận một yêu cầu có dữ liệu sai",
           "why": "Ca này kiểm tính đúng, không kiểm tốc độ."
         },
         {
-          "text": "Vì giao diện có thể đang hiển thị sai thông báo lỗi.",
+          "text": "Vì giao diện có thể đang hiển thị sai thông báo lỗi cho người dùng cuối",
           "why": "Đó là một ca khác, ở tầng giao diện."
         }
       ]
@@ -29,20 +29,20 @@
       "explain": "Theo tài liệu API: sai mã hoặc sai số điện thoại đều trả 404, và không lộ thông tin lịch.",
       "options": [
         {
-          "text": "200 kèm thông tin lịch, vì mã lịch đúng.",
+          "text": "200 kèm thông tin lịch đầy đủ, vì mã lịch đúng nên hệ thống trả về dữ liệu",
           "why": "Đây chính là lỗi lộ thông tin."
         },
         {
-          "text": "200 kèm thân rỗng.",
+          "text": "200 kèm thân rỗng, vì yêu cầu được xử lý xong mà không có gì để trả về",
           "why": "Bên gọi sẽ tưởng yêu cầu thành công."
         },
         {
-          "text": "400 kèm thông báo \"số điện thoại không khớp với mã lịch này\".",
+          "text": "400 kèm thông báo \"số điện thoại không khớp với mã lịch này\" để người dùng sửa",
           "why": "Thông báo đó xác nhận mã lịch tồn tại, giúp người dò."
         },
         {
-          "text": "404, không kèm thông tin lịch.",
-          "why": "Đúng."
+          "text": "404, không kèm thông tin lịch, vì không có lịch nào khớp với cả hai thông tin",
+          "why": "Đúng. Sai mã hoặc sai số điện thoại đều trả 404 theo tài liệu API."
         }
       ]
     },
@@ -52,19 +52,19 @@
       "explain": "Mã trạng thái đúng chưa đủ. Phải chắc là không có dữ liệu sai nào được lưu.",
       "options": [
         {
-          "text": "Kiểm ở màn Quản trị hoặc bằng GET để chắc là không có lịch nào được tạo.",
+          "text": "Kiểm ở màn Quản trị hoặc bằng GET để chắc là không có lịch nào được tạo",
           "why": "Đúng. Luôn kiểm cả trạng thái dữ liệu."
         },
         {
-          "text": "Đánh dấu ca đạt và chuyển ca tiếp.",
+          "text": "Đánh dấu ca đạt vì đã nhận đúng mã 400 và chuyển sang ca tiếp theo ngay",
           "why": "Có thể bỏ sót trường hợp trả 400 nhưng vẫn lưu."
         },
         {
-          "text": "Gửi lại yêu cầu đó 10 lần.",
+          "text": "Gửi lại yêu cầu đó thêm mười lần nữa để xem kết quả có thay đổi hay không",
           "why": "Lặp lại không cho thêm thông tin về dữ liệu đã lưu."
         },
         {
-          "text": "Báo lỗi vì API trả mã lỗi.",
+          "text": "Báo lỗi ngay vì API trả về mã lỗi, nên chắc chắn có vấn đề ở phía máy chủ",
           "why": "400 là kết quả đúng cho dữ liệu sai."
         }
       ]
@@ -75,19 +75,19 @@
       "explain": "Tài liệu API quy định trả 404 khi không tìm thấy. Trả 200 làm bên gọi tưởng đã hủy thành công.",
       "options": [
         {
-          "text": "Đúng, vì không có gì để hủy nên coi như đã hủy.",
+          "text": "Đúng, vì không có gì để hủy nên coi như đã hủy xong, không cần báo gì thêm",
           "why": "Tài liệu API của dự án quy định 404 cho trường hợp này."
         },
         {
-          "text": "Không quan trọng vì không có dữ liệu nào bị ảnh hưởng.",
+          "text": "Không quan trọng vì không có dữ liệu nào bị ảnh hưởng khi lệnh này chạy",
           "why": "Bên gọi dựa vào mã trạng thái để báo cho người dùng."
         },
         {
-          "text": "Là lỗi: phải trả 404. Bên gọi sẽ báo \"đã hủy\" cho một lịch không tồn tại.",
-          "why": "Đúng."
+          "text": "Là lỗi: phải trả 404 vì không có lịch nào, còn 200 khiến bên gọi hiểu sai",
+          "why": "Đúng. Bên gọi sẽ báo \"đã hủy\" cho một lịch không tồn tại."
         },
         {
-          "text": "Là lỗi: phải trả 500.",
+          "text": "Là lỗi: phải trả 500 vì máy chủ không xử lý được yêu cầu xóa dữ liệu này",
           "why": "500 dành cho lỗi của máy chủ, không phải tài nguyên không tồn tại."
         }
       ]

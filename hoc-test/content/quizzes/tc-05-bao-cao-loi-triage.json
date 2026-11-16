@@ -6,19 +6,19 @@
       "explain": "Tiêu đề tốt nêu ở đâu, điều kiện gì, sai thế nào.",
       "options": [
         {
-          "text": "Phí bị sai",
+          "text": "Phí bị sai rồi, cần kiểm lại phần tính toán ở màn đặt lịch cho đúng",
           "why": "Không biết sai ở đâu, khi nào."
         },
         {
-          "text": "[Đặt lịch] Người đúng 60 tuổi không được giảm 20% phí khám",
+          "text": "Người đúng 60 tuổi không được giảm 20% phí khám, ở màn Đặt lịch",
           "why": "Đúng. Đọc tiêu đề là hình dung được lỗi."
         },
         {
-          "text": "Lỗi nghiêm trọng ở phần tính tiền cần sửa gấp!!!",
+          "text": "Lỗi nghiêm trọng ở phần tính tiền cần được sửa gấp, rất khẩn cấp!!!",
           "why": "Có cảm xúc nhưng không có thông tin."
         },
         {
-          "text": "R7 không đạt",
+          "text": "R7 không đạt, vui lòng kiểm tra lại theo tài liệu yêu cầu đã gửi trước đó",
           "why": "Người đọc phải mở tài liệu mới biết R7 là gì, và vẫn không biết sai ở điều kiện nào."
         }
       ]
@@ -29,19 +29,19 @@
       "explain": "Mỗi báo cáo một lỗi, để mỗi lỗi được phân loại, sửa và đóng độc lập.",
       "options": [
         {
-          "text": "Một báo cáo \"Màn Tra cứu có 2 lỗi\".",
+          "text": "Một báo cáo chung: \"Màn Tra cứu có 2 lỗi\", gom cả hai vào một chỗ để dễ theo dõi",
           "why": "Sửa xong một lỗi thì báo cáo đóng hay mở?"
         },
         {
-          "text": "Chỉ báo lỗi chiếm chỗ vì lỗi kia nhỏ.",
+          "text": "Chỉ báo lỗi lịch đã hủy vẫn chiếm chỗ, vì lỗi phí thiếu dấu chấm thì khá nhỏ",
           "why": "Lỗi nhỏ vẫn cần được ghi nhận để nhóm quyết định."
         },
         {
-          "text": "Hai báo cáo riêng, mỗi báo cáo có mức nghiêm trọng riêng.",
-          "why": "Đúng."
+          "text": "Hai báo cáo riêng, mỗi báo cáo có mức nghiêm trọng và cách tái hiện riêng",
+          "why": "Đúng. Mỗi lỗi được phân loại, sửa và đóng độc lập."
         },
         {
-          "text": "Nhắn miệng cho lập trình viên cả hai.",
+          "text": "Nhắn miệng cho lập trình viên cả hai lỗi trong lúc họp để tiết kiệm thời gian",
           "why": "Không có dấu vết, không ai theo dõi được."
         }
       ]
@@ -52,19 +52,19 @@
       "explain": "Lộ thông tin cá nhân của người bệnh cho bất kỳ ai có mã lịch.",
       "options": [
         {
-          "text": "Nghiêm trọng: lộ thông tin cá nhân của người bệnh.",
+          "text": "Nghiêm trọng: lộ thông tin cá nhân của người bệnh cho người dò",
           "why": "Đúng. Hậu quả nặng và ảnh hưởng mọi người bệnh."
         },
         {
-          "text": "Thấp: người dùng bình thường không nhập sai số điện thoại.",
+          "text": "Thấp: người dùng bình thường hiếm khi nhập sai số điện thoại nên ít ai gặp",
           "why": "Người dò thông tin thì có. Đây chính là cách khai thác."
         },
         {
-          "text": "Trung bình: có cách vòng là đừng đưa mã lịch cho ai.",
+          "text": "Trung bình: có cách phòng là đừng bao giờ đưa mã lịch cho ai khác",
           "why": "Người bệnh không biết rủi ro này để tự phòng."
         },
         {
-          "text": "Không phải lỗi, vì vẫn cần mã lịch.",
+          "text": "Không phải lỗi, vì hệ thống vẫn yêu cầu có mã lịch đi kèm khi tra cứu",
           "why": "R10 yêu cầu đúng cả số điện thoại và mã lịch."
         }
       ]
@@ -75,19 +75,19 @@
       "explain": "Tester cung cấp thông tin. Quyết định thuộc về người chịu trách nhiệm sản phẩm.",
       "options": [
         {
-          "text": "Tranh luận đến khi họ đổi ý.",
+          "text": "Tranh luận đến khi họ đổi ý, vì bạn tin lỗi đó nghiêm trọng hơn mức họ nghĩ",
           "why": "Bạn đã trình bày. Tiếp tục ép không phải vai của tester."
         },
         {
-          "text": "Tự hạ mức nghiêm trọng xuống Thấp cho khớp quyết định.",
+          "text": "Tự hạ mức nghiêm trọng xuống Thấp cho khớp với quyết định của người phụ trách",
           "why": "Mức nghiêm trọng mô tả hậu quả, không đổi theo quyết định sửa hay không."
         },
         {
-          "text": "Không báo những lỗi tương tự nữa.",
+          "text": "Không báo những lỗi tương tự nữa để tránh làm phiền người phụ trách sản phẩm",
           "why": "Vẫn phải báo. Mỗi lỗi được quyết định riêng."
         },
         {
-          "text": "Đảm bảo họ đã hiểu đúng hậu quả, ghi quyết định vào báo cáo lỗi, và nêu nó trong mục rủi ro còn lại của báo cáo kết thúc.",
+          "text": "Đảm bảo họ hiểu đúng hậu quả, ghi quyết định vào báo cáo lỗi",
           "why": "Đúng. Quyết định được đưa ra khi đã biết rõ rủi ro."
         }
       ]

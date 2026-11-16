@@ -6,19 +6,19 @@
       "explain": "Charter tốt nêu khu vực, cách làm và loại rủi ro, đủ hẹp để làm trong một phiên.",
       "options": [
         {
-          "text": "Kiểm thử toàn bộ app Sao Mai.",
+          "text": "Kiểm thử toàn bộ app Sao Mai từ đầu đến cuối trong một phiên làm việc",
           "why": "Quá rộng, không biết bắt đầu từ đâu và khi nào xong."
         },
         {
-          "text": "Kiểm ô số điện thoại nhận đúng 10 chữ số.",
+          "text": "Kiểm ô số điện thoại có nhận đúng mười chữ số và từ chối chữ cái không",
           "why": "Đây là một ca kiểm thử có sẵn đáp án, không cần khám phá."
         },
         {
-          "text": "Khám phá luồng hủy lịch từ cả màn Tra cứu và màn Quản trị, với lịch ở từng trạng thái, để tìm chỗ hai màn xử lý khác nhau.",
+          "text": "Khám phá luồng hủy lịch ở hai màn với lịch ở nhiều trạng thái",
           "why": "Đúng. Đủ ba phần và vừa một phiên."
         },
         {
-          "text": "Tìm thật nhiều lỗi.",
+          "text": "Tìm thật nhiều lỗi trong app, càng nhiều lỗi càng tốt cho nhóm kiểm thử",
           "why": "Không nói khu vực nào, bằng cách nào."
         }
       ]
@@ -29,19 +29,19 @@
       "explain": "Ghi lại để không quên, giữ nhịp phiên, xử lý sau.",
       "options": [
         {
-          "text": "Ghi một dòng vào ghi chép, đánh dấu cần hỏi, rồi tiếp tục phiên.",
+          "text": "Ghi một dòng vào ghi chép, đánh dấu cần hỏi, rồi tiếp tục phiên kiểm thử",
           "why": "Đúng. Điều tra kỹ hoặc hỏi lại sau khi phiên kết thúc."
         },
         {
-          "text": "Dừng phiên ngay để nhắn hỏi BA.",
+          "text": "Dừng phiên ngay lập tức để nhắn hỏi BA cho chắc chắn trước khi làm tiếp",
           "why": "Ngắt phiên làm mất mạch và mất thời gian của charter."
         },
         {
-          "text": "Bỏ qua vì chưa chắc là lỗi.",
+          "text": "Bỏ qua vì chưa chắc đó là lỗi, và phiên này đã có kế hoạch rõ ràng rồi",
           "why": "Không ghi lại thì gần như chắc chắn sẽ quên."
         },
         {
-          "text": "Báo ngay lỗi mức Nghiêm trọng.",
+          "text": "Báo ngay đó là lỗi mức Nghiêm trọng để nhóm chú ý và xử lý càng sớm càng tốt",
           "why": "Chưa xác định là lỗi, và mức đó không tương xứng."
         }
       ]
@@ -52,19 +52,19 @@
       "explain": "Mục \"chưa phủ\" là thông tin để lên kế hoạch phiên sau và để biết rủi ro còn mở.",
       "options": [
         {
-          "text": "Bạn làm việc chưa tốt vì chưa kiểm hết.",
+          "text": "Bạn làm việc chưa tốt vì chưa kiểm hết được những gì đã được giao trong phiên",
           "why": "Không phiên nào phủ hết. Ghi thật mới là làm tốt."
         },
         {
-          "text": "Hai điểm đó chưa được kiểm, cần quyết định có dành phiên khác cho chúng không.",
+          "text": "Hai điểm này chưa kiểm, cần quyết định có dành phiên khác không",
           "why": "Đúng. Đây chính là mục đích của mục này."
         },
         {
-          "text": "Hai điểm đó không quan trọng.",
+          "text": "Hai điểm đó không quan trọng lắm nên có thể bỏ qua và không cần ghi thêm gì",
           "why": "Chưa phủ không có nghĩa là không quan trọng."
         },
         {
-          "text": "Hai điểm đó đã được kiểm sơ qua.",
+          "text": "Hai điểm đó đã được kiểm sơ qua trong lúc làm nên coi như đã có kết quả",
           "why": "Chưa phủ nghĩa là chưa kiểm."
         }
       ]
@@ -75,19 +75,19 @@
       "explain": "Tỷ lệ thời gian cho biết việc kiểm thử có đang bị cản trở hay không.",
       "options": [
         {
-          "text": "Bạn chuẩn bị rất cẩn thận, đáng khen.",
+          "text": "Bạn chuẩn bị rất cẩn thận và đáng khen, cách làm này nên giữ cho các phiên sau nữa",
           "why": "Chuẩn bị chiếm phần lớn phiên là dấu hiệu có vấn đề."
         },
         {
-          "text": "Phiên này nên được tính là thành công.",
+          "text": "Phiên này nên được tính là thành công vì bạn đã làm đủ việc được giao hôm nay",
           "why": "Thời gian thực sự kiểm thử quá ít."
         },
         {
-          "text": "Không nói gì, tỷ lệ thời gian không quan trọng.",
+          "text": "Không cần nói gì thêm, tỷ lệ thời gian không quan trọng bằng kết quả cuối cùng",
           "why": "Đây là số liệu trưởng nhóm cần để gỡ vướng."
         },
         {
-          "text": "Môi trường thử hoặc dữ liệu thử đang gây cản trở, cần báo để cải thiện.",
+          "text": "Môi trường hoặc dữ liệu thử đang cản trở, cần báo để cải thiện",
           "why": "Đúng. Ví dụ đề nghị có nút đặt lại dữ liệu mẫu, có đồng hồ giả lập."
         }
       ]

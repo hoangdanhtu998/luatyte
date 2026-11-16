@@ -29,19 +29,19 @@
       "explain": "300.000 × 80% = 240.000, trừ BHYT 50.000 còn 190.000đ. R7 nói BHYT tính sau khi giảm theo tuổi.",
       "options": [
         {
-          "text": "200.000đ",
+          "text": "200.000đ, vì tính (300.000 − 50.000) × 80%, tức là trừ BHYT trước rồi mới giảm theo tuổi",
           "why": "Đây là (300.000 − 50.000) × 80%, sai thứ tự so với R7."
         },
         {
-          "text": "240.000đ",
+          "text": "240.000đ, vì mới giảm theo tuổi 20% và chưa trừ phần BHYT đi kèm",
           "why": "Mới giảm theo tuổi, chưa trừ BHYT."
         },
         {
-          "text": "190.000đ",
+          "text": "190.000đ, vì giảm theo tuổi 20% trước rồi trừ 50.000 BHYT sau cùng",
           "why": "Đúng: 300.000 × 80% − 50.000."
         },
         {
-          "text": "250.000đ",
+          "text": "250.000đ, vì mới trừ 50.000 BHYT trước và chưa áp dụng giảm theo tuổi",
           "why": "Mới trừ BHYT, chưa giảm theo tuổi."
         }
       ]
@@ -52,19 +52,19 @@
       "explain": "Kết quả mong đợi phải lấy từ yêu cầu. Lấy từ app thì ca chỉ chứng minh app giống chính nó.",
       "options": [
         {
-          "text": "Ca kiểm thử sẽ luôn đạt, kể cả khi app tính sai.",
+          "text": "Ca kiểm thử luôn đạt, kể cả khi app tính sai, vì bạn chép kết quả của app",
           "why": "Đúng. Bạn đã chép lỗi của app vào đáp án."
         },
         {
-          "text": "Không có vấn đề gì, cách này nhanh hơn.",
+          "text": "Không có vấn đề gì cả, cách này nhanh hơn nhiều so với việc tự tính từng dòng",
           "why": "Nhanh nhưng mất hết giá trị kiểm thử."
         },
         {
-          "text": "Bảng quyết định không dùng được cho phần phí.",
+          "text": "Bảng quyết định không dùng được cho phần phí vì phí có quá nhiều điều kiện",
           "why": "Phí có nhiều điều kiện kết hợp, rất hợp với bảng quyết định."
         },
         {
-          "text": "Chỉ sai nếu app có lỗi hiển thị.",
+          "text": "Chỉ sai nếu app có lỗi hiển thị trên màn hình, còn lỗi tính toán thì không sao",
           "why": "Sai về cách làm, không phụ thuộc loại lỗi."
         }
       ]
@@ -75,20 +75,20 @@
       "explain": "Chuyển trạng thái không hợp lệ và chỗ hai quy tắc gặp nhau là nơi ít được lập trình viên tự kiểm.",
       "options": [
         {
-          "text": "Lịch Chờ xác nhận, quản trị bấm Xác nhận.",
+          "text": "Lịch Chờ xác nhận, quản trị bấm Xác nhận để chuyển sang trạng thái tiếp theo",
           "why": "Luồng chính, lập trình viên gần như chắc chắn đã tự thử."
         },
         {
-          "text": "Lịch Đã xác nhận, quản trị bấm Đã khám.",
+          "text": "Lịch Đã xác nhận, quản trị bấm Đã khám để đánh dấu người bệnh đã đến khám",
           "why": "Vẫn là luồng chính."
         },
         {
-          "text": "Lịch Chờ xác nhận, người bệnh hủy.",
+          "text": "Lịch Chờ xác nhận, người bệnh hủy lịch của chính mình trên màn hình tra cứu",
           "why": "Chuyển hợp lệ, cần có nhưng ít khả năng lỗi."
         },
         {
-          "text": "Lịch Đã khám, tìm xem còn nút hủy không; lịch Đã hủy, xem chỗ trong khung giờ có được trả lại không.",
-          "why": "Đúng. Một chuyển không được phép và một chỗ hai quy tắc gặp nhau."
+          "text": "Lịch Đã khám xem còn nút hủy không; lịch Đã hủy xem có trả lại chỗ không",
+          "why": "Đúng. Một chuyển không được phép, và một chỗ hai quy tắc gặp nhau."
         }
       ]
     }

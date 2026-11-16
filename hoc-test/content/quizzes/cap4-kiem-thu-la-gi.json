@@ -5,10 +5,22 @@
       "answer": 1,
       "explain": "Hành động sai của con người khi viết code là sai sót (mistake). Sai sót sinh ra lỗi.",
       "options": [
-        { "text": "Lỗi (defect)", "why": "Lỗi là chỗ trong code làm sai. Hành động gõ nhầm thì chưa phải là lỗi." },
-        { "text": "Sai sót (mistake)", "why": "Đúng. Đây là hành động sai của người viết code." },
-        { "text": "Sự cố (failure)", "why": "Sự cố là khi hệ thống chạy và làm sai, người dùng thấy. Ở đây chưa có ai chạy code." },
-        { "text": "Ca kiểm thử (test case)", "why": "Ca kiểm thử là cách kiểm tra. Nó không phải là sai lầm của người viết code." }
+        {
+          "text": "Lỗi (defect)",
+          "why": "Lỗi là chỗ trong code làm sai. Hành động gõ nhầm thì chưa phải là lỗi."
+        },
+        {
+          "text": "Sai sót (mistake)",
+          "why": "Đúng. Đây là hành động sai của người viết code."
+        },
+        {
+          "text": "Sự cố (failure)",
+          "why": "Sự cố là khi hệ thống chạy và làm sai, người dùng thấy. Ở đây chưa có ai chạy code."
+        },
+        {
+          "text": "Ca kiểm thử (test case)",
+          "why": "Ca kiểm thử là cách kiểm tra. Nó không phải là sai lầm của người viết code."
+        }
       ]
     },
     {
@@ -16,10 +28,22 @@
       "answer": 0,
       "explain": "Lỗi (defect) là chỗ trong code hoặc sản phẩm làm khác điều đúng. Lỗi là trạng thái, nằm sẵn trong code.",
       "options": [
-        { "text": "Lỗi (defect)", "why": "Đúng. Dòng sai nằm trong code, chờ được chạy." },
-        { "text": "Sự cố (failure)", "why": "Sự cố chỉ xảy ra khi hệ thống đang chạy và người dùng thấy kết quả sai." },
-        { "text": "Sai sót (mistake)", "why": "Sai sót là hành động của người. Trạng thái nằm trong code là lỗi." },
-        { "text": "Yêu cầu thay đổi (change request)", "why": "Đây là đề nghị đổi tính năng. Ở đây không có đề nghị nào cả." }
+        {
+          "text": "Lỗi (defect)",
+          "why": "Đúng. Dòng sai nằm trong code, chờ được chạy."
+        },
+        {
+          "text": "Sự cố (failure)",
+          "why": "Sự cố chỉ xảy ra khi hệ thống đang chạy và người dùng thấy kết quả sai."
+        },
+        {
+          "text": "Sai sót (mistake)",
+          "why": "Sai sót là hành động của người. Trạng thái nằm trong code là lỗi."
+        },
+        {
+          "text": "Yêu cầu thay đổi (change request)",
+          "why": "Đây là đề nghị đổi tính năng. Ở đây không có đề nghị nào cả."
+        }
       ]
     },
     {
@@ -27,10 +51,22 @@
       "answer": 2,
       "explain": "Người dùng thấy kết quả sai khi hệ thống đang chạy, đó là sự cố (failure).",
       "options": [
-        { "text": "Sai sót (mistake)", "why": "Sai sót nằm ở người viết code. Người dùng không thấy sai sót, họ thấy kết quả sai." },
-        { "text": "Lỗi (defect)", "why": "Lỗi là dòng code sai. Điều khách thấy là kết quả sai khi chạy." },
-        { "text": "Sự cố (failure)", "why": "Đúng. Hệ thống đang chạy và người dùng thấy kết quả sai." },
-        { "text": "Ca kiểm thử (test case)", "why": "Ca kiểm thử là một lần kiểm tra có kịch bản, không phải điều khách gặp phải." }
+        {
+          "text": "Sai sót (mistake)",
+          "why": "Sai sót nằm ở người viết code. Người dùng không thấy sai sót, họ thấy kết quả sai."
+        },
+        {
+          "text": "Lỗi (defect)",
+          "why": "Lỗi là dòng code sai. Điều khách thấy là kết quả sai khi chạy."
+        },
+        {
+          "text": "Sự cố (failure)",
+          "why": "Đúng. Hệ thống đang chạy và người dùng thấy kết quả sai."
+        },
+        {
+          "text": "Ca kiểm thử (test case)",
+          "why": "Ca kiểm thử là một lần kiểm tra có kịch bản, không phải điều khách gặp phải."
+        }
       ]
     },
     {
@@ -38,10 +74,22 @@
       "answer": 3,
       "explain": "Kiểm thử tìm lỗi, không chứng minh là hết lỗi. Ca lỗi có thể nằm ở chỗ chưa ai thử.",
       "options": [
-        { "text": "Chương trình không còn lỗi nào.", "why": "Sai. Kiểm thử không chứng minh được điều đó." },
-        { "text": "Đủ bằng chứng để phát hành mà không cần kiểm thử thêm.", "why": "Sai. Vẫn có thể có lỗi ở chỗ chưa ai thử." },
-        { "text": "Nên bớt ca đi vì đã đủ.", "why": "Sai. Bớt ca làm giảm khả năng tìm lỗi." },
-        { "text": "Chưa chứng minh được là hết lỗi, lỗi có thể nằm ở chỗ chưa được thử.", "why": "Đúng. Mục tiêu là tìm lỗi sớm và giảm rủi ro." }
+        {
+          "text": "Chương trình không còn lỗi nào nữa, có thể yên tâm phát hành ngay bây giờ",
+          "why": "Sai. Kiểm thử không chứng minh được điều đó."
+        },
+        {
+          "text": "Đủ bằng chứng để phát hành luôn mà không cần kiểm thử thêm ở chỗ nào",
+          "why": "Sai. Vẫn có thể có lỗi ở chỗ chưa ai thử."
+        },
+        {
+          "text": "Nên bớt ca đi cho nhẹ việc vì đã có đủ ca rồi, không cần viết thêm",
+          "why": "Sai. Bớt ca làm giảm khả năng tìm lỗi."
+        },
+        {
+          "text": "Chưa chứng minh được là hết lỗi, lỗi có thể nằm ở chỗ chưa được thử",
+          "why": "Đúng. Mục tiêu là tìm lỗi sớm và giảm rủi ro, không phải chứng minh sạch lỗi."
+        }
       ]
     }
   ]

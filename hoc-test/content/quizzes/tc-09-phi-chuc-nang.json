@@ -6,20 +6,20 @@
       "explain": "Mỗi nơi hiển thị có thể được viết theo cách khác nhau. Phải kiểm từng nơi.",
       "options": [
         {
-          "text": "App an toàn với N1.",
+          "text": "App an toàn với N1 vì chuỗi <b> không được chạy và chỉ hiện nguyên văn",
           "why": "Mới kiểm một nơi hiển thị."
         },
         {
-          "text": "Đây là lỗi vì hiện cả ký tự lạ.",
+          "text": "Đây là lỗi vì hiện cả ký tự thẻ lạ ra màn hình và làm người dùng khó hiểu",
           "why": "Hiện nguyên chuỗi là hành vi đúng theo N1."
         },
         {
-          "text": "Phiếu đặt lịch đúng. Còn phải kiểm màn Tra cứu và bảng Quản trị.",
-          "why": "Đúng."
+          "text": "Phiếu đặt lịch đúng, nhưng còn phải kiểm tiếp màn Tra cứu và bảng Quản trị",
+          "why": "Đúng. Mỗi nơi hiển thị có thể được viết theo cách khác nhau."
         },
         {
-          "text": "Cần thử thêm mã chạy được để chắc chắn.",
-          "why": "Thẻ định dạng là đủ, và an toàn hơn."
+          "text": "Cần thử thêm một đoạn mã chạy được để chắc chắn app có chống được tấn công không",
+          "why": "Không cần thử mã chạy được để kết luận; kiểm hiển thị nguyên văn là đủ cho ca này."
         }
       ]
     },
@@ -29,19 +29,19 @@
       "explain": "Sau một lần đăng nhập đúng, bộ đếm phải về 0. Nếu không, người dùng thật sẽ bị khóa oan.",
       "options": [
         {
-          "text": "Sai 3 lần, đúng 1 lần, đăng xuất, sai 3 lần nữa: chưa bị khóa.",
+          "text": "Sai 3 lần, đúng 1 lần, đăng xuất, rồi sai 3 lần nữa: vẫn chưa bị khóa",
           "why": "Đúng. Tổng 6 lần sai nhưng không liên tiếp."
         },
         {
-          "text": "Sai 5 lần rồi thử lần thứ 6.",
+          "text": "Sai 5 lần rồi thử lần thứ 6 xem có bị khóa ngay không, để chắc là đúng quy tắc",
           "why": "Ca này kiểm việc khóa, không kiểm việc đặt lại bộ đếm."
         },
         {
-          "text": "Nhập đúng PIN ngay lần đầu.",
+          "text": "Nhập đúng PIN ngay từ lần đầu tiên, rồi đăng nhập và đăng xuất bình thường",
           "why": "Luồng chính, không chạm tới bộ đếm."
         },
         {
-          "text": "Sai 100 lần liên tiếp.",
+          "text": "Sai 100 lần liên tiếp để xem hệ thống khóa đúng một phút hay bị lỗi gì khác",
           "why": "Không cho thêm thông tin so với ca 5 và 6 lần."
         }
       ]
@@ -52,20 +52,20 @@
       "explain": "Trình đọc màn hình đọc tên của ô từ nhãn được gắn bằng mã. Chữ gợi ý không thay được nhãn và biến mất khi gõ.",
       "options": [
         {
-          "text": "Vì trông không đẹp.",
+          "text": "Vì trông không đẹp và không phù hợp với phong cách chung của cả ứng dụng",
           "why": "Vấn đề không nằm ở thẩm mỹ."
         },
         {
-          "text": "Vì người dùng không biết nhập gì.",
+          "text": "Vì người dùng không biết mình cần nhập gì vào ô đó khi mở form lần đầu",
           "why": "Người nhìn được vẫn thấy chữ gợi ý. Vấn đề nằm ở người không nhìn được."
         },
         {
-          "text": "Không phải lỗi, chữ gợi ý là đủ.",
+          "text": "Không phải lỗi, vì chữ gợi ý là đủ để người dùng hiểu ô đó dùng để làm gì",
           "why": "N2 yêu cầu nhãn gắn với ô."
         },
         {
-          "text": "Vì người dùng trình đọc màn hình không nghe được ô đó là gì, và chữ gợi ý biến mất khi bắt đầu gõ.",
-          "why": "Đúng."
+          "text": "Trình đọc màn hình không biết ô đó là gì, và chữ gợi ý biến mất khi gõ",
+          "why": "Đúng. Trình đọc màn hình đọc tên của ô từ nhãn được gắn bằng mã."
         }
       ]
     },
@@ -75,19 +75,19 @@
       "explain": "Viết đúng mức việc đã làm để người đọc không hiểu nhầm về độ an toàn.",
       "options": [
         {
-          "text": "\"Đã kiểm thử bảo mật, không có vấn đề.\"",
+          "text": "Đã kiểm thử bảo mật và không có vấn đề gì được phát hiện trong suốt lượt kiểm này",
           "why": "Phóng đại. Lượt kiểm nhanh không chứng minh hệ thống an toàn."
         },
         {
-          "text": "\"Đã kiểm nhanh N1, N2, N3, R11 theo danh sách kèm theo. Đề nghị có đợt đánh giá bảo mật chuyên sâu trước khi dùng với dữ liệu thật.\"",
+          "text": "Đã kiểm nhanh N1, N2, N3, R11. Cần đánh giá bảo mật sâu trước khi dùng dữ liệu thật.",
           "why": "Đúng. Rõ đã làm gì và giới hạn ở đâu."
         },
         {
-          "text": "Không ghi gì vì đây không phải việc của tester chức năng.",
+          "text": "Không ghi gì cả vì đây không phải việc của tester chức năng, nên để người khác lo phần này nhé",
           "why": "Thông tin tìm được vẫn có giá trị và cần được báo."
         },
         {
-          "text": "\"Hệ thống đạt chuẩn WCAG.\"",
+          "text": "Hệ thống đạt chuẩn WCAG vì đã kiểm một vài ô và chúng đều có nhãn gắn đúng cách",
           "why": "Kiểm nhãn vài ô không chứng minh đạt cả bộ tiêu chí."
         }
       ]

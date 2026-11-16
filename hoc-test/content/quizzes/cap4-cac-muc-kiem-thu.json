@@ -5,10 +5,22 @@
       "answer": 1,
       "explain": "Kiểm thử đơn vị kiểm một hàm hoặc một thành phần nhỏ khi tách riêng. Nó rẻ và nhanh.",
       "options": [
-        { "text": "Toàn bộ luồng người dùng từ đầu đến cuối.", "why": "Đó là kiểm thử hệ thống, không phải kiểm thử đơn vị." },
-        { "text": "Một hàm hoặc một thành phần nhỏ khi tách riêng.", "why": "Đúng. Đơn vị là phần nhỏ nhất có thể kiểm riêng." },
-        { "text": "Hai hệ thống có nói chuyện với nhau đúng không.", "why": "Đó là kiểm thử tích hợp." },
-        { "text": "Bố cục trên màn hình điện thoại có dễ đọc không.", "why": "Đó là đánh giá bằng mắt, không thuộc kiểm thử đơn vị." }
+        {
+          "text": "Toàn bộ luồng người dùng từ đầu đến cuối.",
+          "why": "Đó là kiểm thử hệ thống, không phải kiểm thử đơn vị."
+        },
+        {
+          "text": "Một hàm hoặc một thành phần nhỏ khi tách riêng.",
+          "why": "Đúng. Đơn vị là phần nhỏ nhất có thể kiểm riêng."
+        },
+        {
+          "text": "Hai hệ thống có nói chuyện với nhau đúng không.",
+          "why": "Đó là kiểm thử tích hợp."
+        },
+        {
+          "text": "Bố cục trên màn hình điện thoại có dễ đọc không.",
+          "why": "Đó là đánh giá bằng mắt, không thuộc kiểm thử đơn vị."
+        }
       ]
     },
     {
@@ -16,10 +28,22 @@
       "answer": 2,
       "explain": "Kiểm thử tích hợp kiểm chỗ các phần ghép lại với nhau. Lỗi giao tiếp thường lộ ở mức này.",
       "options": [
-        { "text": "Kiểm thử đơn vị", "why": "Kiểm thử đơn vị kiểm từng phần riêng. Lỗi giao tiếp không lộ ra khi tách riêng." },
-        { "text": "Kiểm thử hồi quy", "why": "Hồi quy là chạy lại ca cũ sau thay đổi. Nó không phải là một mức kiểm thử theo phạm vi." },
-        { "text": "Kiểm thử tích hợp", "why": "Đúng. Mức này kiểm chỗ các phần ghép lại và trao đổi dữ liệu." },
-        { "text": "Kiểm thử cảm quan", "why": "Đây không phải là một mức kiểm thử trong bài." }
+        {
+          "text": "Kiểm thử đơn vị, kiểm từng phần khi tách riêng ra khỏi phần còn lại",
+          "why": "Kiểm thử đơn vị kiểm từng phần riêng. Lỗi giao tiếp không lộ ra khi tách riêng."
+        },
+        {
+          "text": "Kiểm thử hồi quy, chạy lại ca cũ sau khi có thay đổi trong code",
+          "why": "Hồi quy là chạy lại ca cũ sau thay đổi, không phải một mức kiểm thử theo phạm vi."
+        },
+        {
+          "text": "Kiểm thử tích hợp, kiểm các phần ghép lại và trao đổi dữ liệu",
+          "why": "Đúng. Mức này kiểm chỗ các phần ghép lại và trao đổi dữ liệu."
+        },
+        {
+          "text": "Kiểm thử cảm quan, đánh giá bằng mắt xem giao diện có dễ nhìn không",
+          "why": "Đây không phải một mức kiểm thử trong bài."
+        }
       ]
     },
     {
@@ -27,10 +51,22 @@
       "answer": 0,
       "explain": "Kiểm thử đơn vị rẻ và chạy nhanh, nên có thể chạy thường xuyên.",
       "options": [
-        { "text": "Vì chúng rẻ và chạy nhanh.", "why": "Đúng. Vì vậy nên có nhiều ở tầng này." },
-        { "text": "Vì chúng thay được kiểm thử hệ thống.", "why": "Sai. Mỗi mức bắt một loại lỗi khác nhau." },
-        { "text": "Vì chúng không cần kiểm thử chấp nhận.", "why": "Sai. Test hệ thống và chấp nhận vẫn cần." },
-        { "text": "Vì chúng luôn bắt hết lỗi giao diện.", "why": "Sai. Lỗi giao diện thường cần kiểm ở mức cao hơn." }
+        {
+          "text": "Vì chúng rẻ và chạy nhanh.",
+          "why": "Đúng. Vì vậy nên có nhiều ở tầng này."
+        },
+        {
+          "text": "Vì chúng thay được kiểm thử hệ thống.",
+          "why": "Sai. Mỗi mức bắt một loại lỗi khác nhau."
+        },
+        {
+          "text": "Vì chúng không cần kiểm thử chấp nhận.",
+          "why": "Sai. Test hệ thống và chấp nhận vẫn cần."
+        },
+        {
+          "text": "Vì chúng luôn bắt hết lỗi giao diện.",
+          "why": "Sai. Lỗi giao diện thường cần kiểm ở mức cao hơn."
+        }
       ]
     },
     {
@@ -38,10 +74,22 @@
       "answer": 3,
       "explain": "Các mức cao hơn bắt lỗi ở chỗ giao tiếp trong hệ thống hoàn chỉnh mà kiểm thử đơn vị không thấy.",
       "options": [
-        { "text": "Vì kiểm thử đơn vị đã thừa, nên bỏ.", "why": "Sai. Mỗi mức bắt một loại lỗi khác nhau." },
-        { "text": "Vì chúng chạy rẻ hơn kiểm thử đơn vị.", "why": "Sai. Chúng thường chậm và tốn công hơn." },
-        { "text": "Vì chúng thay được kiểm thử đơn vị.", "why": "Sai. Hai mức bổ sung cho nhau." },
-        { "text": "Vì chúng bắt lỗi ở chỗ giao tiếp trong hệ thống hoàn chỉnh.", "why": "Đúng. Đây là điều kiểm thử đơn vị không bao quát." }
+        {
+          "text": "Vì kiểm thử đơn vị đã thừa, nên bỏ bớt để tiết kiệm công sức cho nhóm",
+          "why": "Sai. Mỗi mức bắt một loại lỗi khác nhau."
+        },
+        {
+          "text": "Vì kiểm thử hệ thống và chấp nhận chạy rẻ và nhanh hơn kiểm thử đơn vị",
+          "why": "Sai. Chúng thường chậm và tốn công hơn."
+        },
+        {
+          "text": "Vì kiểm thử hệ thống và chấp nhận có thể thay thế hoàn toàn kiểm thử đơn vị",
+          "why": "Sai. Hai mức bổ sung cho nhau, không thay được nhau."
+        },
+        {
+          "text": "Vì chúng bắt lỗi ở chỗ giao tiếp trong hệ thống hoàn chỉnh",
+          "why": "Đúng. Đây là loại lỗi kiểm thử đơn vị không bao quát."
+        }
       ]
     }
   ]

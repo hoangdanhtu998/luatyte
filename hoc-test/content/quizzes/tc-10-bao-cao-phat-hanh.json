@@ -6,19 +6,19 @@
       "explain": "Kết luận rõ ràng ngay dòng đầu, kèm lý do mạnh nhất.",
       "options": [
         {
-          "text": "Trong hai tuần qua nhóm kiểm thử đã thực hiện nhiều hoạt động như sau…",
+          "text": "Trong hai tuần qua nhóm kiểm thử đã thực hiện nhiều hoạt động khác nhau, gồm việc như sau…",
           "why": "Người đọc phải đọc hết mới biết kết luận."
         },
         {
-          "text": "Nhìn chung bản 1.1 khá ổn nhưng vẫn còn một số vấn đề cần lưu ý.",
+          "text": "Nhìn chung bản 1.1 khá ổn, nhưng vẫn còn một số vấn đề mà mọi người cần lưu ý thêm",
           "why": "Nước đôi, không giúp quyết định."
         },
         {
-          "text": "Khuyến nghị: chưa phát hành bản 1.1. Lý do chính: trẻ dưới 6 tuổi bị thu phí đầy đủ và API nhận dữ liệu không hợp lệ.",
+          "text": "Khuyến nghị chưa phát hành: trẻ dưới 6 tuổi bị thu phí đủ, API nhận dữ liệu sai",
           "why": "Đúng. Rõ kết luận và căn cứ."
         },
         {
-          "text": "Đã chạy 60 ca, đạt 52, tỷ lệ 87%.",
+          "text": "Nhóm đã chạy 60 ca kiểm thử trong hai tuần vừa qua, đạt 52 ca, tỷ lệ 87 phần trăm",
           "why": "Con số này không cho biết 8 ca không đạt nặng đến đâu."
         }
       ]
@@ -29,19 +29,19 @@
       "explain": "Phần chưa kiểm là thông tin người quyết định cần biết.",
       "options": [
         {
-          "text": "Ghi vào mục \"Chưa kiểm gì\": chưa kiểm cái gì, vì sao, hậu quả có thể có.",
-          "why": "Đúng."
+          "text": "Ghi vào mục \"Chưa kiểm gì\": chưa kiểm gì, vì sao, và hậu quả có thể có",
+          "why": "Đúng. Phần chưa kiểm là thông tin người quyết định cần biết."
         },
         {
-          "text": "Không nhắc tới để báo cáo gọn.",
+          "text": "Không nhắc tới để báo cáo gọn gàng và dễ đọc hơn, tránh làm người đọc lo lắng",
           "why": "Người đọc sẽ mặc định là đã kiểm."
         },
         {
-          "text": "Ghi là đã kiểm vì từng người đặt riêng lẻ đều đúng.",
+          "text": "Ghi là đã kiểm vì từng người đặt riêng lẻ đều đúng, nên coi như đã bao quát",
           "why": "Không đúng sự thật. Đặt đồng thời là rủi ro khác."
         },
         {
-          "text": "Hoãn nộp báo cáo đến khi kiểm được.",
+          "text": "Hoãn nộp báo cáo đến khi kiểm được đầy đủ, để tránh gửi báo cáo chưa hoàn chỉnh",
           "why": "Người quyết định cần thông tin đúng hạn, kể cả thông tin về giới hạn."
         }
       ]
@@ -52,19 +52,19 @@
       "explain": "Tỷ lệ gộp che mất việc phần không đạt nằm ở đâu và nặng thế nào.",
       "options": [
         {
-          "text": "Vì 95% là quá thấp.",
+          "text": "Vì 95% là quá thấp so với mức chuẩn mà các nhóm kiểm thử thường đặt ra",
           "why": "Vấn đề không nằm ở cao hay thấp."
         },
         {
-          "text": "Vì phải đạt 100% mới được phát hành.",
+          "text": "Vì phải đạt 100% số ca thì mới được phát hành, và 95% chưa đủ điều kiện",
           "why": "Không có ngưỡng chung như vậy."
         },
         {
-          "text": "Vì số ca nên nhiều hơn.",
+          "text": "Vì số ca kiểm thử nên nhiều hơn nữa để con số đại diện được đầy đủ hơn",
           "why": "Số ca không quyết định ý nghĩa của tỷ lệ."
         },
         {
-          "text": "Vì 5% không đạt có thể chính là phần tính tiền hoặc lộ thông tin.",
+          "text": "Vì 5% không đạt có thể là phần tính tiền hoặc lộ thông tin cá nhân",
           "why": "Đúng. Phải nói rõ ca không đạt thuộc khu vực rủi ro nào."
         }
       ]
@@ -75,19 +75,19 @@
       "explain": "Tester làm xong việc khi quyết định được đưa ra với đầy đủ thông tin.",
       "options": [
         {
-          "text": "Bạn đã thất bại vì khuyến nghị không được nghe theo.",
+          "text": "Bạn đã thất bại vì khuyến nghị không được nghe theo, và cần rút kinh nghiệm",
           "why": "Quyết định thuộc về người chịu trách nhiệm sản phẩm."
         },
         {
-          "text": "Bạn đã làm đúng việc: quyết định được đưa ra khi đã biết rõ rủi ro. Ghi lại quyết định và các lỗi được chấp nhận.",
-          "why": "Đúng."
+          "text": "Bạn làm đúng việc: quyết định được đưa ra khi đã biết rõ rủi ro",
+          "why": "Đúng. Tester làm xong việc khi quyết định được đưa ra đầy đủ thông tin."
         },
         {
-          "text": "Bạn nên từ chối ký vào báo cáo.",
+          "text": "Bạn nên từ chối ký vào báo cáo vì nó không còn đúng với quyết định cuối cùng",
           "why": "Báo cáo của bạn mô tả sự thật, không phụ thuộc quyết định."
         },
         {
-          "text": "Lần sau nên chấm mức nghiêm trọng cao hơn để ép hoãn.",
+          "text": "Lần sau nên chấm mức nghiêm trọng cao hơn một bậc để buộc đội phải hoãn lại",
           "why": "Thổi phồng mức độ làm mất uy tín của mọi báo cáo sau này."
         }
       ]

@@ -53,6 +53,7 @@
   .fig-img { position:absolute; right:70px; bottom:70px; width:380px; height:auto; }
   .slide .content { max-width:700px; }
 </style>
+<link rel="stylesheet" href="slide-theme.css">
 </head>
 <body>
 <div id="stage">
@@ -140,5 +141,6 @@
   const start = parseInt((location.hash || '#1').slice(1), 10);
   show(isNaN(start) ? 0 : start - 1);
 </script>
+<script src="slide-fit.js"></script>
 </body>
 </html>
