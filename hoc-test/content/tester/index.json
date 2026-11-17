@@ -494,6 +494,15 @@
       "slides": "slides/tester/tc-10-bao-cao-phat-hanh.html",
       "exercises": "content/tester/exercises/tc-10-bao-cao-phat-hanh.json",
       "lab": "lab/so-tay.html#key"
+    },
+    {
+      "id": "tc-11-dang-nhap-khoi-phuc",
+      "title": "Đăng nhập, quên mật khẩu và phân trang trong Sao Mai",
+      "level": 11,
+      "desc": "Đăng nhập bệnh nhân, khóa tạm thời, quên và đổi mật khẩu, trang Lịch của tôi, phân trang quản trị. Các chức năng này có nhiều ranh giới cần kiểm.",
+      "minutes": 40,
+      "exercises": "content/tester/exercises/tc-11-dang-nhap-khoi-phuc.json",
+      "lab": "lab/index.html"
     }
   ]
 }

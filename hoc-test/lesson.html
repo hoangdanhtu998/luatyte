@@ -352,6 +352,19 @@
       buildToc();
       document.getElementById('page').hidden = false;
 
+      // Đọc tới cuối bài thì tự ghi là đã học. Không cần làm bài tập hay máy chủ chạy code.
+      const readEnd = document.createElement('div');
+      readEnd.id = 'read-end';
+      document.getElementById('lesson').appendChild(readEnd);
+      if ('IntersectionObserver' in window) {
+        const endObserver = new IntersectionObserver((entries) => {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          markLessonDone(lesson.id, 'Đã đọc hết bài, bài được ghi là hoàn thành.');
+          endObserver.disconnect();
+        });
+        endObserver.observe(readEnd);
+      }
+
       document.getElementById('tab-read').addEventListener('click', () => showTab('read'));
       document.getElementById('tab-practice').addEventListener('click', () => showTab('practice'));
       document.getElementById('tab-demo').addEventListener('click', () => showTab('demo'));
