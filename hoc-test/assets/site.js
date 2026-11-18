@@ -65,7 +65,7 @@ function initPractice({ lessonId, exercises }) {
   };
 
   function setTerm(lines) {
-    el.term.innerHTML = '';
+    el.term.replaceChildren();
     for (const [cls, text] of lines) {
       const span = document.createElement('span');
       span.className = cls;
@@ -76,7 +76,7 @@ function initPractice({ lessonId, exercises }) {
 
   function fillStds() {
     const env = ENVIRONMENTS[el.lang.value];
-    el.std.innerHTML = '';
+    el.std.replaceChildren();
     for (const s of env.stds) {
       const o = document.createElement('option');
       o.value = s;
@@ -98,7 +98,7 @@ function initPractice({ lessonId, exercises }) {
   function codeKey() { return lessonId + ':' + currentEx().id; }
 
   function renderTabs() {
-    el.tabs.innerHTML = '';
+    el.tabs.replaceChildren();
     exercises.forEach((ex, i) => {
       const b = document.createElement('button');
       b.className = 'ex-tab' + (i === state.ex ? ' on' : '');

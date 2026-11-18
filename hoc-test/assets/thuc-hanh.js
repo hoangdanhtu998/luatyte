@@ -252,7 +252,7 @@
       reset: function () {},
       onEnter: function (step) {
         scen.textContent = step.scenario || '';
-        btns.innerHTML = '';
+        btns.replaceChildren();
         list = [];
         byId = {};
         var choices = step.task && step.task.choices;
@@ -402,7 +402,7 @@
 
   function start(data) {
     var root = document.getElementById('th-root');
-    root.innerHTML = '';
+    root.replaceChildren();
     var type = data.app.type || 'form';
     if (!FACTORY[type]) { root.textContent = 'Loại app chưa hỗ trợ: ' + type; return; }
     var steps = data.steps;

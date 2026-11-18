@@ -15,7 +15,7 @@
     const state = { i: 0, ran: false };
 
     // Dựng khung giao diện.
-    root.innerHTML = '';
+    root.replaceChildren();
     const top = el('div', 'hop-top');
     const dots = el('div', 'hop-dots');
     dots.setAttribute('aria-label', 'Tiến độ');
@@ -66,7 +66,7 @@
     }
 
     function renderDots() {
-      dots.innerHTML = '';
+      dots.replaceChildren();
       screens.forEach((_, k) => {
         const s = el('span');
         if (k <= state.i) s.className = 'on';
@@ -75,7 +75,7 @@
     }
 
     function renderBoxes(screen) {
-      boxes.innerHTML = '';
+      boxes.replaceChildren();
       const { vals, changed } = boxValues();
       (screen.boxes || []).forEach(name => {
         const has = vals[name] !== undefined;
@@ -110,7 +110,7 @@
       feedback.textContent = '';
       feedback.className = 'hop-feedback';
 
-      choices.innerHTML = '';
+      choices.replaceChildren();
       choices.hidden = true;
       next.hidden = false;
       next.textContent = 'Tiếp';

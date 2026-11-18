@@ -67,7 +67,7 @@
   }
   function renderWork() {
     var box = $('work-list');
-    box.innerHTML = '';
+    box.replaceChildren();
     var openId = location.hash.indexOf('#bai=') === 0 ? location.hash.slice(5) : '';
     D.lessons.forEach(function (l) {
       var card = el('details', 'work');
@@ -163,7 +163,7 @@
   }
   function renderBugs() {
     var box = $('bug-list');
-    box.innerHTML = '';
+    box.replaceChildren();
     $('bug-count').textContent = 'Đang có ' + state.bugs.length + ' lỗi trong sổ';
     state.bugs.forEach(function (b, i) {
       var card = el('article', 'bug');
@@ -226,7 +226,7 @@
     var build = $('key-build').value;
     var list = D.bugs.filter(function (b) { return b.builds.indexOf(build) >= 0; });
     var body = document.querySelector('#key-table tbody');
-    body.innerHTML = '';
+    body.replaceChildren();
     list.forEach(function (b) {
       var fk = build + ':' + b.id;
       var tr = el('tr', state.found[fk] ? 'found' : '');

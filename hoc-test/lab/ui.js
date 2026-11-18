@@ -77,7 +77,7 @@
     var sel = $('f-time');
     var keep = sel.value;
     var s = L.load();
-    sel.innerHTML = '';
+    sel.replaceChildren();
     L.slotTimes().forEach(function (t) {
       var n = L.booked(s, $('f-doctor').value, $('f-date').value, t);
       var full = L.slotFull(n);
@@ -130,7 +130,7 @@
   }
 
   function renderTicket(box, a, heading, plainMoney) {
-    box.innerHTML = '';
+    box.replaceChildren();
     box.hidden = false;
     box.className = 'result ok';
     box.appendChild(el('h2', '', heading));
@@ -152,7 +152,7 @@
       var box = $('lookup-result');
       var a = L.find($('l-code').value, $('l-phone').value);
       if (!a) {
-        box.hidden = false; box.className = 'result bad'; box.innerHTML = '';
+        box.hidden = false; box.className = 'result bad'; box.replaceChildren();
         box.appendChild(el('p', '', 'Không tìm thấy lịch khớp với số điện thoại và mã lịch này.'));
         return;
       }
@@ -247,7 +247,7 @@
     $('admin-prev').disabled = pg.page <= 1;
     $('admin-next').disabled = pg.page >= pg.pages;
     var body = document.querySelector('#admin-table tbody');
-    body.innerHTML = '';
+    body.replaceChildren();
     pg.items.forEach(function (a) {
       body.appendChild(adminRow(a));
       if (adminState.open[a.code]) body.appendChild(historyRow(a));

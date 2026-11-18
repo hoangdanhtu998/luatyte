@@ -280,7 +280,7 @@
   function removeTyping() { var d = document.getElementById('typing'); if (d) d.remove(); }
 
   function showChoices(step) {
-    choicesBox.innerHTML = '';
+    choicesBox.replaceChildren();
     if (!step.quiz) { choicesBox.hidden = true; return; }
     choicesBox.hidden = false;
     step.choices.forEach(function (c) {
@@ -317,7 +317,7 @@
 
   // Dựng lại toàn bộ bước trước để khi quay lại thì sân khấu đúng trạng thái.
   function replayUpTo(n) {
-    log.innerHTML = '';
+    log.replaceChildren();
     resetStage();
     for (var i = 0; i < n; i++) {
       var s = STEPS[i];

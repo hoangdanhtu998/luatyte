@@ -252,7 +252,7 @@
       if (heads.length === 0) { toc.hidden = true; if (drawer) drawer.hidden = true; return; }
       heads.forEach((h, i) => { h.id = 'sec-' + (i + 1); });
       toc.innerHTML = '<h4>Trong bài</h4><ol></ol>';
-      if (drawerOl) drawerOl.innerHTML = '';
+      if (drawerOl) drawerOl.replaceChildren();
       const ol = toc.querySelector('ol');
       heads.forEach(h => {
         const li = document.createElement('li');
