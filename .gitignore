@@ -31,3 +31,4 @@ tts-voices/
 # Generated hospital asset outputs
 skill-hospital-assets/hospital-assets/
 skill-hospital-assets/tools/*.log
+/qa-hub/
