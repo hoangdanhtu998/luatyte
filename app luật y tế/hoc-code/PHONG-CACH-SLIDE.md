@@ -174,4 +174,4 @@ Web và slide HTML đã được đồng bộ theo bảng màu trong file này. 
 | `#f7f4ee` kem | `#F5F2EA` |
 | `#1d2330` nền code | `#14181F` |
 
-Áp dụng cho: `assets/site.css`, `index-hoccode.html`, `lesson.html`, `setup.html`, và các slide `slides/*.html`. Trang `du-an.html` vẫn dùng `assets/style.css` cũ (chưa đổi). Khi làm slide mới, dùng bảng mới.
+Áp dụng cho: `assets/site.css`, `index.html`, `lesson.html`, `setup.html`, và các slide `slides/*.html`. Trang `du-an.html` vẫn dùng `assets/style.css` cũ (chưa đổi). Khi làm slide mới, dùng bảng mới.

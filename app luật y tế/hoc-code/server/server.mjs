@@ -222,7 +222,7 @@ async function handleRun(req, res) {
 
 async function serveStatic(req, res, pathname) {
   let rel = decodeURIComponent(pathname);
-  if (rel === '/' || rel === '') rel = '/index-hoccode.html';
+  if (rel === '/' || rel === '') rel = '/index.html';
   const file = resolve(ROOT, '.' + rel);
   const inRoot = file === ROOT || file.startsWith(ROOT + sep);
   const blocked = /(^|[\\/])(server|\.git|node_modules)([\\/]|$)/i.test(rel) || /(^|[\\/])\./.test(rel);
@@ -274,7 +274,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '127.0.0.1', () => {
-  console.log('Học code đang chạy tại http://localhost:' + PORT + '/index-hoccode.html');
+  console.log('Học code đang chạy tại http://localhost:' + PORT + '/index.html');
   console.log('Trình chạy code: ' + RUNNER + (RUNNER === 'docker' ? ' (image ' + DOCKER_IMAGE + ')' : ' (trình biên dịch: ' + (WIN ? COMPILER_DIR : 'PATH') + ')'));
   if (RUNNER !== 'docker') {
     console.log('CẢNH BÁO: chế độ local biên dịch và chạy code trực tiếp trên máy này. Chỉ dùng khi phát triển, không mở cổng này ra internet.');

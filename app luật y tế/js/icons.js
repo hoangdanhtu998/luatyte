@@ -26,7 +26,7 @@ window.LytIcons = (function () {
   }
   ready(function () {
     // Thẻ khu học
-    var hubMap = { 'triet-hoc.html': 'bulb', 'tam-quan.html': 'compass', 'dao-duc.html': 'scale', 'hoc-code/index-hoccode.html': 'code', '/hoc-test/': 'check' };
+    var hubMap = { 'triet-hoc.html': 'bulb', 'tam-quan.html': 'compass', 'dao-duc.html': 'scale', 'hoc-code/index.html': 'code', '/hoc-test/': 'check' };
     document.querySelectorAll('.hub-card a.hub-link').forEach(function (a) {
       var key = a.getAttribute('href');
       var name = hubMap[key];
