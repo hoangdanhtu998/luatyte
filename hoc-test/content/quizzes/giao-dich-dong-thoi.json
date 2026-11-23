@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Hai người cùng đặt suất khám cuối cùng, và cả hai đều thấy thành công. Đây là lỗi gì?",
+      "answer": 1,
+      "explain": "Hai yêu cầu cùng tranh một tài nguyên mà không được kiểm soát đúng. Đây là race condition hoặc mất cập nhật.",
+      "options": [
+        { "text": "Lỗi giao diện", "why": "Giao diện hiển thị đúng kết quả mà backend trả về." },
+        { "text": "Race condition: cần kiểm khóa hoặc ràng buộc khi đặt", "why": "Đúng. Đây là giả thuyết cần thử và thu thập bằng chứng." },
+        { "text": "Lỗi mạng", "why": "Mạng không giải thích được việc hai người cùng thắng." },
+        { "text": "Lỗi font chữ", "why": "Font không liên quan đến việc đặt chỗ." }
+      ]
+    },
+    {
+      "q": "Người dùng bấm Gửi hai lần và tạo ra hai đơn. Cách kiểm nào phù hợp?",
+      "answer": 2,
+      "explain": "Gửi cùng một yêu cầu lặp lại và đếm số bản ghi là cách trực tiếp để kiểm idempotency.",
+      "options": [
+        { "text": "Bấm một lần, thấy OK là đủ", "why": "Một lần không kiểm được trường hợp trùng." },
+        { "text": "Chỉ xem giao diện", "why": "Giao diện không cho biết số bản ghi trong DB." },
+        { "text": "Gửi lặp cùng yêu cầu, đếm số bản ghi trong DB", "why": "Đúng. Đây là ca bắt buộc cho thao tác ghi quan trọng." },
+        { "text": "Bỏ qua vì là lỗi hiếm", "why": "Bấm trùng rất thường xảy ra khi mạng chậm." }
+      ]
+    },
+    {
+      "q": "Trong ACID, Atomicity nghĩa là gì?",
+      "answer": 0,
+      "explain": "Giao dịch được làm trọn vẹn hoặc hủy toàn bộ, không có trạng thái nửa vời.",
+      "options": [
+        { "text": "Hoặc làm trọn vẹn, hoặc hủy toàn bộ", "why": "Đúng. Ví dụ: trừ tiền và cộng tiền cùng thành công hoặc cùng bị hủy." },
+        { "text": "Dữ liệu luôn đúng với mọi quy tắc", "why": "Đây là mô tả của Consistency, không phải Atomicity." },
+        { "text": "Các giao dịch không nhìn thấy nhau", "why": "Đây là mô tả của Isolation." },
+        { "text": "Dữ liệu còn sau khi mất điện", "why": "Đây là mô tả của Durability." }
+      ]
+    },
+    {
+      "q": "Vì sao không nên kết luận \"đây là race condition\" ngay khi thấy hành vi lạ?",
+      "answer": 3,
+      "explain": "Nguyên nhân có thể là retry của client, cache hoặc lỗi khác. Phải lặp lại thử và thu thập log.",
+      "options": [
+        { "text": "Vì tên nghe hay", "why": "Tên gọi không phải lý do để kết luận." },
+        { "text": "Vì luôn luôn là lỗi cơ sở dữ liệu", "why": "Lỗi có nhiều nguyên nhân, không luôn luôn là DB." },
+        { "text": "Vì không cần bằng chứng", "why": "Kết luận không có bằng chứng là kết luận sai quy trình." },
+        { "text": "Vì chưa có bằng chứng và có thể là nguyên nhân khác", "why": "Đúng. Ghi lại bằng chứng, lặp lại thử, rồi mới kết luận với mức độ phù hợp." }
+      ]
+    }
+  ]
+}

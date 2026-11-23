@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Vừa có bản build mới. Bạn kiểm nhanh đăng nhập, đặt lịch và thanh toán để quyết định có kiểm tiếp không. Đây là loại kiểm thử nào?",
+      "answer": 0,
+      "explain": "Smoke test kiểm nhanh các luồng quan trọng nhất sau khi có bản build mới.",
+      "options": [
+        { "text": "Smoke test", "why": "Đúng. Mục tiêu là quyết định có tiếp tục kiểm hay không." },
+        { "text": "Load test", "why": "Load test kiểm tải, không phải kiểm nhanh luồng cơ bản." },
+        { "text": "Penetration test", "why": "Đây là kiểm bảo mật, không phải smoke." },
+        { "text": "Unit test", "why": "Unit test kiểm từng đơn vị code, không phải luồng người dùng." }
+      ]
+    },
+    {
+      "q": "Chỉ sửa công thức phí bảo hiểm. Bạn nên kiểm gì?",
+      "answer": 2,
+      "explain": "Sanity quanh phí và phân tích tác động đến nơi phí được dùng: đơn hàng, hóa đơn, báo cáo.",
+      "options": [
+        { "text": "Full regression mọi chức năng", "why": "Quá nặng cho một thay đổi nhỏ có mục tiêu." },
+        { "text": "Không kiểm vì chỉ sửa công thức", "why": "Công thức được dùng ở nhiều nơi, không kiểm là bỏ sót." },
+        { "text": "Sanity quanh phí và kiểm mọi nơi phí được dùng", "why": "Đúng. Đây là cân bằng giữa phạm vi và chi phí kiểm." },
+        { "text": "Chỉ kiểm màn đăng nhập", "why": "Màn đăng nhập không liên quan đến công thức phí." }
+      ]
+    },
+    {
+      "q": "Bước đầu tiên của phân tích tác động là gì?",
+      "answer": 1,
+      "explain": "Xác định phần đã đổi và phần phụ thuộc vào nó, trước khi chọn ca cần chạy lại.",
+      "options": [
+        { "text": "Viết báo cáo", "why": "Báo cáo đến cuối cùng." },
+        { "text": "Xác định phần thay đổi và phần phụ thuộc", "why": "Đúng. Mọi bước sau dựa trên danh sách này." },
+        { "text": "Chạy kiểm thử hiệu năng", "why": "Hiệu năng không phải bước đầu tiên." },
+        { "text": "Xóa dữ liệu kiểm thử", "why": "Xóa dữ liệu không giúp phân tích tác động." }
+      ]
+    },
+    {
+      "q": "Vì sao regression không nên chỉ chạy những ca vừa sửa?",
+      "answer": 3,
+      "explain": "Lỗi hồi quy thường nằm ở chức năng phụ thuộc, không phải nơi được sửa.",
+      "options": [
+        { "text": "Vì tốn thời gian", "why": "Thời gian là lý do để chọn lọc, không phải lý do để bỏ qua." },
+        { "text": "Vì không cần thiết", "why": "Sửa một chỗ có thể làm hỏng chỗ khác." },
+        { "text": "Vì ca vừa sửa luôn đúng", "why": "Ca vừa sửa có thể đúng nhưng chức năng khác vẫn hỏng." },
+        { "text": "Vì lỗi hồi quy thường nằm ở chức năng phụ thuộc, không chỉ chỗ được sửa", "why": "Đúng. Đây là lý do cần phân tích tác động." }
+      ]
+    }
+  ]
+}

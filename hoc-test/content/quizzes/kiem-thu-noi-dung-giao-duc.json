@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Câu hỏi ghi đáp án là B, nhưng lời giải thích lại nói đáp án đúng là C. Bạn làm gì?",
+      "answer": 0,
+      "explain": "Đây là lỗi nội dung. Phải đối chiếu nguồn để biết đáp án đúng trước khi sửa.",
+      "options": [
+        { "text": "Ghi là lỗi nội dung và đối chiếu nguồn trước khi sửa", "why": "Đúng. Không sửa khi chưa biết đáp án thật." },
+        { "text": "Bỏ qua vì người học sẽ không chú ý", "why": "Người học sẽ học điều sai nếu không sửa." },
+        { "text": "Sửa lời giải cho khớp đáp án B mà không kiểm", "why": "Sửa cho khớp đáp án đang ghi là lấy sai làm đúng." },
+        { "text": "Xóa câu hỏi", "why": "Xóa câu hỏi che giấu lỗi thay vì xử lý nó." }
+      ]
+    },
+    {
+      "q": "Yêu cầu ghi: \"Điểm = số câu đúng / tổng số câu × 10, làm tròn một chữ số thập phân\". Điều gì cần kiểm?",
+      "answer": 2,
+      "explain": "Đối chiếu công thức từ yêu cầu với kết quả hệ thống, gồm làm tròn và các trường hợp biên.",
+      "options": [
+        { "text": "Chỉ kiểm có hiển thị số hay không", "why": "Hiển thị có số không đảm bảo số đúng." },
+        { "text": "Tự áp công thức phổ biến khác", "why": "Phải theo yêu cầu, không theo thói quen." },
+        { "text": "Đối chiếu với yêu cầu, gồm làm tròn và các biên như 0 câu đúng", "why": "Đúng. Tính tay trước rồi so với hệ thống." },
+        { "text": "Không cần kiểm vì công thức đơn giản", "why": "Lỗi làm tròn và chia cho 0 thường nằm ở công thức đơn giản." }
+      ]
+    },
+    {
+      "q": "Đáp án điền ngắn là \"3,14\". Có nên chấp nhận \"3.14\" không?",
+      "answer": 1,
+      "explain": "Phụ thuộc yêu cầu. Nếu chưa quy định thì hỏi lại và ghi là giả định.",
+      "options": [
+        { "text": "Luôn đúng", "why": "Không có quy tắc chung cho mọi trường hợp." },
+        { "text": "Phụ thuộc yêu cầu. Nếu chưa quy định thì hỏi lại và ghi là giả định", "why": "Đúng. Không tự chọn quy tắc rồi coi là đúng." },
+        { "text": "Luôn sai", "why": "Không có căn cứ để coi là sai khi chưa có quy định." },
+        { "text": "Chỉ chấp nhận khi có dấu phẩy", "why": "Đây là quy tắc tự đặt, không phải yêu cầu." }
+      ]
+    },
+    {
+      "q": "Công thức hiển thị \"x²\" thành \"x2\" trên trang. Đây là loại lỗi nào?",
+      "answer": 3,
+      "explain": "Mất ký hiệu làm sai ý nghĩa công thức. Cần kiểm cả nội dung và hiển thị.",
+      "options": [
+        { "text": "Không đáng kể", "why": "x² và x2 có ý nghĩa khác nhau hoàn toàn." },
+        { "text": "Lỗi đường truyền", "why": "Đường truyền không làm đổi ký hiệu." },
+        { "text": "Lỗi CSS màu", "why": "Màu sắc không liên quan đến ký hiệu." },
+        { "text": "Lỗi hiển thị làm sai ý nghĩa công thức", "why": "Đúng. Đây là lỗi nội dung dưới dạng hiển thị." }
+      ]
+    }
+  ]
+}

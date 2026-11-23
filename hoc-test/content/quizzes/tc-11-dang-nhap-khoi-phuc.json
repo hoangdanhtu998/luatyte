@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Bệnh nhân nhập sai mật khẩu đủ 5 lần, sau đó đợi hết 1 phút rồi nhập đúng. Kết quả đúng là gì?",
+      "answer": 1,
+      "explain": "Khóa chỉ kéo dài 1 phút. Khi hết khóa, đăng nhập đúng sẽ vào được và xóa bộ đếm sai.",
+      "options": [
+        { "text": "Vẫn bị khóa, vì đã sai đủ 5 lần thì phải chờ đến khi hệ thống đặt lại dữ liệu", "why": "Khóa tạm thời 1 phút, không phải khóa vĩnh viễn." },
+        { "text": "Vào được, vì hết 1 phút khóa tự mở và đăng nhập đúng xóa bộ đếm sai", "why": "Đúng. Đây là luật của app." },
+        { "text": "Phải đổi mật khẩu mới thì mới vào được", "why": "Khóa không liên quan đến việc đổi mật khẩu." },
+        { "text": "Đổi sang trình duyệt khác là vào được, vì khóa tính theo trình duyệt", "why": "Khóa tính theo số điện thoại, không theo trình duyệt." }
+      ]
+    },
+    {
+      "q": "Mã khôi phục đã hết hạn sau 10 phút. Người dùng nhập chính mã đó. Kết quả đúng là gì?",
+      "answer": 2,
+      "explain": "Mã hết hạn thì phải yêu cầu mã mới. App không được chấp nhận mã cũ.",
+      "options": [
+        { "text": "App tạo tài khoản mới cho số điện thoại đó", "why": "Quên mật khẩu không tạo tài khoản mới." },
+        { "text": "Vẫn đặt được mật khẩu mới, vì mã vẫn đúng về nội dung", "why": "Mã hết hạn thì không còn hiệu lực, dù nội dung vẫn đúng." },
+        { "text": "App báo mã đã hết hạn và yêu cầu gửi mã mới", "why": "Đúng. Đây là hành vi cần kiểm." },
+        { "text": "App tự gửi mã mới rồi cho đặt mật khẩu luôn", "why": "App không tự gửi mã mới. Người dùng phải bấm Gửi mã lại." }
+      ]
+    },
+    {
+      "q": "Khi đổi mật khẩu, mật khẩu cũ nhập đúng. Mật khẩu mới dài đúng 8 ký tự nhưng giống hệt mật khẩu cũ. App nên làm gì?",
+      "answer": 0,
+      "explain": "Đủ 8 ký tự là chưa đủ. Mật khẩu mới phải khác mật khẩu cũ, và app phải từ chối.",
+      "options": [
+        { "text": "Từ chối, vì mật khẩu mới phải khác mật khẩu cũ", "why": "Đúng. Đây là ca dễ bị thiếu." },
+        { "text": "Chấp nhận, vì mật khẩu đủ 8 ký tự", "why": "Độ dài chỉ là một điều kiện. Điều kiện khác phải khác mật khẩu cũ." },
+        { "text": "Từ chối, vì mật khẩu cũ không đúng", "why": "Mật khẩu cũ đã đúng trong ca này." },
+        { "text": "Chấp nhận nhưng hiện cảnh báo", "why": "App phải từ chối, không chỉ cảnh báo." }
+      ]
+    },
+    {
+      "q": "Màn hình quản trị có 6 lịch, mỗi trang 5 lịch. Người kiểm lọc theo một mã không có kết quả nào. App nên hiển thị gì?",
+      "answer": 3,
+      "explain": "Khi không có kết quả thì hiện thông báo trống. Không hiện số trang vô nghĩa như 1/0.",
+      "options": [
+        { "text": "Hiện lỗi 500", "why": "Không có kết quả là tình huống bình thường, không phải lỗi máy chủ." },
+        { "text": "Hiện các dòng cũ chưa được lọc", "why": "Dòng đã bị lọc đi không được lẫn vào kết quả." },
+        { "text": "Hiện trang 1/0", "why": "Số trang 0 là lỗi giao diện cần bắt." },
+        { "text": "Hiện thông báo trống, không hiện số trang", "why": "Đúng. Đây là hành vi cần kiểm." }
+      ]
+    }
+  ]
+}

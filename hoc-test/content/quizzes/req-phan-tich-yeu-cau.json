@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Yêu cầu ghi \"trang phải tải nhanh\". Bạn nên làm gì trước khi viết ca?",
+      "answer": 2,
+      "explain": "Từ \"nhanh\" không đo được. Phải hỏi con số, điều kiện đo và công cụ đo.",
+      "options": [
+        { "text": "Ghi Pass vì trang có tải lên", "why": "Không có tiêu chí thì không có Pass." },
+        { "text": "Tự đặt 3 giây rồi viết ca", "why": "Con số tự đặt không phải yêu cầu. Đó là giả định chưa được xác nhận." },
+        { "text": "Hỏi làm rõ con số, điều kiện đo và công cụ đo", "why": "Đúng. Đây là câu hỏi làm rõ có số liệu." },
+        { "text": "Bỏ qua vì đây không phải chức năng", "why": "Hiệu năng là yêu cầu phi chức năng, vẫn cần kiểm." }
+      ]
+    },
+    {
+      "q": "Trưởng nhóm nói miệng \"chắc sẽ có xác nhận email\" nhưng tài liệu chưa có. Phân loại yêu cầu này thế nào?",
+      "answer": 1,
+      "explain": "Thông tin chỉ nghe trong cuộc họp, chưa có văn bản, là giả định. Không chuyển thành đã xác nhận.",
+      "options": [
+        { "text": "Đã xác nhận", "why": "Chưa có văn bản thì chưa được xác nhận." },
+        { "text": "Giả định", "why": "Đúng. Ghi rõ là giả định và hỏi lại để có văn bản." },
+        { "text": "Ngoài phạm vi", "why": "Chưa có thông tin nào nói là ngoài phạm vi." },
+        { "text": "Đã kiểm xong", "why": "Chưa có ca nào được chạy." }
+      ]
+    },
+    {
+      "q": "Trong RTM, REQ-003 chưa có ca kiểm thử nào. Bạn ghi gì?",
+      "answer": 2,
+      "explain": "Thiếu độ phủ phải được ghi nhận. Hoặc viết ca, hoặc nêu rủi ro nếu quyết định không kiểm.",
+      "options": [
+        { "text": "Ghi Pass vì không có ca nào Fail", "why": "Không có ca thì không có bằng chứng Pass." },
+        { "text": "Xóa REQ-003 khỏi danh sách", "why": "Xóa yêu cầu để báo cáo đẹp là che giấu khoảng trống." },
+        { "text": "Ghi thiếu độ phủ và tạo ca hoặc nêu rủi ro", "why": "Đúng. Đây là cách truy vết trung thực." },
+        { "text": "Đợi đến khi có lỗi mới ghi", "why": "Khoảng trống không chờ lỗi xuất hiện mới được ghi nhận." }
+      ]
+    },
+    {
+      "q": "Developer báo \"đã sửa lỗi\". Tester có cần kiểm lại không?",
+      "answer": 0,
+      "explain": "Lời báo không phải bằng chứng. Tester phải kiểm lại độc lập.",
+      "options": [
+        { "text": "Có, phải kiểm lại độc lập", "why": "Đúng. Đây là nguyên tắc retest." },
+        { "text": "Không, vì developer đã xác nhận", "why": "Developer xác nhận không thay thế kiểm thử độc lập." },
+        { "text": "Chỉ cần đọc diff", "why": "Đọc code là phân tích tĩnh, không phải bằng chứng chạy thật." },
+        { "text": "Chỉ kiểm khi khách hỏi", "why": "Retest là bước bắt buộc trong quy trình, không phải theo yêu cầu khách." }
+      ]
+    }
+  ]
+}

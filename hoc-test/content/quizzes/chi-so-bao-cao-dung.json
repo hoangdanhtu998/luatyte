@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Có 50 ca: 40 Pass, 5 Fail, 5 Blocked. Pass rate theo Pass / (Pass + Fail) là bao nhiêu?",
+      "answer": 2,
+      "explain": "40 / 45 ≈ 88,9%. Blocked không nằm trong mẫu số này, nhưng vẫn phải được báo cáo.",
+      "options": [
+        { "text": "80%", "why": "Đây là tính trên tổng 50 ca, không phải theo công thức đã nêu." },
+        { "text": "90%", "why": "Gần đúng nhưng làm tròn sai, 40 / 45 ≈ 88,9%." },
+        { "text": "≈ 88,9%", "why": "Đúng. Mẫu số là Pass + Fail = 45." },
+        { "text": "100%", "why": "Có 5 ca Fail và 5 ca Blocked, không thể là 100%." }
+      ]
+    },
+    {
+      "q": "\"Độ phủ yêu cầu 95%\" nên sản phẩm không còn lỗi. Nhận định này đúng hay sai?",
+      "answer": 1,
+      "explain": "Coverage cho biết phạm vi đã có ca, không chứng minh không còn lỗi.",
+      "options": [
+        { "text": "Đúng", "why": "Coverage không đo chất lượng hành vi." },
+        { "text": "Sai: coverage chỉ cho biết phạm vi đã phủ, không chứng minh không còn lỗi", "why": "Đúng. Dùng coverage để tìm khoảng trống, không để kết luận." },
+        { "text": "Đúng nếu là code coverage", "why": "Code coverage cũng không chứng minh hành vi đúng." },
+        { "text": "Đúng nếu có automation", "why": "Automation chỉ chạy những gì đã viết, không bảo đảm không còn lỗi." }
+      ]
+    },
+    {
+      "q": "Một số ca bị Blocked do môi trường hỏng. Báo cáo nên ghi thế nào?",
+      "answer": 0,
+      "explain": "Blocked phải được ghi kèm lý do và phạm vi chưa kiểm, không gộp vào Pass.",
+      "options": [
+        { "text": "Ghi Blocked kèm lý do và phạm vi chưa kiểm", "why": "Đúng. Người đọc biết chính xác cái gì chưa được kiểm." },
+        { "text": "Ghi Passed vì không thấy lỗi", "why": "Không chạy được không phải là đạt." },
+        { "text": "Xóa khỏi báo cáo", "why": "Xóa làm người đọc tưởng phạm vi đã được kiểm đủ." },
+        { "text": "Ghi là Failed của sản phẩm", "why": "Môi trường hỏng không phải lỗi của sản phẩm." }
+      ]
+    },
+    {
+      "q": "Đã kiểm được 60% yêu cầu, không có lỗi Critical. Khuyến nghị nào đúng?",
+      "answer": 2,
+      "explain": "40% yêu cầu chưa được kiểm, nên chưa đủ bằng chứng để kết luận sẵn sàng.",
+      "options": [
+        { "text": "Ready for Release", "why": "Còn 40% chưa được kiểm, không đủ bằng chứng." },
+        { "text": "Ready with Known Issues", "why": "Chưa có danh sách lỗi đã biết để nói là chấp nhận được." },
+        { "text": "Inconclusive – More Testing Required", "why": "Đúng. Chưa đủ bằng chứng để kết luận." },
+        { "text": "Sẵn sàng vì không có lỗi Critical", "why": "Không có lỗi lớn không có nghĩa là đã kiểm đủ." }
+      ]
+    }
+  ]
+}

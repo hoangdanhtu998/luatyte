@@ -54,6 +54,11 @@
       "id": 11,
       "name": "Dự án thực chiến: Phòng khám Sao Mai",
       "desc": "Mười bài làm trên một app đặt lịch khám có lỗi cài sẵn. Mỗi bài nộp một sản phẩm như việc thật: câu hỏi làm rõ, kế hoạch, bộ ca, phiên khám phá, báo cáo lỗi, ca API, tự động hóa, hồi quy, báo cáo phát hành."
+    },
+    {
+      "id": 12,
+      "name": "Mở rộng theo tài liệu kiểm thử chuẩn",
+      "desc": "Yêu cầu và truy vết, ghép tổ hợp, cơ sở dữ liệu, giao dịch và đồng thời, tích hợp, nội dung giáo dục, smoke và tác động, chỉ số và báo cáo."
     }
   ],
   "lessons": [
@@ -502,7 +507,80 @@
       "desc": "Đăng nhập bệnh nhân, khóa tạm thời, quên và đổi mật khẩu, trang Lịch của tôi, phân trang quản trị. Các chức năng này có nhiều ranh giới cần kiểm.",
       "minutes": 40,
       "exercises": "content/tester/exercises/tc-11-dang-nhap-khoi-phuc.json",
-      "lab": "lab/index.html"
+      "lab": "lab/index.html",
+      "slides": "slides/tester/tc-11-dang-nhap-khoi-phuc.html"
+    },
+    {
+      "id": "req-phan-tich-yeu-cau",
+      "title": "Phân tích yêu cầu và phát hiện chỗ mơ hồ",
+      "level": 12,
+      "desc": "Tách loại yêu cầu, tìm từ không đo được, gắn nhãn đã xác nhận hay giả định, lập ma trận truy vết.",
+      "minutes": 40,
+      "slides": "slides/tester/req-phan-tich-yeu-cau.html",
+      "exercises": "content/tester/exercises/req-phan-tich-yeu-cau.json"
+    },
+    {
+      "id": "ghep-to-hop",
+      "title": "Ghép tổ hợp: pairwise và đồ thị nguyên nhân–kết quả",
+      "level": 12,
+      "desc": "Vì sao không thử hết tổ hợp, cách phủ cặp, đưa ràng buộc vào bộ ca và chuyển luật thành bảng quyết định.",
+      "minutes": 45,
+      "slides": "slides/tester/ghep-to-hop.html",
+      "exercises": "content/tester/exercises/ghep-to-hop.json"
+    },
+    {
+      "id": "kiem-thu-co-so-du-lieu",
+      "title": "Kiểm thử cơ sở dữ liệu cho tester",
+      "level": 12,
+      "desc": "Đọc dữ liệu bằng SELECT và JOIN, kiểm ràng buộc, đối soát từ giao diện xuống DB, làm việc an toàn với dữ liệu.",
+      "minutes": 45,
+      "slides": "slides/tester/kiem-thu-co-so-du-lieu.html",
+      "exercises": "content/tester/exercises/kiem-thu-co-so-du-lieu.json"
+    },
+    {
+      "id": "giao-dich-dong-thoi",
+      "title": "Giao dịch, đồng thời và tính idempotent",
+      "level": 12,
+      "desc": "ACID, mất cập nhật, race condition, deadlock, bấm trùng và gửi lặp; không kết luận khi chưa có bằng chứng.",
+      "minutes": 45,
+      "slides": "slides/tester/giao-dich-dong-thoi.html",
+      "exercises": "content/tester/exercises/giao-dich-dong-thoi.json"
+    },
+    {
+      "id": "kiem-thu-tich-hop",
+      "title": "Kiểm thử tích hợp và lỗi lan truyền",
+      "level": 12,
+      "desc": "Vẽ mối nối, lỗi một phần khi timeout, retry an toàn, dùng giả lập đúng chỗ, lỗi hiển thị cho người dùng.",
+      "minutes": 40,
+      "slides": "slides/tester/kiem-thu-tich-hop.html",
+      "exercises": "content/tester/exercises/kiem-thu-tich-hop.json"
+    },
+    {
+      "id": "kiem-thu-noi-dung-giao-duc",
+      "title": "Kiểm thử nội dung giáo dục: câu hỏi, đáp án, chấm điểm",
+      "level": 12,
+      "desc": "Kiểm câu hỏi và đáp án với nguồn, chấp nhận đáp án điền ngắn, tính tay công thức chấm điểm, lỗi công thức toán.",
+      "minutes": 40,
+      "slides": "slides/tester/kiem-thu-noi-dung-giao-duc.html",
+      "exercises": "content/tester/exercises/kiem-thu-noi-dung-giao-duc.json"
+    },
+    {
+      "id": "smoke-sanity-tac-dong",
+      "title": "Smoke, sanity và phân tích tác động",
+      "level": 12,
+      "desc": "Chọn bộ smoke, sanity quanh thay đổi, phân tích tác động để biết cần kiểm lại những gì.",
+      "minutes": 35,
+      "slides": "slides/tester/smoke-sanity-tac-dong.html",
+      "exercises": "content/tester/exercises/smoke-sanity-tac-dong.json"
+    },
+    {
+      "id": "chi-so-bao-cao-dung",
+      "title": "Chỉ số kiểm thử và báo cáo không gây hiểu sai",
+      "level": 12,
+      "desc": "Định nghĩa mẫu số của tỷ lệ đạt, trạng thái Blocked và Inconclusive, coverage không chứng minh và khuyến nghị phát hành.",
+      "minutes": 35,
+      "slides": "slides/tester/chi-so-bao-cao-dung.html",
+      "exercises": "content/tester/exercises/chi-so-bao-cao-dung.json"
     }
   ]
 }

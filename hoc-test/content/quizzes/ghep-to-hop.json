@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Bốn tham số, mỗi tham số có ba giá trị. Thử hết mọi tổ hợp cần 81 ca. Bộ pairwise thường cần khoảng bao nhiêu ca?",
+      "answer": 1,
+      "explain": "Pairwise phủ mọi cặp giá trị, với bốn tham số ba giá trị thường cần khoảng 9 ca.",
+      "options": [
+        { "text": "3 ca", "why": "Quá ít, không đủ phủ mọi cặp." },
+        { "text": "9 ca", "why": "Đúng. Đây là kích thước thường gặp của bộ pairwise cho cấu hình này." },
+        { "text": "27 ca", "why": "Vẫn nhiều hơn mức cần thiết cho pairwise." },
+        { "text": "81 ca", "why": "Đây là số tổ hợp đầy đủ, không phải pairwise." }
+      ]
+    },
+    {
+      "q": "Pairwise có đảm bảo bắt được mọi lỗi không?",
+      "answer": 2,
+      "explain": "Lỗi chỉ xảy ra khi ba tham số cụ thể cùng lúc có thể không được phủ bởi bộ pairwise.",
+      "options": [
+        { "text": "Có, vì đã phủ mọi cặp", "why": "Phủ cặp không có nghĩa là phủ mọi bộ ba." },
+        { "text": "Có, nếu có bốn tham số", "why": "Số tham số không làm thay đổi giới hạn này." },
+        { "text": "Không, lỗi cần ba tham số cùng lúc có thể bị bỏ sót", "why": "Đúng. Vì vậy phải thêm ca cho luật nghiệp vụ quan trọng." },
+        { "text": "Có, nếu chạy tự động", "why": "Chạy tự động không làm bộ ca phủ được nhiều hơn." }
+      ]
+    },
+    {
+      "q": "Luật \"Nếu bảo hiểm là BHYT thì không được chọn thanh toán bằng thẻ quốc tế\". Luật này cần được xử lý thế nào khi sinh bộ pairwise?",
+      "answer": 3,
+      "explain": "Đây là ràng buộc. Các tổ hợp không hợp lệ phải được khai báo để loại khỏi bộ ca.",
+      "options": [
+        { "text": "Là ca biên", "why": "Ca biên là giá trị ở ngưỡng, không phải tổ hợp không hợp lệ." },
+        { "text": "Không cần khai báo, pairwise sẽ tự bỏ", "why": "Công cụ không biết luật nghiệp vụ, nên sẽ sinh cả ca vô nghĩa." },
+        { "text": "Là quy tắc lập trình", "why": "Đây là luật nghiệp vụ, không phải quy tắc mã nguồn." },
+        { "text": "Là ràng buộc: khai báo để loại khỏi bộ ca", "why": "Đúng. Đây là cách làm cho bộ ca có ý nghĩa." }
+      ]
+    },
+    {
+      "q": "Khi bắt đầu đồ thị nguyên nhân–kết quả, bước đầu tiên là gì?",
+      "answer": 0,
+      "explain": "Trước hết phải liệt kê nguyên nhân (đầu vào) và kết quả (hành động) từ yêu cầu.",
+      "options": [
+        { "text": "Liệt kê nguyên nhân và kết quả từ yêu cầu", "why": "Đúng. Mọi bước sau dựa trên danh sách này." },
+        { "text": "Viết mã tự động", "why": "Chưa có luật thì chưa có gì để tự động hóa." },
+        { "text": "Chạy kiểm thử hiệu năng", "why": "Hiệu năng không phải bước đầu của kỹ thuật này." },
+        { "text": "Viết báo cáo kết quả", "why": "Báo cáo đến cuối cùng, sau khi đã có ca và kết quả." }
+      ]
+    }
+  ]
+}

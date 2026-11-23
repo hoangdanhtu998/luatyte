@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Giao diện hiện đơn hàng 150.000. Bảng đơn có tổng 150.000, nhưng tổng các dòng chi tiết là 140.000. Bạn làm gì?",
+      "answer": 2,
+      "explain": "Lệch dữ liệu là phát hiện. Phải ghi lại, điều tra nơi tính sai, không tự sửa DB.",
+      "options": [
+        { "text": "Đúng vì giao diện hiện 150.000", "why": "Giao diện chỉ là một tầng. Phải đối soát với chi tiết." },
+        { "text": "Bỏ qua vì chỉ là một đơn", "why": "Lỗi trên một đơn vẫn là lỗi và có thể lặp lại." },
+        { "text": "Ghi là lệch, điều tra API và backend, không tự sửa DB", "why": "Đúng. Đối soát trước, sửa sau và chỉ khi có quyền." },
+        { "text": "Sửa tổng thành 140.000 trực tiếp", "why": "Sửa dữ liệu trước khi biết nguyên nhân là sai quy trình." }
+      ]
+    },
+    {
+      "q": "Muốn tìm học viên chưa nộp bài nào, nên viết JOIN thế nào?",
+      "answer": 1,
+      "explain": "LEFT JOIN giữ mọi học viên, còn điều kiện IS NULL lọc những người không có bài nộp.",
+      "options": [
+        { "text": "INNER JOIN với điều kiện bằng nhau", "why": "INNER JOIN bỏ mất các dòng không khớp, đúng nhóm cần tìm." },
+        { "text": "LEFT JOIN và điều kiện bài nộp IS NULL", "why": "Đúng. Đây là cách tìm các dòng không có bản ghi tương ứng." },
+        { "text": "CROSS JOIN", "why": "CROSS JOIN ghép mọi tổ hợp, không lọc đúng nhóm." },
+        { "text": "DELETE các học viên", "why": "Đây là thao tác ghi, không phải truy vấn đọc, và không được làm khi chưa được phép." }
+      ]
+    },
+    {
+      "q": "Bảng có khóa chính id. Hai dòng cùng id được insert. Điều gì xảy ra đúng?",
+      "answer": 0,
+      "explain": "Khóa chính không được trùng. DB phải từ chối dòng thứ hai.",
+      "options": [
+        { "text": "DB từ chối dòng trùng vì vi phạm khóa chính", "why": "Đúng. Đây là ràng buộc phải được kiểm ở tầng dữ liệu." },
+        { "text": "DB tự sinh id mới", "why": "Chỉ khi cột được cấu hình tự tăng, và đó không phải là điều xảy ra ở đây." },
+        { "text": "DB ghi cả hai dòng", "why": "Điều này sẽ phá vỡ khóa chính." },
+        { "text": "DB xóa dòng cũ", "why": "DB không tự xóa dữ liệu khi insert." }
+      ]
+    },
+    {
+      "q": "Bạn cần thử một câu UPDATE để kiểm tra. Môi trường nào là phù hợp?",
+      "answer": 2,
+      "explain": "Chỉ ghi trên cơ sở dữ liệu thử nghiệm, và chỉ khi được cấp quyền.",
+      "options": [
+        { "text": "Cơ sở dữ liệu production", "why": "Không được ghi thử trên dữ liệu thật." },
+        { "text": "Máy của khách hàng", "why": "Không có quyền ghi trên máy khách." },
+        { "text": "Cơ sở dữ liệu thử nghiệm đã được cấp quyền", "why": "Đúng. Đây là môi trường an toàn cho thao tác ghi." },
+        { "text": "Một bảng sao lưu chưa được xác nhận", "why": "Bảng sao lưu chưa xác nhận vẫn có rủi ro làm hỏng dữ liệu." }
+      ]
+    }
+  ]
+}

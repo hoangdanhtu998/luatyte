@@ -1,0 +1,48 @@
+{
+  "quizzes": [
+    {
+      "q": "Dịch vụ thanh toán bị timeout, nhưng thực tế tiền đã trừ. Hệ thống ghi đơn là \"chưa thanh toán\". Đây là lỗi gì?",
+      "answer": 2,
+      "explain": "Đây là lỗi một phần: trạng thái giữa các dịch vụ mâu thuẫn. Cần kiểm xử lý timeout và đối soát.",
+      "options": [
+        { "text": "Không phải lỗi, vì đơn đã được tạo", "why": "Đơn được tạo nhưng trạng thái thanh toán sai, đó vẫn là lỗi." },
+        { "text": "Chỉ là lỗi giao diện", "why": "Lỗi nằm ở trạng thái giữa các dịch vụ, không chỉ ở màn hình." },
+        { "text": "Trạng thái không nhất quán giữa các dịch vụ, cần kiểm timeout và đối soát", "why": "Đúng. Đây là lỗi một phần cần ca riêng." },
+        { "text": "Lỗi font chữ", "why": "Font không liên quan đến việc thanh toán." }
+      ]
+    },
+    {
+      "q": "Khi nào nên dùng stub hoặc mock cho dịch vụ bên ngoài?",
+      "answer": 1,
+      "explain": "Giả lập hữu ích khi dịch vụ thật chưa sẵn sàng, nhưng vẫn cần kiểm với dịch vụ thật ở giai đoạn sau.",
+      "options": [
+        { "text": "Luôn luôn, không cần test thật", "why": "Giả lập không chứng minh được hợp đồng với dịch vụ thật." },
+        { "text": "Khi dịch vụ thật chưa sẵn sàng, và phải bổ sung kiểm với dịch vụ thật", "why": "Đúng. Ghi rõ ca nào dùng giả lập trong báo cáo." },
+        { "text": "Không bao giờ", "why": "Giả lập có ích để kiểm logic khi phụ thuộc chưa sẵn sàng." },
+        { "text": "Chỉ với giao diện", "why": "Giả lập thường dùng cho tầng dịch vụ và tích hợp, không chỉ giao diện." }
+      ]
+    },
+    {
+      "q": "Chính sách retry khi thanh toán có an toàn không?",
+      "answer": 0,
+      "explain": "Retry chỉ an toàn nếu thao tác idempotent hoặc có khóa chống trùng ở phía nhận.",
+      "options": [
+        { "text": "Chỉ khi thao tác có khóa chống trùng hoặc idempotent", "why": "Đúng. Nếu không, retry có thể tạo hai giao dịch." },
+        { "text": "Luôn an toàn", "why": "Retry thao tác không idempotent có thể gây trừ tiền hai lần." },
+        { "text": "Không bao giờ được retry", "why": "Retry có ích cho lỗi tạm thời, khi được thiết kế đúng." },
+        { "text": "Retry 100 lần", "why": "Số lần retry phải có giới hạn và khoảng chờ hợp lý." }
+      ]
+    },
+    {
+      "q": "Backend trả lỗi 500. Giao diện nên hiển thị thế nào để đúng?",
+      "answer": 3,
+      "explain": "Thông báo dễ hiểu, không lộ chi tiết nội bộ, cho phép thử lại.",
+      "options": [
+        { "text": "Hiện nguyên stack trace", "why": "Lộ chi tiết nội bộ là rủi ro bảo mật." },
+        { "text": "Màn hình trắng", "why": "Người dùng không biết chuyện gì xảy ra." },
+        { "text": "Không hiện gì", "why": "Im lặng khiến người dùng không biết có nên thử lại không." },
+        { "text": "Thông báo dễ hiểu, không lộ chi tiết nội bộ, cho phép thử lại", "why": "Đúng. Đây là cách xử lý lỗi phía giao diện tốt." }
+      ]
+    }
+  ]
+}
