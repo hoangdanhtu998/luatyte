@@ -164,6 +164,17 @@ nav.tabs button[aria-selected="true"] { color: var(--color-ink); }
 .mastery .bar { flex: 1; max-width: 220px; }
 .avatar { height: 130px; flex: none; position: relative; }
 .avatar canvas { width: 100%; height: 100%; display: block; }
+.avatar img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.avatar img.a3d-pop { animation: a3d-pop .45s var(--ease-out); }
+@keyframes a3d-pop { 0%,100% { transform: scale(1); } 40% { transform: scale(1.07) translateY(-4px); } }
+/* Chọn nhân vật đồng hành: hàng chip cuộn ngang dưới ô avatar */
+.pick { display: flex; gap: var(--space-xs); overflow-x: auto; scrollbar-width: none; padding: var(--space-3xs) var(--space-3xs); flex: none; }
+.pick::-webkit-scrollbar { display: none; }
+.pick[hidden] { display: none; }
+.pick .chip { flex-direction: column; gap: 2px; padding: 4px 8px; min-height: 0; line-height: 1; }
+.pick .chip img { width: 30px; height: 30px; object-fit: contain; display: block; }
+.pick .chip span { font-size: 10px; font-weight: 600; white-space: nowrap; }
+@media (max-height: 720px) { .avatar { height: 104px; } }
 .related { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-sm); }
 
 /* ===== Mặt phẳng trò chơi dùng chung ===== */

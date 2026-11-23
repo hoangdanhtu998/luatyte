@@ -1,0 +1,98 @@
+[
+  {
+    "id": "soc",
+    "name": "Sóc",
+    "glb": "soc.glb",
+    "thumb": "thumbs/soc.png"
+  },
+  {
+    "id": "cho",
+    "name": "Chó",
+    "glb": "cho.glb",
+    "thumb": "thumbs/cho.png"
+  },
+  {
+    "id": "gau",
+    "name": "Gấu",
+    "glb": "gau.glb",
+    "thumb": "thumbs/gau.png"
+  },
+  {
+    "id": "gau-truc",
+    "name": "Gấu trúc",
+    "glb": "gau-truc.glb",
+    "thumb": "thumbs/gau-truc.png"
+  },
+  {
+    "id": "tho",
+    "name": "Thỏ",
+    "glb": "tho.glb",
+    "thumb": "thumbs/tho.png"
+  },
+  {
+    "id": "cao",
+    "name": "Cáo",
+    "glb": "cao.glb",
+    "thumb": "thumbs/cao.png"
+  },
+  {
+    "id": "cu",
+    "name": "Cú",
+    "glb": "cu.glb",
+    "thumb": "thumbs/cu.png"
+  },
+  {
+    "id": "vit",
+    "name": "Vịt",
+    "glb": "vit.glb",
+    "thumb": "thumbs/vit.png"
+  },
+  {
+    "id": "ech",
+    "name": "Ếch",
+    "glb": "ech.glb",
+    "thumb": "thumbs/ech.png"
+  },
+  {
+    "id": "khi",
+    "name": "Khỉ",
+    "glb": "khi.glb",
+    "thumb": "thumbs/khi.png"
+  },
+  {
+    "id": "cuu",
+    "name": "Cừu",
+    "glb": "cuu.glb",
+    "thumb": "thumbs/cuu.png"
+  },
+  {
+    "id": "heo",
+    "name": "Heo",
+    "glb": "heo.glb",
+    "thumb": "thumbs/heo.png"
+  },
+  {
+    "id": "canh-cung-tuc",
+    "name": "Chim cánh cụt",
+    "glb": "canh-cung-tuc.glb",
+    "thumb": "thumbs/canh-cung-tuc.png"
+  },
+  {
+    "id": "chuot-hamster",
+    "name": "Chuột hamster",
+    "glb": "chuot-hamster.glb",
+    "thumb": "thumbs/chuot-hamster.png"
+  },
+  {
+    "id": "huou",
+    "name": "Hươu",
+    "glb": "huou.glb",
+    "thumb": "thumbs/huou.png"
+  },
+  {
+    "id": "rua",
+    "name": "Rùa",
+    "glb": "rua.glb",
+    "thumb": "thumbs/rua.png"
+  }
+]

@@ -223,6 +223,7 @@
       <button class="x" type="button" aria-label="Đóng">×</button>
     </div>
     <div class="avatar" id="avatar" hidden aria-hidden="true"></div>
+    <div class="pick" id="pick" role="group" aria-label="Chọn nhân vật đồng hành" hidden></div>
     <div class="suggest" id="suggest"></div>
     <div class="chat">
       <div class="chat-log" id="log" aria-live="polite"></div>
@@ -930,12 +931,43 @@ function setMode(){
   $("#qai").hidden = !sample;
 }
 /* Nhân vật 3D: tải khi mở trợ lý lần đầu, tạm dừng khi đóng */
+let pickP = null;
+function buildPick(){
+  if (pickP) return pickP;
+  pickP = fetch("./data/companions.json").then(r => r.json()).then(list => {
+    const box = $("#pick"), cur = store.get("companion", "soc");
+    box.textContent = "";
+    list.forEach(c => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.dataset.id = c.id;
+      b.setAttribute("aria-label", "Nhân vật " + c.name);
+      b.setAttribute("aria-pressed", c.id === cur ? "true" : "false");
+      const im = document.createElement("img");
+      im.src = "./assets/companions/" + c.thumb; im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+      const sp = document.createElement("span");
+      sp.textContent = c.name;
+      b.append(im, sp);
+      b.onclick = () => {
+        store.set("companion", c.id);
+        box.querySelectorAll(".chip").forEach(x => {
+          const on = x === b;
+          x.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        avatar?.setCompanion?.(c.id);
+      };
+      box.appendChild(b);
+    });
+    box.hidden = false;
+  }).catch(() => {});
+  return pickP;
+}
 function loadAvatar(){
   if (avatarP) return;
-  avatarP = import("./js/avatar.js?v=7").then(m => {
+  avatarP = import("./js/avatar3d.js?v=1").then(m => {
     avatar = m.mount($("#avatar"));
     if (!avatar){ $("#avatar").hidden = true; return; }
     $("#avatar").hidden = false;
+    buildPick();
     if (!$("#p-troly").hidden) avatar.resume();
   }).catch(() => { $("#avatar").hidden = true; });
 }
@@ -1533,11 +1565,6 @@ function renderRoleRoadmapInto(root){
         </div>
       </div>`;
     }).join("");
-    const unique = new Map();
-    role.chuong.forEach(cid => roleChapterQuestions(cid).forEach(q => unique.set(q.q, q)));
-    const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
-    const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
-    const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
     root.innerHTML = `<div class="role-picker" role="group" aria-label="Chọn vai trò">${ROLES.vai_tro.map(r => `<button type="button" class="role-btn" data-role="${esc(r.id)}" aria-pressed="${r.id === selected}"><b>${esc(r.ten)}</b><span>${esc(r.mo_ta)}</span></button>`).join("")}</div>
       <div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
       <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
