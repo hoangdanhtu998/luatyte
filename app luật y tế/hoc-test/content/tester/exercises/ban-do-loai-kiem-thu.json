@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ban-do-ex1",
+    "title": "Đếm việc phi chức năng",
+    "prompt": "Đọc số việc n, rồi n mã (1 là chức năng, 2 là phi chức năng). In số việc phi chức năng.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n mã, đếm mã 2\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "4\n1 2 2 1\n",
+        "expected": "2\n"
+      },
+      {
+        "stdin": "3\n1 1 1\n",
+        "expected": "0\n"
+      },
+      {
+        "stdin": "2\n2 2\n",
+        "expected": "2\n"
+      }
+    ],
+    "hints": [
+      "Mã 2 là phi chức năng.",
+      "Đếm các số bằng 2."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int dem = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (x == 2) dem++;\n    }\n    printf(\"%d\\n\", dem);\n    return 0;\n}\n"
+  }
+]

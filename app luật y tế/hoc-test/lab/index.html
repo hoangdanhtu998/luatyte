@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Phòng khám Sao Mai · Đặt lịch khám (app tập kiểm thử)</title>
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+<div class="lab-note">App tập kiểm thử của khóa <a href="../index.html">Học kiểm thử</a>. Dữ liệu là giả và chỉ lưu trên trình duyệt này. App có lỗi cài sẵn để bạn tìm.</div>
+
+<header class="mast">
+  <a class="logo" href="index.html" id="home-link">Phòng khám Sao Mai</a>
+  <nav class="views" aria-label="Chức năng">
+    <button type="button" data-view="book" aria-current="page">Đặt lịch</button>
+    <button type="button" data-view="lookup">Tra cứu lịch</button>
+    <button type="button" data-view="admin">Quản trị</button>
+    <button type="button" data-view="api">API</button>
+    <a href="yeu-cau.html" target="_blank" rel="noopener">Tài liệu yêu cầu</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Đặt lịch -->
+  <section id="view-book" class="view">
+    <h1>Đặt lịch khám</h1>
+    <p class="sub">Điền thông tin người khám, chọn bác sĩ và khung giờ. Phí hiển thị bên dưới là phí dự kiến.</p>
+    <form id="book-form" novalidate>
+      <div class="grid">
+        <div class="field">
+          <label for="f-name">Họ tên người khám</label>
+          <input id="f-name" name="name" type="text" autocomplete="off">
+          <p class="err" data-err="name"></p>
+        </div>
+        <div class="field" id="phone-field">
+          <!-- nhãn của ô này được dựng bằng script tùy bản dựng -->
+          <input id="f-phone" name="phone" type="text" inputmode="numeric" autocomplete="off" placeholder="Số điện thoại">
+          <p class="err" data-err="phone"></p>
+        </div>
+        <div class="field">
+          <label for="f-age">Tuổi</label>
+          <input id="f-age" name="age" type="text" inputmode="numeric" autocomplete="off">
+          <p class="err" data-err="age"></p>
+        </div>
+        <div class="field">
+          <label for="f-guardian">Người giám hộ (nếu dưới 16 tuổi)</label>
+          <input id="f-guardian" name="guardian" type="text" autocomplete="off">
+          <p class="err" data-err="guardian"></p>
+        </div>
+        <div class="field">
+          <label for="f-doctor">Bác sĩ</label>
+          <select id="f-doctor" name="doctor"></select>
+          <p class="err" data-err="doctor"></p>
+        </div>
+        <div class="field">
+          <label for="f-service">Loại khám</label>
+          <select id="f-service" name="service"></select>
+          <p class="err" data-err="service"></p>
+        </div>
+        <div class="field">
+          <label for="f-date">Ngày khám</label>
+          <input id="f-date" name="date" type="date">
+          <p class="err" data-err="date"></p>
+        </div>
+        <div class="field">
+          <label for="f-time">Giờ khám</label>
+          <select id="f-time" name="time"></select>
+          <p class="err" data-err="time"></p>
+        </div>
+      </div>
+      <label class="check"><input id="f-bhyt" name="bhyt" type="checkbox"> Có thẻ BHYT</label>
+      <div class="fee-line">Phí dự kiến: <strong id="fee-preview">0đ</strong></div>
+      <div class="actions">
+        <button class="primary" id="book-submit" type="submit">Đặt lịch</button>
+        <span class="sending" id="book-sending" hidden>Đang gửi…</span>
+      </div>
+    </form>
+    <div id="book-result" class="result" hidden role="status"></div>
+  </section>
+
+  <!-- Tra cứu -->
+  <section id="view-lookup" class="view" hidden>
+    <h1>Tra cứu lịch</h1>
+    <p class="sub">Nhập số điện thoại đã đặt và mã lịch (dạng SM-123456).</p>
+    <form id="lookup-form" novalidate class="inline-form">
+      <div class="field"><label for="l-phone">Số điện thoại</label><input id="l-phone" type="text" inputmode="numeric" autocomplete="off"></div>
+      <div class="field"><label for="l-code">Mã lịch</label><input id="l-code" type="text" autocomplete="off"></div>
+      <button class="primary" type="submit">Tra cứu</button>
+    </form>
+    <div id="lookup-result" class="result" hidden role="status"></div>
+  </section>
+
+  <!-- Quản trị -->
+  <section id="view-admin" class="view" hidden>
+    <h1>Quản trị lịch khám</h1>
+    <div id="admin-login">
+      <p class="sub">Nhập mã PIN quản trị. Tài khoản thử nằm trong tài liệu yêu cầu.</p>
+      <form id="admin-form" novalidate class="inline-form">
+        <div class="field"><label for="a-pin">Mã PIN</label><input id="a-pin" type="password" inputmode="numeric" autocomplete="off"></div>
+        <button class="primary" type="submit">Đăng nhập</button>
+      </form>
+      <p class="err" id="admin-err"></p>
+    </div>
+    <div id="admin-panel" hidden>
+      <div class="admin-bar"><span id="admin-count"></span><button type="button" id="admin-logout">Đăng xuất</button></div>
+      <div id="admin-table-box">
+        <table id="admin-table">
+          <thead><tr><th>Mã lịch</th><th>Họ tên</th><th>SĐT</th><th>Tuổi</th><th>Bác sĩ</th><th>Ngày giờ</th><th>Phí</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- API -->
+  <section id="view-api" class="view" hidden>
+    <h1>Bảng gọi API</h1>
+    <p class="sub">API mô phỏng chạy ngay trong trình duyệt, dùng chung dữ liệu với giao diện. Mô tả các đường dẫn nằm trong tài liệu yêu cầu, mục API.</p>
+    <form id="api-form" novalidate>
+      <div class="api-row">
+        <div class="field"><label for="api-method">Phương thức</label>
+          <select id="api-method"><option>GET</option><option>POST</option><option>DELETE</option><option>PUT</option></select></div>
+        <div class="field grow"><label for="api-path">Đường dẫn</label><input id="api-path" type="text" value="/slots?doctor=lan&amp;date=" autocomplete="off"></div>
+      </div>
+      <div class="field"><label for="api-body">Thân yêu cầu (JSON, dùng cho POST)</label>
+        <textarea id="api-body" rows="7" spellcheck="false"></textarea></div>
+      <button class="primary" type="submit">Gửi yêu cầu</button>
+    </form>
+    <div class="api-out"><div class="api-status" id="api-status">Chưa gửi yêu cầu nào.</div><pre id="api-response"></pre></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div><span class="badge" id="build-badge"></span> <a id="build-switch" href="#"></a></div>
+  <div class="clock">
+    <label for="clock">Ngày hệ thống (giả lập)</label>
+    <input id="clock" type="date">
+    <button type="button" id="clock-clear">Dùng ngày thật</button>
+  </div>
+  <button type="button" id="reset-data">Đặt lại dữ liệu mẫu</button>
+</footer>
+
+<script src="core.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>

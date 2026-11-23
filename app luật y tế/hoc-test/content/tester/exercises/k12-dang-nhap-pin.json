@@ -1,0 +1,27 @@
+[
+  {
+    "id": "k12-ex3",
+    "title": "Khi nào IP bị khóa",
+    "prompt": "Một IP được thử nhiều lần đăng nhập. Mỗi lần: 1 là sai PIN, 0 là đúng. Khi số lần sai đã đạt 30, mọi lần thử sau bị chặn. Đọc n, rồi n lần thử. In số thứ tự (từ 1) của lần đầu tiên bị chặn, hoặc 0 nếu không có lần nào bị chặn. Lần đúng không được tính là sai.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đếm lần sai, in số thứ tự lần bị chặn đầu tiên hoặc 0\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n1 0 1\n",
+        "expected": "0\n"
+      },
+      {
+        "stdin": "31\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n",
+        "expected": "31\n"
+      },
+      {
+        "stdin": "31\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0\n",
+        "expected": "0\n"
+      }
+    ],
+    "hints": [
+      "Đếm số lần sai. Khi đếm đã bằng 30 mà còn lần thử, lần đó bị chặn.",
+      "Dừng vòng lặp khi tìm được lần bị chặn đầu tiên."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int sai = 0, chan = 0;\n    for (int i = 1; i <= n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (sai >= 30 && !chan) { chan = i; }\n        if (x == 1) sai++;\n    }\n    printf(\"%d\\n\", chan);\n    return 0;\n}\n"
+  }
+]

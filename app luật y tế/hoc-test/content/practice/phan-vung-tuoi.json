@@ -1,0 +1,172 @@
+{
+  "id": "phan-vung-tuoi",
+  "title": "Thực hành: chia vùng với ô Tuổi",
+  "app": {
+    "type": "form",
+    "name": "Form đặt lịch khám (mẫu)",
+    "field": "Tuổi",
+    "lo": 0,
+    "hi": 120,
+    "minV": -20,
+    "maxV": 140,
+    "ruleText": "Tuổi là số nguyên từ 0 đến 120 thì được nhận. Đây là giả định của bài học, không phải yêu cầu thật."
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen app",
+      "theory": [
+        "Chào bạn! Bên trái là một form nhỏ. Có một ô Tuổi và nút Gửi.",
+        "Mỗi lần bạn nhập một giá trị rồi bấm Gửi là một ca kiểm thử: một đầu vào, một kết quả thực tế.",
+        "Bấm Chạy demo để mình làm mẫu trước nhé."
+      ],
+      "demo": [
+        {
+          "type": "type",
+          "value": "60"
+        },
+        {
+          "type": "submit"
+        },
+        {
+          "type": "say",
+          "text": "60 được chấp nhận. Mỗi ca bạn làm sẽ được ghi vào nhật ký bên trái."
+        }
+      ],
+      "detail": "Ca kiểm thử gồm: đầu vào (giá trị nhập), kết quả mong đợi (điều bạn nghĩ app phải làm) và kết quả thực tế (điều app làm). Ca đạt khi hai kết quả khớp nhau."
+    },
+    {
+      "id": "chia-vung",
+      "title": "Chia thành vùng",
+      "theory": [
+        "Thử lần lượt từ -1000 đến 1000 thì mất cả đời. Ta chia giá trị thành vùng.",
+        "Trục số trên màn hình có ba vùng: dưới 0 (báo lỗi), từ 0 đến 120 (chấp nhận), trên 120 (báo lỗi).",
+        "Mọi số trong cùng một vùng được xử lý giống nhau, nên mỗi vùng chỉ cần một đại diện để kiểm."
+      ],
+      "detail": "Cách chia này gọi là phân vùng tương đương (equivalence partition). Nó giúp giảm số ca mà vẫn phủ được mọi kiểu xử lý của app."
+    },
+    {
+      "id": "vung-giua",
+      "title": "Thực hành: vùng giữa",
+      "theory": [
+        "Đến lượt bạn. Hãy nhập một giá trị thuộc vùng giữa, rồi bấm Gửi."
+      ],
+      "task": {
+        "prompt": "Nhập một số trong vùng giữa (từ 0 đến 120) rồi bấm Gửi.",
+        "check": {
+          "result": "ok",
+          "valueRange": [
+            0,
+            120
+          ]
+        },
+        "hints": [
+          "Vùng giữa là các số từ 0 đến 120. Thử nhập 50 xem.",
+          "Nhập số nguyên, ví dụ 30, rồi bấm Gửi."
+        ],
+        "pass": "Đúng rồi! Bạn đã kiểm một đại diện của vùng giữa. Kết quả đúng như kỳ vọng."
+      },
+      "detail": "Ca này kiểm đường đi đúng: giá trị hợp lệ phải được nhận."
+    },
+    {
+      "id": "vung-duoi",
+      "title": "Thực hành: vùng dưới",
+      "theory": [
+        "Vùng dưới 0 là vùng không hợp lệ. App phải báo lỗi."
+      ],
+      "task": {
+        "prompt": "Nhập một số âm rồi bấm Gửi. Kết quả thực tế phải là báo lỗi.",
+        "check": {
+          "result": "err",
+          "valueRange": [
+            -1000,
+            -1
+          ]
+        },
+        "hints": [
+          "Hãy nhập một số nhỏ hơn 0, ví dụ -5.",
+          "Số âm không thuộc vùng giữa, nên app phải báo lỗi."
+        ],
+        "pass": "Đúng! Số âm bị báo lỗi, đúng như kỳ vọng."
+      },
+      "detail": "Mỗi vùng nên có ít nhất một ca. Ca vùng dưới bắt lỗi kiểu app quên kiểm số âm."
+    },
+    {
+      "id": "vung-tren",
+      "title": "Thực hành: vùng trên",
+      "theory": [
+        "Vùng trên 120 cũng không hợp lệ. Thử một số lớn hơn 120."
+      ],
+      "task": {
+        "prompt": "Nhập một số lớn hơn 120 rồi bấm Gửi. Kết quả thực tế phải là báo lỗi.",
+        "check": {
+          "result": "err",
+          "valueRange": [
+            121,
+            1000
+          ]
+        },
+        "hints": [
+          "Thử nhập 150.",
+          "Số lớn hơn 120 nằm ngoài vùng giữa, nên app phải báo lỗi."
+        ],
+        "pass": "Chuẩn! Số vượt 120 bị báo lỗi."
+      },
+      "detail": "Vùng trên và vùng dưới là hai ca khác nhau, vì app có thể kiểm sai một đầu mà không kiểm đầu kia."
+    },
+    {
+      "id": "bien",
+      "title": "Thực hành: giá trị biên",
+      "theory": [
+        "Lỗi hay nằm sát ranh giới, vì người viết code dễ gõ nhầm < thành <=.",
+        "Biên trên của vùng giữa là 120. Hãy kiểm đúng giá trị này."
+      ],
+      "task": {
+        "prompt": "Nhập đúng 120 rồi bấm Gửi. Kết quả thực tế phải là chấp nhận.",
+        "check": {
+          "result": "ok",
+          "value": 120
+        },
+        "hints": [
+          "Ranh giới trên là đúng số 120.",
+          "Nhập đúng 120, không phải 119 hay 121."
+        ],
+        "pass": "Đúng! 120 được chấp nhận. Ranh giới trên nằm đúng chỗ."
+      },
+      "detail": "Ca biên bắt lỗi kiểu <= và < bị đảo. Nhiều lỗi thật nằm đúng ở đây."
+    },
+    {
+      "id": "khong-phai-so",
+      "title": "Thực hành: nhập chữ",
+      "theory": [
+        "Ngoài số sai vùng, người dùng còn có thể nhập chữ. App phải xử lý được."
+      ],
+      "task": {
+        "prompt": "Nhập một chữ, ví dụ abc, rồi bấm Gửi. Kết quả thực tế phải là báo lỗi.",
+        "check": {
+          "result": "err",
+          "text": true
+        },
+        "hints": [
+          "Thử nhập một từ không phải số, ví dụ abc.",
+          "Chữ không phải số nguyên, nên app phải báo lỗi."
+        ],
+        "pass": "Tốt! App không nhận chữ, bạn đã kiểm đầu vào không phải số."
+      },
+      "detail": "Đầu vào sai kiểu là một nhóm ca riêng. Bạn sẽ gặp lại trong các bài sau."
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Bạn vừa làm xong một bộ ca nhỏ. Hãy nhớ ba việc:",
+        "1. Chia giá trị thành vùng và chọn đại diện cho mỗi vùng.",
+        "2. Kiểm thêm ở biên, vì lỗi hay nằm sát ranh giới.",
+        "3. Kiểm đầu vào sai kiểu, không chỉ số sai vùng.",
+        "Xem nhật ký bên trái để đối chiếu các ca bạn đã làm."
+      ],
+      "detail": "Khi bạn tự viết ca cho một ô mới, hãy lặp lại đúng quy trình này: vùng, đại diện, biên, đầu vào sai kiểu."
+    }
+  ],
+  "lesson": "tu-duy-tester"
+}

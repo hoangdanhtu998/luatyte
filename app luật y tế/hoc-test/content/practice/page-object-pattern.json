@@ -1,0 +1,192 @@
+{
+  "id": "page-object-pattern",
+  "title": "Thực hành: chọn cách tổ chức Page Object",
+  "lesson": "page-object-pattern",
+  "app": {
+    "type": "choice",
+    "name": "Tình huống tổ chức test tự động (mẫu)"
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Page Object bọc một trang bằng các hàm theo nghiệp vụ. Test chỉ nói việc cần làm, còn Page Object biết bấm ô nào.",
+        "Đọc tình huống bên trái và chọn cách tổ chức tốt nhất."
+      ],
+      "scenario": "Hai mươi test đăng nhập đều gọi trực tiếp CSS selector của ô email và nút bấm.",
+      "demo": [
+        {
+          "type": "say",
+          "text": "Khi giao diện đổi, bạn phải sửa cả hai mươi test. Page Object gom việc này vào một chỗ."
+        }
+      ],
+      "detail": "Mẹo: hỏi nếu giao diện đổi một chỗ, bạn phải sửa bao nhiêu chỗ khác?"
+    },
+    {
+      "id": "ca-1",
+      "title": "Tình huống 1",
+      "theory": [],
+      "scenario": "Hai mươi test đăng nhập đều gọi trực tiếp CSS selector của ô email và nút bấm. Đổi giao diện thì phải sửa hai mươi chỗ.",
+      "task": {
+        "prompt": "Cách sửa nào tốt nhất?",
+        "choices": [
+          {
+            "id": "gom",
+            "label": "Gom thao tác vào một Page Object"
+          },
+          {
+            "id": "them-cho",
+            "label": "Tăng thời gian chờ trong mỗi test"
+          },
+          {
+            "id": "giu-nguyen",
+            "label": "Giữ nguyên, chỉ sửa test đang lỗi"
+          }
+        ],
+        "check": {
+          "answer": "gom"
+        },
+        "hints": [
+          "Hỏi: làm sao để đổi giao diện chỉ sửa một chỗ?",
+          "Gom selector và thao tác vào Page Object, test chỉ gọi hàm theo nghiệp vụ."
+        ],
+        "pass": "Đúng! Gom vào Page Object thì test không dính vào HTML."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "gom"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Gom vào Page Object thì test không dính vào HTML."
+        }
+      ]
+    },
+    {
+      "id": "ca-2",
+      "title": "Tình huống 2",
+      "theory": [],
+      "scenario": "Ô email đổi từ ô nhập sang combobox. Hàm page.email trong Page Object vẫn giữ nguyên tên và cách dùng, còn các test không đổi.",
+      "task": {
+        "prompt": "Thiết kế này đúng hay sai?",
+        "choices": [
+          {
+            "id": "dung",
+            "label": "Đúng: test không cần đổi"
+          },
+          {
+            "id": "sai",
+            "label": "Sai: test phải đổi theo"
+          }
+        ],
+        "check": {
+          "answer": "dung"
+        },
+        "hints": [
+          "Phép thử đơn giản: đổi loại widget mà giao diện Page Object không đổi thì đã đúng.",
+          "Hàm page.email giữ nguyên nên test không cần sửa."
+        ],
+        "pass": "Đúng! Đổi widget bên trong không làm test phải sửa."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "dung"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Đổi widget bên trong không làm test phải sửa."
+        }
+      ]
+    },
+    {
+      "id": "ca-3",
+      "title": "Tình huống 3",
+      "theory": [],
+      "scenario": "Trang lịch hẹn có một danh sách, từng mục trong danh sách, và phần dựng khung giao diện nội bộ không người dùng nào thấy.",
+      "task": {
+        "prompt": "Nên tạo Page Object cho phần nào?",
+        "choices": [
+          {
+            "id": "danh-sach",
+            "label": "Danh sách và từng mục người dùng thấy"
+          },
+          {
+            "id": "tat-ca",
+            "label": "Mọi thành phần, kể cả khung dựng nội bộ"
+          }
+        ],
+        "check": {
+          "answer": "danh-sach"
+        },
+        "hints": [
+          "Mô hình hóa theo cái người dùng thấy.",
+          "Đừng để lộ tầng chỉ phục vụ dựng giao diện."
+        ],
+        "pass": "Đúng! Chỉ mô hình hóa những gì người dùng thấy."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "danh-sach"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Chỉ mô hình hóa những gì người dùng thấy."
+        }
+      ]
+    },
+    {
+      "id": "ca-4",
+      "title": "Tình huống 4",
+      "theory": [],
+      "scenario": "Sau khi đăng nhập, bạn chuyển sang trang chủ. Hàm đăng nhập cần trả về gì?",
+      "task": {
+        "prompt": "Hàm đăng nhập nên trả về gì?",
+        "choices": [
+          {
+            "id": "trang-moi",
+            "label": "Page Object của trang chủ"
+          },
+          {
+            "id": "chuoi-url",
+            "label": "Chuỗi địa chỉ trang"
+          },
+          {
+            "id": "khong-tra",
+            "label": "Không trả về gì"
+          }
+        ],
+        "check": {
+          "answer": "trang-moi"
+        },
+        "hints": [
+          "Khi điều hướng sang trang khác, hàm trả về Page Object của trang mới.",
+          "Trang mới có thao tác riêng, nên cần Page Object riêng để tiếp tục."
+        ],
+        "pass": "Đúng! Điều hướng trả về Page Object của trang mới."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "trang-moi"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Điều hướng trả về Page Object của trang mới."
+        }
+      ]
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Test nói nghiệp vụ, Page Object biết giao diện. Đổi giao diện thì chỉ sửa một chỗ.",
+        "Đừng tạo Page Object cho mọi trang. Tạo cho những thành phần quan trọng người dùng thấy."
+      ],
+      "detail": "Page Object tốt là cái giúp bạn sửa ít chỗ hơn khi giao diện đổi, không phải cái nhiều lớp nhất."
+    }
+  ]
+}

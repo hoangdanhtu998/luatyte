@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ex1",
+    "title": "Phiên khám phá: Viết charter",
+    "scenario": "App đặt lịch khám Phòng khám Sao Mai",
+    "prompt": "Viết một charter cho phiên khám phá 45 phút về khu vực rủi ro cao 'Thiết bị và người dùng' (người bệnh dùng điện thoại, người lớn tuổi dùng trình đọc màn hình).",
+    "answer": "Charter mẫu: 'Khám phá việc đặt lịch trên điện thoại bằng màn hình nhỏ và dữ liệu thô (rất dài, ký tự đặc biệt) để tìm lỗi hiển thị và rủi ro sử dụng.'",
+    "explanation": "Charter phải đủ hẹp để làm trong 45 phút: 'Khám phá [khu vực] bằng [cách làm] để tìm [thông tin/rủi ro]'. Khó Khám: 'Khám phá thiết bị và người dùng bằng màn hình nhỏ + dữ liệu thô để tìm lỗi hiển thị và sử dụng'."
+  },
+  {
+    "id": "ex2",
+    "title": "Phiên khám phá: Ý tưởng phép thử",
+    "scenario": "Chạy phiên 45 phút trên màn Tra cứu lịch",
+    "prompt": "Trong phiên bạn bí, không biết thử gì tiếp. Chọn ít nhất 3 ý tưởng từ danh sách trong bài để tiếp tục.",
+    "answer": "Ví dụ: (1) Lặp lại/làm nhanh: bấm đặt lịch hai lần nhanh. (2) Dữ liệu ở mép: tên rất dài, chỉ có khoảng trắng, ký tự có dấu. (3) Hai nơi cùng lúc: mở hai tab, đặt lịch cùng một khung giờ. (4) Làm ngược thứ tự: chọn giờ trước rồi mới chọn bác sĩ.",
+    "explanation": "Khi bí, đi qua danh sách 8 ý tưởng phép thử: lặp lại, gián đoạn, làm ngược thứ tự, làm rồi hoàn tác, dữ liệu mép, cùng dữ liệu nhiều nơi, hai nơi cùng lúc, đi đường khác."
+  },
+  {
+    "id": "ex3",
+    "title": "Phiên khám phá: Tổng kết phiên",
+    "scenario": "Sau phiên 45 phút, bạn đã viết 15 dòng ghi chép, tìm được 2 lỗi",
+    "prompt": "Viết tổng kết phiên có 5 mục: đã phủ, chưa phủ, lỗi, câu hỏi, phiên sau.",
+    "answer": "Đã phủ: đặt lịch, hủy, tra cứu. Chưa phủ: đặt nhiều lịch cùng khung giờ, màn Quản trị. Lỗi: 2 lỗi (màn hình trắng khi bấm nhấn quá nhanh, tên quá dài bị tràn). Câu hỏi: bao nhiêu lịch tối đa mỗi khung giờ? Phiên sau: charter cho màn Quản trị.",
+    "explanation": "Tổng kết phiên phải có: đã phủ (đã thử gì), chưa phủ (chưa thử gì nhưng thuộc charter), lỗi (danh sách), câu hỏi (cần hỏi BA/dev), phiên sau (charter đề xuất)."
+  }
+]

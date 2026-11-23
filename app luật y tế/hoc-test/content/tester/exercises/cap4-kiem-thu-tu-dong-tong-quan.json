@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Bài 8: Đếm ca tự động đậu",
+    "prompt": "Đọc số ca n, rồi n kết quả (1 là đậu, 0 là hỏng). In số ca đậu và số ca hỏng, cách nhau một khoảng trắng.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n kết quả, in \"so_dau so_hong\"\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "4\n1 1 0 1\n",
+        "expected": "3 1\n"
+      },
+      {
+        "stdin": "2\n0 0\n",
+        "expected": "0 2\n"
+      },
+      {
+        "stdin": "1\n1\n",
+        "expected": "1 0\n"
+      }
+    ],
+    "hints": [
+      "Đếm riêng số 1 và số 0.",
+      "Số hỏng = n - số đậu."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int dau = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (x == 1) dau++;\n    }\n    printf(\"%d %d\\n\", dau, n - dau);\n    return 0;\n}\n"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "id": "cong-cu-kiem-thu",
+  "title": "Thực hành: chọn công cụ theo vấn đề",
+  "lesson": "cong-cu-kiem-thu",
+  "app": {
+    "type": "matrix",
+    "name": "Danh sách công cụ cho dự án đặt lịch (mẫu)",
+    "items": [
+      { "id": "postman", "label": "Postman hoặc curl: gửi yêu cầu API với nhiều giá trị" },
+      { "id": "cong-tai", "label": "Công cụ tải: mô phỏng nhiều người dùng cùng lúc" },
+      { "id": "so-do", "label": "Sơ đồ ghi lại ý tưởng kiểm thử" },
+      { "id": "trinh-duyet", "label": "Công cụ tự chạy các bước trên trình duyệt" }
+    ]
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Hỏi vấn đề trước, công cụ sau. Dùng sai công cụ làm chậm việc và cho thông tin sai.",
+        "Bấm Chạy demo để xem một cách chọn công cụ theo vấn đề."
+      ],
+      "demo": [
+        { "type": "tick", "id": "postman" },
+        { "type": "submit" },
+        { "type": "say", "text": "Vấn đề là API trả sai với đầu vào, nên cần công cụ gửi yêu cầu. Không cần công cụ tải lúc này." }
+      ],
+      "detail": "Mẹo: đọc vấn đề trước, rồi mới nhìn danh sách công cụ."
+    },
+    {
+      "id": "api-sai",
+      "title": "Vấn đề API",
+      "theory": [
+        "API đặt lịch trả sai khi số lượng âm. Bạn cần gửi nhiều giá trị và xem phản hồi."
+      ],
+      "task": {
+        "prompt": "Tick công cụ phù hợp cho vấn đề API sai khi số lượng âm, rồi chạy.",
+        "check": { "include": ["postman"] },
+        "hints": [
+          "Cần gửi yêu cầu với nhiều giá trị đầu vào.",
+          "Tick Postman hoặc curl, công cụ gửi yêu cầu API."
+        ],
+        "pass": "Đúng! Vấn đề API được xử lý bằng công cụ gửi yêu cầu."
+      },
+      "detail": "Đừng dùng công cụ tải cho một lỗi logic. Hiệu năng chưa phải vấn đề ở đây."
+    },
+    {
+      "id": "tai-cao",
+      "title": "Vấn đề tải",
+      "theory": [
+        "Giờ có 500 người cùng đặt lịch thì trang chậm. Đây là vấn đề hiệu năng dưới tải."
+      ],
+      "task": {
+        "prompt": "Tick thêm công cụ phù hợp cho vấn đề 500 người cùng đặt lịch, rồi chạy. Giữ công cụ ở bước trước.",
+        "check": { "include": ["postman", "cong-tai"] },
+        "hints": [
+          "Cần mô phỏng nhiều người dùng cùng lúc.",
+          "Thêm công cụ tải, và giữ Postman đã tick."
+        ],
+        "pass": "Đúng! Vấn đề tải cần công cụ mô phỏng nhiều người dùng."
+      },
+      "detail": "Mỗi vấn đề cần một loại công cụ. Đừng chọn một công cụ rồi dùng cho mọi thứ."
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Chọn công cụ theo vấn đề: API dùng công cụ gửi yêu cầu, tải dùng công cụ tải, ý tưởng dùng sơ đồ.",
+        "Học tư duy kiểm thử trước, rồi mới học công cụ."
+      ],
+      "detail": "Một công cụ hay không tự làm bạn thành tester giỏi. Điều quan trọng là bạn hiểu vấn đề."
+    }
+  ]
+}

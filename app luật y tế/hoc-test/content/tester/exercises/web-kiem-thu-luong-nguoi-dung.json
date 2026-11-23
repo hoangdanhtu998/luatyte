@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ex1",
+    "title": "Web 1: Đếm bước của luồng",
+    "prompt": "Đọc số bước n của một luồng, rồi n số: 1 nếu bước đó đạt kỳ vọng, 0 nếu không. In \"luong dat\" nếu tất cả bước đạt, ngược lại in số bước đầu tiên không đạt (đánh số từ 1).",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    // TODO: đọc n kết quả từng bước, in kết quả theo đề\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "3\n1 1 1\n",
+        "expected": "luong dat\n"
+      },
+      {
+        "stdin": "4\n1 0 1 0\n",
+        "expected": "buoc 2 khong dat\n"
+      },
+      {
+        "stdin": "2\n0 1\n",
+        "expected": "buoc 1 khong dat\n"
+      }
+    ],
+    "hints": [
+      "Duyệt từng bước và dừng ở bước đầu tiên có kết quả 0.",
+      "Số bước đánh từ 1, không phải từ 0."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int n;\n    scanf(\"%d\", &n);\n    int buoc_loi = 0;\n    for (int i = 1; i <= n; i++) {\n        int x;\n        scanf(\"%d\", &x);\n        if (x == 0 && buoc_loi == 0) buoc_loi = i;\n    }\n    if (buoc_loi == 0) printf(\"luong dat\\n\");\n    else printf(\"buoc %d khong dat\\n\", buoc_loi);\n    return 0;\n}\n"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "ex1",
+    "title": "Web 3: Đánh giá LCP",
+    "prompt": "Đọc thời gian LCP tính bằng mili giây. In \"tot\" nếu dưới 2500, \"can cai thien\" nếu từ 2500 đến 4000, và \"kem\" nếu trên 4000.",
+    "starter": "#include <stdio.h>\n\nint main(void) {\n    int lcp;\n    scanf(\"%d\", &lcp);\n    // TODO: phân loại theo ngưỡng\n    return 0;\n}\n",
+    "tests": [
+      {
+        "stdin": "1800\n",
+        "expected": "tot\n"
+      },
+      {
+        "stdin": "2500\n",
+        "expected": "can cai thien\n"
+      },
+      {
+        "stdin": "4000\n",
+        "expected": "can cai thien\n"
+      },
+      {
+        "stdin": "4001\n",
+        "expected": "kem\n"
+      }
+    ],
+    "hints": [
+      "Kiểm tra mốc cao nhất trước, hoặc dùng if else if theo thứ tự tăng dần.",
+      "Mốc 2500 và 4000 thuộc vùng \"cần cải thiện\"."
+    ],
+    "solution": "#include <stdio.h>\n\nint main(void) {\n    int lcp;\n    scanf(\"%d\", &lcp);\n    if (lcp < 2500) printf(\"tot\\n\");\n    else if (lcp <= 4000) printf(\"can cai thien\\n\");\n    else printf(\"kem\\n\");\n    return 0;\n}\n"
+  }
+]

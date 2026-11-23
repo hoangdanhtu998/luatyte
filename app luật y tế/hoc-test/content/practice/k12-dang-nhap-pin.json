@@ -1,0 +1,91 @@
+{
+  "id": "k12-dang-nhap-pin",
+  "title": "Thực hành: giới hạn thử PIN",
+  "lesson": "k12-dang-nhap-pin",
+  "app": {
+    "type": "form",
+    "name": "Ô đếm số lần nhập sai (mẫu)",
+    "field": "Số lần nhập sai của IP trong 15 phút",
+    "lo": 0,
+    "hi": 29,
+    "minV": -5,
+    "maxV": 35,
+    "ruleText": "Còn được thử khi số lần sai từ 0 đến 29. Đến lần sai thứ 30 thì tạm khóa IP. (Giả định của bài học, theo hằng số trong mã nguồn.)"
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "PIN 4 số chỉ có 10.000 khả năng. Nếu không giới hạn số lần thử, máy dò có thể thử hết rất nhanh.",
+        "Bấm Chạy demo để xem một lần nhập sai được đếm và kiểm."
+      ],
+      "demo": [
+        { "type": "type", "value": "12" },
+        { "type": "submit" },
+        { "type": "say", "text": "12 lần sai vẫn nằm trong giới hạn, nên hệ thống còn cho thử tiếp." }
+      ],
+      "detail": "Giới hạn theo IP chặn được dò từ một máy. Nó không thay thế việc kiểm tra mã và PIN đúng."
+    },
+    {
+      "id": "con-duoc-thu",
+      "title": "Còn được thử",
+      "theory": [
+        "Ở lần sai thứ 29, hệ thống vẫn cho nhập tiếp. Đây là biên trên của vùng được phép."
+      ],
+      "task": {
+        "prompt": "Nhập đúng 29 rồi bấm Gửi. Kết quả thực tế phải là còn được thử.",
+        "check": { "result": "ok", "value": 29 },
+        "hints": [
+          "Ngưỡng cho phép là từ 0 đến 29.",
+          "Nhập đúng 29 và xem kết quả."
+        ],
+        "pass": "Đúng! Lần sai thứ 29 vẫn còn được thử."
+      },
+      "detail": "Đây là biên trên của vùng được phép, nên đáng kiểm nhất."
+    },
+    {
+      "id": "bi-khoa",
+      "title": "Chạm giới hạn",
+      "theory": [
+        "Lần sai thứ 30 phải bị chặn và tạm khóa IP. Nếu hệ thống vẫn cho thử, giới hạn không có tác dụng."
+      ],
+      "task": {
+        "prompt": "Nhập đúng 30 rồi bấm Gửi. Kết quả thực tế phải là bị chặn.",
+        "check": { "result": "err", "value": 30 },
+        "hints": [
+          "Lần sai thứ 30 đã vượt vùng được phép.",
+          "Nhập đúng 30 và xem kết quả."
+        ],
+        "pass": "Đúng! Lần sai thứ 30 bị chặn, IP bị tạm khóa."
+      },
+      "detail": "Kiểm đúng biên: 29 phải qua, 30 phải bị chặn. Sai một số là lỗi đếm."
+    },
+    {
+      "id": "du-lieu-sai",
+      "title": "Dữ liệu không hợp lệ",
+      "theory": [
+        "Số lần sai không thể là chữ. Nếu bộ đếm nhận chữ mà vẫn cho qua, bộ đếm đã hỏng."
+      ],
+      "task": {
+        "prompt": "Nhập chữ abc rồi bấm Gửi. Kết quả thực tế phải là báo lỗi.",
+        "check": { "result": "err", "text": true },
+        "hints": [
+          "Thử nhập một chữ, ví dụ abc.",
+          "Bộ đếm chỉ nhận số nguyên."
+        ],
+        "pass": "Đúng! Dữ liệu không hợp lệ bị báo lỗi."
+      },
+      "detail": "Thông báo lỗi nên chung chung, kiểu 'Mã lớp hoặc PIN không đúng', không lộ lớp có tồn tại hay không."
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Giới hạn thử sai là yêu cầu bảo mật. Kiểm đúng biên 29 và 30, rồi kiểm dữ liệu sai.",
+        "Đừng quên kiểm sau khi đăng nhập đúng: số lần sai có được đặt lại không?"
+      ],
+      "detail": "Một giới hạn chỉ tốt khi bạn đã kiểm nó chặn đúng lúc, không sớm, không muộn."
+    }
+  ]
+}

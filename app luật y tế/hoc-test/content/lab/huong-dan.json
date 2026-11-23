@@ -1,0 +1,180 @@
+{
+  "id": "huong-dan",
+  "title": "Test app Phòng khám Sao Mai",
+  "steps": [
+    {
+      "id": "lam-quen",
+      "view": "book",
+      "target": "#book-form",
+      "title": "Làm quen form đặt lịch",
+      "say": "Đây là form đặt lịch. Bạn sẽ test cả 4 tab: Đặt lịch, Tra cứu, Quản trị, API.",
+      "do": "Xem các ô trong form. Chưa cần nhập gì.",
+      "expect": "Thấy đủ ô: họ tên, SĐT, tuổi, người giám hộ, bác sĩ, loại khám, ngày, giờ, BHYT."
+    },
+    {
+      "id": "bo-trong",
+      "view": "book",
+      "target": "#book-submit",
+      "title": "Gửi form rỗng",
+      "say": "Khoanh đỏ là nút Đặt lịch. Để trống hết rồi bấm.",
+      "do": "Không nhập gì, bấm Đặt lịch.",
+      "expect": "Mỗi ô bắt buộc hiện một dòng báo lỗi. Không tạo lịch nào.",
+      "hint": "Nếu không thấy báo lỗi, kiểm xem có ô nào được điền sẵn không."
+    },
+    {
+      "id": "ten",
+      "view": "book",
+      "target": "#f-name",
+      "title": "Biên tên: 1 ký tự và 50 ký tự",
+      "say": "Khoanh ô Họ tên. Test biên: 1 ký tự rồi 2 ký tự.",
+      "do": "Nhập 1 chữ cái, bấm Đặt lịch. Sau đó nhập 2 chữ cái, bấm Đặt lịch.",
+      "expect": "1 ký tự: báo lỗi. 2 ký tự: không báo lỗi tên. Tên dài 51 ký tự: báo lỗi.",
+      "hint": "Biên thường là chỗ lỗi hay nằm. Đừng chỉ thử 1 giá trị giữa."
+    },
+    {
+      "id": "sdt",
+      "view": "book",
+      "target": "#f-phone",
+      "title": "Số điện thoại đúng 10 số",
+      "say": "Khoanh ô SĐT. Quy định: đúng 10 chữ số, bắt đầu bằng 0.",
+      "do": "Thử: 9 số, 10 số không bắt đầu bằng 0, 10 số có chữ, và 0901234567 (đúng).",
+      "expect": "Chỉ số đúng quy định không báo lỗi SĐT."
+    },
+    {
+      "id": "tuoi-giam-ho",
+      "view": "book",
+      "target": "#f-age",
+      "title": "Tuổi và người giám hộ",
+      "say": "Khoanh ô Tuổi. Quy định: người dưới 16 tuổi cần tên người giám hộ.",
+      "do": "Nhập tuổi 15 và để trống giám hộ, bấm Đặt lịch. Thử tuổi 16 cũng để trống giám hộ.",
+      "expect": "Tuổi 15 bắt buộc có giám hộ. Tuổi 16 theo đúng quy định của app. Ghi lại nếu hai ca cho kết quả khác quy định."
+    },
+    {
+      "id": "tuoi-bien",
+      "view": "book",
+      "target": "#f-age",
+      "title": "Tuổi biên 0 và 120",
+      "say": "Vẫn ô Tuổi. Quy định: từ 0 đến 120.",
+      "do": "Thử: -1, 0, 120, 121, chữ abc.",
+      "expect": "-1, 121, abc: báo lỗi. 0 và 120: chấp nhận."
+    },
+    {
+      "id": "ngay",
+      "view": "book",
+      "target": "#f-date",
+      "title": "Ngày khám",
+      "say": "Khoanh ô Ngày khám. Quy định: từ ngày mai đến 30 ngày tới, phòng khám nghỉ Chủ nhật.",
+      "do": "Thử: hôm nay, ngày mai, ngày cách 30 ngày, ngày cách 31 ngày, một Chủ nhật.",
+      "expect": "Hôm nay không chọn được. Chủ nhật báo nghỉ. Ngày cách 31 ngày báo lỗi."
+    },
+    {
+      "id": "gio-day",
+      "view": "book",
+      "target": "#f-time",
+      "title": "Khung giờ đủ 3 lịch",
+      "say": "Khoanh ô Giờ. Mỗi khung giờ của một bác sĩ chỉ nhận 3 lịch.",
+      "do": "Đặt 3 lịch cùng bác sĩ, cùng ngày, cùng giờ. Sau đó đặt lịch thứ 4.",
+      "expect": "Lịch thứ 4 báo khung giờ đã đủ 3 lịch, và không tạo lịch mới.",
+      "hint": "Đổi tên và SĐT mỗi lần đặt, để không bị trùng."
+    },
+    {
+      "id": "phi",
+      "view": "book",
+      "target": "#fee-preview",
+      "title": "Xem phí trước khi đặt",
+      "say": "Khoanh dòng phí. Phí thay đổi theo tuổi, loại khám và BHYT.",
+      "do": "Đổi loại khám, tick BHYT, đổi tuổi (dưới 6, từ 60, người thường) và xem dòng phí.",
+      "expect": "Dưới 6 tuổi phí 0. Từ 60 giảm 20%. BHYT trừ 50.000đ. Phí hiện đúng trước khi bấm đặt."
+    },
+    {
+      "id": "dat-thanh-cong",
+      "view": "book",
+      "target": "#book-result",
+      "title": "Đặt lịch thành công",
+      "say": "Khoanh vùng kết quả. Nhập đủ thông tin hợp lệ rồi đặt.",
+      "do": "Nhập đủ, hợp lệ, bấm Đặt lịch. Ghi lại mã lịch.",
+      "expect": "Hiện mã dạng SM-xxxxxx và phí đúng. Lịch có trong bảng quản trị sau này."
+    },
+    {
+      "id": "tra-cuu-dung",
+      "view": "lookup",
+      "target": "#lookup-form",
+      "title": "Tra cứu đúng mã và SĐT",
+      "say": "Khoanh form Tra cứu. Cần cả mã lịch và SĐT đã đặt.",
+      "do": "Nhập mã và SĐT vừa đặt, bấm Tra cứu.",
+      "expect": "Hiện đúng tên, ngày giờ, bác sĩ và trạng thái của lịch."
+    },
+    {
+      "id": "tra-cuu-sai",
+      "view": "lookup",
+      "target": "#lookup-result",
+      "title": "Tra cứu sai",
+      "say": "Khoanh vùng kết quả. Thử mã đúng nhưng SĐT sai, rồi mã không có thật.",
+      "do": "Mã đúng, SĐT khác. Sau đó mã SM-999999.",
+      "expect": "Cả hai trường hợp đều không hiện lịch của người khác. Thông báo không lộ thông tin."
+    },
+    {
+      "id": "admin-sai-pin",
+      "view": "admin",
+      "target": "#admin-login",
+      "title": "Sai PIN nhiều lần",
+      "say": "Khoanh form đăng nhập quản trị. Nhập sai PIN 5 lần liên tiếp.",
+      "do": "Nhập PIN sai (ví dụ 0000) 5 lần, mỗi lần bấm đăng nhập.",
+      "expect": "Đến lần sai thứ 5 thì bị khóa tạm. Thông báo có thời gian chờ."
+    },
+    {
+      "id": "admin-dung-pin",
+      "view": "admin",
+      "target": "#admin-form, #admin-panel",
+      "title": "Đăng nhập đúng PIN",
+      "say": "Đợi hết thời gian khóa, rồi nhập PIN đúng. PIN của app tập là 2468.",
+      "do": "Đợi, nhập 2468, bấm đăng nhập.",
+      "expect": "Vào được bảng quản trị. Số đếm lịch đúng."
+    },
+    {
+      "id": "admin-trang-thai",
+      "view": "admin",
+      "target": "#admin-table",
+      "title": "Đổi trạng thái lịch",
+      "say": "Khoanh bảng lịch. Luồng hợp lệ: Chờ xác nhận, Đã xác nhận, Đã khám. Hủy chỉ khi lịch chưa tới ngày khám.",
+      "do": "Bấm Xác nhận, rồi Đã khám ở một lịch. Thử Hủy ở một lịch đã khám.",
+      "expect": "Chuyển đúng thứ tự. Lịch đã khám không hủy được. Bảng cập nhật ngay."
+    },
+    {
+      "id": "api-slots",
+      "view": "api",
+      "target": "#api-form",
+      "title": "API: lấy khung giờ",
+      "say": "Khoanh bảng gọi API. Đây là API của app, không có giao diện riêng.",
+      "do": "Chọn GET, đường dẫn /slots?doctor=lan&date=ngày khám, bấm gửi.",
+      "expect": "Trả về 200 và danh sách giờ, có số lịch đã đặt và cờ đầy."
+    },
+    {
+      "id": "api-sai",
+      "view": "api",
+      "target": "#api-body",
+      "title": "API: dữ liệu sai",
+      "say": "Khoanh ô thân yêu cầu. Thử gửi dữ liệu thiếu trường hoặc sai kiểu.",
+      "do": "POST /appointments với thân thiếu tên, rồi với tuổi là chữ.",
+      "expect": "Trả về 400 kèm lỗi từng trường. Không tạo lịch."
+    },
+    {
+      "id": "api-huy",
+      "view": "api",
+      "target": "#api-response",
+      "title": "API: hủy và tra mã lạ",
+      "say": "Khoanh vùng phản hồi. Thử hủy một lịch đã có, rồi hủy lại chính lịch đó.",
+      "do": "DELETE /appointments/mã. Gửi lại đúng yêu cầu đó lần hai. Thử GET mã không có.",
+      "expect": "Lần đầu 200, lần hai 409. Mã không có trả 404."
+    },
+    {
+      "id": "ket-thuc",
+      "view": "book",
+      "target": "#build-switch",
+      "title": "Đổi bản dựng và reset",
+      "say": "Khoanh nút đổi bản dựng 1.0/1.1. Cùng ca test, đổi bản để so kết quả.",
+      "do": "Đổi sang bản 1.1, chạy lại 2 bước đã thấy lỗi. Bấm Reset dữ liệu nếu cần làm lại.",
+      "expect": "Kết quả khác nhau ở các ca đã đánh dấu lỗi là dấu hiệu bản 1.1 khác 1.0."
+    }
+  ]
+}

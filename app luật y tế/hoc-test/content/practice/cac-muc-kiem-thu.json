@@ -1,0 +1,193 @@
+{
+  "id": "cac-muc-kiem-thu",
+  "title": "Thực hành: chọn mức kiểm thử cho từng lỗi",
+  "lesson": "cap4-cac-muc-kiem-thu",
+  "app": {
+    "type": "choice",
+    "name": "Tình huống lỗi trên hệ thống đặt lịch (mẫu)"
+  },
+  "steps": [
+    {
+      "id": "lam-quen",
+      "title": "Làm quen",
+      "theory": [
+        "Có ba mức kiểm thử chính: đơn vị (một hàm riêng), tích hợp (hai phần ghép lại), hệ thống và chấp nhận (cả hệ thống, theo nhu cầu người dùng).",
+        "Mỗi mức bắt một loại lỗi khác nhau. Đọc tình huống bên trái và chọn mức phù hợp nhất."
+      ],
+      "detail": "Mẹo: hỏi lỗi nằm trong một hàm, ở chỗ hai phần nối nhau, hay ở trải nghiệm đầy đủ của người dùng."
+    },
+    {
+      "id": "ca-1",
+      "title": "Tình huống 1",
+      "theory": [],
+      "scenario": "Hàm tính phí trả về sai khi tuổi bằng đúng 60.",
+      "task": {
+        "prompt": "Lỗi này nên bắt ở mức nào?",
+        "choices": [
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
+        ],
+        "check": {
+          "answer": "don-vi"
+        },
+        "hints": [
+          "Lỗi nằm trong một hàm, không cần ghép hai phần.",
+          "Hàm tính phí là một đơn vị riêng. Kiểm đơn vị là mức bắt sớm và rẻ nhất."
+        ],
+        "pass": "Đúng! Lỗi trong một hàm được bắt ở mức đơn vị."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "don-vi"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Lỗi trong một hàm được bắt ở mức đơn vị."
+        }
+      ]
+    },
+    {
+      "id": "ca-2",
+      "title": "Tình huống 2",
+      "theory": [],
+      "scenario": "Trang đặt lịch gọi API lưu lịch, nhưng API trả ngày theo múi giờ khác với giao diện.",
+      "task": {
+        "prompt": "Lỗi này nên bắt ở mức nào?",
+        "choices": [
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
+        ],
+        "check": {
+          "answer": "tich-hop"
+        },
+        "hints": [
+          "Lỗi nằm ở chỗ giao diện và API nói chuyện với nhau.",
+          "Đây là lỗi giao tiếp giữa hai phần, nên là tích hợp."
+        ],
+        "pass": "Đúng! Lỗi ở chỗ hai phần ghép lại được bắt ở mức tích hợp."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "tich-hop"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Lỗi ở chỗ hai phần ghép lại được bắt ở mức tích hợp."
+        }
+      ]
+    },
+    {
+      "id": "ca-3",
+      "title": "Tình huống 3",
+      "theory": [],
+      "scenario": "Khách không hoàn tất được thanh toán theo đúng quy trình từ đầu đến cuối.",
+      "task": {
+        "prompt": "Lỗi này nên bắt ở mức nào?",
+        "choices": [
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
+        ],
+        "check": {
+          "answer": "he-thong"
+        },
+        "hints": [
+          "Hãy nghĩ đến cả quy trình, từ đầu đến cuối.",
+          "Đây là luồng người dùng đầy đủ, nên là kiểm thử hệ thống."
+        ],
+        "pass": "Đúng! Luồng đầy đủ của người dùng được kiểm ở mức hệ thống."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "he-thong"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Luồng đầy đủ của người dùng được kiểm ở mức hệ thống."
+        }
+      ]
+    },
+    {
+      "id": "ca-4",
+      "title": "Tình huống 4",
+      "theory": [],
+      "scenario": "Hàm kiểm ngày khám trả về sai khi ngày được chọn là Chủ nhật.",
+      "task": {
+        "prompt": "Lỗi này nên bắt ở mức nào?",
+        "choices": [
+          {
+            "id": "don-vi",
+            "label": "Đơn vị"
+          },
+          {
+            "id": "tich-hop",
+            "label": "Tích hợp"
+          },
+          {
+            "id": "he-thong",
+            "label": "Hệ thống"
+          }
+        ],
+        "check": {
+          "answer": "don-vi"
+        },
+        "hints": [
+          "Chỉ một hàm kiểm ngày, không liên quan đến phần khác.",
+          "Hàm kiểm ngày là một đơn vị, nên kiểm đơn vị là đủ."
+        ],
+        "pass": "Đúng! Một hàm kiểm ngày sai thì bắt ở mức đơn vị."
+      },
+      "demo": [
+        {
+          "type": "pick",
+          "id": "don-vi"
+        },
+        {
+          "type": "say",
+          "text": "Đúng! Một hàm kiểm ngày sai thì bắt ở mức đơn vị."
+        }
+      ]
+    },
+    {
+      "id": "tong-ket",
+      "title": "Tổng kết",
+      "theory": [
+        "Tháp kiểm thử: nhiều kiểm thử đơn vị ở đáy (rẻ, nhanh), ít kiểm thử hệ thống ở đỉnh (chậm, đắt).",
+        "Đừng dồn mọi thứ vào kiểm thử hệ thống. Lỗi nhỏ nên bắt ở mức thấp."
+      ],
+      "detail": "Một lỗi có thể xuất hiện ở nhiều mức. Hỏi mức nào bắt được sớm nhất và rẻ nhất."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Test app Sao Mai · Hướng dẫn từng bước</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .hd-head { margin: 4px 0 14px; display: grid; gap: 8px; }
+    .hd-head h1 { margin: 4px 0 0; font-size: 24px; }
+    .hd-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .hd-bar label { font-size: 14px; color: var(--muted); }
+    .hd-bar select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid #c5cfdd; background: var(--paper); }
+    .hd-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 900px) { .hd-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); align-items: start; } }
+    .hd-app, .hd-chat { display: grid; gap: 12px; align-content: start; min-width: 0; }
+    .panel-title { font-size: 13px; color: var(--muted); margin: 0; }
+
+    .hd-frame-wrap { position: relative; }
+    .hd-frame { width: 100%; height: 720px; min-height: 560px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .hd-ring { position: fixed; border: 3px solid #e0a100; border-radius: 10px; box-shadow: 0 0 0 4px rgba(224, 161, 0, .25); pointer-events: none; z-index: 50; animation: hd-pulse 1.4s ease-in-out infinite; }
+    .hd-ring[hidden] { display: none; }
+    @keyframes hd-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(224, 161, 0, .25); } 50% { box-shadow: 0 0 0 10px rgba(224, 161, 0, .05); } }
+
+    .hd-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 240px; overflow-y: auto; font-size: 14px; }
+    .hd-steps li { padding: 6px 8px; border-radius: 8px; display: flex; gap: 8px; align-items: baseline; cursor: pointer; }
+    .hd-steps li:hover { background: #f1f5fb; }
+    .hd-steps li.cur { background: #fff4d6; font-weight: 700; }
+    .hd-steps .mark { width: 1.2em; flex: none; text-align: center; }
+    .hd-steps .pass .mark { color: #2e8b57; }
+    .hd-steps .fail .mark { color: var(--brick); }
+    .hd-steps .skip .mark { color: var(--muted); }
+
+    .hd-chat-log { display: flex; flex-direction: column; gap: 8px; max-height: 360px; overflow-y: auto; }
+    .msg { padding: 10px 14px; border-radius: 14px; line-height: 1.5; background: #eef3fb; }
+    .msg .who { display: block; font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
+    .msg.step { background: #fff4d6; }
+    .hd-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hd-controls .btn[disabled] { opacity: .45; cursor: not-allowed; }
+    .hd-note { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; background: var(--paper); box-sizing: border-box; }
+    .hd-summary { font-size: 14px; }
+    .hd-summary ul { margin: 6px 0 0; padding-left: 18px; }
+    .hd-ok { color: #2e8b57; font-weight: 700; }
+    .hd-bad { color: var(--brick); font-weight: 700; }
+    @media (prefers-reduced-motion: reduce) { .hd-ring { animation: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hd-head">
+      <span class="eyebrow">Thực hành · test app đủ tính năng</span>
+      <h1 id="hd-title">Test app Phòng khám Sao Mai</h1>
+      <div class="hd-bar">
+        <label for="hd-build">Bản dựng</label>
+        <select id="hd-build">
+          <option value="1.0">1.0</option>
+          <option value="1.1">1.1</option>
+        </select>
+        <a class="btn ghost" id="hd-open" href="lab/index.html?build=1.0" target="_blank" rel="noopener">Mở app trong tab mới ↗</a>
+        <a class="btn ghost" href="thuc-hanh.html">Về trang thực hành</a>
+      </div>
+      <p class="th-count" id="hd-count" style="margin:0;color:var(--muted);font-size:14px"></p>
+    </header>
+
+    <div class="hd-grid">
+      <section class="card hd-app" aria-label="App đang test">
+        <p class="panel-title">App đang test: Phòng khám Sao Mai (app tập, dữ liệu giả)</p>
+        <div class="hd-frame-wrap">
+          <iframe class="hd-frame" id="app-frame" title="Phòng khám Sao Mai" src="lab/index.html?build=1.0"></iframe>
+        </div>
+      </section>
+
+      <section class="card hd-chat" aria-label="Trợ giảng hướng dẫn">
+        <p class="panel-title">Trợ giảng · hướng dẫn từng bước</p>
+        <ol class="hd-steps" id="hd-steps" aria-label="Danh sách bước"></ol>
+        <div class="hd-chat-log" id="hd-chat" aria-live="polite"></div>
+        <textarea class="hd-note" id="hd-note" rows="2" placeholder="Ghi chú kết quả (ví dụ: thấy gì, mong đợi gì)"></textarea>
+        <div class="hd-controls">
+          <button class="btn ghost" id="hd-back" type="button">← Quay lại</button>
+          <button class="btn ghost" id="hd-again" type="button">Khoanh lại</button>
+          <button class="btn ghost" id="hd-hint" type="button">Gợi ý</button>
+        </div>
+        <div class="hd-controls">
+          <button class="btn amber" id="hd-pass" type="button">Đạt ✓</button>
+          <button class="btn ghost" id="hd-fail" type="button">Lỗi ✗</button>
+          <button class="btn ghost" id="hd-skip" type="button">Bỏ qua</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="hd-ring" id="hd-ring" hidden></div>
+  <script src="assets/huong-dan-test.js"></script>
+</body>
+</html>

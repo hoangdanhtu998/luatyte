@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QA Hub</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Bỏ qua điều hướng</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">QA</span>
+        <span>QA Hub</span>
+      </div>
+      <nav aria-label="Điều hướng chính">
+        <ul class="nav-list">
+          <li><a href="#/tong" data-nav="tong">Tổng</a></li>
+          <li><a href="#/projects" data-nav="projects">Dự án</a></li>
+          <li><a href="#/testcases" data-nav="testcases">Test case</a></li>
+          <li><a href="#/bugs" data-nav="bugs">Lỗi tìm thấy</a></li>
+          <li><a href="#/summary" data-nav="summary">Báo cáo</a></li>
+          <li><a href="#/assistant" data-nav="assistant">Hỏi trợ lý</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main id="app" class="content" tabindex="-1"></main>
+  </div>
+  <div id="live" class="visually-hidden" role="status" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "quizzes": [
+    {
+      "q": "Bảng quyết định phí có 12 tổ hợp, phải chạy lại ở mọi bản. Nên tự động hóa ở tầng nào?",
+      "answer": 0,
+      "explain": "Quy tắc tính toán kiểm ở tầng thấp thì nhanh và bền. Không cần điền form 12 lần.",
+      "options": [
+        {
+          "text": "Tầng API hoặc quy tắc: gửi 12 yêu cầu và so số tiền.",
+          "why": "Đúng. Nhanh, bền, đúng trọng tâm."
+        },
+        {
+          "text": "Tầng giao diện: kịch bản điền form 12 lần.",
+          "why": "Chạy được nhưng chậm và vỡ mỗi khi form đổi."
+        },
+        {
+          "text": "Không tự động hóa, chạy tay mỗi bản.",
+          "why": "Ca lặp lại, kết quả là con số: đúng loại nên tự động hóa."
+        },
+        {
+          "text": "Chỉ tự động hóa 1 tổ hợp đại diện.",
+          "why": "Các lỗi phí nằm ở tổ hợp cụ thể, một đại diện không bắt được."
+        }
+      ]
+    },
+    {
+      "q": "Ca tự động \"ngày hôm nay + 30 được nhận\" chạy xanh cả tuần, rồi đỏ vào một ngày dù không ai đổi code. Nguyên nhân dễ nhất?",
+      "answer": 2,
+      "explain": "Ca phụ thuộc ngày thật: có hôm ngày + 30 rơi vào Chủ nhật và bị từ chối vì lý do khác.",
+      "options": [
+        {
+          "text": "Playwright bị lỗi.",
+          "why": "Khả năng thấp hơn nhiều so với nguyên nhân trong chính ca."
+        },
+        {
+          "text": "Máy chạy chậm.",
+          "why": "Ca này không phụ thuộc thời gian chạy."
+        },
+        {
+          "text": "Ca dùng ngày thật, và hôm đó ngày + 30 là Chủ nhật.",
+          "why": "Đúng. Cần cố định ngày hệ thống trong bước chuẩn bị."
+        },
+        {
+          "text": "Sản phẩm tự thay đổi.",
+          "why": "Không ai đổi code thì sản phẩm không đổi."
+        }
+      ]
+    },
+    {
+      "q": "Một ca tự động đỏ vì app tính phí 150.000đ cho người 60 tuổi, trong khi ca mong đợi 120.000đ theo R7. Nên làm gì?",
+      "answer": 3,
+      "explain": "Ca đúng với yêu cầu, sản phẩm sai. Việc cần làm là báo lỗi.",
+      "options": [
+        {
+          "text": "Sửa giá trị mong đợi thành 150.000 để ca xanh.",
+          "why": "Bạn vừa chép lỗi của sản phẩm vào ca."
+        },
+        {
+          "text": "Tạm tắt ca để bộ ca xanh.",
+          "why": "Lỗi vẫn ở đó, chỉ là không ai thấy nữa."
+        },
+        {
+          "text": "Chạy lại vài lần xem có xanh không.",
+          "why": "Đây không phải ca chập chờn. Kết quả sẽ giống hệt."
+        },
+        {
+          "text": "Giữ nguyên ca, báo lỗi sản phẩm kèm kết quả của ca.",
+          "why": "Đúng."
+        }
+      ]
+    },
+    {
+      "q": "Ca nào KHÔNG nên tự động hóa?",
+      "answer": 1,
+      "explain": "Giá trị của khám phá nằm ở việc người kiểm đổi hướng theo điều vừa quan sát được.",
+      "options": [
+        {
+          "text": "Tra cứu sai số điện thoại trả 404.",
+          "why": "Rủi ro cao, kết quả rõ, cần kiểm ở mọi bản."
+        },
+        {
+          "text": "Phiên khám phá 45 phút về luồng hủy lịch.",
+          "why": "Đúng. Kịch bản không biết tò mò."
+        },
+        {
+          "text": "Lịch thứ 4 vào cùng khung giờ trả 409.",
+          "why": "Quy tắc lõi, kết quả rõ."
+        },
+        {
+          "text": "Biên tuổi 120 và 121.",
+          "why": "Lỗi biên hay quay lại, rất đáng tự động hóa."
+        }
+      ]
+    }
+  ]
+}

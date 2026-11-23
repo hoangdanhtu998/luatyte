@@ -1,0 +1,37 @@
+/* Phần riêng của sổ tay, dùng chung token với lab.css */
+.muted { color: var(--muted); font-size: 14px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin: 18px 0; }
+.toolbar button:not(.primary) { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; }
+.toolbar select { width: auto; }
+
+.work { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; }
+.work > summary { cursor: pointer; padding: 16px 20px; font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; gap: 12px; align-items: center; list-style: none; }
+.work > summary::-webkit-details-marker { display: none; }
+.work > summary .state { font-size: 13px; font-weight: 600; border-radius: 999px; padding: 2px 12px; background: var(--gold-soft); color: var(--gold); white-space: nowrap; }
+.work.done > summary .state { background: var(--mint); color: var(--pine); }
+.work-body { padding: 0 20px 20px; border-top: 1px solid var(--line); }
+.work-body h3 { font-size: 15px; margin: 18px 0 6px; }
+.work-body .task { margin: 16px 0 10px; }
+.work-body textarea { min-height: 260px; }
+.work-body .row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; align-items: center; }
+.work-body .row button { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 14px; }
+.rubric { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rubric label { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 15px; }
+.rubric input { margin-top: 5px; flex: 0 0 auto; }
+.sample { margin-top: 14px; border: 1px dashed #9BA8A1; border-radius: 8px; }
+.sample > summary { cursor: pointer; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+.sample pre { margin: 0; padding: 14px; background: #14201C; color: #E6EFEA; font: 13.5px/1.55 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; border-radius: 0 0 8px 8px; }
+
+#bug-form .field { margin-bottom: 14px; }
+#bug-form textarea { font-family: var(--font); font-size: 15px; }
+.bug { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--gold); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 12px; }
+.bug h3 { margin: 0 0 4px; font-size: 16px; overflow-wrap: anywhere; }
+.bug .meta { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.bug dl { margin: 0; display: grid; gap: 4px; }
+.bug dt { font-size: 13px; font-weight: 600; color: var(--muted); }
+.bug dd { margin: 0 0 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.bug button { background: none; border: 0; color: var(--clay); font-size: 13px; padding: 0; text-decoration: underline; }
+
+#key-table { min-width: 760px; }
+#key-table td:first-child { text-align: center; }
+#key-table tr.found { background: var(--mint); }

@@ -7,7 +7,14 @@ import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual, createHash } from 'node:crypto';
 import { speak, getVoices, healthCheck as ttsHealth } from './src/tts.mjs';
 
+// Root cho app luật y tế; có thể ghi đè qua HOC_TEST_ROOT để trỏ tới hoc-test ở nơi khác.
 const ROOT = dirname(fileURLToPath(import.meta.url));
+// Khi hoc-test nằm ngoài app (ví dụ: thư mục riêng trong repo cha), dùng biến môi trường để chỉ đường.
+// Ví dụ: HOC_TEST_ROOT=/c/Users/SK/Documents/Luật\ y\ tế/hoc-test node server.mjs
+var HOC_TEST_ROOT = process.env.HOC_TEST_ROOT || null;
+if (HOC_TEST_ROOT) {
+  try { require('fs').accessSync(HOC_TEST_ROOT); } catch { HOC_TEST_ROOT = null; }
+}
 const PORT = Number(process.env.PORT || 4400);
 const DB = resolve(process.env.ACCOUNT_DB || join(ROOT, '..', '2026-10-27-so-y-te-data', 'users.json'));
 // Tài khoản (email/tên đăng nhập, đăng ký, phiên) do máy chủ quản lý xử lý.

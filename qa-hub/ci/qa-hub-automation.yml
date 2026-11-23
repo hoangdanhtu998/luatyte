@@ -1,0 +1,59 @@
+# Mẫu CI cho QA Hub. Chưa đẩy lên GitHub.
+# Workflow của GitHub phải nằm ở thư mục .github/workflows/ của REPO GỐC.
+# Nếu QA Hub nằm trong một thư mục con (ví dụ qa-hub/), sửa "working-directory" bên dưới cho đúng.
+name: QA Hub Automation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qa-hub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: qa-hub   # bỏ dòng này nếu QA Hub là thư mục gốc của repo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: qa-hub/package-lock.json
+
+      - name: Cài dependency
+        run: npm ci
+
+      - name: Cài trình duyệt Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Test (Playwright, gồm API, UI, bảo mật, accessibility)
+        run: npm test
+
+      - name: Lighthouse CI (hiệu năng và accessibility)
+        run: npm run lhci
+
+      - name: Khởi động QA Hub cho kiểm tra axe
+        run: |
+          PORT=3100 node server.js &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:3100/api/health && break; sleep 1; done
+
+      - name: axe-core (WCAG 2.1 AA, không để lỗi critical hoặc serious)
+        env:
+          BASE_URL: http://127.0.0.1:3100
+        run: npm run a11y
+
+      - name: Lưu báo cáo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-hub-reports
+          path: |
+            qa-hub/results/
+            qa-hub/playwright-report/
+            qa-hub/.lighthouseci/
+          if-no-files-found: warn
