@@ -722,7 +722,7 @@ function renderLaws(){
         <div class="pts">${l.points.map(p=>`<p>${esc(p)}</p>`).join("")}</div>
         ${l.guide?`<div class="meta">Văn bản hướng dẫn: ${esc(l.guide)}</div>`:""}
         <div class="links">
-          <a class="linkbtn" href="${TS(l.so)}" target="_blank" rel="noopener">Mở toàn văn ↗</a>
+          <a class="linkbtn" href="https://thuvienphapluat.vn/" data-href="${TS(l.so)}" target="_blank" rel="noopener" onclick="this.href=this.dataset.href">Mở toàn văn ↗</a>
           <button class="linkbtn" type="button" data-askabout="${l.id}">Hỏi trợ lý về luật này</button>
           <button class="linkbtn" type="button" data-quizabout="${l.id}">Luyện câu hỏi</button>
           <button class="linkbtn" type="button" onclick="window.shareLesson('${l.id}', '${esc(l.name).replace(/'/g, "\\'")}')">Chia sẻ ↗</button>
