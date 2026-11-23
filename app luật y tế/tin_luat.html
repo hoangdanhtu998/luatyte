@@ -51,7 +51,7 @@ function badge(code){ return `<span class="state ${esc(code)}">${esc(DATA.tinh_t
 
 function card(m){
   const pts = (m.diem || []).map(p => `<li>${esc(p)}</li>`).join("");
-  const src = (m.nguon || []).map(s => `<li><a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.tieu_de)}</a> <span class="meta">· ${esc(s.trang)}${s.ngay ? " · " + esc(s.ngay) : ""}</span></li>`).join("");
+  const src = (m.nguon || []).map(s => `<li><a href="#" data-src="${esc(safeUrl(s.url))}" onclick="this.href=this.dataset.src" target="_blank" rel="noopener noreferrer">${esc(s.tieu_de)}</a> <span class="meta">· ${esc(s.trang)}${s.ngay ? " · " + esc(s.ngay) : ""}</span></li>`).join("");
   return `<article class="news" data-s="${esc(m.tinh_trang)}" id="${esc(m.id)}">
     ${badge(m.tinh_trang)}
     ${m.moc ? `<p class="moc">${esc(m.moc)}</p>` : ""}
@@ -73,7 +73,7 @@ function render(){
   unv.hidden = !showUnv || !(DATA.chua_xac_minh || []).length;
   unv.innerHTML = `<h2>Chưa xác minh được</h2>
     <p class="sub">Các mục này có trong danh sách tin nhưng chưa tìm thấy văn bản hay bài báo tương ứng khi kiểm tra. Đừng dựa vào chúng khi áp dụng.</p>
-    <ul>${DATA.chua_xac_minh.map(u => `<li><b>${esc(u.tieu_de)}</b>${esc(u.ly_do)}${u.url ? ` <a href="${esc(safeUrl(u.url))}" target="_blank" rel="noopener noreferrer">${esc(u.url_ten || "Nguồn liên quan")}</a>` : ""}</li>`).join("")}</ul>`;
+    <ul>${DATA.chua_xac_minh.map(u => `<li><b>${esc(u.tieu_de)}</b>${esc(u.ly_do)}${u.url ? ` <a href="#" data-src="${esc(safeUrl(u.url))}" onclick="this.href=this.dataset.src" target="_blank" rel="noopener noreferrer">${esc(u.url_ten || "Nguồn liên quan")}</a>` : ""}</li>`).join("")}</ul>`;
   document.querySelectorAll("#filters button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === filter)));
 }
 

@@ -73,7 +73,7 @@ async function boot(){
     <h2>Quy tắc</h2>
     <ul class="pts">${D.quy_tac.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
     <h2>Nguồn đã kiểm</h2>
-    <ul class="pts">${D.nguon_da_kiem.map(s => `<li><a href="${esc(safeUrl(s.nguon))}" target="_blank" rel="noopener noreferrer">${esc(s.van_ban)}</a> <span class="meta">· ${esc(s.loai)}</span></li>`).join("")}</ul>
+    <ul class="pts">${D.nguon_da_kiem.map(s => `<li><a href="#" data-src="${esc(safeUrl(s.nguon))}" onclick="this.href=this.dataset.src" target="_blank" rel="noopener noreferrer">${esc(s.van_ban)}</a> <span class="meta">· ${esc(s.loai)}</span></li>`).join("")}</ul>
     <h2>Chưa xác nhận hoặc đã bác bỏ</h2>
     <ul class="unv-list">${D.chua_xac_nhan.map(c => `<li>${badgeCode(c.trang_thai)} <b>${esc(c.noi_dung)}</b>: ${esc(c.ghi_chu)}</li>`).join("")}</ul>`;
 }
