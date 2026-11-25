@@ -43,6 +43,16 @@
     .msg::before { content: "TG"; position: absolute; left: 16px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #B5483A, #7A2318); color: #fff; font-size: 13px; font-weight: 800; line-height: 36px; text-align: center; box-shadow: 0 2px 6px rgba(31, 79, 174, .35); }
     .msg .who { display: block; font-size: 14px; font-weight: 800; color: #7A2318; margin: 0 0 6px; letter-spacing: 0; }
     .msg:focus-within { outline: 2px solid #B5483A; outline-offset: 2px; }
+    /* Tin cũ lùi lại, tin mới nổi bật để dễ thấy đâu là câu trả lời mới nhất */
+    .msg { transition: opacity .25s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease; }
+    .msg:not(:last-child) { opacity: .66; background: #FBF8F3; border-color: #EFE6DA; box-shadow: none; }
+    .msg:not(:last-child)::before { opacity: .7; filter: grayscale(.5); box-shadow: none; }
+    .msg:not(:last-child) .who { color: #9C8A7C; }
+    .msg:last-child { border-color: #D9A08F; box-shadow: 0 8px 22px rgba(122, 35, 24, .14); }
+    .msg:last-child .who::after { content: "Mới"; display: inline-block; margin-left: 8px; padding: 1px 9px; border-radius: 999px; background: #B5483A; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .04em; vertical-align: 1px; }
+    .chat-log { padding-right: 10px; }
+    .chat-log::-webkit-scrollbar { width: 8px; }
+    .chat-log::-webkit-scrollbar-thumb { background: #E6DCD0; border-radius: 8px; }
     @media (max-width: 600px) { .msg { font-size: 17px; padding: 12px 14px 14px 58px; } .msg::before { width: 32px; height: 32px; line-height: 32px; left: 12px; top: 12px; font-size: 12px; } .msg .who { font-size: 13px; } .chat-log { gap: 12px; } }
     .controls { display: flex; flex-wrap: wrap; gap: 8px; }
     .controls .btn[disabled], .form-row .btn[disabled] { opacity: .45; cursor: not-allowed; }
