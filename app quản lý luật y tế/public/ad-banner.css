@@ -1,7 +1,7 @@
 /* Banner quảng cáo dùng chung: trang quản trị (xem trước) và app học luật y tế.
-   Màu lấy theo thương hiệu Luật y tế (#0F766E). Hỗ trợ sáng/tối theo hệ thống. */
+   Màu lấy theo thương hiệu Luật y tế (#8A2E22, giấy-mực-đỏ nâu). Hỗ trợ sáng/tối theo hệ thống. */
 .ad-banner{
-  --ad-brand:#0F766E;
+  --ad-brand:#8A2E22;
   --ad-ink:#111827;
   --ad-muted:#4b5563;
   --ad-bg:#ffffff;
@@ -22,7 +22,7 @@
 }
 .ad-banner__media img{width:100%;height:100%;object-fit:cover;display:block}
 .ad-banner__media--empty{
-  background:linear-gradient(135deg,#0F766E 0%,#14b8a6 100%);
+  background:linear-gradient(135deg,#8A2E22 0%,#B5483A 100%);
 }
 .ad-banner__media--empty svg{width:44px;height:44px;opacity:.95}
 .ad-banner__body{flex:1 1 auto;min-width:0;padding:14px 16px;display:flex;flex-direction:column;gap:6px;justify-content:center}
@@ -38,7 +38,7 @@
   font-size:14px;font-weight:600;color:#fff;background:var(--ad-brand);
   text-decoration:none;border-radius:8px;padding:8px 14px;min-height:40px;
 }
-.ad-banner__cta:hover{background:#115e59}
+.ad-banner__cta:hover{background:#6E2319}
 .ad-banner__cta:focus-visible{outline:3px solid #7dd3c7;outline-offset:2px}
 .ad-banner--inline{margin:16px auto}
 .ad-banner--sidebar{flex-direction:column;max-width:300px}
@@ -58,7 +58,7 @@
   .ad-banner{
     --ad-ink:#f3f4f6;--ad-muted:#9ca3af;--ad-bg:#14201f;--ad-line:#24423f;--ad-soft:#0f2a28;
   }
-  .ad-banner__label{color:#5eead4}
+  .ad-banner__label{color:#E3B9B1}
   .ad-banner__cta{background:#14b8a6;color:#052e2b}
   .ad-banner__cta:hover{background:#2dd4bf}
 }
