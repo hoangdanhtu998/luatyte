@@ -16,7 +16,8 @@ const shown = (sel) => page.evaluate((s) => {
 }, sel);
 
 await page.goto(URL, { waitUntil: 'load' });
-await page.waitForTimeout(500);
+// Script nạp sau trang (defer): đợi nút xuất hiện thay vì chờ cố định.
+await page.waitForSelector('#focus-toggle', { state: 'visible', timeout: 15000 }).catch(() => failures.push('không có nút Đọc tập trung trên trang'));
 if (!(await shown('.topbar'))) failures.push('thanh tiêu đề không hiện trước khi bật đọc tập trung');
 await page.getByRole('button', { name: 'Đọc tập trung' }).click();
 await page.waitForTimeout(200);
