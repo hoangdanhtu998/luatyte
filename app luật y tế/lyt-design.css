@@ -615,3 +615,8 @@ header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
   .topbar .row { flex-wrap: wrap; gap: 8px 12px; align-items: center; }
   .topbar .row h1 { flex: 1 1 100%; font-size: 1.35rem; min-width: 0; }
 }
+
+/* Chế độ đọc tập trung (mục 32, js/focus-read.js): ẩn điều hướng và thanh tiêu đề; nút Thoát luôn hiện. */
+body.focus-read nav[aria-label="Chuyển khu học"], body.focus-read .topbar { display: none !important; }
+.focus-exit { display: none; position: fixed; top: 12px; right: 12px; z-index: 90; min-height: 44px; }
+body.focus-read .focus-exit { display: inline-flex; align-items: center; }
