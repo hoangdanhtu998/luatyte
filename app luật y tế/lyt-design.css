@@ -604,3 +604,14 @@ header,.mast,.topbar{border-bottom:1px solid var(--color-rule)}
 /* Khung tab nội dung: góc vuông, có lề trong, viền mảnh, bỏ bóng nặng */
 .panel{border-radius:0 !important;padding:clamp(18px,2.4vw,32px) !important;border:1px solid var(--color-rule,#D9CFBE) !important;box-shadow:none !important;background:var(--color-paper-2,#fff) !important}
 .panel > .intro{margin:0 0 18px;padding:0}
+
+/* Thanh nhớ chỗ đọc dở (mục 33, js/resume-reading.js). */
+.resume-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 16px; padding: 10px 14px; border: 1px solid var(--color-rule, #C9B99A); border-left: 4px solid var(--color-accent, #8A2E22); border-radius: 8px; background: var(--color-paper-raised, #FFFDF8); color: var(--color-ink, #231F1A); font-size: 15px; }
+.resume-bar span { flex: 1 1 220px; }
+.resume-bar .btn { min-height: 40px; }
+
+/* Điện thoại: tiêu đề trang không bị ép thành cột hẹp khi có nút và liên kết cạnh bên (mục 31-ish, lỗi bố cục). */
+@media (max-width: 600px) {
+  .topbar .row { flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+  .topbar .row h1 { flex: 1 1 100%; font-size: 1.35rem; min-width: 0; }
+}
