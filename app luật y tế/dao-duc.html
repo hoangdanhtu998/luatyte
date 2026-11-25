@@ -243,6 +243,11 @@
 <script src="js/lesson-frames.js"></script>
 <script src="js/faq-answer.js"></script>
 <script src="js/lesson-chat.js"></script>
+<div class="qz-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0">
+<button type="button" class="btn ghost" id="qz-show">Xem kết quả</button>
+<button type="button" class="btn ghost" id="qz-reset">Làm lại</button>
+</div>
+<p id="qz-result" aria-live="polite" style="margin:0 0 16px"></p>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('.qz-item'));

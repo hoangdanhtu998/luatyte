@@ -73,8 +73,10 @@
   var FPS = { walk: 9, idle: 2.5, greet: 3, examine: 1.6, write: 2.2, carry: 2.2, inject: 3, sit: 2 };
   var STATION_ACT = ["greet", "examine", "carry", "write"]; // Tiếp đón, Khám bệnh, Nhà thuốc, Thanh toán
   var actT = 0;
-  function frameOf(seq, time, fps) { return seq[Math.floor(time * fps) % seq.length]; }
+  // Giữ chỉ số khung trong phạm vi hợp lệ; NaN từ dt sẽ không còn tạo tên "undefined".
+  function frameOf(seq, time, fps) { var n = seq ? seq.length : 0; if (!n) return null; var i = Math.floor((Number.isFinite(time) ? time : 0) * (fps || 1)); return seq[((i % n) + n) % n]; }
   function drawAct(cx, feetY, name, scale) {
+    if (!name) return;
     var im = loadAct(name);
     if (!im.complete || !im.naturalWidth) return;
     var h = Math.round(im.naturalHeight * scale), w = Math.round(im.naturalWidth * scale);
@@ -163,6 +165,7 @@
   }
 
   function update(dt) {
+    if (!Number.isFinite(dt)) dt = 0;
     t += dt; actT += dt;
     if (walking && targetIdx >= 0) {
       var tx = STATIONS[targetIdx].x - 2;
