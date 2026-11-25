@@ -14,10 +14,10 @@
 
     /* Sân khấu: form + trục số */
     .stage { display: grid; gap: 14px; }
-    .form-mock { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fbfcfe; transition: box-shadow .3s; }
-    .form-mock.hl { box-shadow: 0 0 0 3px rgba(240,138,75,.7); }
+    .form-mock { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #FFFFFF; transition: box-shadow .3s; }
+    .form-mock.hl { box-shadow: 0 0 0 3px rgba(138, 46, 34,.7); }
     .form-mock label { display: block; font-weight: 700; margin-bottom: 6px; }
-    .form-mock input { width: 100%; max-width: 220px; font-size: 18px; padding: 8px 10px; border: 1px solid #c5cfdd; border-radius: 8px; }
+    .form-mock input { width: 100%; max-width: 220px; font-size: 18px; padding: 8px 10px; border: 1px solid #C9B99A; border-radius: 8px; }
     .result { margin-top: 10px; font-weight: 700; min-height: 1.4em; }
     .result.ok { color: #2e8b57; }
     .result.err { color: var(--brick); }
@@ -33,7 +33,7 @@
     .chat { display: flex; flex-direction: column; min-height: 340px; }
     .chat-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; max-height: 430px; padding-right: 4px; }
     .msg { max-width: 92%; padding: 10px 14px; border-radius: 14px; line-height: 1.5; animation: rise .35s ease both; }
-    .msg.bot { background: #eef3fb; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg.bot { background: #F6F1E7; align-self: flex-start; border-bottom-left-radius: 4px; }
     .msg.me { background: var(--amber); color: var(--navy); align-self: flex-end; border-bottom-right-radius: 4px; }
     .msg .who { display: block; font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
     .typing { color: var(--muted); font-style: normal; padding: 4px 2px; }
@@ -77,12 +77,12 @@
         <svg viewBox="0 0 600 150" role="img" aria-labelledby="axis-title">
           <title id="axis-title">Trục số chia ba vùng: dưới 0 báo lỗi, từ 0 đến 120 chấp nhận, trên 120 báo lỗi</title>
           <rect x="30" y="40" width="112.5" height="38" rx="6" fill="#f6d5d0"/>
-          <rect x="142.5" y="40" width="326.25" height="38" rx="6" fill="#cfe9dc"/>
+          <rect x="142.5" y="40" width="326.25" height="38" rx="6" fill="#EFE6D4"/>
           <rect x="468.75" y="40" width="101.25" height="38" rx="6" fill="#f6d5d0"/>
           <text class="band-label" x="86" y="30" text-anchor="middle">dưới 0: báo lỗi</text>
           <text class="band-label" x="305" y="30" text-anchor="middle">0 đến 120: chấp nhận</text>
           <text class="band-label" x="519" y="30" text-anchor="middle">trên 120: báo lỗi</text>
-          <line x1="30" y1="100" x2="570" y2="100" stroke="#5b6475" stroke-width="2"/>
+          <line x1="30" y1="100" x2="570" y2="100" stroke="#6E6353" stroke-width="2"/>
           <text class="tick-label" x="142.5" y="122" text-anchor="middle">0</text>
           <text class="tick-label" x="468.75" y="122" text-anchor="middle">120</text>
           <g id="marker" style="transition: transform .5s ease">

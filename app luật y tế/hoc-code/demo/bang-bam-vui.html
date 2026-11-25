@@ -7,10 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root { --cream:#F5F2EA; --ink:#1C2027; --navy:#1C2027; --orange:#F08A4B; --blue:#2F5FB3; --brick:#B8521F; --paper:#fff; --muted:#5b6475; }
+  :root { --cream:#F5F2EA; --ink:#231F1A; --navy:#231F1A; --orange:#8A2E22; --blue:#8A2E22; --brick:#8A2E22; --paper:#fff; --muted:#5b6475; }
   * { box-sizing: border-box; }
   body { margin:0; font-family:'Be Vietnam Pro', sans-serif; background:var(--cream); color:var(--ink); }
-  header { background:var(--navy); color:#F1EDE4; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  header { background:var(--navy); color:#F6F1E7; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
   header a { color:var(--orange); text-decoration:none; font-weight:700; }
   main { max-width:980px; margin:0 auto; padding:18px 16px 60px; display:grid; gap:18px; }
   h1 { margin:0; font-size:26px; }
@@ -21,7 +21,7 @@
   input { width:100%; font:600 16px 'Be Vietnam Pro', sans-serif; padding:10px 12px; border:2px solid #d9dfe9; border-radius:12px; }
   input:focus { outline:none; border-color:var(--orange); }
   .btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-  button { font:700 15px 'Be Vietnam Pro', sans-serif; border:0; border-radius:12px; padding:10px 16px; cursor:pointer; background:var(--navy); color:#F1EDE4; transition:transform .1s, background .2s; }
+  button { font:700 15px 'Be Vietnam Pro', sans-serif; border:0; border-radius:12px; padding:10px 16px; cursor:pointer; background:var(--navy); color:#F6F1E7; transition:transform .1s, background .2s; }
   button:hover { background:#2d333d; transform:translateY(-1px); }
   button.alt { background:var(--orange); color:var(--navy); }
   button.ghost { background:#fff; color:var(--navy); border:2px solid #c5cfdd; }
@@ -43,7 +43,7 @@
   .buckets { display:grid; grid-template-columns: repeat(8, 1fr); gap:8px; }
   .bucket { background:#fff; border:2px solid #dfe5ee; border-radius:14px; padding:8px 6px; min-height:86px; transition: all .3s; }
   .bucket .idx { font:700 13px 'JetBrains Mono', monospace; color:var(--muted); }
-  .bucket.on { border-color:var(--orange); background:#fff6ef; box-shadow:0 0 0 4px rgba(240,138,75,.25); }
+  .bucket.on { border-color:var(--orange); background:#fff6ef; box-shadow:0 0 0 4px rgba(138, 46, 34,.25); }
   .bucket .item { display:block; font-size:13px; margin-top:4px; padding:3px 6px; background:#eef3fa; border-radius:8px; word-break:break-all; }
   .bucket .item.new { background:#e8f5ec; }
   .bucket .item.changed { background:#fde3d2; }
