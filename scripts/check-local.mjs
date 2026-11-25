@@ -41,6 +41,7 @@ await run('Study tests', process.execPath, [
   'test/sitemap.test.mjs',
 ], STUDY);
 await run('Security smoke', process.execPath, [join(ROOT, 'scripts', 'security-smoke.mjs')], ROOT);
+await run('Kiểm tra cấu trúc quiz', process.execPath, [join(ROOT, 'app luật y tế', 'scripts', 'check-quiz.mjs')], ROOT);
 if (withAdmin) await run('Admin tests', 'npm', ['test'], ADMIN, true);
 
 console.log(failed ? `\nCÓ ${failed} NHÓM KIỂM TRA LỖI` : '\nTẤT CẢ KIỂM TRA CỤC BỘ ĐỀU PASS');
