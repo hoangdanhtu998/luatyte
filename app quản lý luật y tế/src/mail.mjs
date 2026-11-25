@@ -7,7 +7,7 @@ export const MAX_TRIES = 1 + RETRY_DELAYS_MS.length; // 1 lần gửi đầu + 3
 
 export const TEMPLATES = {
   'verify-email': { subject: 'Xác minh email của bạn', body: 'Xin chào ${userName}, mã xác minh của bạn là ${verificationCode}.' },
-  'forgot-password': { subject: 'Đặt lại mật khẩu', body: 'Xin chào ${userName}, bạn vừa yêu cầu đặt lại mật khẩu.' },
+  'forgot-password': { subject: 'Đặt lại mật khẩu', body: 'Xin chào ${userName}, mã đặt lại mật khẩu của bạn là ${resetCode}. Mã hết hạn sau 30 phút; nếu không phải bạn yêu cầu thì bỏ qua thư này.' },
   'invoice': { subject: 'Hóa đơn của bạn', body: 'Xin chào ${userName}, hóa đơn của bạn: ${invoiceLink}.' },
   'renewal-reminder': { subject: 'Gói của bạn sắp hết hạn', body: 'Xin chào ${userName}, gói của bạn hết hạn ngày ${expiryDate}. Hãy gia hạn để tiếp tục học.' },
 };

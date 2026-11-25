@@ -16,6 +16,7 @@ import { createAdsIpRoutes } from './ads-ip-routes.mjs';
 import { createScoresRoutes } from './scores-routes.mjs';
 import { createToolsRoutes } from './tools-routes.mjs';
 import { createDiagramsRoutes } from './diagrams-routes.mjs';
+import { enqueue, renderTemplate } from './mail.mjs';
 import { createPeopleRoutes } from './users-routes.mjs';
 import { createProgressRoutes } from './progress-routes.mjs';
 import { recordError } from './phase567.mjs';
@@ -198,6 +199,44 @@ export function createApp({ db, now = () => Date.now(), trustProxy = false, allo
       const t = cookie(req, 'lyt_session');
       if (t) db.prepare('DELETE FROM sessions WHERE token_hash = ?').run(sha(t));
       return send(res, 200, { ok: true }, { 'set-cookie': 'lyt_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0' });
+    }
+
+    if (p === '/api/auth/forgot' && m === 'POST') {
+      // Luôn trả cùng một kết quả để không lộ email nào có tài khoản.
+      const body = await readBody(req);
+      const email = String(body.email || '').trim().toLowerCase();
+      const key = `forgot:${email}`;
+      if (ipLimiter.blocked(`ip:${clientIp(req)}`) || emailLimiter.blocked(key)) return err(res, 429, 'RATE_LIMITED', 'Bạn yêu cầu quá nhiều lần. Vui lòng đợi 15 phút.');
+      ipLimiter.attempt(`ip:${clientIp(req)}`);
+      emailLimiter.attempt(key);
+      const user = email ? db.prepare('SELECT id, name, username, email, status FROM users WHERE email = ?').get(email) : null;
+      if (user && user.status === 'active') {
+        const code = randomBytes(18).toString('base64url');
+        db.prepare('INSERT INTO password_resets (token_hash, user_id, exp) VALUES (?, ?, ?)').run(sha(code), user.id, now() + 30 * 60 * 1000);
+        enqueue(db, { to: user.email, ...renderTemplate('forgot-password', { userName: user.name || user.username, resetCode: code }) }, now());
+      }
+      return send(res, 200, { ok: true });
+    }
+
+    if (p === '/api/auth/reset' && m === 'POST') {
+      const body = await readBody(req);
+      const ip = clientIp(req);
+      if (ipLimiter.blocked(`ip:${ip}`)) return err(res, 429, 'RATE_LIMITED', 'Bạn thử quá nhiều lần. Vui lòng đợi 15 phút.');
+      const row = db.prepare('SELECT * FROM password_resets WHERE token_hash = ?').get(sha(String(body.token || '')));
+      if (!row || row.used_at || row.exp < now()) {
+        ipLimiter.attempt(`ip:${ip}`);
+        return err(res, 400, 'INVALID_TOKEN', 'Mã đặt lại không đúng hoặc đã hết hạn.');
+      }
+      let hash;
+      try { hash = hashPassword(body.password); } catch (e) { return err(res, 400, 'WEAK_PASSWORD', e.message); }
+      db.exec('BEGIN IMMEDIATE');
+      try {
+        db.prepare('UPDATE password_resets SET used_at = ? WHERE token_hash = ?').run(now(), row.token_hash);
+        db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(hash, row.user_id);
+        db.prepare('DELETE FROM sessions WHERE user_id = ?').run(row.user_id);
+        db.exec('COMMIT');
+      } catch (e) { db.exec('ROLLBACK'); throw e; }
+      return send(res, 200, { ok: true });
     }
 
     if (p === '/api/auth/register' && m === 'POST') {

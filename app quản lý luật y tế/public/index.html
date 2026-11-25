@@ -203,6 +203,25 @@
       <button type="submit" class="btn-block" id="login-btn">Tiếp tục</button>
     </form>
     <p class="err" id="login-err" role="alert"></p>
+    <p class="hint"><button type="button" class="link" id="forgot-open">Quên mật khẩu?</button></p>
+  </section>
+
+  <!-- Khôi phục mật khẩu: bước 1 nhập email, bước 2 nhập mã trong thư và mật khẩu mới -->
+  <section id="reset-box" class="hidden">
+    <h2 class="auth-title">Khôi phục mật khẩu</h2>
+    <form id="forgot-form">
+      <p class="auth-sub">Nhập email tài khoản. Nếu email có tài khoản, mã đặt lại sẽ được gửi tới đó.</p>
+      <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="username" placeholder="ten@vidu.vn"></label>
+      <button type="submit" class="btn-block">Gửi mã</button>
+    </form>
+    <form id="reset-form" hidden>
+      <p class="auth-sub">Nhập mã trong thư (hiệu lực 30 phút) và mật khẩu mới ít nhất 10 ký tự.</p>
+      <label class="field"><span>Mã đặt lại</span><input name="token" required autocomplete="one-time-code"></label>
+      <label class="field"><span>Mật khẩu mới</span><input name="password" type="password" required minlength="10" autocomplete="new-password"></label>
+      <button type="submit" class="btn-block">Đặt mật khẩu mới</button>
+    </form>
+    <p class="err" id="reset-err" role="alert"></p>
+    <p class="hint"><button type="button" class="link" id="reset-back">Quay lại đăng nhập</button></p>
   </section>
 
   <!-- Bước 2: mã xác minh hai lớp -->
@@ -622,7 +641,7 @@ function emptyRow(tbody, cols, text) { tbody.innerHTML = ''; const tr = document
 function show(box) {
   $('auth').classList.toggle('hidden', !box);
   document.body.classList.toggle('auth', !!box);
-  ['login-box','totp-box','setup-box'].forEach(id => $(id).classList.toggle('hidden', id !== box));
+  ['login-box','totp-box','setup-box','reset-box'].forEach(id => $(id).classList.toggle('hidden', id !== box));
   if (box) { const f = document.querySelector('#' + box + ' input'); if (f) setTimeout(() => f.focus(), 0); }
 }
 function setLoggedIn(on) {
@@ -698,6 +717,31 @@ $('pw-toggle').onclick = () => {
   $('pw-toggle').setAttribute('aria-label', hidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
 };
 
+$('forgot-open').onclick = () => { $('forgot-form').hidden = false; $('reset-form').hidden = true; setErr('reset-err', ''); show('reset-box'); };
+$('reset-back').onclick = () => show('login-box');
+$('forgot-form').onsubmit = async e => {
+  e.preventDefault(); setErr('reset-err', '');
+  const email = e.target.email.value.trim();
+  await busy(e.target.querySelector('button'), async () => {
+    const r = await api('/api/auth/forgot', { method: 'POST', body: { email } });
+    if (!r.ok) { setErr('reset-err', r.status === 429 ? 'Bạn yêu cầu quá nhiều lần. Vui lòng đợi 15 phút.' : msg(r.data)); return; }
+    $('forgot-form').hidden = true; $('reset-form').hidden = false;
+    setErr('reset-err', 'Nếu email có tài khoản, mã đã được gửi. Kiểm tra hộp thư.');
+    $('reset-form').token.focus();
+  });
+};
+$('reset-form').onsubmit = async e => {
+  e.preventDefault(); setErr('reset-err', '');
+  const f = e.target;
+  await busy(f.querySelector('button'), async () => {
+    const r = await api('/api/auth/reset', { method: 'POST', body: { token: f.token.value.trim(), password: f.password.value } });
+    f.password.value = '';
+    if (!r.ok) { setErr('reset-err', msg(r.data)); return; }
+    f.reset(); $('forgot-form').hidden = false; f.hidden = true;
+    show('login-box');
+    setErr('login-err', 'Đã đặt mật khẩu mới. Hãy đăng nhập lại.');
+  });
+};
 $('login-form').onsubmit = async e => {
   e.preventDefault(); setErr('login-err', '');
   const f = e.target;

@@ -114,6 +114,13 @@ export function openDb(path) {
         locked_until TEXT NOT NULL
       );
     -- Nhật ký quyền riêng tư do chính học viên thực hiện (xóa dữ liệu); không dùng audit_logs vì cần admin_id.
+    -- Đặt lại mật khẩu qua email: chỉ lưu băm của mã, mã dùng một lần và hết hạn sau 30 phút.
+    CREATE TABLE IF NOT EXISTS password_resets (
+      token_hash TEXT PRIMARY KEY,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      exp INTEGER NOT NULL,
+      used_at INTEGER
+    );
     CREATE TABLE IF NOT EXISTS privacy_logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER NOT NULL,
