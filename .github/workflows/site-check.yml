@@ -20,3 +20,9 @@ jobs:
         run: node "app luật y tế/scripts/check-quiz.mjs"
       - name: Kiểm tra trang và link trên site live
         run: node scripts/check-live.mjs https://luatyte.online
+      - name: Cài Chromium để kiểm tra console
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+      - name: Kiểm tra lỗi JavaScript và console trên site live
+        run: node scripts/check-console.mjs https://luatyte.online
