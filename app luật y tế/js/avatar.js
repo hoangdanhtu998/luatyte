@@ -37,10 +37,10 @@ const svg = `
     <path d="M42 55 L50 72 M58 55 L50 72" fill="none" stroke="#94A3B8" stroke-width="1"/>
     <!-- Túi áo và bút -->
     <rect x="58" y="80" width="11" height="10" rx="2" fill="none" stroke="#CBD5E1" stroke-width="1.2"/>
-    <path d="M61 78 L61 74" stroke="#0F766E" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M61 78 L61 74" stroke="#8A2E22" stroke-width="1.6" stroke-linecap="round"/>
     <!-- Thẻ tên -->
     <rect x="30" y="74" width="13" height="8" rx="1.8" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1"/>
-    <rect x="32.5" y="77" width="8" height="1.4" rx="0.7" fill="#0F766E"/>
+    <rect x="32.5" y="77" width="8" height="1.4" rx="0.7" fill="#8A2E22"/>
     <rect x="32.5" y="79.5" width="5" height="1.2" rx="0.6" fill="#94A3B8"/>
     <!-- Ống nghe -->
     <path d="M40 60 Q38 82 48 88 Q58 90 60 80" fill="none" stroke="#334155" stroke-width="1.8" stroke-linecap="round"/>
