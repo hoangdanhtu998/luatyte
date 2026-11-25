@@ -112,8 +112,12 @@ test('xuất và xóa dữ liệu cá nhân: xuất đủ dữ liệu, xóa thì
 
     const meRes = await fetch(base + '/api/me', { headers: { cookie } });
     const csrf = (await meRes.json()).csrfToken;
-    const del = await fetch(base + '/api/me/data', { method: 'DELETE', headers: { cookie, 'x-csrf-token': csrf } });
+    const noConfirm = await fetch(base + '/api/me/data', { method: 'DELETE', headers: { cookie, 'x-csrf-token': csrf } });
+    assert.equal(noConfirm.status, 400, 'thiếu xác nhận thì không được xóa');
+    assert.equal(db.prepare("SELECT status FROM users WHERE id = ?").get(uid).status, 'active', 'chưa xóa khi thiếu xác nhận');
+    const del = await fetch(base + '/api/me/data', { method: 'DELETE', headers: { cookie, 'x-csrf-token': csrf, 'content-type': 'application/json' }, body: JSON.stringify({ confirm: 'XOA DU LIEU CUA TOI' }) });
     assert.equal(del.status, 200);
+    assert.equal(db.prepare("SELECT COUNT(*) n FROM privacy_logs WHERE user_id = ? AND action = 'DELETE_OWN_DATA'").get(uid).n, 1, 'phải ghi nhật ký xóa');
     const row = db.prepare('SELECT email, name, password_hash, status FROM users WHERE id = ?').get(uid);
     assert.ok(row.email.endsWith('@anonymized.local'));
     assert.equal(row.name, '');

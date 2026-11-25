@@ -98,6 +98,24 @@ export function createPeopleRoutes({ db, now, helpers }) {
         return sendCsv(res, `nguoi-dung-${new Date(now()).toISOString().slice(0, 10)}.csv`, csv), true;
       }
 
+      if (p === '/api/admin/consents.csv' && m === 'GET') {
+        const s = requireAdmin(req, res);
+        if (!s) return true;
+        const rows = db.prepare(`SELECT c.agreed_at, c.type, c.version, c.ip, u.id AS user_id, u.email, u.username
+          FROM consents c JOIN users u ON u.id = c.user_id ORDER BY c.agreed_at DESC, c.id DESC`).all();
+        const csv = toCsv(rows, [
+          { label: 'Đồng ý lúc', key: 'agreed_at' },
+          { label: 'Mã người dùng', key: 'user_id' },
+          { label: 'Tên đăng nhập', key: 'username' },
+          { label: 'Email', key: 'email' },
+          { label: 'Loại đồng ý', key: 'type' },
+          { label: 'Phiên bản', key: 'version' },
+          { label: 'IP', key: 'ip' },
+        ]);
+        audit(req, s, { action: 'EXPORT', entity: 'Consent.csv', entityId: rows.length, now: now() });
+        return sendCsv(res, `lich-su-dong-y-${new Date(now()).toISOString().slice(0, 10)}.csv`, csv), true;
+      }
+
       if (p === '/api/admin/people' && m === 'GET') {
         if (!requireAdmin(req, res)) return true;
         const sp = url.searchParams;

@@ -112,7 +112,11 @@ export function createP567Routes({ db, now, helpers }) {
       if (p === '/api/me/data' && m === 'DELETE') {
         const s = sessionOf(req);
         if (!s) return err(res, 401, 'UNAUTHENTICATED', 'Chưa đăng nhập.'), true;
+        // Xóa là không hoàn tác được: buộc gõ đúng cụm xác nhận, không chỉ bấm nút.
+        const body = await readBody(req).catch(() => ({}));
+        if (body.confirm !== 'XOA DU LIEU CUA TOI') return err(res, 400, 'CONFIRM_REQUIRED', 'Gửi {"confirm":"XOA DU LIEU CUA TOI"} để xác nhận xóa dữ liệu.'), true;
         const r = P.anonymizeUser(db, s.user_id, now());
+        db.prepare('INSERT INTO privacy_logs (user_id, action, logged_at, ip) VALUES (?, ?, ?, ?)').run(s.user_id, 'DELETE_OWN_DATA', now(), req.socket?.remoteAddress || '');
         return send(res, 200, r, { 'set-cookie': 'lyt_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0' }), true;
       }
       const dexM = p.match(/^\/api\/admin\/users\/(\d+)\/data-export$/);

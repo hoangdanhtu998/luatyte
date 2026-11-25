@@ -113,6 +113,14 @@ export function openDb(path) {
         first_fail_at TEXT NOT NULL,
         locked_until TEXT NOT NULL
       );
+    -- Nhật ký quyền riêng tư do chính học viên thực hiện (xóa dữ liệu); không dùng audit_logs vì cần admin_id.
+    CREATE TABLE IF NOT EXISTS privacy_logs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      action TEXT NOT NULL,
+      logged_at INTEGER NOT NULL,
+      ip TEXT
+    );
     CREATE TABLE IF NOT EXISTS audit_logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       admin_id INTEGER NOT NULL,

@@ -4,9 +4,9 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIAGRAMS = [
-  { file: '1-tai-khoan.html', title: '1. Vòng đời tài khoản', desc: 'Trạng thái tài khoản và gói: chưa đăng ký, free, chờ thanh toán, Premium, hết hạn, bị khóa.' },
+  { file: '1-tai-khoan.html', title: '1. Vòng đời tài khoản', desc: 'Vòng đời tài khoản và gói: đăng ký miễn phí, đơn chờ thanh toán, gói đang hiệu lực, hết hạn hoặc thu hồi.' },
   { file: '2-api-quan-ly.html', title: '2. App quản lý: nhóm API', desc: 'Các nhóm API của app quản lý: xác thực, gói, quản trị, học viên, công khai.' },
-  { file: '3-ca-truc.html', title: '3. Mini game ca trực', desc: 'Luồng một ca: chọn chế độ, bệnh nhân, chọn đáp án, chấm điểm, tổng kết.' },
+  { file: '3-ca-truc.html', title: '3. Cảnh bệnh viện (mini game)', desc: 'Cảnh 8 khu bệnh viện (tiếp đón đến dự phòng) mà bệnh nhân đi qua trong mini game.' },
   { file: '4-hoc-vien.html', title: '4. Học viên: các tab học', desc: 'Đường đi của học viên từ đăng nhập qua các tab học đến bảng xếp hạng.' },
 ];
 
