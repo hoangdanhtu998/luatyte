@@ -27,17 +27,17 @@
     "pass": "30/06/2026",
     "eff": "15/08/2026",
     "status": "on",
-    "replaces": "Sửa đổi Thông tư 01/2013/TT-BYT và Thông tư 32/2023/TT-BYT.",
+    "replaces": "Sửa đổi Thông tư 01/2013, 32/2023, 23/2024 và 42/2025/TT-BYT.",
     "points": [
       "Thay thế toàn bộ Điều 34 (hồ sơ khám sức khỏe) và Điều 36 (nội dung khám sức khỏe) của Thông tư 32/2023.",
       "Hồ sơ khám sức khỏe lập theo Mẫu 01–04 Phụ lục XXIV; Mẫu 04 là giấy khám sức khỏe tâm thần mới.",
-      "Người mất hoặc bị hạn chế năng lực hành vi dân sự cần có giấy khám sức khỏe và văn bản đồng ý của thân nhân."
+      "Người mất hoặc hạn chế năng lực hành vi dân sự, khi khám không phải khám định kỳ, cần hồ sơ phù hợp và văn bản đồng ý của thân nhân (Điều 34 đã sửa đổi)."
     ],
     "verify": false,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=252026",
-    "ghi_chu": "Kiểm 2026-11-06: Điều 2 (sửa Điều 34, 36) có hiệu lực 01/07/2026, không phải 15/08/2026. Point 3 thiếu điều kiện không thuộc trường hợp khám sức khỏe định kỳ. Kiểm 06/11/2026: hiệu lực 15/08/2026 khớp nhiều nguồn; một trang ghi 30/06/2026 (ngày ban hành). Kiểm 2026-11-09 (thứ cấp): nhiều nguồn ghi hiệu lực chung 15/08/2026, Điều 2–3 có hiệu lực 01/07/2026; một nguồn ghi 30/06/2026 (ngày ban hành). Chưa mở văn bản gốc.",
-    "verify_date": "2026-11-09",
-    "verify_source": "đối chiếu thứ cấp 09/11/2026 (kết quả tìm kiếm tổng hợp; chưa mở văn bản gốc)"
+    "nguon": "https://chinhphu.vn/?classid=0&docid=218704&pageid=27160",
+    "ghi_chu": "Đối chiếu PDF gốc 25/11/2026: hiệu lực chung 15/08/2026; riêng Điều 2 và Điều 3 từ 01/07/2026. Phân biệt hồ sơ đã hoàn thành khám và hồ sơ chưa khám theo Điều 5.",
+    "verify_date": "2026-11-25",
+    "verify_source": "Văn bản và phụ lục ký số trên Cổng Thông tin điện tử Chính phủ: https://chinhphu.vn/?classid=0&docid=218704&pageid=27160"
   },
   {
     "id": "tt26_2025",
@@ -459,7 +459,7 @@
     ],
     "guide": "Nghị định hướng dẫn chưa được xác minh; cần kiểm tra trên vbpl.vn",
     "verify": true,
-    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=114202515",
+    "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498",
     "verify_date": "2026-11-06",
     "verify_source": "PDF Luật 114/2025/QH15 (kiểm Đ1, Đ3, Đ8, Đ14, Đ22, Đ27, Đ45, Đ46)"
   },

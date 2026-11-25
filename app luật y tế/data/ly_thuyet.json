@@ -11,10 +11,10 @@
       "muc_tieu": "Hiểu một số khái niệm cơ bản về y tế và pháp luật trước khi học các quy định chi tiết.",
       "buoc": [
         {
-          "tieu_de": "Trách nhiệm pháp lý có ba loại",
+          "tieu_de": "Một số loại trách nhiệm pháp lý thường gặp",
           "giai_thich": "Khi làm sai pháp luật, có thể chịu ba loại trách nhiệm. Trách nhiệm hành chính là bị xử phạt, thường là phạt tiền hoặc biện pháp khác theo quy định. Trách nhiệm dân sự là bồi thường thiệt hại cho người bị ảnh hưởng. Trách nhiệm hình sự chỉ đặt ra khi hành vi là tội phạm theo Bộ luật Hình sự.",
           "vi_du": "Một cơ sở kê khai sai thông tin có thể bị phạt hành chính. Một cơ sở làm người bệnh bị thiệt hại có thể phải bồi thường dân sự.",
-          "hay_nham": "Nghĩ rằng mọi sai sót đều là tội hình sự. Phần lớn sai sót chỉ đến mức xử phạt hành chính hoặc bồi thường.",
+          "hay_nham": "Không tự kết luận loại trách nhiệm từ một sai sót. Phải xem hành vi, hậu quả và căn cứ pháp luật của từng trường hợp.",
           "nguon": "Kiến thức chung, không phải điều luật cụ thể",
           "verify": false
         },
@@ -30,8 +30,8 @@
           "tieu_de": "Hồ sơ bệnh án là gì",
           "giai_thich": "Hồ sơ bệnh án là tài liệu ghi lại quá trình khám và điều trị của một người bệnh: triệu chứng, kết quả khám, xét nghiệm, chẩn đoán, thuốc và các chăm sóc đã thực hiện. Hồ sơ có thể là bản giấy hoặc bản điện tử, và có giá trị pháp lý như nhau.",
           "vi_du": "Mỗi lần người bệnh nhập viện, bác sĩ ghi diễn biến bệnh vào hồ sơ. Hồ sơ này được dùng để theo dõi điều trị và khi cần giải quyết tranh chấp.",
-          "hay_nham": "Nghĩ rằng hồ sơ bệnh án chỉ dành cho bác sĩ. Người bệnh có quyền xem và sao chụp hồ sơ của mình.",
-          "nguon": "Luật Khám bệnh, chữa bệnh 15/2023, Điều 69 khoản 1 (theo dữ liệu app); phần giải thích là kiến thức chung",
+          "hay_nham": "Quyền đọc, sao chụp hồ sơ thực hiện theo Điều 12 và điểm d khoản 4 Điều 69; cần yêu cầu bằng văn bản.",
+          "nguon": "Luật 15/2023/QH15, khoản 1 và điểm d khoản 4 Điều 69; https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm",
           "verify": false
         },
         {
@@ -167,10 +167,10 @@
       "buoc": [
         {
           "tieu_de": "Được cung cấp thông tin",
-          "giai_thich": "Người bệnh được cung cấp thông tin về tình trạng sức khỏe, phương pháp chữa bệnh, giá dịch vụ, và hướng dẫn tự chăm sóc. Đây là điều tạo nên sự đồng thuận khi điều trị. Người bệnh cũng được đọc và sao chụp hồ sơ bệnh án, và được nhận tóm tắt, giải thích về chi phí.",
+          "giai_thich": "Người bệnh được cung cấp thông tin về tình trạng sức khỏe, phương pháp chữa bệnh, giá dịch vụ, và hướng dẫn tự chăm sóc. Đây là điều tạo nên sự đồng thuận khi điều trị. Người bệnh cũng được đọc và sao chụp hồ sơ bệnh án, và được nhận tóm tắt, giải thích về chi phí. Quyền khai thác hồ sơ phải đáp ứng điều kiện tại điểm d khoản 4 Điều 69, gồm yêu cầu bằng văn bản.",
           "vi_du": "Người bệnh hỏi giá một dịch vụ trước khi làm. Cơ sở phải cung cấp thông tin giá, không được che giấu.",
           "hay_nham": "Cho rằng người bệnh không có quyền xem hồ sơ của mình.",
-          "nguon": "Luật KCB 15/2023, Điều 9 và Điều 12; quiz kcb",
+          "nguon": "Luật 15/2023/QH15, Điều 9, 12 và điểm d khoản 4 Điều 69; https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm",
           "verify": false
         },
         {
@@ -966,7 +966,7 @@
     },
     {
       "id": "c21",
-      "ten": "Bảo hiểm y tế 2025–2026: những điểm mới quan trọng",
+      "ten": "[verify] Bảo hiểm y tế 2025–2026: những điểm mới quan trọng",
       "muc_tieu": [
         "Nắm được đối tượng tham gia BHYT bắt buộc mở rộng theo Nghị định 119/2025",
         "Hiểu mức hưởng 100% nội trú tuyến tỉnh và quy định trái tuyến",
@@ -975,62 +975,62 @@
       ],
       "buoc": [
         {
-          "tieu_de": "Đối tượng BHYT bắt buộc mở rộng (NĐ 119/2025)",
-          "giai_thich": "Nghị định 119/2025/NĐ-CP Điều 5 mở rộng đối tượng BHYT bắt buộc: người lao động làm việc theo HĐ không xác định thời hạn và HĐ từ 3 đến dưới 12 tháng đều thuộc nhóm người LĐ tham gia BHYT bắt buộc.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+          "tieu_de": "[verify] Đối tượng BHYT bắt buộc mở rộng",
+          "giai_thich": "verify — Nguồn docid=214890 mở Quyết định 1720/QĐ-TTg, không chứng minh đối tượng BHYT trong nhận định cũ. Cần đối chiếu Luật BHYT và nghị định hướng dẫn.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Mức hưởng nội trú tại tuyến tỉnh",
-          "giai_thich": "Theo Nghị định 119/2025 Điều 8, người BHYT khám nội trú tại bệnh viện tuyến tỉnh được hưởng 100% chi phí điều trị. Khám trái tuyến tại tuyến trung ương vẫn hưởng 40% mức hưởng.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+          "tieu_de": "[verify] Mức hưởng nội trú tại tuyến tỉnh",
+          "giai_thich": "verify — Không dùng nhận định mọi trường hợp nội trú tuyến tỉnh được trả 100% chi phí. Cần kiểm tra điều kiện, phạm vi và tỷ lệ trên mức hưởng.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Thẻ BHYT điện tử và đăng ký KCB trực tuyến",
-          "giai_thich": "Nghị định 119/2025 Điều 12 công nhận thẻ BHYT điện tử có giá trị pháp lý tương đương thẻ giấy, quét qua app VssID. Thông tư 14/2026 cho phép đăng ký KCB thường xuyên qua VssID.",
-          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
+          "tieu_de": "[verify] Thẻ BHYT điện tử và đăng ký KCB trực tuyến",
+          "giai_thich": "verify — Cần văn bản gốc quy định thẻ điện tử và thủ tục đăng ký; đường dẫn trang tin tổng hợp chưa đủ chứng minh số điều đã nêu.",
+          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Danh mục 850 dịch vụ kỹ thuật BHYT",
-          "giai_thich": "Thông tư 06/2026/TT-BYT ban hành danh mục 850 dịch vụ kỹ thuật được thanh toán BHYT, bao gồm xét nghiệm huyết học, chẩn đoán hình ảnh, nội soi. Giá do HĐND cấp tỉnh quyết định.",
-          "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx"
+          "tieu_de": "[verify] Danh mục 850 dịch vụ kỹ thuật BHYT",
+          "giai_thich": "verify — Chưa xác minh được con số 850 dịch vụ và văn bản danh mục tương ứng.",
+          "nguon": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2026-tt-byt-84521.aspx [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Chuyển tuyến tự động và đăng ký KCB thường xuyên",
-          "giai_thich": "Thông tư 14/2026 Điều 8: chuyển tuyến tự động từ xã → huyện → tỉnh khi bệnh viện tuyến dưới không đủ điều kiện. Người bệnh chọn cơ sở KCB thường xuyên qua app VssID.",
-          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te"
+          "tieu_de": "[verify] Chuyển tuyến tự động và đăng ký KCB thường xuyên",
+          "giai_thich": "verify — Chưa đủ căn cứ cho nhận định chuyển tuyến tự động hoặc đăng ký qua VssID từ mốc ngày đã nêu.",
+          "nguon": "https://vnpa.moh.gov.vn/chinh-sach-moi-lien-quan-den-y-te [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Tổng kết và lưu ý quan trọng",
-          "giai_thich": "Từ 01/07/2025: mở rộng đối tượng, 100% nội trú tuyến tỉnh, thẻ điện tử tương đương thẻ giấy. Từ 01/08/2026: đăng ký KCB qua VssID. Danh mục 850 DVKT thay thế danh mục cũ.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890"
+          "tieu_de": "[verify] Tổng kết và lưu ý quan trọng",
+          "giai_thich": "verify — Các kết luận và mốc ngày của chương này đang chờ đối chiếu; không dùng làm quy tắc thanh toán.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=214890 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         }
       ],
       "on_nhanh": [
         {
-          "q": "HĐLĐ 6 tháng thuộc đối tượng BHYT nào?",
-          "a": "BHYT bắt buộc theo nhóm người lao động"
+          "hoi": "[verify] HĐLĐ 6 tháng thuộc đối tượng BHYT nào?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Nội trú tuyến tỉnh hưởng bao nhiêu?",
-          "a": "100% chi phí điều trị"
+          "hoi": "[verify] Nội trú tuyến tỉnh hưởng bao nhiêu?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Thẻ BHYT điện tử có giá trị như thẻ giấy?",
-          "a": "Có, tương đương"
+          "hoi": "[verify] Thẻ BHYT điện tử có giá trị như thẻ giấy?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Danh mục dịch vụ kỹ thuật BHYT có bao nhiêu mục?",
-          "a": "850 dịch vụ"
+          "hoi": "[verify] Danh mục dịch vụ kỹ thuật BHYT có bao nhiêu mục?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Đăng ký KCB thường xuyên qua ứng dụng gì?",
-          "a": "VssID"
+          "hoi": "[verify] Đăng ký KCB thường xuyên qua ứng dụng gì?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         }
       ]
     },
     {
       "id": "c22",
-      "ten": "Luật Khám chữa bệnh 40/2025 — quyền và nghĩa vụ người bệnh",
+      "ten": "Luật Khám bệnh, chữa bệnh 15/2023: quyền người bệnh",
       "muc_tieu": [
         "Hiểu quyền biết chẩn đoán và từ chối điều trị của người bệnh",
         "Biết trách nhiệm công khai giá dịch vụ của cơ sở KCB",
@@ -1038,42 +1038,42 @@
       ],
       "buoc": [
         {
-          "tieu_de": "Quyền người bệnh (Điều 15)",
-          "giai_thich": "Người bệnh có quyền được biết chẩn đoán, phương án điều trị, rủi ro và được thông tin đầy đủ. Đặc biệt, người bệnh có quyền từ chối điều trị — đây là quyền căn bản được Luật KCB 40/2025 bảo vệ.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+          "tieu_de": "Thông tin và từ chối điều trị",
+          "giai_thich": "Người bệnh được thông tin theo Điều 9. Từ chối điều trị theo Điều 13 cần cam kết bằng văn bản sau tư vấn, trừ trường hợp bắt buộc chữa bệnh.",
+          "nguon": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm"
         },
         {
-          "tieu_de": "Trách nhiệm công khai của cơ sở KCB (Điều 22)",
-          "giai_thich": "Cơ sở KCB phải công khai: giá dịch vụ khám chữa bệnh, thái độ phục vụ, quyền và nghĩa vụ người bệnh. Việc này giúp người bệnh biết rõ chi phí và quyền lợi trước khi đăng ký KCB.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+          "tieu_de": "Niêm yết giá dịch vụ",
+          "giai_thich": "Cơ sở có trách nhiệm niêm yết giá theo khoản 4 Điều 60.",
+          "nguon": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm"
         },
         {
-          "tieu_de": "Hồ sơ bệnh án điện tử (Điều 35)",
-          "giai_thich": "Từ 01/07/2026, hồ sơ bệnh án điện tử có giá trị pháp lý tương đương hồ sơ giấy. Đây là bước tiến quan trọng trong chuyển đổi số y tế, giúp lưu trữ an toàn và tra cứu nhanh.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+          "tieu_de": "Giá trị hồ sơ bệnh án",
+          "giai_thich": "Hồ sơ giấy và điện tử có giá trị pháp lý như nhau theo khoản 1 Điều 69.",
+          "nguon": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm"
         },
         {
-          "tieu_de": "So sánh với Luật KCB 40/2009",
-          "giai_thich": "Luật KCB 40/2025 thay thế Luật KCB 40/2009. Điểm mới: tăng cường quyền người bệnh, quy định rõ về hồ sơ điện tử, mở rộng trách nhiệm công khai của cơ sở KCB.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216500"
+          "tieu_de": "Văn bản thay thế",
+          "giai_thich": "Luật 15/2023/QH15 thay Luật 40/2009/QH12 theo Điều 120; không dùng số hiệu 40/2025 chưa xác minh.",
+          "nguon": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm"
         }
       ],
       "on_nhanh": [
         {
-          "q": "Người bệnh có quyền từ chối điều trị không?",
-          "a": "Có, theo Điều 15"
+          "hoi": "Người bệnh có quyền từ chối điều trị không?",
+          "dap": "Có điều kiện theo Điều 13 Luật 15/2023/QH15."
         },
         {
-          "q": "Cơ sở KCB phải công khai điều gì?",
-          "a": "Giá dịch vụ, quyền lợi người bệnh"
+          "hoi": "Cơ sở KCB phải công khai điều gì?",
+          "dap": "Giá dịch vụ theo khoản 4 Điều 60."
         },
         {
-          "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý từ khi nào?",
-          "a": "01/07/2026"
+          "hoi": "Căn cứ nào quy định giá trị pháp lý hồ sơ bệnh án điện tử?",
+          "dap": "Khoản 1 Điều 69 Luật 15/2023/QH15."
         },
         {
-          "q": "Luật KCB 40/2025 thay thế luật nào?",
-          "a": "Luật KCB 40/2009"
+          "hoi": "Luật 15/2023/QH15 thay thế luật nào?",
+          "dap": "Luật 40/2009/QH12, theo Điều 120."
         }
       ]
     },
@@ -1087,62 +1087,62 @@
       ],
       "buoc": [
         {
-          "tieu_de": "Phạm vi và đối tượng (Điều 1-2)",
-          "giai_thich": "Luật 114/2025/QH15 quy định về phòng, chống dịch bệnh; tiêm chủng; khám sức khỏe định kỳ; giám sát dịch bệnh; kiểm dịch y tế tại cửa khẩu.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Phạm vi (Điều 1)",
+          "giai_thich": "Luật điều chỉnh bệnh truyền nhiễm, bệnh không lây nhiễm, rối loạn tâm thần và dinh dưỡng trong phòng bệnh.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         },
         {
-          "tieu_de": "Tiêm chủng (Điều 15-35)",
-          "giai_thich": "Tiêm chủng bắt buộc theo danh mục do Bộ Y tế ban hành (Điều 16). An toàn tiêm chủng: sàng lọc trước tiêm, theo dõi sau tiêm, xử lý phản ứng sau tiêm (Điều 20-24). Cơ sở tiêm phải đủ điều kiện (Điều 27).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Tiêm chủng: cần kiểm tra quy định chi tiết",
+          "giai_thich": "verify — Các số điều về tiêm chủng trong bản tóm tắt cũ chưa đúng; cần đối chiếu quy định chi tiết và văn bản hướng dẫn.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         },
         {
-          "tieu_de": "Khám sức khỏe & Dịch bệnh (Điều 36-55)",
-          "giai_thich": "Khám sức khỏe định kỳ cho người lao động, học sinh, sinh viên (Điều 36-42). Dịch bệnh: báo dịch, cách ly, phong tỏa, tuyên truyền (Điều 43-50). Cấp phép lưu hành thuốc, hóa chất trong phòng dịch (Điều 51-55).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Thông tin dịch bệnh (Điều 18)",
+          "giai_thich": "Cơ quan chuyên môn y tế đánh giá nguy cơ, cảnh báo, điều tra, xử lý và báo cáo, thông tin dịch bệnh.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         },
         {
-          "tieu_de": "Kiểm dịch y tế cửa khẩu (Điều 56-65)",
-          "giai_thich": "Kiểm dịch y tế tại cửa khẩu quốc tế: xét nghiệm, cách ly, khử trùng phương tiện, hàng hóa (Điều 56-60). Hợp tác quốc tế phòng, chống dịch bệnh (Điều 61-65).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Kiểm dịch y tế (Điều 20)",
+          "giai_thich": "Kiểm dịch y tế được thực hiện tại cửa khẩu.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         },
         {
-          "tieu_de": "Trách nhiệm & Xử phạt (Điều 66-80)",
-          "giai_thich": "Trách nhiệm của UBND cấp tỉnh, Bộ Y tế, Bộ Quốc phòng, Bộ Công an (Điều 66-70). Xử phạt vi phạm: phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Xử phạt: cần văn bản riêng",
+          "giai_thich": "verify — Luật có 46 điều, không có Điều 71–80 về xử phạt. Cần tra văn bản xử phạt và hành vi cụ thể.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         },
         {
-          "tieu_de": "Hiệu lực & Điều khoản chuyển tiếp",
-          "giai_thich": "Luật có hiệu lực từ 01/07/2026 (Điều 104). Thay thế Luật Phòng, chống dịch bệnh 03/2007/QH12.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "Hiệu lực (Điều 45–46)",
+          "giai_thich": "Luật có hiệu lực 01/07/2026; Luật 03/2007/QH12 hết hiệu lực. Điều 46 quy định chuyển tiếp.",
+          "nguon": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat114-2025.pdf"
         }
       ],
       "on_nhanh": [
         {
-          "q": "Luật 114/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "Luật 114/2025 có hiệu lực từ khi?",
+          "dap": "01/07/2026"
         },
         {
-          "q": "Tiêm chủng bắt buộc do ai quy định danh mục?",
-          "a": "Bộ Y tế"
+          "hoi": "Tiêm chủng bắt buộc do ai quy định danh mục?",
+          "dap": "verify — Cần đối chiếu điều khoản về tiêm chủng và danh mục đang áp dụng."
         },
         {
-          "q": "Ai chịu trách nhiệm báo dịch bệnh?",
-          "a": "Cơ sở y tế, UBND cấp xã, cá nhân"
+          "hoi": "Ai chịu trách nhiệm báo dịch bệnh?",
+          "dap": "Cơ quan chuyên môn về y tế thực hiện báo cáo, thông tin theo Điều 18."
         },
         {
-          "q": "Vi phạm quy định tiêm chủng bị xử phạt thế nào?",
-          "a": "Phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80)"
+          "hoi": "Vi phạm quy định tiêm chủng bị xử phạt thế nào?",
+          "dap": "verify — Không có Điều 71–80; phải tra văn bản xử phạt phù hợp."
         },
         {
-          "q": "Luật 114/2025 thay thế luật nào?",
-          "a": "Luật 03/2007/QH12"
+          "hoi": "Luật 114/2025 thay thế luật nào?",
+          "dap": "Luật 03/2007/QH12"
         }
       ]
     },
     {
       "id": "c17",
-      "ten": "Luật Dân số 113/2025: thai sản & giới tính",
+      "ten": "[verify] Luật Dân số 113/2025: thai sản & giới tính",
       "muc_tieu": [
         "Hiểu mục tiêu dân số bền vững theo Luật 113/2025",
         "Nắm quy định về khuyến khích sinh con, cân bằng giới tính khi sinh",
@@ -1150,48 +1150,48 @@
       ],
       "buoc": [
         {
-          "tieu_de": "Mục tiêu dân số (Điều 1-5)",
-          "giai_thich": "Luật 113/2025/QH15 hướng tới dân số bền vững, chất lượng, cân bằng giới tính khi sinh. Mục tiêu: tỷ số giới tính khi sinh tự nhiên (105-107 nam/100 nữ), giảm tỷ lệ sinh con thứ 3 trở lên.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Mục tiêu dân số",
+          "giai_thich": "verify — Nguồn docid=216498 là Luật Phòng bệnh, không chứng minh mục tiêu dân số và chỉ tiêu trong nhận định cũ.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Khuyến khích sinh con & Chăm sóc mẹ/bé (Điều 6-20)",
-          "giai_thich": "Khuyến khích sinh con thứ 2: hỗ trợ tiền sinh, giảm học phí, ưu tiên gửi trẻ (Điều 6-10). Chăm sóc mẹ/bé: khám thai ≥3 lần, sinh tại cơ sở y tế, screening sơ sinh (Điều 11-15).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Khuyến khích sinh con & Chăm sóc mẹ/bé",
+          "giai_thich": "verify — Chưa có nguồn đúng để xác nhận điều kiện hỗ trợ sinh con và số lần khám thai đã nêu.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Cân bằng giới tính & Chăm sóc người cao tuổi (Điều 21-35)",
-          "giai_thich": "Cấm chọn giới tính thai nhi (Điều 21). Hỗ trợ người cao tuổi: thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao (Điều 22-30).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Cân bằng giới tính & Chăm sóc người cao tuổi",
+          "giai_thich": "verify — Cần đối chiếu Luật Dân số và quy định chuyên ngành trước khi gắn số điều về giới tính thai nhi hoặc quyền lợi người cao tuổi.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Phân bố dân số & Dữ liệu (Điều 36-50)",
-          "giai_thich": "Phân bố hợp lý: hạn chế tập trung tại đô thị lớn, khuyến khích đến vùng khó khăn (Điều 36-40). Cơ sở dữ liệu dân số quốc gia: thống nhất, chia sẻ, bảo mật (Điều 41-50).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Phân bố dân số & Dữ liệu",
+          "giai_thich": "verify — Chưa đủ căn cứ cho số điều và yêu cầu phân bố, chia sẻ dữ liệu đã nêu.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         }
       ],
       "on_nhanh": [
         {
-          "q": "Luật Dân số 113/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "[verify] Luật Dân số 113/2025 có hiệu lực từ khi?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Mục tiêu tỷ số giới tính khi sinh?",
-          "a": "105-107 nam/100 nữ"
+          "hoi": "[verify] Mục tiêu tỷ số giới tính khi sinh?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Có được chọn giới tính thai nhi không?",
-          "a": "Cấm (Điều 21)"
+          "hoi": "[verify] Có được chọn giới tính thai nhi không?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Người cao tuổi được hỗ trợ gì?",
-          "a": "Thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao"
+          "hoi": "[verify] Người cao tuổi được hỗ trợ gì?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         }
       ]
     },
     {
       "id": "c18",
-      "ten": "Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI",
+      "ten": "[verify] Luật Chuyển đổi số 148/2025: dữ liệu y tế & AI",
       "muc_tieu": [
         "Hiểu khái niệm chuyển đổi số trong y tế",
         "Nắm quy định về dữ liệu y tế quốc gia, sổ sức khỏe điện tử",
@@ -1199,42 +1199,42 @@
       ],
       "buoc": [
         {
-          "tieu_de": "Chuyển đổi số trong y tế (Điều 1-10)",
-          "giai_thich": "Luật 148/2025/QH15 quy định nguyên tắc: người dân trung tâm, chia sẻ dữ liệu, bảo mật, an toàn thông tin. Phạm vi: sổ sức khỏe điện tử, hồ sơ bệnh án điện tử, định danh y tế, telemedicine, AI trong y tế.",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Chuyển đổi số trong y tế",
+          "giai_thich": "verify — Nguồn docid=216498 là Luật Phòng bệnh, không phải Luật Chuyển đổi số.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Dữ liệu y tế & Sổ sức khỏe điện tử (Điều 11-25)",
-          "giai_thich": "Cơ sở dữ liệu y tế quốc gia: thống nhất, chuẩn hóa, liên thông (Điều 11-15). Sổ sức khỏe điện tử: định danh duy nhất, chủ động cập nhật, chia sẻ an toàn (Điều 16-20). Hồ sơ bệnh án điện tử: giá trị pháp lý = giấy (Điều 21-25).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Dữ liệu y tế & Sổ sức khỏe điện tử",
+          "giai_thich": "verify — Không đồng nhất sổ sức khỏe điện tử với hồ sơ bệnh án điện tử; căn cứ và điều kiện pháp lý cần kiểm tra riêng.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Telemedicine & AI trong y tế (Điều 26-40)",
-          "giai_thich": "Khám chữa bệnh từ xa: điều kiện, tiêu chuẩn, trách nhiệm (Điều 26-30). AI trong y tế: minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35). Bảo vệ dữ liệu cá nhân y tế: đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Telemedicine & AI trong y tế",
+          "giai_thich": "verify — Chưa có nguồn gốc phù hợp để xác nhận các số điều về khám từ xa, AI và dữ liệu cá nhân đã nêu.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         },
         {
-          "tieu_de": "Hạ tầng & An toàn thông tin (Điều 41-55)",
-          "giai_thich": "Hạ tầng số y tế: trung tâm dữ liệu, băng thông, an ninh mạng (Điều 41-45). Ứng dụng chuyển đổi số: định danh VNeID, thanh toán điện tử, kê đơn điện tử (Điều 46-50). Kiểm soát, giám sát, xử phạt vi phạm (Điều 51-55).",
-          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498"
+          "tieu_de": "[verify] Hạ tầng & An toàn thông tin",
+          "giai_thich": "verify — Cần văn bản đúng để đối chiếu yêu cầu hạ tầng, ứng dụng và xử phạt; không dùng số điều trong bản cũ.",
+          "nguon": "https://vanban.chinhphu.vn/?pageid=27160&docid=216498 [verify: chưa phải căn cứ phù hợp cho nội dung này]"
         }
       ],
       "on_nhanh": [
         {
-          "q": "Luật 148/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "[verify] Luật 148/2025 có hiệu lực từ khi?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Sổ sức khỏe điện tử có giá trị pháp lý như giấy không?",
-          "a": "Có, giá trị pháp lý ngang ngửa (Điều 21)"
+          "hoi": "[verify] Sổ sức khỏe điện tử có giá trị pháp lý như giấy không?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "AI trong y tế cần đáp ứng yêu cầu gì?",
-          "a": "Minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35)"
+          "hoi": "[verify] AI trong y tế cần đáp ứng yêu cầu gì?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         },
         {
-          "q": "Dữ liệu cá nhân y tế được bảo vệ thế nào?",
-          "a": "Đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40)"
+          "hoi": "[verify] Dữ liệu cá nhân y tế được bảo vệ thế nào?",
+          "dap": "verify — Chưa đủ căn cứ xác nhận đáp án; cần đối chiếu văn bản gốc đúng với chủ đề."
         }
       ]
     }

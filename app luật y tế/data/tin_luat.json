@@ -1,8 +1,8 @@
 {
   "meta": {
     "cap_nhat": "26/10/2026",
-    "gioi_thieu": "Tổng hợp tin về luật và văn bản y tế mới, kèm tình trạng hiện tại và nguồn bài báo hoặc văn bản. Tin chỉ có giá trị tham khảo: dự án và dự thảo chưa có hiệu lực, nội dung có thể thay đổi. Hãy đối chiếu văn bản gốc trước khi áp dụng.",
-    "nguon_uu_tien": "Báo điện tử Chính phủ, Cổng Quốc hội, Bộ Y tế, các báo pháp luật và báo chí chính thống. Khi có nhiều nguồn ghi khác nhau, mục đó có ghi chú riêng."
+    "gioi_thieu": "Tổng hợp tin và văn bản y tế theo nguồn của từng mục. “Đã ban hành” không đồng nghĩa đã có hiệu lực, và phản hồi kiến nghị không tự tạo quy định mới. Dự thảo chưa có hiệu lực. Đọc mốc cập nhật, phạm vi và văn bản gốc trước khi áp dụng.",
+    "nguon_uu_tien": "Ưu tiên văn bản gốc của Quốc hội, Chính phủ và Bộ Y tế. Bài báo dùng để theo dõi tin; các điều kiện, mức hưởng, số điều và hiệu lực cần đối chiếu văn bản gốc. Mục chưa đủ căn cứ phải đọc là verify."
   },
   "tinh_trang": {
     "ban_thao": "Đang bàn thảo, chưa có hiệu lực",

@@ -51,7 +51,7 @@
       "ban co phai ai",
       "la ai khong"
     ],
-    "a": "Có, mình là một chương trình tra cứu, không phải AI tổng quát. Mình chỉ tìm trong nội dung trên trang.",
+    "a": "Đây là trợ lý tra cứu trong nội dung có sẵn trên trang. Câu trả lời phụ thuộc vào tài liệu nguồn và có thể có mục đang chờ xác minh.",
     "p": [
       "*"
     ]
@@ -136,7 +136,7 @@
       "la ai khong",
       "la ai the"
     ],
-    "a": "Không. Đây là trợ lý tra cứu tìm trong nội dung có sẵn trên trang.",
+    "a": "Đây là trợ lý tra cứu trong nội dung có sẵn trên trang. Câu trả lời phụ thuộc vào tài liệu nguồn và có thể có mục đang chờ xác minh.",
     "p": [
       "*"
     ]
@@ -209,7 +209,7 @@
       "bao mat",
       "bi mat thong tin"
     ],
-    "a": "Bảo mật: thông tin sức khỏe là thông tin nhạy cảm. Người hành nghề chỉ chia sẻ khi cần cho việc điều trị hoặc khi pháp luật yêu cầu (Phần 5).",
+    "a": "Bảo mật: không tự ý chia sẻ thông tin người bệnh. Cần có sự đồng ý hoặc căn cứ pháp luật phù hợp; xem Điều 10, khoản 5 Điều 45 và Điều 69 Luật 15/2023/QH15. Nguồn: https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm",
     "p": [
       "dao-duc"
     ]
@@ -335,7 +335,7 @@
       "da doi chieu",
       "xac minh"
     ],
-    "a": "verify = đã đối chiếu điều khoản với văn bản gốc. Các mục chưa đối chiếu vẫn chỉ là tóm tắt tham khảo.",
+    "a": "verify = chờ xác minh hoặc chưa đủ căn cứ đối chiếu văn bản gốc; không có nghĩa là đã xác nhận đúng. Hãy đọc ghi chú và nguồn của từng mục trước khi áp dụng.",
     "p": [
       "ly_thuyet",
       "tin_luat",

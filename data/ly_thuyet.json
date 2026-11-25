@@ -1007,24 +1007,24 @@
       ],
       "on_nhanh": [
         {
-          "q": "HĐLĐ 6 tháng thuộc đối tượng BHYT nào?",
-          "a": "BHYT bắt buộc theo nhóm người lao động"
+          "hoi": "HĐLĐ 6 tháng thuộc đối tượng BHYT nào?",
+          "dap": "BHYT bắt buộc theo nhóm người lao động"
         },
         {
-          "q": "Nội trú tuyến tỉnh hưởng bao nhiêu?",
-          "a": "100% chi phí điều trị"
+          "hoi": "Nội trú tuyến tỉnh hưởng bao nhiêu?",
+          "dap": "100% chi phí điều trị"
         },
         {
-          "q": "Thẻ BHYT điện tử có giá trị như thẻ giấy?",
-          "a": "Có, tương đương"
+          "hoi": "Thẻ BHYT điện tử có giá trị như thẻ giấy?",
+          "dap": "Có, tương đương"
         },
         {
-          "q": "Danh mục dịch vụ kỹ thuật BHYT có bao nhiêu mục?",
-          "a": "850 dịch vụ"
+          "hoi": "Danh mục dịch vụ kỹ thuật BHYT có bao nhiêu mục?",
+          "dap": "850 dịch vụ"
         },
         {
-          "q": "Đăng ký KCB thường xuyên qua ứng dụng gì?",
-          "a": "VssID"
+          "hoi": "Đăng ký KCB thường xuyên qua ứng dụng gì?",
+          "dap": "VssID"
         }
       ]
     },
@@ -1060,20 +1060,20 @@
       ],
       "on_nhanh": [
         {
-          "q": "Người bệnh có quyền từ chối điều trị không?",
-          "a": "Có, theo Điều 15"
+          "hoi": "Người bệnh có quyền từ chối điều trị không?",
+          "dap": "Có, theo Điều 15"
         },
         {
-          "q": "Cơ sở KCB phải công khai điều gì?",
-          "a": "Giá dịch vụ, quyền lợi người bệnh"
+          "hoi": "Cơ sở KCB phải công khai điều gì?",
+          "dap": "Giá dịch vụ, quyền lợi người bệnh"
         },
         {
-          "q": "Hồ sơ bệnh án điện tử có giá trị pháp lý từ khi nào?",
-          "a": "01/07/2026"
+          "hoi": "Hồ sơ bệnh án điện tử có giá trị pháp lý từ khi nào?",
+          "dap": "01/07/2026"
         },
         {
-          "q": "Luật KCB 40/2025 thay thế luật nào?",
-          "a": "Luật KCB 40/2009"
+          "hoi": "Luật KCB 40/2025 thay thế luật nào?",
+          "dap": "Luật KCB 40/2009"
         }
       ]
     },
@@ -1119,24 +1119,24 @@
       ],
       "on_nhanh": [
         {
-          "q": "Luật 114/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "Luật 114/2025 có hiệu lực từ khi?",
+          "dap": "01/07/2026"
         },
         {
-          "q": "Tiêm chủng bắt buộc do ai quy định danh mục?",
-          "a": "Bộ Y tế"
+          "hoi": "Tiêm chủng bắt buộc do ai quy định danh mục?",
+          "dap": "Bộ Y tế"
         },
         {
-          "q": "Ai chịu trách nhiệm báo dịch bệnh?",
-          "a": "Cơ sở y tế, UBND cấp xã, cá nhân"
+          "hoi": "Ai chịu trách nhiệm báo dịch bệnh?",
+          "dap": "Cơ sở y tế, UBND cấp xã, cá nhân"
         },
         {
-          "q": "Vi phạm quy định tiêm chủng bị xử phạt thế nào?",
-          "a": "Phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80)"
+          "hoi": "Vi phạm quy định tiêm chủng bị xử phạt thế nào?",
+          "dap": "Phạt tiền, khôi phục trạng thái, đình chỉ hoạt động (Điều 71-80)"
         },
         {
-          "q": "Luật 114/2025 thay thế luật nào?",
-          "a": "Luật 03/2007/QH12"
+          "hoi": "Luật 114/2025 thay thế luật nào?",
+          "dap": "Luật 03/2007/QH12"
         }
       ]
     },
@@ -1172,20 +1172,20 @@
       ],
       "on_nhanh": [
         {
-          "q": "Luật Dân số 113/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "Luật Dân số 113/2025 có hiệu lực từ khi?",
+          "dap": "01/07/2026"
         },
         {
-          "q": "Mục tiêu tỷ số giới tính khi sinh?",
-          "a": "105-107 nam/100 nữ"
+          "hoi": "Mục tiêu tỷ số giới tính khi sinh?",
+          "dap": "105-107 nam/100 nữ"
         },
         {
-          "q": "Có được chọn giới tính thai nhi không?",
-          "a": "Cấm (Điều 21)"
+          "hoi": "Có được chọn giới tính thai nhi không?",
+          "dap": "Cấm (Điều 21)"
         },
         {
-          "q": "Người cao tuổi được hỗ trợ gì?",
-          "a": "Thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao"
+          "hoi": "Người cao tuổi được hỗ trợ gì?",
+          "dap": "Thẻ BHYT, ưu tiên khám, chăm sóc tại nhà, văn hóa, thể thao"
         }
       ]
     },
@@ -1221,20 +1221,20 @@
       ],
       "on_nhanh": [
         {
-          "q": "Luật 148/2025 có hiệu lực từ khi?",
-          "a": "01/07/2026"
+          "hoi": "Luật 148/2025 có hiệu lực từ khi?",
+          "dap": "01/07/2026"
         },
         {
-          "q": "Sổ sức khỏe điện tử có giá trị pháp lý như giấy không?",
-          "a": "Có, giá trị pháp lý ngang ngửa (Điều 21)"
+          "hoi": "Sổ sức khỏe điện tử có giá trị pháp lý như giấy không?",
+          "dap": "Có, giá trị pháp lý ngang ngửa (Điều 21)"
         },
         {
-          "q": "AI trong y tế cần đáp ứng yêu cầu gì?",
-          "a": "Minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35)"
+          "hoi": "AI trong y tế cần đáp ứng yêu cầu gì?",
+          "dap": "Minh bạch, giải thích được, chịu trách nhiệm, giám sát (Điều 31-35)"
         },
         {
-          "q": "Dữ liệu cá nhân y tế được bảo vệ thế nào?",
-          "a": "Đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40)"
+          "hoi": "Dữ liệu cá nhân y tế được bảo vệ thế nào?",
+          "dap": "Đồng ý, ẩn danh, xóa khi hết mục đích (Điều 36-40)"
         }
       ]
     }

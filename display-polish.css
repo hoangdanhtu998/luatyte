@@ -1,0 +1,29 @@
+/* A quiet reading frame; all colours follow the existing theme. */
+.wrap { max-width:1040px; }
+.hero { margin-top:24px; }
+.hero-top { gap:16px; }
+.hero-top .brand { flex:1 1 300px; }
+.brand > div { min-width:0; }
+.hero .brand h1 { font-size:clamp(1.6rem,3.6vw,2.5rem); line-height:1.22; overflow-wrap:anywhere; }
+.brand .logo { object-fit:contain; width:56px; height:56px; border-radius:12px; }
+.hero .sub { max-width:65ch; line-height:1.6; overflow-wrap:anywhere; }
+.hero-top .display-open { color:var(--color-ink); border-color:var(--color-rule); }
+.hero .stats { margin-top:24px; padding-bottom:16px; }
+.hero .today { border-left:4px solid var(--color-accent); }
+nav.tabs { gap:6px; padding:12px 0; }
+nav.tabs button { min-height:44px; line-height:1.45; }
+.topbar,.page { max-width:1040px; margin-inline:auto; }
+.topbar > .display-open { margin-top:12px; }
+.chap { line-height:1.8; }
+.chap p,.chap li { max-width:76ch; }
+.toolbar input,.toolbar select,.search input { font-size:16px; }
+@media(max-width:600px) {
+  .hero-top .brand { flex-basis:100%; gap:12px; }
+  .hero-top .display-open { margin-left:auto; }
+  .hero .stats .stat { padding:12px 8px; }
+  .hero .stats .stat span { font-size:12px; line-height:1.5; }
+  nav.tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  nav.tabs button { white-space:normal; padding:10px 8px; font-size:13px; }
+  nav.tabs .ind { display:none; }
+  .display-brand-link { max-width:100%; }
+}
