@@ -32,3 +32,10 @@ nav.tabs button { min-height:44px; line-height:1.45; }
 
 /* Khung hero phẳng như trang giấy in: bỏ bóng đậm, giữ viền be. */
 .hero { box-shadow:none; }
+
+/* Viền ô nhập và ô chọn đạt 3:1 trên nền giấy (WCAG 1.4.11); viền trang trí vẫn giữ màu be. */
+:root { --color-field:#857559; }
+input:not([type="checkbox"]):not([type="radio"]), select, textarea, .search input, .theme-row select { border-color:var(--color-field) !important; }
+
+/* Chế độ tối đã có trong ô Giao diện ("Tối sắc"); ẩn nút Tối trùng lặp. Script vẫn giữ trạng thái đã lưu. */
+#dark-toggle { display:none !important; }
