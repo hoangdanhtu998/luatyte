@@ -1,6 +1,7 @@
 // Route HTTP cho Phase 5, 6, 7. app.mjs gọi handle(req, res, url); trả true nếu đã xử lý.
 import * as P from './phase567.mjs';
 import { toCsv, sendCsv } from './csv.mjs';
+import { learnerStats } from './learner-stats.mjs';
 
 export function createP567Routes({ db, now, helpers }) {
   const { sessionOf, requireAdmin, readBody, send, err, audit, backupDir, fxVndPerUsd } = helpers;
@@ -16,6 +17,11 @@ export function createP567Routes({ db, now, helpers }) {
     const m = req.method;
     try {
       // ---- Phase 5 ----
+      // Thống kê học viên (mục 41): số gộp, không có danh tính.
+      if (p === '/api/admin/stats/learners' && m === 'GET') {
+        if (!requireAdmin(req, res)) return true;
+        return send(res, 200, learnerStats(db, now())), true;
+      }
       if (p === '/api/admin/overview' && m === 'GET') {
         if (!requireAdmin(req, res)) return true;
         return send(res, 200, P.overview(db, now())), true;
