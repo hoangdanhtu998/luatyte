@@ -18,10 +18,10 @@
 
 /* mã nguồn */
 .bn-code { background: var(--code-bg); color: var(--code-ink); border-radius: 12px; overflow-x: auto; padding: 8px 0; font-family: Consolas, "Courier New", monospace; font-size: 14px; line-height: 1.6; }
-.bn-code:focus-visible { outline: 3px solid rgba(240,138,75,.6); outline-offset: 2px; }
+.bn-code:focus-visible { outline: 3px solid rgba(138, 46, 34,.6); outline-offset: 2px; }
 .bn-dong { display: flex; white-space: pre; padding: 0 12px 0 0; border-left: 4px solid transparent; min-width: max-content; width: 100%; }
 .bn-dong b { flex: none; width: 2.6em; text-align: right; padding-right: 10px; color: #8d99ae; font-weight: 400; user-select: none; }
-.bn-dong.dang { background: rgba(240,138,75,.22); border-left-color: var(--amber); color: #fff; }
+.bn-dong.dang { background: rgba(138, 46, 34,.22); border-left-color: var(--amber); color: #fff; }
 .bn-dong.dang b { color: var(--amber); font-weight: 700; }
 
 /* khung bộ nhớ */

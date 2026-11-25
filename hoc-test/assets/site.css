@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
 
-/* Học code. Bảng màu: kem #F5F2EA, navy #221F1B, teal #9B2D20, vàng #F08A4B, nền code #221F1B, đỏ nâu #B8521F.
+/* Học code. Bảng màu: kem #F5F2EA, navy #221F1B, teal #9B2D20, vàng #8A2E22, nền code #221F1B, đỏ nâu #B8521F.
    Phong cách sáng nhưng có khối màu đậm để giao diện nổi bật. Một cột trên điện thoại, mục lục bên phải trên máy tính. */
 
 :root {
@@ -10,7 +10,7 @@
   --navy: #221F1B;
   --navy-2: #3A332C;
   --teal: #9B2D20;
-  --amber: #F08A4B;
+  --amber: #8A2E22;
   --brick: #B8521F;
   --ink: #221F1B;
   --muted: #6B6259;
@@ -90,7 +90,7 @@ tr:last-child td { border-bottom: 0; }
 }
 .btn:hover { background: var(--navy-2); }
 .btn:active { transform: translateY(1px); }
-.btn.amber { background: var(--amber); border-color: var(--amber); color: var(--navy); box-shadow: 0 4px 12px rgba(240,138,75,.3); }
+.btn.amber { background: var(--amber); border-color: var(--amber); color: var(--navy); box-shadow: 0 4px 12px rgba(138, 46, 34,.3); }
 .btn.amber:hover { background: #cf9200; }
 .btn.ghost { background: var(--paper); color: var(--navy); border-color: #D9CFC2; box-shadow: none; }
 .btn.ghost:hover { background: #f1f5fa; }
@@ -98,7 +98,7 @@ tr:last-child td { border-bottom: 0; }
 .btn.ok:hover { background: #267549; }
 .btn.run { background: var(--teal); border-color: var(--teal); box-shadow: 0 4px 12px rgba(155,45,32,.3); }
 .btn.run:hover { background: #3F6B4E; }
-.btn:focus-visible, .ex-tab:focus-visible, .tab-btn:focus-visible, header.top a:focus-visible { outline: 3px solid rgba(240,138,75,.6); outline-offset: 2px; }
+.btn:focus-visible, .ex-tab:focus-visible, .tab-btn:focus-visible, header.top a:focus-visible { outline: 3px solid rgba(138, 46, 34,.6); outline-offset: 2px; }
 
 /* ---------- Trang chủ ---------- */
 .hero {
@@ -111,7 +111,7 @@ tr:last-child td { border-bottom: 0; }
 }
 .hero::after {
   content: ""; position: absolute; right: 90px; bottom: -90px; width: 170px; height: 170px;
-  border-radius: 50%; background: rgba(240,138,75,.35);
+  border-radius: 50%; background: rgba(138, 46, 34,.35);
 }
 .hero > * { position: relative; z-index: 1; }
 .hero .eyebrow {
@@ -124,7 +124,7 @@ tr:last-child td { border-bottom: 0; }
 .progress-line { display: grid; gap: 8px; max-width: 460px; }
 .progress-line .label { font-size: 14px; color: #EDE3DA; font-weight: 600; }
 .bar { height: 12px; background: rgba(255,255,255,.18); border-radius: 999px; overflow: hidden; }
-.bar > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--amber), #F08A4B); border-radius: 999px; }
+.bar > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--amber), #8A2E22); border-radius: 999px; }
 
 .level { margin-top: 40px; }
 .level-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -350,7 +350,7 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
 .btn:hover::after { animation: shine .7s ease; }
 .btn:active { transform: translateY(1px) scale(.98); transition-duration: .05s; }
 .btn.run:hover { box-shadow: 0 8px 18px rgba(155,45,32,.35); }
-.btn.amber:hover { box-shadow: 0 8px 18px rgba(240,138,75,.4); }
+.btn.amber:hover { box-shadow: 0 8px 18px rgba(138, 46, 34,.4); }
 
 /* Thẻ bài: nổi lên và bóng đậm hơn khi rê chuột */
 .lesson-card { transition: transform .18s ease, box-shadow .18s ease, border-color .2s; }
@@ -409,7 +409,7 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
 .term .warn { color: #f0c36b; }
 
 /* ---------- Trợ lý học tập ---------- */
-#chat-open { position: fixed; right: 18px; bottom: 18px; z-index: 40; background: #F08A4B; color: #221F1B; border: 0;
+#chat-open { position: fixed; right: 18px; bottom: 18px; z-index: 40; background: #8A2E22; color: #221F1B; border: 0;
   border-radius: 999px; padding: 12px 18px; font: 700 15px 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
 #chat-open:hover { background: #f29a62; }
 #chat-box { position: fixed; right: 18px; bottom: 18px; z-index: 41; width: min(380px, calc(100vw - 24px)); height: min(520px, calc(100vh - 40px));
@@ -423,7 +423,7 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
 #chat-log .bot { background: #fff; color: #221F1B; align-self: flex-start; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
 #chat-log .bot.error { color: #B8521F; }
 #chat-log .bot.pending { color: #6B6259; font-style: italic; }
-#chat-log .passage { background: #fff; border-left: 4px solid #F08A4B; align-self: stretch; max-width: 100%; }
+#chat-log .passage { background: #fff; border-left: 4px solid #8A2E22; align-self: stretch; max-width: 100%; }
 #chat-log .passage .src { font-size: 12.5px; font-weight: 700; color: #B8521F; margin-bottom: 4px; }
 #chat-log .passage pre { margin: 0; white-space: pre-wrap; font: 13.5px/1.5 'Nunito', sans-serif; color: #221F1B; background: none; padding: 0; border: 0; box-shadow: none; }
 #chat-form { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #e2e6ee; background: #fff; }
@@ -452,7 +452,7 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
     .hop-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .hop-dots { display: flex; gap: 8px; }
     .hop-dots span { width: 12px; height: 12px; border-radius: 50%; background: #D9CFC2; }
-    .hop-dots span.on { background: #F08A4B; }
+    .hop-dots span.on { background: #8A2E22; }
     .hop-stage { display: grid; grid-template-columns: 180px 1fr; gap: 20px; align-items: center; margin-top: 18px; }
     .hop-mascot img { width: 100%; max-width: 180px; height: auto; }
     .hop-bubble { background: #fff; border: 2px solid #221F1B; border-radius: 16px; padding: 16px 18px; font-size: 1.35rem; line-height: 1.5; position: relative; }
@@ -490,7 +490,7 @@ main > *, .level, .lesson-body, .practice { animation: rise .5s ease both; }
 .lvl-progress { margin: 8px 0 14px; }
 .lvl-text { font-size: 13px; color: var(--mute, #6B6259); margin-bottom: 6px; }
 .lvl-bar { height: 8px; border-radius: 999px; background: #e3e8f0; overflow: hidden; }
-.lvl-bar i { display: block; height: 100%; background: var(--amber, #F08A4B); border-radius: 999px; transition: width .4s; }
+.lvl-bar i { display: block; height: 100%; background: var(--amber, #8A2E22); border-radius: 999px; transition: width .4s; }
 
 /* ===== Đợt làm đẹp (polish): bề mặt thẻ, nút, tiêu điểm; không đổi bố cục ===== */
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -503,7 +503,7 @@ p, li { text-wrap: pretty; }
 .btn:not(:disabled):hover { box-shadow: 0 6px 16px -8px rgba(20, 24, 31, .45); }
 .tab-btn, .ex-tab { border-radius: 999px; }
 a { text-underline-offset: 3px; }
-:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid rgba(155, 45, 32, .45); outline-offset: 2px; border-radius: 8px; }
+:where(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid rgba(155, 45, 32, .45); outline-offset: 2px; border-radius: 8px; }
 input, select, textarea { border-radius: 10px; }
 @media (prefers-reduced-motion: reduce) { .lesson-card, .btn { transition: none !important; } }
 
