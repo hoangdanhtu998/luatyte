@@ -39,3 +39,6 @@ input:not([type="checkbox"]):not([type="radio"]), select, textarea, .search inpu
 
 /* Chế độ tối đã có trong ô Giao diện ("Tối sắc"); ẩn nút Tối trùng lặp. Script vẫn giữ trạng thái đã lưu. */
 #dark-toggle { display:none !important; }
+
+/* Logo đặt trực tiếp trên nền giấy của app, không khung riêng. */
+.brand .logo { background:transparent; }
