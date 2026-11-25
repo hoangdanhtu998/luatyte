@@ -21,7 +21,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="lyt-design.css">
-<style>.plan-badge{display:inline-block;margin-left:var(--space-xs);padding:var(--space-2xs) var(--space-xs);border-radius:999px;font:600 12px/1.4 system-ui,sans-serif;vertical-align:middle;border:1px solid transparent;white-space:nowrap}.plan-free{background:color-mix(in srgb,var(--c-green) 14%,transparent);color:var(--c-green);border-color:color-mix(in srgb,var(--c-green) 40%,transparent)}.plan-paid{background:color-mix(in srgb,var(--c-blue) 14%,transparent);color:var(--c-blue);border-color:color-mix(in srgb,var(--c-blue) 40%,transparent)}.plan-admin{background:color-mix(in srgb,var(--c-violet) 14%,transparent);color:var(--c-violet);border-color:color-mix(in srgb,var(--c-violet) 40%,transparent)}.plan-guest{background:var(--surface-2);color:var(--muted);border-color:var(--line)}</style>
+<style>.plan-badge{display:inline-block;margin-left:var(--space-xs);padding:var(--space-2xs) var(--space-xs);border-radius:999px;font:600 12px/1.4 system-ui,sans-serif;vertical-align:middle;border:1px solid transparent;white-space:nowrap}.plan-free{background:color-mix(in srgb,var(--c-green) 14%,transparent);color:var(--c-green);border-color:color-mix(in srgb,var(--c-green) 40%,transparent)}.plan-paid{background:color-mix(in srgb,var(--c-blue) 14%,transparent);color:var(--c-blue);border-color:color-mix(in srgb,var(--c-blue) 40%,transparent)}.plan-admin{background:color-mix(in srgb,var(--c-violet) 14%,transparent);color:var(--c-violet);border-color:color-mix(in srgb,var(--c-violet) 40%,transparent)}.plan-guest{background:var(--surface-2);color:var(--muted);border-color:var(--line)}  .stat-hint { display:block; margin-top:6px; font-size:.82rem; line-height:1.4; color:var(--muted, #6E6353); font-weight:400; }
+  .stat-hint:empty { display:none; }
+</style>
 <style>
 .prog-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:0;gap:var(--space-xs);margin-top:0}
 .prog-grid .stat{border-left:0;padding:var(--space-xs) var(--space-sm);background:var(--surface-2);border:1px solid var(--rule);border-radius:10px}
@@ -80,9 +82,6 @@
 <body><nav aria-label="Chuyển khu học" style="display:flex;flex-wrap:wrap;gap:8px 14px;padding:10px 16px;border-bottom:1px solid var(--color-rule,#ddd);font-size:14px"><a href="index.html" aria-current="page" style="font-weight:700">Luật Y tế</a><a href="hoc.html">Học</a><a href="tam-quan.html">Tam quan</a><a href="triet-hoc.html">Triết học</a><a href="dao-duc.html">Đạo đức</a><a href="hoc-code/index.html">Học code</a><a href="/hoc-test/">Học kiểm thử</a></nav>
 <div class="wrap">
   <header class="hero">
-    <div class="theme-row">
-      <button id="dark-toggle" class="btn ghost" style="padding:6px 12px;font-size:13px" title="Đổi chế độ sáng/tối">Tối</button>
-      <label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
   <div class="hero-top">
       <div class="brand">
         <img class="logo" src="logo-mark.png" alt="" width="48" height="48">
@@ -92,12 +91,15 @@
         </div>
       </div>
 
+  <div class="theme-row">
+  <button id="dark-toggle" class="btn ghost" style="padding:6px 12px;font-size:13px" title="Đổi chế độ sáng/tối">Tối</button>
+  <label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
     <div class="acct"><a class="linkbtn" id="acct-link" href="dang-nhap.html">Đăng nhập</a></div>
     </div>
 <div class="stats">
-      <div class="stat"><span>Chuỗi ôn mỗi ngày</span><b id="s-streak">0</b></div>
-      <div class="stat"><span>Luật đã thuộc</span><b id="s-laws">0</b></div>
-      <div class="stat"><span>Huy hiệu</span><b id="s-badges">0</b></div>
+      <div class="stat"><span>Chuỗi ôn mỗi ngày</span><b id="s-streak">0</b><small class="stat-hint" id="h-streak"></small></div>
+      <div class="stat"><span>Luật đã thuộc</span><b id="s-laws">0</b><small class="stat-hint" id="h-laws"></small></div>
+      <div class="stat"><span>Huy hiệu</span><b id="s-badges">0</b><small class="stat-hint" id="h-badges"></small></div>
 </div>
     <div class="today" id="today-card"></div>
     <div class="remind" id="remind-row">
@@ -649,10 +651,16 @@ function renderBadges(){
   $("#badge-more")?.addEventListener("click", () => { badgeExpanded = !badgeExpanded; renderBadges(); });
 }
 function renderStats(){
-  countUp($("#s-streak"), dailyStreak());
+  const streak = dailyStreak();
+  countUp($("#s-streak"), streak);
   renderToday();
-  $("#s-laws").textContent = masteredLaws().length + "/" + LAWS.filter(l => quizOf(l.id).length).length;
+  const mastered = masteredLaws().length;
+  $("#s-laws").textContent = mastered + "/" + LAWS.filter(l => quizOf(l.id).length).length;
   $("#s-badges").textContent = knownBadgeIds().length + "/" + BADGES.length;
+  // Khi chưa có tiến độ, mỗi thẻ nói việc đầu tiên cần làm thay vì để số 0 trơ trọi (mục 25).
+  $("#h-streak").textContent = streak > 0 ? "" : "Trả lời một câu hôm nay để bắt đầu chuỗi.";
+  $("#h-laws").textContent = mastered > 0 ? "" : "Làm hết một bài trắc nghiệm của một luật để bắt đầu.";
+  $("#h-badges").textContent = knownBadgeIds().length > 0 ? "" : "Trả lời đúng để mở huy hiệu đầu tiên.";
 }
 // Tiến độ cũ của bản live (khóa lyt_lyt_progress) được chép sang khóa mới; không mất dữ liệu.
 const compat = await import("./js/progress-compat.js").catch(() => null);
