@@ -161,7 +161,7 @@ Kiểm: học sinh thấy v4, lịch sử còn v3</code></pre><p><i>Nguồn: Th�
     var pos = idx.lessons.findIndex(function (l) { return l.id === id; });
     var next = pos >= 0 ? idx.lessons[pos + 1] : null;
     var lastTitle = pos >= 0 ? idx.lessons[pos].title : '';
-    if (next) { link.href = next.slides.split('/').pop(); link.textContent = 'Bài tiếp theo →'; }
+    if (next) { link.href = next.slides ? next.slides.split('/').pop() : '../../lesson.html?track=tester&id=' + next.id; link.textContent = 'Bài tiếp theo →'; }
     else { link.href = '../../index.html'; link.textContent = 'Về trang chủ →'; }
     link.title = next ? next.title : 'Bạn đã học hết các bài';
     function show() {
