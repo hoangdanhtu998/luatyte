@@ -29,3 +29,6 @@ nav.tabs button { min-height:44px; line-height:1.45; }
   nav.tabs .ind { display:none; }
   .display-brand-link { max-width:100%; }
 }
+
+/* Khung hero phẳng như trang giấy in: bỏ bóng đậm, giữ viền be. */
+.hero { box-shadow:none; }
