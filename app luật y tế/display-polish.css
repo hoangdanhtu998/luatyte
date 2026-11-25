@@ -10,8 +10,10 @@
 .hero-top .display-open { color:var(--color-ink); border-color:var(--color-rule); }
 .hero .stats { margin-top:24px; padding-bottom:16px; }
 .hero .today { border-left:4px solid var(--color-accent); }
-nav.tabs { gap:6px; padding:12px 0; }
+nav.tabs { gap:6px; padding:12px 0; display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); }
 nav.tabs button { min-height:44px; line-height:1.45; }
+/* Mốc tiến độ 0% không vẽ vệt tròn ở mép thanh. */
+.prog-bar i[style="width:0%"] { display:none; }
 .topbar,.page { max-width:1040px; margin-inline:auto; }
 .topbar > .display-open { margin-top:12px; }
 .chap { line-height:1.8; }
