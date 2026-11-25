@@ -1,0 +1,22 @@
+name: Kiểm tra site sau deploy
+
+# Chạy sau mỗi lần deploy GitHub Pages xong: kiểm tra mọi trang và link nội bộ trên luatyte.online.
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages with Extended Timeout"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  check:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Kiểm tra cấu trúc quiz và tiến độ nội dung
+        run: node "app luật y tế/scripts/check-quiz.mjs"
+      - name: Kiểm tra trang và link trên site live
+        run: node scripts/check-live.mjs https://luatyte.online
