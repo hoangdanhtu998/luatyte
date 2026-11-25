@@ -48,6 +48,7 @@
   bar.className = 'reader';
   bar.innerHTML =
     '<button type="button" class="btn" id="reader-play">Nghe cả bài</button>' +
+    '<button type="button" class="btn ghost" id="reader-pause" hidden>Tạm dừng</button>' +
     '<label>Người giảng <select id="reader-voice" aria-label="Chọn người giảng"></select></label>' +
     '<label>Tốc độ <select id="reader-speed" aria-label="Tốc độ đọc">' +
     '<option value="0.8">0.8×</option><option value="0.9" selected>0.9×</option><option value="1">1×</option><option value="1.2">1.2×</option></select></label>' +
@@ -59,6 +60,8 @@
   var speed = document.getElementById('reader-speed');
   var voiceSel = document.getElementById('reader-voice');
   var note = document.getElementById('reader-note');
+  var pauseBtn = document.getElementById('reader-pause');
+  var paused = false;
 
   if (window.NarratorPicker) NarratorPicker.fill(voiceSel);
   else voiceSel.parentNode.hidden = true;
@@ -101,6 +104,9 @@
     stopClip();
     setLit(-1);
     btn.textContent = 'Nghe cả bài';
+    paused = false;
+    pauseBtn.hidden = true;
+    pauseBtn.textContent = 'Tạm dừng';
   }
 
   // Đọc đoạn bằng giọng của trình duyệt
@@ -147,7 +153,21 @@
     if (!blocks.length) return;
     playing = true;
     btn.textContent = 'Dừng';
+    pauseBtn.hidden = false;
     say(0);
+  });
+  // Tạm dừng và tiếp tục: giữ đúng đoạn đang đọc (clip hoặc giọng trình duyệt).
+  pauseBtn.addEventListener('click', function () {
+    if (!playing) return;
+    if (!paused) {
+      paused = true;
+      if (clip) clip.pause(); else synth.pause();
+      pauseBtn.textContent = 'Tiếp tục';
+    } else {
+      paused = false;
+      if (clip) clip.play().catch(function () {}); else synth.resume();
+      pauseBtn.textContent = 'Tạm dừng';
+    }
   });
 
   // Đổi tốc độ giữa chừng: đọc lại đoạn hiện tại với tốc độ mới
