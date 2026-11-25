@@ -20,7 +20,9 @@
     '.tp-card{border:1px solid #E6DCD0;border-radius:12px;padding:12px;background:#fbfcfe}',
     '.tp-step{font-size:12px;color:#6B6259;font-weight:700}',
     '.tp-title{font-size:16px;margin:4px 0 6px;color:#221F1B}',
-    '.tp-text{margin:0;font-size:14px}',
+    '.tp-body{max-height:260px;overflow-y:auto;margin-top:6px;padding-right:4px}',
+    '.tp-text{margin:0 0 6px;font-size:14px}',
+    '.tp-hl{outline:2px solid #B5483A;outline-offset:4px;border-radius:6px;transition:outline-color .3s}',
     '.tp-now{font-size:12px;color:#7A2318;font-weight:700;margin-top:6px}',
     '.tp-marks,.tp-nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}',
     '.tp-btn{font:inherit;font-size:13px;padding:6px 10px;border:1px solid #D9CFC2;border-radius:8px;background:#fff;color:#221F1B;cursor:pointer}',
@@ -57,14 +59,27 @@
     return !h.closest('[hidden]') && !h.closest('.tutor-panel');
   }
 
-  // Đoạn chữ đầu tiên sau tiêu đề, dừng khi gặp tiêu đề kế tiếp.
-  function firstText(h) {
+  // Nội dung của một mục: các đoạn, ý trong danh sách và dòng bảng, đến tiêu đề kế tiếp.
+  function sectionOf(h) {
+    var out = [];
+    var nodes = [];
     for (var n = h.nextElementSibling; n && !/^H[1-3]$/.test(n.tagName); n = n.nextElementSibling) {
-      var p = n.matches('p, li') ? n : n.querySelector('p, li');
-      var t = p ? p.textContent.replace(/\s+/g, ' ').trim() : '';
-      if (t) return t.length > 260 ? t.slice(0, 257) + '…' : t;
+      if (isVisible(n)) nodes.push(n);
     }
-    return 'Đọc phần này, rồi bấm Đạt, Lỗi hoặc Bỏ qua.';
+    nodes.forEach(function (n) {
+      var items = n.matches('p, li, blockquote, tr, pre') ? [n] : Array.prototype.slice.call(n.querySelectorAll('p, li, tr'));
+      items.forEach(function (x) {
+        if (x.tagName === 'TR') {
+          var cells = Array.prototype.map.call(x.children, function (c) { return c.textContent.replace(/\s+/g, ' ').trim(); });
+          var row = cells.filter(Boolean).join(' | ');
+          if (row) out.push(row);
+          return;
+        }
+        var t = x.textContent.replace(/\s+/g, ' ').trim();
+        if (t && out.indexOf(t) === -1) out.push(t);
+      });
+    });
+    return { nodes: nodes, lines: out };
   }
 
   function stepsFromPage() {
@@ -73,19 +88,74 @@
     if (!hs.length) hs = Array.prototype.filter.call(main.querySelectorAll('h1'), isVisible);
     return hs.map(function (h) {
       var title = h.textContent.replace(/\s+/g, ' ').trim();
-      return { key: title, title: title, text: firstText(h) };
+      var sec = sectionOf(h);
+      return { key: title, title: title, node: h, nodes: sec.nodes, lines: sec.lines };
     }).filter(function (s) { return s.title; });
+  }
+
+  // Làm nổi bật mục đang chọn trên trang.
+  function highlight(step) {
+    state.steps.forEach(function (s) {
+      (s.nodes || []).forEach(function (n) { n.classList.remove('tp-hl'); });
+    });
+    if (step) (step.nodes || []).forEach(function (n) { n.classList.add('tp-hl'); });
+  }
+
+  // Chọn mục theo vị trí cuộn: mục có tiêu đề gần đầu màn hình nhất.
+  function syncToScroll() {
+    var best = -1;
+    state.steps.forEach(function (s, j) {
+      if (s.node && s.node.getBoundingClientRect().top <= 140) best = j;
+    });
+    if (best !== -1 && best !== state.i) {
+      state.i = best;
+      save();
+      render();
+    }
+  }
+  var syncing = null;
+  function watchPage() {
+    // Bấm mục lục hoặc bấm vào nội dung: đợi trang cuộn xong rồi đồng bộ.
+    document.addEventListener('click', function (e) {
+      if (panel && panel.contains(e.target)) return;
+      if (!e.target.closest || !e.target.closest('main, nav, .toc, #toc, aside')) return;
+      clearTimeout(syncing);
+      syncing = setTimeout(syncToScroll, 350);
+    });
+    var t = null;
+    window.addEventListener('scroll', function () {
+      clearTimeout(t);
+      t = setTimeout(syncToScroll, 250);
+    }, { passive: true });
   }
 
   function build() {
     var steps = stepsFromPage();
-    if (!steps.length) steps = [{ key: '_trang', title: document.title || 'Trang này', text: 'Trang này chưa có mục nào để theo dõi.' }];
+    if (!steps.length) steps = [{ key: '_trang', title: document.title || 'Trang này', lines: ['Trang này chưa có mục nào để theo dõi.'] }];
     var sig = steps.map(function (s) { return s.key; }).join('|');
-    if (sig === state.sig) return;
+    if (sig === state.sig) {
+      // Cùng danh sách mục nhưng nội dung có thể đã dựng lại: cập nhật tham chiếu.
+      state.steps.forEach(function (s, j) {
+        if (steps[j]) { s.node = steps[j].node; s.nodes = steps[j].nodes; s.lines = steps[j].lines; }
+      });
+      return;
+    }
     state.sig = sig;
     state.steps = steps;
     if (state.i >= steps.length) state.i = 0;
     render();
+  }
+
+  // Chọn một mục; nếu scroll = true thì cuộn trang tới mục đó.
+  function select(j, scroll) {
+    state.i = Math.min(Math.max(0, j), state.steps.length - 1);
+    save();
+    render();
+    var s = state.steps[state.i];
+    if (scroll && s && s.node && s.node.scrollIntoView) {
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      s.node.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }
   }
 
   // Đặt khung ngay dưới thanh tiêu đề của từng trang, để không che menu.
@@ -97,11 +167,7 @@
     panel.style.maxHeight = Math.max(200, innerHeight - top - 16) + 'px';
   }
 
-  function go(d) {
-    state.i = Math.min(Math.max(0, state.i + d), state.steps.length - 1);
-    save();
-    render();
-  }
+  function go(d) { select(state.i + d, true); }
 
   function setStatus(key, k) {
     if (state.status[key] === k) delete state.status[key];
@@ -132,7 +198,11 @@
     var card = el('div', 'tp-card');
     card.appendChild(el('div', 'tp-step', 'Bước ' + (state.i + 1) + '/' + state.steps.length));
     card.appendChild(el('h3', 'tp-title', s.title));
-    card.appendChild(el('p', 'tp-text', s.text));
+    var body = el('div', 'tp-body');
+    var lines = s.lines && s.lines.length ? s.lines : ['Mục này chỉ có tiêu đề. Đọc tiếp phần bên dưới trang.'];
+    lines.forEach(function (t) { body.appendChild(el('p', 'tp-text', t)); });
+    card.appendChild(body);
+    highlight(s);
     var st = state.status[s.key];
     if (st) card.appendChild(el('div', 'tp-now', 'Đã đánh dấu: ' + LABEL[st]));
     panel.appendChild(card);
@@ -164,7 +234,7 @@
       var li = el('li', j === state.i ? 'on' : null);
       var b = el('button', null, (MARK[state.status[x.key]] || '·') + ' ' + x.title);
       b.type = 'button';
-      b.addEventListener('click', function () { state.i = j; save(); render(); });
+      b.addEventListener('click', function () { select(j, true); });
       li.appendChild(b);
       list.appendChild(li);
     });
@@ -188,6 +258,7 @@
     style.textContent = CSS;
     document.head.appendChild(style);
     build();
+    watchPage();
     window.addEventListener('resize', place);
     // Nội dung bài có thể được dựng sau (tải bằng fetch); theo dõi để cập nhật danh sách bước.
     var timer = null;
