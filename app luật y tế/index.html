@@ -1580,6 +1580,9 @@ function renderRoleRoadmapInto(root){
     const done = [...unique.values()].filter(q => (qStats()[q.q]?.s || 0) >= MASTER_AT).length;
     const unmapped = ROLE_BANK.filter(q => !ROLES.cau_hoi[q.q]).length;
     const docs = (role.van_ban || []).map(id => lawById(id)?.name).filter(Boolean).join(" · ");
+    // Điểm bắt đầu: chương đầu tiên còn câu chưa thuộc. Đích: thành thạo toàn bộ câu của vai trò (mục 5).
+    const startCid = role.chuong.find(cid => { const qs = roleChapterQuestions(cid); return qs.length && qs.some(q => (qStats()[q.q]?.s || 0) < MASTER_AT); });
+    const startName = startCid ? (ROLES.chuong[startCid]?.ten || startCid) : null;
     const chapterRows = role.chuong.map(cid => {
       const meta = ROLES.chuong[cid] || { ten: cid };
       const qs = roleChapterQuestions(cid);
@@ -1599,6 +1602,7 @@ function renderRoleRoadmapInto(root){
     root.innerHTML = `<div class="role-picker" role="group" aria-label="Chọn vai trò">${ROLES.vai_tro.map(r => `<button type="button" class="role-btn" data-role="${esc(r.id)}" aria-pressed="${r.id === selected}"><b>${esc(r.ten)}</b><span>${esc(r.mo_ta)}</span></button>`).join("")}</div>
       <div class="role-summary"><div><b>${esc(role.ten)}</b><p class="meta" style="margin:3px 0 0">${esc(role.mo_ta)}</p>${docs ? `<p class="meta" style="margin:3px 0 0">Văn bản gợi ý: ${esc(docs)}</p>` : ""}</div><span class="meta">${done}/${unique.size} câu đã thuộc</span></div>
       <div class="prog-bar" style="margin:10px 0 2px"><i style="width:${unique.size ? Math.round(done / unique.size * 100) : 0}%"></i></div>
+      <p class="role-points">${startName ? `<b>Bắt đầu:</b> ${esc(startName)}` : "<b>Đã thuộc hết các chương</b>"} · <b>Đích:</b> thành thạo ${done}/${unique.size} câu</p>
       ${chapterRows}
       <p class="role-empty">Lộ trình gợi ý, không phải chương trình đào tạo chính thức. ${unmapped ? `Nhóm Khác: ${unmapped} câu chưa gắn lộ trình (gồm câu đang chờ đối chiếu), vẫn luyện được ở tab Trắc nghiệm.` : ""}</p>`;
     root.querySelectorAll("[data-role]").forEach(b => b.onclick = () => { store.set("role", b.dataset.role); renderRoleRoadmapInto(root); });
