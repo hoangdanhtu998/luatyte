@@ -38,7 +38,7 @@ html[data-ui-studio]:not([data-ui-studio="legacy"]) nav[aria-label="Chuyển khu
 html[data-ui-studio]:not([data-ui-studio="legacy"]) nav[aria-label="Chuyển khu học"] a[aria-current]{color:var(--ui-accent)!important;border-bottom-color:var(--ui-accent)!important}
 html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn,.ecosystem-ui-open):not(.ghost){background:var(--ui-accent);border-color:var(--ui-accent);color:var(--ui-on)}
 html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.ghost,.tabs button,.theme-row select,.search-box input){background:var(--ui-card);color:var(--ui-ink);border-color:var(--ui-rule)}
-html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.tabs button[aria-selected="true"],.hub-cta){color:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .tabs button[aria-selected="true"]{color:var(--ui-accent)}
 html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.card,.hub-card) a:not(.btn),html[data-ui-studio]:not([data-ui-studio="legacy"]) .content a:not(.btn){color:var(--ui-accent)}
 html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,35%);align-items:center;gap:20px;background:linear-gradient(125deg,var(--ui-card),var(--ui-hero));border:1px solid var(--ui-rule);border-radius:20px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow:hidden}
 .ecosystem-banner h2{font:750 clamp(1.4rem,3.5vw,2.6rem)/1.18 system-ui,sans-serif;margin:8px 0;color:inherit}

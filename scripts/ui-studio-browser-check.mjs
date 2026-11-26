@@ -77,6 +77,19 @@ try{
         assert.ok(bounds.main.y<200,'main pushed below fold');
       }
       if(app==='home'&&viewport==='mobile')assert.ok(bounds.main.y>=bounds.nav.bottom-2,'nav overlaps main');
+      if(app==='home'){
+        const ctas=await page.locator('.hub-card .hub-cta').evaluateAll(nodes=>nodes.map(el=>{
+          const style=getComputedStyle(el);
+          const lum=color=>{
+            const rgb=color.match(/[\d.]+/g).slice(0,3).map(n=>Number(n)/255).map(v=>v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4);
+            return 0.2126*rgb[0]+0.7152*rgb[1]+0.0722*rgb[2];
+          };
+          const a=lum(style.color),b=lum(style.backgroundColor);
+          return {text:el.textContent.trim(),ratio:(Math.max(a,b)+0.05)/(Math.min(a,b)+0.05)};
+        }));
+        assert.ok(ctas.length>=6,'missing learning CTAs');
+        assert.ok(ctas.every(x=>x.text&&x.ratio>=4.5),'CTA contrast: '+JSON.stringify(ctas));
+      }
       const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
       assert.ok(overflow<=2,'horizontal overflow '+overflow);
      }catch(e){error=String(e);}
