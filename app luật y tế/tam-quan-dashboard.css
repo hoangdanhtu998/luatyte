@@ -17,3 +17,13 @@ body:has(#tamquan-dashboard)>nav[aria-label="Chuyển khu học"]{display:none!i
 @media(max-width:380px){.tq-brand b{display:none}.tq-brand{width:30px}.tq-side-link{font-size:9px;padding-inline:7px}.tq-topic-grid{grid-template-columns:1fr}.tq-topic-card{min-height:110px}.tq-hero-actions .tq-button{font-size:9px;padding-inline:9px}.tq-rightbar{grid-template-columns:1fr}.tq-rightbar>*{grid-column:1!important}}
 @media(prefers-reduced-motion:reduce){#tamquan-dashboard *,#tamquan-dashboard *:before,#tamquan-dashboard *:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
+
+/* Tam Quan controls its own visual system; keep global UI Studio out of this focused learning page. */
+html[data-ui-studio]:has(#tamquan-dashboard) #tamquan-dashboard{color-scheme:dark}
+body:has(#tamquan-dashboard){background:#0b1025!important}
+body:has(#tamquan-dashboard)>nav[aria-label="Chuyển khu học"] .ecosystem-ui-open{display:none!important}
+#tamquan-dashboard .ecosystem-ui-open{margin-top:auto!important;width:100%;text-align:left!important;background:transparent!important;border:0!important;color:#c9cae0!important}
+#tamquan-dashboard .ecosystem-ui-open:before{content:"✦ ";color:#a876ff}
+#tamquan-dashboard .tq-original[open] .tq-lesson-shell{display:block!important}
+#tamquan-dashboard .tq-lesson-shell .lesson{display:block!important}
+#tamquan-dashboard .tq-lesson-shell{padding:8px 15px 24px}
