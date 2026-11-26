@@ -3,6 +3,7 @@
 
   const page = document.querySelector('main');
   const lesson = page?.querySelector('.lesson');
+  const legacyControls = page ? [...page.children].filter(node => node !== lesson && node.tagName !== 'SCRIPT') : [];
   const legacyControls = [...(page?.children || [])].filter(node => node !== lesson && node.tagName !== 'SCRIPT');
   if (!page || !lesson || document.getElementById('tamquan-dashboard')) return;
 
@@ -60,6 +61,7 @@
     </div>
     <dialog class="tq-reflection-dialog" aria-labelledby="tq-dialog-title"><form method="dialog"><button class="tq-dialog-close" aria-label="Đóng">×</button><small>GỢI Ý SUY NGẪM</small><h2 id="tq-dialog-title">Điều gì thực sự quan trọng với bạn?</h2><p>Hãy viết một suy nghĩ ngắn. Ghi chú sẽ chỉ lưu trên thiết bị này.</p><textarea rows="5" placeholder="Bắt đầu viết…" data-dialog-note></textarea><div><button class="tq-button" value="cancel">Để sau</button><button class="tq-button primary" type="button" data-dialog-save>Lưu suy ngẫm</button></div></form></dialog>`;
   lesson.before(dashboard);
+  legacyControls.forEach(node => { node.hidden = true; });
   const studioButton = document.querySelector('.ecosystem-ui-open');
   if (studioButton) {
     studioButton.classList.add('tq-side-link');
