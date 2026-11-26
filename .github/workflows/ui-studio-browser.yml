@@ -23,6 +23,8 @@ jobs:
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
       - run: node --check "app luật y tế/ui-studio-prefs.js" && node --check "app luật y tế/ui-studio.js" && node --test test/ui-studio.test.mjs
+      - run: bash scripts/stage-pages.sh
+      - run: node --test test/code-runner-local.test.mjs
       - run: node scripts/ui-studio-browser-check.mjs
       - uses: actions/upload-artifact@v4
         if: always()
