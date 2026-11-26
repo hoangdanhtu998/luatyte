@@ -14,7 +14,7 @@ permissions:
 jobs:
   chromium:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,7 +24,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node --check "app luật y tế/ui-studio-prefs.js" && node --check "app luật y tế/ui-studio.js" && node --test test/ui-studio.test.mjs
       - run: bash scripts/stage-pages.sh
-      - run: node --test test/code-runner-local.test.mjs
+      - run: node --test test/code-runner-local.test.mjs test/local-progress.test.mjs
       - run: node scripts/ui-studio-browser-check.mjs
       - uses: actions/upload-artifact@v4
         if: always()

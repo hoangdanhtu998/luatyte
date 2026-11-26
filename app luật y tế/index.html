@@ -1492,31 +1492,26 @@ function renderRoleRoadmapInto(root){
   render();
 }
 /* ================= SAO LƯU TIẾN ĐỘ ================= */
-function exportProgress(){
-  const out = { app: "luatyte", v: 1, exported: new Date().toISOString(), data: {} };
-  for (let i = 0; i < localStorage.length; i++){ const k = localStorage.key(i); if (k.startsWith("lyt_")) out.data[k] = localStorage.getItem(k); }
-  const blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "luatyte-tien-do-" + todayKey() + ".json";
-  document.body.append(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-  toast("Đã xuất file tiến độ (" + Object.keys(out.data).length + " mục).");
+async function exportProgress(){
+  try{
+    const BK=await import("./js/local-progress.mjs");
+    const out=BK.snapshot(localStorage);
+    const json=JSON.stringify(out,null,1);
+    if(new TextEncoder().encode(json).length>BK.MAX_BACKUP_BYTES)throw Error("File tiến độ quá lớn.");
+    const blob=new Blob([json],{type:"application/json"}),a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);a.download="luatyte-tien-do-"+todayKey()+".json";
+    document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+    toast("Đã xuất "+Object.keys(out.data).length+" mục tiến độ.");
+  }catch(e){toast("Không xuất được: "+e.message);}
 }
-function importProgress(file){
-  const r = new FileReader();
-  r.onload = () => {
-    try {
-      const j = JSON.parse(r.result);
-      if (j.app !== "luatyte" || typeof j.data !== "object") throw new Error("không phải file tiến độ của app");
-      const n = Object.keys(j.data).length;
-      if (!confirm("Nhập " + n + " mục tiến độ (xuất lúc " + String(j.exported || "không rõ") + ")?\nDữ liệu hiện tại sẽ bị GHI ĐÈ.")) return;
-      Object.entries(j.data).forEach(([k, v]) => localStorage.setItem(k, v));
-      toast("Đã nhập tiến độ. Tải lại trang…");
-      setTimeout(() => location.reload(), 900);
-    } catch (e){ toast("Không đọc được file: " + e.message); }
-  };
-  r.readAsText(file);
+async function importProgress(file){
+  try{
+    const BK=await import("./js/local-progress.mjs");
+    if(file.size>BK.MAX_BACKUP_BYTES)throw Error("File quá lớn.");
+    const j=JSON.parse(await file.text()),v=BK.validateBackup(j);
+    if(!confirm("Nhập "+Object.keys(v.data).length+" mục? Dữ liệu tương ứng sẽ bị ghi đè. Bỏ qua "+v.ignored.length+" khóa ngoài phạm vi."))return;
+    BK.restoreBackup(localStorage,j);toast("Đã nhập tiến độ. Tải lại trang…");setTimeout(()=>location.reload(),900);
+  }catch(e){toast("Không nhập được: "+e.message);}
 }
 $("#bk-export").onclick = exportProgress;
 $("#bk-import").onchange = e => { const f = e.target.files[0]; if (f) importProgress(f); e.target.value = ""; };

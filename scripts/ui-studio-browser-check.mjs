@@ -3,11 +3,11 @@ import {chromium} from 'playwright';
 import {readFile, mkdir, writeFile, stat} from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-const root=process.cwd(), site=path.join(root,'app luật y tế');
+const root=process.cwd(), site=path.join(root,'_site');
 const output=path.join(root,'ui-studio-report');
 await mkdir(output,{recursive:true});
 const prefs=await readFile(path.join(site,'ui-studio-prefs.js'),'utf8');
-const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.avif':'image/avif','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.mp3':'audio/mpeg'};
+const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.avif':'image/avif','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.woff2':'font/woff2','.mp3':'audio/mpeg'};
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'});
 const preview='https://luatyte.online';
@@ -22,7 +22,7 @@ await context.route('**/*',async route=>{
  try{
   let rel=decodeURIComponent(url.pathname).replace(/^\/+/, '');
   if(!rel||rel.endsWith('/'))rel+='index.html';
-  const base=rel.startsWith('hoc-test/')?root:site;
+  const base=site;
   const file=path.resolve(base,rel);
   if(!file.startsWith(base+path.sep)||(await stat(file)).isDirectory())return route.abort();
   return route.fulfill({status:200,contentType:types[path.extname(file)]||'application/octet-stream',body:await readFile(file)});
