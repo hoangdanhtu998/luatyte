@@ -13,7 +13,7 @@ test('UI Studio loads on all five deployed entry pages',()=>{
 test('six presets and original rollback are present',()=>{
  const js=read('app luật y tế/ui-studio.js'),css=read('app luật y tế/ui-studio.css');
  for(const id of ['notion','minimal','bento','developer','cyberpunk','rpg']){assert.ok(js.includes("'"+id+"'"));assert.ok(css.includes('data-ui-studio="'+id+'"'))}
- assert.ok(js.includes("'legacy'"));assert.ok(js.includes('Domain=luatyte.online; Path=/;'));assert.ok(css.includes('prefers-reduced-motion'));
+ assert.ok(js.includes("'legacy'"));assert.ok(read('app luật y tế/ui-studio-prefs.js').includes('Domain=luatyte.online; Path=/;'));assert.ok(css.includes('prefers-reduced-motion'));
 });
 test('offline cache includes all UI Studio assets',()=>{
  const sw=read('app luật y tế/sw.js');

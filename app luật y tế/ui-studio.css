@@ -79,3 +79,37 @@ html[data-ui-studio="cyberpunk"] .hub-grid{grid-template-columns:repeat(3,minmax
 }
 @media(prefers-reduced-motion:reduce){.ecosystem-banner *,.ecosystem-ui-open{animation:none!important;transition:none!important}}
 @media print{.ecosystem-banner,.ecosystem-ui-open,.ecosystem-ui-dialog{display:none!important}}
+
+/* Artwork cropped from approved ImageGen mockups, 5 columns x 2 rows. */
+.ecosystem-ui-thumb[data-preview]:not([data-preview="legacy"]),.ecosystem-banner-art{background-image:url("ui-studio-art.avif");background-size:500% 200%;background-repeat:no-repeat;box-shadow:none;}
+.ecosystem-ui-thumb[data-preview]:not([data-preview="legacy"]){height:auto;aspect-ratio:5/3;}
+.ecosystem-banner-art{display:block;width:100%;aspect-ratio:5/3;max-width:420px;justify-self:center;border-radius:12px;}
+.ecosystem-ui-thumb[data-preview="notion"],html[data-ui-studio="notion"] .ecosystem-banner-art{background-position:0% 0%;}
+.ecosystem-ui-thumb[data-preview="minimal"],html[data-ui-studio="minimal"] .ecosystem-banner-art{background-position:25% 0%;}
+.ecosystem-ui-thumb[data-preview="bento"],html[data-ui-studio="bento"] .ecosystem-banner-art{background-position:50% 0%;}
+.ecosystem-ui-thumb[data-preview="developer"],html[data-ui-studio="developer"] .ecosystem-banner-art{background-position:75% 0%;}
+.ecosystem-ui-thumb[data-preview="cyberpunk"],html[data-ui-studio="cyberpunk"] .ecosystem-banner-art{background-position:100% 0%;}
+.ecosystem-ui-thumb[data-preview="rpg"],html[data-ui-studio="rpg"] .ecosystem-banner-art{background-position:0% 100%;}
+html[data-ui-studio="developer"][data-ui-app="law"] .ecosystem-banner-art{background-position:25% 100%;}
+html[data-ui-studio="developer"][data-ui-app="code"] .ecosystem-banner-art{background-position:50% 100%;}
+html[data-ui-studio="developer"][data-ui-app="tamquan"] .ecosystem-banner-art{background-position:75% 100%;}
+html[data-ui-studio="developer"][data-ui-app="testing"] .ecosystem-banner-art{background-position:100% 100%;}
+@media screen {
+html[data-ui-studio="minimal"] .ecosystem-banner{grid-template-columns:minmax(0,1fr) minmax(0,35%);text-align:left}
+html[data-ui-studio="cyberpunk"] .ecosystem-banner-art{border-radius:0;border:1px solid var(--ui-accent)}
+html[data-ui-studio="rpg"] .ecosystem-banner-art{border:2px solid var(--ui-accent);box-shadow:0 0 24px #fbbf2420}
+html[data-ui-studio="notion"] .ecosystem-banner-art{max-width:280px;border-radius:6px}
+html[data-ui-studio="notion"] .stats{grid-template-columns:1fr}
+html[data-ui-studio="notion"] .stat{display:flex;flex-direction:row;justify-content:space-between;align-items:center;border:1px solid var(--ui-rule)}
+html[data-ui-studio="bento"] .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border:0}
+html[data-ui-studio="rpg"] .hub-card{border-color:var(--ui-rule);background:linear-gradient(125deg,var(--ui-card),var(--ui-hero))}
+html[data-ui-studio="cyberpunk"] .hub-card{border-color:var(--ui-accent)}
+@media(min-width:960px){
+html[data-ui-studio="notion"][data-ui-app="home"] body,html[data-ui-studio="developer"][data-ui-app="home"] body,html[data-ui-studio="cyberpunk"][data-ui-app="home"] body{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:start;min-height:100vh}
+html[data-ui-studio="notion"][data-ui-app="home"] body>nav,html[data-ui-studio="developer"][data-ui-app="home"] body>nav,html[data-ui-studio="cyberpunk"][data-ui-app="home"] body>nav{display:flex;flex-direction:column!important;align-items:stretch;min-height:100vh;position:sticky;top:0;padding:24px 16px!important;gap:16px!important;border-right:1px solid var(--ui-rule)}
+html[data-ui-studio="notion"][data-ui-app="home"] .hub-main,html[data-ui-studio="developer"][data-ui-app="home"] .hub-main,html[data-ui-studio="cyberpunk"][data-ui-app="home"] .hub-main{grid-column:2;max-width:1280px}
+html[data-ui-studio="bento"] .hub-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(170px,auto)}
+html[data-ui-studio="bento"] .hub-card:first-child{grid-column:span 2;grid-row:span 2}
+}
+@media(max-width:640px){html[data-ui-studio="minimal"] .ecosystem-banner{grid-template-columns:1fr}.ecosystem-banner-art{max-width:220px}}
+}

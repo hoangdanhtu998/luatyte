@@ -14,13 +14,9 @@
     ['rpg','RPG Learning','Hành trình, mốc học và nhiệm vụ']
   ];
   const ids = new Set(presets.map(p=>p[0]));
-  const key = 'luatyte-ui-studio-v2';
-  const appKey = key+':'+app;
-  const domain = location.protocol==='https:' && (location.hostname==='luatyte.online' || location.hostname.endsWith('.luatyte.online'));
-  const read = k=>{try{return localStorage.getItem(k)}catch{return null}};
-  const cookie = ()=>{try{return document.cookie.split(';').map(s=>s.trim()).find(s=>s.startsWith(key+'='))?.slice(key.length+1)||null}catch{return null}};
-  const global = ()=>{const c=domain?cookie():null;return ids.has(c)?c:ids.has(read(key))?read(key):'legacy'};
-  const selected = ()=>ids.has(read(appKey))?read(appKey):global();
+  const prefs = window.LuatYTeUIStudio;
+  if (!prefs) return;
+  const selected = ()=>prefs.active(app);
   const apply = v=>{root.dataset.uiStudio=ids.has(v)?v:'legacy'};
   root.dataset.uiApp=app;
   apply(selected());
@@ -55,19 +51,11 @@
     dialog.append(title,text,cards,scopeLabel,status,actions);document.body.append(dialog);
     const sync=()=>radios.forEach(r=>{r.checked=r.value===draft});
     const resetDraft=()=>{draft=selected();apply(draft);sync()};
-    open.addEventListener('click',()=>{resetDraft();scope.value=ids.has(read(appKey))?'app':'all';status.textContent='';dialog.showModal()});
+    open.addEventListener('click',()=>{resetDraft();scope.value=prefs.scope(app);status.textContent='';dialog.showModal()});
     save.addEventListener('click',()=>{
       try{
-        if(scope.value==='app')localStorage.setItem(appKey,draft);
-        else if(scope.value==='inherit')localStorage.removeItem(appKey);
-        else{
-          localStorage.setItem(key,draft);
-          localStorage.removeItem(appKey);
-          if(domain){
-            document.cookie=key+'='+draft+'; Domain=luatyte.online; Path=/; Max-Age=31536000; SameSite=Lax; Secure';
-            if(cookie()!==draft)status.textContent='Đã lưu tại trình duyệt, nhưng cookie chia sẻ bị chặn.';
-          }
-        }
+        const result=prefs.save(app,draft,scope.value);
+        if(scope.value==='all'&&!result.shared){status.textContent='Đã lưu cho origin này; không đồng bộ sang subdomain nếu chưa chạy HTTPS hoặc cookie bị chặn.';apply(selected());return;}
         dialog.close();
       }catch{status.textContent='Không thể lưu lựa chọn. Kiểm tra cài đặt lưu trữ của trình duyệt.'}
     });
@@ -83,7 +71,7 @@
       const banner=create('section',undefined,'ecosystem-banner');banner.setAttribute('aria-label','Giới thiệu không gian học');
       const words=create('div');words.append(create('small',d[0]),create('h2',d[1]),create('p',d[2]));
       const link=create('a',d[4],'ecosystem-banner-cta');link.href=d[3];words.append(link);
-      const image=create('img');image.src=new URL('ui-studio-art.svg#'+d[5],script.src).href;image.alt='';image.width=420;image.height=220;image.decoding='async';
+      const image=create('span',undefined,'ecosystem-banner-art');image.setAttribute('aria-hidden','true');
       banner.append(words,image);target.prepend(banner);
     }
   };
