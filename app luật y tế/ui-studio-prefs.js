@@ -20,14 +20,14 @@
   const latest=(...values)=>values.filter(Boolean).reduce((a,b)=>!a||b.revision>a.revision?b:a,null);
   const common=()=>latest(shared?parse(cookie(key)):null,parse(get(key)),shared?parse(cookie(oldKey)):null,parse(get(oldKey)))||{id:'legacy',revision:0};
   const own=app=>parse(get(key+':'+app))||parse(get(oldKey+':'+app))||(app==='qa'?parse(get('qa-hub-ui-studio-v1')):null);
-  const active=app=>{const g=common(),a=own(app);return a&&a.revision>=g.revision?a.id:g.id};
-  const scope=app=>{const a=own(app);return a&&a.revision>=common().revision?'app':'all'};
+  const active=app=>{const g=common(),a=own(app);return a&&a.revision===g.revision?a.id:g.id};
+  const scope=app=>{const a=own(app);return a&&a.revision===common().revision?'app':'all'};
   const save=(app,id,where)=>{
     if(!ids.has(id))throw Error('Bố cục không hợp lệ.');
     if(where==='inherit'){remove(key+':'+app);remove(oldKey+':'+app);if(app==='qa')remove('qa-hub-ui-studio-v1');return {shared:true};}
-    const revision=Math.max(Date.now(),common().revision+1,(own(app)?.revision||0)+1);
+    if(where==='app'){set(key+':'+app,encode({id,revision:common().revision}));return {shared:true};}
+    const revision=Math.max(Date.now(),common().revision+1);
     const value=encode({id,revision});
-    if(where==='app'){set(key+':'+app,value);return {shared:true};}
     set(key,value);
     remove(key+':'+app);remove(oldKey+':'+app);
     if(app==='qa')remove('qa-hub-ui-studio-v1');
