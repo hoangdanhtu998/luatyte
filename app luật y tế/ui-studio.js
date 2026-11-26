@@ -28,7 +28,7 @@
     const open=button('UI Studio','ecosystem-ui-open');open.setAttribute('aria-haspopup','dialog');host.append(open);
     const dialog=create('dialog',undefined,'ecosystem-ui-dialog');dialog.id='ecosystem-ui-studio';dialog.setAttribute('aria-labelledby','ecosystem-ui-title');
     const title=create('h2','UI Studio');title.id='ecosystem-ui-title';
-    const text=create('p','Thử bố cục ngay trên trang. Dữ liệu học và tài khoản không thay đổi.');
+    const text=create('p','Thử bố cục ngay trên trang. Dữ liệu học và tài khoản không thay đổi.'+(prefs.shared?'':' Khi chạy cục bộ, cấu hình chung chỉ áp dụng cho origin này.'));
     const cards=create('fieldset',undefined,'ecosystem-ui-options');cards.append(create('legend','Phong cách giao diện'));
     let draft=selected();
     const radios=[];
@@ -55,7 +55,7 @@
     save.addEventListener('click',()=>{
       try{
         const result=prefs.save(app,draft,scope.value);
-        if(scope.value==='all'&&!result.shared){status.textContent='Đã lưu cho origin này; không đồng bộ sang subdomain nếu chưa chạy HTTPS hoặc cookie bị chặn.';apply(selected());return;}
+        if(scope.value==='all'&&prefs.shared&&!result.shared){status.textContent='Đã lưu cho origin này; không đồng bộ sang subdomain nếu chưa chạy HTTPS hoặc cookie bị chặn.';apply(selected());return;}
         dialog.close();
       }catch{status.textContent='Không thể lưu lựa chọn. Kiểm tra cài đặt lưu trữ của trình duyệt.'}
     });
