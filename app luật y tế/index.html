@@ -98,7 +98,7 @@
   <button id="dark-toggle" class="btn ghost" style="padding:6px 12px;font-size:13px" title="Đổi chế độ sáng/tối">Tối</button>
   <label>Giao diện <select id="theme-pick" aria-label="Chọn giao diện"><option value="trang-be">Trắng & be (mặc định)</option><option value="mono">Trắng đen</option><option value="paper">Biên tập sáng</option><option value="warm">Ấm dịu</option><option value="terra">Đất nung</option><option value="plum">Mận</option><option value="sepia">Giấy cũ</option><option value="ink">Tối sắc</option></select></label></div>
     <a class="linkbtn" href="gioi-thieu.html">Giới thiệu và cách dùng</a>
-    <div class="acct"><a class="linkbtn" id="acct-link" href="dang-nhap.html">Đăng nhập</a></div>
+    <div class="acct"><a class="linkbtn" href="admin.html">Theo dõi hệ thống</a></div>
     </div>
 <div class="stats">
       <div class="stat"><span>Chuỗi ôn mỗi ngày</span><b id="s-streak">0</b><small class="stat-hint" id="h-streak"></small></div>
@@ -372,132 +372,11 @@ const store = {
   set(k, v){ try { localStorage.setItem("lyt_"+k, JSON.stringify(v)); sync?.schedule(); } catch {} }
 };
 
-/* ================= ĐỒNG BỘ TIẾN ĐỘ THEO TÀI KHOẢN ================= */
-const withTimeout = ms => { try { return AbortSignal.timeout(ms); } catch { return undefined; } };
+/* Personal learning: no account server. Preserve every existing localStorage key. */
 sync = {
-  ready: false, syncing: false, user: null, csrf: "", timer: 0, pushing: false,
-  lastError: "", lastOk: 0, canPush: false,
-  staticMode: false, // chạy tĩnh (GitHub Pages): không có máy chủ tài khoản, tiến độ chỉ lưu trên máy
-  classify: o => o.networkError || o.status === 404 ? "static" : (o.status === 401 || o.status === 403 ? "anon" : (o.status >= 200 && o.status < 300 ? "ok" : "error")),
-  snapshot(){
-    const data = {};
-    for (let i = 0; i < localStorage.length; i++){
-      const k = localStorage.key(i);
-      if (k && k.startsWith("lyt_") && k !== "lyt_syncAt") data[k] = localStorage.getItem(k);
-    }
-    return data;
-  },
-  localAt(){ return Number(localStorage.getItem("lyt_syncAt") || 0); },
-  apply(data){
-    Object.entries(data || {}).forEach(([k, v]) => {
-      if (k.startsWith("lyt_") && k !== "lyt_syncAt" && typeof v === "string") localStorage.setItem(k, v);
-    });
-  },
-  note(){
-    if (this.staticMode) return "Tiến độ đang lưu trên máy này.";
-    if (!this.ready){
-      if (this.lastError) return `Chưa kiểm tra được tài khoản: ${esc(this.lastError)}. Bấm “Thử lại”. <a href="dang-nhap.html">Đăng nhập</a>`;
-      return `Chưa đăng nhập — tiến độ chỉ lưu trên máy này. <a href="dang-nhap.html">Đăng nhập</a>`;
-    }
-    const who = esc(this.user.email || this.user.username || "tài khoản");
-    if (this.lastError) return `Chưa đồng bộ với <b>${who}</b>: ${esc(this.lastError)}. Bấm “Thử lại” để thử lại.`;
-    if (this.lastOk) return `Đã đồng bộ với <b>${who}</b> lúc ${new Date(this.lastOk).toLocaleTimeString("vi-VN")}.`;
-    return `Đang đồng bộ với <b>${who}</b>.`;
-  },
-  paint(){
-    const note = document.getElementById("sync-note");
-    if (note) note.innerHTML = this.note();
-    const btn = document.getElementById("sync-now");
-    if (btn){
-      btn.hidden = this.staticMode || !(this.ready || this.lastError);
-      btn.textContent = this.lastError ? "Thử lại" : "Đồng bộ ngay";
-    }
-  },
-  async init(){
-    if (this.syncing) return false;
-    this.syncing = true;
-    this.lastError = "";
-    this.canPush = false;
-    this.staticMode = false;
-    try {
-      let r = null;
-      try { r = await fetch("/api/me", { cache: "no-store", signal: withTimeout(1200) }); } catch { r = null; }
-      const kind = this.classify(r ? { status: r.status } : { networkError: true, hadSync: !!this.localAt() });
-      if (kind === "static"){
-        this.staticMode = true; this.ready = false; this.user = null; this.csrf = "";
-        this.paint();
-        return false;
-      }
-      if (kind === "anon"){
-        this.ready = false; this.user = null; this.csrf = "";
-        return false;
-      }
-      if (kind === "error"){
-        this.lastError = r ? "máy chủ tài khoản chưa sẵn sàng (" + r.status + ")" : "không kết nối được máy chủ tài khoản";
-        this.paint();
-        return false;
-      }
-      const me = await r.json().catch(() => null);
-      if (!me || !me.user){ this.ready = false; return false; }
-      this.user = me.user; this.csrf = me.csrfToken || ""; this.ready = true;
-      const g = await fetch("/api/progress", { cache: "no-store", signal: withTimeout(1500) });
-      if (!g.ok) { this.lastError = "không tải được tiến độ tài khoản"; this.paint(); return false; }
-      const d = await g.json().catch(() => null);
-      if (!d) { this.lastError = "dữ liệu tiến độ không hợp lệ"; this.paint(); return false; }
-      const remote = d.data && typeof d.data === "object" ? d.data : null;
-      const local = this.snapshot();
-      const remoteAt = Number(d.updatedAt || 0), localAt = this.localAt();
-      this.canPush = true;
-      if (!remote || !Object.keys(remote).length){
-        if (Object.keys(local).length) await this.push();
-      } else if (!localAt){
-        // Lần đầu đồng bộ trên máy này: lấy dữ liệu máy chủ làm gốc, dữ liệu đang có trên máy được ưu tiên.
-        this.apply({ ...remote, ...local });
-        await this.push();
-      } else if (remoteAt > localAt + 1000){
-        this.apply(remote);
-        localStorage.setItem("lyt_syncAt", String(remoteAt));
-        toast("Đã đồng bộ tiến độ từ tài khoản.");
-      } else if (localAt > remoteAt + 1000){
-        await this.push();
-      }
-      this.paint();
-      return !this.lastError;
-    } catch {
-      this.lastError = "không kết nối được máy chủ tài khoản";
-      this.paint();
-      return false;
-    } finally { this.syncing = false; }
-  },
-  schedule(){
-    if (!this.ready || !this.canPush || this.syncing) return;
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.push(), 1500);
-  },
-  async push(){
-    if (!this.ready || !this.canPush || this.pushing) return false;
-    this.pushing = true;
-    try {
-      const r = await fetch("/api/progress", {
-        method: "PUT",
-        headers: { "content-type": "application/json", "x-csrf-token": this.csrf },
-        body: JSON.stringify({ data: this.snapshot() }),
-        signal: withTimeout(4000),
-      });
-      if (!r.ok){
-        this.lastError = (r.status === 401 || r.status === 403)
-          ? "phiên đăng nhập đã hết hạn hoặc CSRF không hợp lệ"
-          : "máy chủ chưa nhận tiến độ (" + r.status + ")";
-        this.paint();
-        return false;
-      }
-      const d = await r.json().catch(() => ({}));
-      if (d.updatedAt) localStorage.setItem("lyt_syncAt", String(d.updatedAt));
-      this.lastError = ""; this.lastOk = Date.now(); this.paint();
-      return true;
-    } catch { this.lastError = "không kết nối được máy chủ"; this.paint(); return false; }
-    finally { this.pushing = false; }
-  }
+  ready:false, lastError:"", staticMode:true,
+  note(){return "Tiến độ lưu trên trình duyệt này. Xuất file sao lưu để chuyển máy.";},
+  schedule(){}, async init(){return false;}, async push(){return false;}
 };
 
 /* Màu nhóm lấy từ token của site.css (--c-*), không dùng mã cứng; đổi theo chế độ sáng/tối. */
@@ -669,7 +548,6 @@ function renderStats(){
 // Tiến độ cũ của bản live (khóa lyt_lyt_progress) được chép sang khóa mới; không mất dữ liệu.
 const compat = await import("./js/progress-compat.js").catch(() => null);
 try { compat?.migrateLegacyProgress(localStorage); } catch {}
-if (compat) sync.classify = compat.classifyAccountProbe;
 const EXB = await import("./js/exam-builder.js").catch(() => null);
 await sync.init();
 renderStats(); checkBadges();
@@ -1416,7 +1294,7 @@ function renderProgress(){
     return `<div class="prog-col" title="${esc(d.k)}: ${d.e.r || 0} đúng, ${d.e.w || 0} sai"><i style="height:${h}%"></i><span>${Number(d.k.slice(8))}</span></div>`;
   }).join("");
 
-  const syncNote = sync ? sync.note() : `Chưa đăng nhập — tiến độ chỉ lưu trên máy này. <a href="dang-nhap.html">Đăng nhập</a>`;
+  const syncNote = sync ? sync.note() : "Tiến độ lưu trên trình duyệt này.";
 
   box.innerHTML = `
     <div class="stats prog-grid">
@@ -2119,7 +1997,6 @@ boot().catch(e => {
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 <script>
 /* Nút tài khoản: hiện email nếu đã đăng nhập; ẩn khi chạy tĩnh (không có máy chủ). */
-fetch("/api/me",{cache:"no-store"}).then(r=>{ if(r.status===404||r.status===405||r.status===501){ const a=document.getElementById("acct-link"); if(a) a.style.display="none"; return null; } return r.ok?r.json():null; }).then(d=>{ if(d&&d.user&&d.user.email){ const a=document.getElementById("acct-link"); a.textContent=d.user.email; a.title="Tài khoản đang đăng nhập"; } }).catch(()=>{});
 </script>
 <script src="js/plan-badge.js" defer></script>
 <script src="js/theme.js"></script>
