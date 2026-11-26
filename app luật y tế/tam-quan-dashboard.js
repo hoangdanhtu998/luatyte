@@ -3,6 +3,7 @@
 
   const page = document.querySelector('main');
   const lesson = page?.querySelector('.lesson');
+  const legacyControls = [...(page?.children || [])].filter(node => node !== lesson && node.tagName !== 'SCRIPT');
   if (!page || !lesson || document.getElementById('tamquan-dashboard')) return;
 
   const storageKey = 'luatyte-tamquan-dashboard-v1';
@@ -66,7 +67,11 @@
     dashboard.querySelector('.tq-sidebar').append(studioButton);
   }
   const original = dashboard.querySelector('.tq-original');
-  original.append(lesson);
+  const lessonShell = document.createElement('div');
+  lessonShell.className = 'tq-lesson-shell';
+  lessonShell.append(lesson);
+  original.append(lessonShell);
+  legacyControls.forEach(node => node.hidden = true);
   const state = read();
   const note = dashboard.querySelector('#tq-note');
   note.value = typeof state.note === 'string' ? state.note : '';
