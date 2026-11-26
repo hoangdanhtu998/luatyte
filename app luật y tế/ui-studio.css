@@ -113,3 +113,35 @@ html[data-ui-studio="bento"] .hub-card:first-child{grid-column:span 2;grid-row:s
 }
 @media(max-width:640px){html[data-ui-studio="minimal"] .ecosystem-banner{grid-template-columns:1fr}.ecosystem-banner-art{max-width:220px}}
 }
+
+/* Sprint 01: take precedence over lyt-design.css's fixed full-width nav. */
+@media screen {
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body:has(>nav[aria-label="Chuyển khu học"]){padding-top:0!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body>nav[aria-label="Chuyển khu học"]{position:relative!important;inset:auto!important;min-height:0;width:100%!important;box-sizing:border-box;flex-direction:row!important;align-items:center}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hub-main,.ecosystem-banner,main,.hub-card){box-sizing:border-box;min-width:0}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) main.triet>.ecosystem-banner{grid-column:1/-1}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-ui-dialog{margin:auto;max-width:calc(100% - 24px);color:var(--ui-ink);background:var(--ui-card)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-card .hub-cta{background:var(--ui-accent);color:var(--ui-on);border-color:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-card .hub-cta:hover{background:var(--ui-accent);color:var(--ui-on)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-link{overflow-wrap:anywhere}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) header.top{color:var(--ui-ink);background:var(--ui-sunk)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(th,.tabs button,.opt:not(.right):not(.wrong),input:not([type="color"]),textarea,select){background:var(--ui-card);color:var(--ui-ink);border-color:var(--ui-rule)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hero,.card,.hub-card) h1,html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hero,.card,.hub-card) h2{color:var(--ui-ink)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]){--color-accent:var(--ui-accent)!important;--color-action:var(--ui-accent)!important;--color-action-ink:var(--ui-on)!important;--color-accent-ink:var(--ui-on)!important;--color-accent-soft:var(--ui-card)!important;--color-accent-soft-ink:var(--ui-ink)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn):not(.ghost){color:var(--ui-on);background:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn).ghost{color:var(--ui-ink);background:var(--ui-card)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn):focus-visible{outline:3px solid var(--ui-accent);outline-offset:3px}
+@media(min-width:960px){
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) body{padding:0!important;display:grid;grid-template-columns:230px minmax(0,1fr);grid-template-rows:auto;align-items:start}
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) body>nav[aria-label="Chuyển khu học"]{grid-column:1;grid-row:1;position:sticky!important;top:0!important;left:auto!important;right:auto!important;width:100%!important;min-height:0;height:100dvh;overflow-y:auto;display:flex;flex-direction:column!important;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:12px!important;border-right:1px solid var(--ui-rule)!important}
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) .hub-main{grid-column:2;grid-row:1;margin:0 auto;padding:24px clamp(16px,3vw,40px) 48px;max-width:1280px}
+}
+@media(max-width:959px){
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-ui-open{max-width:100%}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body>nav[aria-label="Chuyển khu học"]{height:auto!important}
+}
+@media(max-width:480px){
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-main{padding-inline:12px}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-banner{grid-template-columns:minmax(0,1fr)}
+}
+}

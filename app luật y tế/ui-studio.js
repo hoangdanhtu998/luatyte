@@ -67,6 +67,8 @@
     const target=document.querySelector('.hub-main,main,.wrap');
     if(target && !target.querySelector('.ecosystem-banner')){
       const data={home:['LUATYTE.ONLINE / LEARNING SPACE','Một nền tảng. Nhiều hành trình học.','Chọn lĩnh vực, tiếp tục bài học và khám phá kiến thức.','index.html','Học Luật Y Tế','law'],law:['LUẬT Y TẾ / LEARNING SPACE','Hiểu luật. Vững thực hành.','Tra cứu văn bản, ôn tập và luyện câu hỏi thực tế.','hoc.html','Khám phá các khu học','law'],code:['CODE HUB / WORKSPACE','Học code bằng thực hành.','Tiếp tục lộ trình lập trình theo từng cấp độ.','#levels','Khám phá lộ trình','code'],tamquan:['TAM QUAN / KNOWLEDGE SPACE','Mở rộng cách nhìn thế giới.','Thế giới quan, nhân sinh quan và giá trị quan qua tình huống.','#m1','Bắt đầu bài học','tamquan'],testing:['QA HUB / LEARNING SPACE','Học kiểm thử. Làm thực tế.','Rèn kỹ năng qua bài học và dự án kiểm thử.','#levels','Khám phá lộ trình','testing']};
+      data.philosophy=['TRIẾT HỌC / KNOWLEDGE SPACE','Hiểu tư tưởng. Rèn lập luận.','Khám phá triết học qua từng chủ đề.','#s1','Bắt đầu bài học','tamquan'];
+      data.ethics=['ĐẠO ĐỨC / KNOWLEDGE SPACE','Suy xét và lựa chọn có căn cứ.','Khám phá đạo đức và tình huống nghề y.','#s1','Bắt đầu bài học','tamquan'];
       const d=data[app]||data.home;
       const banner=create('section',undefined,'ecosystem-banner');banner.setAttribute('aria-label','Giới thiệu không gian học');
       const words=create('div');words.append(create('small',d[0]),create('h2',d[1]),create('p',d[2]));

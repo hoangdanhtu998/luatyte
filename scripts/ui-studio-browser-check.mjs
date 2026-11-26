@@ -28,7 +28,7 @@ await context.route('**/*',async route=>{
   return route.fulfill({status:200,contentType:types[path.extname(file)]||'application/octet-stream',body:await readFile(file)});
  }catch{return route.fulfill({status:404,body:'Not found'})}
 });
-const pages=[['home','/hoc.html'],['law','/index.html'],['code','/hoc-code/index.html'],['tamquan','/tam-quan.html'],['testing','/hoc-test/index.html']];
+const pages=[['home','/hoc.html'],['law','/index.html'],['code','/hoc-code/index.html'],['tamquan','/tam-quan.html'],['philosophy','/triet-hoc.html'],['ethics','/dao-duc.html'],['testing','/hoc-test/index.html']];
 const layouts=['notion','minimal','bento','developer','cyberpunk','rpg'];
 const results=[];
 try{
@@ -66,6 +66,17 @@ try{
       await page.locator('.ecosystem-banner').waitFor({state:'visible'});
       const decoded=await page.evaluate(async()=>{const i=new Image();i.src='/ui-studio-art.avif';await i.decode();return i.naturalWidth});
       assert.equal(decoded,700);
+      const bounds=await page.evaluate(()=>{
+        const read=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
+        return {nav:read('body>nav[aria-label="Chuyển khu học"]'),main:read('main')||read('.wrap'),banner:read('.ecosystem-banner')};
+      });
+      assert.ok(bounds.banner.width>=240,'banner too narrow');
+      if(app==='home'&&viewport==='desktop'&&['notion','developer','cyberpunk'].includes(layout)){
+        assert.ok(bounds.nav.width<320,'sidebar width '+bounds.nav.width);
+        assert.ok(bounds.main.x>=bounds.nav.right-2,'sidebar overlaps main');
+        assert.ok(bounds.main.y<200,'main pushed below fold');
+      }
+      if(app==='home'&&viewport==='mobile')assert.ok(bounds.main.y>=bounds.nav.bottom-2,'nav overlaps main');
       const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
       assert.ok(overflow<=2,'horizontal overflow '+overflow);
      }catch(e){error=String(e);}
