@@ -1,7 +1,7 @@
 /* sw.js — Sổ tay Luật Y tế: network-first (bản mới khi có mạng), cache khi ngoại tuyến */
-const V = "lyt-personal-v7";
+const V = "lyt-shared-shell-v10";
 const CORE = [
-  "ui-studio.js", "ui-studio.css", "ui-studio-art.svg", "ui-studio-art.avif", "ui-studio-prefs.js", "js/local-progress.mjs", "js/control-center.mjs", "admin.html",
+  "ui-studio.js", "ui-studio.css", "ui-studio-art.svg", "ui-studio-art.avif", "ui-studio-prefs.js", "ui-studio-shell.js", "ui-studio-shell.css", "tam-quan-dashboard.js", "tam-quan-dashboard.css", "js/local-progress.mjs", "js/control-center.mjs", "admin.html",
   "./", "index.html", "hoc.html", "tam-quan.html", "triet-hoc.html", "dao-duc.html", "lyt-design.css", "game.html", "clinic.html", "site.css", "tokens.css", "base.css", "js/hospital.js", "tin_luat.html", "tham_chieu.html", "ly_thuyet.html", "404.html",
   "manifest.json", "icon.svg", "display-settings.css", "display-polish.css", "js/display-settings.js",
   "js/search.js", "js/progress-compat.js", "js/exam-builder.js", "js/avatar.js", "js/swipe-core.js", "js/plan-badge.js", "js/clinic3d.js",

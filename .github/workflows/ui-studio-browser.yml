@@ -7,7 +7,7 @@ on:
       - 'scripts/ui-studio-browser-check.mjs'
       - '.github/workflows/ui-studio-browser.yml'
   push:
-    branches: ['feature/ui-studio']
+    branches: ['feature/ui-studio','feature/shared-ui-studio-shell']
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,7 +22,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
-      - run: node --check "app luật y tế/ui-studio-prefs.js" && node --check "app luật y tế/ui-studio.js" && node --test test/ui-studio.test.mjs
+      - run: node --check "app luật y tế/ui-studio-prefs.js" && node --check "app luật y tế/ui-studio.js" && node --check "app luật y tế/ui-studio-shell.js" && node --check "app luật y tế/tam-quan-dashboard.js" && node --test test/ui-studio.test.mjs
       - run: bash scripts/stage-pages.sh
       - run: node --test test/code-runner-local.test.mjs test/local-progress.test.mjs
       - run: node scripts/ui-studio-browser-check.mjs

@@ -28,7 +28,7 @@
     const open=button('UI Studio','ecosystem-ui-open');open.setAttribute('aria-haspopup','dialog');host.append(open);
     const dialog=create('dialog',undefined,'ecosystem-ui-dialog');dialog.id='ecosystem-ui-studio';dialog.setAttribute('aria-labelledby','ecosystem-ui-title');
     const title=create('h2','UI Studio');title.id='ecosystem-ui-title';
-    const text=create('p','Thử bố cục ngay trên trang. Dữ liệu học và tài khoản không thay đổi.'+(prefs.shared?'':' Khi chạy cục bộ, cấu hình chung chỉ áp dụng cho origin này.'));
+    const text=create('p','Thử bố cục ngay trên trang. Nội dung học và dữ liệu không thay đổi.'+(prefs.shared?'':' Cấu hình dùng chung; khi mở QA Hub cục bộ qua liên kết, preset được chuyển theo đường dẫn.'));
     const cards=create('fieldset',undefined,'ecosystem-ui-options');cards.append(create('legend','Phong cách giao diện'));
     let draft=selected();
     const radios=[];
@@ -43,7 +43,7 @@
     }
     const scopeLabel=create('label','Phạm vi áp dụng ','ecosystem-ui-scope');
     const scope=create('select');scope.setAttribute('aria-label','Phạm vi áp dụng');
-    for(const [v,t] of [['app','Chỉ ứng dụng này'],['all','Toàn bộ hệ sinh thái'],['inherit','Dùng giao diện chung']]){const o=create('option',t);o.value=v;scope.append(o)}
+    for(const [v,t] of [['all','Toàn bộ hệ sinh thái']]){const o=create('option',t);o.value=v;scope.append(o)}
     scopeLabel.append(scope);
     const actions=create('div',undefined,'ecosystem-ui-actions');
     const save=button('Áp dụng'),cancel=button('Hủy'),reset=button('Giao diện gốc');
@@ -61,7 +61,7 @@
     });
     cancel.addEventListener('click',()=>dialog.close());
     reset.addEventListener('click',()=>{draft='legacy';sync();apply(draft)});
-    dialog.addEventListener('close',()=>{apply(selected());open.focus()});
+    dialog.addEventListener('close',()=>{apply(selected());requestAnimationFrame(()=>open.focus({preventScroll:true}))});
     const refresh=()=>{if(!dialog.open)apply(selected())};
     window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);window.addEventListener('focus',refresh);
     const target=document.querySelector('.hub-main,main,.wrap');

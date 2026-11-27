@@ -28,7 +28,7 @@ await context.route('**/*',async route=>{
   return route.fulfill({status:200,contentType:types[path.extname(file)]||'application/octet-stream',body:await readFile(file)});
  }catch{return route.fulfill({status:404,body:'Not found'})}
 });
-const pages=[['home','/hoc.html'],['law','/index.html'],['code','/hoc-code/index.html'],['tamquan','/tam-quan.html'],['philosophy','/triet-hoc.html'],['ethics','/dao-duc.html'],['testing','/hoc-test/index.html']];
+const pages=[['home','/hoc.html'],['law','/index.html'],['code','/hoc-code/index.html'],['tamquan','/tam-quan.html'],['philosophy','/triet-hoc.html'],['ethics','/dao-duc.html'],['testing','/hoc-test/index.html'],['hospital','/clinic.html']];
 const layouts=['notion','minimal','bento','developer','cyberpunk','rpg'];
 const results=[];
 try{
@@ -39,12 +39,13 @@ try{
  assert.equal(await evalAt(q,"LuatYTeUIStudio.active('qa')"),'developer');
  await evalAt(q,"LuatYTeUIStudio.save('qa','notion','app')");
  assert.equal(await evalAt(q,"LuatYTeUIStudio.active('qa')"),'notion');
- assert.equal(await evalAt(a,"LuatYTeUIStudio.active('law')"),'developer');
+ assert.equal(await evalAt(a,"LuatYTeUIStudio.active('law')"),'notion');
  await evalAt(a,"LuatYTeUIStudio.save('law','rpg','all')");
  assert.equal(await evalAt(q,"LuatYTeUIStudio.active('qa')"),'rpg');
  assert.equal(await evalAt(x,"LuatYTeUIStudio.active('qa')"),'legacy');
- results.push({test:'cross-origin preview cookie + override isolation',passed:true});
+ results.push({test:'cross-origin preview cookie + global selection',passed:true});
  await a.close();await q.close();await x.close();
+ const handoff=await context.newPage();await handoff.goto(preview+'/__ui-test?ui-preset=cyberpunk.'+(Date.now()+100));assert.equal(await handoff.evaluate("LuatYTeUIStudio.active('hospital')"),'cyberpunk');assert.ok(!new URL(handoff.url()).searchParams.has('ui-preset'));await handoff.close();results.push({test:'validated navigation handoff',passed:true});
  for(const [viewport,size] of [['desktop',{width:1440,height:900}],['mobile',{width:390,height:844}]]){
   for(const [app,url] of pages){
    const page=await context.newPage();await page.setViewportSize(size);
@@ -59,37 +60,41 @@ try{
       await open.click();
       const dialog=page.locator('#ecosystem-ui-studio');
       await dialog.locator('input[value="'+layout+'"]').check();
-      await dialog.getByLabel('Phạm vi áp dụng').selectOption('app');
+      await dialog.getByLabel('Phạm vi áp dụng').selectOption('all');
       await dialog.getByRole('button',{name:'Áp dụng',exact:true}).click();
       await dialog.waitFor({state:'hidden'});
       assert.equal(await page.locator('html').getAttribute('data-ui-studio'),layout);
-      await page.locator('.ecosystem-banner').waitFor({state:'visible'});
-      const decoded=await page.evaluate(async()=>{const i=new Image();i.src='/ui-studio-art.avif';await i.decode();return i.naturalWidth});
-      assert.equal(decoded,700);
-      const bounds=await page.evaluate(()=>{
-        const read=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
-        return {nav:read('body>nav[aria-label="Chuyển khu học"]'),main:read('main')||read('.wrap'),banner:read('.ecosystem-banner')};
-      });
-      assert.ok(bounds.banner.width>=240,'banner too narrow');
-      if(app==='home'&&viewport==='desktop'&&['notion','developer','cyberpunk'].includes(layout)){
-        assert.ok(bounds.nav.width<320,'sidebar width '+bounds.nav.width);
-        assert.ok(bounds.main.x>=bounds.nav.right-2,'sidebar overlaps main');
-        assert.ok(bounds.main.y<200,'main pushed below fold');
-      }
-      if(app==='home'&&viewport==='mobile')assert.ok(bounds.main.y>=bounds.nav.bottom-2,'nav overlaps main');
-      if(app==='home'){
-        const ctas=await page.locator('.hub-card .hub-cta').evaluateAll(nodes=>nodes.map(el=>{
-          const style=getComputedStyle(el);
-          const lum=color=>{
-            const rgb=color.match(/[\d.]+/g).slice(0,3).map(n=>Number(n)/255).map(v=>v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4);
-            return 0.2126*rgb[0]+0.7152*rgb[1]+0.0722*rgb[2];
-          };
-          const a=lum(style.color),b=lum(style.backgroundColor);
-          return {text:el.textContent.trim(),ratio:(Math.max(a,b)+0.05)/(Math.min(a,b)+0.05)};
-        }));
-        assert.ok(ctas.length>=6,'missing learning CTAs');
-        assert.ok(ctas.every(x=>x.text&&x.ratio>=4.5),'CTA contrast: '+JSON.stringify(ctas));
-      }
+      const shellApps=['home','law','code','tamquan','testing','hospital'];
+      if(shellApps.includes(app)){
+       const frame=page.locator('.studio-frame');
+       await frame.waitFor({state:'visible'});
+       assert.equal(await frame.getAttribute('data-studio-app'),app);
+       assert.equal(await page.locator('.studio-nav-item').count(),6);
+       assert.equal(await page.locator('.studio-workspace').count(),1);
+       assert.ok(await frame.locator('.studio-hero').isVisible(),'missing hero');
+       assert.ok(await frame.locator('.studio-topic').count()>=4,'missing topics');
+       assert.ok(await frame.locator('.studio-step').count()>=4,'missing roadmap');
+       const geom=await frame.evaluate(f=>{
+         const q=s=>{const r=f.querySelector(s).getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,right:r.right,bottom:r.bottom}};
+         const b=f.querySelector('.studio-primary'),s=getComputedStyle(b);
+         const lum=color=>{const rgb=color.match(/[\d.]+/g).slice(0,3).map(n=>Number(n)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]};
+         const a=lum(s.color),c=lum(s.backgroundColor);
+         return {nav:q('.studio-nav'),hero:q('.studio-hero'),work:q('.studio-workspace'),contrast:(Math.max(a,c)+.05)/(Math.min(a,c)+.05),areas:getComputedStyle(f).gridTemplateAreas};
+       });
+       assert.ok(geom.contrast>=4.5,'primary CTA contrast '+geom.contrast);
+       assert.ok(geom.work.w>=280,'workspace too narrow');
+       if(viewport==='desktop'&&['notion','developer','cyberpunk'].includes(layout)){
+         assert.ok(geom.nav.w<300,'navigation too wide');
+         assert.ok(geom.hero.x>=geom.nav.right-2,'nav overlaps hero');
+       }else assert.ok(geom.hero.y>=geom.nav.bottom-2,'nav overlaps hero');
+       if(app==='tamquan'){
+         assert.ok(await page.locator('#tamquan-dashboard').count(),'Tam Quan dashboard script did not initialize');
+         assert.equal(await page.locator('.studio-context>.lesson-chat').count(),1,'helper overlays shell');
+       }
+       if(['law','code','testing'].includes(app))assert.equal(await page.locator('.studio-context .studio-live-progress').count(),1,'live progress missing');
+       if(app==='hospital')assert.ok(await page.locator('#pix2').count(),'Hospital canvas missing');
+      }else await page.locator('.ecosystem-banner').waitFor({state:'visible'});
+      const decoded=await page.evaluate(async()=>{const i=new Image();i.src='/ui-studio-art.avif';await i.decode();return i.naturalWidth});assert.equal(decoded,700);
       const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
       assert.ok(overflow<=2,'horizontal overflow '+overflow);
      }catch(e){error=String(e);}
@@ -100,6 +105,30 @@ try{
    await page.close();
   }
  }
+ const journey=await context.newPage();
+ try{
+  await journey.setViewportSize({width:1440,height:900});
+  await journey.goto(preview+'/index.html');
+  await journey.getByRole('button',{name:'UI Studio',exact:true}).click();
+  const d=journey.locator('#ecosystem-ui-studio');
+  await d.locator('input[value="minimal"]').check();
+  await d.getByRole('button',{name:'Áp dụng',exact:true}).click();
+  await journey.locator('.studio-topic').filter({hasText:'Flashcard'}).click();
+  assert.equal(await journey.locator('[data-tab="thenho"]').getAttribute('aria-selected'),'true');
+  for(const [app,title] of [['code','Học Code'],['tamquan','Học Tam Quan'],['testing','Testing Academy'],['hospital','Hospital World'],['law','Học Luật Y Tế']]){
+   await journey.locator('.studio-nav').getByRole('link',{name:title,exact:true}).click();
+   await journey.locator('.studio-frame[data-studio-app="'+app+'"]').waitFor();
+   assert.equal(await journey.locator('html').getAttribute('data-ui-studio'),'minimal');
+   if(app==='tamquan'){
+    const note=journey.locator('#tq-note');await note.fill('unsaved test note');
+    await journey.getByRole('button',{name:'UI Studio',exact:true}).click();
+    await d.locator('input[value="bento"]').check();
+    await d.getByRole('button',{name:'Hủy',exact:true}).click();
+    assert.equal(await note.inputValue(),'unsaved test note');
+   }
+  }
+  results.push({test:'global navigation, real law tab, preserve unsaved reflection',passed:true});
+ }catch(e){results.push({test:'global navigation, real law tab, preserve unsaved reflection',passed:false,error:String(e)})}finally{await journey.close()}
 }catch(e){results.push({test:'browser setup/cross-origin',passed:false,error:String(e)});}
 finally{await browser.close();await writeFile(path.join(output,'results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));}
 if(results.some(x=>!x.passed))process.exitCode=1;
