@@ -19,3 +19,10 @@ test('offline cache includes all UI Studio assets',()=>{
  const sw=read('app luật y tế/sw.js');
  for(const p of ['ui-studio.js','ui-studio.css','ui-studio-art.svg']){assert.ok(sw.includes('"'+p+'"'));assert.ok(read('app luật y tế/'+p).length>0)}
 });
+test('shared shell is attached to the five public apps and hub',()=>{
+ for(const [page,prefix,app] of [['app luật y tế/index.html','','law'],['app luật y tế/hoc-code/index.html','../','code'],['app luật y tế/tam-quan.html','','tamquan'],['hoc-test/index.html','../','testing'],['app luật y tế/clinic.html','','hospital'],['app luật y tế/hoc.html','','home']]){
+  const html=read(page);assert.ok(html.includes('href="'+prefix+'ui-studio-shell.css"'),page);assert.ok(html.includes('src="'+prefix+'ui-studio-shell.js" data-app="'+app+'"'),page);
+ }
+ assert.ok(read('app luật y tế/ui-studio-shell.css').includes('grid-template-areas'));
+ assert.equal((read('app luật y tế/tam-quan-dashboard.js').match(/const legacyControls =/g)||[]).length,1);
+});

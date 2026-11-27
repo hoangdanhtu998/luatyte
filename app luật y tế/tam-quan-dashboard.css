@@ -27,3 +27,28 @@ body:has(#tamquan-dashboard)>nav[aria-label="Chuyển khu học"] .ecosystem-ui-
 #tamquan-dashboard .tq-original[open] .tq-lesson-shell{display:block!important}
 #tamquan-dashboard .tq-lesson-shell .lesson{display:block!important}
 #tamquan-dashboard .tq-lesson-shell{padding:8px 15px 24px}
+
+/* Use shared UI Studio tokens and shell when a preset is active. */
+html[data-studio-shell="on"] #tamquan-dashboard{
+ --tq-bg:var(--st-bg);--tq-panel:var(--st-panel);--tq-panel-2:var(--st-sunk);--tq-border:var(--st-line);--tq-text:var(--st-ink);--tq-muted:var(--st-muted);--tq-purple:var(--st-accent);--tq-mint:var(--st-accent);--tq-pink:var(--st-accent);
+ background:var(--st-bg);color:var(--st-ink);color-scheme:inherit;margin:0!important;min-height:0;
+}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-layout{grid-template-columns:minmax(0,1fr) minmax(200px,26%);padding:0;max-width:none;gap:12px}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-main{grid-column:1;min-width:0}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-rightbar{grid-column:2;position:static;max-height:none;overflow:visible;min-width:0;display:grid;grid-template-columns:1fr}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-sidebar,.tq-hero){display:none!important}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-topbar{position:relative;top:auto;padding:10px 0;background:none;border:0;height:auto;margin-bottom:12px}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-brand,.tq-top-actions){display:none}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-search{max-width:none;background:var(--st-panel);border-color:var(--st-line);color:var(--st-ink)}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-search input{color:var(--st-ink)!important}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-search input::placeholder{color:var(--st-muted)}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-panel,.tq-prompt-card,.tq-topic-card,.tq-original,.tq-ai-message,.tq-reflection-dialog){background:var(--st-panel);border-color:var(--st-line);color:var(--st-ink);box-shadow:none;border-radius:var(--st-radius)}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-panel,.tq-topic-card,.tq-prompt-card) :is(h2,h3,p,small,label,b,strong){color:inherit}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-step,.tq-chat input,.tq-ai-quick button,.tq-days button,.tq-reflection textarea,.tq-button,.tq-chat button,.tq-info){background:var(--st-sunk)!important;color:var(--st-ink)!important;border-color:var(--st-line)!important}
+html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-button.primary,.tq-button.green){background:var(--st-accent)!important;color:var(--st-on)!important}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-concept-map svg text{fill:var(--st-ink)!important}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-lesson-shell{padding:12px;overflow-wrap:anywhere}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-progress{background:var(--st-sunk)}
+html[data-studio-shell="on"] #tamquan-dashboard .tq-progress i{background:var(--st-accent)}
+@media(max-width:950px){html[data-studio-shell="on"] #tamquan-dashboard .tq-layout{display:block}html[data-studio-shell="on"] #tamquan-dashboard .tq-rightbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}}
+@media(max-width:640px){html[data-studio-shell="on"] #tamquan-dashboard .tq-rightbar{grid-template-columns:1fr}html[data-studio-shell="on"] #tamquan-dashboard :is(.tq-two-col,.tq-lower-grid){grid-template-columns:1fr}}
