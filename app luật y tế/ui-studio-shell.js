@@ -93,10 +93,20 @@
    const anchors=new Map();
    const portal=(node,target)=>{if(!node)return;const marker=document.createComment('studio-restore');node.before(marker);anchors.set(node,marker);target.append(node)};
    const restore=()=>{for(const [node,marker] of [...anchors].reverse()){marker.replaceWith(node);}anchors.clear()};
+   const dockQA=()=>{
+     if(app!=='qa')return;
+     const panel=document.getElementById('progress-panel');if(!panel)return;
+     if(frame.isConnected&&frame.dataset.view==='overview'){
+       if(panel.parentElement!==context&&!anchors.has(panel))portal(panel,context);
+     }else if(anchors.has(panel)){
+       anchors.get(panel).replaceWith(panel);anchors.delete(panel);
+     }
+   };
    const view=()=>{
      const detail=app==='qa'&&location.hash&&location.hash!=='#/tong'&&location.hash!=='#/overview';
      const start=app==='hospital'&&document.getElementById('v-start');
      frame.dataset.view=detail||(start&&start.classList.contains('hidden'))?'detail':'overview';
+     dockQA();
    };
    function update(){
      const active=root.dataset.uiStudio&&root.dataset.uiStudio!=='legacy';
@@ -119,6 +129,7 @@
    frame.addEventListener('click',event=>{const a=event.target.closest('a[data-studio-href]');if(a)a.href=urlFor(a.dataset.studioHref)});
    new MutationObserver(update).observe(root,{attributes:true,attributeFilter:['data-ui-studio']});
    window.addEventListener('hashchange',view);
+   if(app==='qa')new MutationObserver(dockQA).observe(document.body,{childList:true});
    if(app==='hospital'){const start=document.getElementById('v-start');if(start)new MutationObserver(view).observe(start,{attributes:true,attributeFilter:['class']})}
    window.addEventListener('storage',update);window.addEventListener('pageshow',update);window.addEventListener('focus',update);
    update();

@@ -185,3 +185,10 @@ html[data-studio-shell="on"] .studio-context>.lesson-chat{height:300px}
 }
 }
 @media(prefers-reduced-motion:reduce){.studio-live-progress .bar>span{transition:none!important}}
+
+@media screen{
+html[data-studio-shell="on"] .studio-context>#progress-panel{position:relative!important;inset:auto!important;width:100%!important;max-width:none!important;max-height:360px;overflow:auto;margin:0!important;padding:14px!important;border:1px solid var(--st-line);border-radius:var(--st-radius);background:var(--st-panel);color:var(--st-ink);box-shadow:none;z-index:1}
+.studio-context>#progress-panel .progress-title{color:var(--st-ink);font-size:15px}
+.studio-context>#progress-panel .progress-bar{background:var(--st-sunk)}
+.studio-context>#progress-panel .progress-fill{background:var(--st-accent)}
+}
