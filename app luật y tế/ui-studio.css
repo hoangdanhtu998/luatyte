@@ -1,0 +1,147 @@
+/* Scoped UI Studio; legacy deliberately preserves existing page styles. */
+.ecosystem-ui-open{min-height:44px;padding:8px 15px;border:1px solid currentColor;border-radius:10px;background:transparent;color:inherit;font:700 14px system-ui,sans-serif;cursor:pointer}
+.ecosystem-ui-dialog{box-sizing:border-box;width:min(780px,calc(100% - 24px));max-height:90dvh;overflow:auto;padding:24px;border:1px solid var(--ui-rule,#b8c0ca);border-radius:18px;background:var(--ui-card,#fff);color:var(--ui-ink,#1b2330);font:16px/1.5 system-ui,sans-serif}
+.ecosystem-ui-dialog::backdrop{background:#0009}
+.ecosystem-ui-dialog h2{color:inherit;margin:0 0 12px;font:750 24px system-ui,sans-serif}
+.ecosystem-ui-options{border:0;padding:0;margin:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:12px}
+.ecosystem-ui-option{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;padding:12px;border:1px solid var(--ui-rule,#cbd5e1);border-radius:12px;cursor:pointer}
+.ecosystem-ui-option input{width:20px;min-height:20px;align-self:start;margin:4px 0}
+.ecosystem-ui-option:has(input:checked){outline:2px solid var(--ui-accent,#4338ca)}
+.ecosystem-ui-option strong,.ecosystem-ui-option small{display:block;color:inherit}.ecosystem-ui-option small{opacity:.8;font-size:12px}
+.ecosystem-ui-thumb{height:65px;grid-column:2;display:block;border-radius:6px;background:#999}
+.ecosystem-ui-scope{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ecosystem-ui-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ecosystem-ui-actions button,.ecosystem-ui-scope select{min-height:44px;padding:8px 12px;border:1px solid var(--ui-rule,#94a3b8);border-radius:8px;color:var(--ui-ink,#1b2330);background:var(--ui-card,#fff);font:600 14px system-ui,sans-serif}
+.ecosystem-ui-actions button:first-child{background:var(--ui-accent,#4338ca);color:var(--ui-on,#fff);border-color:transparent}
+.ecosystem-ui-status{min-height:1.5em}.ecosystem-banner{display:none}
+.ecosystem-ui-dialog :focus-visible,.ecosystem-ui-open:focus-visible{outline:3px solid var(--ui-accent,#4338ca);outline-offset:3px}
+html[data-ui-studio="notion"]{--ui-bg:#f5f3ee;--ui-card:#ffffff;--ui-sunk:#e9e5dd;--ui-ink:#292524;--ui-muted:#57534e;--ui-rule:#d6d3d1;--ui-accent:#57534e;--ui-on:#ffffff;--ui-hero:#e8e3d9;color-scheme:light;--color-paper:#f5f3ee!important;--color-paper-2:#ffffff!important;--color-paper-3:#e9e5dd!important;--color-ink:#292524!important;--color-ink-2:#57534e!important;--color-muted:#57534e!important;--color-rule:#d6d3d1!important;--color-focus:#57534e!important;--paper:#ffffff!important;--surface:#ffffff!important;--surface-2:#e9e5dd!important;--ink:#292524!important;--muted:#57534e!important;--rule:#d6d3d1!important;--control:#d6d3d1!important;--accent:#57534e!important;--cream:#f5f3ee!important;--navy:#292524!important;--navy-2:#e9e5dd!important;--teal:#57534e!important;--amber:#57534e!important;--brick:#57534e!important;--line:#d6d3d1!important;}
+.ecosystem-ui-thumb[data-preview="notion"]{background:linear-gradient(90deg,#e9e5dd 24%,transparent 24%),linear-gradient(#e8e3d9 37%,#ffffff 37%);border:1px solid #d6d3d1;box-shadow:inset 0 -4px #57534e;}
+html[data-ui-studio="minimal"]{--ui-bg:#f8fafc;--ui-card:#ffffff;--ui-sunk:#eaf0f7;--ui-ink:#172033;--ui-muted:#475569;--ui-rule:#cbd5e1;--ui-accent:#4338ca;--ui-on:#ffffff;--ui-hero:#e0e7ff;color-scheme:light;--color-paper:#f8fafc!important;--color-paper-2:#ffffff!important;--color-paper-3:#eaf0f7!important;--color-ink:#172033!important;--color-ink-2:#475569!important;--color-muted:#475569!important;--color-rule:#cbd5e1!important;--color-focus:#4338ca!important;--paper:#ffffff!important;--surface:#ffffff!important;--surface-2:#eaf0f7!important;--ink:#172033!important;--muted:#475569!important;--rule:#cbd5e1!important;--control:#cbd5e1!important;--accent:#4338ca!important;--cream:#f8fafc!important;--navy:#172033!important;--navy-2:#eaf0f7!important;--teal:#4338ca!important;--amber:#4338ca!important;--brick:#4338ca!important;--line:#cbd5e1!important;}
+.ecosystem-ui-thumb[data-preview="minimal"]{background:linear-gradient(90deg,#eaf0f7 24%,transparent 24%),linear-gradient(#e0e7ff 37%,#ffffff 37%);border:1px solid #cbd5e1;box-shadow:inset 0 -4px #4338ca;}
+html[data-ui-studio="bento"]{--ui-bg:#141526;--ui-card:#22263b;--ui-sunk:#101221;--ui-ink:#f5f5ff;--ui-muted:#b9bfd5;--ui-rule:#42465f;--ui-accent:#fb7185;--ui-on:#17111e;--ui-hero:#3d3158;color-scheme:dark;--color-paper:#141526!important;--color-paper-2:#22263b!important;--color-paper-3:#101221!important;--color-ink:#f5f5ff!important;--color-ink-2:#b9bfd5!important;--color-muted:#b9bfd5!important;--color-rule:#42465f!important;--color-focus:#fb7185!important;--paper:#22263b!important;--surface:#22263b!important;--surface-2:#101221!important;--ink:#f5f5ff!important;--muted:#b9bfd5!important;--rule:#42465f!important;--control:#42465f!important;--accent:#fb7185!important;--cream:#141526!important;--navy:#f5f5ff!important;--navy-2:#101221!important;--teal:#fb7185!important;--amber:#fb7185!important;--brick:#fb7185!important;--line:#42465f!important;}
+.ecosystem-ui-thumb[data-preview="bento"]{background:linear-gradient(90deg,#101221 24%,transparent 24%),linear-gradient(#3d3158 37%,#22263b 37%);border:1px solid #42465f;box-shadow:inset 0 -4px #fb7185;}
+html[data-ui-studio="developer"]{--ui-bg:#10121c;--ui-card:#1b1d2e;--ui-sunk:#11101d;--ui-ink:#f5f5ff;--ui-muted:#b6b5cd;--ui-rule:#39374f;--ui-accent:#fca311;--ui-on:#17111e;--ui-hero:#35245b;color-scheme:dark;--color-paper:#10121c!important;--color-paper-2:#1b1d2e!important;--color-paper-3:#11101d!important;--color-ink:#f5f5ff!important;--color-ink-2:#b6b5cd!important;--color-muted:#b6b5cd!important;--color-rule:#39374f!important;--color-focus:#fca311!important;--paper:#1b1d2e!important;--surface:#1b1d2e!important;--surface-2:#11101d!important;--ink:#f5f5ff!important;--muted:#b6b5cd!important;--rule:#39374f!important;--control:#39374f!important;--accent:#fca311!important;--cream:#10121c!important;--navy:#f5f5ff!important;--navy-2:#11101d!important;--teal:#fca311!important;--amber:#fca311!important;--brick:#fca311!important;--line:#39374f!important;}
+.ecosystem-ui-thumb[data-preview="developer"]{background:linear-gradient(90deg,#11101d 24%,transparent 24%),linear-gradient(#35245b 37%,#1b1d2e 37%);border:1px solid #39374f;box-shadow:inset 0 -4px #fca311;}
+html[data-ui-studio="cyberpunk"]{--ui-bg:#061521;--ui-card:#102737;--ui-sunk:#081b29;--ui-ink:#e5faff;--ui-muted:#a5c7d6;--ui-rule:#245b70;--ui-accent:#00e5ff;--ui-on:#061521;--ui-hero:#10394b;color-scheme:dark;--color-paper:#061521!important;--color-paper-2:#102737!important;--color-paper-3:#081b29!important;--color-ink:#e5faff!important;--color-ink-2:#a5c7d6!important;--color-muted:#a5c7d6!important;--color-rule:#245b70!important;--color-focus:#00e5ff!important;--paper:#102737!important;--surface:#102737!important;--surface-2:#081b29!important;--ink:#e5faff!important;--muted:#a5c7d6!important;--rule:#245b70!important;--control:#245b70!important;--accent:#00e5ff!important;--cream:#061521!important;--navy:#e5faff!important;--navy-2:#081b29!important;--teal:#00e5ff!important;--amber:#00e5ff!important;--brick:#00e5ff!important;--line:#245b70!important;}
+.ecosystem-ui-thumb[data-preview="cyberpunk"]{background:linear-gradient(90deg,#081b29 24%,transparent 24%),linear-gradient(#10394b 37%,#102737 37%);border:1px solid #245b70;box-shadow:inset 0 -4px #00e5ff;}
+html[data-ui-studio="rpg"]{--ui-bg:#18102d;--ui-card:#2c2042;--ui-sunk:#130c25;--ui-ink:#fff5df;--ui-muted:#d5c6e7;--ui-rule:#665079;--ui-accent:#fbbf24;--ui-on:#18102d;--ui-hero:#4b315c;color-scheme:dark;--color-paper:#18102d!important;--color-paper-2:#2c2042!important;--color-paper-3:#130c25!important;--color-ink:#fff5df!important;--color-ink-2:#d5c6e7!important;--color-muted:#d5c6e7!important;--color-rule:#665079!important;--color-focus:#fbbf24!important;--paper:#2c2042!important;--surface:#2c2042!important;--surface-2:#130c25!important;--ink:#fff5df!important;--muted:#d5c6e7!important;--rule:#665079!important;--control:#665079!important;--accent:#fbbf24!important;--cream:#18102d!important;--navy:#fff5df!important;--navy-2:#130c25!important;--teal:#fbbf24!important;--amber:#fbbf24!important;--brick:#fbbf24!important;--line:#665079!important;}
+.ecosystem-ui-thumb[data-preview="rpg"]{background:linear-gradient(90deg,#130c25 24%,transparent 24%),linear-gradient(#4b315c 37%,#2c2042 37%);border:1px solid #665079;box-shadow:inset 0 -4px #fbbf24;}
+@media screen {
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body{background:var(--ui-bg);color:var(--ui-ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(h1,h2,h3,h4,strong){color:var(--ui-ink)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.card,.hub-card,.stat,.today,.toc,.lesson-card,.level,.panel,.hero,.law){background:var(--ui-card);border-color:var(--ui-rule);color:var(--ui-ink);border-radius:16px}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.muted,.sub,.lead,.hub-desc,.intro,.hub-lead,.hub-kicker){color:var(--ui-muted)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.wrap,main,.hub-main){max-width:1280px;min-width:0;width:100%;margin-inline:auto}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) nav[aria-label="Chuyển khu học"],html[data-ui-studio]:not([data-ui-studio="legacy"]) header.top{background:var(--ui-sunk)!important;border-color:var(--ui-rule)!important;color:var(--ui-ink);box-shadow:none;position:relative}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) nav[aria-label="Chuyển khu học"] a,html[data-ui-studio]:not([data-ui-studio="legacy"]) header.top a{color:var(--ui-ink)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) nav[aria-label="Chuyển khu học"] a[aria-current]{color:var(--ui-accent)!important;border-bottom-color:var(--ui-accent)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn,.ecosystem-ui-open):not(.ghost){background:var(--ui-accent);border-color:var(--ui-accent);color:var(--ui-on)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.ghost,.tabs button,.theme-row select,.search-box input){background:var(--ui-card);color:var(--ui-ink);border-color:var(--ui-rule)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .tabs button[aria-selected="true"]{color:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.card,.hub-card) a:not(.btn),html[data-ui-studio]:not([data-ui-studio="legacy"]) .content a:not(.btn){color:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,35%);align-items:center;gap:20px;background:linear-gradient(125deg,var(--ui-card),var(--ui-hero));border:1px solid var(--ui-rule);border-radius:20px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow:hidden}
+.ecosystem-banner h2{font:750 clamp(1.4rem,3.5vw,2.6rem)/1.18 system-ui,sans-serif;margin:8px 0;color:inherit}
+.ecosystem-banner small{font:700 12px/1.5 system-ui,sans-serif;letter-spacing:.08em;color:var(--ui-accent)}
+.ecosystem-banner p{color:var(--ui-muted)}
+.ecosystem-banner img{width:100%;height:auto;max-height:220px;object-fit:contain}
+.ecosystem-banner-cta{display:inline-flex;align-items:center;min-height:44px;background:var(--ui-accent);color:var(--ui-on)!important;padding:8px 15px;border-radius:10px;text-decoration:none;font-weight:700}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-grid,html[data-ui-studio]:not([data-ui-studio="legacy"]) .lessons,html[data-ui-studio]:not([data-ui-studio="legacy"]) .laws{gap:14px}
+html[data-ui-studio="notion"] :is(.hub-grid,.lessons,.laws){grid-template-columns:1fr}
+html[data-ui-studio="notion"] :is(.hub-card,.lesson-card){border-radius:6px;box-shadow:none}
+html[data-ui-studio="notion"] .ecosystem-banner img{max-height:135px}
+html[data-ui-studio="minimal"] :is(.wrap,main,.hub-main){max-width:1000px}
+html[data-ui-studio="minimal"] .ecosystem-banner{text-align:center;grid-template-columns:1fr}
+html[data-ui-studio="minimal"] .ecosystem-banner img{display:none}
+html[data-ui-studio="minimal"] .lesson{display:block;max-width:780px;margin:auto}
+html[data-ui-studio="minimal"] .toc{position:static;max-height:none}
+html[data-ui-studio="bento"] :is(.hub-grid,.lessons){grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));grid-auto-rows:minmax(120px,auto)}
+html[data-ui-studio="bento"] .hub-card:first-child{background:linear-gradient(140deg,var(--ui-card),var(--ui-hero))}
+html[data-ui-studio="bento"] .lesson{display:grid;grid-template-columns:1fr}
+html[data-ui-studio="bento"] .toc{position:static}
+html[data-ui-studio="developer"] .hero{border-left:4px solid var(--ui-accent)}
+html[data-ui-studio="developer"] .lesson{gap:20px}
+html[data-ui-studio="cyberpunk"] :is(.card,.hub-card,.lesson-card,.toc,.ecosystem-banner){border-radius:0;border:1px solid var(--ui-rule);box-shadow:inset 0 0 18px #00e5ff0d}
+html[data-ui-studio="cyberpunk"] .ecosystem-banner{background:repeating-linear-gradient(0deg,transparent 0 22px,#00e5ff12 23px),linear-gradient(125deg,var(--ui-card),var(--ui-hero))}
+html[data-ui-studio="rpg"] :is(.hub-grid,.lessons){grid-template-columns:1fr;padding-left:24px;border-left:3px dashed var(--ui-accent)}
+html[data-ui-studio="rpg"] :is(.hub-card,.lesson-card){position:relative}
+html[data-ui-studio="rpg"] :is(.hub-card,.lesson-card)::before{content:"";position:absolute;left:-33px;top:24px;width:14px;height:14px;background:var(--ui-accent);border-radius:50%}
+html[data-ui-studio="rpg"] .lesson{display:block}
+html[data-ui-studio="rpg"] .toc{position:static;border-left:3px dashed var(--ui-accent);max-height:none}
+html[data-ui-studio="rpg"] .ecosystem-banner{background:radial-gradient(ellipse at right top,var(--ui-hero),var(--ui-sunk))}
+@media(min-width:960px){
+html[data-ui-studio="bento"] .hub-card:first-child{grid-column:span 2}
+html[data-ui-studio="notion"] .hub-main,html[data-ui-studio="developer"] .hub-main{max-width:1120px}
+html[data-ui-studio="developer"] .hub-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+html[data-ui-studio="cyberpunk"] .hub-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:640px){html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-banner{grid-template-columns:1fr;margin:12px 0}.ecosystem-banner img{max-height:120px}html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hub-grid,.lessons,.laws){grid-template-columns:minmax(0,1fr)}html[data-ui-studio]:not([data-ui-studio="legacy"]) .lesson{display:block}}
+}
+@media(prefers-reduced-motion:reduce){.ecosystem-banner *,.ecosystem-ui-open{animation:none!important;transition:none!important}}
+@media print{.ecosystem-banner,.ecosystem-ui-open,.ecosystem-ui-dialog{display:none!important}}
+
+/* Artwork cropped from approved ImageGen mockups, 5 columns x 2 rows. */
+.ecosystem-ui-thumb[data-preview]:not([data-preview="legacy"]),.ecosystem-banner-art{background-image:url("ui-studio-art.avif");background-size:500% 200%;background-repeat:no-repeat;box-shadow:none;}
+.ecosystem-ui-thumb[data-preview]:not([data-preview="legacy"]){height:auto;aspect-ratio:5/3;}
+.ecosystem-banner-art{display:block;width:100%;aspect-ratio:5/3;max-width:420px;justify-self:center;border-radius:12px;}
+.ecosystem-ui-thumb[data-preview="notion"],html[data-ui-studio="notion"] .ecosystem-banner-art{background-position:0% 0%;}
+.ecosystem-ui-thumb[data-preview="minimal"],html[data-ui-studio="minimal"] .ecosystem-banner-art{background-position:25% 0%;}
+.ecosystem-ui-thumb[data-preview="bento"],html[data-ui-studio="bento"] .ecosystem-banner-art{background-position:50% 0%;}
+.ecosystem-ui-thumb[data-preview="developer"],html[data-ui-studio="developer"] .ecosystem-banner-art{background-position:75% 0%;}
+.ecosystem-ui-thumb[data-preview="cyberpunk"],html[data-ui-studio="cyberpunk"] .ecosystem-banner-art{background-position:100% 0%;}
+.ecosystem-ui-thumb[data-preview="rpg"],html[data-ui-studio="rpg"] .ecosystem-banner-art{background-position:0% 100%;}
+html[data-ui-studio="developer"][data-ui-app="law"] .ecosystem-banner-art{background-position:25% 100%;}
+html[data-ui-studio="developer"][data-ui-app="code"] .ecosystem-banner-art{background-position:50% 100%;}
+html[data-ui-studio="developer"][data-ui-app="tamquan"] .ecosystem-banner-art{background-position:75% 100%;}
+html[data-ui-studio="developer"][data-ui-app="testing"] .ecosystem-banner-art{background-position:100% 100%;}
+@media screen {
+html[data-ui-studio="minimal"] .ecosystem-banner{grid-template-columns:minmax(0,1fr) minmax(0,35%);text-align:left}
+html[data-ui-studio="cyberpunk"] .ecosystem-banner-art{border-radius:0;border:1px solid var(--ui-accent)}
+html[data-ui-studio="rpg"] .ecosystem-banner-art{border:2px solid var(--ui-accent);box-shadow:0 0 24px #fbbf2420}
+html[data-ui-studio="notion"] .ecosystem-banner-art{max-width:280px;border-radius:6px}
+html[data-ui-studio="notion"] .stats{grid-template-columns:1fr}
+html[data-ui-studio="notion"] .stat{display:flex;flex-direction:row;justify-content:space-between;align-items:center;border:1px solid var(--ui-rule)}
+html[data-ui-studio="bento"] .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border:0}
+html[data-ui-studio="rpg"] .hub-card{border-color:var(--ui-rule);background:linear-gradient(125deg,var(--ui-card),var(--ui-hero))}
+html[data-ui-studio="cyberpunk"] .hub-card{border-color:var(--ui-accent)}
+@media(min-width:960px){
+html[data-ui-studio="notion"][data-ui-app="home"] body,html[data-ui-studio="developer"][data-ui-app="home"] body,html[data-ui-studio="cyberpunk"][data-ui-app="home"] body{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:start;min-height:100vh}
+html[data-ui-studio="notion"][data-ui-app="home"] body>nav,html[data-ui-studio="developer"][data-ui-app="home"] body>nav,html[data-ui-studio="cyberpunk"][data-ui-app="home"] body>nav{display:flex;flex-direction:column!important;align-items:stretch;min-height:100vh;position:sticky;top:0;padding:24px 16px!important;gap:16px!important;border-right:1px solid var(--ui-rule)}
+html[data-ui-studio="notion"][data-ui-app="home"] .hub-main,html[data-ui-studio="developer"][data-ui-app="home"] .hub-main,html[data-ui-studio="cyberpunk"][data-ui-app="home"] .hub-main{grid-column:2;max-width:1280px}
+html[data-ui-studio="bento"] .hub-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(170px,auto)}
+html[data-ui-studio="bento"] .hub-card:first-child{grid-column:span 2;grid-row:span 2}
+}
+@media(max-width:640px){html[data-ui-studio="minimal"] .ecosystem-banner{grid-template-columns:1fr}.ecosystem-banner-art{max-width:220px}}
+}
+
+/* Sprint 01: take precedence over lyt-design.css's fixed full-width nav. */
+@media screen {
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body:has(>nav[aria-label="Chuyển khu học"]){padding-top:0!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body>nav[aria-label="Chuyển khu học"]{position:relative!important;inset:auto!important;min-height:0;width:100%!important;box-sizing:border-box;flex-direction:row!important;align-items:center}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hub-main,.ecosystem-banner,main,.hub-card){box-sizing:border-box;min-width:0}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) main.triet>.ecosystem-banner{grid-column:1/-1}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-ui-dialog{margin:auto;max-width:calc(100% - 24px);color:var(--ui-ink);background:var(--ui-card)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-card .hub-cta{background:var(--ui-accent);color:var(--ui-on);border-color:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-card .hub-cta:hover{background:var(--ui-accent);color:var(--ui-on)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-link{overflow-wrap:anywhere}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) header.top{color:var(--ui-ink);background:var(--ui-sunk)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(th,.tabs button,.opt:not(.right):not(.wrong),input:not([type="color"]),textarea,select){background:var(--ui-card);color:var(--ui-ink);border-color:var(--ui-rule)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hero,.card,.hub-card) h1,html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.hero,.card,.hub-card) h2{color:var(--ui-ink)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]){--color-accent:var(--ui-accent)!important;--color-action:var(--ui-accent)!important;--color-action-ink:var(--ui-on)!important;--color-accent-ink:var(--ui-on)!important;--color-accent-soft:var(--ui-card)!important;--color-accent-soft-ink:var(--ui-ink)!important}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn):not(.ghost){color:var(--ui-on);background:var(--ui-accent)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn).ghost{color:var(--ui-ink);background:var(--ui-card)}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) :is(.btn,.linkbtn):focus-visible{outline:3px solid var(--ui-accent);outline-offset:3px}
+@media(min-width:960px){
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) body{padding:0!important;display:grid;grid-template-columns:230px minmax(0,1fr);grid-template-rows:auto;align-items:start}
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) body>nav[aria-label="Chuyển khu học"]{grid-column:1;grid-row:1;position:sticky!important;top:0!important;left:auto!important;right:auto!important;width:100%!important;min-height:0;height:100dvh;overflow-y:auto;display:flex;flex-direction:column!important;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:12px!important;border-right:1px solid var(--ui-rule)!important}
+html[data-ui-app="home"]:is([data-ui-studio="notion"],[data-ui-studio="developer"],[data-ui-studio="cyberpunk"]) .hub-main{grid-column:2;grid-row:1;margin:0 auto;padding:24px clamp(16px,3vw,40px) 48px;max-width:1280px}
+}
+@media(max-width:959px){
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-ui-open{max-width:100%}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) body>nav[aria-label="Chuyển khu học"]{height:auto!important}
+}
+@media(max-width:480px){
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .hub-main{padding-inline:12px}
+html[data-ui-studio]:not([data-ui-studio="legacy"]) .ecosystem-banner{grid-template-columns:minmax(0,1fr)}
+}
+}

@@ -20,6 +20,8 @@ import { createChat } from './chat.mjs';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = Number(process.env.PORT || 4500);
 const RUNNER = (process.env.RUNNER || 'local').toLowerCase();
+if (!['local','docker'].includes(RUNNER)) throw new Error('RUNNER phải là local hoặc docker.');
+let running = false;
 const WIN = process.platform === 'win32';
 const COMPILER_DIR = process.env.COMPILER_DIR || (WIN ? 'C:\\winlibs\\mingw64\\bin' : '');
 const DOCKER_IMAGE = process.env.DOCKER_IMAGE || 'gcc:14';
@@ -167,13 +169,14 @@ async function runLocal({ language, std, warn, code, stdin }) {
 // Một container cho cả biên dịch lẫn chạy: không mạng, giới hạn RAM, CPU và số tiến trình.
 async function runDocker({ language, std, warn, code, stdin }) {
   const dir = await mkdtemp(join(tmpdir(), 'hoccode-'));
+  const container = 'hoccode-' + randomBytes(8).toString('hex');
   try {
     const src = 'main.' + (language === 'c' ? 'c' : 'cpp');
     await writeFile(join(dir, src), code, 'utf8');
     const compiler = language === 'c' ? 'gcc' : 'g++';
     const flags = warn ? '-Wall -Wextra ' : '';
     const script = `${compiler} -std=${std} ${flags}${src} -o main 2> build.log || { cat build.log >&2; exit 90; }; cat build.log >&2; timeout 5 ./main`;
-    const args = ['run', '--rm', '-i', '--network', 'none', '--memory', '256m', '--cpus', '1', '--pids-limit', '64',
+    const args = ['run', '--rm', '--name', container, '-i', '--network', 'none', '--memory', '256m', '--cpus', '1', '--pids-limit', '64', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--read-only', '--tmpfs', '/tmp:rw,nosuid,size=64m',
       '-v', dir + ':/work', '-w', '/work', DOCKER_IMAGE, 'sh', '-c', script];
     const t0 = Date.now();
     const r = await runProcess('docker', args, { cwd: dir, input: stdin, timeout: LIMIT.compileMs + LIMIT.runMs, cap: LIMIT.outBytes });
@@ -188,6 +191,7 @@ async function runDocker({ language, std, warn, code, stdin }) {
       run: { code: r.code, signal: r.signal, stdout: r.stdout, stderr: r.stderr, timedOut: r.timedOut || r.code === 124, truncated: r.truncated, ms: Date.now() - t0 },
     };
   } finally {
+    await runProcess('docker', ['rm','-f',container], {cwd:dir,input:'',timeout:3000,cap:4096}).catch(()=>{});
     await rm(dir, { recursive: true, force: true }).catch(() => {});
   }
 }
@@ -258,15 +262,27 @@ async function handleChatRoute(req, res) {
   }
 }
 
+// Loopback only: reject DNS rebinding and requests from unrelated websites.
 const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, 'http://localhost');
+  const port=req.socket.localPort;
+  const host=String(req.headers.host||'').toLowerCase();
+  if(!['localhost:'+port,'127.0.0.1:'+port].includes(host))return fail(res,403,'HOST','Chỉ mở qua localhost.');
+  const url = new URL(req.url, 'http://'+host);
+  if(url.pathname.startsWith('/api/')&&req.method==='POST'){
+    const origin=req.headers.origin;
+    const site=req.headers['sec-fetch-site'];
+    if((origin&&origin!=='http://'+host)||(site&&site!=='same-origin'&&site!=='none'))return fail(res,403,'ORIGIN','Chỉ nhận yêu cầu từ trang cục bộ cùng origin.');
+    if((req.headers['content-type']||'').split(';')[0].trim().toLowerCase()!=='application/json')return fail(res,415,'MEDIA_TYPE','Chỉ nhận JSON.');
+  }
   if (url.pathname === '/api/chat') {
     if (req.method !== 'POST') return fail(res, 405, 'METHOD', 'Dùng POST.');
     return handleChatRoute(req, res);
   }
   if (url.pathname === '/api/run') {
     if (req.method !== 'POST') return fail(res, 405, 'METHOD', 'Dùng POST.');
-    return handleRun(req, res);
+    if(running)return fail(res,429,'BUSY','Đang chạy bài khác.');
+    running=true;
+    try { return await handleRun(req,res); } finally { running=false; }
   }
   if (url.pathname.startsWith('/api/')) return fail(res, 404, 'NOT_FOUND', 'Không có API này.');
   if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end(); }

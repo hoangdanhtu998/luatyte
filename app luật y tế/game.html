@@ -281,8 +281,6 @@ let lastTick = 0;
 let paused = false;
 let locked = false;
 let fbTimer = 0;
-let me = null;
-let csrf = "";
 
 const readJson = (key, fallback) => {
   try { const raw = localStorage.getItem("lyt_" + key); return raw == null ? fallback : JSON.parse(raw); }
@@ -342,60 +340,9 @@ function glowCard(card, kind) {
   card.classList.add(cls);
   setTimeout(() => card.classList.remove(cls), 480);
 }
-function markDirty() { try { localStorage.setItem("lyt_syncAt", "0"); } catch {} }
-
-async function fetchMe() {
-  if (me) return me;
-  try {
-    const r = await fetch("/api/me", { cache: "no-store", signal: timeout(1200) });
-    if (!r.ok) return null;
-    const d = await r.json();
-    if (!d || !d.user) return null;
-    me = d.user; csrf = d.csrfToken || "";
-    return me;
-  } catch { return null; }
-}
-async function pullGameStats() {
-  if (!(await fetchMe())) return;
-  try {
-    const g = await fetch("/api/progress", { cache: "no-store", signal: timeout(1500) });
-    if (!g.ok) return;
-    const d = await g.json().catch(() => null);
-    const data = d && d.data && typeof d.data === "object" ? d.data : {};
-    if (typeof data.lyt_swipe === "string") {
-      try { stats = mergeSwipeStats(stats, JSON.parse(data.lyt_swipe)); writeJson("swipe", stats); } catch {}
-    }
-    const t = Number(data.lyt_tfbest);
-    if (Number.isFinite(t) && t > tfBest) { tfBest = Math.round(t); writeJson("tfbest", tfBest); }
-    if (phase === "intro") renderIntro();
-  } catch {}
-}
-async function pushGameStats() {
-  if (!(await fetchMe())) { markDirty(); return false; }
-  try {
-    const g = await fetch("/api/progress", { cache: "no-store", signal: timeout(1500) });
-    if (!g.ok) throw new Error("progress");
-    const d = await g.json().catch(() => ({}));
-    const data = d && d.data && typeof d.data === "object" ? { ...d.data } : {};
-    if (typeof data.lyt_swipe === "string") {
-      try { stats = mergeSwipeStats(stats, JSON.parse(data.lyt_swipe)); writeJson("swipe", stats); } catch {}
-    }
-    const remoteTf = Number(data.lyt_tfbest);
-    if (Number.isFinite(remoteTf) && remoteTf > tfBest) { tfBest = Math.round(remoteTf); writeJson("tfbest", tfBest); }
-    data.lyt_swipe = JSON.stringify(stats);
-    data.lyt_tfbest = JSON.stringify(tfBest);
-    const r = await fetch("/api/progress", {
-      method: "PUT",
-      headers: { "content-type": "application/json", "x-csrf-token": csrf },
-      body: JSON.stringify({ data }),
-      signal: timeout(4000),
-    });
-    if (!r.ok) throw new Error("put");
-    const out = await r.json().catch(() => ({}));
-    if (out.updatedAt) localStorage.setItem("lyt_syncAt", String(out.updatedAt));
-    return true;
-  } catch { markDirty(); return false; }
-}
+// Personal learning: progress remains on this browser.
+async function pullGameStats() { return; }
+async function pushGameStats() { return true; }
 
 async function loadData() {
   const load = n => fetch("data/" + n + ".json", { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(n); return r.json(); });

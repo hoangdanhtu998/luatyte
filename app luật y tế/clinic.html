@@ -1944,24 +1944,8 @@ function renderBoard(box, data, note){
   if (note){ const p = document.createElement("p"); p.className = "hint"; p.textContent = note; box.appendChild(p); }
 }
 async function saveAndShowBoard(){
-  const box = document.getElementById("e-board"); if (!box) return;
-  box.textContent = "Đang cập nhật bảng xếp hạng…";
-  let note = "";
-  try {
-    const me = await fetch("/api/me", { credentials: "same-origin" });
-    if (me.ok){
-      const j = await me.json();
-      const r = await fetch("/api/scores", { method: "POST", credentials: "same-origin",
-        headers: { "content-type": "application/json", "x-csrf-token": j.csrfToken },
-        body: JSON.stringify({ mode: mode, gold: sessGold, healed: correct }) });
-      if (!r.ok){ const e = await r.json().catch(() => ({})); note = (e.error && e.error.message) || "Chưa lưu được điểm ca này."; }
-    } else note = "Đăng nhập để tên bạn xuất hiện trên bảng xếp hạng.";
-  } catch (_) { note = "Chưa kết nối được máy chủ tài khoản."; }
-  try {
-    const r = await fetch("/api/scores/top", { credentials: "same-origin" });
-    if (!r.ok) throw new Error("top");
-    renderBoard(box, await r.json(), note);
-  } catch (_) { box.textContent = note || "Chưa tải được bảng xếp hạng."; }
+  const box=document.getElementById("e-board");
+  if(box)box.textContent="Điểm ca trực và bảng vàng được lưu trên trình duyệt này.";
 }
 
 function endSession(){
@@ -2144,7 +2128,7 @@ function renderLogin(){
   const nextStreak = stats.login.last === yesterdayKey() ? stats.login.streak + 1 : 1;
   const reward = 100 + 50 * Math.min(nextStreak, 7);
   box.classList.remove("hidden");
-  box.innerHTML = `<div><b>Quà đăng nhập hôm nay: ${reward} vàng</b><small>Chuỗi ngày liên tiếp: ${nextStreak}. Ngày thứ 7 trở đi thưởng tối đa.</small></div><button class="btn" id="claim-login" type="button">Nhận</button>`;
+  box.innerHTML = `<div><b>Quà học hôm nay: ${reward} vàng</b><small>Chuỗi ngày liên tiếp: ${nextStreak}. Ngày thứ 7 trở đi thưởng tối đa.</small></div><button class="btn" id="claim-login" type="button">Nhận</button>`;
   $("#claim-login").onclick = () => {
     stats.login = { last: today, streak: nextStreak };
     gold += reward; stats.earned += reward; sfx("ok");

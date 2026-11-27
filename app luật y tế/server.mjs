@@ -35,7 +35,7 @@ async function proxyToAccounts(req, res, path) {
 
 const SESSION_MS = 24 * 60 * 60 * 1000;
 const REQUIRE_LOGIN = process.env.REQUIRE_LOGIN === 'true'; // phiên đăng nhập tự hết sau 24 giờ
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.xml': 'application/xml', '.txt': 'text/plain', '.wav': 'audio/wav' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.avif': 'image/avif', '.png': 'image/png', '.xml': 'application/xml', '.txt': 'text/plain', '.wav': 'audio/wav' };
 
 export function loadUsers(path = DB) {
   if (!existsSync(path)) return { users: [] };
@@ -175,7 +175,7 @@ export function createHandler() {
       }
       if (!existsSync(target)) { res.writeHead(404); return res.end('Chưa có bài giảng slide. Chạy build trong slides-ly-thuyet.'); }
       const ext = extname(target);
-      const TYPE = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ttf': 'font/ttf', '.webp': 'image/webp', '.jpg': 'image/jpeg' };
+      const TYPE = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.avif': 'image/avif', '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ttf': 'font/ttf', '.webp': 'image/webp', '.jpg': 'image/jpeg' };
       res.writeHead(200, { 'content-type': TYPE[ext] || 'application/octet-stream', 'cache-control': 'no-cache' });
       return res.end(readFileSync(target));
     }

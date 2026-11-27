@@ -28,19 +28,7 @@ jobs:
         # Thư mục "app luật y tế" là gốc của site. Ghép thêm hoc-test/, 404.html, CNAME từ gốc repo.
         # Bỏ mã nguồn, công cụ, dữ liệu nội bộ và thư mục không phục vụ web để artifact nhẹ hơn.
         # Thư mục audio/ không đưa lên Pages: file giọng được phát từ jsDelivr (nhánh main).
-        run: |
-          mkdir -p _site
-          rsync -a \
-            --exclude='.git' --exclude='node_modules' --exclude='.github' \
-            --exclude='scripts' --exclude='test' --exclude='docs' --exclude='deploy' \
-            --exclude='deliverables' --exclude='output' --exclude='src' \
-            --exclude='server.mjs' --exclude='*.log' \
-            --exclude='/audio/' \
-            "app luật y tế/" _site/
-          cp -r hoc-test _site/hoc-test
-          cp -r "app luật y tế/hoc-code" _site/hoc-code
-          cp 404.html CNAME _site/
-          echo "Số file: $(find _site -type f | wc -l)  Dung lượng: $(du -sh _site | cut -f1)"
+        run: bash scripts/stage-pages.sh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
