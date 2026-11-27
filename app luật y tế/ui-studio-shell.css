@@ -150,3 +150,38 @@ html[data-ui-studio="rpg"] .studio-step::after{display:none}
 }
 @media(prefers-reduced-motion:reduce){.studio-frame :is(.studio-art,.studio-topic,.studio-step-link){animation:none!important;transition:none!important}}
 @media print{.studio-frame{display:block}.studio-frame>:not(.studio-workspace){display:none!important}.studio-work-head{display:none!important}}
+
+/* Review pass: reuse live progress controls, keep the existing lesson helper inside its rail. */
+@media screen {
+html[data-studio-shell="on"] .studio-context-panel>.studio-live-progress{display:grid!important;grid-template-columns:1fr!important;width:100%!important;min-width:0;margin:4px 0 0!important;padding:0!important;gap:6px!important;border:0!important;background:none!important}
+html[data-studio-shell="on"] .studio-live-progress .stat{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;padding:10px!important;border:1px solid var(--st-line)!important;border-radius:9px!important;background:var(--st-sunk)!important;color:var(--st-ink)!important;text-align:left!important;min-width:0}
+.studio-live-progress .stat span{font-size:11px!important;color:var(--st-muted)!important}
+.studio-live-progress .stat b{font-size:18px!important;line-height:1.15!important;color:var(--st-ink)!important}
+.studio-live-progress .stat small{grid-column:1/-1;font-size:10px!important;color:var(--st-muted)!important}
+.studio-live-progress .label{font-weight:650;color:var(--st-ink)!important}
+.studio-live-progress .bar{height:8px!important;width:100%!important;background:var(--st-sunk)!important;border:1px solid var(--st-line);border-radius:99px;overflow:hidden}
+.studio-live-progress .bar>span{display:block;height:100%;background:var(--st-accent)!important;transition:width .6s ease}
+html[data-studio-shell="on"] .studio-context>.lesson-chat{position:relative!important;inset:auto!important;width:100%!important;max-width:none!important;max-height:340px!important;height:320px;box-sizing:border-box;background:var(--st-panel);border:1px solid var(--st-line);border-radius:var(--st-radius)!important;box-shadow:none;z-index:1}
+.studio-context .lesson-chat .lc-head{background:var(--st-sunk)!important;color:var(--st-ink)!important;padding:10px!important}
+.studio-context .lesson-chat .lc-head strong{color:var(--st-ink)!important;font-size:13px!important;overflow-wrap:anywhere}
+.studio-context .lesson-chat .lc-log{font-size:12px;padding:10px}
+.studio-context .lesson-chat .lc-form{padding:8px;gap:4px}
+.studio-context .lesson-chat .lc-send{padding:0 9px;font-size:12px}
+.studio-context .lesson-chat .lc-input{font-size:12px;padding:8px}
+html[data-studio-shell="on"] body:not(.chat-open) .studio-context>.lesson-chat{display:none}
+html[data-studio-shell="on"] .studio-hero{min-height:220px}
+html[data-ui-studio="minimal"] .studio-hero,html[data-ui-studio="rpg"] .studio-hero{min-height:254px}
+html[data-studio-shell="on"] .studio-topic{min-height:116px}
+html[data-ui-studio="notion"] .studio-topic{min-height:72px}
+html[data-ui-studio="bento"] .studio-topic:first-child{min-height:144px}
+html[data-studio-shell="on"] .studio-workspace>[class="wrap"]>.hero,html[data-studio-shell="on"] .studio-workspace>main>.hero{padding:18px!important}
+@media(min-width:1151px){html:is([data-ui-studio="developer"],[data-ui-studio="minimal"],[data-ui-studio="cyberpunk"],[data-ui-studio="rpg"]) .studio-topic-grid:has(>:last-child:nth-child(4)){grid-template-columns:repeat(4,minmax(0,1fr))}.studio-topic-grid:has(>:last-child:nth-child(4)) .studio-topic{min-height:106px;padding:12px}}
+@media(max-width:720px){
+html[data-studio-shell="on"] .studio-nav .studio-brand{display:flex;font-size:0;flex:none;margin:0;gap:0}
+html[data-studio-shell="on"] .studio-nav .studio-brand-mark{width:30px;height:30px;font-size:18px}
+html[data-studio-shell="on"] .studio-hero{min-height:0}
+html[data-studio-shell="on"] .studio-art{max-width:190px}
+html[data-studio-shell="on"] .studio-context>.lesson-chat{height:300px}
+}
+}
+@media(prefers-reduced-motion:reduce){.studio-live-progress .bar>span{transition:none!important}}

@@ -61,7 +61,7 @@
     });
     cancel.addEventListener('click',()=>dialog.close());
     reset.addEventListener('click',()=>{draft='legacy';sync();apply(draft)});
-    dialog.addEventListener('close',()=>{apply(selected());open.focus()});
+    dialog.addEventListener('close',()=>{apply(selected());requestAnimationFrame(()=>open.focus({preventScroll:true}))});
     const refresh=()=>{if(!dialog.open)apply(selected())};
     window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);window.addEventListener('focus',refresh);
     const target=document.querySelector('.hub-main,main,.wrap');

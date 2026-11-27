@@ -87,7 +87,11 @@ try{
          assert.ok(geom.nav.w<300,'navigation too wide');
          assert.ok(geom.hero.x>=geom.nav.right-2,'nav overlaps hero');
        }else assert.ok(geom.hero.y>=geom.nav.bottom-2,'nav overlaps hero');
-       if(app==='tamquan')assert.ok(await page.locator('#tamquan-dashboard').count(),'Tam Quan dashboard script did not initialize');
+       if(app==='tamquan'){
+         assert.ok(await page.locator('#tamquan-dashboard').count(),'Tam Quan dashboard script did not initialize');
+         assert.equal(await page.locator('.studio-context>.lesson-chat').count(),1,'helper overlays shell');
+       }
+       if(['law','code','testing'].includes(app))assert.equal(await page.locator('.studio-context .studio-live-progress').count(),1,'live progress missing');
        if(app==='hospital')assert.ok(await page.locator('#pix2').count(),'Hospital canvas missing');
       }else await page.locator('.ecosystem-banner').waitFor({state:'visible'});
       const decoded=await page.evaluate(async()=>{const i=new Image();i.src='/ui-studio-art.avif';await i.decode();return i.naturalWidth});assert.equal(decoded,700);
@@ -101,6 +105,30 @@ try{
    await page.close();
   }
  }
+ const journey=await context.newPage();
+ try{
+  await journey.setViewportSize({width:1440,height:900});
+  await journey.goto(preview+'/index.html');
+  await journey.getByRole('button',{name:'UI Studio',exact:true}).click();
+  const d=journey.locator('#ecosystem-ui-studio');
+  await d.locator('input[value="minimal"]').check();
+  await d.getByRole('button',{name:'Áp dụng',exact:true}).click();
+  await journey.locator('.studio-topic').filter({hasText:'Flashcard'}).click();
+  assert.equal(await journey.locator('[data-tab="thenho"]').getAttribute('aria-selected'),'true');
+  for(const [app,title] of [['code','Học Code'],['tamquan','Học Tam Quan'],['testing','Testing Academy'],['hospital','Hospital World'],['law','Học Luật Y Tế']]){
+   await journey.locator('.studio-nav').getByRole('link',{name:title,exact:true}).click();
+   await journey.locator('.studio-frame[data-studio-app="'+app+'"]').waitFor();
+   assert.equal(await journey.locator('html').getAttribute('data-ui-studio'),'minimal');
+   if(app==='tamquan'){
+    const note=journey.locator('#tq-note');await note.fill('unsaved test note');
+    await journey.getByRole('button',{name:'UI Studio',exact:true}).click();
+    await d.locator('input[value="bento"]').check();
+    await d.getByRole('button',{name:'Hủy',exact:true}).click();
+    assert.equal(await note.inputValue(),'unsaved test note');
+   }
+  }
+  results.push({test:'global navigation, real law tab, preserve unsaved reflection',passed:true});
+ }catch(e){results.push({test:'global navigation, real law tab, preserve unsaved reflection',passed:false,error:String(e)})}finally{await journey.close()}
 }catch(e){results.push({test:'browser setup/cross-origin',passed:false,error:String(e)});}
 finally{await browser.close();await writeFile(path.join(output,'results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));}
 if(results.some(x=>!x.passed))process.exitCode=1;
